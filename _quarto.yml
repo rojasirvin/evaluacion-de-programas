@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Course Title"
+  title: "Evaluación de Programas 2023"
   sidebar:
     background: primary
     # logo: "images/logo.png"
@@ -11,18 +11,18 @@ website:
     align: center
     tools:
       - icon: github
-        href: https://github.com/Pakillo/quarto-course-website-template
+        href: https://github.com/rojasirvin/quarto-course-website-template
         text: GitHub
     style: docked
     contents:
       - href: index.qmd
         text: Home
+      - href: programa.qmd
+        text: Programas
       - href: schedule.qmd
         text: Schedule
       - href: materials.qmd
         text: Materials
-      - href: https://github.com/Pakillo/quarto-course-website-template/discussions
-        text: Forum
 
 format:
   html:
