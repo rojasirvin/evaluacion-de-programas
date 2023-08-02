@@ -4,7 +4,7 @@ title: "Evaluación de Programas 2023"
 
 <br>
 
-Profesor: [Irvin Rojas](https://www.rojasirvin.com/) (irvin.rojas@cide.edu).
+Profesor: [Irvin Rojas](https://www.rojasirvin.com/) (irvin.rojas\@cide.edu).
 
 Horario de clases: lunes y miércoles (8:00 a 9:30).
 
@@ -17,4 +17,3 @@ Horario de oficina: por definir.
 **¡Bienvenidas, bienvenidos!**
 
 Este es un sitio para las y los estudiantes del curso de Evaluación de Programas de la Maestría en Economía del CIDE. Sin embargo, otras personas pueden encontrar útiles los recursos de este sitio, como el programa del curso, las tareas y la lista de lecturas.
-
