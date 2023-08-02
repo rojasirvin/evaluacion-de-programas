@@ -18,11 +18,20 @@ website:
       - href: index.qmd
         text: Home
       - href: programa.qmd
-        text: Programas
+        text: Programa
+      - href: reglas.qmd
+        text: Reglas
+      - href: lecturas.qmd
+        text: Lecturas
+      - href: presentaciones.qmd
+        text: Presentaciones
+      - href: tareas.qmd
+        text: Tareas
+      - href: materials.qmd
+        text: Materiales
       - href: schedule.qmd
         text: Schedule
-      - href: materials.qmd
-        text: Materials
+
 
 format:
   html:
