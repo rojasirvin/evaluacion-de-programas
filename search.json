@@ -1,5 +1,103 @@
 [
   {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Example schedule:\n\n\n\n\n\n\n\n\n\nMorning\nAfternoon\n\n\n\n\nL\nIntro + Data manipulation\ngit / GitHub\n\n\nM\nGeneralised Linear Models\nData visualisation\n\n\nX\nMixed models / GAM / Bayes\nFunctional programming + Students work\n\n\nJ\nMultivariate analyses\nReproducible workflows\n\n\nV\nUsing R as GIS + Students work\nProject presentations"
+  },
+  {
+    "objectID": "programa.html",
+    "href": "programa.html",
+    "title": "Programa",
+    "section": "",
+    "text": "Identificar las condiciones que permiten la implementación de una evaluación de impacto.\nConocer los fundamentos teóricos sobre los que se sustentan las metodologías de las evaluaciones de impacto.\nImplementar los métodos de evaluación empleando software, interpretar los resultados y reportar las conclusiones en forma de artículos científicos y/o reportes de política.\nConocer e implementar buenas prácticas en el uso de software, orientadas a la transparencia y la replicabilidad en la investigación.\nConocer los temas que conforman la literatura actual de evaluaciones de impacto."
+  },
+  {
+    "objectID": "programa.html#objetivos",
+    "href": "programa.html#objetivos",
+    "title": "Programa",
+    "section": "",
+    "text": "Identificar las condiciones que permiten la implementación de una evaluación de impacto.\nConocer los fundamentos teóricos sobre los que se sustentan las metodologías de las evaluaciones de impacto.\nImplementar los métodos de evaluación empleando software, interpretar los resultados y reportar las conclusiones en forma de artículos científicos y/o reportes de política.\nConocer e implementar buenas prácticas en el uso de software, orientadas a la transparencia y la replicabilidad en la investigación.\nConocer los temas que conforman la literatura actual de evaluaciones de impacto."
+  },
+  {
+    "objectID": "programa.html#referencias",
+    "href": "programa.html#referencias",
+    "title": "Programa",
+    "section": "Referencias",
+    "text": "Referencias\nEl curso se basa en los siguientes textos:\n\n(MHE) Angrist, J.D. y Pischke, J.S. (2013). Mostly Harmless Econometrics: An Empiricists Companion. Princeton University Press.\n\nAngrist, J.D. y Pischke, J.S. (2014). Mastering ’Metrics: The Path from Cause to Effect. Princeton University Press.\n\n(CT) Cameron, A.C. y P.K. Trivedi. (2005). Microeconometrics: Methods and applications. Oxford University Press.\n(MT) Cunningham, S. (2021). Causal inference: The mixtape. Yale University Press. Disponible en: https://mixtape.scunning.com/index.html.\nHuntington-Klein, N. (2021). The effect: An introduction to research design and causality. Chapman and Hall/CRC.\nDiNardo, J. y D.S. Lee. (2011). Program Evaluation and Research Designs. En Handbook of Labor Economics, 4A: 463-536.\n(GMPRV) Gertler, P.J., S. Martinez, P. Premand, L.B., Rawlings, y C.M.J. Vermeersch. (2011). La evaluación de impacto en la práctica. Banco Interamericano de Desarrollo y Banco Mundial, segunda edición. Disponible en: https://publications.iadb.org/publications/spanish/document/La-evaluaci%C3%B3n-de-impacto-en-la-pr%C3%A1ctica-Segunda-edici%C3%B3n.pdf."
+  },
+  {
+    "objectID": "programa.html#contenido-temático",
+    "href": "programa.html#contenido-temático",
+    "title": "Programa",
+    "section": "Contenido temático",
+    "text": "Contenido temático\nUnidad 1. Introducción\n\nFundamentos de la evaluación de impacto\n\nInferencia causal\nRevisión de métodos de regresión\n\nReplicabilidad y transparencia en la evaluación\n\nRMardkown para la generación de reportes científicos\n\n\nUnidad 2. Métodos de evaluación\n\nEvaluación experimental\n\nAsignación aleatoria\nErrores estándar\nLATE y variables instrumentales\nCorrección por prueba de múltiples hipótesis\nAplicaciones de métodos experimentales\n\nDiferencia en diferencias\n\nSupuestos fundamentales\nEfectos fijos individuales\nDID desfasado\nANCOVA\nAplicaciones de DID\n\nMétodos de pareamiento\n\nSupuestos fundamentales\nPareamiento exacto\nPareamiento por puntaje de propensión (PSM)\nAplicaciones del PSM\n\nDiseños con discontinuidades\n\nSupuestos fundamentales\nDiscontinuidades nítidas y difusas\nDiscontinuidades geográficas\nPliegues en la regresión\nAplicaciones diseños con discontinuidades\n\nMétodo del control sintético\n\nSupuestos fundamentales\nInferencia basada en placebos\nAplicaciones de control sintético\n\n\nUnidad 3. Temas actuales de evaluación\n\nExtensiones I\n\nAprendizaje automatizado y big data en la evaluación de impacto"
+  },
+  {
+    "objectID": "programa.html#evaluación-del-curso",
+    "href": "programa.html#evaluación-del-curso",
+    "title": "Programa",
+    "section": "Evaluación del curso",
+    "text": "Evaluación del curso\n\nExamen parcial: 20%\nExamen final: 30%\nProyecto final: 20%\nTareas (4): 20% (5% cada una)\nExposición: 10% (7% presentación y 3% folleto)"
+  },
+  {
+    "objectID": "programa.html#tareas",
+    "href": "programa.html#tareas",
+    "title": "Programa",
+    "section": "Tareas",
+    "text": "Tareas\nCuatro tareas teórico-prácticas. Las tareas deben entregarse de manera individual, pero se recomienda ampliamente colaborar en grupos de estudio. Para evitar confusiones, escriban en su tarea con quiénes colaboraron. Las tareas deberán entregarse en Teams antes de la fecha y hora señalada. No se aceptarán tareas fuera de tiempo. Por favor, no comprima los archivos en carpetas comprimidas. Las tareas deberán contener dos archivos:\nUn primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.\nUn segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad."
+  },
+  {
+    "objectID": "programa.html#software",
+    "href": "programa.html#software",
+    "title": "Programa",
+    "section": "Software",
+    "text": "Software\nR será el paquete standard usado en las sesiones prácticas. Más aún, el uso de cualquier software es aceptado siempre que se cumplan con los requisitos de replicabilidad y reportes de las tareas y exámenes. Habrá una sesión especial para introducir el uso de RMarkdown para la generación de reportes científicos."
+  },
+  {
+    "objectID": "programa.html#exámenes",
+    "href": "programa.html#exámenes",
+    "title": "Programa",
+    "section": "Exámenes",
+    "text": "Exámenes\n\nExamen parcial: jueves13 de octubre en el horario de clase.\nExamen final: martes 6 de diciembre en horario por definir."
+  },
+  {
+    "objectID": "programa.html#exposiciones",
+    "href": "programa.html#exposiciones",
+    "title": "Programa",
+    "section": "Exposiciones",
+    "text": "Exposiciones\nCada alumno realizará una presentación de uno los artículos aplicados marcados con “+” en la lista de lecturas. Cada presentación deberá ser de máximo 15 minutos y debe incluir el contenido que el presentador considere relevante. La presentación deberá abordar, mínimamente: 1) el problema a investigar, 2) la metodología empleada, 3) la pertinencia de la metodología y la teoría vista en el curso, 4) los datos empleados, 5) los principales resultados, y 6) una crítica sobre la validez y las conclusiones del estudio. La presentación deberá acompañarse de un breve folleto que resuma los puntos anteriores, para ser distribuido con el resto de la clase."
+  },
+  {
+    "objectID": "programa.html#proyecto-final",
+    "href": "programa.html#proyecto-final",
+    "title": "Programa",
+    "section": "Proyecto final",
+    "text": "Proyecto final\nEl proyecto final consistirá en un protocolo de investigación de una evaluación de impacto. El tema y la metodología es libre, pero se evaluará el potencial para realizarse en el corto plazo. Se aconseja seleccionar un tema para el que se empleen datos de libre acceso. El protocolo deberá incluir, mínimamente: 1) una revisión de literatura, 2) un bosquejo de las motivaciones teóricas del problema, 3) la metodología empírica a emplear, 4) la fuente de datos a usar, y 5) los resultados preliminares. El proyecto debe presentarse en formato escrito con una extensión máxima de 20 cuartillas. Se recomienda ampliamente dar seguimiento al proyecto en horas de oficina para recibir retroalimentación respecto a los avances y resolver posibles dudas y dificultades.\nEntrega: fecha por definir, a través de Teams."
+  },
+  {
+    "objectID": "materiales.html",
+    "href": "materiales.html",
+    "title": "Materiales",
+    "section": "",
+    "text": "Datasets\nSlides"
+  },
+  {
+    "objectID": "tareas.html",
+    "href": "tareas.html",
+    "title": "Tareas",
+    "section": "",
+    "text": "Aquí encontrarán las tareas del curso. No coman ansias."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Evaluación de Programas 2023",
+    "section": "",
+    "text": "Profesor: Irvin Rojas (irvin.rojas@cide.edu).\nHorario de clases: lunes y miércoles (8:00 a 9:30).\nPlataforma del curso: Microsoft Teams.\nHorario de oficina: por definir.\n\n¡Bienvenidas, bienvenidos!\nEste es un sitio para las y los estudiantes del curso de Evaluación de Programas de la Maestría en Economía del CIDE. Sin embargo, otras personas pueden encontrar útiles los recursos de este sitio, como el programa del curso, las tareas y la lista de lecturas."
+  },
+  {
     "objectID": "presentaciones.html",
     "href": "presentaciones.html",
     "title": "Presentaciones",
@@ -119,108 +217,10 @@
     "text": "Otras lecturas sobre temas no cubiertos en el curso\n\nMás allá de los experimentos\n\nBarrett, C. B., & Carter, M. R. (2010). The power and pitfalls of experiments in development economics: Some non-random reflections. Applied economic perspectives and policy, 32(4), 515-548.\n\nBarrett, C. B., & Carter, M. R. (2020). Finding our balance? Revisiting the randomization revolution in development economics ten years further on. World Development, 127, 104789.\n\nHjort, J., Moreira, D., Rao, G., & Santini, J. F. (2021). How research affects policy: Experimental evidence from 2,150 Brazilian municipalities. American Economic Review, 111(5), 1442-80.\nDeaton, A., Case. (2019). Randomization in the tropics revisited: a theme and eleven variations. In Randomized controlled trials in the field of development: A critical perspective. Oxford University Press. Forthcoming.\n\nRavallion, Martin. (2020). Should the randomistas (continue to) rule? National Bureau of Economic Research, Working Paper 27554.\n\nModelos estructurales en evaluación\n\nAbbring, J. H., & Heckman, J. J. (2007). Econometric evaluation of social programs, part III: Distributional treatment effects, dynamic treatment effects, dynamic discrete choice, and general equilibrium policy evaluation. Handbook of econometrics, 6, 5145-5303.\n\nAttanasio, O. P., Meghir, C., & Santiago, A. (2011). Education choices in Mexico: using a structural model and a randomized experiment to evaluate Progresa. The Review of Economic Studies, 79(1), 37-66.\n\nDuflo, E., Hanna, R., & Ryan, S. P. (2012). Incentives work: Getting teachers to come to school. American Economic Review, 102(4), 1241-78.}\nHamilton, B. H., Hincapié, A., Miller, R. A., & Papageorge, N. W. (2018). Innovation and Diffusion of Medical Treatment. National Bureau of Economic Working Paper 24577.\n\nKeane, M. P. (2010). A structural perspective on the experimentalist school. Journal of Economic Perspectives, 24(2), 47-58.\nKeane, M. P., Todd, P. E., & Wolpin, K. I. (2011). The structural estimation of behavioral models: Discrete choice dynamic programming methods and applications. In Handbook of labor economics (Vol. 4, pp. 331-461). Elsevier.\n\nLow, H., & Meghir, C. (2017). The use of structural models in econometrics. Journal of Economic Perspectives, 31(2), 33-58.\nMa, X., Lawell, C. Y. L., & Rozelle, S. (2020). Peer effects and the use of subsidized goods: A structural econometric model of a health promotion program in rural China. Working paper, Cornell University.\n\nNevo, A., & Whinston, M. D. (2010). Taking the dogma out of econometrics: Structural modeling and credible inference. Journal of Economic Perspectives, 24(2), 69-82.\n\nTodd, P. E., & Wolpin, K. I. (2010). Structural estimation and policy evaluation in developing countries. Annu. Rev. Econ., 2(1), 21-50.\nWolpin, K. I. (2013). The limits of inference without theory. MIT Press.\n\nEvaluaciones de impacto a nivel de economía local (LEWIE)\n\nTaylor, J. E., Dyer, G. A., Stewart, M., Yunez-Naude, A., & Ardila, S. (2003). The economics of ecotourism: A Galápagos Islands economy-wide perspective. Economic Development and Cultural Change, 51(4), 977-997.\nTaylor, J. E., & Filipski, M. J. (2014). Beyond experiments in development economics: Local economy-wide impact evaluation. Oxford University Press.\nTaylor, J. E., Filipski, M. J., Alloush, M., Gupta, A., Rojas Valdes, R.I., & Gonzalez-Estrada, E. (2016). Economic impact of refugees. Proceedings of the National Academy of Sciences, 201604566.\n\nCombinación de metodologías no experimentales\n\nCattaneo, M. D., Frandsen, B. R., & Titiunik, R. (2015). Randomization inference in the regression discontinuity design: An application to party advantages in the US Senate. Journal of Causal Inference, 3(1), 1-24.\n\nDonohue III, J. J., & Ho, D. E. (2007). The Impact of Damage Caps on Malpractice Claims: Randomization Inference with Difference‐in‐Differences. Journal of Empirical Legal Studies, 4(1), 69-102.\n\nKeele, L., Titiunik, R., & Zubizarreta, J. R. (2015). Enhancing a geographic regression discontinuity design through matching to estimate the effect of ballot initiatives on voter turnout. Journal of the Royal Statistical Society. Series A (Statistics in Society), 223-239.\n\nLevasseur, P. (2019). Can social programs break the vicious cycle between poverty and obesity? Evidence from urban Mexico. World Development, 113, 143-156.\n\nMacKinnon, J. G., & Webb, M. D. (2020). Randomization inference for difference-in-differences with few treated clusters. Journal of Econometrics.\n\nParker, S. W., Saenz, J., & Wong, R. (2018). Health insurance and the aging: Evidence from the Seguro Popular program in Mexico. Demography, 55(1), 361-386.\nSant’Anna, P. H., & Zhao, J. (2020). Doubly robust difference-in-differences estimators. Journal of Econometrics, 219(1), 101-122.\n\nImpactos de largo plazo\n\nAthey, S., Chetty, R., Imbens, G. W., & Kang, H. (2019). The surrogate index: Combining short-term proxies to estimate long-term treatment effects more rapidly and precisely, National Bureau of Economic Research, Working Paper 26463.\nHamory, J., Miguel, E., Walker, M., Kremer, M., & Baird, S. (2021). Twenty-year economic impacts of deworming. Proceedings of the National Academy of Sciences, 118(14).\nDupas, P., Duflo, E. & Kremer, M. (2021). The Impact of Free Secondary Education: Experimental Evidence from Ghana. Stanford University Working Paper.\n\nParker, S. W., & Vogl, T. (2018). Do conditional cash transfers improve economic outcomes in the next generation? Evidence from Mexico (No. w24303). National Bureau of Economic Research.\n\nEtica\n\nHumphreys, M. (2015). Reflections on the ethics of social experimentation. Journal of Globalization and Development, 6(1), 87-112.\nLewis, J. (2020). Experimental Design: Ethics, Integrity, and the Scientific Method. Handbook of Research Ethics and Scientific Integrity, 459-474.\nRayzberg, M. S. (2019). Fairness in the field: The ethics of resource allocation in randomized controlled field experiments. Science, Technology, & Human Values, 44(3), 371-398.\n\nCredibilidad e inferencia estadística\n\nAmrhein, V., Greenland, S., & McShane, B. (2019). Scientists rise up against statistical significance. Nature. 567, 305-307.\n\nAngrist, J. D., & Pischke, J. S. (2010). The credibility revolution in empirical economics: How better research design is taking the con out of econometrics. Journal of economic perspectives, 24(2), 3-30.\n\nGreenland, S., Senn, S. J., Rothman, K. J., Carlin, J. B., Poole, C., Goodman, S. N., & Altman, D. G. (2016). Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. European journal of epidemiology, 31(4), 337-350.\nLeamer, E. E. (1983). Let’s take the con out of econometrics. The American Economic Review, 73(1), 31-43.\nLeamer, E. E. (2010). Tantalus on the Road to Asymptopia. Journal of Economic Perspectives, 24(2), 31-46.\nNuzzo, R. (2014). Scientific method: statistical errors. Nature News, 506(7487), 150.\nSims, C. A. (2010). But economics is not an experimental science. Journal of Economic Perspectives, 24(2), 59-68.\nWasserstein, R. L., & Lazar, N. A. (2016). The ASA statement on p-values: context, process, and purpose. The American Statistician, 70(2), 129-133.\n\nInferencia por aleatorización\n\nAbadie, A., Athey, S., Imbens, G. W., & Wooldridge, J. M. (2020). Sampling‐Based versus Design‐Based Uncertainty in Regression Analysis. Econometrica, 88(1), 265-296.\n\nAthey, S., & Imbens, G. W. (2017). The econometrics of randomized experiments. In Handbook of economic field experiments (Vol. 1, pp. 73-140). North-Holland.\n\nHo, D. E., & Imai, K. (2006). Randomization inference with natural experiments: An analysis of ballot effects in the 2003 California recall election. Journal of the American Statistical Association, 101(475), 888-900.\n\nKerwin, J. T., & Thornton, R. L. (2020). Making the grade: The sensitivity of education program effectiveness to input choices and outcome measures. Review of Economics and Statistics, 1-45."
   },
   {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Schedule",
-    "section": "",
-    "text": "Example schedule:\n\n\n\n\n\n\n\n\n\nMorning\nAfternoon\n\n\n\n\nL\nIntro + Data manipulation\ngit / GitHub\n\n\nM\nGeneralised Linear Models\nData visualisation\n\n\nX\nMixed models / GAM / Bayes\nFunctional programming + Students work\n\n\nJ\nMultivariate analyses\nReproducible workflows\n\n\nV\nUsing R as GIS + Students work\nProject presentations"
-  },
-  {
-    "objectID": "materiales.html",
-    "href": "materiales.html",
-    "title": "Materiales",
-    "section": "",
-    "text": "Datasets\nSlides"
-  },
-  {
-    "objectID": "programa.html",
-    "href": "programa.html",
-    "title": "Programa",
-    "section": "",
-    "text": "Identificar las condiciones que permiten la implementación de una evaluación de impacto.\nConocer los fundamentos teóricos sobre los que se sustentan las metodologías de las evaluaciones de impacto.\nImplementar los métodos de evaluación empleando software, interpretar los resultados y reportar las conclusiones en forma de artículos científicos y/o reportes de política.\nConocer e implementar buenas prácticas en el uso de software, orientadas a la transparencia y la replicabilidad en la investigación.\nConocer los temas que conforman la literatura actual de evaluaciones de impacto."
-  },
-  {
-    "objectID": "programa.html#objetivos",
-    "href": "programa.html#objetivos",
-    "title": "Programa",
-    "section": "",
-    "text": "Identificar las condiciones que permiten la implementación de una evaluación de impacto.\nConocer los fundamentos teóricos sobre los que se sustentan las metodologías de las evaluaciones de impacto.\nImplementar los métodos de evaluación empleando software, interpretar los resultados y reportar las conclusiones en forma de artículos científicos y/o reportes de política.\nConocer e implementar buenas prácticas en el uso de software, orientadas a la transparencia y la replicabilidad en la investigación.\nConocer los temas que conforman la literatura actual de evaluaciones de impacto."
-  },
-  {
-    "objectID": "programa.html#referencias",
-    "href": "programa.html#referencias",
-    "title": "Programa",
-    "section": "Referencias",
-    "text": "Referencias\nEl curso se basa en los siguientes textos:\n\n(MHE) Angrist, J.D. y Pischke, J.S. (2013). Mostly Harmless Econometrics: An Empiricists Companion. Princeton University Press.\n\nAngrist, J.D. y Pischke, J.S. (2014). Mastering ’Metrics: The Path from Cause to Effect. Princeton University Press.\n\n(CT) Cameron, A.C. y P.K. Trivedi. (2005). Microeconometrics: Methods and applications. Oxford University Press.\n(MT) Cunningham, S. (2021). Causal inference: The mixtape. Yale University Press. Disponible en: https://mixtape.scunning.com/index.html.\nHuntington-Klein, N. (2021). The effect: An introduction to research design and causality. Chapman and Hall/CRC.\nDiNardo, J. y D.S. Lee. (2011). Program Evaluation and Research Designs. En Handbook of Labor Economics, 4A: 463-536.\n(GMPRV) Gertler, P.J., S. Martinez, P. Premand, L.B., Rawlings, y C.M.J. Vermeersch. (2011). La evaluación de impacto en la práctica. Banco Interamericano de Desarrollo y Banco Mundial, segunda edición. Disponible en: https://publications.iadb.org/publications/spanish/document/La-evaluaci%C3%B3n-de-impacto-en-la-pr%C3%A1ctica-Segunda-edici%C3%B3n.pdf."
-  },
-  {
-    "objectID": "programa.html#contenido-temático",
-    "href": "programa.html#contenido-temático",
-    "title": "Programa",
-    "section": "Contenido temático",
-    "text": "Contenido temático\nUnidad 1. Introducción\n\nFundamentos de la evaluación de impacto\n\nInferencia causal\nRevisión de métodos de regresión\n\nReplicabilidad y transparencia en la evaluación\n\nRMardkown para la generación de reportes científicos\n\n\nUnidad 2. Métodos de evaluación\n\nEvaluación experimental\n\nAsignación aleatoria\nErrores estándar\nLATE y variables instrumentales\nCorrección por prueba de múltiples hipótesis\nAplicaciones de métodos experimentales\n\nDiferencia en diferencias\n\nSupuestos fundamentales\nEfectos fijos individuales\nDID desfasado\nANCOVA\nAplicaciones de DID\n\nMétodos de pareamiento\n\nSupuestos fundamentales\nPareamiento exacto\nPareamiento por puntaje de propensión (PSM)\nAplicaciones del PSM\n\nDiseños con discontinuidades\n\nSupuestos fundamentales\nDiscontinuidades nítidas y difusas\nDiscontinuidades geográficas\nPliegues en la regresión\nAplicaciones diseños con discontinuidades\n\nMétodo del control sintético\n\nSupuestos fundamentales\nInferencia basada en placebos\nAplicaciones de control sintético\n\n\nUnidad 3. Temas actuales de evaluación\n\nExtensiones I\n\nAprendizaje automatizado y big data en la evaluación de impacto"
-  },
-  {
-    "objectID": "programa.html#evaluación-del-curso",
-    "href": "programa.html#evaluación-del-curso",
-    "title": "Programa",
-    "section": "Evaluación del curso",
-    "text": "Evaluación del curso\n\nExamen parcial: 20%\nExamen final: 30%\nProyecto final: 20%\nTareas (4): 20% (5% cada una)\nExposición: 10% (7% presentación y 3% folleto)"
-  },
-  {
-    "objectID": "programa.html#tareas",
-    "href": "programa.html#tareas",
-    "title": "Programa",
-    "section": "Tareas",
-    "text": "Tareas\nCuatro tareas teórico-prácticas. Las tareas deben entregarse de manera individual, pero se recomienda ampliamente colaborar en grupos de estudio. Para evitar confusiones, escriban en su tarea con quiénes colaboraron. Las tareas deberán entregarse en Teams antes de la fecha y hora señalada. No se aceptarán tareas fuera de tiempo. Por favor, no comprima los archivos en carpetas comprimidas. Las tareas deberán contener dos archivos:\nUn primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.\nUn segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad."
-  },
-  {
-    "objectID": "programa.html#software",
-    "href": "programa.html#software",
-    "title": "Programa",
-    "section": "Software",
-    "text": "Software\nR será el paquete standard usado en las sesiones prácticas. Más aún, el uso de cualquier software es aceptado siempre que se cumplan con los requisitos de replicabilidad y reportes de las tareas y exámenes. Habrá una sesión especial para introducir el uso de RMarkdown para la generación de reportes científicos."
-  },
-  {
-    "objectID": "programa.html#exámenes",
-    "href": "programa.html#exámenes",
-    "title": "Programa",
-    "section": "Exámenes",
-    "text": "Exámenes\n\nExamen parcial: jueves13 de octubre en el horario de clase.\nExamen final: martes 6 de diciembre en horario por definir."
-  },
-  {
-    "objectID": "programa.html#exposiciones",
-    "href": "programa.html#exposiciones",
-    "title": "Programa",
-    "section": "Exposiciones",
-    "text": "Exposiciones\nCada alumno realizará una presentación de uno los artículos aplicados marcados con “+” en la lista de lecturas. Cada presentación deberá ser de máximo 15 minutos y debe incluir el contenido que el presentador considere relevante. La presentación deberá abordar, mínimamente: 1) el problema a investigar, 2) la metodología empleada, 3) la pertinencia de la metodología y la teoría vista en el curso, 4) los datos empleados, 5) los principales resultados, y 6) una crítica sobre la validez y las conclusiones del estudio. La presentación deberá acompañarse de un breve folleto que resuma los puntos anteriores, para ser distribuido con el resto de la clase."
-  },
-  {
-    "objectID": "programa.html#proyecto-final",
-    "href": "programa.html#proyecto-final",
-    "title": "Programa",
-    "section": "Proyecto final",
-    "text": "Proyecto final\nEl proyecto final consistirá en un protocolo de investigación de una evaluación de impacto. El tema y la metodología es libre, pero se evaluará el potencial para realizarse en el corto plazo. Se aconseja seleccionar un tema para el que se empleen datos de libre acceso. El protocolo deberá incluir, mínimamente: 1) una revisión de literatura, 2) un bosquejo de las motivaciones teóricas del problema, 3) la metodología empírica a emplear, 4) la fuente de datos a usar, y 5) los resultados preliminares. El proyecto debe presentarse en formato escrito con una extensión máxima de 20 cuartillas. Se recomienda ampliamente dar seguimiento al proyecto en horas de oficina para recibir retroalimentación respecto a los avances y resolver posibles dudas y dificultades.\nEntrega: fecha por definir, a través de Teams."
-  },
-  {
     "objectID": "reglas.html",
     "href": "reglas.html",
     "title": "Reglas",
     "section": "",
     "text": "No se tolerarán actos de discriminación. Se procura un ambiente de respeto entre todos los miembros de la clase.\nToda la comunicación relativa al curso se dará por medio del correo institucional del CIDE.\nLas tareas y exámenes se entregarán a través de Teams.\nLos participantes en la sesión deberán procurar que haya un ambiente silencioso para el desarrollo de la clase cerrando sus micrófonos cuando no requieran hacer uso de la palabra.\nSe aplicarán estrictamente los lineamientos generales contenidos en el código de ética del CIDE en términos de plagio y fraude en tareas, exámenes y proyecto final."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Evaluación de Programas 2023",
-    "section": "",
-    "text": "Profesor: Irvin Rojas (irvin.rojas@cide.edu).\nHorario de clases: lunes y miércoles (8:00 a 9:30).\nPlataforma del curso: Microsoft Teams.\nHorario de oficina: por definir.\n\n¡Bienvenidas, bienvenidos!\nEste es un sitio para las y los estudiantes del curso de Evaluación de Programas de la Maestría en Economía del CIDE. Sin embargo, otras personas pueden encontrar útiles los recursos de este sitio, como el programa del curso, las tareas y la lista de lecturas."
-  },
-  {
-    "objectID": "tareas.html",
-    "href": "tareas.html",
-    "title": "Tareas",
-    "section": "",
-    "text": "Aquí encontrarán las tareas del curso. No coman ansias."
   }
 ]
