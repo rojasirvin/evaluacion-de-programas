@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/rojasirvin/evaluacion-de-programas/presentaciones.html</loc>
-    <lastmod>2023-08-20T17:58:07.641Z</lastmod>
+    <loc>https://github.com/rojasirvin/evaluacion-de-programas/tareas.html</loc>
+    <lastmod>2023-08-20T18:07:06.398Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/rojasirvin/evaluacion-de-programas/lecturas.html</loc>
-    <lastmod>2023-08-20T17:58:07.017Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/rojasirvin/evaluacion-de-programas/schedule.html</loc>
-    <lastmod>2023-08-20T17:58:04.637Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/rojasirvin/evaluacion-de-programas/materiales.html</loc>
-    <lastmod>2023-08-20T17:58:03.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/rojasirvin/evaluacion-de-programas/programa.html</loc>
-    <lastmod>2023-08-20T17:58:02.156Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/rojasirvin/evaluacion-de-programas/reglas.html</loc>
-    <lastmod>2023-08-20T17:58:04.265Z</lastmod>
+    <lastmod>2023-08-20T18:07:05.646Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/rojasirvin/evaluacion-de-programas/index.html</loc>
-    <lastmod>2023-08-20T17:58:04.953Z</lastmod>
+    <lastmod>2023-08-20T18:07:03.646Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/rojasirvin/evaluacion-de-programas/tareas.html</loc>
-    <lastmod>2023-08-20T17:58:07.329Z</lastmod>
+    <loc>https://github.com/rojasirvin/evaluacion-de-programas/schedule.html</loc>
+    <lastmod>2023-08-20T18:07:03.106Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/rojasirvin/evaluacion-de-programas/materiales.html</loc>
+    <lastmod>2023-08-20T18:07:02.466Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/rojasirvin/evaluacion-de-programas/presentaciones.html</loc>
+    <lastmod>2023-08-20T18:07:03.374Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/rojasirvin/evaluacion-de-programas/reglas.html</loc>
+    <lastmod>2023-08-20T18:07:03.918Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/rojasirvin/evaluacion-de-programas/programa.html</loc>
+    <lastmod>2023-08-20T18:07:06.118Z</lastmod>
   </url>
 </urlset>
