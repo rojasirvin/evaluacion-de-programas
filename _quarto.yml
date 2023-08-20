@@ -27,11 +27,6 @@ website:
         text: Presentaciones
       - href: tareas.qmd
         text: Tareas
-      - href: materiales.qmd
-        text: Materiales
-      - href: schedule.qmd
-        text: Schedule
-
 
 format:
   html:
