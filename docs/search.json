@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Evaluación de Programas 2023",
     "section": "",
-    "text": "Profesor: Irvin Rojas (irvin.rojas@cide.edu).\nHorario de clases: lunes y miércoles (8:00 a 9:30).\nPlataforma del curso: Microsoft Teams.\nHorario de oficina: por definir.\n\n¡Bienvenidas, bienvenidos!\nEste es un sitio para las y los estudiantes del curso de Evaluación de Programas de la Maestría en Economía del CIDE. Sin embargo, otras personas pueden encontrar útiles los recursos de este sitio, como el programa del curso, las tareas y la lista de lecturas."
+    "text": "Profesor: Irvin Rojas (irvin.rojas@cide.edu).\nHorario de clases: lunes y miércoles (8:00 a 9:30).\nPlataforma del curso: Microsoft Teams.\nHorario de oficina: por definir.\n\n¡Bienvenidas, bienvenidos!\nEste es un sitio para las y los estudiantes del curso de Evaluación de Programas de la Licenciatura y Maestría en Economía del CIDE. Sin embargo, otras personas pueden encontrar útiles los recursos de este sitio, como el programa del curso, las tareas y la lista de lecturas."
   },
   {
     "objectID": "lecturas.html",
@@ -186,7 +186,7 @@
     "href": "programa.html#exámenes",
     "title": "Programa",
     "section": "Exámenes",
-    "text": "Exámenes\n\nExamen parcial: jueves 13 de octubre en el horario de clase.\nExamen final: martes 6 de diciembre en horario por definir."
+    "text": "Exámenes\n\nExamen parcial: miércoles 11 de octubre en el horario de clase.\nExamen final: por definir."
   },
   {
     "objectID": "programa.html#exposiciones",
@@ -203,11 +203,18 @@
     "text": "Proyecto final\nEl proyecto final consistirá en un protocolo de investigación de una evaluación de impacto. El tema y la metodología es libre, pero se evaluará el potencial para realizarse en el corto plazo. Se aconseja seleccionar un tema para el que se empleen datos de libre acceso. El protocolo deberá incluir, mínimamente: 1) una revisión de literatura, 2) un bosquejo de las motivaciones teóricas del problema, 3) la metodología empírica a emplear, 4) la fuente de datos a usar, y 5) los resultados preliminares. El proyecto debe presentarse en formato escrito con una extensión máxima de 20 cuartillas. Se recomienda ampliamente dar seguimiento al proyecto en horas de oficina para recibir retroalimentación respecto a los avances y resolver posibles dudas y dificultades.\nEntrega: fecha por definir, a través de Teams."
   },
   {
+    "objectID": "programa.html#lista-de-lecturas",
+    "href": "programa.html#lista-de-lecturas",
+    "title": "Programa",
+    "section": "Lista de lecturas",
+    "text": "Lista de lecturas\nLas lecturas obligatorias (marcadas con “*”) permiten una discusión informada en la clase. Las lecturas que serán presentadas en exposiciones también son obligatorias y están marcadas con “+”. El resto de las lecturas no serán cubiertas en clase, pero son ampliamente recomendables. En las sesiones de exposiciones se espera que el resto de la clase tenga el conocimiento suficiente sobre el material presentado para participar en la discusión. La lista de lecturas está disponible aquí."
+  },
+  {
     "objectID": "reglas.html",
     "href": "reglas.html",
     "title": "Reglas",
     "section": "",
-    "text": "No se tolerarán actos de discriminación. Se procura un ambiente de respeto entre todos los miembros de la clase.\nToda la comunicación relativa al curso se dará por medio del correo institucional del CIDE.\nLas tareas y exámenes se entregarán a través de Teams.\nLos participantes en la sesión deberán procurar que haya un ambiente silencioso para el desarrollo de la clase cerrando sus micrófonos cuando no requieran hacer uso de la palabra.\nSe aplicarán estrictamente los lineamientos generales contenidos en el código de ética del CIDE en términos de plagio y fraude en tareas, exámenes y proyecto final."
+    "text": "No se tolerarán actos de discriminación. Se procura un ambiente de respeto entre todos los miembros de la clase.\nToda la comunicación relativa al curso se dará por medio del correo institucional del CIDE.\nLas tareas y exámenes se entregarán a través de Teams.\nLos participantes en la sesión deberán procurar que haya un ambiente silencioso para el desarrollo de la clase.\nSe aplicarán estrictamente los lineamientos generales contenidos en el código de ética del CIDE en términos de plagio y fraude en tareas, exámenes y proyecto final."
   },
   {
     "objectID": "schedule.html",

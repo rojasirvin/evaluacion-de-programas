@@ -92,6 +92,7 @@ Unidad 3. Temas actuales de evaluación
 
 
 ## Tareas
+
 Cuatro tareas teórico-prácticas. Las tareas deben entregarse de manera individual, pero se recomienda ampliamente colaborar en grupos de estudio. Para evitar confusiones, escriban en su tarea con quiénes colaboraron. Las tareas deberán entregarse en Teams antes de la fecha y hora señalada. No se aceptarán tareas fuera de tiempo. Por favor, **no comprima los archivos** en carpetas comprimidas. Las tareas deberán contener dos archivos:
 
 Un primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.
@@ -104,9 +105,9 @@ Un segundo archivo deberá contener el código replicable usado para generar los
 R será el paquete standard usado en las sesiones prácticas. Más aún, el uso de cualquier software es aceptado siempre que se cumplan con los requisitos de replicabilidad y reportes de las tareas y exámenes. Habrá una sesión especial para introducir el uso de RMarkdown para la generación de reportes científicos.
 
 ## Exámenes
-* Examen parcial: jueves 13 de octubre en el horario de clase.
+* Examen parcial: miércoles 11 de octubre en el horario de clase.
 
-* Examen final: martes 6 de diciembre en horario por definir.
+* Examen final: por definir.
 
 
 ## Exposiciones
@@ -119,3 +120,7 @@ El proyecto final consistirá en un protocolo de investigación de una evaluaci�
 
 Entrega: fecha por definir, a través de Teams.
 
+## Lista de lecturas
+
+Las lecturas obligatorias (marcadas con “*”) permiten una discusión informada en la clase. Las lecturas que serán presentadas en exposiciones también son obligatorias y están marcadas con “+”. El resto de las lecturas no serán cubiertas en clase, pero son ampliamente recomendables. En las sesiones de exposiciones se espera que el resto de la clase tenga el conocimiento suficiente sobre el material presentado para participar en la discusión.
+La lista de lecturas está disponible [aquí](https://rojasirvin.github.io/evaluacion-de-programas/lecturas.html).
