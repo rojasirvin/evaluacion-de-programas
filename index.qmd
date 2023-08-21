@@ -2,7 +2,7 @@
 title: "Evaluación de Programas 2023"
 ---
 
-<br>
+---
 
 Profesor: [Irvin Rojas](https://www.rojasirvin.com/) (irvin.rojas\@cide.edu).
 
@@ -12,7 +12,7 @@ Plataforma del curso: Microsoft Teams.
 
 Horario de oficina: por definir.
 
-<br>
+---
 
 **¡Bienvenidas, bienvenidos!**
 
