@@ -31,9 +31,6 @@ website:
 format:
   html:
     theme: minty
-    # css: styles.css
+    css: styles.css
     toc: true
-
-execute:
-  freeze: auto
 
