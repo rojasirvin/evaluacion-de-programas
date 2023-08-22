@@ -179,7 +179,7 @@
     "href": "programa.html#software",
     "title": "Programa",
     "section": "Software",
-    "text": "Software\nR será el paquete standard usado en las sesiones prácticas. Más aún, el uso de cualquier software es aceptado siempre que se cumplan con los requisitos de replicabilidad y reportes de las tareas y exámenes. Habrá una sesión especial para introducir el uso de RMarkdown para la generación de reportes científicos."
+    "text": "Software\nR será el paquete standard usado en las sesiones prácticas. Más aún, el uso de cualquier software es aceptado siempre que se cumplan con los requisitos de replicabilidad y reportes de las tareas y exámenes. Habrá una sesión especial para introducir el uso de Quarto para la generación de reportes científicos."
   },
   {
     "objectID": "programa.html#exámenes",
