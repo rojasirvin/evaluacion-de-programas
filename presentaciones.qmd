@@ -4,3 +4,9 @@ title: "Presentaciones"
 
 Por favor, seleccione una de las lecturas marcadas con una "+" de la lista de lecturas y envíe un correo al profesor para que se le asigne una fecha de presentación.
 
+| **Autores** | **Tema** | **Presentador o presentadora** | **Fecha de exposición** |
+| --- | --- | --- | --- |
+| Arceo-Gomez & Campos-Vazquez (2014) | Experimental    | Rigoberto Mendoza | 6 de septiembre |
+| Espinosa & Rubin (2015) | PSM | Samuel Martínez   | 18 de octubre |
+| Aguilar, Gutierrez & Seira (2021) | Discontinuidades  | Yorlyn Funez | 1 de noviembre |  
+| Campos-Vazquez & Esquivel (2023) | Control sintético  | Claudia Alemán | 13 de noviembre |  
