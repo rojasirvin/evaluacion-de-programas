@@ -7,6 +7,22 @@ Por favor, seleccione una de las lecturas marcadas con una "+" de la lista de le
 | **Autores** | **Tema** | **Presentador o presentadora** | **Fecha de exposición** |
 | --- | --- | --- | --- |
 | Arceo-Gomez & Campos-Vazquez (2014) | Experimental    | Rigoberto Mendoza | 6 de septiembre |
+|   | Experimental    |  | 6 de septiembre |
+|   | Experimental    |  | 6 de septiembre |
+|   | LATE    |  | 20 de septiembre |
+|   | LATE    |  | 20 de septiembre |
+|   | DID    |  | 4 de octubre |
+|   | DID    |  | 4 de octubre |
+|   | DID    |  | 4 de octubre |
 | Espinosa & Rubin (2015) | PSM | Samuel Martínez   | 18 de octubre |
+|   | PSM    |  | 18 de octubre |
+|   | PSM    |  | 18 de octubre |
 | Aguilar, Gutierrez & Seira (2021) | Discontinuidades  | Yorlyn Funez | 1 de noviembre |  
-| Campos-Vazquez & Esquivel (2023) | Control sintético  | Claudia Alemán | 13 de noviembre |  
+| Del Valle et al. (2020) | Discontinuidades  | Wolfgang Reséndiz | 1 de noviembre |
+|  | Discontinuidades  |  | 1 de noviembre |
+| Campos-Vazquez & Esquivel (2020) | Control sintético  | Francisco Vinicio | 13 de noviembre | 
+| Campos-Vazquez & Esquivel (2023) | Control sintético  | Claudia Alemán | 13 de noviembre | 
+|  | Control sintético  |  | 13 de noviembre | 
+|  | Machine Learning   |  | 27 de noviembre | 
+|  | Machine Learning  |  | 27 de noviembre | 
+|  | Machine Learning   |  | 27 de noviembre | 
