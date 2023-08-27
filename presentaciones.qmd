@@ -11,7 +11,7 @@ Por favor, seleccione una de las lecturas marcadas con una "+" de la lista de le
 |   | Experimental    |  | 6 de septiembre |
 |   | LATE    |  | 20 de septiembre |
 |   | LATE    |  | 20 de septiembre |
-|   | DID    |  | 4 de octubre |
+| Boruchowicz et al. (2022) | DID    | Rodrigo Gutiérrez | 4 de octubre |
 |   | DID    |  | 4 de octubre |
 |   | DID    |  | 4 de octubre |
 | Espinosa & Rubin (2015) | PSM | Samuel Martínez   | 18 de octubre |
