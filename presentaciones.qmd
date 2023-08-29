@@ -10,10 +10,10 @@ Por favor, seleccione una de las lecturas marcadas con una "+" de la lista de le
 | Bruhn et al. (2018)  | Experimental    | Brian Roque | 6 de septiembre |
 |   | Experimental    |  | 6 de septiembre |
 |  Gonzalez-Navarro et al. (2016) | LATE    | Miguel Rosales | 20 de septiembre |
-|   | LATE    |  | 20 de septiembre |
+| De la O (2013)  | LATE    | Juan Carlos Muñoz | 20 de septiembre |
 | Boruchowicz et al. (2022) | DID    | Rodrigo Gutiérrez | 4 de octubre |
 |  Conti et al. (2023) | DID    | José Valencia | 4 de octubre |
-|   | DID    |  | 4 de octubre |
+|  Clarke & Mühlrad (2021) | DID    | Paola Guarneros | 4 de octubre |
 | Espinosa & Rubin (2015) | PSM | Samuel Martínez   | 18 de octubre |
 |   | PSM    |  | 18 de octubre |
 |   | PSM    |  | 18 de octubre |
