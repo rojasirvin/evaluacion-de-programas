@@ -130,7 +130,7 @@
     "href": "presentaciones.html",
     "title": "Presentaciones",
     "section": "",
-    "text": "Por favor, seleccione una de las lecturas marcadas con una “+” de la lista de lecturas y envíe un correo al profesor para que se le asigne una fecha de presentación.\n\n\n\n\n\n\n\n\n\nAutores\nTema\nPresentador o presentadora\nFecha de exposición\n\n\n\n\nArceo-Gomez & Campos-Vazquez (2014)\nExperimental\nRigoberto Mendoza\n6 de septiembre\n\n\n\nExperimental\n\n6 de septiembre\n\n\n\nExperimental\n\n6 de septiembre\n\n\n\nLATE\n\n20 de septiembre\n\n\n\nLATE\n\n20 de septiembre\n\n\nBoruchowicz et al. (2022)\nDID\nRodrigo Gutiérrez\n4 de octubre\n\n\n\nDID\n\n4 de octubre\n\n\n\nDID\n\n4 de octubre\n\n\nEspinosa & Rubin (2015)\nPSM\nSamuel Martínez\n18 de octubre\n\n\n\nPSM\n\n18 de octubre\n\n\n\nPSM\n\n18 de octubre\n\n\nAguilar, Gutierrez & Seira (2021)\nDiscontinuidades\nYorlyn Funez\n1 de noviembre\n\n\nDel Valle et al. (2020)\nDiscontinuidades\nWolfgang Reséndiz\n1 de noviembre\n\n\n\nDiscontinuidades\n\n1 de noviembre\n\n\nCampos-Vazquez & Esquivel (2020)\nControl sintético\nFrancisco Vinicio\n13 de noviembre\n\n\nCampos-Vazquez & Esquivel (2023)\nControl sintético\nClaudia Alemán\n13 de noviembre\n\n\n\nControl sintético\n\n13 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre"
+    "text": "Por favor, seleccione una de las lecturas marcadas con una “+” de la lista de lecturas y envíe un correo al profesor para que se le asigne una fecha de presentación.\n\n\n\n\n\n\n\n\n\nAutores\nTema\nPresentador o presentadora\nFecha de exposición\n\n\n\n\nArceo-Gomez & Campos-Vazquez (2014)\nExperimental\nRigoberto Mendoza\n6 de septiembre\n\n\nBruhn et al. (2018)\nExperimental\nBrian Roque\n6 de septiembre\n\n\n\nExperimental\n\n6 de septiembre\n\n\nGonzalez-Navarro et al. (2016)\nLATE\nMiguel Rosales\n20 de septiembre\n\n\n\nLATE\n\n20 de septiembre\n\n\nBoruchowicz et al. (2022)\nDID\nRodrigo Gutiérrez\n4 de octubre\n\n\nConti et al. (2023)\nDID\nJosé Valencia\n4 de octubre\n\n\n\nDID\n\n4 de octubre\n\n\nEspinosa & Rubin (2015)\nPSM\nSamuel Martínez\n18 de octubre\n\n\n\nPSM\n\n18 de octubre\n\n\n\nPSM\n\n18 de octubre\n\n\nAguilar et al. (2021)\nDiscontinuidades\nYorlyn Funez\n1 de noviembre\n\n\nDel Valle et al. (2020)\nDiscontinuidades\nWolfgang Reséndiz\n1 de noviembre\n\n\nDavis (2008)\nDiscontinuidades\nAlan Loera\n1 de noviembre\n\n\nCampos-Vazquez & Esquivel (2020)\nControl sintético\nFrancisco Vinicio\n13 de noviembre\n\n\nCampos-Vazquez & Esquivel (2023)\nControl sintético\nClaudia Alemán\n13 de noviembre\n\n\n\nControl sintético\n\n13 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre"
   },
   {
     "objectID": "programa.html",
@@ -224,10 +224,59 @@
     "text": "Example schedule:\n\n\n\n\n\n\n\n\n\nMorning\nAfternoon\n\n\n\n\nL\nIntro + Data manipulation\ngit / GitHub\n\n\nM\nGeneralised Linear Models\nData visualisation\n\n\nX\nMixed models / GAM / Bayes\nFunctional programming + Students work\n\n\nJ\nMultivariate analyses\nReproducible workflows\n\n\nV\nUsing R as GIS + Students work\nProject presentations"
   },
   {
+    "objectID": "tarea-1.html",
+    "href": "tarea-1.html",
+    "title": "tarea-1",
+    "section": "",
+    "text": "Suponga que para un experimento en un laboratorio de economía experimental se asignó a la mitad de los participantes a un grupo de tratamiento y la otra mitad al grupo de control. Se busca estudiar el efecto del tratamiento \\(T_\\) sobre el desempeño en un juego estratégico, medido por la variable \\(y_i\\). Antes de comenzar el experimento se recolectaron una serie de características \\(x_{ji}\\), \\(j=1,\\ldots 10\\), de cada paciente. En el experimento, se trabaja con \\(\\alpha=0.10\\).\n\n[5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:\nPara verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento \\(T_i\\) para correr la siguiente regresión: \\[T_i=\\alpha+\\sum_{j=1}^{10}x_{ji}'\\beta +\\varepsilon_i\\]\nDespués realicé una prueba \\(F\\) de significancia conjunta sobre los coeficientes \\(\\beta_j\\) que resultó tener un valor \\(p\\) de 0.02.\nExplique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.\n[5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?\n[5 puntos] Por otro lado, el investigador B le reporta lo siguiente:\nYo realicé un análisis para determinar el balance en la asignación del tratamiento. Para cada una de las características \\(x_{ji}\\) corrí la siguiente regresión: \\[x_{ji}=\\gamma+\\pi T_i+u_i\\] A continuación, le reporto una tabla con los valores \\(p\\) asociados al coeficiente estimado de \\(\\pi\\) en cada una de las 10 regresiones.\n\n\n\n\n\n\n\n\n\n\nCaracterística\nValor \\(p\\)\n\nCaracterística\nValor \\(p\\)\n\n\n\n\n\\(x_{1i}\\)\n0.05\n\n\\(x_{6i}\\)\n0.03\n\n\n\\(x_{2i}\\)\n0.02\n\n\\(x_{7i}\\)\n0.19\n\n\n\\(x_{3i}\\)\n0.07\n\n\\(x_{8i}\\)\n0.85\n\n\n\\(x_{4i}\\)\n0.00\n\n\\(x_{9i}\\)\n0.01\n\n\n\\(x_{5i}\\)\n0.42\n\n\\(x_{10i}\\)\n0.03\n\n\n\nExplique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento,\n[5 puntos] Explique qué concluye sobre la validez interna del estudio en cuestión. ¿Qué propiedades estadísticas tendría el estimador de diferencia de medias de la variable de desempeño en el juego entre el grupo tratado y de control?"
+  },
+  {
+    "objectID": "tarea-1.html#pregunta-1",
+    "href": "tarea-1.html#pregunta-1",
+    "title": "tarea-1",
+    "section": "",
+    "text": "Suponga que para un experimento en un laboratorio de economía experimental se asignó a la mitad de los participantes a un grupo de tratamiento y la otra mitad al grupo de control. Se busca estudiar el efecto del tratamiento \\(T_\\) sobre el desempeño en un juego estratégico, medido por la variable \\(y_i\\). Antes de comenzar el experimento se recolectaron una serie de características \\(x_{ji}\\), \\(j=1,\\ldots 10\\), de cada paciente. En el experimento, se trabaja con \\(\\alpha=0.10\\).\n\n[5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:\nPara verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento \\(T_i\\) para correr la siguiente regresión: \\[T_i=\\alpha+\\sum_{j=1}^{10}x_{ji}'\\beta +\\varepsilon_i\\]\nDespués realicé una prueba \\(F\\) de significancia conjunta sobre los coeficientes \\(\\beta_j\\) que resultó tener un valor \\(p\\) de 0.02.\nExplique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.\n[5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?\n[5 puntos] Por otro lado, el investigador B le reporta lo siguiente:\nYo realicé un análisis para determinar el balance en la asignación del tratamiento. Para cada una de las características \\(x_{ji}\\) corrí la siguiente regresión: \\[x_{ji}=\\gamma+\\pi T_i+u_i\\] A continuación, le reporto una tabla con los valores \\(p\\) asociados al coeficiente estimado de \\(\\pi\\) en cada una de las 10 regresiones.\n\n\n\n\n\n\n\n\n\n\nCaracterística\nValor \\(p\\)\n\nCaracterística\nValor \\(p\\)\n\n\n\n\n\\(x_{1i}\\)\n0.05\n\n\\(x_{6i}\\)\n0.03\n\n\n\\(x_{2i}\\)\n0.02\n\n\\(x_{7i}\\)\n0.19\n\n\n\\(x_{3i}\\)\n0.07\n\n\\(x_{8i}\\)\n0.85\n\n\n\\(x_{4i}\\)\n0.00\n\n\\(x_{9i}\\)\n0.01\n\n\n\\(x_{5i}\\)\n0.42\n\n\\(x_{10i}\\)\n0.03\n\n\n\nExplique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento,\n[5 puntos] Explique qué concluye sobre la validez interna del estudio en cuestión. ¿Qué propiedades estadísticas tendría el estimador de diferencia de medias de la variable de desempeño en el juego entre el grupo tratado y de control?"
+  },
+  {
+    "objectID": "tarea-1.html#pregunta-2",
+    "href": "tarea-1.html#pregunta-2",
+    "title": "tarea-1",
+    "section": "Pregunta 2",
+    "text": "Pregunta 2\nMicrofinanzas"
+  },
+  {
+    "objectID": "tarea-1.html#pregunta-3",
+    "href": "tarea-1.html#pregunta-3",
+    "title": "tarea-1",
+    "section": "Pregunta 3",
+    "text": "Pregunta 3\nReplique el ejercicio de representar la FEC de salarios en función de educación para México, como en la Figura 3.1.1 de MHE (p. 39), usando los datos del primer trimestre de 2021 de la ENOE. El gráfico es complejo, pero recibirá crédito completo si reproduce, al menos por separado, los dos siguientes tipos de gráficos:\n\n[10 puntos] Gráfico de la relación promedio entre años de educación e ingresos.\n[10 puntos] Gráfico de la distribución de ingresos para cuatro niveles de educación que usted considere relevante destacar. Argumente sobre los niveles de educación elegidos."
+  },
+  {
+    "objectID": "tarea-1.html#pregunta-4",
+    "href": "tarea-1.html#pregunta-4",
+    "title": "tarea-1",
+    "section": "Pregunta 4",
+    "text": "Pregunta 4\nUse los datos del archivo STAR_public_use.csv para este problema. En este problema replicará la columna 1 de la Tabla 1 en Angrist et al. (2009).1\n\n[5 puntos] Obtenga la media y la desviación estándar de la edad, age, en el grupo de control (columna 1), restringiendo la muestra a aquellos individuos con noshow igual a 0.\n[10 puntos] Usando una regresión lineal, muestre la edad no está correlacionada con la asignación a los tratamientos (ssp, sfp y sfsp). De nuevo, debe restringir la muestra quienes tienen noshow igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).\n[5 puntos] Realice una prueba de significancia conjunta de los coeficientes obtenidos en el punto b. Reporte el estadístico \\(F\\) y el valor \\(p\\) asociado (columna 5).\n[10 puntos] ¿Cuál es el propósito de la prueba F realizada en el punto c.? ¿Qué hipótesis nula prueban los autores? ¿Qué concluimos a partir de la tabla 1?"
+  },
+  {
+    "objectID": "tarea-1.html#pregunta-5",
+    "href": "tarea-1.html#pregunta-5",
+    "title": "tarea-1",
+    "section": "Pregunta 5",
+    "text": "Pregunta 5\nNuevamente, use los datos del archivo STAR_public_use.csv para este problema. En este problema, replicará dos columnas del efecto de tratamiento de la Tabla 5. Note que de nuevo se deben usar solo las observaciones que tienen noshow igual a 0. Además, note que se usan las siguientes variables de control: sex, mtongue, hsgroup, numcourses_nov1, lastmin, mom_edn, y dad_edn, todas ellas categóricas.\nAntes de estimar los efectos, los autores sustituyen gpa_year1 por NA cuando grade_20059_fall es NA y sustituyen grade_20059_fall por NA cuando gpa_year1 es NA Esto le permitirá quedarse con los individuos que tienen información completa.\n\n[10 puntos] Estime el efecto de cada tipo de tratamiento sobre el GPA, es decir, sobre la variable gpa_year1, para toda la muestra (Panel B, columna 1). Calcule correctamente los errores estándar. Interprete los resultados.\n[10 puntos] Estime el efecto de recibir cada tipo de tratamiento, considerando los tratamientos SSP o SFP (de cualquier tipo) en las mujeres de la muestra (Panel B, columna 6). Esto es, considere el tratamiento SSP como un primer tipo de tratamiento y, ya sea SFP o SFSP, como un segundo tipo de tratamiento. Calcule correctamente los errores estándar. Interprete sus resultados."
+  },
+  {
+    "objectID": "tarea-1.html#footnotes",
+    "href": "tarea-1.html#footnotes",
+    "title": "tarea-1",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAngrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. American Economic Journal: Applied Economics, 1(1), 136-63.↩︎"
+  },
+  {
     "objectID": "tareas.html",
     "href": "tareas.html",
     "title": "Tareas",
     "section": "",
-    "text": "Aquí encontrarán las tareas del curso. No coman ansias."
+    "text": "Aquí encontrarán las tareas del curso. No coman ansias.\nTarea 1."
   }
 ]

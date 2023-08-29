@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Evaluación de Programas 2023 - Tareas</title>
+<title>Evaluación de Programas 2023 - tarea-1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,6 +58,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -71,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tareas.html">Tareas</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">tarea-1</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tareas.html" class="sidebar-item-text sidebar-link active">
+  <a href="./tareas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tareas</span></a>
   </div>
 </li>
@@ -141,14 +143,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#pregunta-1" id="toc-pregunta-1" class="nav-link active" data-scroll-target="#pregunta-1">Pregunta 1</a></li>
+  <li><a href="#pregunta-2" id="toc-pregunta-2" class="nav-link" data-scroll-target="#pregunta-2">Pregunta 2</a></li>
+  <li><a href="#pregunta-3" id="toc-pregunta-3" class="nav-link" data-scroll-target="#pregunta-3">Pregunta 3</a></li>
+  <li><a href="#pregunta-4" id="toc-pregunta-4" class="nav-link" data-scroll-target="#pregunta-4">Pregunta 4</a></li>
+  <li><a href="#pregunta-5" id="toc-pregunta-5" class="nav-link" data-scroll-target="#pregunta-5">Pregunta 5</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tareas</h1>
+<h1 class="title">tarea-1</h1>
 </div>
 
 
@@ -163,12 +175,117 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Aquí encontrarán las tareas del curso. No coman ansias.</p>
-<p><a href="./tarea-1.html">Tarea 1</a>.</p>
+<section id="pregunta-1" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
+<p>Suponga que para un experimento en un laboratorio de economía experimental se asignó a la mitad de los participantes a un grupo de tratamiento y la otra mitad al grupo de control. Se busca estudiar el efecto del tratamiento <span class="math inline">\(T_\)</span> sobre el desempeño en un juego estratégico, medido por la variable <span class="math inline">\(y_i\)</span>. Antes de comenzar el experimento se recolectaron una serie de características <span class="math inline">\(x_{ji}\)</span>, <span class="math inline">\(j=1,\ldots 10\)</span>, de cada paciente. En el experimento, se trabaja con <span class="math inline">\(\alpha=0.10\)</span>.</p>
+<ol type="a">
+<li><p>[5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:</p>
+<p><em>Para verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento <span class="math inline">\(T_i\)</span> para correr la siguiente regresión:</em> <span class="math display">\[T_i=\alpha+\sum_{j=1}^{10}x_{ji}'\beta +\varepsilon_i\]</span></p>
+<p><em>Después realicé una prueba <span class="math inline">\(F\)</span> de significancia conjunta sobre los coeficientes <span class="math inline">\(\beta_j\)</span> que resultó tener un valor <span class="math inline">\(p\)</span> de 0.02.</em></p>
+<p>Explique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.</p></li>
+<li><p>[5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?</p></li>
+<li><p>[5 puntos] Por otro lado, el investigador B le reporta lo siguiente:</p>
+<p><em>Yo realicé un análisis para determinar el balance en la asignación del tratamiento. Para cada una de las características <span class="math inline">\(x_{ji}\)</span> corrí la siguiente regresión:</em> <span class="math display">\[x_{ji}=\gamma+\pi T_i+u_i\]</span> <em>A continuación, le reporto una tabla con los valores <span class="math inline">\(p\)</span> asociados al coeficiente estimado de <span class="math inline">\(\pi\)</span> en cada una de las 10 regresiones.</em></p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Característica</strong></th>
+<th><strong>Valor <span class="math inline">\(p\)</span></strong></th>
+<th></th>
+<th><strong>Característica</strong></th>
+<th><strong>Valor <span class="math inline">\(p\)</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x_{1i}\)</span></td>
+<td>0.05</td>
+<td></td>
+<td><span class="math inline">\(x_{6i}\)</span></td>
+<td>0.03</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{2i}\)</span></td>
+<td>0.02</td>
+<td></td>
+<td><span class="math inline">\(x_{7i}\)</span></td>
+<td>0.19</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_{3i}\)</span></td>
+<td>0.07</td>
+<td></td>
+<td><span class="math inline">\(x_{8i}\)</span></td>
+<td>0.85</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{4i}\)</span></td>
+<td>0.00</td>
+<td></td>
+<td><span class="math inline">\(x_{9i}\)</span></td>
+<td>0.01</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_{5i}\)</span></td>
+<td>0.42</td>
+<td></td>
+<td><span class="math inline">\(x_{10i}\)</span></td>
+<td>0.03</td>
+</tr>
+</tbody>
+</table>
+<p>Explique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento,</p></li>
+<li><p>[5 puntos] Explique qué concluye sobre la validez interna del estudio en cuestión. ¿Qué propiedades estadísticas tendría el estimador de diferencia de medias de la variable de desempeño en el juego entre el grupo tratado y de control?</p></li>
+</ol>
+</section>
+<section id="pregunta-2" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
+<p>Microfinanzas</p>
+</section>
+<section id="pregunta-3" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-3">Pregunta 3</h2>
+<p>Replique el ejercicio de representar la FEC de salarios en función de educación para México, como en la Figura 3.1.1 de MHE (p.&nbsp;39), usando los datos del primer trimestre de 2021 de la ENOE. El gráfico es complejo, pero recibirá crédito completo si reproduce, al menos por separado, los dos siguientes tipos de gráficos:</p>
+<ol type="a">
+<li><p>[10 puntos] Gráfico de la relación promedio entre años de educación e ingresos.</p></li>
+<li><p>[10 puntos] Gráfico de la distribución de ingresos para cuatro niveles de educación que usted considere relevante destacar. Argumente sobre los niveles de educación elegidos.</p></li>
+</ol>
+</section>
+<section id="pregunta-4" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-4">Pregunta 4</h2>
+<p>Use los datos del archivo <em>STAR_public_use.csv</em> para este problema. En este problema replicará la columna 1 de la Tabla 1 en <a href="https://pubs.aeaweb.org/doi/pdfplus/10.1257/app.1.1.136">Angrist et al.&nbsp;(2009)</a>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<ol type="a">
+<li><p>[5 puntos] Obtenga la media y la desviación estándar de la edad, <strong>age</strong>, en el grupo de control (columna 1), restringiendo la muestra a aquellos individuos con <strong>noshow</strong> igual a 0.</p></li>
+<li><p>[10 puntos] Usando una regresión lineal, muestre la edad no está correlacionada con la asignación a los tratamientos (<strong>ssp</strong>, <strong>sfp</strong> y <strong>sfsp</strong>). De nuevo, debe restringir la muestra quienes tienen <strong>noshow</strong> igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).</p></li>
+<li><p>[5 puntos] Realice una prueba de significancia conjunta de los coeficientes obtenidos en el punto b. Reporte el estadístico <span class="math inline">\(F\)</span> y el valor <span class="math inline">\(p\)</span> asociado (columna 5).</p></li>
+<li><p>[10 puntos] ¿Cuál es el propósito de la prueba F realizada en el punto c.? ¿Qué hipótesis nula prueban los autores? ¿Qué concluimos a partir de la tabla 1?</p></li>
+</ol>
+</section>
+<section id="pregunta-5" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-5">Pregunta 5</h2>
+<p>Nuevamente, use los datos del archivo <em>STAR_public_use.csv</em> para este problema. En este problema, replicará dos columnas del efecto de tratamiento de la Tabla 5. Note que de nuevo se deben usar solo las observaciones que tienen <strong>noshow</strong> igual a 0. Además, note que se usan las siguientes variables de control: <strong>sex</strong>, <strong>mtongue</strong>, <strong>hsgroup</strong>, <strong>numcourses_nov1</strong>, <strong>lastmin</strong>, <strong>mom_edn</strong>, y <strong>dad_edn</strong>, todas ellas categóricas.</p>
+<p>Antes de estimar los efectos, los autores sustituyen <strong>gpa_year1</strong> por <em>NA</em> cuando <strong>grade_20059_fall</strong> es <em>NA</em> y sustituyen <strong>grade_20059_fall</strong> por <em>NA</em> cuando <strong>gpa_year1</strong> es <em>NA</em> Esto le permitirá quedarse con los individuos que tienen información completa.</p>
+<ol type="a">
+<li><p>[10 puntos] Estime el efecto de cada tipo de tratamiento sobre el <em>GPA</em>, es decir, sobre la variable <strong>gpa_year1</strong>, para toda la muestra (Panel B, columna 1). Calcule correctamente los errores estándar. Interprete los resultados.</p></li>
+<li><p>[10 puntos] Estime el efecto de recibir cada tipo de tratamiento, considerando los tratamientos SSP o SFP (de cualquier tipo) en las mujeres de la muestra (Panel B, columna 6). Esto es, considere el tratamiento SSP como un primer tipo de tratamiento y, ya sea SFP o SFSP, como un segundo tipo de tratamiento. Calcule correctamente los errores estándar. Interprete sus resultados.</p></li>
+</ol>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Angrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. <em>American Economic Journal: Applied Economics</em>, 1(1), 136-63.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
