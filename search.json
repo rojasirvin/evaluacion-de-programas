@@ -4,7 +4,91 @@
     "href": "tareas.html",
     "title": "Tareas",
     "section": "",
-    "text": "Aquí encontrarán las tareas del curso. No coman ansias."
+    "text": "Aquí encontrarán las tareas del curso. No coman ansias.\nTarea 1."
+  },
+  {
+    "objectID": "tarea-1.html",
+    "href": "tarea-1.html",
+    "title": "tarea-1",
+    "section": "",
+    "text": "Suponga que para un experimento en un laboratorio de economía experimental se asignó a la mitad de los participantes a un grupo de tratamiento y la otra mitad al grupo de control. Se busca estudiar el efecto del tratamiento \\(T_\\) sobre el desempeño en un juego estratégico, medido por la variable \\(y_i\\). Antes de comenzar el experimento se recolectaron una serie de características \\(x_{ji}\\), \\(j=1,\\ldots 10\\), de cada paciente. En el experimento, se trabaja con \\(\\alpha=0.10\\).\n\n[5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:\nPara verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento \\(T_i\\) para correr la siguiente regresión: \\[T_i=\\alpha+\\sum_{j=1}^{10}x_{ji}'\\beta +\\varepsilon_i\\]\nDespués realicé una prueba \\(F\\) de significancia conjunta sobre los coeficientes \\(\\beta_j\\) que resultó tener un valor \\(p\\) de 0.02.\nExplique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.\n[5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?\n[5 puntos] Por otro lado, el investigador B le reporta lo siguiente:\nYo realicé un análisis para determinar el balance en la asignación del tratamiento. Para cada una de las características \\(x_{ji}\\) corrí la siguiente regresión: \\[x_{ji}=\\gamma+\\pi T_i+u_i\\] A continuación, le reporto una tabla con los valores \\(p\\) asociados al coeficiente estimado de \\(\\pi\\) en cada una de las 10 regresiones.\n\n\n\n\n\n\n\n\n\n\nCaracterística\nValor \\(p\\)\n\nCaracterística\nValor \\(p\\)\n\n\n\n\n\\(x_{1i}\\)\n0.05\n\n\\(x_{6i}\\)\n0.03\n\n\n\\(x_{2i}\\)\n0.02\n\n\\(x_{7i}\\)\n0.19\n\n\n\\(x_{3i}\\)\n0.07\n\n\\(x_{8i}\\)\n0.85\n\n\n\\(x_{4i}\\)\n0.00\n\n\\(x_{9i}\\)\n0.01\n\n\n\\(x_{5i}\\)\n0.42\n\n\\(x_{10i}\\)\n0.03\n\n\n\nExplique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento,\n[5 puntos] Explique qué concluye sobre la validez interna del estudio en cuestión. ¿Qué propiedades estadísticas tendría el estimador de diferencia de medias de la variable de desempeño en el juego entre el grupo tratado y de control?"
+  },
+  {
+    "objectID": "tarea-1.html#pregunta-1",
+    "href": "tarea-1.html#pregunta-1",
+    "title": "tarea-1",
+    "section": "",
+    "text": "Suponga que para un experimento en un laboratorio de economía experimental se asignó a la mitad de los participantes a un grupo de tratamiento y la otra mitad al grupo de control. Se busca estudiar el efecto del tratamiento \\(T_\\) sobre el desempeño en un juego estratégico, medido por la variable \\(y_i\\). Antes de comenzar el experimento se recolectaron una serie de características \\(x_{ji}\\), \\(j=1,\\ldots 10\\), de cada paciente. En el experimento, se trabaja con \\(\\alpha=0.10\\).\n\n[5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:\nPara verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento \\(T_i\\) para correr la siguiente regresión: \\[T_i=\\alpha+\\sum_{j=1}^{10}x_{ji}'\\beta +\\varepsilon_i\\]\nDespués realicé una prueba \\(F\\) de significancia conjunta sobre los coeficientes \\(\\beta_j\\) que resultó tener un valor \\(p\\) de 0.02.\nExplique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.\n[5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?\n[5 puntos] Por otro lado, el investigador B le reporta lo siguiente:\nYo realicé un análisis para determinar el balance en la asignación del tratamiento. Para cada una de las características \\(x_{ji}\\) corrí la siguiente regresión: \\[x_{ji}=\\gamma+\\pi T_i+u_i\\] A continuación, le reporto una tabla con los valores \\(p\\) asociados al coeficiente estimado de \\(\\pi\\) en cada una de las 10 regresiones.\n\n\n\n\n\n\n\n\n\n\nCaracterística\nValor \\(p\\)\n\nCaracterística\nValor \\(p\\)\n\n\n\n\n\\(x_{1i}\\)\n0.05\n\n\\(x_{6i}\\)\n0.03\n\n\n\\(x_{2i}\\)\n0.02\n\n\\(x_{7i}\\)\n0.19\n\n\n\\(x_{3i}\\)\n0.07\n\n\\(x_{8i}\\)\n0.85\n\n\n\\(x_{4i}\\)\n0.00\n\n\\(x_{9i}\\)\n0.01\n\n\n\\(x_{5i}\\)\n0.42\n\n\\(x_{10i}\\)\n0.03\n\n\n\nExplique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento,\n[5 puntos] Explique qué concluye sobre la validez interna del estudio en cuestión. ¿Qué propiedades estadísticas tendría el estimador de diferencia de medias de la variable de desempeño en el juego entre el grupo tratado y de control?"
+  },
+  {
+    "objectID": "tarea-1.html#pregunta-2",
+    "href": "tarea-1.html#pregunta-2",
+    "title": "tarea-1",
+    "section": "Pregunta 2",
+    "text": "Pregunta 2\nMicrofinanzas"
+  },
+  {
+    "objectID": "tarea-1.html#pregunta-3",
+    "href": "tarea-1.html#pregunta-3",
+    "title": "tarea-1",
+    "section": "Pregunta 3",
+    "text": "Pregunta 3\nReplique el ejercicio de representar la FEC de salarios en función de educación para México, como en la Figura 3.1.1 de MHE (p. 39), usando los datos del primer trimestre de 2021 de la ENOE. El gráfico es complejo, pero recibirá crédito completo si reproduce, al menos por separado, los dos siguientes tipos de gráficos:\n\n[10 puntos] Gráfico de la relación promedio entre años de educación e ingresos.\n[10 puntos] Gráfico de la distribución de ingresos para cuatro niveles de educación que usted considere relevante destacar. Argumente sobre los niveles de educación elegidos."
+  },
+  {
+    "objectID": "tarea-1.html#pregunta-4",
+    "href": "tarea-1.html#pregunta-4",
+    "title": "tarea-1",
+    "section": "Pregunta 4",
+    "text": "Pregunta 4\nUse los datos del archivo STAR_public_use.csv para este problema. En este problema replicará la columna 1 de la Tabla 1 en Angrist et al. (2009).1\n\n[5 puntos] Obtenga la media y la desviación estándar de la edad, age, en el grupo de control (columna 1), restringiendo la muestra a aquellos individuos con noshow igual a 0.\n[10 puntos] Usando una regresión lineal, muestre la edad no está correlacionada con la asignación a los tratamientos (ssp, sfp y sfsp). De nuevo, debe restringir la muestra quienes tienen noshow igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).\n[5 puntos] Realice una prueba de significancia conjunta de los coeficientes obtenidos en el punto b. Reporte el estadístico \\(F\\) y el valor \\(p\\) asociado (columna 5).\n[10 puntos] ¿Cuál es el propósito de la prueba F realizada en el punto c.? ¿Qué hipótesis nula prueban los autores? ¿Qué concluimos a partir de la tabla 1?"
+  },
+  {
+    "objectID": "tarea-1.html#pregunta-5",
+    "href": "tarea-1.html#pregunta-5",
+    "title": "tarea-1",
+    "section": "Pregunta 5",
+    "text": "Pregunta 5\nNuevamente, use los datos del archivo STAR_public_use.csv para este problema. En este problema, replicará dos columnas del efecto de tratamiento de la Tabla 5. Note que de nuevo se deben usar solo las observaciones que tienen noshow igual a 0. Además, note que se usan las siguientes variables de control: sex, mtongue, hsgroup, numcourses_nov1, lastmin, mom_edn, y dad_edn, todas ellas categóricas.\nAntes de estimar los efectos, los autores sustituyen gpa_year1 por NA cuando grade_20059_fall es NA y sustituyen grade_20059_fall por NA cuando gpa_year1 es NA Esto le permitirá quedarse con los individuos que tienen información completa.\n\n[10 puntos] Estime el efecto de cada tipo de tratamiento sobre el GPA, es decir, sobre la variable gpa_year1, para toda la muestra (Panel B, columna 1). Calcule correctamente los errores estándar. Interprete los resultados.\n[10 puntos] Estime el efecto de recibir cada tipo de tratamiento, considerando los tratamientos SSP o SFP (de cualquier tipo) en las mujeres de la muestra (Panel B, columna 6). Esto es, considere el tratamiento SSP como un primer tipo de tratamiento y, ya sea SFP o SFSP, como un segundo tipo de tratamiento. Calcule correctamente los errores estándar. Interprete sus resultados."
+  },
+  {
+    "objectID": "tarea-1.html#footnotes",
+    "href": "tarea-1.html#footnotes",
+    "title": "tarea-1",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAngrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. American Economic Journal: Applied Economics, 1(1), 136-63.↩︎"
+  },
+  {
+    "objectID": "reglas.html",
+    "href": "reglas.html",
+    "title": "Reglas",
+    "section": "",
+    "text": "No se tolerarán actos de discriminación. Se procura un ambiente de respeto entre todos los miembros de la clase.\nToda la comunicación relativa al curso se dará por medio del correo institucional del CIDE.\nLas tareas y exámenes se entregarán a través de Teams.\nLos participantes en la sesión deberán procurar que haya un ambiente silencioso para el desarrollo de la clase.\nSe aplicarán estrictamente los lineamientos generales contenidos en el código de ética del CIDE en términos de plagio y fraude en tareas, exámenes y proyecto final."
+  },
+  {
+    "objectID": "presentaciones.html",
+    "href": "presentaciones.html",
+    "title": "Presentaciones",
+    "section": "",
+    "text": "Por favor, seleccione una de las lecturas marcadas con una “+” de la lista de lecturas y envíe un correo al profesor para que se le asigne una fecha de presentación.\n\n\n\n\n\n\n\n\n\nAutores\nTema\nPresentador o presentadora\nFecha de exposición\n\n\n\n\nArceo-Gomez & Campos-Vazquez (2014)\nExperimental\nRigoberto Mendoza\n6 de septiembre\n\n\nBruhn et al. (2018)\nExperimental\nBrian Roque\n6 de septiembre\n\n\n\nExperimental\n\n6 de septiembre\n\n\nGonzalez-Navarro et al. (2016)\nLATE\nMiguel Rosales\n20 de septiembre\n\n\n\nLATE\n\n20 de septiembre\n\n\nBoruchowicz et al. (2022)\nDID\nRodrigo Gutiérrez\n4 de octubre\n\n\nConti et al. (2023)\nDID\nJosé Valencia\n4 de octubre\n\n\n\nDID\n\n4 de octubre\n\n\nEspinosa & Rubin (2015)\nPSM\nSamuel Martínez\n18 de octubre\n\n\n\nPSM\n\n18 de octubre\n\n\n\nPSM\n\n18 de octubre\n\n\nAguilar et al. (2021)\nDiscontinuidades\nYorlyn Funez\n1 de noviembre\n\n\nDel Valle et al. (2020)\nDiscontinuidades\nWolfgang Reséndiz\n1 de noviembre\n\n\nDavis (2008)\nDiscontinuidades\nAlan Loera\n1 de noviembre\n\n\nCampos-Vazquez & Esquivel (2020)\nControl sintético\nFrancisco Vinicio\n13 de noviembre\n\n\nCampos-Vazquez & Esquivel (2023)\nControl sintético\nClaudia Alemán\n13 de noviembre\n\n\n\nControl sintético\n\n13 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre"
+  },
+  {
+    "objectID": "materiales.html",
+    "href": "materiales.html",
+    "title": "Materiales",
+    "section": "",
+    "text": "Datasets\nSlides"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Example schedule:\n\n\n\n\n\n\n\n\n\nMorning\nAfternoon\n\n\n\n\nL\nIntro + Data manipulation\ngit / GitHub\n\n\nM\nGeneralised Linear Models\nData visualisation\n\n\nX\nMixed models / GAM / Bayes\nFunctional programming + Students work\n\n\nJ\nMultivariate analyses\nReproducible workflows\n\n\nV\nUsing R as GIS + Students work\nProject presentations"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Evaluación de Programas 2023",
+    "section": "",
+    "text": "Profesor: Irvin Rojas (irvin.rojas@cide.edu).\nHorario de clases: lunes y miércoles (8:00 a 9:30).\nPlataforma del curso: Microsoft Teams.\nHorario de oficina: por definir.\n\n¡Bienvenidas, bienvenidos!\nEste es un sitio para las y los estudiantes del curso de Evaluación de Programas de la Licenciatura y Maestría en Economía del CIDE. Sin embargo, otras personas pueden encontrar útiles los recursos de este sitio, como el programa del curso, las tareas y la lista de lecturas."
   },
   {
     "objectID": "lecturas.html",
@@ -117,41 +201,6 @@
     "title": "Lecturas",
     "section": "Otras lecturas sobre temas no cubiertos en el curso",
     "text": "Otras lecturas sobre temas no cubiertos en el curso\n\nMás allá de los experimentos\n\nBarrett, C. B., & Carter, M. R. (2010). The power and pitfalls of experiments in development economics: Some non-random reflections. Applied economic perspectives and policy, 32(4), 515-548.\n\nBarrett, C. B., & Carter, M. R. (2020). Finding our balance? Revisiting the randomization revolution in development economics ten years further on. World Development, 127, 104789.\n\nHjort, J., Moreira, D., Rao, G., & Santini, J. F. (2021). How research affects policy: Experimental evidence from 2,150 Brazilian municipalities. American Economic Review, 111(5), 1442-80.\nDeaton, A., Case. (2019). Randomization in the tropics revisited: a theme and eleven variations. In Randomized controlled trials in the field of development: A critical perspective. Oxford University Press. Forthcoming.\n\nRavallion, Martin. (2020). Should the randomistas (continue to) rule? National Bureau of Economic Research, Working Paper 27554.\n\nModelos estructurales en evaluación\n\nAbbring, J. H., & Heckman, J. J. (2007). Econometric evaluation of social programs, part III: Distributional treatment effects, dynamic treatment effects, dynamic discrete choice, and general equilibrium policy evaluation. Handbook of econometrics, 6, 5145-5303.\n\nAttanasio, O. P., Meghir, C., & Santiago, A. (2011). Education choices in Mexico: using a structural model and a randomized experiment to evaluate Progresa. The Review of Economic Studies, 79(1), 37-66.\n\nDuflo, E., Hanna, R., & Ryan, S. P. (2012). Incentives work: Getting teachers to come to school. American Economic Review, 102(4), 1241-78.}\nHamilton, B. H., Hincapié, A., Miller, R. A., & Papageorge, N. W. (2018). Innovation and Diffusion of Medical Treatment. National Bureau of Economic Working Paper 24577.\n\nKeane, M. P. (2010). A structural perspective on the experimentalist school. Journal of Economic Perspectives, 24(2), 47-58.\nKeane, M. P., Todd, P. E., & Wolpin, K. I. (2011). The structural estimation of behavioral models: Discrete choice dynamic programming methods and applications. In Handbook of labor economics (Vol. 4, pp. 331-461). Elsevier.\n\nLow, H., & Meghir, C. (2017). The use of structural models in econometrics. Journal of Economic Perspectives, 31(2), 33-58.\nMa, X., Lawell, C. Y. L., & Rozelle, S. (2020). Peer effects and the use of subsidized goods: A structural econometric model of a health promotion program in rural China. Working paper, Cornell University.\n\nNevo, A., & Whinston, M. D. (2010). Taking the dogma out of econometrics: Structural modeling and credible inference. Journal of Economic Perspectives, 24(2), 69-82.\n\nTodd, P. E., & Wolpin, K. I. (2010). Structural estimation and policy evaluation in developing countries. Annu. Rev. Econ., 2(1), 21-50.\nWolpin, K. I. (2013). The limits of inference without theory. MIT Press.\n\nEvaluaciones de impacto a nivel de economía local (LEWIE)\n\nTaylor, J. E., Dyer, G. A., Stewart, M., Yunez-Naude, A., & Ardila, S. (2003). The economics of ecotourism: A Galápagos Islands economy-wide perspective. Economic Development and Cultural Change, 51(4), 977-997.\nTaylor, J. E., & Filipski, M. J. (2014). Beyond experiments in development economics: Local economy-wide impact evaluation. Oxford University Press.\nTaylor, J. E., Filipski, M. J., Alloush, M., Gupta, A., Rojas Valdes, R.I., & Gonzalez-Estrada, E. (2016). Economic impact of refugees. Proceedings of the National Academy of Sciences, 201604566.\n\nCombinación de metodologías no experimentales\n\nCattaneo, M. D., Frandsen, B. R., & Titiunik, R. (2015). Randomization inference in the regression discontinuity design: An application to party advantages in the US Senate. Journal of Causal Inference, 3(1), 1-24.\n\nDonohue III, J. J., & Ho, D. E. (2007). The Impact of Damage Caps on Malpractice Claims: Randomization Inference with Difference‐in‐Differences. Journal of Empirical Legal Studies, 4(1), 69-102.\n\nKeele, L., Titiunik, R., & Zubizarreta, J. R. (2015). Enhancing a geographic regression discontinuity design through matching to estimate the effect of ballot initiatives on voter turnout. Journal of the Royal Statistical Society. Series A (Statistics in Society), 223-239.\n\nLevasseur, P. (2019). Can social programs break the vicious cycle between poverty and obesity? Evidence from urban Mexico. World Development, 113, 143-156.\n\nMacKinnon, J. G., & Webb, M. D. (2020). Randomization inference for difference-in-differences with few treated clusters. Journal of Econometrics.\n\nParker, S. W., Saenz, J., & Wong, R. (2018). Health insurance and the aging: Evidence from the Seguro Popular program in Mexico. Demography, 55(1), 361-386.\nSant’Anna, P. H., & Zhao, J. (2020). Doubly robust difference-in-differences estimators. Journal of Econometrics, 219(1), 101-122.\n\nImpactos de largo plazo\n\nAthey, S., Chetty, R., Imbens, G. W., & Kang, H. (2019). The surrogate index: Combining short-term proxies to estimate long-term treatment effects more rapidly and precisely, National Bureau of Economic Research, Working Paper 26463.\nHamory, J., Miguel, E., Walker, M., Kremer, M., & Baird, S. (2021). Twenty-year economic impacts of deworming. Proceedings of the National Academy of Sciences, 118(14).\nDupas, P., Duflo, E. & Kremer, M. (2021). The Impact of Free Secondary Education: Experimental Evidence from Ghana. Stanford University Working Paper.\n\nParker, S. W., & Vogl, T. (2018). Do conditional cash transfers improve economic outcomes in the next generation? Evidence from Mexico (No. w24303). National Bureau of Economic Research.\n\nEtica\n\nHumphreys, M. (2015). Reflections on the ethics of social experimentation. Journal of Globalization and Development, 6(1), 87-112.\nLewis, J. (2020). Experimental Design: Ethics, Integrity, and the Scientific Method. Handbook of Research Ethics and Scientific Integrity, 459-474.\nRayzberg, M. S. (2019). Fairness in the field: The ethics of resource allocation in randomized controlled field experiments. Science, Technology, & Human Values, 44(3), 371-398.\n\nCredibilidad e inferencia estadística\n\nAmrhein, V., Greenland, S., & McShane, B. (2019). Scientists rise up against statistical significance. Nature. 567, 305-307.\n\nAngrist, J. D., & Pischke, J. S. (2010). The credibility revolution in empirical economics: How better research design is taking the con out of econometrics. Journal of economic perspectives, 24(2), 3-30.\n\nGreenland, S., Senn, S. J., Rothman, K. J., Carlin, J. B., Poole, C., Goodman, S. N., & Altman, D. G. (2016). Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. European journal of epidemiology, 31(4), 337-350.\nLeamer, E. E. (1983). Let’s take the con out of econometrics. The American Economic Review, 73(1), 31-43.\nLeamer, E. E. (2010). Tantalus on the Road to Asymptopia. Journal of Economic Perspectives, 24(2), 31-46.\nNuzzo, R. (2014). Scientific method: statistical errors. Nature News, 506(7487), 150.\nSims, C. A. (2010). But economics is not an experimental science. Journal of Economic Perspectives, 24(2), 59-68.\nWasserstein, R. L., & Lazar, N. A. (2016). The ASA statement on p-values: context, process, and purpose. The American Statistician, 70(2), 129-133.\n\nInferencia por aleatorización\n\nAbadie, A., Athey, S., Imbens, G. W., & Wooldridge, J. M. (2020). Sampling‐Based versus Design‐Based Uncertainty in Regression Analysis. Econometrica, 88(1), 265-296.\n\nAthey, S., & Imbens, G. W. (2017). The econometrics of randomized experiments. In Handbook of economic field experiments (Vol. 1, pp. 73-140). North-Holland.\n\nHo, D. E., & Imai, K. (2006). Randomization inference with natural experiments: An analysis of ballot effects in the 2003 California recall election. Journal of the American Statistical Association, 101(475), 888-900.\n\nKerwin, J. T., & Thornton, R. L. (2020). Making the grade: The sensitivity of education program effectiveness to input choices and outcome measures. Review of Economics and Statistics, 1-45."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Evaluación de Programas 2023",
-    "section": "",
-    "text": "Profesor: Irvin Rojas (irvin.rojas@cide.edu).\nHorario de clases: lunes y miércoles (8:00 a 9:30).\nPlataforma del curso: Microsoft Teams.\nHorario de oficina: por definir.\n\n¡Bienvenidas, bienvenidos!\nEste es un sitio para las y los estudiantes del curso de Evaluación de Programas de la Licenciatura y Maestría en Economía del CIDE. Sin embargo, otras personas pueden encontrar útiles los recursos de este sitio, como el programa del curso, las tareas y la lista de lecturas."
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Schedule",
-    "section": "",
-    "text": "Example schedule:\n\n\n\n\n\n\n\n\n\nMorning\nAfternoon\n\n\n\n\nL\nIntro + Data manipulation\ngit / GitHub\n\n\nM\nGeneralised Linear Models\nData visualisation\n\n\nX\nMixed models / GAM / Bayes\nFunctional programming + Students work\n\n\nJ\nMultivariate analyses\nReproducible workflows\n\n\nV\nUsing R as GIS + Students work\nProject presentations"
-  },
-  {
-    "objectID": "materiales.html",
-    "href": "materiales.html",
-    "title": "Materiales",
-    "section": "",
-    "text": "Datasets\nSlides"
-  },
-  {
-    "objectID": "presentaciones.html",
-    "href": "presentaciones.html",
-    "title": "Presentaciones",
-    "section": "",
-    "text": "Por favor, seleccione una de las lecturas marcadas con una “+” de la lista de lecturas y envíe un correo al profesor para que se le asigne una fecha de presentación.\n\n\n\n\n\n\n\n\n\nAutores\nTema\nPresentador o presentadora\nFecha de exposición\n\n\n\n\nArceo-Gomez & Campos-Vazquez (2014)\nExperimental\nRigoberto Mendoza\n6 de septiembre\n\n\n\nExperimental\n\n6 de septiembre\n\n\n\nExperimental\n\n6 de septiembre\n\n\n\nLATE\n\n20 de septiembre\n\n\n\nLATE\n\n20 de septiembre\n\n\nBoruchowicz et al. (2022)\nDID\nRodrigo Gutiérrez\n4 de octubre\n\n\n\nDID\n\n4 de octubre\n\n\n\nDID\n\n4 de octubre\n\n\nEspinosa & Rubin (2015)\nPSM\nSamuel Martínez\n18 de octubre\n\n\n\nPSM\n\n18 de octubre\n\n\n\nPSM\n\n18 de octubre\n\n\nAguilar, Gutierrez & Seira (2021)\nDiscontinuidades\nYorlyn Funez\n1 de noviembre\n\n\nDel Valle et al. (2020)\nDiscontinuidades\nWolfgang Reséndiz\n1 de noviembre\n\n\n\nDiscontinuidades\n\n1 de noviembre\n\n\nCampos-Vazquez & Esquivel (2020)\nControl sintético\nFrancisco Vinicio\n13 de noviembre\n\n\nCampos-Vazquez & Esquivel (2023)\nControl sintético\nClaudia Alemán\n13 de noviembre\n\n\n\nControl sintético\n\n13 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre\n\n\n\nMachine Learning\n\n27 de noviembre"
-  },
-  {
-    "objectID": "reglas.html",
-    "href": "reglas.html",
-    "title": "Reglas",
-    "section": "",
-    "text": "No se tolerarán actos de discriminación. Se procura un ambiente de respeto entre todos los miembros de la clase.\nToda la comunicación relativa al curso se dará por medio del correo institucional del CIDE.\nLas tareas y exámenes se entregarán a través de Teams.\nLos participantes en la sesión deberán procurar que haya un ambiente silencioso para el desarrollo de la clase.\nSe aplicarán estrictamente los lineamientos generales contenidos en el código de ética del CIDE en términos de plagio y fraude en tareas, exámenes y proyecto final."
   },
   {
     "objectID": "programa.html",
