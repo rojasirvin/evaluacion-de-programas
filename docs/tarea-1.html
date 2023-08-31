@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Evaluación de Programas 2023 - tarea-1</title>
+<title>Evaluación de Programas 2023 - Tarea 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">tarea-1</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Tarea 1</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -147,7 +147,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pregunta-1" id="toc-pregunta-1" class="nav-link active" data-scroll-target="#pregunta-1">Pregunta 1</a></li>
+  <li><a href="#instrucciones" id="toc-instrucciones" class="nav-link active" data-scroll-target="#instrucciones">Instrucciones</a></li>
+  <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos">Datos</a></li>
+  <li><a href="#pregunta-1" id="toc-pregunta-1" class="nav-link" data-scroll-target="#pregunta-1">Pregunta 1</a></li>
   <li><a href="#pregunta-2" id="toc-pregunta-2" class="nav-link" data-scroll-target="#pregunta-2">Pregunta 2</a></li>
   <li><a href="#pregunta-3" id="toc-pregunta-3" class="nav-link" data-scroll-target="#pregunta-3">Pregunta 3</a></li>
   <li><a href="#pregunta-4" id="toc-pregunta-4" class="nav-link" data-scroll-target="#pregunta-4">Pregunta 4</a></li>
@@ -160,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">tarea-1</h1>
+<h1 class="title">Tarea 1</h1>
 </div>
 
 
@@ -175,9 +177,20 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="instrucciones" class="level2">
+<h2 class="anchored" data-anchor-id="instrucciones">Instrucciones</h2>
+<p>Fecha de entrega: <strong>18 de septiembre</strong></p>
+<p>La tarea deberá entregarse en Teams. Deberá incluir dos documentos:</p>
+<p>Un primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.</p>
+<p>Un segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad.</p>
+</section>
+<section id="datos" class="level2">
+<h2 class="anchored" data-anchor-id="datos">Datos</h2>
+<p><a href="./files/muestra-enoe-123.csv">muestra-enoe-123.csv</a> <a href="./files/STAR_public_use.csv">STAR_public_use.csv</a></p>
+</section>
 <section id="pregunta-1" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
-<p>Suponga que para un experimento en un laboratorio de economía experimental se asignó a la mitad de los participantes a un grupo de tratamiento y la otra mitad al grupo de control. Se busca estudiar el efecto del tratamiento <span class="math inline">\(T_\)</span> sobre el desempeño en un juego estratégico, medido por la variable <span class="math inline">\(y_i\)</span>. Antes de comenzar el experimento se recolectaron una serie de características <span class="math inline">\(x_{ji}\)</span>, <span class="math inline">\(j=1,\ldots 10\)</span>, de cada paciente. En el experimento, se trabaja con <span class="math inline">\(\alpha=0.10\)</span>.</p>
+<p>Suponga que para un experimento en un laboratorio de economía experimental se asignó a la mitad de los participantes a un grupo de tratamiento y la otra mitad al grupo de control. Se busca estudiar el efecto del tratamiento <span class="math inline">\(T_i\)</span> sobre el desempeño en un juego estratégico, medido por la variable <span class="math inline">\(y_i\)</span> (a más puntaje, mejor desempeño). Antes de comenzar el experimento se recolectaron una serie de características <span class="math inline">\(x_{ji}\)</span>, <span class="math inline">\(j=1,\ldots 10\)</span>, de cada jugador. En el experimento, se trabaja con <span class="math inline">\(\alpha=0.10\)</span>.</p>
 <ol type="a">
 <li><p>[5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:</p>
 <p><em>Para verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento <span class="math inline">\(T_i\)</span> para correr la siguiente regresión:</em> <span class="math display">\[T_i=\alpha+\sum_{j=1}^{10}x_{ji}'\beta +\varepsilon_i\]</span></p>
@@ -242,19 +255,23 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>Explique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento,</p></li>
-<li><p>[5 puntos] Explique qué concluye sobre la validez interna del estudio en cuestión. ¿Qué propiedades estadísticas tendría el estimador de diferencia de medias de la variable de desempeño en el juego entre el grupo tratado y de control?</p></li>
+<li><p>[5 puntos] Explique qué concluye sobre la validez interna del estudio en cuestión. ¿Qué propiedades estadísticas tendría el estimador de diferencia de medias de la variable de desempeño en el juego entre el grupo tratado y el de control?</p></li>
 </ol>
 </section>
 <section id="pregunta-2" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
-<p>Microfinanzas</p>
+<p>Suponga que está interesado en conocer el impacto que tiene el acceso a las microfinanzas en un indicador de seguridad alimentaria <span class="math inline">\(y_i\)</span> de las familias. La idea detrás es que el acceso al crédito podría mejorar la habilidad de los hogares para suavizar el consumo. Afortunadamente, usted recibe el respaldo de una microfinanciera que le ofrece una base de datos para con información para construir <span class="math inline">\(y_i\)</span>, recolecatada a partir de una encuesta en los hogares de sus clientes con más de un año de antiguedad. Además, le da acceso a datos de otra encuesta complementaria realizada en hogares que no son clientes y que no tienen acceso a microfinanzas para construir el mismo indicador de seguridad alimentaria. Al final, tendría una muestra de varios miles de hogares con y sin acceso a microfinanzas.</p>
+<p>Suponga que con estos datos descubre que la seguridad alimentaria es 25% más alta en los hogares con clientes de la microfinanciera, en comparación con la seguridad alimentaria de los hogares sin acceso a las microfinanzas.</p>
+<ol type="a">
+<li><p>[10 puntos] ¿Cómo valora el diseño del estudio descrito? ¿Qué fortalezas y/o debilidades encuentra?</p></li>
+<li><p>[10 puntos] ¿De qué signo esperaría que fuera el sesgo de selección, en caso de existir? Explique sus razones.</p></li>
+</ol>
 </section>
 <section id="pregunta-3" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-3">Pregunta 3</h2>
-<p>Replique el ejercicio de representar la FEC de salarios en función de educación para México, como en la Figura 3.1.1 de MHE (p.&nbsp;39), usando los datos del primer trimestre de 2021 de la ENOE. El gráfico es complejo, pero recibirá crédito completo si reproduce, al menos por separado, los dos siguientes tipos de gráficos:</p>
+<p>Replique el ejercicio de representar la FEC de salarios en función de educación para México, como en la Figura 3.1.1 de MHE (p.&nbsp;39), usando los datos del primer trimestre de 2023 de la ENOE. El gráfico es complejo, pero recibirá crédito completo si reproduce, al menos por separado, los dos siguientes tipos de gráficos:</p>
 <ol type="a">
-<li><p>[10 puntos] Gráfico de la relación promedio entre años de educación e ingresos.</p></li>
-<li><p>[10 puntos] Gráfico de la distribución de ingresos para cuatro niveles de educación que usted considere relevante destacar. Argumente sobre los niveles de educación elegidos.</p></li>
+<li>[10 puntos] Replique el ejercicio en MHE que ejemplifica el teorema de la regresión de la FEC. Para esto use el archivo de datos <em>muestra-enoe-123.csv</em>, que contiene una muestra del primer trimestre de 2023 de la ENOE e incluye personas que trabajan y reciben un ingreso. <strong>lingreso</strong> es el log del ingreso mensual y <strong>escolaridad</strong> son los años de educación. Primero, estime una regresión de <strong>lingreso</strong> en función de <strong>escolaridad</strong> usando los microdatos. Luego, obtenga la media de <strong>lingreso</strong> para cada nivel de <strong>escolaridad</strong> y estime una regresión de las medias en función de <strong>escolaridad</strong>, pesando por el número de observaciones usadas para construir cada media. Compare los coeficientes estimados.</li>
 </ol>
 </section>
 <section id="pregunta-4" class="level2">
@@ -262,9 +279,9 @@ ul.task-list li input[type="checkbox"] {
 <p>Use los datos del archivo <em>STAR_public_use.csv</em> para este problema. En este problema replicará la columna 1 de la Tabla 1 en <a href="https://pubs.aeaweb.org/doi/pdfplus/10.1257/app.1.1.136">Angrist et al.&nbsp;(2009)</a>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <ol type="a">
 <li><p>[5 puntos] Obtenga la media y la desviación estándar de la edad, <strong>age</strong>, en el grupo de control (columna 1), restringiendo la muestra a aquellos individuos con <strong>noshow</strong> igual a 0.</p></li>
-<li><p>[10 puntos] Usando una regresión lineal, muestre la edad no está correlacionada con la asignación a los tratamientos (<strong>ssp</strong>, <strong>sfp</strong> y <strong>sfsp</strong>). De nuevo, debe restringir la muestra quienes tienen <strong>noshow</strong> igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).</p></li>
+<li><p>[10 puntos] Usando una regresión lineal, muestre que la edad no está correlacionada con la asignación a los tratamientos (<strong>ssp</strong>, <strong>sfp</strong> y <strong>sfsp</strong>). De nuevo, debe restringir la muestra quienes tienen <strong>noshow</strong> igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).</p></li>
 <li><p>[5 puntos] Realice una prueba de significancia conjunta de los coeficientes obtenidos en el punto b. Reporte el estadístico <span class="math inline">\(F\)</span> y el valor <span class="math inline">\(p\)</span> asociado (columna 5).</p></li>
-<li><p>[10 puntos] ¿Cuál es el propósito de la prueba F realizada en el punto c.? ¿Qué hipótesis nula prueban los autores? ¿Qué concluimos a partir de la tabla 1?</p></li>
+<li><p>[10 puntos] ¿Cuál es el propósito de la prueba F realizada en el punto c.? ¿Qué hipótesis nula prueban los autores?</p></li>
 </ol>
 </section>
 <section id="pregunta-5" class="level2">
