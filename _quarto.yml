@@ -27,6 +27,9 @@ website:
         text: Presentaciones
       - href: tareas.qmd
         text: Tareas
+        menu:
+          - text: Tarea 1
+            href: tarea-1.qmd
 
 format:
   html:

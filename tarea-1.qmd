@@ -14,7 +14,8 @@ Un segundo archivo deberá contener el código replicable usado para generar los
 
 ## Datos
 
-[muestra-enoe-123.csv](./files/muestra-enoe-123.csv) 
+[muestra-enoe-123.csv](./files/muestra-enoe-123.csv)
+
 [STAR_public_use.csv](./files/STAR_public_use.csv)
 
 ## Pregunta 1
