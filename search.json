@@ -1,73 +1,80 @@
 [
   {
-    "objectID": "tareas.html",
-    "href": "tareas.html",
-    "title": "Tareas",
+    "objectID": "programa.html",
+    "href": "programa.html",
+    "title": "Programa",
     "section": "",
-    "text": "Aquí encontrarán las tareas del curso. No coman ansias."
+    "text": "Identificar las condiciones que permiten la implementación de una evaluación de impacto.\nConocer los fundamentos teóricos sobre los que se sustentan las metodologías de las evaluaciones de impacto.\nImplementar los métodos de evaluación empleando software, interpretar los resultados y reportar las conclusiones en forma de artículos científicos y/o reportes de política.\nConocer e implementar buenas prácticas en el uso de software, orientadas a la transparencia y la replicabilidad en la investigación.\nConocer los temas que conforman la literatura actual de evaluaciones de impacto."
   },
   {
-    "objectID": "tarea-1.html",
-    "href": "tarea-1.html",
-    "title": "Tarea 1",
+    "objectID": "programa.html#objetivos",
+    "href": "programa.html#objetivos",
+    "title": "Programa",
     "section": "",
-    "text": "Fecha de entrega: 18 de septiembre\nLa tarea deberá entregarse en Teams. Deberá incluir dos documentos:\nUn primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.\nUn segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad."
+    "text": "Identificar las condiciones que permiten la implementación de una evaluación de impacto.\nConocer los fundamentos teóricos sobre los que se sustentan las metodologías de las evaluaciones de impacto.\nImplementar los métodos de evaluación empleando software, interpretar los resultados y reportar las conclusiones en forma de artículos científicos y/o reportes de política.\nConocer e implementar buenas prácticas en el uso de software, orientadas a la transparencia y la replicabilidad en la investigación.\nConocer los temas que conforman la literatura actual de evaluaciones de impacto."
   },
   {
-    "objectID": "tarea-1.html#instrucciones",
-    "href": "tarea-1.html#instrucciones",
-    "title": "Tarea 1",
-    "section": "",
-    "text": "Fecha de entrega: 18 de septiembre\nLa tarea deberá entregarse en Teams. Deberá incluir dos documentos:\nUn primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.\nUn segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad."
+    "objectID": "programa.html#referencias",
+    "href": "programa.html#referencias",
+    "title": "Programa",
+    "section": "Referencias",
+    "text": "Referencias\nEl curso se basa en los siguientes textos:\n\n(MHE) Angrist, J.D. y Pischke, J.S. (2013). Mostly Harmless Econometrics: An Empiricists Companion. Princeton University Press.\n\nAngrist, J.D. y Pischke, J.S. (2014). Mastering ’Metrics: The Path from Cause to Effect. Princeton University Press.\n\n(CT) Cameron, A.C. y P.K. Trivedi. (2005). Microeconometrics: Methods and applications. Oxford University Press.\n(MT) Cunningham, S. (2021). Causal inference: The mixtape. Yale University Press. Disponible en: https://mixtape.scunning.com/index.html.\nHuntington-Klein, N. (2021). The effect: An introduction to research design and causality. Chapman and Hall/CRC.\nDiNardo, J. y D.S. Lee. (2011). Program Evaluation and Research Designs. En Handbook of Labor Economics, 4A: 463-536.\n(GMPRV) Gertler, P.J., S. Martinez, P. Premand, L.B., Rawlings, y C.M.J. Vermeersch. (2011). La evaluación de impacto en la práctica. Banco Interamericano de Desarrollo y Banco Mundial, segunda edición. Disponible en: https://publications.iadb.org/publications/spanish/document/La-evaluaci%C3%B3n-de-impacto-en-la-pr%C3%A1ctica-Segunda-edici%C3%B3n.pdf."
   },
   {
-    "objectID": "tarea-1.html#datos",
-    "href": "tarea-1.html#datos",
-    "title": "Tarea 1",
-    "section": "Datos",
-    "text": "Datos\nmuestra-enoe-123.csv\nSTAR_public_use.csv"
+    "objectID": "programa.html#contenido-temático",
+    "href": "programa.html#contenido-temático",
+    "title": "Programa",
+    "section": "Contenido temático",
+    "text": "Contenido temático\nUnidad 1. Introducción\n\nFundamentos de la evaluación de impacto\n\nInferencia causal\nRevisión de métodos de regresión\n\nReplicabilidad y transparencia en la evaluación\n\nRMardkown para la generación de reportes científicos\n\n\nUnidad 2. Métodos de evaluación\n\nEvaluación experimental\n\nAsignación aleatoria\nErrores estándar\nLATE y variables instrumentales\nCorrección por prueba de múltiples hipótesis\nAplicaciones de métodos experimentales\n\nDiferencia en diferencias\n\nSupuestos fundamentales\nEfectos fijos individuales\nDID desfasado\nANCOVA\nAplicaciones de DID\n\nMétodos de pareamiento\n\nSupuestos fundamentales\nPareamiento exacto\nPareamiento por puntaje de propensión (PSM)\nAplicaciones del PSM\n\nDiseños con discontinuidades\n\nSupuestos fundamentales\nDiscontinuidades nítidas y difusas\nDiscontinuidades geográficas\nPliegues en la regresión\nAplicaciones diseños con discontinuidades\n\nMétodo del control sintético\n\nSupuestos fundamentales\nInferencia basada en placebos\nAplicaciones de control sintético\n\n\nUnidad 3. Temas actuales de evaluación\n\nExtensiones I\n\nAprendizaje automatizado y big data en la evaluación de impacto"
   },
   {
-    "objectID": "tarea-1.html#pregunta-1",
-    "href": "tarea-1.html#pregunta-1",
-    "title": "Tarea 1",
-    "section": "Pregunta 1",
-    "text": "Pregunta 1\nSuponga que para un experimento en un laboratorio de economía experimental se asignó a la mitad de los participantes a un grupo de tratamiento y la otra mitad al grupo de control. Se busca estudiar el efecto del tratamiento \\(T_i\\) sobre el desempeño en un juego estratégico, medido por la variable \\(y_i\\) (a más puntaje, mejor desempeño). Antes de comenzar el experimento se recolectaron una serie de características \\(x_{ji}\\), \\(j=1,\\ldots 10\\), de cada jugador. En el experimento, se trabaja con \\(\\alpha=0.10\\).\n\n[5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:\nPara verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento \\(T_i\\) para correr la siguiente regresión: \\[T_i=\\alpha+\\sum_{j=1}^{10}x_{ji}'\\beta +\\varepsilon_i\\]\nDespués realicé una prueba \\(F\\) de significancia conjunta sobre los coeficientes \\(\\beta_j\\) que resultó tener un valor \\(p\\) de 0.02.\nExplique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.\n[5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?\n[5 puntos] Por otro lado, el investigador B le reporta lo siguiente:\nYo realicé un análisis para determinar el balance en la asignación del tratamiento. Para cada una de las características \\(x_{ji}\\) corrí la siguiente regresión: \\[x_{ji}=\\gamma+\\pi T_i+u_i\\] A continuación, le reporto una tabla con los valores \\(p\\) asociados al coeficiente estimado de \\(\\pi\\) en cada una de las 10 regresiones.\n\n\n\n\n\n\n\n\n\n\nCaracterística\nValor \\(p\\)\n\nCaracterística\nValor \\(p\\)\n\n\n\n\n\\(x_{1i}\\)\n0.05\n\n\\(x_{6i}\\)\n0.03\n\n\n\\(x_{2i}\\)\n0.02\n\n\\(x_{7i}\\)\n0.19\n\n\n\\(x_{3i}\\)\n0.07\n\n\\(x_{8i}\\)\n0.85\n\n\n\\(x_{4i}\\)\n0.00\n\n\\(x_{9i}\\)\n0.01\n\n\n\\(x_{5i}\\)\n0.42\n\n\\(x_{10i}\\)\n0.03\n\n\n\nExplique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento,\n[5 puntos] Explique qué concluye sobre la validez interna del estudio en cuestión. ¿Qué propiedades estadísticas tendría el estimador de diferencia de medias de la variable de desempeño en el juego entre el grupo tratado y el de control?"
+    "objectID": "programa.html#evaluación-del-curso",
+    "href": "programa.html#evaluación-del-curso",
+    "title": "Programa",
+    "section": "Evaluación del curso",
+    "text": "Evaluación del curso\n\nExamen parcial: 20%\nExamen final: 30%\nProyecto final: 20%\nTareas (4): 20% (5% cada una)\nExposición: 10% (7% presentación y 3% folleto)"
   },
   {
-    "objectID": "tarea-1.html#pregunta-2",
-    "href": "tarea-1.html#pregunta-2",
-    "title": "Tarea 1",
-    "section": "Pregunta 2",
-    "text": "Pregunta 2\nSuponga que está interesado en conocer el impacto que tiene el acceso a las microfinanzas en un indicador de seguridad alimentaria \\(y_i\\) de las familias. La idea detrás es que el acceso al crédito podría mejorar la habilidad de los hogares para suavizar el consumo. Afortunadamente, usted recibe el respaldo de una microfinanciera que le ofrece una base de datos para con información para construir \\(y_i\\), recolecatada a partir de una encuesta en los hogares de sus clientes con más de un año de antiguedad. Además, le da acceso a datos de otra encuesta complementaria realizada en hogares que no son clientes y que no tienen acceso a microfinanzas para construir el mismo indicador de seguridad alimentaria. Al final, tendría una muestra de varios miles de hogares con y sin acceso a microfinanzas.\nSuponga que con estos datos descubre que la seguridad alimentaria es 25% más alta en los hogares con clientes de la microfinanciera, en comparación con la seguridad alimentaria de los hogares sin acceso a las microfinanzas.\n\n[10 puntos] ¿Cómo valora el diseño del estudio descrito? ¿Qué fortalezas y/o debilidades encuentra?\n[10 puntos] ¿De qué signo esperaría que fuera el sesgo de selección, en caso de existir? Explique sus razones."
+    "objectID": "programa.html#tareas",
+    "href": "programa.html#tareas",
+    "title": "Programa",
+    "section": "Tareas",
+    "text": "Tareas\nCuatro tareas teórico-prácticas. Las tareas deben entregarse de manera individual, pero se recomienda ampliamente colaborar en grupos de estudio. Para evitar confusiones, escriban en su tarea con quiénes colaboraron. Las tareas deberán entregarse en Teams antes de la fecha y hora señalada. No se aceptarán tareas fuera de tiempo. Por favor, no comprima los archivos en carpetas comprimidas. Las tareas deberán contener dos archivos:\nUn primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.\nUn segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad."
   },
   {
-    "objectID": "tarea-1.html#pregunta-3",
-    "href": "tarea-1.html#pregunta-3",
-    "title": "Tarea 1",
-    "section": "Pregunta 3",
-    "text": "Pregunta 3\nReplique el ejercicio de representar la FEC de salarios en función de educación para México, como en la Figura 3.1.1 de MHE (p. 39), usando los datos del primer trimestre de 2023 de la ENOE. El gráfico es complejo, pero recibirá crédito completo si reproduce, al menos por separado, los dos siguientes tipos de gráficos:\n\n[10 puntos] Replique el ejercicio en MHE que ejemplifica el teorema de la regresión de la FEC. Para esto use el archivo de datos muestra-enoe-123.csv, que contiene una muestra del primer trimestre de 2023 de la ENOE e incluye personas que trabajan y reciben un ingreso. lingreso es el log del ingreso mensual y escolaridad son los años de educación. Primero, estime una regresión de lingreso en función de escolaridad usando los microdatos. Luego, obtenga la media de lingreso para cada nivel de escolaridad y estime una regresión de las medias en función de escolaridad, pesando por el número de observaciones usadas para construir cada media. Compare los coeficientes estimados."
+    "objectID": "programa.html#software",
+    "href": "programa.html#software",
+    "title": "Programa",
+    "section": "Software",
+    "text": "Software\nR será el paquete standard usado en las sesiones prácticas. Más aún, el uso de cualquier software es aceptado siempre que se cumplan con los requisitos de replicabilidad y reportes de las tareas y exámenes. Habrá una sesión especial para introducir el uso de Quarto para la generación de reportes científicos."
   },
   {
-    "objectID": "tarea-1.html#pregunta-4",
-    "href": "tarea-1.html#pregunta-4",
-    "title": "Tarea 1",
-    "section": "Pregunta 4",
-    "text": "Pregunta 4\nUse los datos del archivo STAR_public_use.csv para este problema. En este problema replicará la columna 1 de la Tabla 1 en Angrist et al. (2009).1\n\n[5 puntos] Obtenga la media y la desviación estándar de la edad, age, en el grupo de control (columna 1), restringiendo la muestra a aquellos individuos con noshow igual a 0.\n[10 puntos] Usando una regresión lineal, muestre que la edad no está correlacionada con la asignación a los tratamientos (ssp, sfp y sfsp). De nuevo, debe restringir la muestra quienes tienen noshow igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).\n[5 puntos] Realice una prueba de significancia conjunta de los coeficientes obtenidos en el punto b. Reporte el estadístico \\(F\\) y el valor \\(p\\) asociado (columna 5).\n[10 puntos] ¿Cuál es el propósito de la prueba F realizada en el punto c.? ¿Qué hipótesis nula prueban los autores?"
+    "objectID": "programa.html#exámenes",
+    "href": "programa.html#exámenes",
+    "title": "Programa",
+    "section": "Exámenes",
+    "text": "Exámenes\n\nExamen parcial: miércoles 11 de octubre en el horario de clase.\nExamen final: por definir."
   },
   {
-    "objectID": "tarea-1.html#pregunta-5",
-    "href": "tarea-1.html#pregunta-5",
-    "title": "Tarea 1",
-    "section": "Pregunta 5",
-    "text": "Pregunta 5\nNuevamente, use los datos del archivo STAR_public_use.csv para este problema. En este problema, replicará dos columnas del efecto de tratamiento de la Tabla 5. Note que de nuevo se deben usar solo las observaciones que tienen noshow igual a 0. Además, note que se usan las siguientes variables de control: sex, mtongue, hsgroup, numcourses_nov1, lastmin, mom_edn, y dad_edn, todas ellas categóricas.\nAntes de estimar los efectos, los autores sustituyen gpa_year1 por NA cuando grade_20059_fall es NA y sustituyen grade_20059_fall por NA cuando gpa_year1 es NA Esto le permitirá quedarse con los individuos que tienen información completa.\n\n[10 puntos] Estime el efecto de cada tipo de tratamiento sobre el GPA, es decir, sobre la variable gpa_year1, para toda la muestra (Panel B, columna 1). Calcule correctamente los errores estándar. Interprete los resultados.\n[10 puntos] Estime el efecto de recibir cada tipo de tratamiento, considerando los tratamientos SSP o SFP (de cualquier tipo) en las mujeres de la muestra (Panel B, columna 6). Esto es, considere el tratamiento SSP como un primer tipo de tratamiento y, ya sea SFP o SFSP, como un segundo tipo de tratamiento. Calcule correctamente los errores estándar. Interprete sus resultados."
+    "objectID": "programa.html#exposiciones",
+    "href": "programa.html#exposiciones",
+    "title": "Programa",
+    "section": "Exposiciones",
+    "text": "Exposiciones\nCada alumno realizará una presentación de uno los artículos aplicados marcados con “+” en la lista de lecturas. Cada presentación deberá ser de máximo 15 minutos y debe incluir el contenido que el presentador considere relevante. La presentación deberá abordar, mínimamente: 1) el problema a investigar, 2) la metodología empleada, 3) la pertinencia de la metodología y la teoría vista en el curso, 4) los datos empleados, 5) los principales resultados, y 6) una crítica sobre la validez y las conclusiones del estudio. La presentación deberá acompañarse de un breve folleto que resuma los puntos anteriores, para ser distribuido con el resto de la clase."
   },
   {
-    "objectID": "tarea-1.html#footnotes",
-    "href": "tarea-1.html#footnotes",
-    "title": "Tarea 1",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nAngrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. American Economic Journal: Applied Economics, 1(1), 136-63.↩︎"
+    "objectID": "programa.html#proyecto-final",
+    "href": "programa.html#proyecto-final",
+    "title": "Programa",
+    "section": "Proyecto final",
+    "text": "Proyecto final\nEl proyecto final consistirá en un protocolo de investigación de una evaluación de impacto. El tema y la metodología es libre, pero se evaluará el potencial para realizarse en el corto plazo. Se aconseja seleccionar un tema para el que se empleen datos de libre acceso. El protocolo deberá incluir, mínimamente: 1) una revisión de literatura, 2) un bosquejo de las motivaciones teóricas del problema, 3) la metodología empírica a emplear, 4) la fuente de datos a usar, y 5) los resultados preliminares. El proyecto debe presentarse en formato escrito con una extensión máxima de 20 cuartillas. Se recomienda ampliamente dar seguimiento al proyecto en horas de oficina para recibir retroalimentación respecto a los avances y resolver posibles dudas y dificultades.\nEntrega: fecha por definir, a través de Teams."
+  },
+  {
+    "objectID": "programa.html#lista-de-lecturas",
+    "href": "programa.html#lista-de-lecturas",
+    "title": "Programa",
+    "section": "Lista de lecturas",
+    "text": "Lista de lecturas\nLas lecturas obligatorias (marcadas con “*”) permiten una discusión informada en la clase. Las lecturas que serán presentadas en exposiciones también son obligatorias y están marcadas con “+”. El resto de las lecturas no serán cubiertas en clase, pero son ampliamente recomendables. En las sesiones de exposiciones se espera que el resto de la clase tenga el conocimiento suficiente sobre el material presentado para participar en la discusión. La lista de lecturas está disponible aquí."
   },
   {
     "objectID": "reglas.html",
@@ -89,6 +96,76 @@
     "title": "Materiales",
     "section": "",
     "text": "Datasets\nSlides"
+  },
+  {
+    "objectID": "tareas/index.html",
+    "href": "tareas/index.html",
+    "title": "Tareas",
+    "section": "",
+    "text": "Aquí encontrarán las tareas del curso. No coman ansias."
+  },
+  {
+    "objectID": "tareas/tarea-1.html",
+    "href": "tareas/tarea-1.html",
+    "title": "Tarea 1",
+    "section": "",
+    "text": "Fecha de entrega: 18 de septiembre\nLa tarea deberá entregarse en Teams. Deberá incluir dos documentos:\nUn primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.\nUn segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad."
+  },
+  {
+    "objectID": "tareas/tarea-1.html#instrucciones",
+    "href": "tareas/tarea-1.html#instrucciones",
+    "title": "Tarea 1",
+    "section": "",
+    "text": "Fecha de entrega: 18 de septiembre\nLa tarea deberá entregarse en Teams. Deberá incluir dos documentos:\nUn primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.\nUn segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad."
+  },
+  {
+    "objectID": "tareas/tarea-1.html#datos",
+    "href": "tareas/tarea-1.html#datos",
+    "title": "Tarea 1",
+    "section": "Datos",
+    "text": "Datos\nmuestra-enoe-123.csv\nSTAR_public_use.csv"
+  },
+  {
+    "objectID": "tareas/tarea-1.html#pregunta-1",
+    "href": "tareas/tarea-1.html#pregunta-1",
+    "title": "Tarea 1",
+    "section": "Pregunta 1",
+    "text": "Pregunta 1\nSuponga que para un experimento en un laboratorio de economía experimental se asignó a la mitad de los participantes a un grupo de tratamiento y la otra mitad al grupo de control. Se busca estudiar el efecto del tratamiento \\(T_i\\) sobre el desempeño en un juego estratégico, medido por la variable \\(y_i\\) (a más puntaje, mejor desempeño). Antes de comenzar el experimento se recolectaron una serie de características \\(x_{ji}\\), \\(j=1,\\ldots 10\\), de cada jugador. En el experimento, se trabaja con \\(\\alpha=0.10\\).\n\n[5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:\nPara verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento \\(T_i\\) para correr la siguiente regresión: \\[T_i=\\alpha+\\sum_{j=1}^{10}x_{ji}'\\beta +\\varepsilon_i\\]\nDespués realicé una prueba \\(F\\) de significancia conjunta sobre los coeficientes \\(\\beta_j\\) que resultó tener un valor \\(p\\) de 0.02.\nExplique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.\n[5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?\n[5 puntos] Por otro lado, el investigador B le reporta lo siguiente:\nYo realicé un análisis para determinar el balance en la asignación del tratamiento. Para cada una de las características \\(x_{ji}\\) corrí la siguiente regresión: \\[x_{ji}=\\gamma+\\pi T_i+u_i\\] A continuación, le reporto una tabla con los valores \\(p\\) asociados al coeficiente estimado de \\(\\pi\\) en cada una de las 10 regresiones.\n\n\n\n\n\n\n\n\n\n\nCaracterística\nValor \\(p\\)\n\nCaracterística\nValor \\(p\\)\n\n\n\n\n\\(x_{1i}\\)\n0.05\n\n\\(x_{6i}\\)\n0.03\n\n\n\\(x_{2i}\\)\n0.02\n\n\\(x_{7i}\\)\n0.19\n\n\n\\(x_{3i}\\)\n0.07\n\n\\(x_{8i}\\)\n0.85\n\n\n\\(x_{4i}\\)\n0.00\n\n\\(x_{9i}\\)\n0.01\n\n\n\\(x_{5i}\\)\n0.42\n\n\\(x_{10i}\\)\n0.03\n\n\n\nExplique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento,\n[5 puntos] Explique qué concluye sobre la validez interna del estudio en cuestión. ¿Qué propiedades estadísticas tendría el estimador de diferencia de medias de la variable de desempeño en el juego entre el grupo tratado y el de control?"
+  },
+  {
+    "objectID": "tareas/tarea-1.html#pregunta-2",
+    "href": "tareas/tarea-1.html#pregunta-2",
+    "title": "Tarea 1",
+    "section": "Pregunta 2",
+    "text": "Pregunta 2\nSuponga que está interesado en conocer el impacto que tiene el acceso a las microfinanzas en un indicador de seguridad alimentaria \\(y_i\\) de las familias. La idea detrás es que el acceso al crédito podría mejorar la habilidad de los hogares para suavizar el consumo. Afortunadamente, usted recibe el respaldo de una microfinanciera que le ofrece una base de datos para con información para construir \\(y_i\\), recolecatada a partir de una encuesta en los hogares de sus clientes con más de un año de antiguedad. Además, le da acceso a datos de otra encuesta complementaria realizada en hogares que no son clientes y que no tienen acceso a microfinanzas para construir el mismo indicador de seguridad alimentaria. Al final, tendría una muestra de varios miles de hogares con y sin acceso a microfinanzas.\nSuponga que con estos datos descubre que la seguridad alimentaria es 25% más alta en los hogares con clientes de la microfinanciera, en comparación con la seguridad alimentaria de los hogares sin acceso a las microfinanzas.\n\n[10 puntos] ¿Cómo valora el diseño del estudio descrito? ¿Qué fortalezas y/o debilidades encuentra?\n[10 puntos] ¿De qué signo esperaría que fuera el sesgo de selección, en caso de existir? Explique sus razones."
+  },
+  {
+    "objectID": "tareas/tarea-1.html#pregunta-3",
+    "href": "tareas/tarea-1.html#pregunta-3",
+    "title": "Tarea 1",
+    "section": "Pregunta 3",
+    "text": "Pregunta 3\nReplique el ejercicio de representar la FEC de salarios en función de educación para México, como en la Figura 3.1.1 de MHE (p. 39), usando los datos del primer trimestre de 2023 de la ENOE. El gráfico es complejo, pero recibirá crédito completo si reproduce, al menos por separado, los dos siguientes tipos de gráficos:\n\n[10 puntos] Replique el ejercicio en MHE que ejemplifica el teorema de la regresión de la FEC. Para esto use el archivo de datos muestra-enoe-123.csv, que contiene una muestra del primer trimestre de 2023 de la ENOE e incluye personas que trabajan y reciben un ingreso. lingreso es el log del ingreso mensual y escolaridad son los años de educación. Primero, estime una regresión de lingreso en función de escolaridad usando los microdatos. Luego, obtenga la media de lingreso para cada nivel de escolaridad y estime una regresión de las medias en función de escolaridad, pesando por el número de observaciones usadas para construir cada media. Compare los coeficientes estimados."
+  },
+  {
+    "objectID": "tareas/tarea-1.html#pregunta-4",
+    "href": "tareas/tarea-1.html#pregunta-4",
+    "title": "Tarea 1",
+    "section": "Pregunta 4",
+    "text": "Pregunta 4\nUse los datos del archivo STAR_public_use.csv para este problema. En este problema replicará la columna 1 de la Tabla 1 en Angrist et al. (2009).1\n\n[5 puntos] Obtenga la media y la desviación estándar de la edad, age, en el grupo de control (columna 1), restringiendo la muestra a aquellos individuos con noshow igual a 0.\n[10 puntos] Usando una regresión lineal, muestre que la edad no está correlacionada con la asignación a los tratamientos (ssp, sfp y sfsp). De nuevo, debe restringir la muestra quienes tienen noshow igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).\n[5 puntos] Realice una prueba de significancia conjunta de los coeficientes obtenidos en el punto b. Reporte el estadístico \\(F\\) y el valor \\(p\\) asociado (columna 5).\n[10 puntos] ¿Cuál es el propósito de la prueba F realizada en el punto c.? ¿Qué hipótesis nula prueban los autores?"
+  },
+  {
+    "objectID": "tareas/tarea-1.html#pregunta-5",
+    "href": "tareas/tarea-1.html#pregunta-5",
+    "title": "Tarea 1",
+    "section": "Pregunta 5",
+    "text": "Pregunta 5\nNuevamente, use los datos del archivo STAR_public_use.csv para este problema. En este problema, replicará dos columnas del efecto de tratamiento de la Tabla 5. Note que de nuevo se deben usar solo las observaciones que tienen noshow igual a 0. Además, note que se usan las siguientes variables de control: sex, mtongue, hsgroup, numcourses_nov1, lastmin, mom_edn, y dad_edn, todas ellas categóricas.\nAntes de estimar los efectos, los autores sustituyen gpa_year1 por NA cuando grade_20059_fall es NA y sustituyen grade_20059_fall por NA cuando gpa_year1 es NA Esto le permitirá quedarse con los individuos que tienen información completa.\n\n[10 puntos] Estime el efecto de cada tipo de tratamiento sobre el GPA, es decir, sobre la variable gpa_year1, para toda la muestra (Panel B, columna 1). Calcule correctamente los errores estándar. Interprete los resultados.\n[10 puntos] Estime el efecto de recibir cada tipo de tratamiento, considerando los tratamientos SSP o SFP (de cualquier tipo) en las mujeres de la muestra (Panel B, columna 6). Esto es, considere el tratamiento SSP como un primer tipo de tratamiento y, ya sea SFP o SFSP, como un segundo tipo de tratamiento. Calcule correctamente los errores estándar. Interprete sus resultados."
+  },
+  {
+    "objectID": "tareas/tarea-1.html#footnotes",
+    "href": "tareas/tarea-1.html#footnotes",
+    "title": "Tarea 1",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAngrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. American Economic Journal: Applied Economics, 1(1), 136-63.↩︎"
   },
   {
     "objectID": "schedule.html",
@@ -215,82 +292,5 @@
     "title": "Lecturas",
     "section": "Otras lecturas sobre temas no cubiertos en el curso",
     "text": "Otras lecturas sobre temas no cubiertos en el curso\n\nMás allá de los experimentos\n\nBarrett, C. B., & Carter, M. R. (2010). The power and pitfalls of experiments in development economics: Some non-random reflections. Applied economic perspectives and policy, 32(4), 515-548.\n\nBarrett, C. B., & Carter, M. R. (2020). Finding our balance? Revisiting the randomization revolution in development economics ten years further on. World Development, 127, 104789.\n\nHjort, J., Moreira, D., Rao, G., & Santini, J. F. (2021). How research affects policy: Experimental evidence from 2,150 Brazilian municipalities. American Economic Review, 111(5), 1442-80.\nDeaton, A., Case. (2019). Randomization in the tropics revisited: a theme and eleven variations. In Randomized controlled trials in the field of development: A critical perspective. Oxford University Press. Forthcoming.\n\nRavallion, Martin. (2020). Should the randomistas (continue to) rule? National Bureau of Economic Research, Working Paper 27554.\n\nModelos estructurales en evaluación\n\nAbbring, J. H., & Heckman, J. J. (2007). Econometric evaluation of social programs, part III: Distributional treatment effects, dynamic treatment effects, dynamic discrete choice, and general equilibrium policy evaluation. Handbook of econometrics, 6, 5145-5303.\n\nAttanasio, O. P., Meghir, C., & Santiago, A. (2011). Education choices in Mexico: using a structural model and a randomized experiment to evaluate Progresa. The Review of Economic Studies, 79(1), 37-66.\n\nDuflo, E., Hanna, R., & Ryan, S. P. (2012). Incentives work: Getting teachers to come to school. American Economic Review, 102(4), 1241-78.}\nHamilton, B. H., Hincapié, A., Miller, R. A., & Papageorge, N. W. (2018). Innovation and Diffusion of Medical Treatment. National Bureau of Economic Working Paper 24577.\n\nKeane, M. P. (2010). A structural perspective on the experimentalist school. Journal of Economic Perspectives, 24(2), 47-58.\nKeane, M. P., Todd, P. E., & Wolpin, K. I. (2011). The structural estimation of behavioral models: Discrete choice dynamic programming methods and applications. In Handbook of labor economics (Vol. 4, pp. 331-461). Elsevier.\n\nLow, H., & Meghir, C. (2017). The use of structural models in econometrics. Journal of Economic Perspectives, 31(2), 33-58.\nMa, X., Lawell, C. Y. L., & Rozelle, S. (2020). Peer effects and the use of subsidized goods: A structural econometric model of a health promotion program in rural China. Working paper, Cornell University.\n\nNevo, A., & Whinston, M. D. (2010). Taking the dogma out of econometrics: Structural modeling and credible inference. Journal of Economic Perspectives, 24(2), 69-82.\n\nTodd, P. E., & Wolpin, K. I. (2010). Structural estimation and policy evaluation in developing countries. Annu. Rev. Econ., 2(1), 21-50.\nWolpin, K. I. (2013). The limits of inference without theory. MIT Press.\n\nEvaluaciones de impacto a nivel de economía local (LEWIE)\n\nTaylor, J. E., Dyer, G. A., Stewart, M., Yunez-Naude, A., & Ardila, S. (2003). The economics of ecotourism: A Galápagos Islands economy-wide perspective. Economic Development and Cultural Change, 51(4), 977-997.\nTaylor, J. E., & Filipski, M. J. (2014). Beyond experiments in development economics: Local economy-wide impact evaluation. Oxford University Press.\nTaylor, J. E., Filipski, M. J., Alloush, M., Gupta, A., Rojas Valdes, R.I., & Gonzalez-Estrada, E. (2016). Economic impact of refugees. Proceedings of the National Academy of Sciences, 201604566.\n\nCombinación de metodologías no experimentales\n\nCattaneo, M. D., Frandsen, B. R., & Titiunik, R. (2015). Randomization inference in the regression discontinuity design: An application to party advantages in the US Senate. Journal of Causal Inference, 3(1), 1-24.\n\nDonohue III, J. J., & Ho, D. E. (2007). The Impact of Damage Caps on Malpractice Claims: Randomization Inference with Difference‐in‐Differences. Journal of Empirical Legal Studies, 4(1), 69-102.\n\nKeele, L., Titiunik, R., & Zubizarreta, J. R. (2015). Enhancing a geographic regression discontinuity design through matching to estimate the effect of ballot initiatives on voter turnout. Journal of the Royal Statistical Society. Series A (Statistics in Society), 223-239.\n\nLevasseur, P. (2019). Can social programs break the vicious cycle between poverty and obesity? Evidence from urban Mexico. World Development, 113, 143-156.\n\nMacKinnon, J. G., & Webb, M. D. (2020). Randomization inference for difference-in-differences with few treated clusters. Journal of Econometrics.\n\nParker, S. W., Saenz, J., & Wong, R. (2018). Health insurance and the aging: Evidence from the Seguro Popular program in Mexico. Demography, 55(1), 361-386.\nSant’Anna, P. H., & Zhao, J. (2020). Doubly robust difference-in-differences estimators. Journal of Econometrics, 219(1), 101-122.\n\nImpactos de largo plazo\n\nAthey, S., Chetty, R., Imbens, G. W., & Kang, H. (2019). The surrogate index: Combining short-term proxies to estimate long-term treatment effects more rapidly and precisely, National Bureau of Economic Research, Working Paper 26463.\nHamory, J., Miguel, E., Walker, M., Kremer, M., & Baird, S. (2021). Twenty-year economic impacts of deworming. Proceedings of the National Academy of Sciences, 118(14).\nDupas, P., Duflo, E. & Kremer, M. (2021). The Impact of Free Secondary Education: Experimental Evidence from Ghana. Stanford University Working Paper.\n\nParker, S. W., & Vogl, T. (2018). Do conditional cash transfers improve economic outcomes in the next generation? Evidence from Mexico (No. w24303). National Bureau of Economic Research.\n\nEtica\n\nHumphreys, M. (2015). Reflections on the ethics of social experimentation. Journal of Globalization and Development, 6(1), 87-112.\nLewis, J. (2020). Experimental Design: Ethics, Integrity, and the Scientific Method. Handbook of Research Ethics and Scientific Integrity, 459-474.\nRayzberg, M. S. (2019). Fairness in the field: The ethics of resource allocation in randomized controlled field experiments. Science, Technology, & Human Values, 44(3), 371-398.\n\nCredibilidad e inferencia estadística\n\nAmrhein, V., Greenland, S., & McShane, B. (2019). Scientists rise up against statistical significance. Nature. 567, 305-307.\n\nAngrist, J. D., & Pischke, J. S. (2010). The credibility revolution in empirical economics: How better research design is taking the con out of econometrics. Journal of economic perspectives, 24(2), 3-30.\n\nGreenland, S., Senn, S. J., Rothman, K. J., Carlin, J. B., Poole, C., Goodman, S. N., & Altman, D. G. (2016). Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. European journal of epidemiology, 31(4), 337-350.\nLeamer, E. E. (1983). Let’s take the con out of econometrics. The American Economic Review, 73(1), 31-43.\nLeamer, E. E. (2010). Tantalus on the Road to Asymptopia. Journal of Economic Perspectives, 24(2), 31-46.\nNuzzo, R. (2014). Scientific method: statistical errors. Nature News, 506(7487), 150.\nSims, C. A. (2010). But economics is not an experimental science. Journal of Economic Perspectives, 24(2), 59-68.\nWasserstein, R. L., & Lazar, N. A. (2016). The ASA statement on p-values: context, process, and purpose. The American Statistician, 70(2), 129-133.\n\nInferencia por aleatorización\n\nAbadie, A., Athey, S., Imbens, G. W., & Wooldridge, J. M. (2020). Sampling‐Based versus Design‐Based Uncertainty in Regression Analysis. Econometrica, 88(1), 265-296.\n\nAthey, S., & Imbens, G. W. (2017). The econometrics of randomized experiments. In Handbook of economic field experiments (Vol. 1, pp. 73-140). North-Holland.\n\nHo, D. E., & Imai, K. (2006). Randomization inference with natural experiments: An analysis of ballot effects in the 2003 California recall election. Journal of the American Statistical Association, 101(475), 888-900.\n\nKerwin, J. T., & Thornton, R. L. (2020). Making the grade: The sensitivity of education program effectiveness to input choices and outcome measures. Review of Economics and Statistics, 1-45."
-  },
-  {
-    "objectID": "programa.html",
-    "href": "programa.html",
-    "title": "Programa",
-    "section": "",
-    "text": "Identificar las condiciones que permiten la implementación de una evaluación de impacto.\nConocer los fundamentos teóricos sobre los que se sustentan las metodologías de las evaluaciones de impacto.\nImplementar los métodos de evaluación empleando software, interpretar los resultados y reportar las conclusiones en forma de artículos científicos y/o reportes de política.\nConocer e implementar buenas prácticas en el uso de software, orientadas a la transparencia y la replicabilidad en la investigación.\nConocer los temas que conforman la literatura actual de evaluaciones de impacto."
-  },
-  {
-    "objectID": "programa.html#objetivos",
-    "href": "programa.html#objetivos",
-    "title": "Programa",
-    "section": "",
-    "text": "Identificar las condiciones que permiten la implementación de una evaluación de impacto.\nConocer los fundamentos teóricos sobre los que se sustentan las metodologías de las evaluaciones de impacto.\nImplementar los métodos de evaluación empleando software, interpretar los resultados y reportar las conclusiones en forma de artículos científicos y/o reportes de política.\nConocer e implementar buenas prácticas en el uso de software, orientadas a la transparencia y la replicabilidad en la investigación.\nConocer los temas que conforman la literatura actual de evaluaciones de impacto."
-  },
-  {
-    "objectID": "programa.html#referencias",
-    "href": "programa.html#referencias",
-    "title": "Programa",
-    "section": "Referencias",
-    "text": "Referencias\nEl curso se basa en los siguientes textos:\n\n(MHE) Angrist, J.D. y Pischke, J.S. (2013). Mostly Harmless Econometrics: An Empiricists Companion. Princeton University Press.\n\nAngrist, J.D. y Pischke, J.S. (2014). Mastering ’Metrics: The Path from Cause to Effect. Princeton University Press.\n\n(CT) Cameron, A.C. y P.K. Trivedi. (2005). Microeconometrics: Methods and applications. Oxford University Press.\n(MT) Cunningham, S. (2021). Causal inference: The mixtape. Yale University Press. Disponible en: https://mixtape.scunning.com/index.html.\nHuntington-Klein, N. (2021). The effect: An introduction to research design and causality. Chapman and Hall/CRC.\nDiNardo, J. y D.S. Lee. (2011). Program Evaluation and Research Designs. En Handbook of Labor Economics, 4A: 463-536.\n(GMPRV) Gertler, P.J., S. Martinez, P. Premand, L.B., Rawlings, y C.M.J. Vermeersch. (2011). La evaluación de impacto en la práctica. Banco Interamericano de Desarrollo y Banco Mundial, segunda edición. Disponible en: https://publications.iadb.org/publications/spanish/document/La-evaluaci%C3%B3n-de-impacto-en-la-pr%C3%A1ctica-Segunda-edici%C3%B3n.pdf."
-  },
-  {
-    "objectID": "programa.html#contenido-temático",
-    "href": "programa.html#contenido-temático",
-    "title": "Programa",
-    "section": "Contenido temático",
-    "text": "Contenido temático\nUnidad 1. Introducción\n\nFundamentos de la evaluación de impacto\n\nInferencia causal\nRevisión de métodos de regresión\n\nReplicabilidad y transparencia en la evaluación\n\nRMardkown para la generación de reportes científicos\n\n\nUnidad 2. Métodos de evaluación\n\nEvaluación experimental\n\nAsignación aleatoria\nErrores estándar\nLATE y variables instrumentales\nCorrección por prueba de múltiples hipótesis\nAplicaciones de métodos experimentales\n\nDiferencia en diferencias\n\nSupuestos fundamentales\nEfectos fijos individuales\nDID desfasado\nANCOVA\nAplicaciones de DID\n\nMétodos de pareamiento\n\nSupuestos fundamentales\nPareamiento exacto\nPareamiento por puntaje de propensión (PSM)\nAplicaciones del PSM\n\nDiseños con discontinuidades\n\nSupuestos fundamentales\nDiscontinuidades nítidas y difusas\nDiscontinuidades geográficas\nPliegues en la regresión\nAplicaciones diseños con discontinuidades\n\nMétodo del control sintético\n\nSupuestos fundamentales\nInferencia basada en placebos\nAplicaciones de control sintético\n\n\nUnidad 3. Temas actuales de evaluación\n\nExtensiones I\n\nAprendizaje automatizado y big data en la evaluación de impacto"
-  },
-  {
-    "objectID": "programa.html#evaluación-del-curso",
-    "href": "programa.html#evaluación-del-curso",
-    "title": "Programa",
-    "section": "Evaluación del curso",
-    "text": "Evaluación del curso\n\nExamen parcial: 20%\nExamen final: 30%\nProyecto final: 20%\nTareas (4): 20% (5% cada una)\nExposición: 10% (7% presentación y 3% folleto)"
-  },
-  {
-    "objectID": "programa.html#tareas",
-    "href": "programa.html#tareas",
-    "title": "Programa",
-    "section": "Tareas",
-    "text": "Tareas\nCuatro tareas teórico-prácticas. Las tareas deben entregarse de manera individual, pero se recomienda ampliamente colaborar en grupos de estudio. Para evitar confusiones, escriban en su tarea con quiénes colaboraron. Las tareas deberán entregarse en Teams antes de la fecha y hora señalada. No se aceptarán tareas fuera de tiempo. Por favor, no comprima los archivos en carpetas comprimidas. Las tareas deberán contener dos archivos:\nUn primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.\nUn segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad."
-  },
-  {
-    "objectID": "programa.html#software",
-    "href": "programa.html#software",
-    "title": "Programa",
-    "section": "Software",
-    "text": "Software\nR será el paquete standard usado en las sesiones prácticas. Más aún, el uso de cualquier software es aceptado siempre que se cumplan con los requisitos de replicabilidad y reportes de las tareas y exámenes. Habrá una sesión especial para introducir el uso de Quarto para la generación de reportes científicos."
-  },
-  {
-    "objectID": "programa.html#exámenes",
-    "href": "programa.html#exámenes",
-    "title": "Programa",
-    "section": "Exámenes",
-    "text": "Exámenes\n\nExamen parcial: miércoles 11 de octubre en el horario de clase.\nExamen final: por definir."
-  },
-  {
-    "objectID": "programa.html#exposiciones",
-    "href": "programa.html#exposiciones",
-    "title": "Programa",
-    "section": "Exposiciones",
-    "text": "Exposiciones\nCada alumno realizará una presentación de uno los artículos aplicados marcados con “+” en la lista de lecturas. Cada presentación deberá ser de máximo 15 minutos y debe incluir el contenido que el presentador considere relevante. La presentación deberá abordar, mínimamente: 1) el problema a investigar, 2) la metodología empleada, 3) la pertinencia de la metodología y la teoría vista en el curso, 4) los datos empleados, 5) los principales resultados, y 6) una crítica sobre la validez y las conclusiones del estudio. La presentación deberá acompañarse de un breve folleto que resuma los puntos anteriores, para ser distribuido con el resto de la clase."
-  },
-  {
-    "objectID": "programa.html#proyecto-final",
-    "href": "programa.html#proyecto-final",
-    "title": "Programa",
-    "section": "Proyecto final",
-    "text": "Proyecto final\nEl proyecto final consistirá en un protocolo de investigación de una evaluación de impacto. El tema y la metodología es libre, pero se evaluará el potencial para realizarse en el corto plazo. Se aconseja seleccionar un tema para el que se empleen datos de libre acceso. El protocolo deberá incluir, mínimamente: 1) una revisión de literatura, 2) un bosquejo de las motivaciones teóricas del problema, 3) la metodología empírica a emplear, 4) la fuente de datos a usar, y 5) los resultados preliminares. El proyecto debe presentarse en formato escrito con una extensión máxima de 20 cuartillas. Se recomienda ampliamente dar seguimiento al proyecto en horas de oficina para recibir retroalimentación respecto a los avances y resolver posibles dudas y dificultades.\nEntrega: fecha por definir, a través de Teams."
-  },
-  {
-    "objectID": "programa.html#lista-de-lecturas",
-    "href": "programa.html#lista-de-lecturas",
-    "title": "Programa",
-    "section": "Lista de lecturas",
-    "text": "Lista de lecturas\nLas lecturas obligatorias (marcadas con “*”) permiten una discusión informada en la clase. Las lecturas que serán presentadas en exposiciones también son obligatorias y están marcadas con “+”. El resto de las lecturas no serán cubiertas en clase, pero son ampliamente recomendables. En las sesiones de exposiciones se espera que el resto de la clase tenga el conocimiento suficiente sobre el material presentado para participar en la discusión. La lista de lecturas está disponible aquí."
   }
 ]
