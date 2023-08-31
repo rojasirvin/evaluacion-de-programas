@@ -16,13 +16,13 @@ Por favor, seleccione una de las lecturas marcadas con una "+" de la lista de le
 |  Clarke & Mühlrad (2021) | DID    | Paola Guarneros | 4 de octubre |
 | Espinosa & Rubin (2015) | PSM | Samuel Martínez   | 18 de octubre |
 | Becerril et al. (2010)  | PSM    | Stephanie Neri | 18 de octubre |
-|   | PSM    |  | 18 de octubre |
+|  García-Díaz et al. (2018) | PSM    | Francisco Vinicio  | 18 de octubre |
 | Aguilar et al. (2021) | Discontinuidades  | Yorlyn Funez | 1 de noviembre |  
 | Del Valle et al. (2020) | Discontinuidades  | Wolfgang Reséndiz | 1 de noviembre |
 | Davis (2008) | Discontinuidades  | Alan Loera | 1 de noviembre |
-| Campos-Vazquez & Esquivel (2020) | Control sintético  | Francisco Vinicio | 13 de noviembre | 
 | Campos-Vazquez & Esquivel (2023) | Control sintético  | Claudia Alemán | 13 de noviembre | 
 |  | Control sintético  |  | 13 de noviembre | 
+|  | Control sintético  |  | 13 de noviembre | 
 | Chernozhukov et al. (2018)  | Machine Learning   | Jair García | 27 de noviembre | 
-|  | Machine Learning  |  | 27 de noviembre | 
+| Baiardi et al. (2021) | Machine Learning  | Raúl Cepeda | 27 de noviembre | 
 |  | Machine Learning   |  | 27 de noviembre | 
