@@ -4,5 +4,5 @@ title: "Tareas"
 
 # Tarea 1
 
-- Fecha de entrega: 18 de septiembre en Teams
+- Fecha de entrega: 18 de septiembre a las 20:00 en Teams
 - [Preguntas](./tarea-1.qmd)
