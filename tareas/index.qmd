@@ -2,6 +2,7 @@
 title: "Tareas"
 ---
 
-Aquí encontrarán las tareas del curso. No coman ansias.
+# Tarea 1.
 
-[Link](./tarea-1.qmd)
+- Fecha de entrega: 18 de septiembre en Teams
+- [Preguntas](./tarea-1.qmd)

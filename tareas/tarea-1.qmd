@@ -1,5 +1,6 @@
 ---
 title: "Tarea 1"
+lang: es
 ---
 
 ## Instrucciones
