@@ -6,3 +6,4 @@ title: "Tareas"
 
 - Fecha de entrega: 18 de septiembre a las 20:00 en Teams
 - [Preguntas](./tarea-1.qmd)
+- [Respuestas](./tarea-1-respuestas.qmd)

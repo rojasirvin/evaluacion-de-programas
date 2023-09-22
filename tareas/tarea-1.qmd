@@ -3,7 +3,7 @@ title: "Tarea 1"
 lang: es
 ---
 
-## Instrucciones
+## z
 
 Fecha de entrega: **18 de septiembre**
 
