@@ -1,11 +1,11 @@
 ---
-title: "Tarea 1"
+title: "Tarea 2"
 lang: es
 ---
 
-## z
+## Preguntas
 
-Fecha de entrega: **18 de septiembre**
+Fecha de entrega: **9 de octubre a las 20:00**
 
 La tarea deberá entregarse en Teams. Deberá incluir dos documentos:
 
@@ -15,9 +15,7 @@ Un segundo archivo deberá contener el código replicable usado para generar los
 
 ## Datos
 
-[muestra-enoe-123.csv](../files/muestra-enoe-123.csv)
 
-[STAR_public_use.csv](../files/STAR_public_use.csv)
 
 ## Pregunta 1
 
