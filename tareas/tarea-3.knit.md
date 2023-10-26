@@ -2,27 +2,10 @@
 title: "Tarea 3"
 ---
 
-```{r setup}
-#| echo: false
-#| warning: false 
-#| message: false
-knitr::opts_chunk$set(echo = TRUE,
-                      warning = FALSE,
-                      message = FALSE,
-                      indent = "")
-library(tidyverse)
-library(janitor)
-library(bacondecomp)
-library(lfe) #linear fixed effects
-library(modelsummary)
-library(MatchIt)
-library(lmtest)
-library(sandwich)
-library(clubSandwich)
-library(cobalt)
-library(stargazer)
-library(did)
-```
+::: {.cell}
+
+:::
+
 
 # Instrucciones
 
@@ -48,23 +31,23 @@ Stevenson, B. & Wolfers, J. (2006)[^1] estudian los efectos de la introducción 
 
 Al correr el pedazo de código siguiente, obtendrá un objeto de datos **wd** en donde la variable de impacto es la tasa de suicidios en mujeres, **suicide_rate**, **st** identifica a los estados, **year** identifica a los años y **divyear** es el año en que se introdujo la legislación del divorcio unilateral. La última fila del código crea el indicador de tratamiento **unilaterial**, que toma el valor de 1 para los estados tratados en los periodos post tratamiento.
 
-```{r}
+
+::: {.cell}
+
+```{.r .cell-code}
 wd <- divorce %>% 
 filter(year>=1964 & year<=1996 & sex==2) %>% 
 mutate(suicide_rate=suicide*1000000/(stpop*fshare),
    year=as.numeric(year),
    divyear = ifelse(divyear>1996, Inf, divyear),
    unilateral=ifelse(year>divyear, 1, 0))
-
 ```
+:::
 
+::: {.cell}
 
-```{r setup2}
-#| echo: false
-#| warning: false 
-#| message: false
-knitr::opts_chunk$set(indent = "   ")
-```
+:::
+
 
 
 a. [5 puntos] ¿Por qué decimos que esta es una aplicación de la estimación de efectos de tratamiento con adopción escalonada?
@@ -99,3 +82,4 @@ a. [5 puntos] En el matching de la parte b., evalúe qué tan bueno es el proced
 a. [5 puntos] Estime ahora el TOT en el ingreso trimestral, como en la parte b., pero usando un caliper de 0.1 y 3 vecinos a ser emparejados. ¿Cómo cambian sus resultados respecto a los de la parte b.?
 
 a. [5 puntos] ¿Qué ventajas y desventajas encuentra en la estimación de los efectos de tratamiento usando matching?
+
