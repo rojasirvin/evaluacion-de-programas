@@ -1,0 +1,288 @@
+---
+title: "Tarea 3"
+---
+
+```{r setup}
+#| echo: false
+#| warning: false 
+#| message: false
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      indent = "")
+library(tidyverse)
+library(janitor)
+library(bacondecomp)
+library(lfe) #linear fixed effects
+library(modelsummary)
+library(MatchIt)
+library(lmtest)
+library(sandwich)
+library(clubSandwich)
+library(cobalt)
+library(stargazer)
+library(did)
+```
+
+# Instrucciones
+
+Fecha de entrega: **9 de noviembre a las 20:00**
+
+La tarea deberá entregarse en Teams. Deberá incluir dos documentos:
+
+Un primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.
+
+Un segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad.
+
+# Datos
+
+[datos_jcf_analisis.csv](../files/datos_jcf_analisis.csv)
+
+# Preguntas
+
+## Pregunta 1
+
+Stevenson, B. & Wolfers, J. (2006)[^1] estudian los efectos de la introducción de leyes que permiten el divorcio unilateral en los Estados Unidos. La librería *bacondecomp* incluye los datos usados en dicho artículo (debe instalar y cargar la librería). Usaremos los datos de 1964 a 1996 para mostrar cómo impactan las leyes de divorcio express (unilateral) a la tasa de suicidios en mujeres.
+
+[^1]: Stevenson, B. & Wolfers, J. (2006). Bargaining in the Shadow of the Law: Divorce Laws and Family Distress. *The Quarterly Journal of Economics*, 121(1), 267-288.
+
+Al correr el pedazo de código anterior, obtendrá un objeto de datos **wd** en donde la variable de impacto es la tasa de suicidios en mujeres, **suicide_rate**, **st** identifica a los estados, **year** identifica a los años y **divyear** es el año en que se introdujo la legislación del divorcio unilateral. La última fila del código crea el indicador de tratamiento **unilaterial**, que toma el valor de 1 para los estados tratados en los periodos post tratamiento.
+
+```{r}
+wd <- divorce %>% 
+filter(year>=1964 & year<=1996 & sex==2) %>% 
+mutate(suicide_rate=suicide*1000000/(stpop*fshare),
+   year=as.numeric(year),
+   divyear = ifelse(divyear>1996, Inf, divyear),
+   unilateral=ifelse(year>divyear, 1, 0))
+
+```
+
+
+```{r setup2}
+#| echo: false
+#| warning: false 
+#| message: false
+knitr::opts_chunk$set(indent = "   ")
+```
+
+
+
+a. [5 puntos] ¿Por qué decimos que esta es una aplicación de la estimación de efectos de tratamiento con adopción escalonada?
+
+   *En esta aplicación, cada estado comienza a ser tratado en indistintos momentos del tiempo. Si hacemos un tabulado de **divyear** notamos cuántos estados se vuelven tratados en cada año:*
+
+```{r}
+table(filter(wd,year==1996)$divyear)
+```
+   *El panel comienza en 1964, para cuando ya 9 estados habían sido tratados. Los estados van siendo tratados hasta que, para el fin del periodo analizado, 1996, solo cinco todavía no habían sido tratados. En esta aplicación, esos cinco estados son los nunca tratados.*
+
+a. [5 puntos] Como punto de partida, estime el efecto del tratamiento sobre **suicide_rate** usando efectos fijos por estado y año (TWFE) y empleando una librería específica para efectos fijos, como *felm*. Tome en cuenta la agrupación de los errores. Interprete sus resultados.
+
+   *Usando felm:*
+
+```{r}
+summary(felm(suicide_rate ~ unilateral | st + year | 0 | st,
+              data = wd))
+```
+    
+a. [5 puntos] Compruebe que puede obtener el mismo resultado con una regresión lineal usando el paquete *lm* e incluyendo, además de la variable de tratamiento, dummies de estado y de año. 
+
+
+   *Estimamos con dummies:*
+  
+```{r}
+summary(m1 <- lm(suicide_rate ~ unilateral + factor(st) + factor(year),
+              data = wd))$coef[1:2,1:3]
+```
+
+   *Luego estimamos errores agrupados:*
+  
+```{r}
+stargazer(m1,
+          type = 'text',
+          se = list(sqrt(diag(vcovCR(m1, cluster = wd$st, type = 'CR1')))),
+          keep = c("unilateral"))
+```
+
+   *Obtenemos los mismos coeficientes. Aquí también podrán volver a  comprobar la importancia de usar errores agrupados. Sin agrupar, el error estimado asumiendo independencia es casi menos de la mitad que el estimado con la matriz de varianzas agrupada.*
+
+
+a. [10 puntos] Realice la descomposición de Goodman-Bacon (2021). Construya un gráfico donde muestre en el eje $x$ el peso otorgado a cada comparación 2x2 que el estimador de TWFE realiza mecánicamente y en el eje $y$ el efecto estimado correspondiente a cada comparación. Interprete el gráfico obtenido.
+
+   *Como vimos en clase:*
+    
+```{r}
+#Goodman-Bacon decomposition
+df_bacon <- bacon(suicide_rate ~ unilateral,
+                  data = wd,
+                  id_var = "st",
+                  time_var = "year")
+
+coef_bacon <- sum(df_bacon$estimate * df_bacon$weight)
+print(paste("Weighted sum of decomposition =", round(coef_bacon, 4)))
+
+twfe <- felm(suicide_rate ~ unilateral | st + year | 0 | st,
+              data = wd)
+
+#Gráfico----
+df_bacon %>% 
+  ggplot(aes(x=weight,
+             y=estimate,
+             shape=type)) +
+  geom_point() +
+  geom_hline(yintercept = round(twfe$coefficients, 4))
+
+
+```
+    
+   *Las comparaciones que más pesan en el estimador de efectos fijos son las de estados tratados con los que siempre estuvieron tratados en el panel, recibiendo dos de esas comparaciones alrededor de 13 y el 7% del peso (los dos triángulos más hacia la derecha). otra comparación que recibe alrededor de 7% del peso es la de los tratados con los nunca tratados (cruz más hacia la derecha). En total, las comparaciones con los estados que iniciaron siendo tratados se llevan el 42% del peso. Las comparaciones entre los tratados tarde y los tratados temprano también reciben un peso alto de 23%.*
+
+a. [10 puntos] Implemente el estimador de Callaway & Sant’Anna (2021) para estimar los efectos del tratamiento específicos para cada cohorte, usando el paquete *did*. Utilice como grupo de comparación los estados nunca tratados. La columna **stid** es un identificador numérico de los estados (lo requerirá cuando use *att_gt* del paquete *did*).
+
+```{r}
+atts_nyt <- att_gt(yname = "suicide_rate",
+                      tname = "year",
+                      idname = "stid",
+                      gname = "divyear",
+                      data = wd,
+                      control_group = "nevertreated",
+                      est_method = 'reg',
+                      bstrap = TRUE,
+                      biters = 1000,
+                      print_details = FALSE,
+                      panel = TRUE)
+summary(atts_nyt)
+
+ggdid(atts_nyt)
+
+```
+
+a. [10 puntos] Reporte los resultados agregados obtenidos a partir del estimador Callaway & Sant’Anna (2021), usando una agregación dinámica que muestre los efectos promedio para cada periodo antes y después del tratamiento. Grafique los resultados.
+
+   *Graficamos:*
+  
+```{r}
+agg.es <- aggte(atts_nyt,
+                type = "dynamic")
+summary(agg.es)
+
+ggdid(agg.es)
+
+```
+
+a. [5 puntos] ¿Cuáles son las ventajas del estimador de Callaway & Sant’Anna (2021) respecto al estimador de TWFE?
+
+
+
+## Pregunta 2
+
+La ENIGH 2020 incluyó un módulo para la evaluación del Programa Jóvenes Construyendo el futuro. Se buscó que la cobertura de la encuesta pudiera incluir suficientes participantes del programa para poder compararlos con los no participantes. Los datos en *datos_jcf_analisis.csv* fueron construidos a partir de dicha encuesta. En este ejercicio estimaremos el efecto de participar en el programa sobre el ingreso trimestral, **ingtot_tri**, usando métodos de matching.
+
+Las siguientes variables están incluidas en el archivo de datos: **mujer** (dummy de sexo), **indigena** (dummy de pertenencia a una etnia), **rural** (dummy del ámbito rural), **escoacum** (años de escolaridad), **casadounion** (dummy para casados o en unión libre), **jefehog** (dummy para jefes del hogar), **haymenores** (dummy para la presencia de menores de edad en el hogar), **proggob** (dummy para beneficiarios de programas de gobierno), y **tot_integ** (número de miembros del hogar). También se incluye la clave de las entidades, **cve_ent**.
+
+a. [5 puntos] Considere la comparación para el ingreso trimestral, **ingtot_tri**, entre beneficiarios y su grupo de comparación, que serán los jóvenes que no asisten a la escuela y no están empleados. Los beneficiarios tienen *jcf2==1* y los jóvenes que no asisten a la escuela y no están empleados tienen *jcf2==0*. Muestra qué tan similares o qué tan diferentes son los individuos en ambos grupos en términos de las características indicadas anteriormente y del ingreso trimestral.
+
+   *Estadística descriptiva:*
+
+```{r }
+data.jcf <- read_csv("C:/Users/rojas/Dropbox/Evaluación de Programas Sociales/2023/tareas/datos_jcf_analisis.csv")
+
+set.seed(1023)
+```
+
+```{r}
+datasummary(ingtot_tri + mujer + indigena + rural + escoacum + casadounion + jefehog + haymenores + proggob + tot_integ ~ factor(jcf2) * (mean + sd) * Arguments(na.rm=TRUE),
+                fmt = "%.2f",
+                data = data.jcf)
+```
+    
+   *Claramente los individuos que participan en el programa son diferentes a los que no. En el programa hay una proporción menor de mujeres que en el grupo no tratado; en el grupo tratado hay un nivel mayor de escolaridad acumulada; y los individuos del grupo tratado viven en hogares más pequeños que los del grupo no tratado. Entre muchas otras diferencias.*
+    
+   *El problema entonces es que existen factores que influyen en la probabilidad de recibir el tratamiento y en el ingreso, por lo que una comparación simple de individuos tratados y no tratados confundirá el efecto del tratamiento.*
+
+a. [5 puntos] Estime el TOT (TT o ATT) del programa en el ingreso trimestral, **ingtot_tri** usando el algoritmo de *vecino más cercano*. Para estimar el impacto en el ingreso trimestral se comparan a los beneficiarios de JCF con los jóvenes que no asisten a la escuela y no están empleados. Los beneficiarios tienen *jcf2==1* y los jóvenes que no asisten a la escuela y no están empleados tienen *jcf2==0*. Escoja la especificación del *propensity score* que más le parezca adecuada. Realice la inferencia estadística con errores agrupados a nivel grupo de emparejamiento. ¿De qué tamaño es el TOT estimado y es este efecto estadísticamente significativo?
+
+```{r}
+sub.data <- data.jcf %>%
+dplyr::select(ingtot_tri, jcf2, mujer, indigena, cve_ent, rural, escoacum, casadounion,
+    jefehog, haymenores, proggob, tot_integ, factor.x)
+
+sub.data <- sub.data[complete.cases(sub.data), ]
+
+
+m.out.a <- matchit(formula=jcf2 ~ mujer + indigena + factor(cve_ent) + rural  + escoacum + casadounion + jefehog + haymenores + proggob + tot_integ,
+                 method = "nearest",
+                 distance= "glm",
+                 replace = FALSE,
+                 data = sub.data)
+```
+
+   *Estimamos el efecto del tratamiento:*
+
+```{r}
+tt1 <- lm(ingtot_tri ~ jcf2,
+      data = match.data(m.out.a))
+
+#Errores agrupados a nivel subclass
+coeftest(tt1,
+         vcov. = vcovCL,
+         cluster = ~subclass)
+```
+
+   *Se estima un efecto de 7830 pesos adicionales de ingreso trimestral para los participantes en el programa.*
+
+a. [5 puntos] En el matching de la parte b., evalúe qué tan bueno es el procedimiento en balancear las características observadas una vez realizado el matching. Cree un *love plot* para evaluar qué tan bueno es el procedimiento de matching para obtener una muestra balanceada.
+
+   *bal.tab del paquete cobalt nos permite ver un resumen del balance:*
+   
+```{r}
+#Con esto elimino las dummies de estado de la salida
+bal.tab(m.out.a, m.threshold=0.1, un=T)
+```
+    
+   *Y finalmente el loveplot:*
+    
+```{r}
+m.out.a[["X"]][["factor(cve_ent)"]] <- NULL
+
+love.plot(bal.tab(m.out.a),
+      threshold = .1)
+```
+
+   *Parece haber un buen balance, aunque la educación es la única variable que no queda bien balanceada. Después del emparejamiento, las medias (estandarizadas) entre tratados y no tratados difieren en más de 0.1.*
+    
+a. [5 puntos] Estime ahora el TOT en el ingreso trimestral, como en la parte b., pero usando un caliper de 0.1 y 3 vecinos a ser emparejados. ¿Cómo cambian sus resultados respecto a los de la parte b.?
+
+```{r}
+sub.data <- data.jcf %>% 
+  dplyr::select(ingtot_tri, jcf2, mujer, indigena, cve_ent, rural, escoacum, 
+           casadounion, jefehog, haymenores, proggob, tot_integ, factor.x)
+
+sub.data <- sub.data[complete.cases(sub.data), ] 
+
+m.out.c <- matchit(formula=jcf2 ~ mujer + indigena + factor(cve_ent) + rural  + escoacum + casadounion + jefehog + haymenores + proggob + tot_integ,
+                 method = "nearest",
+                 distance= "glm",
+                 ratio = 3,
+                 caliper = 0.1,
+                 replace = FALSE,
+                 data = sub.data)
+```
+
+   *Estimamos el efecto del tratamiento:*
+    
+```{r}
+tt3 <- lm(ingtot_tri ~ jcf2,
+      data = match.data(m.out.c))
+
+#Errores agrupados a nivel subclass
+coeftest(tt3,
+         vcov. = vcovCL,
+         cluster = ~subclass)
+```
+
+
+   *Se estima ahora un efecto de 7258 pesos, menor al efecto de 7830 pesos estimado en la parte b.*
+
+
