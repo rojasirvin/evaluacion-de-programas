@@ -324,7 +324,7 @@ synth.tables <- synth.tab(dataprep.res = dataprep.out,
                           synth.res = synth.out)
 ```
  
-   *Recuperamos los pesos:*
+   *Recuperamos los pesos $V$ y $W$:*
 
 
 ```{r}
