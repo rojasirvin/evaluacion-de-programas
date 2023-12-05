@@ -1,0 +1,593 @@
+---
+title: "Respuestas a la tarea 4"
+lang: es
+---
+
+```{r setup}
+#| echo: false
+#| warning: false 
+#| message: false
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      indent = "   ")
+library(tidyverse)
+library(janitor)
+library(rdrobust)
+library(Synth)
+library(stargazer)
+library(sandwich)
+```
+
+
+## Pregunta 1
+
+Los datos del archivo *salud_peru.csv* contienen información de una encuesta en hogares realizada en Perú. Un programa del gobierno otorgó un seguro de salud para cubrir a hogares de trabajadores informales y pobres, típicamente excluidos de los servicios de salud. Para ello, se uso un índice de ingreso (IFH), expresado en soles, para determinar la elegibilidad. Aquellos hogares con un IFH menor o igual a 55 soles son considerados pobres. Se desea estimar el efecto del programa en la probabilidad de recibir algún tipo de anteción médica, **curative**, y sobre la probabilidad de recibir algún tipo de asistencia médica en un hospital o con un doctor, **hospinter**. La columna **ifh** contiene el indicador del ingreso.
+
+a. [10 puntos] Genere una gráfica donde muestre evidencia de una discontinuidad en la variable **curative** para aquellos hogares que recibieron los beneficios del programa. Debe usar solo a los trabajadores informales, *formal==0*. Primero, realice la gráfica con una ventana de 100 soles a la izquierda y 100 soles a la derecha del corte de elegibilidad y en la que cada punto represente la media de la variable **curative** en *bins* de 5 soles. Agregue una línea de regresión lineal para cada lado del corte de elegibilidad.
+
+   **Nota: Esta pregunta estuvo basada en el estudiod de Bernal, Carpio & Klein (2017).[^1]**
+   
+   [^1]: Bernal, N., Carpio, M. A., & Klein, T. J. (2017). The effects of access to health insurance: evidence from a regression discontinuity design in Peru. Journal of Public Economics, 154, 122-136.
+
+   *Construimos un indicador de elegibilidad:*
+
+```{r}
+salud <- read_csv("../files/salud_peru.csv") %>% 
+  filter(formal==0) %>% 
+  mutate(ifh_norm=ifh-corte,
+         abajo_corte=ifelse(ifh<=corte, 1, 0))
+```
+
+   *Partimos la muestra en grupos de cinco soles:*
+   
+```{r}
+salud <- salud %>% 
+  mutate(bin5=cut(ifh, breaks = c(seq(from=0, to=100, by=5))))
+```
+
+   *Construimos la proporción con curative==1 en cada grupo*:
+   
+```{r}
+salud5 <- salud %>% 
+  group_by(bin5) %>% 
+  summarise(curative=mean(curative, na.rm=T)) %>% 
+  ungroup()
+
+salud5 <- salud5 %>% 
+  mutate(bin5_num = seq(1:nrow(salud5)))
+```
+
+   *Y hacemos el gráfico:*
+   
+```{r}
+salud5 %>% 
+  ggplot(aes(x = bin5_num,
+             y = curative)) +
+  geom_point() +
+  geom_smooth(method = lm,
+              se = F,
+              data = filter(salud5, bin5_num<=11)) +
+  geom_smooth(method = lm,
+              se = F,
+              data = filter(salud5, bin5_num>11))
+```
+
+a. [5 puntos] Genere el mismo gráfico que en la parte a., pero ahora con una ventana de 25 soles a cada lado de la discontinuidad.
+
+   *Siguiendo el mismo procedimiento:*
+
+```{r}
+salud <- salud %>% 
+  mutate(bin25=cut(ifh, breaks = c(seq(from=0, to=100, by=25))))
+
+salud25  <- salud %>% 
+  group_by(bin25) %>% 
+  summarise(curative=mean(curative, na.rm=T)) %>% 
+  ungroup()
+
+salud25 <- salud25 %>% 
+  mutate(bin25_num = seq(1:nrow(salud25)))
+
+salud25 %>% 
+  ggplot(aes(x = bin25_num,
+             y = curative)) +
+  geom_point() +
+  geom_smooth(method = lm,
+              se = F,
+              data = filter(salud25, bin25_num<=2)) +
+  geom_smooth(method = lm,
+              se = F,
+              data = filter(salud25, bin25_num>2))
+```
+
+a. [5 puntos] Genere el mismo gráfico que en la parte a., pero calcule la media de la variable **curative** en *bins* de 10 soles.
+
+   *Siguiendo el mismo procedimiento:*
+
+```{r}
+salud <- salud %>% 
+  mutate(bin10=cut(ifh, breaks = c(seq(from=0, to=100, by=10))))
+
+salud10 <- salud %>% 
+  group_by(bin10) %>% 
+  summarise(curative=mean(curative, na.rm=T)) %>% 
+  ungroup()
+
+salud10 <- salud10 %>% 
+  mutate(bin10_num = seq(1:nrow(salud10)))
+
+salud10 %>% 
+  ggplot(aes(x = bin10_num,
+             y = curative)) +
+  geom_point() +
+  geom_smooth(method = lm,
+              se = F,
+              data = filter(salud10, bin10_num<=5)) +
+  geom_smooth(method = lm,
+              se = F,
+              data = filter(salud10, bin10_num>5))
+```
+
+a. [5 puntos] Ahora use *rdplot* del paquete *rdrobust* para construir el mismo gráfico.
+
+   *Podemos usar rdplot para construir el gráfico, lo que nos permite seleccionar de manera óptima el número de ventanas en las que se construirá la proporción de personas que recibieron atención médica.*
+    
+```{r}
+(rdplot(y = salud$curative,
+    x = salud$ifh_norm,
+    c=0,
+    p=1))
+```
+
+a. [10 puntos] Estime la versión más básica de un modelo de regresión discontinua para el efecto del programa sobre **hospinter**. Reporte el coeficiente estimado del efecto del tratamiento y su significancia estadística. Use una ventana de 20 soles en el IFH antes y después del corte de elegibilidad. Interprete sus resultados.
+
+```{r}
+r1 <- lm(hospinter ~ ifh_norm + abajo_corte,
+       data=filter(salud, ifh_norm>=-20 & ifh_norm <=20))
+
+stargazer(r1,
+          type = 'text',
+          keep = 'abajo_corte',
+          se = list(sqrt(diag(vcovHC(r1, type='HC1')))),
+          column.labels = '20 soles')
+```
+    
+   *Con un modelo lineal y una dummy de elegibilidad, estimamos un efecto de 4.7 puntos porcentuales en la probabilidad de recibir algún tipo de asistencia médica.*
+    
+a. [5 puntos] Estime la misma especificación que en la parte d., pero ahora con una ventana de 10 soles en el IFH. Interprete sus resultados.
+
+   *Al restringir la ventana de análisis obtenemos un efecto estimado de 6.6 puntos porcentuales:*
+
+```{r}
+r2 <- lm(hospinter ~ ifh_norm + abajo_corte,
+       data=filter(salud, ifh_norm>=-10 & ifh_norm <=10))
+
+
+stargazer(r1, r2,
+          type = 'text',
+          keep = 'abajo_corte',
+          se = list(sqrt(diag(vcovHC(r1, type='HC1'))),
+                    sqrt(diag(vcovHC(r2, type='HC1')))),
+          column.labels = c('20 soles', '10 soles'))
+```
+
+a. [5 puntos] Regrese a una ventana de 20 soles como en la parte d., pero ahora permita un coeficiente distinto para el IFH antes y después del corte, y un polinomio de orden 2 para la variable de asignación. Interprete sus resultados.
+
+   *Permitiendo pendientes distintas y con un polinomio cuadrático de la variable de asignación obtenemos un efecto estimado de 6.8 puntos porcentuales:*
+    
+```{r}
+r3 <- lm(hospinter ~ ifh_norm*abajo_corte + I(ifh_norm^2)*abajo_corte,
+       data=filter(salud, ifh_norm>=-20 & ifh_norm <=20))
+
+
+stargazer(r1, r2, r3,
+          type = 'text',
+          keep = 'abajo_corte',
+          se = list(sqrt(diag(vcovHC(r1, type='HC1'))),
+                    sqrt(diag(vcovHC(r2, type='HC1'))),
+                    sqrt(diag(vcovHC(r3, type='HC1')))),
+          column.labels = c('20 soles', '10 soles', '20 soles diferentes pendientes'))
+
+```
+    
+   *Como nota, los autores estiman el siguiente modelo para obtener los resultados reportados en la tabla 1 del artículo de 7.8 puntos porcentuales. Ellos introducen una serie de controles, lo cual no es raro en los análisis de diseños con discontinuidades:*
+    
+```{r}
+r4 <- lm(hospinter ~ ifh_norm + abajo_corte + ifh_norm*abajo_corte + mujer + edad + educ + mieperho + hhmujer + high*ifh_norm + high*abajo_corte ,
+       data=filter(salud, ifh_norm>=-20 & ifh_norm <=20))
+
+
+
+stargazer(r1, r2, r3, r4,
+          type = 'text',
+          keep = 'abajo_corte',
+          se = list(sqrt(diag(vcovHC(r1, type='HC1'))),
+                    sqrt(diag(vcovHC(r2, type='HC1'))),
+                    sqrt(diag(vcovHC(r3, type='HC1'))),
+                    sqrt(diag(vcovHC(r4, type='HC1')))),
+          column.labels = c('20 soles', '10 soles', '20 soles diferentes pendientes', 'publicado'))
+
+
+```
+
+a. [5 puntos] Use *rdrobust* para estimar el efecto usando un polinomio de orden 2 y una regresión local no paramétrica. Use algún selector de ancho de banda óptimo.
+
+   *Podemos usar rdrobust para estimar el efecto con la selección óptima del ancho de ventana:*
+    
+```{r}
+summary(rdrobust(y=salud$hospinter,
+                 x=salud$ifh,
+                 c=55,
+                 p=2,
+                 bwselect='mserd',
+                 vce = 'hc3'))
+```
+
+   *El efecto estimado es de 8.2 puntos porcentuales. La venta seleccionada de manera óptima es de 16.56 soles usando el criterio del error cuadrático medio.*
+   
+
+## Pregunta 2
+
+El archivo *basque.csv* contiene los datos empleados por Abadie y Gardeazabal (2003) para estimar el efecto del terrorismo en el PIB per cápita (**gdpcap**) en el País Vasco usando el método de control sintético. Los autores consideran como periodo pre intervención a 1955 - 1969.
+
+a. [10 puntos] Estime el control sintético del PIB per cápita del País Vasco usando como *grupo donador* al resto de las regiones de España. Esto es, encuentre la matriz $W$ que otorga pesos a las distintas regiones usando una serie de predictores observables. Para este propósito, use como predictores el promedio de las siguientes variables para el periodo 1964-1969:
+
+    - La inversión como porcentaje del PIB, **invest**
+    - El porcentaje de la población analfabeta, **school.illit**
+    - El porcentaje de la población con educación primaria, **school.prim**
+    -	El porcentaje de la población con educación media, **school.med**
+    -	El porcentaje de la población con educación superior, **school.high**
+    -	El porcentaje de la población con educación más que superior, **school.post.high**
+    
+     Además, use como *predictores especiales* los siguientes valores:
+
+    -	El promedio del PIB per capita, **gdpcap**, de 1960 a 1969
+    -	La densidad de población, **popdens**, de 1969
+    -	El promedio de la participación de la agricultura, **sec.agriculture**, de 1961 a 1969
+    -	El promedio de la participación de la energía, **sec.energy**, de 1961 a 1969
+    - El promedio de la participación de la industria, **sec.industry**, de 1961 a 1969
+    -	El promedio de la participación de la construcción, **sec.construction**, de 1961 a 1969
+    -	El promedio de la participación de los servicios, **sec.services.venta**, de 1961 a 1969
+    -	El promedio de la participación de los servicios no comerciables, **sec.services.nonventa**, de 1961 a 1969
+
+    Note que el País Vasco está identificado con el número 17 de la variable **regionno**. Realice el procedimiento de optimización para minimizar las discrepancias entre la unidad tratada y su sintético usando el periodo 1960-1969.
+
+    ¿Qué regiones y con qué pesos contribuyen a construir el País Vasco sintético?
+
+    
+    
+   *Implementamos el método de control sintético:*
+
+```{r}
+#| message: false
+#| warning: false
+#| include: false
+data_vasco <- data.frame(read_csv("../files/basque.csv"))
+
+dataprep.out <- dataprep(foo = data_vasco,
+                  predictors = c("invest", "school.illit", "school.prim", "school.med", "school.high", "school.post.high"),
+                  predictors.op = c("mean"),
+                  dependent = c("gdpcap"),
+                  unit.variable = c("regionno"),
+                  time.variable = c("year"),
+                  special.predictors = list(
+                    list("gdpcap", 1960:1969,c("mean")),
+                    list("sec.agriculture", 1961:1969,c("mean")),
+                    list("sec.energy", 1961:1969,c("mean")),
+                    list("sec.industry", 1961:1969,c("mean")),
+                    list("sec.construction", 1961:1969,c("mean")),
+                    list("sec.services.venta", 1961:1969,c("mean")),
+                    list("sec.services.nonventa", 1961:1969,c("mean")),
+                    list("popdens", 1969,c("mean"))),
+                  treatment.identifier = 17,
+                  controls.identifier = c(2:16,18),
+                  time.predictors.prior = c(1964:1969),
+                  time.optimize.ssr = c(1960:1969),
+                  unit.names.variable = c("regionname"),
+                  time.plot = c(1955:1997))
+```
+
+
+```{r}
+#| echo: true
+#| eval: false
+data_vasco <- data.frame(read_csv("basque.csv"))
+
+dataprep.out <- dataprep(foo = data_vasco,
+                  predictors = c("invest", "school.illit", "school.prim", "school.med", "school.high", "school.post.high"),
+                  predictors.op = c("mean"),
+                  dependent = c("gdpcap"),
+                  unit.variable = c("regionno"),
+                  time.variable = c("year"),
+                  special.predictors = list(
+                    list("gdpcap", 1960:1969,c("mean")),
+                    list("sec.agriculture", 1961:1969,c("mean")),
+                    list("sec.energy", 1961:1969,c("mean")),
+                    list("sec.industry", 1961:1969,c("mean")),
+                    list("sec.construction", 1961:1969,c("mean")),
+                    list("sec.services.venta", 1961:1969,c("mean")),
+                    list("sec.services.nonventa", 1961:1969,c("mean")),
+                    list("popdens", 1969,c("mean"))),
+                  treatment.identifier = 17,
+                  controls.identifier = c(2:16,18),
+                  time.predictors.prior = c(1964:1969),
+                  time.optimize.ssr = c(1960:1969),
+                  unit.names.variable = c("regionname"),
+                  time.plot = c(1955:1997))
+```
+
+```{r}
+synth.out <- synth(data.prep.obj = dataprep.out)
+
+synth.tables <- synth.tab(dataprep.res = dataprep.out,
+                          synth.res = synth.out)
+```
+ 
+   *Recuperamos los pesos:*
+
+
+```{r}
+print(synth.tables)
+```
+
+   *El País Vasco sintético se obtiene como una combinación de Cataluña y Madrid, con unos pesos de 0.851 y 0.149, respectivamente.*
+
+a. [5 puntos] Obtenga un gráfico en donde represente las series de tiempo del PIB per cápita del País Vasco que efectivamente se realizó, la de su correspondiente control sintético y la del promedio simple del resto de las regiones españolas.
+
+   *Recuperamos las series originales y sintética del País Vasco:*
+
+```{r}
+Ys <- dataprep.out$Y0plot %*% synth.out$solution.w
+                
+Y1 <- dataprep.out$Y1plot
+```
+    
+   *Por otro lado, podemos calcular el promedio sobre todas las regiones de la matriz $Y0plot$:*
+    
+
+```{r}
+Y0media <- matrix(rowMeans(dataprep.out$Y0plot))
+```
+
+   *Y ponemos todo en un data frame para graficarlo fácilmente:*
+    
+
+```{r}
+data.plot <- as.data.frame(cbind(Y1,Ys, Y0media))
+
+colnames(data.plot) <- c("Y1","Ys","Y0media")
+data.plot <- data.plot %>% 
+mutate(year=seq(from=1955, to=1997))
+
+#Gráfico de series
+data.plot %>% 
+ggplot(aes(x=year))+
+geom_line(aes(y=Y1, linetype = "País Vasco")) +
+geom_line(aes(y=Ys, linetype = "Sintético"))+
+geom_line(aes(y=Y0media, linetype = "Resto de España"))+
+geom_vline(xintercept=1970, color = "black", size=1, linetype="dashed")+
+scale_x_continuous(breaks=seq(1955, 1997, 5))+
+labs(x = "Año",
+    y = "PIB per capita",
+    linetype = "Legend") +
+scale_linetype_manual(values = c("País Vasco"="solid", "Sintético"="dashed", "Resto de España"="dotted"))
+
+```
+
+   *El País Vasco era más rico que el promedio del resto de las regiones españolas. Durante el periodo post al inicio de la actividad terrorista, el resto de España siguió creciendo, pero el País Vasco se acercó hacia abajo.*
+
+a. [5 puntos] Genere una gráfica de brecha que muestre el efecto del terrorismo sobre el PIB per cápita. La brecha es la diferencia entre la serie de tiempo realizada y su contraparte sintética.
+
+   *El gráfico de brechas se obtiene fácilmente con las funciones de Synth:*
+
+
+```{r}
+gaps.plot(synth.res = synth.out,
+      dataprep.res = dataprep.out,
+      tr.intake = 1970,
+      Ylab = c("GDP per capita"),
+      Xlab = c("year"), 
+      Ylim = c(-4,4))
+```
+    
+   *El gráfico de las trayectorias es:*
+
+
+```{r}
+path.plot(synth.res = synth.out,
+      dataprep.res = dataprep.out,
+      tr.intake = 1955:1997,
+      Ylab = c("GDP per capita"),
+      Xlab = c("year"))
+```
+    
+
+a. [10 puntos] Ahora verificará la robustez de los resultados de este trabajo a la elección de los predictores que entran en las matrices $X_1$ y $X_0$ estudiadas en clase. Primero, obtenga de nuevo el control sintético, esta vez eliminando *todos* los predictores especiales. Construya la correspondiente gráfica de brecha y sobrepóngala con la gráfica de brecha que se obtiene con la especificación de la parte a.
+
+```{r}
+dataprep.out.2 <- dataprep(foo = data_vasco,
+                  predictors = c("invest", "school.illit", "school.prim", "school.med", "school.high", "school.post.high"),
+                  predictors.op = c("mean"),
+                  dependent = c("gdpcap"),
+                  unit.variable = c("regionno"),
+                  time.variable = c("year"),
+                  treatment.identifier = 17,
+                  controls.identifier = c(2:16,18),
+                  time.predictors.prior = c(1964:1969),
+                  time.optimize.ssr = c(1960:1969),
+                  unit.names.variable = c("regionname"),
+                  time.plot = c(1955:1997))
+
+synth.out.2 <- synth(data.prep.obj = dataprep.out.2)
+
+Ys.2 <- dataprep.out.2$Y0plot %*% synth.out.2$solution.w
+
+
+```
+   *Obtenemos la brecha usando la especificación original de la parte a. y la nueva de la parte d.:*
+
+```{r}
+data.plot <- cbind(data.plot, Ys.2) %>% 
+  rename(Ys.2 = w.weight) %>% 
+  mutate(gap = Y1-Ys,
+         gap.2 = Y1-Ys.2)
+```
+
+   *Graficamos las dos brechas:*
+   
+```{r}
+data.plot %>% 
+  ggplot(aes(x=year))+
+  geom_line(aes(y=gap, linetype = "Sintético"))+
+  geom_line(aes(y=gap.2, linetype = "Sintético sin predictores especiales")) +
+  geom_vline(xintercept=1970, color = "black", size=1, linetype="dashed")+
+  geom_hline(yintercept=0, color = "black", size=1, linetype="dashed")+
+  scale_x_continuous(breaks=seq(1955, 1997, 5))+
+  labs(x = "Año",
+       y = "Cambio en el PIB per capita",
+       linetype = "Legend")
+
+```
+
+
+a. [10 puntos] Regrese a la especificación original de la parte a. y ahora estime el control sintético empleando *solamente* predictores especiales. Construya la correspondiente gráfica de brecha y sobrepóngala con las gráficas de brechas que se obtiene con la especificación de la parte a. y de la parte d.
+
+```{r}
+#| include: false
+#| message: false
+#| warning: false
+dataprep.out.3 <- dataprep(foo = data_vasco,
+                  dependent = c("gdpcap"),
+                  unit.variable = c("regionno"),
+                  time.variable = c("year"),
+                  special.predictors = list(
+                    list("gdpcap", 1960:1969,c("mean")),
+                    list("sec.agriculture", 1961:1969,c("mean")),
+                    list("sec.energy", 1961:1969,c("mean")),
+                    list("sec.industry", 1961:1969,c("mean")),
+                    list("sec.construction", 1961:1969,c("mean")),
+                    list("sec.services.venta", 1961:1969,c("mean")),
+                    list("sec.services.nonventa", 1961:1969,c("mean")),
+                    list("popdens", 1969,c("mean"))),
+                  treatment.identifier = 17,
+                  controls.identifier = c(2:16,18),
+                  time.predictors.prior = c(1964:1969),
+                  time.optimize.ssr = c(1960:1969),
+                  unit.names.variable = c("regionname"),
+                  time.plot = c(1955:1997))
+```
+
+```{r}
+#| echo: true
+#| eval: false
+dataprep.out.3 <- dataprep(foo = data_vasco,
+                  dependent = c("gdpcap"),
+                  unit.variable = c("regionno"),
+                  time.variable = c("year"),
+                  special.predictors = list(
+                    list("gdpcap", 1960:1969,c("mean")),
+                    list("sec.agriculture", 1961:1969,c("mean")),
+                    list("sec.energy", 1961:1969,c("mean")),
+                    list("sec.industry", 1961:1969,c("mean")),
+                    list("sec.construction", 1961:1969,c("mean")),
+                    list("sec.services.venta", 1961:1969,c("mean")),
+                    list("sec.services.nonventa", 1961:1969,c("mean")),
+                    list("popdens", 1969,c("mean"))),
+                  treatment.identifier = 17,
+                  controls.identifier = c(2:16,18),
+                  time.predictors.prior = c(1964:1969),
+                  time.optimize.ssr = c(1960:1969),
+                  unit.names.variable = c("regionname"),
+                  time.plot = c(1955:1997))
+```
+
+```{r}
+synth.out.3 <- synth(data.prep.obj = dataprep.out.3)
+
+Ys.3 <- dataprep.out.3$Y0plot %*% synth.out.3$solution.w
+
+
+```
+
+
+
+```{r}
+data.plot <- cbind(data.plot, Ys.3) %>% 
+  rename(Ys.3 = w.weight) %>% 
+  mutate(gap.3 = Y1-Ys.3)
+```
+
+
+```{r}
+synth.tables.3 <- synth.tab(dataprep.res = dataprep.out.3,
+                            synth.res = synth.out.3)
+```
+
+```{r}
+print(synth.tables.3)
+```
+
+   *Graficamos las dos brechas:*
+   
+```{r}
+data.plot %>% 
+  ggplot(aes(x=year))+
+  geom_line(aes(y=gap, linetype = "Sintético"))+
+  geom_line(aes(y=gap.2, linetype = "Sintético sin predictores especiales")) +
+  geom_line(aes(y=gap.3, linetype = "Sintético solo con predictores especiales")) +
+  geom_vline(xintercept=1970, color = "black", size=1, linetype="dashed")+
+  geom_hline(yintercept=0, color = "black", size=1, linetype="dashed")+
+  scale_x_continuous(breaks=seq(1955, 1997, 5))+
+  labs(x = "Año",
+       y = "Cambio en el PIB per capita",
+       linetype = "Legend")
+
+```
+
+
+a. [10 puntos] Finalmente, regrese a la especificación original de la parte a., pero ahora conserve en los predictores especiales solo al PIB per cápita (**gdpcap**), además de la lista de predictores convencionales usadas en la especificación original. Construya la correspondiente gráfica de brecha y sobrepóngala con las gráficas de brechas que se obtiene con la especificación de las partes a., d. y e.
+
+```{r}
+#| message: false
+#| warning: false
+
+dataprep.out.4 <- dataprep(foo = data_vasco,
+                  predictors = c("invest", "school.illit", "school.prim", "school.med", "school.high", "school.post.high"),
+                  predictors.op = c("mean"),
+                  dependent = c("gdpcap"),
+                  unit.variable = c("regionno"),
+                  time.variable = c("year"),
+                  special.predictors = list(
+                    list("gdpcap", 1960:1969,c("mean"))),
+                  treatment.identifier = 17,
+                  controls.identifier = c(2:16,18),
+                  time.predictors.prior = c(1964:1969),
+                  time.optimize.ssr = c(1960:1969),
+                  unit.names.variable = c("regionname"),
+                  time.plot = c(1955:1997))
+
+synth.out.4 <- synth(data.prep.obj = dataprep.out.4)
+
+Ys.4 <- dataprep.out.4$Y0plot %*% synth.out.4$solution.w
+
+data.plot <- cbind(data.plot, Ys.4) %>% 
+  rename(Ys.4 = w.weight) %>% 
+  mutate(gap.4 = Y1-Ys.4)
+
+
+data.plot %>% 
+  ggplot(aes(x=year))+
+  geom_line(aes(y=gap, linetype = "Sintético"))+
+  geom_line(aes(y=gap.2, linetype = "Sintético sin predictores especiales")) +
+  geom_line(aes(y=gap.3, linetype = "Sintético solo con predictores especiales")) +
+  geom_line(aes(y=gap.4, linetype = "Sintético solo con GPD como predictor especial")) +
+  geom_vline(xintercept=1970, color = "black", size=1, linetype="dashed")+
+  geom_hline(yintercept=0, color = "black", size=1, linetype="dashed")+
+  scale_x_continuous(breaks=seq(1955, 1997, 5))+
+  labs(x = "Año",
+       y = "Cambio en el PIB per capita",
+       linetype = "Legend")
+
+```
+ 

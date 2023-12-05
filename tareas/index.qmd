@@ -34,3 +34,5 @@ title: "Tareas"
 
 - Fecha de entrega: 4 de diciembre a las 20:00 en Teams
 - [Preguntas](./tarea-4.qmd)
+- [Respuestas](./tarea-4-respuestas.qmd)
+
