@@ -47,7 +47,7 @@ data.morocco %>%
 
    Obtenga ahora el valor de la diferencia entre el grupo de tratamiento y el de control, así como su valor $p$ (últimas dos columnas). Para ello, estime una regresión en la que la variable dependiente sea número de niños que vive en el hogar **nchildren_resid_bl**, en función de la variable de asignación **treatment** y variables dummy de pareja de localidad (la variable **paire** indica cuáles son las parejas). La regresión permite recuperar la diferencia de 0.01 niños que se reporta en la fila correspondiente en la tabla 1. Para recuperar el valor $p$, estime errores agrupados usando la variable **demi_paire**, que es la clave de las distintas localidades, como variable de agrupación. Una forma de realizar esto es con la función *coef_test* del paquete *clubSandwich*.[^2]
 
-```{r include=T,echo=T,warning=FALSE, message=FALSE}
+```{r}
 
 dif_members <- lm(nchildren_resid_bl ~ treatment + factor(paire),
    data=data.morocco)
@@ -674,7 +674,9 @@ data.nofam %>%
 
 
 [^1]: Por ejemplo, suponga que estima un modelo al que llame *modelo1*. Entonces, si ejecuta
-    ```{r include=T, echo=T, eval=F}
+    ```{r}
+    #| eval: false
+    #| echo: true
 coef_test(modelo1,
           vcov="CR1S",
           cluster=mis_datos$demi_paire)[1:2,]
