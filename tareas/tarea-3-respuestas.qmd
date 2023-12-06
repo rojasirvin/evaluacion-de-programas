@@ -177,7 +177,7 @@ a. [5 puntos] Considere la comparación para el ingreso trimestral, **ingtot_tri
    *Estadística descriptiva:*
 
 ```{r }
-data.jcf <- read_csv("C:/Users/rojas/Dropbox/Evaluación de Programas Sociales/2023/tareas/datos_jcf_analisis.csv")
+data.jcf <- read_csv("../files/datos_jcf_analisis.csv")
 
 set.seed(1023)
 ```
