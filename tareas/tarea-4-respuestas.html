@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Evaluación de Programas 2023 - Respuestas a la tarea 4</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Respuestas a la tarea 4</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../iconoEvaluaciondeProgramasSociales.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/rojasirvin/evaluacion-de-programas" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reglas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reglas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lecturas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecturas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../presentaciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentaciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tareas/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tareas</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#pregunta-1" id="toc-pregunta-1" class="nav-link active" data-scroll-target="#pregunta-1">Pregunta 1</a></li>
+  <li><a href="#pregunta-2" id="toc-pregunta-2" class="nav-link" data-scroll-target="#pregunta-2">Pregunta 2</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Respuestas a la tarea 4</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="pregunta-1" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
+<p>Los datos del archivo <em>salud_peru.csv</em> contienen información de una encuesta en hogares realizada en Perú. Un programa del gobierno otorgó un seguro de salud para cubrir a hogares de trabajadores informales y pobres, típicamente excluidos de los servicios de salud. Para ello, se uso un índice de ingreso (IFH), expresado en soles, para determinar la elegibilidad. Aquellos hogares con un IFH menor o igual a 55 soles son considerados pobres. Se desea estimar el efecto del programa en la probabilidad de recibir algún tipo de anteción médica, <strong>curative</strong>, y sobre la probabilidad de recibir algún tipo de asistencia médica en un hospital o con un doctor, <strong>hospinter</strong>. La columna <strong>ifh</strong> contiene el indicador del ingreso.</p>
+<ol type="a">
+<li><p>[10 puntos] Genere una gráfica donde muestre evidencia de una discontinuidad en la variable <strong>curative</strong> para aquellos hogares que recibieron los beneficios del programa. Debe usar solo a los trabajadores informales, <em>formal==0</em>. Primero, realice la gráfica con una ventana de 100 soles a la izquierda y 100 soles a la derecha del corte de elegibilidad y en la que cada punto represente la media de la variable <strong>curative</strong> en <em>bins</em> de 5 soles. Agregue una línea de regresión lineal para cada lado del corte de elegibilidad.</p>
+<p><strong>Nota: Esta pregunta estuvo basada en el estudiod de Bernal, Carpio &amp; Klein (2017).<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></strong></p>
+<p><em>Construimos un indicador de elegibilidad:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>salud <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../files/salud_peru.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(formal<span class="sc">==</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ifh_norm=</span>ifh<span class="sc">-</span>corte,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">abajo_corte=</span><span class="fu">ifelse</span>(ifh<span class="sc">&lt;=</span>corte, <span class="dv">1</span>, <span class="dv">0</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Partimos la muestra en grupos de cinco soles:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>salud <span class="ot">&lt;-</span> salud <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bin5=</span><span class="fu">cut</span>(ifh, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>, <span class="at">to=</span><span class="dv">100</span>, <span class="at">by=</span><span class="dv">5</span>))))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Construimos la proporción con curative==1 en cada grupo</em>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>salud5 <span class="ot">&lt;-</span> salud <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(bin5) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">curative=</span><span class="fu">mean</span>(curative, <span class="at">na.rm=</span>T)) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>salud5 <span class="ot">&lt;-</span> salud5 <span class="sc">%&gt;%</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bin5_num =</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(salud5)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Y hacemos el gráfico:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>salud5 <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bin5_num,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> curative)) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> <span class="fu">filter</span>(salud5, bin5_num<span class="sc">&lt;=</span><span class="dv">11</span>)) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> <span class="fu">filter</span>(salud5, bin5_num<span class="sc">&gt;</span><span class="dv">11</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="tarea-4-respuestas_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div></li>
+<li><p>[5 puntos] Genere el mismo gráfico que en la parte a., pero ahora con una ventana de 25 soles a cada lado de la discontinuidad.</p>
+<p><em>Siguiendo el mismo procedimiento:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>salud <span class="ot">&lt;-</span> salud <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bin25=</span><span class="fu">cut</span>(ifh, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>, <span class="at">to=</span><span class="dv">100</span>, <span class="at">by=</span><span class="dv">25</span>))))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>salud25  <span class="ot">&lt;-</span> salud <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(bin25) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">curative=</span><span class="fu">mean</span>(curative, <span class="at">na.rm=</span>T)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>salud25 <span class="ot">&lt;-</span> salud25 <span class="sc">%&gt;%</span> </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bin25_num =</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(salud25)))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>salud25 <span class="sc">%&gt;%</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bin25_num,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> curative)) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> <span class="fu">filter</span>(salud25, bin25_num<span class="sc">&lt;=</span><span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> <span class="fu">filter</span>(salud25, bin25_num<span class="sc">&gt;</span><span class="dv">2</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="tarea-4-respuestas_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div></li>
+<li><p>[5 puntos] Genere el mismo gráfico que en la parte a., pero calcule la media de la variable <strong>curative</strong> en <em>bins</em> de 10 soles.</p>
+<p><em>Siguiendo el mismo procedimiento:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>salud <span class="ot">&lt;-</span> salud <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bin10=</span><span class="fu">cut</span>(ifh, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="at">from=</span><span class="dv">0</span>, <span class="at">to=</span><span class="dv">100</span>, <span class="at">by=</span><span class="dv">10</span>))))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>salud10 <span class="ot">&lt;-</span> salud <span class="sc">%&gt;%</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(bin10) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">curative=</span><span class="fu">mean</span>(curative, <span class="at">na.rm=</span>T)) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>salud10 <span class="ot">&lt;-</span> salud10 <span class="sc">%&gt;%</span> </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bin10_num =</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(salud10)))</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>salud10 <span class="sc">%&gt;%</span> </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bin10_num,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> curative)) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> <span class="fu">filter</span>(salud10, bin10_num<span class="sc">&lt;=</span><span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F,</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> <span class="fu">filter</span>(salud10, bin10_num<span class="sc">&gt;</span><span class="dv">5</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="tarea-4-respuestas_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div></li>
+<li><p>[5 puntos] Ahora use <em>rdplot</em> del paquete <em>rdrobust</em> para construir el mismo gráfico.</p>
+<p><em>Podemos usar rdplot para construir el gráfico, lo que nos permite seleccionar de manera óptima el número de ventanas en las que se construirá la proporción de personas que recibieron atención médica.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">rdplot</span>(<span class="at">y =</span> salud<span class="sc">$</span>curative,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> salud<span class="sc">$</span>ifh_norm,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">c=</span><span class="dv">0</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">p=</span><span class="dv">1</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mass points detected in the running variable."</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="tarea-4-respuestas_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Call: rdplot
+
+Number of Obs.                 4161
+Kernel                      Uniform
+
+Number of Obs.                 1786            2375
+Eff. Number of Obs.            1786            2375
+Order poly. fit (p)               1               1
+BW poly. fit (h)             52.680          45.000
+Number of bins scale          1.000           1.000</code></pre>
+</div>
+</div></li>
+<li><p>[10 puntos] Estime la versión más básica de un modelo de regresión discontinua para el efecto del programa sobre <strong>hospinter</strong>. Reporte el coeficiente estimado del efecto del tratamiento y su significancia estadística. Use una ventana de 20 soles en el IFH antes y después del corte de elegibilidad. Interprete sus resultados.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(hospinter <span class="sc">~</span> ifh_norm <span class="sc">+</span> abajo_corte,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">data=</span><span class="fu">filter</span>(salud, ifh_norm<span class="sc">&gt;=-</span><span class="dv">20</span> <span class="sc">&amp;</span> ifh_norm <span class="sc">&lt;=</span><span class="dv">20</span>))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(r1,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">'text'</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">keep =</span> <span class="st">'abajo_corte'</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">se =</span> <span class="fu">list</span>(<span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(r1, <span class="at">type=</span><span class="st">'HC1'</span>)))),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">column.labels =</span> <span class="st">'20 soles'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+===============================================
+                        Dependent variable:    
+                    ---------------------------
+                             hospinter         
+                             20 soles          
+-----------------------------------------------
+abajo_corte                   0.047**          
+                              (0.019)          
+
+-----------------------------------------------
+Observations                   2,799           
+R2                             0.002           
+Adjusted R2                    0.001           
+Residual Std. Error      0.263 (df = 2796)     
+F Statistic           3.043** (df = 2; 2796)   
+===============================================
+Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+</div>
+<p><em>Con un modelo lineal y una dummy de elegibilidad, estimamos un efecto de 4.7 puntos porcentuales en la probabilidad de recibir algún tipo de asistencia médica.</em></p></li>
+<li><p>[5 puntos] Estime la misma especificación que en la parte d., pero ahora con una ventana de 10 soles en el IFH. Interprete sus resultados.</p>
+<p><em>Al restringir la ventana de análisis obtenemos un efecto estimado de 6.6 puntos porcentuales:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(hospinter <span class="sc">~</span> ifh_norm <span class="sc">+</span> abajo_corte,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">data=</span><span class="fu">filter</span>(salud, ifh_norm<span class="sc">&gt;=-</span><span class="dv">10</span> <span class="sc">&amp;</span> ifh_norm <span class="sc">&lt;=</span><span class="dv">10</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(r1, r2,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">'text'</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">keep =</span> <span class="st">'abajo_corte'</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">se =</span> <span class="fu">list</span>(<span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(r1, <span class="at">type=</span><span class="st">'HC1'</span>))),</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(r2, <span class="at">type=</span><span class="st">'HC1'</span>)))),</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">'20 soles'</span>, <span class="st">'10 soles'</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+=================================================================
+                                 Dependent variable:             
+                    ---------------------------------------------
+                                      hospinter                  
+                           20 soles               10 soles       
+                             (1)                    (2)          
+-----------------------------------------------------------------
+abajo_corte                0.047**                0.066**        
+                           (0.019)                (0.026)        
+
+-----------------------------------------------------------------
+Observations                2,799                  1,654         
+R2                          0.002                  0.004         
+Adjusted R2                 0.001                  0.003         
+Residual Std. Error   0.263 (df = 2796)      0.264 (df = 1651)   
+F Statistic         3.043** (df = 2; 2796) 3.399** (df = 2; 1651)
+=================================================================
+Note:                                 *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Regrese a una ventana de 20 soles como en la parte d., pero ahora permita un coeficiente distinto para el IFH antes y después del corte, y un polinomio de orden 2 para la variable de asignación. Interprete sus resultados.</p>
+<p><em>Permitiendo pendientes distintas y con un polinomio cuadrático de la variable de asignación obtenemos un efecto estimado de 6.8 puntos porcentuales:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>r3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(hospinter <span class="sc">~</span> ifh_norm<span class="sc">*</span>abajo_corte <span class="sc">+</span> <span class="fu">I</span>(ifh_norm<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span>abajo_corte,</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">data=</span><span class="fu">filter</span>(salud, ifh_norm<span class="sc">&gt;=-</span><span class="dv">20</span> <span class="sc">&amp;</span> ifh_norm <span class="sc">&lt;=</span><span class="dv">20</span>))</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(r1, r2, r3,</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">'text'</span>,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">keep =</span> <span class="st">'abajo_corte'</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">se =</span> <span class="fu">list</span>(<span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(r1, <span class="at">type=</span><span class="st">'HC1'</span>))),</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(r2, <span class="at">type=</span><span class="st">'HC1'</span>))),</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(r3, <span class="at">type=</span><span class="st">'HC1'</span>)))),</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">'20 soles'</span>, <span class="st">'10 soles'</span>, <span class="st">'20 soles diferentes pendientes'</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+=====================================================================================================
+                                                     Dependent variable:                             
+                         ----------------------------------------------------------------------------
+                                                          hospinter                                  
+                                20 soles               10 soles        20 soles diferentes pendientes
+                                  (1)                    (2)                        (3)              
+-----------------------------------------------------------------------------------------------------
+abajo_corte                     0.047**                0.066**                    0.068**            
+                                (0.019)                (0.026)                    (0.030)            
+
+ifh_norm:abajo_corte                                                               -0.003            
+                                                                                  (0.007)            
+
+abajo_corte:I(ifh_norm2)                                                           0.0003            
+                                                                                  (0.0004)           
+
+-----------------------------------------------------------------------------------------------------
+Observations                     2,799                  1,654                      2,799             
+R2                               0.002                  0.004                      0.003             
+Adjusted R2                      0.001                  0.003                      0.001             
+Residual Std. Error        0.263 (df = 2796)      0.264 (df = 1651)          0.263 (df = 2793)       
+F Statistic              3.043** (df = 2; 2796) 3.399** (df = 2; 1651)      1.505 (df = 5; 2793)     
+=====================================================================================================
+Note:                                                                     *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+</div>
+<p><em>Como nota, los autores estiman el siguiente modelo para obtener los resultados reportados en la tabla 1 del artículo de 7.8 puntos porcentuales. Ellos introducen una serie de controles, lo cual no es raro en los análisis de diseños con discontinuidades:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>r4 <span class="ot">&lt;-</span> <span class="fu">lm</span>(hospinter <span class="sc">~</span> ifh_norm <span class="sc">+</span> abajo_corte <span class="sc">+</span> ifh_norm<span class="sc">*</span>abajo_corte <span class="sc">+</span> mujer <span class="sc">+</span> edad <span class="sc">+</span> educ <span class="sc">+</span> mieperho <span class="sc">+</span> hhmujer <span class="sc">+</span> high<span class="sc">*</span>ifh_norm <span class="sc">+</span> high<span class="sc">*</span>abajo_corte ,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">data=</span><span class="fu">filter</span>(salud, ifh_norm<span class="sc">&gt;=-</span><span class="dv">20</span> <span class="sc">&amp;</span> ifh_norm <span class="sc">&lt;=</span><span class="dv">20</span>))</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(r1, r2, r3, r4,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">'text'</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">keep =</span> <span class="st">'abajo_corte'</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">se =</span> <span class="fu">list</span>(<span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(r1, <span class="at">type=</span><span class="st">'HC1'</span>))),</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(r2, <span class="at">type=</span><span class="st">'HC1'</span>))),</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(r3, <span class="at">type=</span><span class="st">'HC1'</span>))),</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcovHC</span>(r4, <span class="at">type=</span><span class="st">'HC1'</span>)))),</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">column.labels =</span> <span class="fu">c</span>(<span class="st">'20 soles'</span>, <span class="st">'10 soles'</span>, <span class="st">'20 soles diferentes pendientes'</span>, <span class="st">'publicado'</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+==============================================================================================================================
+                                                                  Dependent variable:                                         
+                         -----------------------------------------------------------------------------------------------------
+                                                                       hospinter                                              
+                                20 soles               10 soles        20 soles diferentes pendientes        publicado        
+                                  (1)                    (2)                        (3)                         (4)           
+------------------------------------------------------------------------------------------------------------------------------
+abajo_corte                     0.047**                0.066**                    0.068**                     0.078***        
+                                (0.019)                (0.026)                    (0.030)                     (0.028)         
+
+ifh_norm:abajo_corte                                                               -0.003                     -0.0003         
+                                                                                  (0.007)                     (0.002)         
+
+abajo_corte:I(ifh_norm2)                                                           0.0003                                     
+                                                                                  (0.0004)                                    
+
+abajo_corte:high                                                                                               -0.056         
+                                                                                                              (0.038)         
+
+------------------------------------------------------------------------------------------------------------------------------
+Observations                     2,799                  1,654                      2,799                       2,799          
+R2                               0.002                  0.004                      0.003                       0.024          
+Adjusted R2                      0.001                  0.003                      0.001                       0.020          
+Residual Std. Error        0.263 (df = 2796)      0.264 (df = 1651)          0.263 (df = 2793)           0.260 (df = 2787)    
+F Statistic              3.043** (df = 2; 2796) 3.399** (df = 2; 1651)      1.505 (df = 5; 2793)      6.131*** (df = 11; 2787)
+==============================================================================================================================
+Note:                                                                                              *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Use <em>rdrobust</em> para estimar el efecto usando un polinomio de orden 2 y una regresión local no paramétrica. Use algún selector de ancho de banda óptimo.</p>
+<p><em>Podemos usar rdrobust para estimar el efecto con la selección óptima del ancho de ventana:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">rdrobust</span>(<span class="at">y=</span>salud<span class="sc">$</span>hospinter,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">x=</span>salud<span class="sc">$</span>ifh,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">c=</span><span class="dv">55</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">p=</span><span class="dv">2</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bwselect=</span><span class="st">'mserd'</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">vce =</span> <span class="st">'hc3'</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sharp RD estimates using local polynomial regression.
+
+Number of Obs.                 4161
+BW type                       mserd
+Kernel                   Triangular
+VCE method                      HC3
+
+Number of Obs.                 1786         2375
+Eff. Number of Obs.             980         1528
+Order est. (p)                    2            2
+Order bias  (q)                   3            3
+BW est. (h)                  16.585       16.585
+BW bias (b)                  24.402       24.402
+rho (h/b)                     0.680        0.680
+Unique Obs.                     252          246
+
+=============================================================================
+        Method     Coef. Std. Err.         z     P&gt;|z|      [ 95% C.I. ]       
+=============================================================================
+  Conventional    -0.082     0.035    -2.313     0.021    [-0.151 , -0.012]    
+        Robust         -         -    -2.229     0.026    [-0.168 , -0.011]    
+=============================================================================</code></pre>
+</div>
+</div>
+<p><em>El efecto estimado es de 8.2 puntos porcentuales. La venta seleccionada de manera óptima es de 16.56 soles usando el criterio del error cuadrático medio.</em></p></li>
+</ol>
+</section>
+<section id="pregunta-2" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
+<p>El archivo <em>basque.csv</em> contiene los datos empleados por Abadie y Gardeazabal (2003) para estimar el efecto del terrorismo en el PIB per cápita (<strong>gdpcap</strong>) en el País Vasco usando el método de control sintético. Los autores consideran como periodo pre intervención a 1955 - 1969.</p>
+<ol type="a">
+<li><p>[10 puntos] Estime el control sintético del PIB per cápita del País Vasco usando como <em>grupo donador</em> al resto de las regiones de España. Esto es, encuentre la matriz <span class="math inline">\(W\)</span> que otorga pesos a las distintas regiones usando una serie de predictores observables. Para este propósito, use como predictores el promedio de las siguientes variables para el periodo 1964-1969:</p>
+<ul>
+<li>La inversión como porcentaje del PIB, <strong>invest</strong></li>
+<li>El porcentaje de la población analfabeta, <strong>school.illit</strong></li>
+<li>El porcentaje de la población con educación primaria, <strong>school.prim</strong></li>
+<li>El porcentaje de la población con educación media, <strong>school.med</strong></li>
+<li>El porcentaje de la población con educación superior, <strong>school.high</strong></li>
+<li>El porcentaje de la población con educación más que superior, <strong>school.post.high</strong></li>
+</ul>
+<p>Además, use como <em>predictores especiales</em> los siguientes valores:</p>
+<ul>
+<li>El promedio del PIB per capita, <strong>gdpcap</strong>, de 1960 a 1969</li>
+<li>La densidad de población, <strong>popdens</strong>, de 1969</li>
+<li>El promedio de la participación de la agricultura, <strong>sec.agriculture</strong>, de 1961 a 1969</li>
+<li>El promedio de la participación de la energía, <strong>sec.energy</strong>, de 1961 a 1969</li>
+<li>El promedio de la participación de la industria, <strong>sec.industry</strong>, de 1961 a 1969</li>
+<li>El promedio de la participación de la construcción, <strong>sec.construction</strong>, de 1961 a 1969</li>
+<li>El promedio de la participación de los servicios, <strong>sec.services.venta</strong>, de 1961 a 1969</li>
+<li>El promedio de la participación de los servicios no comerciables, <strong>sec.services.nonventa</strong>, de 1961 a 1969</li>
+</ul>
+<p>Note que el País Vasco está identificado con el número 17 de la variable <strong>regionno</strong>. Realice el procedimiento de optimización para minimizar las discrepancias entre la unidad tratada y su sintético usando el periodo 1960-1969.</p>
+<p>¿Qué regiones y con qué pesos contribuyen a construir el País Vasco sintético?</p>
+<p><em>Implementamos el método de control sintético:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>data_vasco <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">read_csv</span>(<span class="st">"basque.csv"</span>))</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>dataprep.out <span class="ot">&lt;-</span> <span class="fu">dataprep</span>(<span class="at">foo =</span> data_vasco,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">predictors =</span> <span class="fu">c</span>(<span class="st">"invest"</span>, <span class="st">"school.illit"</span>, <span class="st">"school.prim"</span>, <span class="st">"school.med"</span>, <span class="st">"school.high"</span>, <span class="st">"school.post.high"</span>),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">predictors.op =</span> <span class="fu">c</span>(<span class="st">"mean"</span>),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dependent =</span> <span class="fu">c</span>(<span class="st">"gdpcap"</span>),</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">unit.variable =</span> <span class="fu">c</span>(<span class="st">"regionno"</span>),</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.variable =</span> <span class="fu">c</span>(<span class="st">"year"</span>),</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">special.predictors =</span> <span class="fu">list</span>(</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"gdpcap"</span>, <span class="dv">1960</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.agriculture"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.energy"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.industry"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.construction"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.services.venta"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.services.nonventa"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"popdens"</span>, <span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>))),</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>                  <span class="at">treatment.identifier =</span> <span class="dv">17</span>,</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>                  <span class="at">controls.identifier =</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">16</span>,<span class="dv">18</span>),</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.predictors.prior =</span> <span class="fu">c</span>(<span class="dv">1964</span><span class="sc">:</span><span class="dv">1969</span>),</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.optimize.ssr =</span> <span class="fu">c</span>(<span class="dv">1960</span><span class="sc">:</span><span class="dv">1969</span>),</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>                  <span class="at">unit.names.variable =</span> <span class="fu">c</span>(<span class="st">"regionname"</span>),</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.plot =</span> <span class="fu">c</span>(<span class="dv">1955</span><span class="sc">:</span><span class="dv">1997</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>synth.out <span class="ot">&lt;-</span> <span class="fu">synth</span>(<span class="at">data.prep.obj =</span> dataprep.out)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+X1, X0, Z1, Z0 all come directly from dataprep object.
+
+
+**************** 
+ searching for synthetic control unit  
+
+
+**************** 
+**************** 
+**************** 
+
+MSPE (LOSS V): 0.008864572 
+
+solution.v:
+ 0.0006492116 0.01764209 0.002961697 2.81393e-05 0.00463772 0.0006428704 0.005494548 0.1765645 0.001377245 0.1788794 0.03953784 0.001454675 0.1204615 0.4496685 
+
+solution.w:
+ 8.6e-09 1.74e-08 2.52e-08 2.07e-08 1.51e-08 2.043e-07 1.34e-08 2.44e-08 0.8508151 7.95e-08 8.3e-09 2.5e-08 0.1491843 1.99e-08 3.74e-08 5.73e-08 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>synth.tables <span class="ot">&lt;-</span> <span class="fu">synth.tab</span>(<span class="at">dataprep.res =</span> dataprep.out,</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">synth.res =</span> synth.out)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Recuperamos los pesos <span class="math inline">\(V\)</span> y <span class="math inline">\(W\)</span>:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(synth.tables)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$tab.pred
+                                         Treated Synthetic Sample Mean
+invest                                    24.647    21.583      21.424
+school.illit                              39.888   256.337     170.786
+school.prim                             1031.742  2730.105    1127.186
+school.med                                90.359   223.340      76.260
+school.high                               25.728    63.437      24.235
+school.post.high                          13.480    36.153      13.478
+special.gdpcap.1960.1969                   5.285     5.271       3.581
+special.sec.agriculture.1961.1969          6.844     6.179      21.353
+special.sec.energy.1961.1969               4.106     2.760       5.310
+special.sec.industry.1961.1969            45.082    37.636      22.425
+special.sec.construction.1961.1969         6.150     6.952       7.276
+special.sec.services.venta.1961.1969      33.754    41.104      36.528
+special.sec.services.nonventa.1961.1969    4.072     5.371       7.111
+special.popdens.1969                     246.890   196.283      99.414
+
+$tab.v
+                                        v.weights
+invest                                  0.001    
+school.illit                            0.018    
+school.prim                             0.003    
+school.med                              0        
+school.high                             0.005    
+school.post.high                        0.001    
+special.gdpcap.1960.1969                0.005    
+special.sec.agriculture.1961.1969       0.177    
+special.sec.energy.1961.1969            0.001    
+special.sec.industry.1961.1969          0.179    
+special.sec.construction.1961.1969      0.04     
+special.sec.services.venta.1961.1969    0.001    
+special.sec.services.nonventa.1961.1969 0.12     
+special.popdens.1969                    0.45     
+
+$tab.w
+   w.weights                   unit.names unit.numbers
+2      0.000                    Andalucia            2
+3      0.000                       Aragon            3
+4      0.000       Principado De Asturias            4
+5      0.000             Baleares (Islas)            5
+6      0.000                     Canarias            6
+7      0.000                    Cantabria            7
+8      0.000              Castilla Y Leon            8
+9      0.000           Castilla-La Mancha            9
+10     0.851                     Cataluna           10
+11     0.000         Comunidad Valenciana           11
+12     0.000                  Extremadura           12
+13     0.000                      Galicia           13
+14     0.149        Madrid (Comunidad De)           14
+15     0.000           Murcia (Region de)           15
+16     0.000 Navarra (Comunidad Foral De)           16
+18     0.000                   Rioja (La)           18
+
+$tab.loss
+        Loss W      Loss V
+[1,] 0.3479783 0.008864572</code></pre>
+</div>
+</div>
+<p><em>El País Vasco sintético se obtiene como una combinación de Cataluña y Madrid, con unos pesos de 0.851 y 0.149, respectivamente.</em></p></li>
+<li><p>[5 puntos] Obtenga un gráfico en donde represente las series de tiempo del PIB per cápita del País Vasco que efectivamente se realizó, la de su correspondiente control sintético y la del promedio simple del resto de las regiones españolas.</p>
+<p><em>Recuperamos las series originales y sintética del País Vasco:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>Ys <span class="ot">&lt;-</span> dataprep.out<span class="sc">$</span>Y0plot <span class="sc">%*%</span> synth.out<span class="sc">$</span>solution.w</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>Y1 <span class="ot">&lt;-</span> dataprep.out<span class="sc">$</span>Y1plot</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Por otro lado, podemos calcular el promedio sobre todas las regiones de la matriz <span class="math inline">\(Y0plot\)</span>:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>Y0media <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rowMeans</span>(dataprep.out<span class="sc">$</span>Y0plot))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Y ponemos todo en un data frame para graficarlo fácilmente:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>data.plot <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(Y1,Ys, Y0media))</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data.plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Y1"</span>,<span class="st">"Ys"</span>,<span class="st">"Y0media"</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>data.plot <span class="ot">&lt;-</span> data.plot <span class="sc">%&gt;%</span> </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">year=</span><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1955</span>, <span class="at">to=</span><span class="dv">1997</span>))</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Gráfico de series</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>data.plot <span class="sc">%&gt;%</span> </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year))<span class="sc">+</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>Y1, <span class="at">linetype =</span> <span class="st">"País Vasco"</span>)) <span class="sc">+</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>Ys, <span class="at">linetype =</span> <span class="st">"Sintético"</span>))<span class="sc">+</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>Y0media, <span class="at">linetype =</span> <span class="st">"Resto de España"</span>))<span class="sc">+</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">1970</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">1955</span>, <span class="dv">1997</span>, <span class="dv">5</span>))<span class="sc">+</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Año"</span>,</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"PIB per capita"</span>,</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"Legend"</span>) <span class="sc">+</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"País Vasco"</span><span class="ot">=</span><span class="st">"solid"</span>, <span class="st">"Sintético"</span><span class="ot">=</span><span class="st">"dashed"</span>, <span class="st">"Resto de España"</span><span class="ot">=</span><span class="st">"dotted"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="tarea-4-respuestas_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><em>El País Vasco era más rico que el promedio del resto de las regiones españolas. Durante el periodo post al inicio de la actividad terrorista, el resto de España siguió creciendo, pero el País Vasco se acercó hacia abajo.</em></p></li>
+<li><p>[5 puntos] Genere una gráfica de brecha que muestre el efecto del terrorismo sobre el PIB per cápita. La brecha es la diferencia entre la serie de tiempo realizada y su contraparte sintética.</p>
+<p><em>El gráfico de brechas se obtiene fácilmente con las funciones de Synth:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gaps.plot</span>(<span class="at">synth.res =</span> synth.out,</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">dataprep.res =</span> dataprep.out,</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">tr.intake =</span> <span class="dv">1970</span>,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">Ylab =</span> <span class="fu">c</span>(<span class="st">"GDP per capita"</span>),</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">Xlab =</span> <span class="fu">c</span>(<span class="st">"year"</span>), </span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">Ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="tarea-4-respuestas_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p><em>El gráfico de las trayectorias es:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">path.plot</span>(<span class="at">synth.res =</span> synth.out,</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">dataprep.res =</span> dataprep.out,</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">tr.intake =</span> <span class="dv">1955</span><span class="sc">:</span><span class="dv">1997</span>,</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">Ylab =</span> <span class="fu">c</span>(<span class="st">"GDP per capita"</span>),</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">Xlab =</span> <span class="fu">c</span>(<span class="st">"year"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="tarea-4-respuestas_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div></li>
+<li><p>[10 puntos] Ahora verificará la robustez de los resultados de este trabajo a la elección de los predictores que entran en las matrices <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_0\)</span> estudiadas en clase. Primero, obtenga de nuevo el control sintético, esta vez eliminando <em>todos</em> los predictores especiales. Construya la correspondiente gráfica de brecha y sobrepóngala con la gráfica de brecha que se obtiene con la especificación de la parte a.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>dataprep.out<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">dataprep</span>(<span class="at">foo =</span> data_vasco,</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">predictors =</span> <span class="fu">c</span>(<span class="st">"invest"</span>, <span class="st">"school.illit"</span>, <span class="st">"school.prim"</span>, <span class="st">"school.med"</span>, <span class="st">"school.high"</span>, <span class="st">"school.post.high"</span>),</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">predictors.op =</span> <span class="fu">c</span>(<span class="st">"mean"</span>),</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dependent =</span> <span class="fu">c</span>(<span class="st">"gdpcap"</span>),</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">unit.variable =</span> <span class="fu">c</span>(<span class="st">"regionno"</span>),</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.variable =</span> <span class="fu">c</span>(<span class="st">"year"</span>),</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">treatment.identifier =</span> <span class="dv">17</span>,</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">controls.identifier =</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">16</span>,<span class="dv">18</span>),</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.predictors.prior =</span> <span class="fu">c</span>(<span class="dv">1964</span><span class="sc">:</span><span class="dv">1969</span>),</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.optimize.ssr =</span> <span class="fu">c</span>(<span class="dv">1960</span><span class="sc">:</span><span class="dv">1969</span>),</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">unit.names.variable =</span> <span class="fu">c</span>(<span class="st">"regionname"</span>),</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.plot =</span> <span class="fu">c</span>(<span class="dv">1955</span><span class="sc">:</span><span class="dv">1997</span>))</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>synth.out<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">synth</span>(<span class="at">data.prep.obj =</span> dataprep.out<span class="fl">.2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+X1, X0, Z1, Z0 all come directly from dataprep object.
+
+
+**************** 
+ searching for synthetic control unit  
+
+
+**************** 
+**************** 
+**************** 
+
+MSPE (LOSS V): 0.557369 
+
+solution.v:
+ 0.158524 0.649228 8.0163e-06 0.0009854878 0.1912543 2.531e-07 
+
+solution.w:
+ 2.0448e-06 4.16351e-05 5.8443e-06 3.27897e-05 9.0538e-06 0.6474261 4.81822e-05 1.12328e-05 7.805e-07 5.2039e-06 1.42574e-05 9.5262e-06 0.3220171 2.41067e-05 0.02728823 0.003063902 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>Ys<span class="fl">.2</span> <span class="ot">&lt;-</span> dataprep.out<span class="fl">.2</span><span class="sc">$</span>Y0plot <span class="sc">%*%</span> synth.out<span class="fl">.2</span><span class="sc">$</span>solution.w</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Obtenemos la brecha usando la especificación original de la parte a. y la nueva de la parte d.:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>data.plot <span class="ot">&lt;-</span> <span class="fu">cbind</span>(data.plot, Ys<span class="fl">.2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Ys.2 =</span> w.weight) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gap =</span> Y1<span class="sc">-</span>Ys,</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">gap.2 =</span> Y1<span class="sc">-</span>Ys<span class="fl">.2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Graficamos las dos brechas:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>data.plot <span class="sc">%&gt;%</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year))<span class="sc">+</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>gap, <span class="at">linetype =</span> <span class="st">"Sintético"</span>))<span class="sc">+</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>gap<span class="fl">.2</span>, <span class="at">linetype =</span> <span class="st">"Sintético sin predictores especiales"</span>)) <span class="sc">+</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">1970</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">0</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">1955</span>, <span class="dv">1997</span>, <span class="dv">5</span>))<span class="sc">+</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Año"</span>,</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Cambio en el PIB per capita"</span>,</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Legend"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="tarea-4-respuestas_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+</div>
+</div></li>
+<li><p>[10 puntos] Regrese a la especificación original de la parte a. y ahora estime el control sintético empleando <em>solamente</em> predictores especiales. Construya la correspondiente gráfica de brecha y sobrepóngala con las gráficas de brechas que se obtiene con la especificación de la parte a. y de la parte d.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dataprep.out<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">dataprep</span>(<span class="at">foo =</span> data_vasco,</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dependent =</span> <span class="fu">c</span>(<span class="st">"gdpcap"</span>),</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">unit.variable =</span> <span class="fu">c</span>(<span class="st">"regionno"</span>),</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.variable =</span> <span class="fu">c</span>(<span class="st">"year"</span>),</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">special.predictors =</span> <span class="fu">list</span>(</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"gdpcap"</span>, <span class="dv">1960</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.agriculture"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.energy"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.industry"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.construction"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.services.venta"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"sec.services.nonventa"</span>, <span class="dv">1961</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"popdens"</span>, <span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>))),</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>                  <span class="at">treatment.identifier =</span> <span class="dv">17</span>,</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>                  <span class="at">controls.identifier =</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">16</span>,<span class="dv">18</span>),</span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.predictors.prior =</span> <span class="fu">c</span>(<span class="dv">1964</span><span class="sc">:</span><span class="dv">1969</span>),</span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.optimize.ssr =</span> <span class="fu">c</span>(<span class="dv">1960</span><span class="sc">:</span><span class="dv">1969</span>),</span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>                  <span class="at">unit.names.variable =</span> <span class="fu">c</span>(<span class="st">"regionname"</span>),</span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.plot =</span> <span class="fu">c</span>(<span class="dv">1955</span><span class="sc">:</span><span class="dv">1997</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>synth.out<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">synth</span>(<span class="at">data.prep.obj =</span> dataprep.out<span class="fl">.3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+X1, X0, Z1, Z0 all come directly from dataprep object.
+
+
+**************** 
+ searching for synthetic control unit  
+
+
+**************** 
+**************** 
+**************** 
+
+MSPE (LOSS V): 0.008864554 
+
+solution.v:
+ 0.07746593 0.02894192 0.01187302 0.03894489 0.05917415 0.0437988 0.1911735 0.5486278 
+
+solution.w:
+ 2.4e-09 3.2e-09 1.39e-08 2e-09 3.7e-09 4.53e-08 3.3e-09 1.09e-08 0.8508135 4.94e-08 1.4e-09 1.09e-08 0.1491863 5.5e-09 7.2e-09 1.56e-08 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>Ys<span class="fl">.3</span> <span class="ot">&lt;-</span> dataprep.out<span class="fl">.3</span><span class="sc">$</span>Y0plot <span class="sc">%*%</span> synth.out<span class="fl">.3</span><span class="sc">$</span>solution.w</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>data.plot <span class="ot">&lt;-</span> <span class="fu">cbind</span>(data.plot, Ys<span class="fl">.3</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Ys.3 =</span> w.weight) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gap.3 =</span> Y1<span class="sc">-</span>Ys<span class="fl">.3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>synth.tables<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">synth.tab</span>(<span class="at">dataprep.res =</span> dataprep.out<span class="fl">.3</span>,</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">synth.res =</span> synth.out<span class="fl">.3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(synth.tables<span class="fl">.3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$tab.pred
+                                        Treated Synthetic Sample Mean
+special.gdpcap.1960.1969                  5.285     5.271       3.581
+special.sec.agriculture.1961.1969         6.844     6.179      21.353
+special.sec.energy.1961.1969              4.106     2.760       5.310
+special.sec.industry.1961.1969           45.082    37.636      22.425
+special.sec.construction.1961.1969        6.150     6.952       7.276
+special.sec.services.venta.1961.1969     33.754    41.104      36.528
+special.sec.services.nonventa.1961.1969   4.072     5.371       7.111
+special.popdens.1969                    246.890   196.284      99.414
+
+$tab.v
+                                        v.weights
+special.gdpcap.1960.1969                0.077    
+special.sec.agriculture.1961.1969       0.029    
+special.sec.energy.1961.1969            0.012    
+special.sec.industry.1961.1969          0.039    
+special.sec.construction.1961.1969      0.059    
+special.sec.services.venta.1961.1969    0.044    
+special.sec.services.nonventa.1961.1969 0.191    
+special.popdens.1969                    0.549    
+
+$tab.w
+   w.weights                   unit.names unit.numbers
+2      0.000                    Andalucia            2
+3      0.000                       Aragon            3
+4      0.000       Principado De Asturias            4
+5      0.000             Baleares (Islas)            5
+6      0.000                     Canarias            6
+7      0.000                    Cantabria            7
+8      0.000              Castilla Y Leon            8
+9      0.000           Castilla-La Mancha            9
+10     0.851                     Cataluna           10
+11     0.000         Comunidad Valenciana           11
+12     0.000                  Extremadura           12
+13     0.000                      Galicia           13
+14     0.149        Madrid (Comunidad De)           14
+15     0.000           Murcia (Region de)           15
+16     0.000 Navarra (Comunidad Foral De)           16
+18     0.000                   Rioja (La)           18
+
+$tab.loss
+        Loss W      Loss V
+[1,] 0.3302474 0.008864554</code></pre>
+</div>
+</div>
+<p><em>Graficamos las dos brechas:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data.plot <span class="sc">%&gt;%</span> </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year))<span class="sc">+</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>gap, <span class="at">linetype =</span> <span class="st">"Sintético"</span>))<span class="sc">+</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>gap<span class="fl">.2</span>, <span class="at">linetype =</span> <span class="st">"Sintético sin predictores especiales"</span>)) <span class="sc">+</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>gap<span class="fl">.3</span>, <span class="at">linetype =</span> <span class="st">"Sintético solo con predictores especiales"</span>)) <span class="sc">+</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">1970</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">0</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">1955</span>, <span class="dv">1997</span>, <span class="dv">5</span>))<span class="sc">+</span></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Año"</span>,</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Cambio en el PIB per capita"</span>,</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Legend"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="tarea-4-respuestas_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid" width="672"></p>
+</div>
+</div></li>
+<li><p>[10 puntos] Finalmente, regrese a la especificación original de la parte a., pero ahora conserve en los predictores especiales solo al PIB per cápita (<strong>gdpcap</strong>), además de la lista de predictores convencionales usadas en la especificación original. Construya la correspondiente gráfica de brecha y sobrepóngala con las gráficas de brechas que se obtiene con la especificación de las partes a., d.&nbsp;y e.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>dataprep.out<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="fu">dataprep</span>(<span class="at">foo =</span> data_vasco,</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">predictors =</span> <span class="fu">c</span>(<span class="st">"invest"</span>, <span class="st">"school.illit"</span>, <span class="st">"school.prim"</span>, <span class="st">"school.med"</span>, <span class="st">"school.high"</span>, <span class="st">"school.post.high"</span>),</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">predictors.op =</span> <span class="fu">c</span>(<span class="st">"mean"</span>),</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">dependent =</span> <span class="fu">c</span>(<span class="st">"gdpcap"</span>),</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">unit.variable =</span> <span class="fu">c</span>(<span class="st">"regionno"</span>),</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.variable =</span> <span class="fu">c</span>(<span class="st">"year"</span>),</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">special.predictors =</span> <span class="fu">list</span>(</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">list</span>(<span class="st">"gdpcap"</span>, <span class="dv">1960</span><span class="sc">:</span><span class="dv">1969</span>,<span class="fu">c</span>(<span class="st">"mean"</span>))),</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">treatment.identifier =</span> <span class="dv">17</span>,</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">controls.identifier =</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">16</span>,<span class="dv">18</span>),</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.predictors.prior =</span> <span class="fu">c</span>(<span class="dv">1964</span><span class="sc">:</span><span class="dv">1969</span>),</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.optimize.ssr =</span> <span class="fu">c</span>(<span class="dv">1960</span><span class="sc">:</span><span class="dv">1969</span>),</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>                  <span class="at">unit.names.variable =</span> <span class="fu">c</span>(<span class="st">"regionname"</span>),</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time.plot =</span> <span class="fu">c</span>(<span class="dv">1955</span><span class="sc">:</span><span class="dv">1997</span>))</span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>synth.out<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="fu">synth</span>(<span class="at">data.prep.obj =</span> dataprep.out<span class="fl">.4</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+X1, X0, Z1, Z0 all come directly from dataprep object.
+
+
+**************** 
+ searching for synthetic control unit  
+
+
+**************** 
+**************** 
+**************** 
+
+MSPE (LOSS V): 0.005500137 
+
+solution.v:
+ 0.0002460977 0.1750598 0.1601796 5.68867e-05 0.02372614 0.0003627186 0.6403687 
+
+solution.w:
+ 5.59186e-05 0.0007466064 0.01257194 0.4022879 0.0002418272 0.1667079 0.002075899 0.0001717687 0.0006148531 0.0002505461 0.0001929417 0.000288312 0.4125448 0.0002650872 0.0005560526 0.0004276961 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>Ys<span class="fl">.4</span> <span class="ot">&lt;-</span> dataprep.out<span class="fl">.4</span><span class="sc">$</span>Y0plot <span class="sc">%*%</span> synth.out<span class="fl">.4</span><span class="sc">$</span>solution.w</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>data.plot <span class="ot">&lt;-</span> <span class="fu">cbind</span>(data.plot, Ys<span class="fl">.4</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Ys.4 =</span> w.weight) <span class="sc">%&gt;%</span> </span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gap.4 =</span> Y1<span class="sc">-</span>Ys<span class="fl">.4</span>)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>data.plot <span class="sc">%&gt;%</span> </span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year))<span class="sc">+</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>gap, <span class="at">linetype =</span> <span class="st">"Sintético"</span>))<span class="sc">+</span></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>gap<span class="fl">.2</span>, <span class="at">linetype =</span> <span class="st">"Sintético sin predictores especiales"</span>)) <span class="sc">+</span></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>gap<span class="fl">.3</span>, <span class="at">linetype =</span> <span class="st">"Sintético solo con predictores especiales"</span>)) <span class="sc">+</span></span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y=</span>gap<span class="fl">.4</span>, <span class="at">linetype =</span> <span class="st">"Sintético solo con GPD como predictor especial"</span>)) <span class="sc">+</span></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept=</span><span class="dv">1970</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">0</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size=</span><span class="dv">1</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>)<span class="sc">+</span></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">seq</span>(<span class="dv">1955</span>, <span class="dv">1997</span>, <span class="dv">5</span>))<span class="sc">+</span></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Año"</span>,</span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Cambio en el PIB per capita"</span>,</span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">linetype =</span> <span class="st">"Legend"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="tarea-4-respuestas_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" width="672"></p>
+</div>
+</div></li>
+</ol>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Bernal, N., Carpio, M. A., &amp; Klein, T. J. (2017). The effects of access to health insurance: evidence from a regression discontinuity design in Peru. Journal of Public Economics, 154, 122-136.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

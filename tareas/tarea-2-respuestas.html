@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Evaluación de Programas 2023 - Respuestas a la tarea 2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Respuestas a la tarea 2</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../iconoEvaluaciondeProgramasSociales.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/rojasirvin/evaluacion-de-programas" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reglas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reglas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lecturas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecturas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../presentaciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentaciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tareas/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tareas</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#pregunta-1" id="toc-pregunta-1" class="nav-link active" data-scroll-target="#pregunta-1">Pregunta 1</a></li>
+  <li><a href="#pregunta-2" id="toc-pregunta-2" class="nav-link" data-scroll-target="#pregunta-2">Pregunta 2</a></li>
+  <li><a href="#pregunta-3" id="toc-pregunta-3" class="nav-link" data-scroll-target="#pregunta-3">Pregunta 3</a></li>
+  <li><a href="#pregunta-4" id="toc-pregunta-4" class="nav-link" data-scroll-target="#pregunta-4">Pregunta 4</a></li>
+  <li><a href="#pregunta-5" id="toc-pregunta-5" class="nav-link" data-scroll-target="#pregunta-5">Pregunta 5</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Respuestas a la tarea 2</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">warning =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">indent =</span> <span class="st">"   "</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(clubSandwich)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(AER)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="pregunta-1" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
+<p>En Crepon et al.&nbsp;(2015)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> se estudia una intervención en Marruecos en la que se analiza el efecto de la <em>adopción</em> de microfinanzas, a través de un experimento de campo. En 81 de 162 localidades estudiadas se introdujo aleatoriamente una empresa de microfinanzas. Para seleccionar las localidades de tratamiento, primero se <em>emparejaron</em> localidades de acuerdo a características observables y, para cada pareja se asignó a tratamiento y otra a control. La base de datos <em>crepon_morocco_balance.csv</em> contiene los datos de este estudio usados para mostrar la integridad del diseño. La variable <strong>treatment</strong> es la variable de asignación aleatoria, mientras que la variable <strong>client</strong> es la variable de adopción</p>
+<ol type="a">
+<li><p>[3 puntos] Primero recordaremos cómo mostrar que el tratamiento efectivamente fue asignado de manera aleatoria. El siguiente código lee los datos que debemos usar y se queda con las observaciones de la línea base. Con estos datos, mostraremos que la variable <strong>nchildren_resid_bl</strong>, que indica el número de niños que viven en cada hogar está balanceado entre los grupos asignados a tratamiento y control. Noten que la media del número de niños que viven en el hogar en el grupo de control es 1.68 (d.e. 1.64) y que hay 2,266 hogares en dicho grupo de control. Esto es exactamente lo que se reporta en la primera fila correspondiente a <em>Number children (&lt;16 years old)</em> en la tabla 1 del artículo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data.morocco<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"../files/crepon_morocco_balance.csv"</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"latin1"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(merge_indicator<span class="sc">!=</span><span class="dv">1</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>data.morocco <span class="sc">%&gt;%</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean=</span><span class="fu">mean</span>(nchildren_resid_bl, <span class="at">na.rm=</span>T),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">std=</span><span class="fu">sd</span>(nchildren_resid_bl, <span class="at">na.rm=</span>T),</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">n=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  treatment  mean   std     n
+      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
+1         0  1.68  1.64  2266
+2         1  1.69  1.64  2199</code></pre>
+</div>
+</div>
+<p>Obtenga ahora el valor de la diferencia entre el grupo de tratamiento y el de control, así como su valor <span class="math inline">\(p\)</span> (últimas dos columnas). Para ello, estime una regresión en la que la variable dependiente sea número de niños que vive en el hogar <strong>nchildren_resid_bl</strong>, en función de la variable de asignación <strong>treatment</strong> y variables dummy de pareja de localidad (la variable <strong>paire</strong> indica cuáles son las parejas). La regresión permite recuperar la diferencia de 0.01 niños que se reporta en la fila correspondiente en la tabla 1. Para recuperar el valor <span class="math inline">\(p\)</span>, estime errores agrupados usando la variable <strong>demi_paire</strong>, que es la clave de las distintas localidades, como variable de agrupación. Una forma de realizar esto es con la función <em>coef_test</em> del paquete <em>clubSandwich</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dif_members <span class="ot">&lt;-</span> <span class="fu">lm</span>(nchildren_resid_bl <span class="sc">~</span> treatment <span class="sc">+</span> <span class="fu">factor</span>(paire),</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   <span class="at">data=</span>data.morocco)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dif_members)<span class="sc">$</span>coef[<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   Estimate Std. Error    t value     Pr(&gt;|t|)
+(Intercept)     1.313048243 0.19816551  6.6260180 3.865649e-11
+treatment       0.007236848 0.04599191  0.1573505 8.749759e-01
+factor(paire)2  0.492156863 0.27004402  1.8225060 6.844634e-02
+factor(paire)3  0.255020364 0.28328679  0.9002198 3.680528e-01
+factor(paire)4 -1.316666667 0.29878450 -4.4067436 1.074441e-05
+factor(paire)5  0.510117240 0.28886400  1.7659426 7.747509e-02
+factor(paire)6  1.552126474 0.27721212  5.5990571 2.286898e-08</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nobs</span>(dif_members)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4465</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef_test</span>(dif_members,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">vcov =</span> <span class="st">"CR1S"</span>, </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">cluster =</span> data.morocco<span class="sc">$</span>demi_paire)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Coef. Estimate     SE t-stat d.f. (Satt) p-val (Satt) Sig.
+ (Intercept)  1.31305 0.0389 33.724        1.03       0.0172    *
+   treatment  0.00724 0.0407  0.178       76.54       0.8593     </code></pre>
+</div>
+</div>
+<p><em>Obtenemos un coeficiente de 0.00724, que se redonde a 0.01 en la tabla. El valor <span class="math inline">\(p\)</span> de 0.859 es exactamente el reportado en la última columa. Aquí lo clave es calcular los errores agrupados.</em></p></li>
+<li><p>[2 puntos] Ahora mostremos que efectivamente este es un ejemplo de una intervención con cumplimiento imperfecto. Genere un cuadro que indique: 1) cuántas personas que fueron asignadas a recibir el tratamiento efectivamente fueron clientes; 2) cuántas personas que fueron asignadas a recibir el tratamiento no se convirtieron en clientes; 3) cuántas personas que no fueron asignadas a recibir el tratamiento sí se convirtieron en clientes; y 4) cuántas personas que no fueron asignadas a recibir el tratamiento tampoco se convirtieron en clientes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data.morocco <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">treatment=</span><span class="fu">factor</span>(treatment, <span class="at">levels=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">labels=</span><span class="fu">c</span>(<span class="st">"Control"</span>, <span class="st">"Tratamiento"</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">client=</span><span class="fu">factor</span>(client, <span class="at">levels=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),<span class="at">labels=</span><span class="fu">c</span>(<span class="st">"No cliente"</span>, <span class="st">"Cliente"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(treatment, client,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">show_na =</span> F)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   treatment No cliente Cliente
+     Control       2101       0
+ Tratamiento       1753     251</code></pre>
+</div>
+</div>
+<p><em>Este es un ejemplo de una intervención con incumplimiento de un solo lado. De aquellos asignados al tratamiento, 251 se convirtieron en clientes y 1,753 no. De aquellos asignados al control, ninguno tuvo acceso a microfinanzas. En otras palabras, podemos descartar la presencia de siempre cumplidores (always-takers). Por tanto, en este tipo de aplicaciones, el efecto del tratamiento en los tratados (támbien llamado TOT, ATET o TT) es igual al LATE.</em></p></li>
+<li><p>[5 puntos] Ahora mostraremos que la adopción, es decir, convertirse en cliente, no es independiente de las características de los hogares. Considere las variables <strong>members_resid_bl</strong> y <strong>act_number_bl</strong>, que indican el número de miembros del hogar y el número de actividades económicas del hogar. Para cada una de estas dos variables, utilice la misma especificación que en la parte a., pero ahora usando la variable <strong>cliente</strong> como regresor. ¿Qué concluye?</p>
+<p><em>Para el número de miembros del hogar:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(members_resid_bl <span class="sc">~</span> client <span class="sc">+</span> <span class="fu">factor</span>(paire),</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">data=</span>data.morocco)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">coef_test</span>(r1,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">vcov =</span> <span class="st">"CR1S"</span>, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">cluster =</span> data.morocco<span class="sc">$</span>demi_paire)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Coef. Estimate    SE t-stat d.f. (Satt) p-val (Satt) Sig.
+ (Intercept)     4.18 0.128  32.70         1.0       0.0195    *
+      client     0.43 0.180   2.38        45.4       0.0214    *</code></pre>
+</div>
+</div>
+<p><em>Para el número de actividades económicas del hogar:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(act_number_bl <span class="sc">~</span> client <span class="sc">+</span> <span class="fu">factor</span>(paire),</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">data=</span>data.morocco)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">coef_test</span>(r2,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">vcov =</span> <span class="st">"CR1S"</span>, </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">cluster =</span> data.morocco<span class="sc">$</span>demi_paire)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Coef. Estimate     SE t-stat d.f. (Satt) p-val (Satt) Sig.
+ (Intercept)    1.109 0.2330   4.76         1.0      0.13185     
+      client    0.191 0.0687   2.78        45.4      0.00787   **</code></pre>
+</div>
+</div>
+<p><em>La adopción no es independiente de las características de los hogares. Parece ser que los hogares que se convierten en clientes son más grandes y tienen más actividades económicas. Por tanto, comparar las variables de impacto entre quienes adoptarony no adoptaron implicaría un sesgo de selección.</em></p></li>
+<li><p>[5 puntos] Con estos elementos estamos convencidos de que es necesario emplear lo que sabemos sobre cumplimiento imperfecto. Usaremos ahora los datos en <em>crepon_morocco_analysis.csv</em>, que contiene los datos empleados para evaluar el impacto de la adopción. Estos datos están listos para analizarse. Estime la forma reducida del efecto de ser asignado al tratamiento sobre gasto total, <strong>expense_total</strong>. Comente los resultados, en particular, comente sobre la magnitud y la significancia estadística de la variable <strong>treatment</strong>. Aquí y en adelante, incluya los siguientes controles en la regresión: <strong>members_resid_bl</strong>, <strong>nadults_resid_bl</strong>, <strong>head_age_bl</strong>, <strong>act_livestock_bl</strong>, <strong>act_business_bl</strong>, <strong>borrowed_total_bl</strong>, <strong>members_resid_d_bl</strong>, <strong>nadults_resid_d_bl</strong>, <strong>head_age_d_bl</strong>, <strong>act_livestock_d_bl</strong>, <strong>act_business_d_bl</strong>, <strong>borrowed_total_d_bl</strong>, <strong>ccm_resp_activ</strong>, <strong>other_resp_activ</strong>, <strong>ccm_resp_activ_d</strong> y <strong>other_resp_activ_d</strong>. Además, incluya efectos fijos por pareja introduciendo la variable <strong>paire</strong> como factor. Use los mismos errores estándar que en la parte a. Con esto deberá poder recuperar el coeficiente y el error estándar de la columna (3) de la tabla 3.</p>
+<p><em>La forma reducida estima la relación causal entre la variable de gasto y la asignación aleatoria. Se estima un efecto de 4057 unidades monetarias en el gasto, estadísticamente significativo al 5%. Este es el efecto de ser asignado al tratamiento o ITT.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>data.morocco<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"../files/crepon_morocco_analysis.csv"</span>)   <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>res_fr<span class="ot">&lt;-</span> <span class="fu">lm</span>(expense_total <span class="sc">~</span> treatment <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>              members_resid_bl <span class="sc">+</span> nadults_resid_bl <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>              head_age_bl <span class="sc">+</span> act_livestock_bl <span class="sc">+</span> act_business_bl <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>              borrowed_total_bl <span class="sc">+</span> members_resid_d_bl <span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>              nadults_resid_d_bl <span class="sc">+</span> head_age_d_bl <span class="sc">+</span> act_livestock_d_bl <span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>              act_business_d_bl <span class="sc">+</span> borrowed_total_d_bl <span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>              ccm_resp_activ <span class="sc">+</span> other_resp_activ <span class="sc">+</span> ccm_resp_activ_d <span class="sc">+</span> </span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>              other_resp_activ_d <span class="sc">+</span> <span class="fu">factor</span>(paire),</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">data=</span>data.morocco)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="fu">coef_test</span>(res_fr,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">vcov =</span> <span class="st">"CR1S"</span>,</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">cluster =</span> data.morocco<span class="sc">$</span>demi_paire)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Coef. Estimate   SE t-stat d.f. (Satt) p-val (Satt) Sig.
+ (Intercept)   -18493 6735  -2.75         2.1        0.105     
+   treatment     4057 1721   2.36        74.4        0.021    *</code></pre>
+</div>
+</div>
+<p><em>Este efecto estimado tiene una interpretación causal. Sin embargo, lo que nos está diciendo es la diferencia en el gasto en hogares donde el programa fue ofrecido y donde no. Pero no la diferencia en el efectivamente usar microfinanzas, que puede ser el parámetro de mayor interés. En otras palabras, el ITT es como un efecto del tratamiento, diluido por el no cumplimiento.</em></p></li>
+<li><p>[5 puntos] Estime ahora la <strong>primera etapa</strong>, es decir, estime por MCO el efecto causal de la asignación sobre la adopción. Comente sobre la magnitud, la significancia estadística y la interpretación de la variable <strong>treatment</strong> en términos del comportamiento de los <strong>cumplidores</strong>. Debería poder replicar el coeficiente y el error estándar de la columna 1 en la tabla 2 del artículo.</p>
+<p><em>La primera etapa muestra un aumento de 16.7% en la probabilidad de ser cliente debido al tratamiento. Este efecto es estadísticamente significativo al 10%. En otras palabras, 16.7% de los individuos en la muestra son cumplidores, es decir, se vuelven clientes solo porque se les ofreció el tratamiento.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>res_fs<span class="ot">&lt;-</span> <span class="fu">lm</span>(client <span class="sc">~</span> treatment <span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>              members_resid_bl <span class="sc">+</span> nadults_resid_bl <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                head_age_bl <span class="sc">+</span> act_livestock_bl <span class="sc">+</span> act_business_bl <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                borrowed_total_bl <span class="sc">+</span> members_resid_d_bl <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                nadults_resid_d_bl <span class="sc">+</span> head_age_d_bl <span class="sc">+</span> act_livestock_d_bl <span class="sc">+</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                act_business_d_bl <span class="sc">+</span> borrowed_total_d_bl <span class="sc">+</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                ccm_resp_activ <span class="sc">+</span> other_resp_activ <span class="sc">+</span> ccm_resp_activ_d <span class="sc">+</span> </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                other_resp_activ_d <span class="sc">+</span> <span class="fu">factor</span>(paire),</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">data=</span>data.morocco)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="fu">coef_test</span>(res_fs,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">vcov =</span> <span class="st">"CR1S"</span>, </span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">cluster =</span> data.morocco<span class="sc">$</span>demi_paire)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Coef. Estimate     SE t-stat d.f. (Satt) p-val (Satt) Sig.
+ (Intercept)  -0.0988 0.0549   -1.8         2.1        0.208     
+   treatment   0.1672 0.0118   14.2        74.4       &lt;0.001  ***</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Considere la columna 3 del panel A en la Tabla 9 del artículo. Aquí se reporta la estimación por MCO de la relación entre <strong>client</strong> y gasto total, con los mismos controles y tipo de errores que antes. Replique este resultado. ¿Se puede interpretar de forma causal el coeficiente sobre <strong>client</strong>?</p>
+<p><em>Noten que para replicar la entrada la clave está en condicionar a aquellos asignados al tratamiento (como se indica en la tabla del artículo). No se puede interpretar de manera causal la relación de 11934 unidades monetarias más en el gasto en los clientes con respecto a los no clientes pues es muy posible que haya sesgo de selección. Por ejemplo, si los hogares más educados deciden adoptar en mayor medida los productos de microfinanzas, es posible pensar que esos mismos hogares hubieran tenido mayor gasto incluso sin microfinanzas. Estaríamos entonces sobreestimando el efecto del tratamiento.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>res_mco <span class="ot">&lt;-</span> <span class="fu">lm</span>(expense_total <span class="sc">~</span> client <span class="sc">+</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                members_resid_bl <span class="sc">+</span> nadults_resid_bl <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                head_age_bl <span class="sc">+</span> act_livestock_bl <span class="sc">+</span> act_business_bl <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                borrowed_total_bl <span class="sc">+</span> members_resid_d_bl <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                nadults_resid_d_bl <span class="sc">+</span> head_age_d_bl <span class="sc">+</span> act_livestock_d_bl <span class="sc">+</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                act_business_d_bl <span class="sc">+</span> borrowed_total_d_bl <span class="sc">+</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                ccm_resp_activ <span class="sc">+</span> other_resp_activ <span class="sc">+</span> ccm_resp_activ_d <span class="sc">+</span> </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>                other_resp_activ_d <span class="sc">+</span> <span class="fu">factor</span>(paire),</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">data=</span><span class="fu">filter</span>(data.morocco,treatment<span class="sc">==</span><span class="dv">1</span>))</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">coef_test</span>(res_mco,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">vcov =</span> <span class="st">"CR1S"</span>, </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">cluster =</span><span class="fu">filter</span>(data.morocco,treatment<span class="sc">==</span><span class="dv">1</span>)<span class="sc">$</span>demi_paire)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Coef. Estimate   SE t-stat d.f. (Satt) p-val (Satt) Sig.
+ (Intercept)   -12718 9447  -1.35        65.8       0.1828     
+      client    11934 5580   2.14        41.1       0.0384    *</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] ¿Cuáles son los dos supuestos econométricos que permiten la estimación del Local Average Treatment Effect (LATE) en el contexto de este problema? Comente sobre la evidencia que respalda el supuesto de que los instrumentos no son débiles en este problema.</p>
+<p><em>Los supuestos necesarios son:</em></p>
+<p><em>Relevancia del instrumento. Se requiere que la asignación aleatoria del tratamiento efectivamente afecte la probabilidad de ser cliente. La evidencia que respalda este requerimiento es el resultado de la primera etapa. El estadístico <span class="math inline">\(F\)</span> de la primera etapa es 10.86, apenas arriba de la regla de dedo de 10 que comúnmente se usa para decir que no hay presencia de instrumentos débiles.</em></p>
+<p><em>Exclusión. Se requiere que el instrumento no pertenezca a la ecuación estructural. Esto se garantiza por la asignación aleatoria del tratamiento.</em></p></li>
+<li><p>[5 puntos] Estime el efecto del cumplimiento sobre el gasto total, usando la asignación aleatoria como instrumento del cumplimiento. Es decir, estime el LATE. Use los mismos controles y tipo de errores que en c.&nbsp;Este resultado se reporta en la columna 3 del panel B en la Tabla 9. ¿Cuál es la interpretación del coeficiente de la variable <strong>client</strong>? En R, la función <em>ivreg</em> del paquete <em>AER</em> le permite hacer la estimación de MC2E.</p>
+<p><em>El LATE estimado es de 24263 monetarias adicionales de gasto debido a ser cliente. Esta cifra es considerablemente mayor que las 4057 unidades monetarias estimada en la forma reducida. Este es un efecto local pues solo considera el cambio en el gasto debido a ser cliente de la microfinanciera, en aquellos individuos que cambiaron su comportamiento debido a la asignación aleatoria del tratamiento. Noten también que en todas las regresiones se incluye errores agrupados a nivel pareja o paire.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>res_iv <span class="ot">&lt;-</span> <span class="fu">ivreg</span>(expense_total <span class="sc">~</span> client <span class="sc">+</span> members_resid_bl <span class="sc">+</span> nadults_resid_bl</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>     <span class="sc">+</span> head_age_bl <span class="sc">+</span> act_livestock_bl <span class="sc">+</span> act_business_bl </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>     <span class="sc">+</span> borrowed_total_bl <span class="sc">+</span> members_resid_d_bl <span class="sc">+</span> nadults_resid_d_bl</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>     <span class="sc">+</span> head_age_d_bl <span class="sc">+</span> act_livestock_d_bl <span class="sc">+</span> act_business_d_bl </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>     <span class="sc">+</span> borrowed_total_d_bl <span class="sc">+</span> ccm_resp_activ <span class="sc">+</span> other_resp_activ </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>     <span class="sc">+</span> ccm_resp_activ_d  <span class="sc">+</span> other_resp_activ_d <span class="sc">+</span> <span class="fu">factor</span>(paire) <span class="sc">|</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>       treatment <span class="sc">+</span>  members_resid_bl <span class="sc">+</span> nadults_resid_bl</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>     <span class="sc">+</span> head_age_bl <span class="sc">+</span> act_livestock_bl <span class="sc">+</span> act_business_bl </span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>     <span class="sc">+</span> borrowed_total_bl <span class="sc">+</span> members_resid_d_bl <span class="sc">+</span> nadults_resid_d_bl</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>     <span class="sc">+</span> head_age_d_bl <span class="sc">+</span> act_livestock_d_bl <span class="sc">+</span> act_business_d_bl </span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>     <span class="sc">+</span> borrowed_total_d_bl <span class="sc">+</span> ccm_resp_activ <span class="sc">+</span> other_resp_activ </span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>     <span class="sc">+</span> ccm_resp_activ_d  <span class="sc">+</span> other_resp_activ_d <span class="sc">+</span> <span class="fu">factor</span>(paire),</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">data=</span>data.morocco)</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res_iv)<span class="sc">$</span>coefficients[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Estimate Std. Error   t value   Pr(&gt;|t|)
+(Intercept) -16095.68   11033.49 -1.458802 0.14468442
+client       24263.46   12419.55  1.953651 0.05080007</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef_test</span>(res_iv,</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">vcov =</span> <span class="st">"CR1S"</span>, </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">cluster =</span> data.morocco<span class="sc">$</span>demi_paire)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Coef. Estimate   SE t-stat d.f. (Satt) p-val (Satt) Sig.
+ (Intercept)   -16096 7144  -2.25        2.11       0.1464     
+      client    24263 9944   2.44       74.45       0.0171    *</code></pre>
+</div>
+</div></li>
+</ol>
+</section>
+<section id="pregunta-2" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
+<ol type="a">
+<li><p>[5 puntos] Sea una variable de resultados <span class="math inline">\(y_i\)</span>, una variable de asignación aleatoria <span class="math inline">\(Z_i\)</span> y una variable de adopción <span class="math inline">\(D_i\)</span>. El estimador de Wald se define como:</p>
+<p><span class="math display">\[\hat{\beta}_{Wald}=\frac{\bar{Y}_{Z_i=1}-\bar{Y}_{Z_i=0}}{\bar{D}_{Z_i=1}-\bar{D}_{Z_i=0}}\]</span></p>
+<p>En esta pregunta mostraremos cómo el estimador de Wald es equivalente al estimador de VI cuando no hay controles. Use nuevamente los datos en <em>crepon_morocco_analysis.csv</em>. Obtenga el estimador de Wald como el cociente de la diferencia en gasto total promedio entre los hogares asignados a tratamiento y control dividido por la diferencia en la probabilidad de adopción entre los hogares asignados a tratamiento y control. Recuerde que la variable del gasto total es <strong>expense_total</strong>.</p>
+<p><em>Obtenemos el estadístico de Wald, usando la definición:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>data.morocco<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"../files/crepon_morocco_analysis.csv"</span>)   <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>mean_cliente<span class="ot">&lt;-</span>data.morocco <span class="sc">%&gt;%</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">p_cliente=</span><span class="fu">mean</span>(client, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>mean_gasto<span class="ot">&lt;-</span>data.morocco <span class="sc">%&gt;%</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">m_gasto=</span><span class="fu">mean</span>(expense_total, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="co">#Neceistamos la diferencia de gastos y de probabilidad de ser cliente</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>dif_gasto <span class="ot">&lt;-</span> mean_gasto[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_gasto[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>dif_cliente <span class="ot">&lt;-</span> mean_cliente[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_cliente[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>Wald <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(dif_gasto <span class="sc">/</span> dif_cliente)</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>Wald</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 22869.23</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Ahora estime por MC2E el efecto de la adopción sobre el gasto total, usando la variable de asignación como instrumento para la adopción. ¿Qué ventaja observa con respecto al estimador de Wald?</p>
+<p><em>Notemos que obtenemos lo mismo al hacer una estimación de variables instrumentales. El coeficiente sobre la variable client es igual al estadístico de Wald. El estadístico de Wald es idéntico al estimador de variables instrumentales cuando el instrumento es binario. La mayor ventaja de realizar la estimación de esta manera es que podemos obtener errores estándar, lo cual nos permite hacer inferencia estadística sobre el tamaño del efecto de ser cliente en el gasto.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>Wald_vi <span class="ot">&lt;-</span> <span class="fu">ivreg</span>(expense_total <span class="sc">~</span> client  <span class="sc">|</span> treatment,</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data=</span>data.morocco)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Notemos que obtenemos directamente el error estándar</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Wald_vi)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+ivreg(formula = expense_total ~ client | treatment, data = data.morocco)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+ -44264  -21394  -17064   -4804 1305816 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)    21395       1496  14.298   &lt;2e-16 ***
+client         22869      12684   1.803   0.0714 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 74610 on 4932 degrees of freedom
+Multiple R-Squared: 0.00651, Adjusted R-squared: 0.006309 
+Wald test: 3.251 on 1 and 4932 DF,  p-value: 0.07144 </code></pre>
+</div>
+</div></li>
+</ol>
+</section>
+<section id="pregunta-3" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-3">Pregunta 3</h2>
+<p>En la Pregunta 2, parte a, obtuvo el estimador de Wald para aproximar el efecto de la adopción en el gasto total. Considere dicho cálculo sin controles para lo que resta de esta pregunta.</p>
+<ol type="a">
+<li><p>[5 puntos] Utilice un procedimiento bootstrap <em>a mano</em> para estimar el error estándar del estimador de Wald usando 30 repeticiones. Es decir, debe realizar un remuestreo de los datos originales y para cada muestra obtener el estimador de Wald. Luego, obtenga la desviación estándar de los 30 estadísticos calculados. Utilice una semilla para poder replicar sus resultados.</p>
+<p><em>Ya sabemos calcular un estadístico de Wald, como en la Pregunta 2, parte a. La idea ahora es repetir dicho proceso B veces, pero en cada repetición con una muestra bootstrap a la mano:</em></p>
+<p><em>Fijamos los parámetros para el remuestreo, fijamos una semilla e inicializamos un vector donde iremos coleccionando los estadísticos estimados:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>data.morocco<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"../files/crepon_morocco_analysis.csv"</span>)   <span class="sc">%&gt;%</span> </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() </span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>obs <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data.morocco)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">923</span>)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>B<span class="ot">=</span><span class="dv">30</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>Wrep30_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">W=</span><span class="fu">matrix</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">nrow =</span> B))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Realizamos el procedimiento de remuestreo y, para cada muestra a la mano, estimamos el estadístico de Wald. Guardamos cada estadístico en la posición correspondiente del vector que previamente inicializamos.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  data.b <span class="ot">&lt;-</span>data.morocco[<span class="fu">sample</span>(<span class="fu">nrow</span>(data.morocco),obs, <span class="at">replace =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  mean_cliente<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">p_cliente=</span><span class="fu">mean</span>(client, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>()</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>  mean_gasto<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">m_gasto=</span><span class="fu">mean</span>(expense_total, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>()</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>  dif_gasto <span class="ot">&lt;-</span> mean_gasto[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_gasto[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>  dif_cliente <span class="ot">&lt;-</span> mean_cliente[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_cliente[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>  Wrep30_1[i,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(dif_gasto <span class="sc">/</span> dif_cliente)</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>*Estimamos el error estándar como la desviación estándar de los <span class="math inline">\(B\)</span> estadísticos estimados. #El error estimado es simplemente la desviación estándar de los B estadísticos estimados</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Wrep30_1<span class="sc">$</span>W)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12080.76</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Reemplace la semilla de la parte a. por una nueva semilla y estime nuevamente el error estándar del estimador de Wald con 30 repeticiones. Comente sobre la diferencia entre este error estándar y el de la parte a.</p>
+<p><em>El cambio que observamos en el error estándar estimado por bootstrap entre esta parte y la parte a. es que al cambiar la semilla, los números aleatorios generados son distitnos y, por tanto, cada muestra bootstrap tiene distintos individuos.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">9232</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>B<span class="ot">=</span><span class="dv">50</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>Wrep30_2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">W=</span><span class="fu">matrix</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">nrow =</span> B))</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  data.b <span class="ot">&lt;-</span>data.morocco[<span class="fu">sample</span>(<span class="fu">nrow</span>(data.morocco),obs, <span class="at">replace =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>  mean_cliente<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">p_cliente=</span><span class="fu">mean</span>(client, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>()</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>  mean_gasto<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">m_gasto=</span><span class="fu">mean</span>(expense_total, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>()</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>  dif_gasto <span class="ot">&lt;-</span> mean_gasto[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_gasto[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>  dif_cliente <span class="ot">&lt;-</span> mean_cliente[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_cliente[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>  Wrep30_2[i,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(dif_gasto <span class="sc">/</span> dif_cliente)</span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Wrep30_2<span class="sc">$</span>W)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14864.09</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Regrese el valor de la semilla al usado en a. y estime nuevamente el error estándar del estimador de Wald, esta vez usando 2000 repeticiones. Comente sobre la diferencia entre este error estándar y el de la parte a.</p>
+<p><em>Ahora las diferencias en el error estimado surgen porque tenemos muchas más repeticiones bootstrap. Lo más importante de estos procedimientos es que pueda implementarlos a otros contextos. Por ejemplo, podemos hacer obtener errores bootstrap para el vector de coeficientes de una estimación de MC2E, para el producto de dos coeficientes, etc.</em></p>
+<div class="cell" data-hash="tarea-2-respuestas_cache/html/unnamed-chunk-16_d0719754582739f7cf5bc196b4f120da">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">923</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>B<span class="ot">=</span><span class="dv">2000</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>Wrep2000 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">W=</span><span class="fu">matrix</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">nrow =</span> B))</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>  data.b <span class="ot">&lt;-</span>data.morocco[<span class="fu">sample</span>(<span class="fu">nrow</span>(data.morocco),obs, <span class="at">replace =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>  mean_cliente<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">p_cliente=</span><span class="fu">mean</span>(client, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>()</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>  mean_gasto<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">m_gasto=</span><span class="fu">mean</span>(expense_total, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>()</span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>  dif_gasto <span class="ot">&lt;-</span> mean_gasto[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_gasto[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>  dif_cliente <span class="ot">&lt;-</span> mean_cliente[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_cliente[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>  Wrep2000[i,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(dif_gasto <span class="sc">/</span> dif_cliente)</span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Wrep2000<span class="sc">$</span>W)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12382.39</code></pre>
+</div>
+</div>
+<p><em>El error estándar estimado por bootstrap con 2,000 repeticiones es 12,382. Cuando usamos regresión para estimar el estimador de Wald obtuvimos un error estándar estimado de 12,684.</em></p></li>
+</ol>
+</section>
+<section id="pregunta-4" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-4">Pregunta 4</h2>
+<p>Considere nuevamente la base <em>STAR_public_use.csv</em> usada en la Tarea 1 del artículo Angrist, Lang y Oreopoulos (2009)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. En esta pregunta nos concentraremos en los efectos de la intervención en el año 2, mostrados en la columna (4) de la Tabla 6, sobre dos variables, el promedio de calificaciones <strong>gpa_year2</strong> y los créditos completados <strong>credits_earned2</strong>.</p>
+<p>El propósito de esta pregunta es mostrar la función de los <span class="math inline">\(z\)</span>-scores en el análisis de efectos de tratamiento. De nuevo, puede quedarse solo con las observaciones que tienen <strong>noshow</strong> igual a 0. Antes de comenzar su análisis, sustituya por NA los valores en <strong>credits_earned2</strong> para aquellas observaciones que tienen <span class="math inline">\(NA\)</span> en la variable <strong>prob_year1</strong>.</p>
+<ol type="a">
+<li><p>[5 puntos] Para tener un punto de comparación, estime la ecuación del efecto de tratamiento para <strong>gpa_year2</strong> usando la misma especificación que en la pregunta 5 de la Tarea 1. Use también errores robustos. Deberá poder replicar los coeficientes y errores estándar del panel A, columna (4). ¿Cómo se interpretan el coeficiente sobre la variable <strong>ssp</strong>?</p>
+<p><em>Usando la misma especificación que usamos en la Tarea 1, obtenemos los coeficientes en el artículo.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>data.angrist<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"../files/STAR_public_use.csv"</span>,</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"latin1"</span>))   <span class="sc">%&gt;%</span> </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>data.angrist<span class="ot">&lt;-</span>data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(noshow<span class="sc">==</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">credits_earned2=</span><span class="fu">ifelse</span>(<span class="fu">is.na</span>(prob_year1),<span class="cn">NA</span>,credits_earned2)) </span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">&lt;-</span><span class="fu">lm</span>(gpa_year2 <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp<span class="sc">+</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(sex)<span class="sc">+</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mtongue)<span class="sc">+</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(hsgroup)<span class="sc">+</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(numcourses_nov1)<span class="sc">+</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(lastmin)<span class="sc">+</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mom_edn)<span class="sc">+</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(dad_edn),</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>           data.angrist)</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r1, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r1, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Estimate Std. Error    t value     Pr(&gt;|t|)
+(Intercept)  2.87240513 0.45314003  6.3388908 3.261488e-10
+ssp          0.05018813 0.07423854  0.6760388 4.991454e-01
+sfp         -0.01807372 0.06618352 -0.2730848 7.848347e-01
+sfsp         0.07158763 0.09081195  0.7883063 4.306722e-01</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Genere un <span class="math inline">\(z\)</span>-score para la variable <strong>gpa_year2</strong> al que llame <strong>gpa_year2_sd</strong>. Para ello, calcule la media y desviación estándar de <strong>gpa_year2</strong> para el grupo de control y luego genere <strong>gpa_year2_sd</strong> restándole a <strong>gpa_year2</strong> la media obtenida y dividiendo esta diferencia por la desviación estándar obtenida. Compruebe que si calcula la media y la desviación estándar de <strong>gpa_year2_sd</strong>, en el grupo de control estas deberían ser 0 y 1, respectivamente.</p>
+<p><em>Creamos un z-score:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>gpa_year2_stats <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(gpa_year2,<span class="at">na.rm=</span>T),</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">desvest=</span><span class="fu">sd</span>(gpa_year2,<span class="at">na.rm=</span>T))</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">gpa_year2_sd=</span>(gpa_year2<span class="sc">-</span>gpa_year2_stats<span class="sc">$</span>media)<span class="sc">/</span>gpa_year2_stats<span class="sc">$</span>desvest)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Tiene media igual a 0:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(gpa_year2_sd,<span class="at">na.rm=</span>T))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+     media
+     &lt;dbl&gt;
+1 1.60e-16</code></pre>
+</div>
+</div>
+<p><em>Y desviación estándar igual a 1:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">desvest=</span><span class="fu">sd</span>(gpa_year2_sd,<span class="at">na.rm=</span>T)) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  desvest
+    &lt;dbl&gt;
+1       1</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Realice la misma estimación que en la parte a., pero ahora use como variable dependiente <strong>gpa_year2_sd</strong>. ¿Cómo se interpreta el coeficiente sobre <strong>ssp</strong>? ¿Qué es diferente y qué es igual entre los resultados obtenidos en esta parte y los obtenidos en la parte a.?</p>
+<p><em>Realizamos la estimación, pero con la variable dependiente estandarizada:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">&lt;-</span><span class="fu">lm</span>(gpa_year2_sd <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp<span class="sc">+</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(sex)<span class="sc">+</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mtongue)<span class="sc">+</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(hsgroup)<span class="sc">+</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(numcourses_nov1)<span class="sc">+</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(lastmin)<span class="sc">+</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mom_edn)<span class="sc">+</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(dad_edn),</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>           data.angrist)</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r2, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r2, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Estimate Std. Error    t value   Pr(&gt;|t|)
+(Intercept)  0.94640721 0.50806908  1.8627530 0.06273961
+ssp          0.05627187 0.08323764  0.6760388 0.49914542
+sfp         -0.02026459 0.07420621 -0.2730848 0.78483470
+sfsp         0.08026539 0.10182006  0.7883063 0.43067220</code></pre>
+</div>
+</div>
+<p><em>Los coeficientes estimados son diferentes. Ahora el coeficiente sobre ssp es el efecto que tiene el programa en el z-score del promedio de calificaciones, es decir, el SSP tiene un efecto de 0.056 desviaciones estándar en el z-score del promedio de calificaciones, aunque este efecto no es estadísticamente significativo. La magnitud del error estándar también es diferente, pues ahora las variables están en distintas unidades. Noten, en cambio, que el estadístico t asociado a SSP es exactamente igual al de la parte a., por lo que en ambos casos no se rechaza la <span class="math inline">\(H_0\)</span>.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r1, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r1, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Estimate Std. Error    t value     Pr(&gt;|t|)
+(Intercept)  2.87240513 0.45314003  6.3388908 3.261488e-10
+ssp          0.05018813 0.07423854  0.6760388 4.991454e-01
+sfp         -0.01807372 0.06618352 -0.2730848 7.848347e-01
+sfsp         0.07158763 0.09081195  0.7883063 4.306722e-01</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Ahora realizaremos un índice de mejora en educación, al agregar los resultados de estos dos indicadores en una sola variable, como se describe en Banerjee et al.&nbsp;(2015)<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Para ello, primero genere <strong>credits_earned2_sd</strong>, que será la versión estandarizada de <strong>credits_earned2</strong>, siguiendo el mismo procedimiento que en la parte b. En seguida, genere una nueva variable llamada <strong>indice_escolar</strong>, que será el promedio de <strong>credits_earned2_sd</strong> y <strong>gpa_year2_sd</strong>. Luego, calcule la media y la desviación estándar de <strong>indice_escolar</strong> en el grupo de control. Finalmente, genere una nueva variable <strong>indice_escolar_sd</strong> restándole a <strong>indice_escolar</strong> la media antes calculada y dividiendo esta diferencia por la desviación estándar antes calculada. Muestre que la variable <strong>indice_escolar_sd</strong> tiene media 0 y desviación estándar 1 en el grupo de control.</p>
+<p><em>Primero creamos la versión estandarizada de la variable de créditos:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>credits_earned2_stats <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(credits_earned2,<span class="at">na.rm=</span>T),</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(credits_earned2,<span class="at">na.rm=</span>T))</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">credits_earned2_sd=</span>(credits_earned2<span class="sc">-</span>credits_earned2_stats<span class="sc">$</span>media)<span class="sc">/</span>credits_earned2_stats<span class="sc">$</span>desvest)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Luego calculamos la media de las dos variables estandarizadas:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">indice_escolar=</span><span class="fu">rowMeans</span>(<span class="fu">select</span>(.,credits_earned2_sd,gpa_year2_sd)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Ahora obtenemos la media y la desviación estándar en el grupo de control del promedio antes calculado:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>indice_escolar_stats <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(indice_escolar,<span class="at">na.rm=</span>T),</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(indice_escolar,<span class="at">na.rm=</span>T))</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">indice_escolar_sd=</span>(indice_escolar<span class="sc">-</span>indice_escolar_stats<span class="sc">$</span>media)<span class="sc">/</span>indice_escolar_stats<span class="sc">$</span>desvest)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Efectivamente tiene media igual a 0:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(indice_escolar_sd,<span class="at">na.rm=</span>T))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+      media
+      &lt;dbl&gt;
+1 -1.33e-17</code></pre>
+</div>
+</div>
+<p><em>Y desviación estándar igual a 1:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">desvest=</span><span class="fu">sd</span>(indice_escolar_sd,<span class="at">na.rm=</span>T)) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  desvest
+    &lt;dbl&gt;
+1       1</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Estime ahora el efecto de tratamiento sobre <strong>indice_escolar_sd</strong>, siguiendo la misma especificación econométrica que en la parte a. y usando errores robustos. ¿Qué concluye?</p>
+<p><em>Estimamos usando la misma especificación, pero ahora con el índice compuesto como variable de impacto:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>r3 <span class="ot">&lt;-</span><span class="fu">lm</span>(indice_escolar_sd <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp<span class="sc">+</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(sex)<span class="sc">+</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(mtongue)<span class="sc">+</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(hsgroup)<span class="sc">+</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(numcourses_nov1)<span class="sc">+</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(lastmin)<span class="sc">+</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(mom_edn)<span class="sc">+</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(dad_edn),</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>                           data.angrist)</span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r3, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r3, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               Estimate Std. Error    t value  Pr(&gt;|t|)
+(Intercept)  0.49452306 0.46650249  1.0600652 0.2893277
+ssp          0.02805373 0.08261358  0.3395778 0.7342338
+sfp         -0.02543190 0.07385703 -0.3443396 0.7306511
+sfsp         0.03404990 0.09616572  0.3540753 0.7233445</code></pre>
+</div>
+</div>
+<p><em>La ventaja de este procedimiento es que solo probamos una hipótesis en lugar de dos. Si tuviéramos muchas variables de impacto, tendríamos que probar múltiples hipótesis, incrementando la probabilidad de falsos rechazos. La construcción de índices es una alternativa para enfrentar este problema.</em></p></li>
+</ol>
+</section>
+<section id="pregunta-5" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-5">Pregunta 5</h2>
+<p>Considere los valores <span class="math inline">\(p\)</span> del archivo <em>pvalues.csv</em>. Cada valor <span class="math inline">\(p_i\)</span> está asociado a una prueba de hipótesis <span class="math inline">\(i\)</span>. La variable familia denota tres grupos de hipótesis sobre las cuales estamos interesados en hacer correcciones de múltiples hipótesis. La investigación en cuestión emplea <span class="math inline">\(\alpha=0.05\)</span>.</p>
+<ol type="a">
+<li><p>[5 puntos] Para cada una de las pruebas de hipótesis, genere un cuadro como el que se presenta a continuación y diga si se rechaza o no la hipótesis nula, bajo los siguientes criterios:</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th>Hipótesis sin corrección</th>
+<th>Controlando la tasa de errores en la familia (FWER) usando el método de Bonferroni</th>
+<th>Controlando la tasa de falso descubrimiento (FDR) dentro de la familia usando el método de Benjamini y Hochberg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">15</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>En este problema lo único posiblemente complicado era operacionalizar los procedimientos. Aquí les pongo mi propuesta. La columna regla_sincorr indica qué <span class="math inline">\(H_0\)</span> se rechazaría con el valor <span class="math inline">\(p\)</span> reportado originalmente en el estudio con <span class="math inline">\(\alpha=0.05\)</span>. La columna regla_bonferroni indica qué <span class="math inline">\(H_0\)</span> se rechazaría con la correción de Bonferroni, tomando en cuenta el agrupamiento con las familias en su definición original. Lo mismo sucede con regla_bh para la correción de Benjamini &amp; Hochberg.</em></p>
+<p><em>Este fue mi procedimiento. Leemos los datos:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>data.pvalues<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"../files/pvalues.csv"</span>,</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"latin1"</span>))  </span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Construyo un objeto con los valores <span class="math inline">\(p\)</span> y los ordeno de menor a mayor:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>data.fam.or <span class="ot">&lt;-</span> data.pvalues <span class="sc">%&gt;%</span> </span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(familia,p) </span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>data.fam.or <span class="ot">&lt;-</span> data.fam.or <span class="sc">%&gt;%</span> </span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(familia) <span class="sc">%&gt;%</span> </span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">posicion=</span><span class="fu">seq</span>(<span class="at">along.with =</span> familia)) <span class="sc">%&gt;%</span> </span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">numerohipotesis=</span><span class="fu">max</span>(posicion)) <span class="sc">%&gt;%</span> </span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>data.fam.or</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 6
+   hipotesis       p familia familia_corregida posicion numerohipotesis
+       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;             &lt;dbl&gt;    &lt;int&gt;           &lt;int&gt;
+ 1         4 0.00210       1                 1        1               5
+ 2         1 0.0145        1                 1        2               5
+ 3         5 0.0401        1                 1        3               5
+ 4         3 0.0678        1                 1        4               5
+ 5         2 0.230         1                 1        5               5
+ 6         7 0.0018        2                 4        1               3
+ 7         6 0.322         2                 4        2               3
+ 8         8 0.513         2                 4        3               3
+ 9        15 0.0018        3                 4        1               7
+10         9 0.0034        3                 4        2               7
+11        11 0.0211        3                 4        3               7
+12        13 0.0273        3                 4        4               7
+13        12 0.0412        3                 4        5               7
+14        14 0.120         3                 4        6               7
+15        10 0.176         3                 4        7               7</code></pre>
+</div>
+</div>
+<p><em>Construyo los valores contra los que compararé el valor <span class="math inline">\(p\)</span> original. En el caso del método de Bonferroni, calculo <span class="math inline">\(\alpha_i=\frac{\alpha}{\text{número de hipótesis en la familia}}\)</span>. Para el caso de la corrección de Benjamini y Hochberg, calculo <span class="math inline">\(q=\frac{\text{orden descendente de la hipótesis}}{\text{número de hipótesis en la familia}}\alpha\)</span></em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>data.fam.or <span class="ot">&lt;-</span> data.fam.or <span class="sc">%&gt;%</span> </span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">alpha_bonferroni=</span>alpha<span class="sc">/</span>numerohipotesis) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">corrector_bh=</span>posicion<span class="sc">/</span>numerohipotesis) <span class="sc">%&gt;%</span> </span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">q=</span>corrector_bh<span class="sc">*</span>alpha)</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>data.fam.or</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 9
+   hipotesis       p familia familia_corregida posicion numerohipotesis
+       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;             &lt;dbl&gt;    &lt;int&gt;           &lt;int&gt;
+ 1         4 0.00210       1                 1        1               5
+ 2         1 0.0145        1                 1        2               5
+ 3         5 0.0401        1                 1        3               5
+ 4         3 0.0678        1                 1        4               5
+ 5         2 0.230         1                 1        5               5
+ 6         7 0.0018        2                 4        1               3
+ 7         6 0.322         2                 4        2               3
+ 8         8 0.513         2                 4        3               3
+ 9        15 0.0018        3                 4        1               7
+10         9 0.0034        3                 4        2               7
+11        11 0.0211        3                 4        3               7
+12        13 0.0273        3                 4        4               7
+13        12 0.0412        3                 4        5               7
+14        14 0.120         3                 4        6               7
+15        10 0.176         3                 4        7               7
+# ℹ 3 more variables: alpha_bonferroni &lt;dbl&gt;, corrector_bh &lt;dbl&gt;, q &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p><em>Finalmente, especificamos las reglas de decisión:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>data.fam.or <span class="ot">&lt;-</span> data.fam.or <span class="sc">%&gt;%</span> </span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">regla_sincorr=</span><span class="fu">ifelse</span>(p<span class="sc">&lt;</span>.<span class="dv">05</span>,<span class="dv">1</span>,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">regla_bonferroni=</span><span class="fu">ifelse</span>(p<span class="sc">&lt;</span>alpha_bonferroni,<span class="dv">1</span>,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">regla_bh=</span><span class="fu">ifelse</span>(p<span class="sc">&lt;</span>q,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>data.fam.or <span class="ot">&lt;-</span> data.fam.or <span class="sc">%&gt;%</span> </span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(hipotesis)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Estos son los resultados:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>data.fam.or <span class="sc">%&gt;%</span> </span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(hipotesis,familia,regla_sincorr,regla_bonferroni,regla_bh)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 5
+   hipotesis familia regla_sincorr regla_bonferroni regla_bh
+       &lt;dbl&gt;   &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;    &lt;dbl&gt;
+ 1         1       1             1                0        1
+ 2         2       1             0                0        0
+ 3         3       1             0                0        0
+ 4         4       1             1                1        1
+ 5         5       1             1                0        0
+ 6         6       2             0                0        0
+ 7         7       2             1                1        1
+ 8         8       2             0                0        0
+ 9         9       3             1                1        1
+10        10       3             0                0        0
+11        11       3             1                0        1
+12        12       3             1                0        0
+13        13       3             1                0        1
+14        14       3             0                0        0
+15        15       3             1                1        1</code></pre>
+</div>
+</div>
+<p><em>Sin corrección se rechazan las hipótesis 1, 4, 5, 7, 9, 11, 12, 13 y 15 (nueve hipótesis en total). Al agrupar con la definición de familia dada por la variable familia solo se rechazan cuatro hipótesis siguiendo el método de Bonferroni, es decir, la corrección fue muy conservadora. Con el método de Benjamini y Hochberg se rechazan siete hipótesis.</em></p></li>
+<li><p>[5 puntos] Suponga que encuentra buenas razones conceptuales para afirmar que las familias 2 y 3 deben ser consideraras una sola familia. Tendríamos ahora solo dos familias, la familia 1 original y una nueva familia numerada como 4, como se indica en la variable familia_corregida. ¿Cómo cambian sus conclusiones respecto a la parte a. de esta pregunta? Genere un nuevo cuadro con esta redefinición.</p>
+<p><em>Repetimos el mismo procedimiento, solo que con la columna <strong>familia_corregida</strong> como la que indica a qué familia pertenece cada hipótesis:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>data.fam.corr <span class="ot">&lt;-</span> data.pvalues <span class="sc">%&gt;%</span> </span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">arrange</span>(familia_corregida,p)</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>data.fam.corr <span class="ot">&lt;-</span> data.fam.corr <span class="sc">%&gt;%</span> </span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(familia_corregida) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">posicion=</span><span class="fu">seq</span>(<span class="at">along.with =</span> familia_corregida)) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">numerohipotesis=</span><span class="fu">max</span>(posicion)) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a>data.fam.corr <span class="ot">&lt;-</span> data.fam.corr <span class="sc">%&gt;%</span> </span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">alpha_bonferroni=</span>alpha<span class="sc">/</span>numerohipotesis) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">corrector_bh=</span>posicion<span class="sc">/</span>numerohipotesis) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">q=</span>corrector_bh<span class="sc">*</span>alpha) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">regla_sincorr=</span><span class="fu">ifelse</span>(p<span class="sc">&lt;</span>.<span class="dv">05</span>,<span class="dv">1</span>,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">regla_bonferroni=</span><span class="fu">ifelse</span>(p<span class="sc">&lt;</span>alpha_bonferroni,<span class="dv">1</span>,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb67-16"><a href="#cb67-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">regla_bh=</span><span class="fu">ifelse</span>(p<span class="sc">&lt;</span>q,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb67-17"><a href="#cb67-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-18"><a href="#cb67-18" aria-hidden="true" tabindex="-1"></a>data.fam.corr <span class="ot">&lt;-</span> data.fam.corr <span class="sc">%&gt;%</span> </span>
+<span id="cb67-19"><a href="#cb67-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(hipotesis)</span>
+<span id="cb67-20"><a href="#cb67-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-21"><a href="#cb67-21" aria-hidden="true" tabindex="-1"></a>data.fam.corr <span class="sc">%&gt;%</span> </span>
+<span id="cb67-22"><a href="#cb67-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(hipotesis,familia_corregida,regla_sincorr,regla_bonferroni,regla_bh)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 5
+   hipotesis familia_corregida regla_sincorr regla_bonferroni regla_bh
+       &lt;dbl&gt;             &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;    &lt;dbl&gt;
+ 1         1                 1             1                0        1
+ 2         2                 1             0                0        0
+ 3         3                 1             0                0        0
+ 4         4                 1             1                1        1
+ 5         5                 1             1                0        0
+ 6         6                 4             0                0        0
+ 7         7                 4             1                1        1
+ 8         8                 4             0                0        0
+ 9         9                 4             1                1        1
+10        10                 4             0                0        0
+11        11                 4             1                0        0
+12        12                 4             1                0        0
+13        13                 4             1                0        0
+14        14                 4             0                0        0
+15        15                 4             1                1        1</code></pre>
+</div>
+</div>
+<p><em>Ahora solo tenemos dos familias, pero la familia 1 se mantiene igual. Entonces, no debe haber cambios en qué hipótesis se rechazan dentro de la familia 1 sin importar el método, lo cual ocurre en este caso. Al reagrupar las familias, ahora se rechazan en total cuatro hipótesis con el método de Bonferroni y cinco con el de Benjamini y Hochberg.</em></p></li>
+<li><p>[5 puntos] Suponga que su asistente de investigación olvidó el concepto de familia y realiza las correcciones por pruebas de múltiples hipótesis ignorando las familias. ¿Qué concluiría en este caso? Genere un nuevo cuadro bajo esta circunstancia. Comente sobre la diferencia en las conclusiones entre las partes b. y c.</p>
+<p><em>Finalmente, podemos ver esta parte como si hubiera una sola gran familia. En este caso, usando el método de Bonferroni se rechazarían solo tres hipótesis. Usando el método de Benjamini y Hochberg se rechazan cinco hipótesis.</em></p>
+<p><em>En esta pregunta comprobamos que el procedimiento de Bonferroni es demasiado conservador, así como no agrupar por familias lo es también. El cómo decidamos agrupar las variables en familias tiene importantes consecuencias al momento de realizar las correcciones. El procedimiento de Benjamini y Hochberg es ampliamente usado en la literatura de evaluación, como lo hemos visto en varias de las aplicaciones de clase.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>data.nofam <span class="ot">&lt;-</span> data.pvalues <span class="sc">%&gt;%</span> </span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">arrange</span>(p)</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Hago esto para usar mi mismo código</span></span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>data.nofam <span class="ot">&lt;-</span> data.nofam <span class="sc">%&gt;%</span> </span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">granfamilia=</span><span class="dv">1</span>)</span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a>data.nofam <span class="ot">&lt;-</span> data.nofam <span class="sc">%&gt;%</span> </span>
+<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(granfamilia) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">posicion=</span><span class="fu">seq</span>(<span class="at">along.with =</span> granfamilia)) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">numerohipotesis=</span><span class="fu">max</span>(posicion)) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb69-13"><a href="#cb69-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-14"><a href="#cb69-14" aria-hidden="true" tabindex="-1"></a>data.nofam <span class="ot">&lt;-</span> data.nofam <span class="sc">%&gt;%</span> </span>
+<span id="cb69-15"><a href="#cb69-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">regla_sincorr=</span><span class="fu">ifelse</span>(p<span class="sc">&lt;</span>.<span class="dv">05</span>,<span class="dv">1</span>,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-16"><a href="#cb69-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">alpha_bonferroni=</span>alpha<span class="sc">/</span>numerohipotesis) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-17"><a href="#cb69-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">corrector_bh=</span>posicion<span class="sc">/</span>numerohipotesis) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-18"><a href="#cb69-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">q=</span>corrector_bh<span class="sc">*</span>alpha) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-19"><a href="#cb69-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">regla_bonferroni=</span><span class="fu">ifelse</span>(p<span class="sc">&lt;</span>alpha_bonferroni,<span class="dv">1</span>,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb69-20"><a href="#cb69-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">regla_bh=</span><span class="fu">ifelse</span>(p<span class="sc">&lt;</span>q,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb69-21"><a href="#cb69-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-22"><a href="#cb69-22" aria-hidden="true" tabindex="-1"></a>data.nofam <span class="ot">&lt;-</span> data.nofam <span class="sc">%&gt;%</span> </span>
+<span id="cb69-23"><a href="#cb69-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(hipotesis)</span>
+<span id="cb69-24"><a href="#cb69-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-25"><a href="#cb69-25" aria-hidden="true" tabindex="-1"></a>data.nofam <span class="sc">%&gt;%</span> </span>
+<span id="cb69-26"><a href="#cb69-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(hipotesis,regla_sincorr,regla_bonferroni,regla_bh)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 4
+   hipotesis regla_sincorr regla_bonferroni regla_bh
+       &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;    &lt;dbl&gt;
+ 1         1             1                0        1
+ 2         2             0                0        0
+ 3         3             0                0        0
+ 4         4             1                1        1
+ 5         5             1                0        0
+ 6         6             0                0        0
+ 7         7             1                1        1
+ 8         8             0                0        0
+ 9         9             1                0        1
+10        10             0                0        0
+11        11             1                0        0
+12        12             1                0        0
+13        13             1                0        0
+14        14             0                0        0
+15        15             1                1        1</code></pre>
+</div>
+</div></li>
+</ol>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Por ejemplo, suponga que estima un modelo al que llame <em>modelo1</em>. Entonces, si ejecuta</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef_test</span>(modelo1,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">vcov=</span><span class="st">"CR1S"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">cluster=</span>mis_datos<span class="sc">$</span>demi_paire)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>obtendrá los coeficientes con los errores agrupados requeridos. La opción <em>CR1S</em> toma en cuenta el número de grupos o <em>clusters</em> para realizar inferencia. Puede leer más al respecto en la ayuda al ejecutar <em>?vcovCR</em>. Este es el tipo de ajuste de muestras finitas que usan los autores. Esta corrección consiste en multiplicar la matriz de sándwich agrupada CR0 por <span class="math inline">\(\frac{G(N-1)}{(G-1)(N-p)}\)</span>, donde <span class="math inline">\(G\)</span> es el número de grupos, <span class="math inline">\(N\)</span> es el número total de observaciones y <span class="math inline">\(p\)</span> es el número de regresores.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Crépon, B., Devoto, F., Duflo, E., &amp; Parienté, W. (2015). Estimating the impact of microcredit on those who take it up: Evidence from a randomized experiment in Morocco. <em>American Economic Journal: Applied Economics</em>, 7(1), 123-50.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Angrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. <em>American Economic Journal: Applied Economics</em>, 1(1), 136-63.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Banerjee, A. et al.&nbsp;(2015). A multifaceted program causes lasting progress for the very poor: Evidence from six countries. <em>Science</em>, 348(6236).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
