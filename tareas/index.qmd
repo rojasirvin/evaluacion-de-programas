@@ -4,35 +4,23 @@ title: "Tareas"
 
 # Tarea 1
 
-- Fecha de entrega: 18 de septiembre a las 20:00 en Teams
-- [Preguntas](./tarea-1.qmd)
-- [Respuestas](./tarea-1-respuestas.qmd)
-
+- Fecha de entrega: martes 17 de septiembre a las 20:00 en Teams
 
 ---
 
 # Tarea 2
 
-- Fecha de entrega: 9 de octubre a las 20:00 en Teams
-- [Preguntas](./tarea-2.qmd)
-- [Respuestas](./tarea-2-respuestas.qmd)
-
-
+- Fecha de entrega: martes 1 de octubre a las 20:00 en Teams
 
 ---
 
 # Tarea 3
 
-- Fecha de entrega: 9 de noviembre a las 20:00 en Teams
-- [Preguntas](./tarea-3.qmd)
-- [Respuestas](./tarea-3-respuestas.qmd)
-
+- Fecha de entrega: martes 29 de octubre a las 20:00 en Teams
 
 ---
 
 # Tarea 4
 
-- Fecha de entrega: 4 de diciembre a las 20:00 en Teams
-- [Preguntas](./tarea-4.qmd)
-- [Respuestas](./tarea-4-respuestas.qmd)
+- Fecha de entrega: jueves 28 de noviembre a las 20:00 en Teams
 

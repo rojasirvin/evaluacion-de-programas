@@ -39,7 +39,7 @@ Unidad 1. Introducción
   - Revisión de métodos de regresión
   
 * Replicabilidad y transparencia en la evaluación
-  - RMardkown para la generación de reportes científicos
+  - Quarto para la generación de reportes científicos
 
 Unidad 2. Métodos de evaluación
 
@@ -105,7 +105,8 @@ Un segundo archivo deberá contener el código replicable usado para generar los
 R será el paquete standard usado en las sesiones prácticas. Más aún, el uso de cualquier software es aceptado siempre que se cumplan con los requisitos de replicabilidad y reportes de las tareas y exámenes. Habrá una sesión especial para introducir el uso de Quarto para la generación de reportes científicos.
 
 ## Exámenes
-* Examen parcial: miércoles 11 de octubre en el horario de clase.
+  
+* Examen parcial: jueves 3 de octubre en el horario de clase.
 
 * Examen final: por definir.
 
@@ -123,4 +124,5 @@ Entrega: fecha por definir, a través de Teams.
 ## Lista de lecturas
 
 Las lecturas obligatorias (marcadas con “*”) permiten una discusión informada en la clase. Las lecturas que serán presentadas en exposiciones también son obligatorias y están marcadas con “+”. El resto de las lecturas no serán cubiertas en clase, pero son ampliamente recomendables. En las sesiones de exposiciones se espera que el resto de la clase tenga el conocimiento suficiente sobre el material presentado para participar en la discusión.
+
 La lista de lecturas está disponible [aquí](https://rojasirvin.github.io/evaluacion-de-programas/lecturas.html).
