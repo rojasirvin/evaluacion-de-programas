@@ -180,6 +180,23 @@
     ]
   },
   {
+    "objectID": "presentaciones.html",
+    "href": "presentaciones.html",
+    "title": "Presentaciones",
+    "section": "",
+    "text": "Por favor, seleccione una de las lecturas marcadas con una “+” de la lista de lecturas y envíe un correo al profesor para que se le asigne una fecha de presentación.\n\n\n\n\n\n\n\n\n\nAutores\nTema\nPresentador o presentadora\nFecha de exposición",
+    "crumbs": [
+      "Presentaciones"
+    ]
+  },
+  {
+    "objectID": "materiales.html",
+    "href": "materiales.html",
+    "title": "Materiales",
+    "section": "",
+    "text": "Datasets\nSlides"
+  },
+  {
     "objectID": "programa.html",
     "href": "programa.html",
     "title": "Programa",
@@ -224,7 +241,7 @@
     "href": "programa.html#evaluación-del-curso",
     "title": "Programa",
     "section": "Evaluación del curso",
-    "text": "Evaluación del curso\n\nExamen parcial: 20%\nExamen final: 30%\nProyecto final: 20%\nTareas (4): 20% (5% cada una)\nExposición: 10% (7% presentación y 3% folleto)",
+    "text": "Evaluación del curso\n\nExamen parcial: 20%\nExamen final: 30%\nProyecto final: 20%\nTareas (4): 20% (5% cada una)\nExposición: 10% (7% presentación y 3% resumen)",
     "crumbs": [
       "Programa"
     ]
@@ -264,7 +281,7 @@
     "href": "programa.html#exposiciones",
     "title": "Programa",
     "section": "Exposiciones",
-    "text": "Exposiciones\nCada alumno realizará una presentación de uno los artículos aplicados marcados con “+” en la lista de lecturas. Cada presentación deberá ser de máximo 15 minutos y debe incluir el contenido que el presentador considere relevante. La presentación deberá abordar, mínimamente: 1) el problema a investigar, 2) la metodología empleada, 3) la pertinencia de la metodología y la teoría vista en el curso, 4) los datos empleados, 5) los principales resultados, y 6) una crítica sobre la validez y las conclusiones del estudio. La presentación deberá acompañarse de un breve folleto que resuma los puntos anteriores, para ser distribuido con el resto de la clase.",
+    "text": "Exposiciones\nCada alumno realizará una presentación de uno los artículos aplicados marcados con “+” en la lista de lecturas. Cada presentación deberá ser de máximo 15 minutos y debe incluir el contenido que el presentador considere relevante. La presentación deberá abordar, mínimamente: 1) el problema a investigar, 2) la metodología empleada, 3) la pertinencia de la metodología y la teoría vista en el curso, 4) los datos empleados, 5) los principales resultados, y 6) una crítica sobre la validez y las conclusiones del estudio. La presentación deberá acompañarse de un breve resumen de máximo una página de extensión que sintetice los puntos anteriores, para ser distribuido con el resto de la clase.",
     "crumbs": [
       "Programa"
     ]
@@ -290,20 +307,13 @@
     ]
   },
   {
-    "objectID": "materiales.html",
-    "href": "materiales.html",
-    "title": "Materiales",
+    "objectID": "cronograma.html",
+    "href": "cronograma.html",
+    "title": "Cronograma",
     "section": "",
-    "text": "Datasets\nSlides"
-  },
-  {
-    "objectID": "presentaciones.html",
-    "href": "presentaciones.html",
-    "title": "Presentaciones",
-    "section": "",
-    "text": "Por favor, seleccione una de las lecturas marcadas con una “+” de la lista de lecturas y envíe un correo al profesor para que se le asigne una fecha de presentación.\n\n\n\n\n\n\n\n\n\nAutores\nTema\nPresentador o presentadora\nFecha de exposición",
+    "text": "El siguiente cronograma es informativo sobre la organización del curso:",
     "crumbs": [
-      "Presentaciones"
+      "Cronograma"
     ]
   },
   {
