@@ -21,6 +21,8 @@ website:
         text: Programa
       - href: reglas.qmd
         text: Reglas
+      - href: cronograma.qmd
+        text: Cronograma
       - href: lecturas.qmd
         text: Lecturas
       - href: presentaciones.qmd

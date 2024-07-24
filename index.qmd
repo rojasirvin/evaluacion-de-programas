@@ -4,7 +4,7 @@ title: "Evaluación de Programas 2024"
 
 ---
 
-Profesor: [Irvin Rojas](https://rojasirvin.github.io/) (irvin.rojas\@cide.edu).
+Profesor: [Irvin Rojas](https://rojasirvin.github.io/){target="_blank"} (irvin.rojas\@cide.edu).
 
 Horario de clases: martes y jueves (8:00 a 9:30).
 

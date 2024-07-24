@@ -1,0 +1,7 @@
+---
+title: "Cronograma"
+---
+
+El siguiente cronograma es informativo sobre la organización del curso:
+
+![](cronograma-trabajo-eps2024.pdf){width=100% height=800}

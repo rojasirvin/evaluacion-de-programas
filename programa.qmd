@@ -88,7 +88,7 @@ Unidad 3. Temas actuales de evaluación
 + Examen final: 30%
 + Proyecto final: 20%
 + Tareas (4): 20% (5% cada una)
-+ Exposición: 10% (7% presentación y 3% folleto)
++ Exposición: 10% (7% presentación y 3% resumen)
 
 
 ## Tareas
@@ -113,7 +113,7 @@ R será el paquete standard usado en las sesiones prácticas. Más aún, el uso 
 
 ## Exposiciones
 
-Cada alumno realizará una presentación de uno los artículos aplicados marcados con “+” en la lista de lecturas. Cada presentación deberá ser de máximo 15 minutos y debe incluir el contenido que el presentador considere relevante. La presentación deberá abordar, mínimamente: 1) el problema a investigar, 2) la metodología empleada, 3) la pertinencia de la metodología y la teoría vista en el curso, 4) los datos empleados, 5) los principales resultados, y 6) una crítica sobre la validez y las conclusiones del estudio. La presentación deberá acompañarse de un breve folleto que resuma los puntos anteriores, para ser distribuido con el resto de la clase.
+Cada alumno realizará una presentación de uno los artículos aplicados marcados con “+” en la lista de lecturas. Cada presentación deberá ser de máximo 15 minutos y debe incluir el contenido que el presentador considere relevante. La presentación deberá abordar, mínimamente: 1) el problema a investigar, 2) la metodología empleada, 3) la pertinencia de la metodología y la teoría vista en el curso, 4) los datos empleados, 5) los principales resultados, y 6) una crítica sobre la validez y las conclusiones del estudio. La presentación deberá acompañarse de un breve resumen de máximo una página de extensión que sintetice los puntos anteriores, para ser distribuido con el resto de la clase.
 
 ## Proyecto final
 
