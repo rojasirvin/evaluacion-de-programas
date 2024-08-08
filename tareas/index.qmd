@@ -10,7 +10,7 @@ title: "Tareas"
 
 # Tarea 2
 
-- Fecha de entrega: martes 1 de octubre a las 20:00 en Teams
+- Fecha de entrega: lunes 30 de septiembre a las 20:00 en Teams
 
 ---
 
@@ -22,5 +22,5 @@ title: "Tareas"
 
 # Tarea 4
 
-- Fecha de entrega: jueves 28 de noviembre a las 20:00 en Teams
+- Fecha de entrega: martes 26 de noviembre a las 20:00 en Teams
 

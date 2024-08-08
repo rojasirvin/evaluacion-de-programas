@@ -7,9 +7,9 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
 ## Semana 1
 * Diseño y econometría
   + \* Freedman, D. A. (1991). Statistical models and shoe leather. *Sociological methodology*, 291-313.
-  + \* Athey, S., y Imbens, G. W. (2017). The state of applied econometrics: Causality and policy evaluation. *Journal of Economic Perspectives*, 31(2), 3-32.
+  + \* Athey, S., & Imbens, G. W. (2017). The state of applied econometrics: Causality and policy evaluation. *Journal of Economic Perspectives*, 31(2), 3-32.
   + Heckman, J. J. (2001). Micro data, heterogeneity, and the evaluation of public policy: Nobel lecture. *Journal of political Economy*, 109(4), 673-748.  
-  + Heckman, J. J., y Vytlacil, E. J. (2007). Econometric evaluation of social programs, part I: Causal models, structural models and econometric policy evaluation. *Handbook of econometrics*, 6, 4779-4874.  
+  + Heckman, J. J., & Vytlacil, E. J. (2007). Econometric evaluation of social programs, part I: Causal models, structural models and econometric policy evaluation. *Handbook of econometrics*, 6, 4779-4874.  
 
 * Inferencia causal  
   + GMPRV, Capítulo 3  
@@ -35,6 +35,14 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
 * Inferencia estadística
   + \* MM, Capítulo 1 (Randomized Trials), Apéndice (Mastering Inference)
   + MT, Capítulo 2 (Probability and Regression Review)
+  
+* Errores estándar no estándar
+  + Abadie, A., Athey, S., Imbens, G. W., & Wooldridge, J. M. (2023). When should you adjust standard errors for clustering?. *The Quarterly Journal of Economics*, 138(1), 1-35.
+  + \* MHE, Capítulo 8  (Nonstandard Standard Errors Issues)
+  + Cameron, A. C., & Miller, D. L. (2015). A practitioner’s guide to cluster-robust inference. *Journal of Human Resources*, 50(2), 317-372.
+  + Stock, J. H. (2010). The other transformation in econometric practice: Robust tools for inference. *Journal of Economic Perspectives*, 24(2), 83-94.
+
+## Semana 4
 
 * Aplicaciones de evaluaciones experimentales  
   + \+ Arceo-Gomez, E. O., & Campos-Vazquez, R. M. (2014). Race and marriage in the labor market: A discrimination correspondence study in a developing country. *American Economic Review*, 104(5), 376-80.  
@@ -48,18 +56,13 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + \+ Gertler, P. (2004). Do conditional cash transfers improve child health? Evidence from PROGRESA's control randomized experiment. *American economic review*, 94(2), 336-341.
   + Londoño-Vélez, J., & Querubin, P. (2022). The Impact of Emergency Cash Assistance in a Pandemic: Experimental Evidence from Colombia. *The Review of Economics and Statistics*, 1-27
   + Martínez A, C., Puentes, E., & Ruiz-Tagle, J. (2018). The effects of micro-entrepreneurship programs on labor market performance: experimental evidence from Chile. *American Economic Journal: Applied Economics*, 10(2), 101-24.
-  + Mousa, S. (2019). Creating Coexistence: Intergroup Contact and Soccer in Post-ISIS Iraq. Unpublished manuscript. Stanford University.  
+  + Mousa, S. (2020). Building social cohesion between Christians and Muslims through soccer in post-ISIS Iraq. *Science*, 369(6505), 866-870.  
   + Poertner, M. (2023). Does Political Representation Increase Participation? Evidence from Party Candidate Lotteries in Mexico. *American Political Science Review*, 117(2), 537-556.
   + \+ Seira, E., Elizondo, A., & Laguna-Müggenburg, E. (2017). Are information disclosures effective? evidence from the credit card market. *American Economic Journal: Economic Policy*, 9(1), 277-307.  
   + \+ Tagliati, F. (2022). Welfare effects of an in-kind transfer program: Evidence from Mexico. *Journal of Development Economics*, 154, 102753.
 
 
-## Semana 4
-* Errores estándar no estándar  
-  + \* MHE, Capítulo 8  (Nonstandard Standard Errors Issues)
-  + Cameron, A. C., y Miller, D. L. (2015). A practitioner’s guide to cluster-robust inference. *Journal of Human Resources*, 50(2), 317-372.
-  + Stock, J. H. (2010). The other transformation in econometric practice: Robust tools for inference. *Journal of Economic Perspectives*, 24(2), 83-94.
-  
+
   
 ## Semana 5
 
@@ -69,42 +72,6 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + MHE, Capítulo 4 (Instrumental Variables in Action)  
   + \* MM, Capítulo 3 (Instrumental Variables)
   + MT, Capítulo 7 (Instrumental Variables)
-
-
-* Aplicaciones LATE  
-  + Angrist, J. D. (1990). Lifetime earnings and the Vietnam era draft lottery: evidence from social security administrative records. *The American Economic Review*, 313-336.  
-  + \* Angrist, J. D. (2006). Instrumental variables methods in experimental criminological research: what, why and how. *Journal of Experimental Criminology*, 2(1), 23-44.  
-  + Angrist, J. D., Imbens, G., & Rubin, D. B. (1996). Identification of causal effects using instrumental variables. *Journal of the American statistical Association*, 91(434), 444-455.  
-  + \* Crépon, B., Devoto, F., Duflo, E., & Parienté, W. (2015). Estimating the impact of microcredit on those who take it up: Evidence from a randomized experiment in Morocco. *American Economic Journal: Applied Economics*, 7(1), 123-50.  
-  + Devoto, F., Duflo, E., Dupas, P., Parienté, W., & Pons, V. (2012). Happiness on tap: Piped water adoption in urban Morocco. *American Economic Journal: Economic Policy*, 4(4), 68-99.
-  + \+ De La O, A. L. (2013). Do conditional cash transfers affect electoral behavior? Evidence from a randomized experiment in Mexico. *American Journal of Political Science*, 57(1), 1-14.  
-  + \+ Gonzalez-Navarro, M., & Quintana-Domeque, C. (2016). Paving streets for the poor: Experimental analysis of infrastructure effects. *Review of Economics and Statistics*, 98(2), 254-267.
-  + Heckman, J. J., & Vytlacil, E. J. (2007). Econometric evaluation of social programs, part II: Using the marginal treatment effect to organize alternative econometric estimators to evaluate social programs, and to forecast their effects in new environments. *Handbook of econometrics*, 6, 4875-5143.  
-  + Imbens, G. W., & Angrist, J. D. (1994). Identification and estimation of local average treatment effects. *Econometrica* (1986-1998), 62(2), 467.
-  + Kling, J. R., Liebman, J. B., & Katz, L. F. (2007). Experimental analysis of neighborhood effects. *Econometrica*, 75(1), 83-119. 
-
-
-
-
-## Semana 6
-* Diferencia en diferencias  
-  + CT, Capítulo 25, Sección 25.5 
-  + GMPRV, Capítulo 7  
-  + \* MM, Capítulo 5 (Differences-in-differences)
-  + MT, Capítulo 9 (Difference in differences), secciones 1 a 5
-
-* DID desfasado
-  + \* MT, Capítulo 9 (Difference in differences), sección 
-  + Baker, A. C., Larcker, D. F., & Wang, C. C. (2022). How much should we trust staggered difference-in-differences estimates?. *Journal of Financial Economics*, 144(2), 370-395.
-  + Callaway, B., & Sant’Anna, P. H. (2021). Difference-in-differences with multiple time periods. *Journal of Econometrics*, 225(2), 200-230.
-  + Goodman-Bacon, A. (2021). Difference-in-differences with variation in treatment timing. *Journal of Econometrics*, 225(2), 254-277.
-  + Marcus, M., & Sant’Anna, P. H. (2021). The role of parallel trends in event study settings: An application to environmental economics. *Journal of the Association of Environmental and Resource Economists*, 8(2), 235-275.
-  + \* Roth, J., Sant'Anna, P. H., Bilinski, A., & Poe, J. (2023). What's Trending in Difference-in-Differences? A Synthesis of the Recent Econometrics Literature. *Journal of Econometrics*, 235(2), 2218-2244.
-
-
-  
-  
-## Semana 7
 
 * Corrección por prueba de múltiples hipótesis  
   + \* Angelucci, M., Karlan, D., & Zinman, J. (2015). Microcredit impacts: Evidence from a randomized microcredit program placement experiment by Compartamos Banco. *American Economic Journal: Applied Economics*, 7(1), 151-82. 
@@ -118,6 +85,39 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + \* McKenzie, D. (2012). Beyond baseline and follow-up: The case for more T in experiments. *Journal of development Economics*, 99(2), 210-221.
   + Rojas Valdes, R.I., Wydick, B., & Lybbert, T.J. (2021). Can Hope Elevate Microfinance? Evidence from Oaxaca, Mexico. *Oxford Economic Papers*.
 
+
+
+## Semana 6
+
+* Aplicaciones LATE  
+  + Angrist, J. D. (1990). Lifetime earnings and the Vietnam era draft lottery: evidence from social security administrative records. *The American Economic Review*, 313-336.  
+  + \* Angrist, J. D. (2006). Instrumental variables methods in experimental criminological research: what, why and how. *Journal of Experimental Criminology*, 2(1), 23-44.  
+  + Angrist, J. D., Imbens, G., & Rubin, D. B. (1996). Identification of causal effects using instrumental variables. *Journal of the American statistical Association*, 91(434), 444-455.  
+  + \* Crépon, B., Devoto, F., Duflo, E., & Parienté, W. (2015). Estimating the impact of microcredit on those who take it up: Evidence from a randomized experiment in Morocco. *American Economic Journal: Applied Economics*, 7(1), 123-50.  
+  + Devoto, F., Duflo, E., Dupas, P., Parienté, W., & Pons, V. (2012). Happiness on tap: Piped water adoption in urban Morocco. *American Economic Journal: Economic Policy*, 4(4), 68-99.
+  + \+ De La O, A. L. (2013). Do conditional cash transfers affect electoral behavior? Evidence from a randomized experiment in Mexico. *American Journal of Political Science*, 57(1), 1-14.  
+  + \+ Gonzalez-Navarro, M., & Quintana-Domeque, C. (2016). Paving streets for the poor: Experimental analysis of infrastructure effects. *Review of Economics and Statistics*, 98(2), 254-267.
+  + Heckman, J. J., & Vytlacil, E. J. (2007). Econometric evaluation of social programs, part II: Using the marginal treatment effect to organize alternative econometric estimators to evaluate social programs, and to forecast their effects in new environments. *Handbook of econometrics*, 6, 4875-5143.  
+  + Imbens, G. W., & Angrist, J. D. (1994). Identification and estimation of local average treatment effects. *Econometrica* (1986-1998), 62(2), 467.
+  + Kling, J. R., Liebman, J. B., & Katz, L. F. (2007). Experimental analysis of neighborhood effects. *Econometrica*, 75(1), 83-119. 
+
+* Diferencia en diferencias  
+  + CT, Capítulo 25, Sección 25.5 
+  + GMPRV, Capítulo 7  
+  + \* MM, Capítulo 5 (Differences-in-differences)
+  + MT, Capítulo 9 (Difference in differences), secciones 1 a 5
+
+* DID desfasado
+  + \* MT, Capítulo 9 (Difference in differences), sección 9.6
+  + Baker, A. C., Larcker, D. F., & Wang, C. C. (2022). How much should we trust staggered difference-in-differences estimates?. *Journal of Financial Economics*, 144(2), 370-395.
+  + Callaway, B., & Sant’Anna, P. H. (2021). Difference-in-differences with multiple time periods. *Journal of Econometrics*, 225(2), 200-230.
+  + Goodman-Bacon, A. (2021). Difference-in-differences with variation in treatment timing. *Journal of Econometrics*, 225(2), 254-277.
+  + Marcus, M., & Sant’Anna, P. H. (2021). The role of parallel trends in event study settings: An application to environmental economics. *Journal of the Association of Environmental and Resource Economists*, 8(2), 235-275.
+  + \* Roth, J., Sant'Anna, P. H., Bilinski, A., & Poe, J. (2023). What's Trending in Difference-in-Differences? A Synthesis of the Recent Econometrics Literature. *Journal of Econometrics*, 235(2), 2218-2244.
+
+  
+  
+## Semana 8
 
 * Aplicaciones de DID  
   + \* Bertrand, M., Duflo, E., & Mullainathan, S. (2004). How much should we trust differences-in-differences estimates? *The Quarterly journal of economics*, 119(1), 249-275.
@@ -136,13 +136,6 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + Zhang, R., Li, Y., Zhang, A. L., Wang, Y., & Molina, M. J. (2020). Identifying airborne transmission as the dominant route for the spread of COVID-19. *Proceedings of the National Academy of Sciences*.  
   
 
-
-
-## Semana 8
-
-Semana de examen parcial.
-
-
 ## Semana 9
 
 * Métodos de pareamiento
@@ -150,6 +143,16 @@ Semana de examen parcial.
   + \* MH, Capítulo 3, Sección 3.3
   + \* MT, Capítulo 5
 
+* Diseños con discontinuidades
+  + GMPRV, Capítulo 6
+
+* Discontinuidades nítidas y difusas  
+  + MHE, Capítulo 6  
+  + \* MM, Capítulo 4
+  + \* MT, Capítulo 6
+  
+
+## Semana 10
 
 * Aplicaciones del PSM  
   + Abadie, A., & Imbens, G. W. (2016). Matching on the estimated propensity score. *Econometrica*, 84(2), 781-807.  
@@ -165,17 +168,18 @@ Semana de examen parcial.
   + Wellalage, N. H., & Locke, S. (2020). Remittance and financial inclusion in refugee migrants: inverse probability of treatment weighting using the propensity score. *Applied Economics*, 52(9), 929-950.
 
 
-## Semana 10
-
-* Diseños con discontinuidades
-  + GMPRV, Capítulo 6
-
-* Discontinuidades nítidas y difusas  
-  + MHE, Capítulo 6  
-  + \* MM, Capítulo 4
-  + \* MT, Capítulo 6
-  
 ## Semana 11
+
+* Control sintético 
+  + \* MT, Capítulo 10
+  + \* Abadie, A. (2019). Using synthetic controls: Feasibility, data requirements, and methodological aspects. *Journal of Economic Literature*.
+  + \* Abadie, A., Diamond, A., & Hainmueller, J. (2010). Synthetic control methods for comparative case studies: Estimating the effect of California’s tobacco control program. *Journal of the American statistical Association*, 105(490), 493-505.
+  + \+ Abadie, A., Diamond, A., & Hainmueller, J. (2015). Comparative politics and the synthetic control method. *American Journal of Political Science*, 59(2), 495-510.  
+  
+
+
+
+## Semana 12
 
 * Aplicaciones de diseños con discontinuidades  
   + Abdulkadiroğlu, A., Angrist, J., & Pathak, P. (2014). The elite illusion: Achievement effects at Boston and New York exam schools. *Econometrica*, 82(1), 137-196.
@@ -215,16 +219,6 @@ Semana de examen parcial.
   + Lurie, I. Z., Sacks, D. W., & Heim, B. (2021). Does the individual mandate affect insurance coverage? Evidence from tax returns. *American Economic Journal: Economic Policy*, 13(2), 378-407.
 
 
-
-## Semana 12
-
-* Control sintético 
-  + \* MT, Capítulo 10
-  + \* Abadie, A. (2019). Using synthetic controls: Feasibility, data requirements, and methodological aspects. *Journal of Economic Literature*.
-  + \* Abadie, A., Diamond, A., & Hainmueller, J. (2010). Synthetic control methods for comparative case studies: Estimating the effect of California’s tobacco control program. *Journal of the American statistical Association*, 105(490), 493-505.
-  + \+ Abadie, A., Diamond, A., & Hainmueller, J. (2015). Comparative politics and the synthetic control method. *American Journal of Political Science*, 59(2), 495-510.  
-
-
 ## Semana 13
 
 * Aplicaciones de control sintético
@@ -254,6 +248,7 @@ Semana de examen parcial.
   + Chernozhukov, V., Chetverikov, D., Demirer, M., Duflo, E., Hansen, C., Newey, W., & Robins, J. (2018). Double/debiased machine learning for treatment and structural parameters. *Econometrics Journal*, 21(1), pp. C1–C68.
   + \+ Chernozhukov, V., Demirer, M., Duflo, E., & Fernandez-Val, I. (2018). Generic machine learning inference on heterogeneous treatment effects in randomized experiments, with an application to immunization in India. Woring Paper No. w24678. National Bureau of Economic Research.
   + Cole, M. A., Elliott, R. J., & Liu, B. (2020). The impact of the Wuhan Covid-19 lockdown on air pollution and health: a machine learning and augmented synthetic control approach. *Environmental and Resource Economics*, 76(4), 553-580.
+  + Dell, M. (2024). Deep Learning for Economists. arXiv preprint arXiv:2407.15339.
   + Naimi, A. I., Mishler, A. E., & Kennedy, E. H. (2017). Challenges in obtaining valid causal effect estimates with machine learning algorithms. ArXiv preprint 1711.07137.
   + Storm, H., Baylis, K., & Heckelei, T. (2020). Machine learning in agricultural and applied economics. *European Review of Agricultural Economics*, 47(3), 849-892.
   + Torrats-Espinosa, G. (2021). Using machine learning to estimate the effect of racial segregation on COVID-19 mortality in the United States. *Proceedings of the National Academy of Sciences*, 118(7).
