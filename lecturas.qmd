@@ -45,19 +45,23 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
 ## Semana 4
 
 * Aplicaciones de evaluaciones experimentales  
-  + \+ Arceo-Gomez, E. O., & Campos-Vazquez, R. M. (2014). Race and marriage in the labor market: A discrimination correspondence study in a developing country. *American Economic Review*, 104(5), 376-80.  
+  + \+ Arceo-Gomez, E. O., & Campos-Vazquez, R. M. (2014). Race and marriage in the labor market: A discrimination correspondence study in a developing country. *American Economic Review*, 104(5), 376-80.
+  + \+ Ascencio, S. J., & Chang, H. I. (2024). Do primaries improve evaluations of public officials? Experimental evidence from Mexico. *Political Behavior*, 1-22.
   + Baird, S., McIntosh, C., & Özler, B. (2011). Cash or condition? Evidence from a cash transfer experiment. The *Quarterly journal of economics*, 126(4), 1709-1753.  
   + \* Banerjee, A., Duflo, E., Goldberg, N., Karlan, D., Osei, R., Parienté, W., Shapiro, J., Thuysbaert, B. & Udry, C. (2015). A multifaceted program causes lasting progress for the very poor: Evidence from six countries. *Science*, 348(6236), 1260799.
   + Blattman, C., Emeriau, M., & Fiala, N. (2018). Do anti-poverty programs sway voters? Experimental evidence from Uganda. *Review of Economics and Statistics*, 100(5), 891-905.
   + \+ Bruhn, M., Karlan, D., & Schoar, A. (2018). The impact of consulting services on small and medium enterprises: Evidence from a randomized trial in Mexico. *Journal of Political Economy*, 126(2), 635-687.
+  + \+ Davies, E., Deffebach, P., Iacovone, L., & Mckenzie, D. (2024). Training microentrepreneurs over Zoom: Experimental evidence from Mexico. *Journal of Development Economics*, 167, 103244.
   + \+ De La O, A. L., Fernández-Vázquez, P. & García, F. M. (2023). Federal and state audits do not increase compliance with a grant program to improve municipal infrastructure: A pre-registered field experiment. *Journal of Development Economics*, 162, 103043.
   + Duflo, E., Dupas, P., & Kremer, M. (2015). Education, HIV, and early fertility: Experimental evidence from Kenya. *American Economic Review*, 105(9), 2757-97.  
   + Dupas, P. (2011). Do teenagers respond to HIV risk information? Evidence from a field experiment in Kenya. *American Economic Journal*: Applied Economics, 3(1), 1-34.  
   + \+ Gertler, P. (2004). Do conditional cash transfers improve child health? Evidence from PROGRESA's control randomized experiment. *American economic review*, 94(2), 336-341.
+  + \+ Hoyos, R. D., Attanasio, O., & Meghir, C. (2024). Targeting high school scholarships to the poor: the impact of a program in Mexico. *Economic Development and Cultural Change*, 72(4), 1747-1768.
   + Londoño-Vélez, J., & Querubin, P. (2022). The Impact of Emergency Cash Assistance in a Pandemic: Experimental Evidence from Colombia. *The Review of Economics and Statistics*, 1-27
   + Martínez A, C., Puentes, E., & Ruiz-Tagle, J. (2018). The effects of micro-entrepreneurship programs on labor market performance: experimental evidence from Chile. *American Economic Journal: Applied Economics*, 10(2), 101-24.
   + Mousa, S. (2020). Building social cohesion between Christians and Muslims through soccer in post-ISIS Iraq. *Science*, 369(6505), 866-870.  
   + Poertner, M. (2023). Does Political Representation Increase Participation? Evidence from Party Candidate Lotteries in Mexico. *American Political Science Review*, 117(2), 537-556.
+  + \+ Sadka, J., Seira, E., & Woodruff, C. (2024). Information and Bargaining through Agents: Experimental Evidence from Mexico’s Labour Courts. *Review of Economic Studies*, rdae003.
   + \+ Seira, E., Elizondo, A., & Laguna-Müggenburg, E. (2017). Are information disclosures effective? evidence from the credit card market. *American Economic Journal: Economic Policy*, 9(1), 277-307.  
   + \+ Tagliati, F. (2022). Welfare effects of an in-kind transfer program: Evidence from Mexico. *Journal of Development Economics*, 154, 102753.
 
@@ -124,7 +128,8 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + \+ Boruchowicz, C., Parker, S. W., & Robbins, L. (2022). Time use of youth during a pandemic: Evidence from Mexico. *World Development*, 149, 105687.
   + \+ Cabrera-Hernández, F., Padilla-Romo, M., & Peluffo, C. (2023). Full-time schools and educational trajectories: Evidence from high-stakes exams. *Economics of Education Review*, 96, 102443.
   + Campos, R. M., Esquivel, G., & Santillán, A. S. (2017). El impacto del salario mínimo en los ingresos y el empleo en México. *Revista CEPAL*.
-  + \* Card, D. (1990). The impact of the Mariel boatlift on the Miami labor market. *ILR Review*, 43(2), 245-257. 
+  + \* Card, D. (1990). The impact of the Mariel boatlift on the Miami labor market. *ILR Review*, 43(2), 245-257.
+  + \+ Chort, I., & Öktem, B. (2024). Agricultural shocks, coping policies and deforestation: Evidence from the coffee leaf rust epidemic in Mexico. *American Journal of Agricultural Economics*, 106(3), 1020-1057.
   + \+ Djourelova, M. (2023). Persuasion through Slanted Language: Evidence from the Media Coverage of Immigration. *American Economic Review*, 113(3), 800-835.
   + \+ Conti, G., & Ginja, R. (2023). Who Benefits from Free Health Insurance?: Evidence from Mexico. *Journal of Human Resources*, 58(1), 146-182.
   + \* Card, D., & Krueger, A. B. (2000). Minimum wages and employment: a case study of the fast-food industry in New Jersey and Pennsylvania: reply. *American Economic Review*,  0(5), 1397-1420.
@@ -197,13 +202,15 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + \+ Davis, L. W. (2008). The effect of driving restrictions on air quality in Mexico City. *Journal of Political Economy*, 116(1), 38-81.  
   + \+ Davis, L. W. (2017). Saturday driving restrictions fail to improve air quality in Mexico City. *Scientific Reports*, 7, 41652.
   + \+ Del Valle, A., de Janvry, A., & Sadoulet, E. (2020). Rules for recovery: Impact of indexed disaster funds on shock coping in Mexico. *American Economic Journal: Applied Economics*, 12(4), 164-95.
+  + \+ Del Valle, A. (2024). Saving Lives with Indexed Disaster Funds: Evidence from Mexico. *American Economic Journal: Economic Policy*, 16(2), 442-479.
   + \+ Dell, M. (2015). Trafficking networks and the Mexican drug war. *American Economic Review*, 105(6), 1738-79.
-  + \+ Goodwin, M. B., Gonzalez, F., & Fontenla, M. (2023). The impact of daylight saving time in Mexico. *Applied Economics*, 1-11.
+  + \+ Goodwin, M. B., Gonzalez, F., & Fontenla, M. (2024). The impact of daylight saving time in Mexico. *Applied Economics*, 56(1), 22-32.
   + \* Lee, D. S., & Lemieux, T. (2010). Regression discontinuity designs in economics. *Journal of economic literature*, 48(2), 281-355.
   + MacPherson, C., & Sterck, O. (2021). Empowering refugees through cash and agriculture: A regression discontinuity design. *Journal of Development Economics*, 149, 102614.
   + Makarin, A., Pique, R., & Aragón, F. (2020). National or sub-national parties: Does party geographic scope matter? *Journal of Development Economics*, 102516.  
   + \* Manacorda, M., Miguel, E., & Vigorito, A. (2011). Government transfers and political support. *American Economic Journal: Applied Economics*, 3(3), 1-28.  
   + Moussa, W., Salti, N., Irani, A., Al Mokdad, R., Jamaluddine, Z., Chaaban, J., & Ghattas, H. (2022). The impact of cash transfers on Syrian refugee children in Lebanon. *World Development*, 150, 105711.
+  + \+ Sierra, G. D. R., Martínez, A. A. G., Cruz, M. Á. M., & Barrientos, L. G. Z. (2024). The impact of subsidies on house prices in Mexico's mortgage market for low-income households 2008–2019. *Journal of Housing Economics*, 63, 101970.
   + Sohn, H., & Lee, S. W. (2019). Causal Impact of Having a College Degree on Women’s Fertility: Evidence From Regression Kink Designs. *Demography*, 56(3), 969-990.
   + Takaku, R., & Yokoyama, I. (2021). What the COVID-19 school closure left in its wake: evidence from a regression discontinuity analysis in Japan. *Journal of Public Economics*, 195, 104364.
   + Tuttle, C. (2019). Snapping Back: Food Stamp Bans and Criminal Recidivism. *American Economic Journal: Economic Policy*, 11(2), 301-27.  
@@ -234,6 +241,7 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + \+ Cepeda-Francese, C. A., & Ramírez-Álvarez, A. A. (2023). Reforming justice under a security crisis: The case of the criminal justice reform in Mexico. World Development, 163, 106148.
   + Geloso, V., & Pavlik, J. B. (2021). The Cuban revolution and infant mortality: A synthetic control approach. *Explorations in Economic History*, 80, 101376.
   + Grier, K., & Maynard, N. (2016). The economic consequences of Hugo Chavez: A synthetic control analysis. *Journal of Economic Behavior & Organization*, 125, 1-21.
+  + \+ González-Rozada, M., & Ruffo, H. (2024). Do trade agreements contribute to the decline in labor share? Evidence from Latin American countries. *World Development*, 177, 106561.
   + Mitze, T., Kosfeld, R., Rode, J., & Wälde, K. (2020). Face masks considerably reduce COVID-19 cases in Germany. *Proceedings of the National Academy of Sciences*, 117(51), 32293-32301.
   + Peri, G., & Yasenov, V. (2019). The Labor Market Effects of a Refugee Wave Synthetic Control Method Meets the Mariel Boatlift. *Journal of Human Resources*, 54(2), 267-309.
   
