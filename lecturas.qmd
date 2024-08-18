@@ -171,6 +171,7 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + \+ García-Díaz, R., Sosa-Rubí, S. G., Serván-Mori, E., & Nigenda, G. (2018). Welfare effects of health insurance in Mexico: The case of Seguro Popular de Salud. *PloS one*, 13(7), e0199876.  
   + \* LaLonde, R. J. (1986). Evaluating the econometric evaluations of training programs with experimental data. The *American economic review*, 604-620.
   + Wellalage, N. H., & Locke, S. (2020). Remittance and financial inclusion in refugee migrants: inverse probability of treatment weighting using the propensity score. *Applied Economics*, 52(9), 929-950.
+  + \+ Stabridis, O., & Salgado-Viveros, C. (2023). Efectos de género y etnicidad en la brecha salarial entre jornaleros agrícolas del noroeste mexicano. *Frontera Norte*, 35.
 
 
 ## Semana 11
