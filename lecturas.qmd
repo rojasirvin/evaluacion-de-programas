@@ -196,7 +196,7 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + Bagues, M., & Campa, P. (2021). Can gender quotas in candidate lists empower women? Evidence from a regression discontinuity design. *Journal of Public Economics*, 194, 104315.
   + Bosch, M., & Schady, N. (2019). The effect of welfare payments on work: Regression discontinuity evidence from Ecuador. *Journal of Development Economics*, 139, 17-27.  
   + Calonico, S., Cattaneo, M. D., Farrell, M. H., & Titiunik, R. (2019). Regression discontinuity designs using covariates.   *Review of Economics and Statistics*, 101(3), 442-451.  
-    + \+ Cañedo, A. P., Fabregas, R., & Gupta, P. (2023). Emergency cash transfers for informal workers: Impact evidence from Mexico. *Journal of Public Economics*, 219, 104820.
+  + \+ Cañedo, A. P., Fabregas, R., & Gupta, P. (2023). Emergency cash transfers for informal workers: Impact evidence from Mexico. *Journal of Public Economics*, 219, 104820.
   + Card, D., Dobkin, C., & Maestas, N. (2009). Does Medicare save lives? *The quarterly journal of economics*, 124(2), 597-636.  
   + Carpenter, C., & Dobkin, C. (2009). The effect of alcohol consumption on mortality: regression discontinuity evidence from the minimum drinking age. *American Economic Journal: Applied Economics*, 1(1), 164-82.  
   + Cook, T. D., & Wong, V. C. (2008). Empirical tests of the validity of the regression discontinuity design. *Annales d'Economie et de Statistique*, 127-150.  
