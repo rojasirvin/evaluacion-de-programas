@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Evaluación de Programas 2023 - Respuestas a la tarea 1</title>
+<title>Evaluación de Programas 2024 - Respuestas a la tarea 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -78,7 +78,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -87,13 +93,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -104,13 +139,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Respuestas a la tarea 1</li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Respuestas a la tarea 1</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -119,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../iconoEvaluaciondeProgramasSociales.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
@@ -167,6 +202,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../cronograma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cronograma</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../tareas/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tareas</span></a>
   </div>
@@ -174,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -210,93 +251,1102 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <section id="respuestas" class="level1">
 <h1>Respuestas</h1>
 <section id="pregunta-1" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
-<p>Suponga que para un experimento en un laboratorio de economía experimental se asignó a la mitad de los participantes a un grupo de tratamiento y la otra mitad al grupo de control. Se busca estudiar el efecto del tratamiento <span class="math inline">\(T_i\)</span> sobre el desempeño en un juego estratégico, medido por la variable <span class="math inline">\(y_i\)</span> (a más puntaje, mejor desempeño). Antes de comenzar el experimento se recolectaron una serie de características <span class="math inline">\(x_{ji}\)</span>, <span class="math inline">\(j=1,\ldots 10\)</span>, de cada jugador. En el experimento, se trabaja con <span class="math inline">\(\alpha=0.10\)</span>.</p>
-<ol type="a">
-<li><p>[5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:</p>
-<p><em>Para verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento <span class="math inline">\(T_i\)</span> para correr la siguiente regresión:</em> <span class="math display">\[T_i=\alpha+\sum_{j=1}^{10}x_{ji}'\beta +\varepsilon_i\]</span></p>
-<p><em>Después realicé una prueba <span class="math inline">\(F\)</span> de significancia conjunta sobre los coeficientes <span class="math inline">\(\beta_j\)</span> que resultó tener un valor <span class="math inline">\(p\)</span> de 0.02.</em></p>
-<p>Explique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.</p>
-<p><em>La <span class="math inline">\(H_0\)</span> es que <span class="math inline">\(\beta_1=\beta_2=\ldots=\beta_{10}=0\)</span>, es decir, que las características observadas no predicen el status de tratamiento. Si efectivamente hubo una aleatorización exitosa, esperaríamos que este fuera el caso.</em></p></li>
-<li><p>[5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?</p>
-<p><em>El valor <span class="math inline">\(p\)</span> indica que es muy poco probable observar el estadístico <span class="math inline">\(F\)</span> bajo la hipótesis nula, por lo que la rechazamos. Es decir, hay evidencia que señala que las características predicen la asignación al tratamiento.</em></p></li>
-<li><p>[5 puntos] Por otro lado, el investigador B le reporta lo siguiente:</p>
-<p><em>Yo realicé un análisis para determinar el balance en la asignación del tratamiento. Para cada una de las características <span class="math inline">\(x_{ji}\)</span> corrí la siguiente regresión:</em> <span class="math display">\[x_{ji}=\gamma+\pi T_i+u_i\]</span> <em>A continuación, le reporto una tabla con los valores <span class="math inline">\(p\)</span> asociados al coeficiente estimado de <span class="math inline">\(\pi\)</span> en cada una de las 10 regresiones.</em></p>
-<table class="table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
+<p>Se diseñó una intervención que consistió en entregar zapatos a niños en cuatro áreas con altos niveles de pobreza de cierto país. Se sabe que los niños caminan bastante para ir a la escuela y realizan una serie de tareas domésticas después de la escuela. Por tanto, se tiene la hipótesis de que la entrega de zapatos tendrá impactos en el desarrollo de los niños. Se seleccionaron aleatoriamente localidades de control y localidades de tratamiento. Dentro de las localidades asignadas al tratamiento, todos los niños de entre 7 y 12 años de edad recibieron zapatos. Los investigadores deciden usar un <span class="math inline">\(\alpha=0.10\)</span> durante el estudio.</p>
+<p>La tabla 1 presenta información sobre una serie de características de los niños que participaron en el estudio en la línea base.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="hiiletlmyi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hiiletlmyi table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#hiiletlmyi thead, #hiiletlmyi tbody, #hiiletlmyi tfoot, #hiiletlmyi tr, #hiiletlmyi td, #hiiletlmyi th {
+  border-style: none;
+}
+
+#hiiletlmyi p {
+  margin: 0;
+  padding: 0;
+}
+
+#hiiletlmyi .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hiiletlmyi .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#hiiletlmyi .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hiiletlmyi .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hiiletlmyi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hiiletlmyi .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hiiletlmyi .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hiiletlmyi .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hiiletlmyi .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hiiletlmyi .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hiiletlmyi .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hiiletlmyi .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hiiletlmyi .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hiiletlmyi .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#hiiletlmyi .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hiiletlmyi .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hiiletlmyi .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hiiletlmyi .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hiiletlmyi .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hiiletlmyi .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hiiletlmyi .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hiiletlmyi .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hiiletlmyi .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hiiletlmyi .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hiiletlmyi .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hiiletlmyi .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hiiletlmyi .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hiiletlmyi .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hiiletlmyi .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hiiletlmyi .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hiiletlmyi .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hiiletlmyi .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hiiletlmyi .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hiiletlmyi .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hiiletlmyi .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hiiletlmyi .gt_left {
+  text-align: left;
+}
+
+#hiiletlmyi .gt_center {
+  text-align: center;
+}
+
+#hiiletlmyi .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hiiletlmyi .gt_font_normal {
+  font-weight: normal;
+}
+
+#hiiletlmyi .gt_font_bold {
+  font-weight: bold;
+}
+
+#hiiletlmyi .gt_font_italic {
+  font-style: italic;
+}
+
+#hiiletlmyi .gt_super {
+  font-size: 65%;
+}
+
+#hiiletlmyi .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#hiiletlmyi .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hiiletlmyi .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#hiiletlmyi .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#hiiletlmyi .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#hiiletlmyi .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#hiiletlmyi .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
-<tr class="header">
-<th><strong>Característica</strong></th>
-<th><strong>Valor <span class="math inline">\(p\)</span></strong></th>
-<th></th>
-<th><strong>Característica</strong></th>
-<th><strong>Valor <span class="math inline">\(p\)</span></strong></th>
+<tr class="header gt_heading">
+<th colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Tabla 1. Covariables entre grupos de tratamiento y control (datos en la línea base)</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id=" " class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="$$(1)$$" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">$$(1)$$</th>
+<th id="$$(2)$$" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">$$(2)$$</th>
+<th id="$$(3)$$" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">$$(3)$$</th>
 </tr>
 </thead>
-<tbody>
+<tbody class="gt_table_body">
 <tr class="odd">
-<td><span class="math inline">\(x_{1i}\)</span></td>
-<td>0.05</td>
-<td></td>
-<td><span class="math inline">\(x_{6i}\)</span></td>
-<td>0.03</td>
+<td class="gt_row gt_left" headers="">Variables</td>
+<td class="gt_row gt_left" headers="$$(1)$$">Media control</td>
+<td class="gt_row gt_left" headers="$$(2)$$">Media tratamiento</td>
+<td class="gt_row gt_left" headers="$$(3)$$">$$p$$</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(x_{2i}\)</span></td>
-<td>0.02</td>
-<td></td>
-<td><span class="math inline">\(x_{7i}\)</span></td>
-<td>0.19</td>
+<td class="gt_row gt_left" headers="">Edad</td>
+<td class="gt_row gt_left" headers="$$(1)$$">9.486</td>
+<td class="gt_row gt_left" headers="$$(2)$$">9.332</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.114</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(x_{3i}\)</span></td>
-<td>0.07</td>
-<td></td>
-<td><span class="math inline">\(x_{8i}\)</span></td>
-<td>0.85</td>
+<td class="gt_row gt_left" headers="">Sexo (masculino=1)</td>
+<td class="gt_row gt_left" headers="$$(1)$$">0.545</td>
+<td class="gt_row gt_left" headers="$$(2)$$">0.497</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.073*</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(x_{4i}\)</span></td>
-<td>0.00</td>
-<td></td>
-<td><span class="math inline">\(x_{9i}\)</span></td>
-<td>0.01</td>
+<td class="gt_row gt_left" headers="">Jefe trabaja en agricultura</td>
+<td class="gt_row gt_left" headers="$$(1)$$">0.462</td>
+<td class="gt_row gt_left" headers="$$(2)$$">0.522</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.435</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(x_{5i}\)</span></td>
-<td>0.42</td>
-<td></td>
-<td><span class="math inline">\(x_{10i}\)</span></td>
-<td>0.03</td>
+<td class="gt_row gt_left" headers="">Grado máximo de estudios en el hogar</td>
+<td class="gt_row gt_left" headers="$$(1)$$">5.836</td>
+<td class="gt_row gt_left" headers="$$(2)$$">5.346</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.406</td>
 </tr>
-</tbody>
+<tr class="even">
+<td class="gt_row gt_left" headers="">Índice calidad de vivienda</td>
+<td class="gt_row gt_left" headers="$$(1)$$">0.492</td>
+<td class="gt_row gt_left" headers="$$(2)$$">0.593</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.447</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="">Índice de consumo de durables</td>
+<td class="gt_row gt_left" headers="$$(1)$$">0.441</td>
+<td class="gt_row gt_left" headers="$$(2)$$">0.467</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.829</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="">Número de pares de zapatos que posee</td>
+<td class="gt_row gt_left" headers="$$(1)$$">2.06</td>
+<td class="gt_row gt_left" headers="$$(2)$$">1.825</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.213</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="">Horas que pasa sin zapatos</td>
+<td class="gt_row gt_left" headers="$$(1)$$">2.09</td>
+<td class="gt_row gt_left" headers="$$(2)$$">1.963</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.917</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="">Días que no fue a la escuela</td>
+<td class="gt_row gt_left" headers="$$(1)$$">0.701</td>
+<td class="gt_row gt_left" headers="$$(2)$$">0.886</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.465</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="">Horas para dormir</td>
+<td class="gt_row gt_left" headers="$$(1)$$">10.68</td>
+<td class="gt_row gt_left" headers="$$(2)$$">9.98</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.388</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="">Horas para comer</td>
+<td class="gt_row gt_left" headers="$$(1)$$">1.931</td>
+<td class="gt_row gt_left" headers="$$(2)$$">1.934</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.986</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="">Horas para lavar</td>
+<td class="gt_row gt_left" headers="$$(1)$$">0.732</td>
+<td class="gt_row gt_left" headers="$$(2)$$">0.835</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.228</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="">Horas en escuela</td>
+<td class="gt_row gt_left" headers="$$(1)$$">4.613</td>
+<td class="gt_row gt_left" headers="$$(2)$$">4.154</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.168</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="">Horas para trabajar</td>
+<td class="gt_row gt_left" headers="$$(1)$$">0.409</td>
+<td class="gt_row gt_left" headers="$$(2)$$">0.572</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.082*</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="">N</td>
+<td class="gt_row gt_left" headers="$$(1)$$">666</td>
+<td class="gt_row gt_left" headers="$$(2)$$">912</td>
+<td class="gt_row gt_left" headers="$$(3)$$">1,578</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="even">
+<td colspan="4" class="gt_sourcenote">Nota: Los valores \(p\) son de una prueba \(t\) simple. * \(p &lt;0.10\), ** \(p &lt;0.05\), *** \(p &lt;0.01\).</td>
+</tr>
+</tfoot>
+
 </table>
-<p>Explique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.</p>
-<p><em>En cada caso, la <span class="math inline">\(H_0\)</span> es que <span class="math inline">\(\pi=0\)</span>, es decir, que no existen diferencias significativas en la variable <span class="math inline">\(x_{ij}\)</span> entre tratados y no tratados. Si el tratamiento fue correctamente aleatorizado, esperaríamos que esto se cumpliera para la mayoría de las características recolectadas.</em></p></li>
-<li><p>[5 puntos] Explique qué concluye sobre la validez interna del estudio en cuestión. ¿Qué propiedades estadísticas tendría el estimador de diferencia de medias de la variable de desempeño en el juego entre el grupo tratado y el de control?</p>
-<p><em>En cinco de las 10 características hay diferencias significativas entre tratados y no tratados. Esto es consistente con lo encontrado en la parte a. Es decir, parece que los individuos en el grupo de tratamiento son distintos a los del grupo de control. Esto nos haría dudar del caracter causal de la diferencia de medias de la variable de desempeño como un estimador del efecto del tratamiento. No sabemos si es el tratamiento o las diferencias en las características observables lo que explican las diferencias que se encuentren o no se encuentren en la variable de desempeño en el juego. Este es un ejemplo de cómo luciría un experimento cuya integridad está comprometida.</em></p></li>
+
+</div>
+</div>
+</div>
+<p>La tabla 2 muestra los resultados de estimar una regresión del tipo</p>
+<p><span class="math display">\[y_i=\alpha+X_i'\beta+\theta T_i+\varepsilon_i\]</span></p>
+<p>donde <span class="math inline">\(T_i\)</span> indica la pertenencia al grupo de tratamiento, <span class="math inline">\(X_i\)</span> es un vector de características observables usadas como controles y <span class="math inline">\(y_i\)</span> es cada una de las siguientes variables sobre las que se estima el impacto del programa: 1) número de zapatos que posee; 2) días que no fue a la escuela; y 3) horas para trabajar.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="jjxeaytldv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jjxeaytldv table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jjxeaytldv thead, #jjxeaytldv tbody, #jjxeaytldv tfoot, #jjxeaytldv tr, #jjxeaytldv td, #jjxeaytldv th {
+  border-style: none;
+}
+
+#jjxeaytldv p {
+  margin: 0;
+  padding: 0;
+}
+
+#jjxeaytldv .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jjxeaytldv .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jjxeaytldv .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jjxeaytldv .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jjxeaytldv .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jjxeaytldv .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jjxeaytldv .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jjxeaytldv .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jjxeaytldv .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jjxeaytldv .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jjxeaytldv .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jjxeaytldv .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jjxeaytldv .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jjxeaytldv .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jjxeaytldv .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jjxeaytldv .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jjxeaytldv .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jjxeaytldv .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jjxeaytldv .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jjxeaytldv .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jjxeaytldv .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jjxeaytldv .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jjxeaytldv .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jjxeaytldv .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jjxeaytldv .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jjxeaytldv .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jjxeaytldv .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jjxeaytldv .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jjxeaytldv .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jjxeaytldv .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jjxeaytldv .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jjxeaytldv .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jjxeaytldv .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jjxeaytldv .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jjxeaytldv .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jjxeaytldv .gt_left {
+  text-align: left;
+}
+
+#jjxeaytldv .gt_center {
+  text-align: center;
+}
+
+#jjxeaytldv .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jjxeaytldv .gt_font_normal {
+  font-weight: normal;
+}
+
+#jjxeaytldv .gt_font_bold {
+  font-weight: bold;
+}
+
+#jjxeaytldv .gt_font_italic {
+  font-style: italic;
+}
+
+#jjxeaytldv .gt_super {
+  font-size: 65%;
+}
+
+#jjxeaytldv .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jjxeaytldv .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jjxeaytldv .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jjxeaytldv .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jjxeaytldv .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jjxeaytldv .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jjxeaytldv .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Tabla 2. Efectos del tratamiento en variables seleccionadas</th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id=" " class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="$$(1)$$" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">$$(1)$$</th>
+<th id="$$(2)$$" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">$$(2)$$</th>
+<th id="$$(3)$$" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">$$(3)$$</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers=""></td>
+<td class="gt_row gt_left" headers="$$(1)$$">Número de pares de zapatos que posee</td>
+<td class="gt_row gt_left" headers="$$(2)$$">Días que no fue a la escuela</td>
+<td class="gt_row gt_left" headers="$$(3)$$">Horas para trabajar</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="">$$\hat{\theta}$$</td>
+<td class="gt_row gt_left" headers="$$(1)$$">0.075</td>
+<td class="gt_row gt_left" headers="$$(2)$$">-0.165**</td>
+<td class="gt_row gt_left" headers="$$(3)$$">0.348</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="">(e.e)</td>
+<td class="gt_row gt_left" headers="$$(1)$$">(0.061)</td>
+<td class="gt_row gt_left" headers="$$(2)$$">(0.057)</td>
+<td class="gt_row gt_left" headers="$$(3)$$">(0.243)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="">N</td>
+<td class="gt_row gt_left" headers="$$(1)$$">1,302</td>
+<td class="gt_row gt_left" headers="$$(2)$$">664</td>
+<td class="gt_row gt_left" headers="$$(3)$$">556</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="even">
+<td colspan="4" class="gt_sourcenote">Nota: * \(p &lt;0.10\), ** \(p &lt;0.05\), *** \(p &lt;0.01\). Todas las regresiones controlan por edad, sexo, ocupación del jefe del hogar y calidad de la vivienda. Errores estándar agrupados a nivel localidad entre paréntesis. \(\hat{{\theta}}\) se refiere al estimador de \(\theta\).</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<ol type="a">
+<li><p>[2 puntos] ¿Qué representan los valores <span class="math inline">\(p\)</span> reportados en la columna (3) en la tabla 1?</p>
+<p><em>Para cada característica, es el valor <span class="math inline">\(p\)</span> asociado al estadístico <span class="math inline">\(t\)</span> en la prueba de diferencia de medias. Indica la probabilidad de observar el estadístico <span class="math inline">\(t\)</span> bajo la <span class="math inline">\(H_0\)</span> de igualdad de medias. Por tanto, valores <span class="math inline">\(p\)</span> por debajo del nivel de significacia <span class="math inline">\(\alpha\)</span> indican que el estadístico asociado es poco probable de observar bajo la <span class="math inline">\(H_0\)</span>.</em></p></li>
+<li><p>[3 puntos] Un donante está preocupado por los resultados de la intervención porque considera que los niños que tenían más zapatos antes de que iniciara el programa tuvieron una menor probabilidad de estar en el grupo que recibió zapatos por parte del programa. ¿Considera esto una preocupación válida sobre la integridad del experimento?</p>
+<p><em>Si bien los niños que están en el grupo de control tienen en promedio 2.06 pares de zapatos y los que están en el de tratamiento tienen en promedio 1.825 pares de zapatos, esta diferencia no es estadísticamente significativa. Esto queda en evidencia por el valor <span class="math inline">\(p=0.213\)</span>, por lo que la preocupación del donante no está justificada por los datos.</em></p></li>
+<li><p>[5 puntos] ¿Cómo se interpreta el asterisco al lado del valor <span class="math inline">\(p\)</span> de 0.082 asociado a las horas para trabajar?</p>
+<p><em>Dado que se trabaja con un <span class="math inline">\(\alpha=0.10\)</span>, los asteriscos denotan los casos en los que las diferencias de medias tiene un valor <span class="math inline">\(p\)</span> asociado menor a dicho <span class="math inline">\(\alpha\)</span>. Es decir, el asterisco al lado del 0.082 indica que la diferencia en horas para trabajar entre los niños del grupo de tratamiento y de control es estadísticamente significativa.</em></p></li>
+<li><p>[5 puntos] ¿Cuál es el impacto del programa en el número de pares zapatos que los niños en promedio poseen? Mencione la magnitud y significancia estadística de dicho impacto.</p>
+<p><em>De acuerdo a la columna (1) de la tabla 2, los niños que recibieron zapatos tienen en promedio 0.075 pares de zapatos más que los niños que no recibieron el programa. Sin embargo, esta diferencia no es estadísticamente significativa a los niveles de confianza típicamente usados en economía.</em></p></li>
+<li><p>[5 puntos] En columna (2) de la tabla 2, ¿qué interpretación tienen los dos asteriscos al lado de -0.165?</p>
+<p><em>Los asteriscos son una notación del nivel de confianza al que se rechaza la <span class="math inline">\(H0\)</span>. En el caso de los dos asteriscos al lado del -0.165, significa que el programa tuvo un efecto de reducir los días en que los niños no van a la escuela de 0.165 días y que este efecto es estadísticamente significativo al 5%.</em></p></li>
+<li><p>[5 puntos] ¿Cuántos días sin ir a la escuela esperaríamos observar después de la intervención en los niños que recibieron zapatos?</p>
+<p><em>Simplemente sumamos el efecto estimado a la media del grupo de control. Es decir, esperamos que el número de días que no van a la escuela en el caso de los niños que recibieron los zapatos sea de <span class="math inline">\(0.701-0.165=0.536\)</span>.</em></p></li>
+<li><p>[5 puntos] La nota al pie de la tabla 2 indica que se reportan errores estándar agrupados? ¿Por qué los investigadores realizan la estimación de los errores estándar de esta manera?</p>
+<p><em>El programa fue aleatorizado a nivel localidad, por lo que existe una correlación entre las variables observadas y no observadas entre los individuos de los grupos de control y tratamiento. Los errores agrupados toman en cuenta esta correlación, asumiendo que existe una correlación arbitraria entre las observaciones de la misma localidad, pero independiencia entre observaciones de distintas localidades.</em></p></li>
 </ol>
 </section>
 <section id="pregunta-2" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
-<p>Suponga que está interesado en conocer el impacto que tiene el acceso a las microfinanzas en un indicador de seguridad alimentaria <span class="math inline">\(y_i\)</span> de las familias. La idea detrás es que el acceso al crédito podría mejorar la habilidad de los hogares para suavizar el consumo. Afortunadamente, usted recibe el respaldo de una microfinanciera que le ofrece una base de datos para con información para construir <span class="math inline">\(y_i\)</span>, recolecatada a partir de una encuesta en los hogares de sus clientes con más de un año de antiguedad. Además, le da acceso a datos de otra encuesta complementaria realizada en hogares que no son clientes y que no tienen acceso a microfinanzas para construir el mismo indicador de seguridad alimentaria. Al final, tendría una muestra de varios miles de hogares con y sin acceso a microfinanzas.</p>
-<p>Suponga que con estos datos descubre que la seguridad alimentaria es 25% más alta en los hogares con clientes de la microfinanciera, en comparación con la seguridad alimentaria de los hogares sin acceso a las microfinanzas.</p>
+<p>Suponga que está interesado en conocer el impacto que tiene el acceso a las microfinanzas en un indicador de seguridad alimentaria <span class="math inline">\(y_i\)</span> de las familias. La idea detrás es que el acceso al crédito podría mejorar la habilidad de los hogares para suavizar el consumo. Afortunadamente, usted tiene acceso a una encuesta representativa a nivel nacional que incluye un índice de seguridad alimentaria así como una variable indicadora o <em>dummy</em>, <span class="math inline">\(T_i\)</span>, que toma el valor de 1 si algún miembro del hogar tiene acceso a microfinanzas y de 0 en otro caso.</p>
+<p>Suponga que su asistente le sugiere que para evaluar el impacto de microfinanzas basta con estimar la siguiente regresión por MCO:</p>
+<p><span class="math display">\[ y_i = \alpha + \beta T_i + \varepsilon_i \]</span></p>
 <ol type="a">
-<li><p>[10 puntos] ¿Cómo valora el diseño del estudio descrito? ¿Qué fortalezas y/o debilidades encuentra?</p>
-<p><em>A pesar de que se cuenta con una cantidad notable de información, la situación que se describe no deja de ser un ejemplo de una comparación observacional. Usted tendría acceso a información de personas que tomaron la decisión de ser clientes de la microfinanciera, o que la microfinanciera ya decidió atender con publicidad y con atención personalizada para que se volvieran clientes. Es decir, estas personas son distintas en características observadas, pero sobre todo, no observadas, de quienes no son clientes. Las razones por las que se volvieron clientes o no de la microfinanciera pueden estar correlacionadas también con tener una mejor o peor seguridad alimentaria, por lo que tenemos un ejemplo de sesgo de selección. En general, el diseño de este estudio no permitiría obtener conclusiones sobre el efecto causal de tener acceso a microfinanzas. La debilidad principal se encuentra en la presencia del sesgo de selección.</em></p></li>
-<li><p>[10 puntos] ¿De qué signo esperaría que fuera el sesgo de selección, en caso de existir? Explique sus razones.</p>
-<p><em>Muchas historias son posibles. Por ejemplo, suponiendo que las personas con mayor educación e información tendrían mejor acceso a productos financieros, pero también tendrían un mejor manejo de los recursos del hogar, entonces aquellas familias con acceso a microfinanzas hubieran podido tener una mejor seguridad alimentaria incluso sin haber tenido acceso a dichos productos financieros. En otras palabras, familias con mayor educación e información tendrían mejorar seguridad alimentaria sin importar su acceso a productos financieros, por lo que esperariamos un sesgo de selección positivo, por lo que tenderíamos a sobreestimar el impacto de las microfinanzas.</em></p></li>
+<li><p>[5 puntos] ¿Cómo valora la propuesta de su asistente? ¿Qué podemos esperar de una comparación observacional como la de la propuesta?</p>
+<p><em>Esto es lo que conocemos como una comparación observacional. Sabemos que en comparaciones observacionales es muy probable la presencia del sesgo de selección, es decr, que los hogares <em>tratados</em> con el acceso a microfinanzas sean diferentes a los que no tuvieron acceso. Las razones por las que los hogares tienen acceso a microfinanzas pueden estar correlacionadas también con tener una mejor o peor seguridad alimentaria, por lo que tenemos hay presencia de sesgo de selección. En general, el diseño de este estudio no permitiría obtener conclusiones sobre el efecto causal de tener acceso a microfinanzas.</em></p></li>
+<li><p>[5 puntos] Muestre si el estimador de MCO de <span class="math inline">\(\beta\)</span> es consistente o no para el efecto de tratamiento.</p>
+<p><em>Estimar una regresión por MCO produciría un estimador <span class="math inline">\(\hat{\beta}\)</span> inconsistente para el verdadero efecto de tratamiento <span class="math inline">\(\beta\)</span>. Para ver esto, recordemos que el estimador de MCO puede reescribirse como sigue:</em></p>
+<p><span class="math display">\[\hat{\beta}=\beta + \left(N^{1-}\sum x_i x_i'\right)\left(N^{-1}\sum x_i u_i\right)\]</span></p>
+<p><em>Si podemos aplicar una LGN a <span class="math inline">\(\left(N^{1-}\sum x_i x_i'\right)\)</span>, sabemos que el límite es una matriz finita y no nula. Entonces, para que <span class="math inline">\(\hat{\beta} \overset{p}{\to} \beta\)</span> se requiere que, al aplicar una LGN a <span class="math inline">\(\left(N^{-1}\sum x_i u_i\right)\)</span>, la probabilidad límite sea 0. Esto ocurre si E(x_iu_i)=0, es decir, si no hay correlación entre los no observables y los regresores. Por los argumentos hechos arriba, esto es muy probable que se viole pues uno de los regresores es <span class="math inline">\(T_i\)</span>, que está correlacionado con no observables que hacen más o menos probable que un hogar tenga acceso a microfinanzas y que también determinan la seguridad alimentaria.</em></p></li>
 </ol>
 </section>
 <section id="pregunta-3" class="level2">
@@ -308,7 +1358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../files/muestra-enoe-123.csv"</span>) </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(lingreso <span class="sc">~</span> escolaridad,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> df))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">data =</span> df))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -330,6 +1380,7 @@ Multiple R-squared:  0.1115, Adjusted R-squared:  0.1113
 F-statistic: 822.1 on 1 and 6554 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
+<p><em>Cada año de escolaridad se asocia con un incremento de 6% en el ingreso.</em></p>
 <p><em>Ahora calculemos la media del ingreso por cada año de educación, asegurándonos de conservar también el número de observaciones empleada para hacer dicho cálculo:</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.agregada <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
@@ -337,11 +1388,11 @@ F-statistic: 822.1 on 1 and 6554 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">lingreso =</span> <span class="fu">mean</span>(lingreso, <span class="at">na.rm=</span>T),</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><em>Corremos la regresión con los datos agregados, pensando por el número de observaciones en cada grupo:</em></p>
+<p><em>Corremos la regresión con los datos agregados, pesando por el número de observaciones en cada grupo:</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(lingreso <span class="sc">~</span> escolaridad,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> df.agregada,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">weights =</span> n))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> df.agregada,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">weights =</span> n))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -370,7 +1421,7 @@ F-statistic: 149.7 on 1 and 19 DF,  p-value: 1.861e-10</code></pre>
 <h2 class="anchored" data-anchor-id="pregunta-4">Pregunta 4</h2>
 <p>Use los datos del archivo <em>STAR_public_use.csv</em> para este problema. En este problema replicará la fila correspondiente a la variable <em>High scool GPA</em> (calificación en la preparatoria) de la Tabla 1 en <a href="https://pubs.aeaweb.org/doi/pdfplus/10.1257/app.1.1.136">Angrist et al.&nbsp;(2009)</a>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <ol type="a">
-<li><p>[5 puntos] Obtenga la media y la desviación estándar de la calificación en la preparatoria, <strong>gpa0</strong>, en el grupo de control (columna 1), restringiendo la muestra a aquellos individuos con <strong>noshow</strong> igual a 0.</p>
+<li><p>[5 puntos] Obtenga la media y la desviación estándar de la edad, <strong>age</strong> en los datos, en el grupo de control (columna 1), restringiendo la muestra a aquellos individuos con <strong>noshow</strong> igual a 0.</p>
 <p><em>Después de eliminar a lo sindividuos que tienen <strong>noshow</strong> igual a 1, obtenemos la media y desviación estándar reportadas en la tabla. Noten que deben restringir al grupo de control para obtener dichas cifras. La columna del tamaño de la muestra se obtiene sin restringir al grupo de control, aunque esto no se pedía en la pregunta.</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../files/STAR_public_use.csv"</span>,</span>
@@ -381,13 +1432,13 @@ F-statistic: 149.7 on 1 and 19 DF,  p-value: 1.861e-10</code></pre>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Media y desviación estándar</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span> </span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(gpa0),</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(gpa0))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(age),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(age))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   media desvest
   &lt;dbl&gt;   &lt;dbl&gt;
-1  78.7    4.22</code></pre>
+1  18.3   0.616</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#N</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span> </span>
@@ -399,42 +1450,41 @@ F-statistic: 149.7 on 1 and 19 DF,  p-value: 1.861e-10</code></pre>
 1  1571</code></pre>
 </div>
 </div></li>
-<li><p>[10 puntos] Usando una regresión lineal, muestre que la calificación en la preparatoria no está correlacionada con la asignación a los tratamientos (<strong>ssp</strong>, <strong>sfp</strong> y <strong>sfsp</strong>). De nuevo, debe restringir la muestra quienes tienen <strong>noshow</strong> igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).</p>
+<li><p>[10 puntos] Usando una regresión lineal, muestre que la edad no está correlacionada con la asignación a los tratamientos (<strong>ssp</strong>, <strong>sfp</strong> y <strong>sfsp</strong>). De nuevo, debe restringir la muestra quienes tienen <strong>noshow</strong> igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).</p>
 <p><em>La regresión es:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(balance <span class="ot">&lt;-</span> <span class="fu">lm</span>(gpa0 <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp,</span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(balance <span class="ot">&lt;-</span> <span class="fu">lm</span>(age <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp,</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> data.angrist))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = gpa0 ~ ssp + sfp + sfsp, data = data.angrist)
+lm(formula = age ~ ssp + sfp + sfsp, data = data.angrist)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--10.6567  -3.4567  -0.1567   3.3433   8.6612 
+    Min      1Q  Median      3Q     Max 
+-1.2910 -0.2910 -0.2910 -0.2373  4.7090 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) 78.65672    0.13718 573.377   &lt;2e-16 ***
-ssp          0.16997    0.30779   0.552    0.581    
-sfp          0.23795    0.30372   0.783    0.433    
-sfsp        -0.01787    0.38433  -0.047    0.963    
+(Intercept) 18.29097    0.01985 921.363   &lt;2e-16 ***
+ssp         -0.05368    0.04454  -1.205    0.228    
+sfp         -0.03277    0.04395  -0.746    0.456    
+sfsp         0.02558    0.05562   0.460    0.646    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 4.233 on 1567 degrees of freedom
-Multiple R-squared:  0.0005287,  Adjusted R-squared:  -0.001385 
-F-statistic: 0.2763 on 3 and 1567 DF,  p-value: 0.8425</code></pre>
+Residual standard error: 0.6125 on 1567 degrees of freedom
+Multiple R-squared:  0.001438,   Adjusted R-squared:  -0.0004737 
+F-statistic: 0.7522 on 3 and 1567 DF,  p-value: 0.5211</code></pre>
 </div>
-</div>
-<p><em>Noten que aquí los autores no utilizan errores robustos. Yo hubiera estimado errores robustos.</em></p></li>
+</div></li>
 <li><p>[5 puntos] Realice una prueba de significancia conjunta de los coeficientes obtenidos en el punto b. Reporte el estadístico <span class="math inline">\(F\)</span> y el valor <span class="math inline">\(p\)</span> asociado (columna 5).</p>
 <p><em>El estadístico <span class="math inline">\(F\)</span> ya es calculado con la regresión. Basta con pedirlo:</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(balance)<span class="sc">$</span>fstatistic</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       value        numdf        dendf 
-   0.2762878    3.0000000 1567.0000000 </code></pre>
+   0.7522152    3.0000000 1567.0000000 </code></pre>
 </div>
 </div>
 <p><em>¿Pero cómo puedo calcular el valor <span class="math inline">\(p\)</span>? Basta usar la definición, es la probabilidad de observar un valor más extremo que el estadístico, bajo la distribución teórica. En este caso, la distribución teórica es una <span class="math inline">\(F\)</span> y debemos especificar los grados de libertad en el numerador y en el denominador:</em></p>
@@ -445,25 +1495,25 @@ F-statistic: 0.2763 on 3 and 1567 DF,  p-value: 0.8425</code></pre>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    value 
-0.8425407 </code></pre>
+0.5210527 </code></pre>
 </div>
 </div></li>
 <li><p>[10 puntos] ¿Cuál es el propósito de la prueba F realizada en el punto c.? ¿Qué hipótesis nula prueban los autores?</p>
-<p><em>Aquí se busca probar que la asignación a los tres tipos de tratamiento no está correlacionada con la calificación en preparatoria, que es una medida del desempeño escolar justo al momento de iniciar el experimento. La <span class="math inline">\(H_0\)</span> es que <span class="math inline">\(\beta_{SSP}=\beta_{SFP}=\beta_{SFSP}=0\)</span>. Si rechazamos la hipótesis nula concluiríamos que hay diferencias entre grupos en la calificación de preparatoria. En este caso, el estadístico <span class="math inline">\(F\)</span> es pequeño y su valor <span class="math inline">\(p\)</span> indica que es muy probable de observarlo bajo la hipótesis nula por lo que no hay bases para rechazarla.</em></p></li>
+<p><em>Aquí se busca probar que la asignación a los tres tipos de tratamiento no está correlacionada con la edad. La <span class="math inline">\(H_0\)</span> es que <span class="math inline">\(\beta_{SSP}=\beta_{SFP}=\beta_{SFSP}=0\)</span>. Si rechazamos la hipótesis nula concluiríamos que hay diferencias entre grupos en la edad En este caso, el estadístico <span class="math inline">\(F\)</span> es pequeño y su valor <span class="math inline">\(p\)</span> indica que es muy probable de observarlo bajo la hipótesis nula por lo que no hay bases para rechazarla.</em></p></li>
 </ol>
 </section>
 <section id="pregunta-5" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-5">Pregunta 5</h2>
-<p>Nuevamente, use los datos del archivo <em>STAR_public_use.csv</em> para este problema. En este problema, replicará dos columnas del efecto de tratamiento de la Tabla 5. Note que de nuevo se deben usar solo las observaciones que tienen <strong>noshow</strong> igual a 0. Además, note que se usan las siguientes variables de control: <strong>sex</strong>, <strong>mtongue</strong>, <strong>hsgroup</strong>, <strong>numcourses_nov1</strong>, <strong>lastmin</strong>, <strong>mom_edn</strong>, y <strong>dad_edn</strong>, todas ellas categóricas.</p>
+<p>Nuevamente, use los datos del archivo <em>STAR_public_use.csv</em> para este problema. En este problema, replicará dos columnas del efecto de tratamiento de la Tabla 5. Note que de nuevo se deben usar solo las observaciones que tienen <strong>noshow</strong> igual a 0. Los autores también sustituyen los valores de <strong>gpa_year1</strong> por <em>NA</em> cuando la variable <strong>grade_20059_fall</strong> es <em>NA</em>; y sustituyen <strong>grade_20059_fall</strong> por <em>NA</em> cuando la variable <strong>gpa_year1</strong> es <em>NA.</em> Además, note que se usan las siguientes variables de control: <strong>sex</strong>, <strong>mtongue</strong>, <strong>hsgroup</strong>, <strong>numcourses_nov1</strong>, <strong>lastmin</strong>, <strong>mom_edn</strong>, y <strong>dad_edn</strong>, todas ellas categóricas.</p>
 <ol type="a">
-<li><p>[10 puntos] Estime el efecto de cada tipo de tratamiento sobre la calificación del trimestre de otoño, <strong>grade_20059_fall</strong>, para toda la muestra (Panel A, columna 1). Calcule correctamente los errores estándar. Interprete los resultados.</p>
+<li><p>[10 puntos] Estime el efecto de cada tipo de tratamiento sobre el promedio o <em>GPA</em>, denotado <strong>gpa_year1</strong> en los datos, para toda la muestra (Panel B, columna 1). Calcule correctamente los errores estándar. Interprete los resultados.</p>
 <p><em>Haciendo la sustitución sugerida por los autores, estimamos:</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">gpa_year1=</span><span class="fu">ifelse</span>(<span class="fu">is.na</span>(grade_20059_fall),<span class="cn">NA</span>,gpa_year1),</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">grade_20059_fall=</span><span class="fu">ifelse</span>(<span class="fu">is.na</span>(gpa_year1),<span class="cn">NA</span>,grade_20059_fall))</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">&lt;-</span><span class="fu">lm</span>(grade_20059_fall <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp<span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">&lt;-</span><span class="fu">lm</span>(gpa_year1 <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp<span class="sc">+</span></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">factor</span>(sex)<span class="sc">+</span></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">factor</span>(mtongue)<span class="sc">+</span></span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>           <span class="fu">factor</span>(hsgroup)<span class="sc">+</span></span>
@@ -477,22 +1527,22 @@ F-statistic: 0.2763 on 3 and 1567 DF,  p-value: 0.8425</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1)<span class="sc">$</span>coef[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>              Estimate Std. Error    t value     Pr(&gt;|t|)
-(Intercept) 66.3735025  6.3907155 10.3859267 2.840799e-24
-ssp          0.3492964  0.9084654  0.3844906 7.006818e-01
-sfp          1.8241268  0.8963916  2.0349665 4.206972e-02
-sfsp         2.7020874  1.1768042  2.2961232 2.183745e-02</code></pre>
+<pre><code>              Estimate Std. Error  t value     Pr(&gt;|t|)
+(Intercept) 1.60138378 0.46453145 3.447310 0.0005854449
+ssp         0.07259427 0.06603498 1.099331 0.2718404422
+sfp         0.01025889 0.06515735 0.157448 0.8749178181
+sfsp        0.20971238 0.08554012 2.451626 0.0143604306</code></pre>
 </div>
 </div>
 <p><em>Los errores estándar correctos son los robustos:</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(reg1, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(reg1, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>              Estimate Std. Error    t value     Pr(&gt;|t|)
-(Intercept) 66.3735025  3.8631593 17.1811456 1.981996e-59
-ssp          0.3492964  0.9173865  0.3807516 7.034537e-01
-sfp          1.8241268  0.8465341  2.1548179 3.137099e-02
-sfsp         2.7020874  1.1244211  2.4030920 1.640541e-02</code></pre>
+<pre><code>              Estimate Std. Error   t value     Pr(&gt;|t|)
+(Intercept) 1.60138378 0.46059228 3.4767925 0.0005252628
+ssp         0.07259427 0.06601070 1.0997349 0.2716642613
+sfp         0.01025889 0.06357889 0.1613569 0.8718389856
+sfsp        0.20971238 0.09221545 2.2741566 0.0231293441</code></pre>
 </div>
 </div>
 <p><em>Finalmente, lo que se reporta en la tabla como la media del grupo de control no es la constante en la regresión, sino la media y desviación estándar. Noten que se usa la muestra que efectivamente se usa en la regresión, es decir, sin valores faltantes.</em></p>
@@ -510,15 +1560,15 @@ sfsp         2.7020874  1.1244211  2.4030920 1.640541e-02</code></pre>
 <span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>     <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(mom_edn)</span>
 <span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>     <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(dad_edn)</span>
 <span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>     <span class="sc">&amp;</span> control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(grade_20059_fall,</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(gpa_year1,</span>
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                       <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(grade_20059_fall,</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(gpa_year1,</span>
 <span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                       <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   media desvest
   &lt;dbl&gt;   &lt;dbl&gt;
-1  64.2    11.9</code></pre>
+1  1.80   0.902</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gpa_year1) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(grade_20059_fall)</span>
@@ -540,14 +1590,14 @@ sfsp         2.7020874  1.1244211  2.4030920 1.640541e-02</code></pre>
 1   1255</code></pre>
 </div>
 </div></li>
-<li><p>[10 puntos] Estime el efecto de recibir cada tipo de tratamiento, considerando los tratamientos SSP o SFP (de cualquier tipo) en los hombres de la muestra (Panel A, columna 5). Esto es, considere el tratamiento SSP como un primer tipo de tratamiento y, ya sea SFP o SFSP, como un segundo tipo de tratamiento. Calcule correctamente los errores estándar. Interprete sus resultados.</p>
+<li><p>[10 puntos] Estime el efecto sobre el <em>GPA</em> de recibir cada tipo de tratamiento, considerando los tratamientos SSP o SFP (de cualquier tipo) en los hombres de la muestra (Panel B, columna 5). Esto es, considere el tratamiento SSP como un primer tipo de tratamiento y, ya sea SFP o SFSP, como un segundo tipo de tratamiento. Calcule correctamente los errores estándar. Interprete sus resultados.</p>
 <p><em>Definimos la variable de recibir el tratamiento SFP o SFSP. Luego estimamos:</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">sspany =</span> <span class="fu">ifelse</span>(sfp <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> sfsp <span class="sc">==</span> <span class="dv">1</span>, <span class="dv">1</span>, </span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">0</span>))</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>reg2<span class="ot">&lt;-</span><span class="fu">lm</span>(grade_20059_fall <span class="sc">~</span> ssp <span class="sc">+</span> sspany<span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>reg2<span class="ot">&lt;-</span><span class="fu">lm</span>(gpa_year1 <span class="sc">~</span> ssp <span class="sc">+</span> sspany<span class="sc">+</span></span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">factor</span>(mtongue)<span class="sc">+</span></span>
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">factor</span>(hsgroup)<span class="sc">+</span></span>
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>           <span class="fu">factor</span>(numcourses_nov1)<span class="sc">+</span></span>
@@ -561,10 +1611,10 @@ sfsp         2.7020874  1.1244211  2.4030920 1.640541e-02</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(reg2, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(reg2, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>               Estimate Std. Error     t value     Pr(&gt;|t|)
-(Intercept) 63.82375619   5.837643 10.93313826 4.530618e-25
-ssp         -0.01375880   1.331848 -0.01033060 9.917617e-01
-sspany       0.01615914   1.163865  0.01388403 9.889281e-01</code></pre>
+<pre><code>                Estimate Std. Error     t value    Pr(&gt;|t|)
+(Intercept)  1.488578569 0.51919391  2.86709560 0.004319175
+ssp          0.007920013 0.10719768  0.07388232 0.941133873
+sspany      -0.042402063 0.09476171 -0.44745989 0.654738783</code></pre>
 </div>
 </div>
 <p><em>La media en el control:</em></p>
@@ -583,15 +1633,15 @@ sspany       0.01615914   1.163865  0.01388403 9.889281e-01</code></pre>
 <span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>     <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(dad_edn)</span>
 <span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>     <span class="sc">&amp;</span> control<span class="sc">==</span><span class="dv">1</span></span>
 <span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>     <span class="sc">&amp;</span> female<span class="sc">==</span><span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(grade_20059_fall,</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(gpa_year1,</span>
 <span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>                       <span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(grade_20059_fall,</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(gpa_year1,</span>
 <span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>                       <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 2
   media desvest
   &lt;dbl&gt;   &lt;dbl&gt;
-1  65.9    11.3</code></pre>
+1  1.91   0.908</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(gpa_year1) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(grade_20059_fall)</span>
@@ -706,10 +1756,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -719,8 +1786,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -732,7 +1808,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -776,6 +1975,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -801,6 +2001,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -861,6 +2087,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
