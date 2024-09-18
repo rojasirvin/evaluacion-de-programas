@@ -8,7 +8,7 @@ title: "Tareas"
 
 - [Preguntas](./tarea-1.qmd)
 
-- Respuestas
+- [Respuestas](./tarea-1-respuestas.qmd)
 
 ---
 
