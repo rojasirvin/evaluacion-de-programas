@@ -14,7 +14,9 @@ title: "Tareas"
 
 # Tarea 2
 
-- Fecha de entrega: lunes 30 de septiembre a las 20:00 en Teams
+- Fecha de entrega: miércoles 2 de octubre a las 20:00 en Teams
+
+- [Preguntas](./tarea-2.qmd)
 
 ---
 
