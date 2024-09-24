@@ -1,0 +1,211 @@
+---
+title: "LATE"
+lang: es
+---
+
+```{r setup}
+#| echo: false
+#| warning: false 
+#| message: false
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
+library(tidyverse)
+library(knitr)
+library(stargazer)
+library(janitor)
+library(sandwich)
+library(gt)
+library(gtExtras)
+```
+
+# Local Average Treatment Effect
+
+En esta nota se presenta la derivación del Local Average Treatment Effect (LATE) de acuerdo con Angrist, Imbens & Rubin (1996)
+
+Frecuentemente nos encontraremos con intervenciones donde la aleatorización ocurre de manera íntegra, pero no todos aquellos asignados a cierto tratamiento efectivamente lo reciben.
+
+Consideraremos la diferencia entre **ser asignado** al tratamiento y **recibir el tratamiento** pues, por ejemplo, al evaluar un programa que asigna aleatoriamente a niños a escuelas de prestigio, nos interesa el efecto de efectivamente asistir a dichas escuelas y, quizás no tanto, el efecto de haber sido sorteado para asistir a dichas escuelas por medio de un experimento.
+
+Usaremos un estimador de variables instrumentales (VI) para relacionar los efectos de la **asignación** con los efectos de la **adopción**. El resultado principal al que llegaremos es el siguiente:
+
+$$\text{Efecto de la asignación en } Y=(\text{Efecto de la asignación en la adopción})\times (\text{Efecto de la adopción en }Y)$$
+
+Por tanto:
+
+$$\text{Efecto de la adopción en }Y=\frac{\text{Efecto de la asignación en }Y}{\text{Efecto de las asignación en la adopción}}$$
+
+Ahora derivaremos formalmente este resultado, pero la intuición es importante: el efecto causal de la adopción es el efecto de la asignación, *escalado* por el efecto de la asignación en la adopción
+
+## Notación
+
+Consideremos, para la asignación y el cumplimiento, las dos posibles situaciones:
+
+Asignación: $Z_i=\begin{cases} 1 \\0 \\ \end{cases}$
+
+Cumplimiento: $D_i=\begin{cases} 1 \\0 \\ \end{cases}$
+
+Si $Y_i$ variable de resultados, nos importa el efecto de $D_i$ sobre $Y_i$.
+
+$D_i(Z)$ es el indicador de cumplir, dada la asignación $Z$, por lo que con cumplimiento perfecto tendríamos $D_i(Z)=Z_i$. En general, hay asignados que no cumplen y no asignados que cumplen.
+
+Con esta notación podemos escribir la variable de pacto de $i$ como $Y_i(Z,D)$.
+
+Noten que $Y_i(Z,D)$ y $D_i(Z)$ son resultados potenciales.
+
+## Supuestos
+
+**Supuesto 1**: *Stable Unit Treatment Value Assumption (SUTVA)*
+
+Este supuesto indica que los resultados potenciales de $i$ no están correlacionados con los de los otros individuos. Por tanto podemos escribir:
+
+$$Y_i(Z,D)=Y_i(Z_i,D_i)$$
+Y además:
+
+$$D_i(Z)=D_i(Z_i)$$
+
+**Supuesto 2**: asignación aleatoria
+
+La asignación de $Z_i$ es aleatoria, es decir:
+
+$$P(Z=C)=P(Z=C')\quad \forall\quad C,C'$$
+
+Los supuestos 1 y 2 nos permiten identificar los efectos causales de $Z$ en $Y$ y de $Z$ en $D$ calculando diferencias de medias por grupos de $Z$:
+
+- $ITT_Y$ comparar las medias de $y$ entre quienes $Z=1$ y quienes $Z=0$
+  
+- $ITT_D$ comparar las medias de $D$ entre quienes $Z=1$ y quienes $Z=0$
+
+Los dos efectos causales antes descritos reciben el nombre de **intención a tratar** o **intention to treat**, o como se encuentra frecuentemente,  $ITT$. Este parámetro nos dice el efecto que resulta de ser asignado, es decir, refleja la intención que se tenía para tratar a un grupo y a otro no.
+
+Hasta ahora el supuesto crítico es la asignación aleatoria de $Z$. Sin embargo, $D_i$ puede no serlo y, en general, no lo es. Por tanto, una comparación de $y$ entre grupos de $D$ es inapropiada. Necesitamos algunos supuestos para decir algo del efecto causal de $D$ sobre $Y$
+
+**Supuesto 3**: restricción de exclusión
+
+Este supuestos indica que la asignación al tratamiento es independiente de los resultados potenciales:
+
+$$Y(Z,D)=Y(Z',D)\quad \forall \quad Z,Z',D$$
+
+Este supuesto implica que podemos escribir:
+
+$$Y_i(1,d)=Y_i(0,d) \quad d=\{0,1\}$$
+
+Es decir, la exclusión resuleve el problema contrafactual.
+
+Además, con el supuesto 3 podemos escribir:
+
+$$Y(D)=Y(Z,D)=Y(Z',D)\quad \forall \quad Z,Z',D$$
+
+ por el supuesto 1:
+
+$$Y_i(D_i)=Y_i(Z,D)$$
+
+**Supuesto 4**: el efecto causal promedio de $Z$ sobre $D$ es distinto de cero
+
+Este supuesto implica que, si se asignan individuos a ser tratados, esperamos que algunos efectivamente cumplan:
+
+$$E(D_i(1)-D_i(0))\neq0$$
+
+En otras palabras, la asignación tiene efecto sobre el cumplimiento.
+
+**Supuesto 5**: monotonicidad
+
+Este supuesto dice que no hay un individuo que:
+
+  - Cuando se le asigna, no cumple
+  - Cuando no se le asigna, cumple
+  
+
+$$D_i(1)\geq D_i(0) \quad \forall\quad i=1,\ldots N$$
+
+Noten que este supuesto se debe pensar en términos contrafactuales. A un individuo que no cumple cuando se le asigna y cumple cuando no se le asigna se le conoce como **retador** o *defier*.
+
+# Variable instrumental
+
+Decimos que $Z$ es una **variable instrumental** para el efecto causal de $D$ sobre $Y$ si se cumplen los supuestos 1 al 5.
+
+
+# Interpretación del estimador de VI
+
+Comencemos escribiendo el efecto causal de $Z$ en $Y$, que por el supuesto de exclusión de $Z$ es:
+
+$$
+\begin{aligned}
+Y_i(1,D_i(1))-Y_i(0,D_i(0))=\underbrace{Y_i(D_i(1))-Y_i(D_i(0))}_{A} \\
+\end{aligned}
+$$
+
+Notemos que el lado derecho, $A$, puede calcularse siguiendo la notación de resultados potenciales:
+
+$$
+\begin{aligned}
+Y(D)&=Y(0)+D(Z)(Y(1)-Y(0)) \\
+D(Z)&=D(0)+Z(D(1)-D(0))\\
+\end{aligned}
+$$
+
+
+
+Sustituyendo $D$ en $Y$:
+
+$$
+\begin{aligned}
+Y(D(Z))&=Y(0)+(D(0)+Z(D(1)-D(0)))(Y(1)-Y(0)) \\
+&=Y(0)D(0)(Y(1)-Y(0))+Z(D(1)-D(0))(Y(1)-Y(0))
+\end{aligned}
+$$
+
+Podemos evaluar entonces los dos valores de $Z$ y obtener:
+
+$$
+\begin{aligned}
+Y(D(1))&=Y(0)+D(1)(Y(1)-Y(0)) \\
+Y(D(0))&=Y(0)+D(0)(Y(1))-Y(0) \\
+\end{aligned}
+$$
+
+Y entonces:
+
+$$
+\begin{aligned}
+A&=Y_i(D_i(1))-Y_i(D_i(0)) \\
+&=(Y_i(1)-Y_i(0))(D_i(1)-D_i(0))\\
+\end{aligned}
+$$
+
+Es decir, el efecto causal de $Z$ sobre $Y$ para $i$ es el producto del efecto causal de $D$ sobre $Y$ y del efecto causal de $Z$ sobre $D$:
+
+$$
+\underbrace{Y_i(1,D_i(1))-Y_i(0,D_i(0))}_B=(Y_i(1)-Y_i(0))(D_i(1)-D_i(0))
+$$
+
+Consideremos ahora $B$ y obtengamos el valor esperado:
+
+$$
+\begin{aligned}
+E(Y_i(1,D_i(1))-Y_i(0,D_i(0)))&=E(Y_i(1)-Y_i(0))(D_i(1)-D_i(0))\\
+&=E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=1)P(D_i(1)-D_i(0)=1)\\
+&+E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=0)P(D_i(1)-D_i(0)=0)\\
+&+E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=-1)P(D_i(1)-D_i(0)=-1)\\
+\end{aligned}
+$$
+La intuición de este valor esperado es obtener el valor esperado del cambio en la varaible de impacto bajo los distintos posibles efectos de $Z$ sobre $D$. Así, el segundo término de la suma es cero y corresponde a aquellos para quienes la asignación no modificó el cumplimento, por lo que $E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=0)=0$. Usando el supueto 5 de monotonicidad, sabemos $D_i(1)-D_i(0)$ es igual a uno o cero, es decir, $P(D_i(1)-D_i(0)=-1)=0$.
+
+Por tanto:
+
+$$
+\begin{aligned}
+E(Y_i(1,D_i(1))-Y_i(0,D_i(0)))=E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=1)P(D_i(1)-D_i(0)=1)
+\end{aligned}
+$$
+
+Es decir, el efecto causal promedio de $Z$ sobre $Y$ es igual al producto del efecto causal promedio de $D$ sobre $Y$ en aquellos individuos que cuando se les asigna cumplen y cuando no se les asigna no cumplen, $D_i(0)=0$ y $D_i(1)=1$, y la proporción de estos individuos en la población
+
+**Proposición 1 en Angrist, Imbens & Rubin (1996)**: interpretación causal del estimador de VI
+
+Si los supuestos 1 a 5 se cumplen, el estimador de VI es:
+
+$$E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=1)=\frac{E(Y_i(D_i(1),1))-Y_i(D_i(0),0)}{E(D_i(1)-D_i(0)}=\lambda_{LATE}$$
+
+Angrist y coautores llaman a este parámetro el **efecto local promedio del tratamiento** o *LATE*. El LATE es el efecto causal promedio del tratamiento en un conjunto de individuos cuyo estatus de tratamiento puede ser modificado por la asignación aleatoria. A estos individuos se les conoce como **cumplidores** o *compliers*.
+
