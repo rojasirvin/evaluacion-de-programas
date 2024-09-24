@@ -2,4 +2,4 @@
 title: "Notas"
 ---
 
-- LATE
+- [LATE](./late.qmd)
