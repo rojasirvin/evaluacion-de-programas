@@ -18,6 +18,8 @@ title: "Tareas"
 
 - [Preguntas](./tarea-2.qmd)
 
+- Respuestas
+
 ---
 
 # Tarea 3
