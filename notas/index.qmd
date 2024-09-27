@@ -3,3 +3,5 @@ title: "Notas"
 ---
 
 - [LATE](./late.qmd)
+
+- [Múltiples hipótesis](./múltiples-hipótesis.qmd)
