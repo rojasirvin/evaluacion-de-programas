@@ -18,7 +18,7 @@ title: "Tareas"
 
 - [Preguntas](./tarea-2.qmd)
 
-- Respuestas
+- [Respuestas](./tarea-2-respuestas.qmd)
 
 ---
 
