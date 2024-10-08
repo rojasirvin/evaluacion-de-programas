@@ -1,0 +1,7 @@
+---
+title: "Diapositivas"
+---
+
+
+[Diferencia en diferencias](./did.qmd)
+

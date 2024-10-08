@@ -720,5 +720,22 @@
     "title": "Múltiples hipótesis",
     "section": "",
     "text": "Otra forma comúnmente usada de evitar el problema de las múltiples hipótesis es crear índices. Kling, Liebmand y Katz (2007) proponen el siguiente promedio de los \\(z\\)-score para generar un solo índice. Para ello, se sigue el siguiente procedimiento:\n\nDefinir las familias y las variables que componen cada familia, donde \\(y_{ij}\\) es la \\(j\\)ésima variable en la familia con \\(J\\) variables.\nDefinir las varibles \\(y_{ij}\\) de tal forma que mayores valores se interpreten como mejora.\nCrear \\(z_{ij}\\) como \\(z_{ij}=\\frac{y_{ij}-\\bar{y_j}^C}{sd(y_j)^C}\\sim(0,1)\\), es decir, estandarizar cada una de las \\(J\\) variables usando al grupo de control como referencia.\nCrear \\(z_i\\), un solo índice para cada individuo que agregue los \\(J\\) índices creados antes\n\nEl procedimiento descrito en Banerjee et al. (2015) es bastante general, pues incluye el caso donde hay varias rondas de seguimiento y varios países.\nPodemos escribir el índice descrito como:\n\\[z_i=\\frac{(\\frac{1}{J}\\sum_j z_{ij})-\\bar{z}_j^C}{sd(z_j^C)}\\]\nEsta transformación tiene la ventaja de que en la siguiente regresión de efecto de tratamiento\n\\[z_i=\\alpha+\\beta T_i + X_i'\\gamma+\\varepsilon_i\\]\nel coeficiente \\(\\beta\\) se interpreta como el efecto del tratamiento medido en desviaciones estándar con respecto a la media del grupo de control.\nNoten que todos las variables dentro de la familia pesan igual. Quizás nos gustaría tomar en cuenta la correlación entre las variables dentro del índice\n\n\nAnderson (2008) propone el siguiente índice, que puede verse como una generalización del de Kling:\n\\[\\bar{s}_i=\\frac{1}{W_{i}}\\sum_{j\\in J} w_j z_{ij}\\]\nEn este índice, \\(w_j\\) es el peso para la variable \\(j\\) y \\(W_i=\\sum_{j\\in J}w_{j}\\). Los pesos son una función de la matriz de covarianzas entre las variables que conforman la familia. Diversos software ya incluyen funciones para obtener los índices de Anderson (2008)."
+  },
+  {
+    "objectID": "diapositivas/did.html#tendencias-comunes",
+    "href": "diapositivas/did.html#tendencias-comunes",
+    "title": "Diferencia en diferencias",
+    "section": "Tendencias comunes",
+    "text": "Tendencias comunes\nEl supuesto fundamental es el de tendencias comunes, es decir, que en ausencia del tratamiento, el grupo de tratamiento se hubiera comportado igual al grupo de control.\nEl supuesto de tendencias comunes es un supuesto entendido en el sentido contrafactual y no puede ser probado directamente."
+  },
+  {
+    "objectID": "diapositivas/index.html",
+    "href": "diapositivas/index.html",
+    "title": "Diapositivas",
+    "section": "",
+    "text": "Diferencia en diferencias",
+    "crumbs": [
+      "Diapositivas"
+    ]
   }
 ]
