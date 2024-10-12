@@ -9,12 +9,11 @@ Por favor, seleccione una de las lecturas marcadas con una "+" de la lista de le
 | Arceo-Gomez & Campos-Vazquez (2014) | Experimental | Ximena Nuñez  | Martes 10 de septiembre |
 | Gertler (2004) | Experimental | Montserrath Vázquez | Martes 10 de septiembre |
 | De la O (2013)  | LATE | Luis Angel Ruiz  | Martes 24 de septiembre |
-| Boruchowicz et al. (2022) | DID | Antonio Lara  | Martes 8 de octubre |
-|  | DID |   | Martes 8 de octubre |
-|  | Pareamiento |   | Martes 22 de octubre |
+| Boruchowicz et al. (2022) | DID | Antonio Lara  | Martes 22 de octubre |
+|  | DID |   | Martes 22 de octubre |
 | Aguilar, Gutiérrez & Seira (2021) | Discontinuidades | Abigail Basañez  | Martes 5 de noviembre |
 | Davis (2017) | Discontinuidades | Raúl Zúñiga  | Martes 5 de noviembre |
 | Campos-Vazquez & Esquivel (2020) | Control sintético | Emilio Vázquez  | Martes 12 de noviembre |
 | Campos-Vazquez & Esquivel (2023) | Control sintético | Cynthia Ramos  | Martes 12 de noviembre |
-|  | Machine learning | Ricardo Cortés  | Martes 19 de noviembre |
-| Baiardi & Naghi (2021) | Machine learning | Alejandra Rojas  | Martes 19 de noviembre |
+|  | Machine learning | Ricardo Cortés  | Jueves 21 de noviembre |
+| Baiardi & Naghi (2021) | Machine learning | Alejandra Rojas  | Jueves 21 de noviembre |

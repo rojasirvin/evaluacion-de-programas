@@ -130,7 +130,7 @@ $$m_{NT}=\frac{Y_{8,post}-Y_{8,pre}}{X_{8,post}-X_{8,pre}}=\frac{132-165}{1931-1
 - Y entonces, podemos encontrar cuál hubiera sido el número de bancos en el distrio 6 (tratado) si hubiera seguido la pendiente del distrito 8:
 
 $$m_T=\frac{\tilde{Y}_{6,post}-Y_{6,pre}}{X_{6,post}-X_{6,pre}}=\frac{\tilde{Y}_{6,post}-135}{1931-1930}=-33$$
-- Por tanto, $\tilde{Y}_{6,post}=102$ es el número de bancos que el distrito 6 hubiera tenido si hubiera seguido una tendencia paralela a la del distrito 8 ]
+- Por tanto, $\tilde{Y}_{6,post}=102$ es el número de bancos que el distrito 6 hubiera tenido si hubiera seguido una tendencia paralela a la del distrito 8
 
 
 
@@ -164,7 +164,7 @@ dd_grafica <- banks_contrafactual %>%
 
 
 
-```{r, echo=T, eval=T, message=F, warning=F, fig.height=6.5}
+```{r}
 dd_grafica
 ```
 
@@ -178,7 +178,7 @@ dd_grafica
 $$
 \begin{aligned}
 \delta_{DID}&=(Y_{6,post}-Y_{6,pre})-(Y_{8,post}-Y_{8,pre}) \\
-&=(Y_{6,1931}-Y_{6,1931})-(Y_{8,1930}-Y_{8,1930}) \\
+&=(Y_{6,1931}-Y_{6,1930})-(Y_{8,1931}-Y_{8,1930}) \\
 &=(121-135)-(132-165) \\
 &=-14+33 = 19
 \end{aligned}
@@ -266,12 +266,6 @@ summary(did_bank2)
 
 
 
-## Tendencias comunes
-
-El supuesto fundamental es el de **tendencias comunes**, es decir, que en ausencia del tratamiento, el grupo de tratamiento se hubiera comportado igual al grupo de control.
-
-El supuesto de tendencias comunes es un supuesto entendido en el sentido contrafactual y no puede ser probado directamente.
-
 
 # Violación a los supuestos
 
@@ -322,20 +316,13 @@ knitr::include_graphics("trends_3.png")
 
 
 
-# Relajación de supuestos
 
-- Cuando tenemos datos en panel con varios periodos pre y post intervención podemos relajar el supuesto de tendencias paralelas
 
-- Podemos estimar un modelo con tendencias específicas por estado:
 
-$$y_{st}=\alpha+\delta_{DID}LEGAL_{st}+\sum_k\beta_k STATE_{ks}+\sum_j \gamma_j YEAR_{jt}+\sum_k\theta_k(STATE_{ks}\times t)+ e_{st}$$
-- $\theta_k$ captura tendencias específicas por cada estado
 
-- $\delta_{DID}$ captura las desviaciones respecto a una tendencia suave, aún cuando las tendencias no sean comúnes
 
 
 # Adopción escalonada
-
 
 - Diferencias en la edad legal para beber en Estados Unidos
 
