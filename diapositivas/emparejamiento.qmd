@@ -1,0 +1,30 @@
+---
+title: "Métodos de emparejamiento"
+author: "Irvin Rojas"
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+---
+
+
+```{r setup}
+#| echo: false
+#| warning: false 
+#| message: false
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
+library(tidyverse)
+library(knitr)
+library(stargazer)
+library(janitor)
+library(sandwich)
+library(nnet)
+library(marginaleffects)
+library(foreign)
+library(AER)
+library(ggbrace)
+```
+
