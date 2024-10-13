@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -337,6 +402,7 @@ Irvin Rojas
 </div>
 
 </section>
+<section>
 <section id="diferencia-en-diferencias" class="title-slide slide level1 center">
 <h1>Diferencia en diferencias</h1>
 <ul>
@@ -345,9 +411,8 @@ Irvin Rojas
 <li><p>Además, constituye el fundamento para otro de los métodos en donde la investigación actual es muy activa, el control sintético</p></li>
 </ul>
 </section>
-
-<section id="diferencia-en-diferencias-1" class="title-slide slide level1 center">
-<h1>Diferencia en diferencias</h1>
+<section id="introducción" class="slide level2">
+<h2>Introducción</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -368,9 +433,8 @@ Irvin Rojas
 </div>
 </div>
 </section>
-
-<section id="diferencia-en-diferencias-2" class="title-slide slide level1 center">
-<h1>Diferencia en diferencias</h1>
+<section id="diferencia-en-diferencias-1" class="slide level2">
+<h2>Diferencia en diferencias</h2>
 <ul>
 <li>Como respuesta a las corridas bancarias que caracterizaron la crisis de 1929, los bancos comerciales en Mississippi se vieron expuestos a dos políticas distintas</li>
 </ul>
@@ -411,30 +475,94 @@ T=
 <li><p>Sin embargo, esta comparación claramente ignora las condiciones iniciales</p></li>
 </ul>
 </section>
-
-<section id="diferencia-en-diferencias-3" class="title-slide slide level1 center">
-<h1>Diferencia en diferencias</h1>
+<section id="representación-gráfica" class="slide level2">
+<h2>Representación gráfica</h2>
 <ul>
 <li>Gráficamente observamos</li>
 </ul>
-
-<img data-src="did_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"><ul>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb1" data-code-line-numbers="40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>banks<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"banks_mm.csv"</span>,</span>
+<span id="cb1-2"><a></a>                       <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"latin1"</span>))</span>
+<span id="cb1-3"><a></a>banks <span class="ot">&lt;-</span> banks <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a></a>  <span class="fu">filter</span>(<span class="fu">month</span>(date) <span class="sc">==</span> <span class="dv">7</span>L,</span>
+<span id="cb1-5"><a></a>         <span class="fu">mday</span>(date) <span class="sc">==</span> <span class="dv">1</span>L) <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">year</span>(date)) <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a></a>  <span class="fu">select</span>(year,</span>
+<span id="cb1-8"><a></a>         <span class="fu">matches</span>(<span class="st">"bi[ob][68]"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a></a>  <span class="fu">select</span>(year,bib6,bib8) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-10"><a></a>  <span class="fu">gather</span>(distrito,banks,bib6<span class="sc">:</span>bib8) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-11"><a></a>  <span class="fu">mutate</span>(<span class="at">treatment=</span><span class="fu">ifelse</span>(distrito<span class="sc">==</span><span class="st">"bib6"</span>,<span class="dv">1</span>,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-12"><a></a>  <span class="fu">mutate</span>(<span class="at">post=</span><span class="fu">ifelse</span>(year<span class="sc">&gt;=</span><span class="dv">1931</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb1-13"><a></a></span>
+<span id="cb1-14"><a></a>banks <span class="sc">%&gt;%</span> </span>
+<span id="cb1-15"><a></a>  <span class="fu">mutate</span>(<span class="at">banks=</span><span class="fu">ifelse</span>(year<span class="sc">==</span><span class="dv">1930</span> <span class="sc">|</span> year<span class="sc">==</span><span class="dv">1931</span>,banks,<span class="cn">NA</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-16"><a></a>  <span class="fu">filter</span>(year <span class="sc">&lt;=</span> <span class="dv">1932</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-17"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>banks, <span class="at">color=</span>distrito)) <span class="sc">+</span></span>
+<span id="cb1-18"><a></a>  <span class="fu">geom_line</span>(<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb1-19"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">100</span>,<span class="dv">180</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="representación-gráfica-1" class="slide level2">
+<h2>Representación gráfica</h2>
+<ul>
 <li>Del distrito 8 (no tratado) podemos obtener la pendiente:</li>
 </ul>
-<p><span class="math display">\[m_{NT}=\frac{Y_{8,post}-Y_{8,pre}}{X_{8,post}-X_{8,pre}}=\frac{132-165}{1931-1930}=-33\]</span> - Y entonces, podemos encontrar cuál hubiera sido el número de bancos en el distrio 6 (tratado) si hubiera seguido la pendiente del distrito 8:</p>
-<p><span class="math display">\[m_T=\frac{\tilde{Y}_{6,post}-Y_{6,pre}}{X_{6,post}-X_{6,pre}}=\frac{\tilde{Y}_{6,post}-135}{1931-1930}=-33\]</span> - Por tanto, <span class="math inline">\(\tilde{Y}_{6,post}=102\)</span> es el número de bancos que el distrito 6 hubiera tenido si hubiera seguido una tendencia paralela a la del distrito 8 ]</p>
+<p><span class="math display">\[m_{NT}=\frac{Y_{8,post}-Y_{8,pre}}{X_{8,post}-X_{8,pre}}=\frac{132-165}{1931-1930}=-33\]</span></p>
+<ul>
+<li>Y entonces, podemos encontrar cuál hubiera sido el número de bancos en el distrio 6 (tratado) si hubiera seguido la pendiente del distrito 8:</li>
+</ul>
+<p><span class="math display">\[m_T=\frac{\tilde{Y}_{6,post}-Y_{6,pre}}{X_{6,post}-X_{6,pre}}=\frac{\tilde{Y}_{6,post}-135}{1931-1930}=-33\]</span> - Por tanto, <span class="math inline">\(\tilde{Y}_{6,post}=102\)</span> es el número de bancos que el distrito 6 hubiera tenido si hubiera seguido una tendencia paralela a la del distrito 8</p>
 </section>
-
-<section id="diferencia-en-diferencias-4" class="title-slide slide level1 center">
-<h1>Diferencia en diferencias</h1>
+<section id="representación-gráfica-2" class="slide level2">
+<h2>Representación gráfica</h2>
 <ul>
 <li>Podemos contruir el contrafactual para el distrito 6 observando la pendiente del distrito 8</li>
 </ul>
-
-<img data-src="did_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
-
-<section id="diferencia-en-diferencias-5" class="title-slide slide level1 center">
-<h1>Diferencia en diferencias</h1>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>banks_contrafactual <span class="ot">&lt;-</span> banks <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a></a>    <span class="fu">mutate</span>(<span class="at">banks=</span><span class="fu">ifelse</span>(year<span class="sc">==</span><span class="dv">1930</span> <span class="sc">|</span> year<span class="sc">==</span><span class="dv">1931</span>,banks,<span class="cn">NA</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a></a>  <span class="fu">filter</span>(year <span class="sc">&lt;=</span> <span class="dv">1932</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-4"><a></a>  <span class="fu">mutate</span>(<span class="at">tipo=</span><span class="st">"observado"</span>)</span>
+<span id="cb2-5"><a></a>  </span>
+<span id="cb2-6"><a></a>d6_contrafactual <span class="ot">&lt;-</span> banks_contrafactual <span class="sc">%&gt;%</span> </span>
+<span id="cb2-7"><a></a>  <span class="fu">filter</span>(distrito<span class="sc">==</span><span class="st">"bib6"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-8"><a></a>  <span class="fu">mutate</span>(<span class="at">banks=</span><span class="fu">ifelse</span>(year<span class="sc">==</span><span class="dv">1931</span>,<span class="dv">102</span>,banks),</span>
+<span id="cb2-9"><a></a>         <span class="at">tipo=</span><span class="st">"contrafactual"</span>)</span>
+<span id="cb2-10"><a></a></span>
+<span id="cb2-11"><a></a>banks_contrafactual <span class="ot">&lt;-</span> <span class="fu">rbind</span>(banks_contrafactual,d6_contrafactual)</span>
+<span id="cb2-12"><a></a></span>
+<span id="cb2-13"><a></a>dd_grafica <span class="ot">&lt;-</span> banks_contrafactual <span class="sc">%&gt;%</span> </span>
+<span id="cb2-14"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>year, <span class="at">y=</span>banks, <span class="at">color=</span>distrito, <span class="at">linetype=</span>tipo))<span class="sc">+</span></span>
+<span id="cb2-15"><a></a>  <span class="fu">geom_line</span>(<span class="at">size=</span><span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-16"><a></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"dashed"</span>, <span class="st">"solid"</span>)) <span class="sc">+</span></span>
+<span id="cb2-17"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">100</span>,<span class="dv">180</span>)) </span>
+<span id="cb2-18"><a></a></span>
+<span id="cb2-19"><a></a></span>
+<span id="cb2-20"><a></a>dd_grafica</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="did_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="diferencia-en-diferencias-2" class="slide level2">
+<h2>Diferencia en diferencias</h2>
 <ul>
 <li>Podemos dar así una primera definición de lo que es la diferencia en diferencias del número de bancos que sobrevivieron a la Gran Depresión en Mississippi</li>
 </ul>
@@ -452,17 +580,15 @@ T=
 <li><p>DID construye un contrafactual para las unidades tratadas usando la pendiente de las unidades no tratadas</p></li>
 </ul>
 </section>
-
-<section id="diferencia-en-diferencias-6" class="title-slide slide level1 center">
-<h1>Diferencia en diferencias</h1>
+<section id="diferencia-en-diferencias-3" class="slide level2">
+<h2>Diferencia en diferencias</h2>
 <ul>
 <li><p>El supuesto fundamental es el de <strong>tendencias comunes</strong>, es decir, que en ausencia del tratamiento, el grupo de tratamiento se hubiera comportado igual al grupo de control</p></li>
 <li><p>Si hay varios puntos pre intervención, el supuesto de tendencias comunes puede probarse empíricamente</p></li>
 </ul>
 </section>
-
-<section id="regresión-en-did" class="title-slide slide level1 center">
-<h1>Regresión en DID</h1>
+<section id="regresión-en-did" class="slide level2">
+<h2>Regresión en DID</h2>
 <ul>
 <li><p>El método puede generalizarse a más periodos de tiempo</p></li>
 <li><p>Aquí, una regresión nos permite identificar el efecto del tratamiento</p></li>
@@ -476,10 +602,15 @@ T=
 <li><p><span class="math inline">\(\delta_{r,DID}\)</span> es el estimador de DID del efecto del tratamiento</p></li>
 </ul>
 </section>
-
-<section id="regresión-en-did-1" class="title-slide slide level1 center">
-<h1>Regresión en DID</h1>
+<section id="regresión-en-did-1" class="slide level2">
+<h2>Regresión en DID</h2>
+<ul>
+<li><p>Usemos los datos del archivo <a href="banks_mm.csv">banks_mm.csv</a> que se utilizan en el libro</p></li>
+<li><p>Es una forma muy básica de datos en panel: cada fila representa un distrito en un periodo de tiempo</p></li>
+<li><p>Podemos identificar si cada fila pertenece a un distrito tratado o no o a un periodo posterior a al tratamiento o no</p></li>
+</ul>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>banks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 5
     year distrito banks treatment  post
@@ -499,10 +630,16 @@ T=
 </div>
 </div>
 </section>
-
-<section id="regresión-en-did-2" class="title-slide slide level1 center">
-<h1>Regresión en DID</h1>
+<section id="regresión-en-did-2" class="slide level2">
+<h2>Regresión en DID</h2>
+<ul>
+<li>Estimemos la regresión que acabamos de motivar usando todos los periodos en el panel</li>
+</ul>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>did_bank <span class="ot">&lt;-</span> <span class="fu">lm</span>(banks <span class="sc">~</span> treatment <span class="sc">+</span> post<span class="sc">+</span> treatment<span class="sc">*</span>post,</span>
+<span id="cb5-2"><a></a>               <span class="at">data=</span>banks)</span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a><span class="fu">summary</span>(did_bank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -527,15 +664,18 @@ F-statistic: 21.71 on 3 and 8 DF,  p-value: 0.0003369</code></pre>
 </div>
 </div>
 </section>
-
-<section>
-<section id="regresión-en-did-3" class="title-slide slide level1 center">
-<h1>Regresión en DID</h1>
+<section id="regresión-en-did-3" class="slide level2">
+<h2>Regresión en DID</h2>
 <ul>
 <li>Noten que si solo usamos dos años, obtenemos exactamente lo que obtendríamos haciendo las diferencias <em>a mano</em></li>
 </ul>
-<p><span class="math display">\[\delta_{DiD}=(Y_{6,1931}-Y_{6,1931})-(Y_{8,1930}-Y_{8,1930})=19\]</span></p>
+<p><span class="math display">\[\delta_{DiD}=(Y_{6,1931}-Y_{6,1930})-(Y_{8,1931}-Y_{8,1930})=19\]</span></p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>did_bank2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(banks <span class="sc">~</span> treatment <span class="sc">+</span> post<span class="sc">+</span> treatment<span class="sc">*</span>post,</span>
+<span id="cb7-2"><a></a>               <span class="at">data=</span><span class="fu">filter</span>(banks,year<span class="sc">==</span><span class="dv">1930</span> <span class="sc">|</span> year<span class="sc">==</span><span class="dv">1931</span>))</span>
+<span id="cb7-3"><a></a></span>
+<span id="cb7-4"><a></a></span>
+<span id="cb7-5"><a></a><span class="fu">summary</span>(did_bank2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -558,55 +698,52 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 </div>
 </div>
 </section>
-<section id="tendencias-comunes" class="slide level2">
-<h2>Tendencias comunes</h2>
-<p>El supuesto fundamental es el de <strong>tendencias comunes</strong>, es decir, que en ausencia del tratamiento, el grupo de tratamiento se hubiera comportado igual al grupo de control.</p>
-<p>El supuesto de tendencias comunes es un supuesto entendido en el sentido contrafactual y no puede ser probado directamente.</p>
-</section></section>
-<section id="violación-a-los-supuestos" class="title-slide slide level1 center">
-<h1>Violación a los supuestos</h1>
+<section id="violación-a-los-supuestos" class="slide level2">
+<h2>Violación a los supuestos</h2>
 <ul>
 <li><p>Consideremos cosas que podrían salir mal con respecto al supuesto de tendencias paralelas</p></li>
-<li><p>En este ejemplo estilizado algo sucedió en Allatsea que produjo un cambio en la trayectoria de mortalidad antes del cambio en la legislación</p></li>
+<li><p>Supongamos que un tratamiento ocurre en el periodo marcado con la línea vertical, por ejemplo, un cambio en una legislación</p></li>
+<li><p>En este ejemplo algo sucedió en Allatsea que produjo un cambio en la trayectoria de mortalidad antes del cambio en la legislación</p></li>
 <li><p>El supuesto de tendencias paralelas sí se sostenía hasta antes de este cambio</p></li>
-<li><p>Sin embargo, nuestra estrategia de DID atribuiría el efecto al cambio en la legislación</p></li>
+<li><p>Sin embargo, nuestra estrategia de DID atribuiría el efecto al cambio en la legislación cuando en realidad cuando ese cambio ocurrió ya nole pasó nada a Allatsea</p></li>
 </ul>
 
 <img data-src="trends_1.png" width="205" class="r-stretch"></section>
-
-<section id="violación-a-los-supuestos-1" class="title-slide slide level1 center">
-<h1>Violación a los supuestos</h1>
+<section id="violación-a-los-supuestos-1" class="slide level2">
+<h2>Violación a los supuestos</h2>
 <ul>
 <li><p>En este segundo ejemplo, el supuesto de tendencias paralelas pre intervención se viola</p></li>
 <li><p>Aunque en el momento del cambio de la política, la línea de Allatsea es más inclinada, estimar esta relación por DID de nuevo atribuiría a la política diferencias que ya existían antes de la intervención</p></li>
 </ul>
 
 <img data-src="trends_2.png" width="204" class="r-stretch"></section>
-
-<section id="violación-a-los-supuestos-2" class="title-slide slide level1 center">
-<h1>Violación a los supuestos</h1>
+<section id="violación-a-los-supuestos-2" class="slide level2">
+<h2>Violación a los supuestos</h2>
 <ul>
 <li><p>En este tercer ejemplo hay tendencias que no son paralelas pre intervención</p></li>
 <li><p>Sin embargo, después de la intervención, la trayectoria de Allatsea tiene una pendiente claramente más inclinada que antes de la intervención</p></li>
-<li><p>Quisiéramos incorporar esta posibilidad en la estimación</p></li>
 </ul>
 
-<img data-src="trends_3.png" width="203" class="r-stretch"></section>
-
-<section id="relajación-de-supuestos" class="title-slide slide level1 center">
-<h1>Relajación de supuestos</h1>
-<ul>
-<li><p>Cuando tenemos datos en panel con varios periodos pre y post intervención podemos relajar el supuesto de tendencias paralelas</p></li>
-<li><p>Podemos estimar un modelo con tendencias específicas por estado:</p></li>
-</ul>
-<p><span class="math display">\[y_{st}=\alpha+\delta_{DID}LEGAL_{st}+\sum_k\beta_k STATE_{ks}+\sum_j \gamma_j YEAR_{jt}+\sum_k\theta_k(STATE_{ks}\times t)+ e_{st}\]</span> - <span class="math inline">\(\theta_k\)</span> captura tendencias específicas por cada estado</p>
-<ul>
-<li><span class="math inline">\(\delta_{DID}\)</span> captura las desviaciones respecto a una tendencia suave, aún cuando las tendencias no sean comúnes</li>
-</ul>
-</section>
-
+<img data-src="trends_3.png" width="203" class="r-stretch"></section></section>
+<section>
 <section id="adopción-escalonada" class="title-slide slide level1 center">
 <h1>Adopción escalonada</h1>
+
+</section>
+<section id="adopción-escalonada-en-la-antiguedad" class="slide level2">
+<h2>Adopción escalonada en la <em>antiguedad</em></h2>
+<ul>
+<li><p>DID es uno de esos campos tan activos en la investigación que cosas que pensábamos superadas o completamente estudiadas se han modificado en los últimos años</p></li>
+<li><p>En esta sección mostramos el tratamiento que MHE y MM dan a los problemas de adopción escalonada</p></li>
+<li><p>La adopción escalonada ocurre cuando existen varios periodos de tratamiento y algunas unidades van siendo tratadas de forma desfasada</p></li>
+<li><p>Por ejemplo, en Méxio las leyes de despenalización del aborto o las que reconocen las uniones entre personas del mismo sexo son buenos ejemplos de tratamientos con adopción escalonada</p></li>
+<li><p>Hasta los trabajos de Goodman-Bacon (2021) y Chaisemartin &amp; D’Haultfœuille (2020), los problemas con adopción escalonada se abordaban econométricamente de la misma forma que hemos descrito hasta ahora, conocida como efectos fijos en bidireccionales (sí, suena horrible dicha traducción) o <em>two-way fixed effects</em></p></li>
+<li><p>Esta sección presenta el tipo de tratamiento que hoy ya consideramos inapropiado</p></li>
+<li><p>Más adelante se presentan alternativas para los problemas de adopción escalonada</p></li>
+</ul>
+</section>
+<section id="edad-legal-para-beber-en-eua" class="slide level2">
+<h2>Edad legal para beber en EUA</h2>
 <ul>
 <li><p>Diferencias en la edad legal para beber en Estados Unidos</p></li>
 <li><p>¿Las restricciones a la edad mínima para comprar alcohol tienen un impacto en la mortalidad?</p></li>
@@ -620,9 +757,8 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <li><p><span class="math inline">\(T_s\times POST_t\)</span> es igual a 1 para las observaciones de Alabama en los años en los que la nueva política ya está en vigor</p></li>
 </ul>
 </section>
-
-<section id="más-de-un-estado" class="title-slide slide level1 center">
-<h1>Más de un estado</h1>
+<section id="más-de-un-estado" class="slide level2">
+<h2>Más de un estado</h2>
 <ul>
 <li><p>¿Por qué quedarnos solo con la comparación con Arkansas?</p></li>
 <li><p>Podemos incluir más unidades que implementen cambios en la política en distintos momentos</p></li>
@@ -636,9 +772,8 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 </ul>
 <p><span class="math display">\[y_{st}=\alpha+\delta_{DID}LEGAL_{st}+\sum_k\beta_k STATE_{ks}+\sum_j \gamma_j YEAR_{jt}+e_{st}\]</span></p>
 </section>
-
-<section id="estructura-de-datos-en-panel" class="title-slide slide level1 center">
-<h1>Estructura de datos en panel</h1>
+<section id="estructura-de-datos-en-panel" class="slide level2">
+<h2>Estructura de datos en panel</h2>
 <ul>
 <li><p>Los datos que acabamos de describir tienen una estructura de panel</p></li>
 <li><p>La variable de panel es el estado <span class="math inline">\(s\)</span> y la variable de tiempo es el año <span class="math inline">\(t\)</span></p></li>
@@ -647,9 +782,8 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <li><p><strong>Efectos año</strong> <span class="math inline">\(YEAR_{jt}\)</span>: factores que afectan a todas las unidades por igual en un momento del tiempo</p></li>
 </ul>
 </section>
-
-<section id="interpretación" class="title-slide slide level1 center">
-<h1>Interpretación</h1>
+<section id="interpretación" class="slide level2">
+<h2>Interpretación</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -703,7 +837,7 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

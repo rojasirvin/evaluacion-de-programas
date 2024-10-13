@@ -13,7 +13,7 @@ format:
 #| echo: false
 #| warning: false 
 #| message: false
-knitr::opts_chunk$set(echo = FALSE,
+knitr::opts_chunk$set(echo = TRUE,
                       warning = FALSE,
                       message = FALSE)
 library(tidyverse)
@@ -26,8 +26,6 @@ library(marginaleffects)
 library(foreign)
 library(AER)
 library(ggbrace)
-
-
 ```
 
 
@@ -41,7 +39,7 @@ library(ggbrace)
 - Además, constituye el fundamento para otro de los métodos en donde la investigación actual es muy activa, el control sintético
 
 
-# Diferencia en diferencias
+## Introducción
 
 
 :::: {.columns}
@@ -56,6 +54,7 @@ library(ggbrace)
 
 ::: {.column width="50%"}
 ```{r}
+#| echo: false
 knitr::include_graphics("banks_map.png")
 ```
 :::
@@ -64,7 +63,7 @@ knitr::include_graphics("banks_map.png")
 
 
 
-# Diferencia en diferencias
+## Diferencia en diferencias
 
 
 - Como respuesta a las corridas bancarias que caracterizaron la crisis de 1929, los bancos comerciales en Mississippi se vieron expuestos a dos políticas distintas
@@ -94,11 +93,14 @@ $$
 
 
 
-# Diferencia en diferencias
+## Representación gráfica
 
 - Gráficamente observamos
 
 ```{r}
+#| output-location: column
+#| code-line-numbers: "40"
+
 banks<-read_csv("banks_mm.csv",
                        locale = locale(encoding = "latin1"))
 banks <- banks %>%
@@ -111,10 +113,7 @@ banks <- banks %>%
   gather(distrito,banks,bib6:bib8) %>% 
   mutate(treatment=ifelse(distrito=="bib6",1,0)) %>% 
   mutate(post=ifelse(year>=1931,1,0))
-```
 
-
-```{r}
 banks %>% 
   mutate(banks=ifelse(year==1930 | year==1931,banks,NA)) %>% 
   filter(year <= 1932) %>% 
@@ -122,11 +121,12 @@ banks %>%
   geom_line(size=2) +
   scale_y_continuous(limits=c(100,180))
 ```
-
+## Representación gráfica
 
 - Del distrito 8 (no tratado) podemos obtener la pendiente:
 
 $$m_{NT}=\frac{Y_{8,post}-Y_{8,pre}}{X_{8,post}-X_{8,pre}}=\frac{132-165}{1931-1930}=-33$$
+
 - Y entonces, podemos encontrar cuál hubiera sido el número de bancos en el distrio 6 (tratado) si hubiera seguido la pendiente del distrito 8:
 
 $$m_T=\frac{\tilde{Y}_{6,post}-Y_{6,pre}}{X_{6,post}-X_{6,pre}}=\frac{\tilde{Y}_{6,post}-135}{1931-1930}=-33$$
@@ -134,12 +134,13 @@ $$m_T=\frac{\tilde{Y}_{6,post}-Y_{6,pre}}{X_{6,post}-X_{6,pre}}=\frac{\tilde{Y}_
 
 
 
-# Diferencia en diferencias
-
+## Representación gráfica
 
 - Podemos contruir el contrafactual para el distrito 6 observando la pendiente del distrito 8
 
 ```{r}
+#| output-location: column
+
 banks_contrafactual <- banks %>%
     mutate(banks=ifelse(year==1930 | year==1931,banks,NA)) %>% 
   filter(year <= 1932) %>% 
@@ -151,27 +152,21 @@ d6_contrafactual <- banks_contrafactual %>%
          tipo="contrafactual")
 
 banks_contrafactual <- rbind(banks_contrafactual,d6_contrafactual)
-```
 
-```{r}
 dd_grafica <- banks_contrafactual %>% 
   ggplot(aes(x=year, y=banks, color=distrito, linetype=tipo))+
   geom_line(size=2) +
   scale_linetype_manual(values=c("dashed", "solid")) +
   scale_y_continuous(limits=c(100,180)) 
 
-```
 
-
-
-```{r}
 dd_grafica
 ```
 
 
 
 
-# Diferencia en diferencias
+## Diferencia en diferencias
 
 - Podemos dar así una primera definición de lo que es la diferencia en diferencias del número de bancos que sobrevivieron a la Gran Depresión en Mississippi
 
@@ -191,7 +186,7 @@ $$
 - DID construye un contrafactual para las unidades tratadas usando la pendiente de las unidades no tratadas
 
 
-# Diferencia en diferencias
+## Diferencia en diferencias
 
 - El supuesto fundamental es el de **tendencias comunes**, es decir, que en ausencia del tratamiento, el grupo de tratamiento se hubiera comportado igual al grupo de control
 
@@ -199,7 +194,7 @@ $$
 
 
 
-# Regresión en DID
+## Regresión en DID
 
 - El método puede generalizarse a más periodos de tiempo 
 
@@ -220,16 +215,14 @@ $$y_{dt}=\alpha+\beta T_d+\gamma POST_t + \delta_{r,DID}(T_d\times POST_t)+e_{dt
 
 
 
-# Regresión en DID
+## Regresión en DID
 
 
+- Usemos los datos del archivo [banks_mm.csv](banks_mm.csv) que se utilizan en el libro
 
-```{r}
-did_bank <- lm(banks ~ treatment + post+ treatment*post,
-               data=banks)
-```
+- Es una forma muy básica de datos en panel: cada fila representa un distrito en un periodo de tiempo
 
-
+- Podemos identificar si cada fila pertenece a un distrito tratado o no o a un periodo posterior a al tratamiento o no
 
 ```{r}
 banks
@@ -237,29 +230,30 @@ banks
 
 
 
-# Regresión en DID
+## Regresión en DID
+
+- Estimemos la regresión que acabamos de motivar usando todos los periodos en el panel
 
 ```{r}
+did_bank <- lm(banks ~ treatment + post+ treatment*post,
+               data=banks)
+
 summary(did_bank)
 ```
 
 
 
-# Regresión en DID
+## Regresión en DID
 
 - Noten que si solo usamos dos años, obtenemos exactamente lo que obtendríamos haciendo las diferencias *a mano*
 
-$$\delta_{DiD}=(Y_{6,1931}-Y_{6,1931})-(Y_{8,1930}-Y_{8,1930})=19$$
+$$\delta_{DiD}=(Y_{6,1931}-Y_{6,1930})-(Y_{8,1931}-Y_{8,1930})=19$$
 
 ```{r}
 did_bank2 <- lm(banks ~ treatment + post+ treatment*post,
                data=filter(banks,year==1930 | year==1931))
 
-```
 
-
-
-```{r}
 summary(did_bank2)
 ```
 
@@ -267,17 +261,20 @@ summary(did_bank2)
 
 
 
-# Violación a los supuestos
+## Violación a los supuestos
 
 - Consideremos cosas que podrían salir mal con respecto al supuesto de tendencias paralelas
 
-- En este ejemplo estilizado algo sucedió en Allatsea que produjo un cambio en la trayectoria de mortalidad antes del cambio en la legislación
+- Supongamos que un tratamiento ocurre en el periodo marcado con la línea vertical, por ejemplo, un cambio en una legislación
+
+- En este ejemplo  algo sucedió en Allatsea que produjo un cambio en la trayectoria de mortalidad antes del cambio en la legislación
 
 - El supuesto de tendencias paralelas sí se sostenía hasta antes de este cambio
 
-- Sin embargo, nuestra estrategia de DID atribuiría el efecto al cambio en la legislación
+- Sin embargo, nuestra estrategia de DID atribuiría el efecto al cambio en la legislación cuando en realidad cuando ese cambio ocurrió ya nole pasó nada a Allatsea
 
 ```{r}
+#| echo: false
 knitr::include_graphics("trends_1.png")
 ```
 
@@ -285,7 +282,7 @@ knitr::include_graphics("trends_1.png")
 
 
 
-# Violación a los supuestos
+## Violación a los supuestos
 
 
 - En este segundo ejemplo, el supuesto de tendencias paralelas pre intervención se viola
@@ -293,23 +290,21 @@ knitr::include_graphics("trends_1.png")
 - Aunque en el momento del cambio de la política, la línea de Allatsea es más inclinada, estimar esta relación por DID de nuevo atribuiría a la política diferencias que ya existían antes de la intervención
 
 ```{r}
+#| echo: false
 knitr::include_graphics("trends_2.png")
 ```
 
 
 
 
-# Violación a los supuestos
+## Violación a los supuestos
 
 - En este tercer ejemplo hay tendencias que no son paralelas pre intervención
 
 - Sin embargo, después de la intervención, la trayectoria de Allatsea tiene una pendiente claramente más inclinada que antes de la intervención
 
-- Quisiéramos incorporar esta posibilidad en la estimación
-
-
-
 ```{r}
+#| echo: false
 knitr::include_graphics("trends_3.png")
 ```
 
@@ -317,12 +312,26 @@ knitr::include_graphics("trends_3.png")
 
 
 
-
-
-
-
-
 # Adopción escalonada
+
+## Adopción escalonada en la *antiguedad*
+
+- DID es uno de esos campos tan activos en la investigación que cosas que pensábamos superadas o completamente estudiadas se han modificado en los últimos años
+
+- En esta sección mostramos el tratamiento que MHE y MM dan a los problemas de adopción escalonada
+
+- La adopción escalonada ocurre cuando existen varios periodos de tratamiento y algunas unidades van siendo tratadas de forma desfasada
+
+- Por ejemplo, en Méxio las leyes de despenalización del aborto o las que reconocen las uniones entre personas del mismo sexo son buenos ejemplos de tratamientos con adopción escalonada
+
+- Hasta los trabajos de Goodman-Bacon (2021) y Chaisemartin & D’Haultfœuille (2020), los problemas con adopción escalonada se abordaban econométricamente de la misma forma que hemos descrito hasta ahora, conocida como efectos fijos en bidireccionales (sí, suena horrible dicha traducción) o *two-way fixed effects*
+
+- Esta sección presenta el tipo de tratamiento que hoy ya consideramos inapropiado
+
+- Más adelante se presentan alternativas para los problemas de adopción escalonada
+
+
+## Edad legal para beber en EUA
 
 - Diferencias en la edad legal para beber en Estados Unidos
 
@@ -343,7 +352,7 @@ $$y_{st}=\alpha+\beta T_s+\gamma POST_t+\delta_{DID}(T_s\times POST_t)+e_{st}$$
 
 
 
-# Más de un estado
+## Más de un estado
 
 - ¿Por qué quedarnos solo con la comparación con Arkansas?
 
@@ -364,7 +373,7 @@ $$y_{st}=\alpha+\delta_{DID}LEGAL_{st}+\sum_k\beta_k STATE_{ks}+\sum_j \gamma_j 
 
 
 
-# Estructura de datos en panel
+## Estructura de datos en panel
 
 - Los datos que acabamos de describir tienen una estructura de panel
 
@@ -378,7 +387,7 @@ $$y_{st}=\alpha+\delta_{DID}LEGAL_{st}+\sum_k\beta_k STATE_{ks}+\sum_j \gamma_j 
 
 
 
-# Interpretación
+## Interpretación
 
 | Muertes por 100,000 habs.: | $\hat{\delta}_{DID}$ |
 |:--- | :---: |
