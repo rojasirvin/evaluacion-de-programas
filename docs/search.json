@@ -136,7 +136,7 @@
     "href": "presentaciones.html",
     "title": "Presentaciones",
     "section": "",
-    "text": "Por favor, seleccione una de las lecturas marcadas con una “+” de la lista de lecturas y envíe un correo al profesor para que se le asigne una fecha de presentación.\n\n\n\n\n\n\n\n\n\nAutores\nTema\nPresentador o presentadora\nFecha de exposición\n\n\n\n\nArceo-Gomez & Campos-Vazquez (2014)\nExperimental\nXimena Nuñez\nMartes 10 de septiembre\n\n\nGertler (2004)\nExperimental\nMontserrath Vázquez\nMartes 10 de septiembre\n\n\nDe la O (2013)\nLATE\nLuis Angel Ruiz\nMartes 24 de septiembre\n\n\nBoruchowicz et al. (2022)\nDID\nAntonio Lara\nMartes 22 de octubre\n\n\n\nDID\n\nMartes 22 de octubre\n\n\nAguilar, Gutiérrez & Seira (2021)\nDiscontinuidades\nAbigail Basañez\nMartes 5 de noviembre\n\n\nDavis (2017)\nDiscontinuidades\nRaúl Zúñiga\nMartes 5 de noviembre\n\n\nCampos-Vazquez & Esquivel (2020)\nControl sintético\nEmilio Vázquez\nMartes 12 de noviembre\n\n\nCampos-Vazquez & Esquivel (2023)\nControl sintético\nCynthia Ramos\nMartes 12 de noviembre\n\n\n\nMachine learning\nRicardo Cortés\nJueves 21 de noviembre\n\n\nBaiardi & Naghi (2021)\nMachine learning\nAlejandra Rojas\nJueves 21 de noviembre",
+    "text": "Por favor, seleccione una de las lecturas marcadas con una “+” de la lista de lecturas y envíe un correo al profesor para que se le asigne una fecha de presentación.\n\n\n\n\n\n\n\n\n\nAutores\nTema\nPresentador o presentadora\nFecha de exposición\n\n\n\n\nArceo-Gomez & Campos-Vazquez (2014)\nExperimental\nXimena Nuñez\nMartes 10 de septiembre\n\n\nGertler (2004)\nExperimental\nMontserrath Vázquez\nMartes 10 de septiembre\n\n\nDe la O (2013)\nLATE\nLuis Angel Ruiz\nMartes 24 de septiembre\n\n\nBoruchowicz et al. (2022)\nDID\nAntonio Lara\nMartes 22 de octubre\n\n\nChort & Öktem (2024)\nDID\nAlejandra Rojas\nMartes 22 de octubre\n\n\nConti & Ginja (2023).\nDID\nVíctor Escandón\nJueves 24 de octubre\n\n\nAguilar, Gutiérrez & Seira (2021)\nDiscontinuidades\nAbigail Basañez\nMartes 5 de noviembre\n\n\nDavis (2017)\nDiscontinuidades\nRaúl Zúñiga\nMartes 5 de noviembre\n\n\nCampos-Vazquez & Esquivel (2020)\nControl sintético\nEmilio Vázquez\nMartes 12 de noviembre\n\n\nCampos-Vazquez & Esquivel (2023)\nControl sintético\nCynthia Ramos\nMartes 12 de noviembre\n\n\n\nMachine learning\nRicardo Cortés\nJueves 21 de noviembre",
     "crumbs": [
       "Presentaciones"
     ]
@@ -327,7 +327,7 @@
     "href": "diapositivas/index.html",
     "title": "Diapositivas",
     "section": "",
-    "text": "Diferencia en diferencias",
+    "text": "Diferencia en diferencias\nMétodos de emparejamiento",
     "crumbs": [
       "Diapositivas"
     ]
@@ -720,5 +720,845 @@
     "title": "Respuestas a la tarea 2",
     "section": "Notas",
     "text": "Notas\n\n\nBanerjee, A. et al. (2015). A multifaceted program causes lasting progress for the very poor: Evidence from six countries. Science, 348(6236).↩︎\nPor ejemplo, suponga que estima un modelo al que llame modelo1. Entonces, si ejecuta\n\ncoef_test(modelo1,\n          vcov=\"CR1S\",\n          cluster=mis_datos$demi_paire)[1:2,]\n\nobtendrá los coeficientes con los errores agrupados requeridos. La opción CR1S toma en cuenta el número de grupos o clusters para realizar inferencia. Puede leer más al respecto en la ayuda al ejecutar ?vcovCR. Este es el tipo de ajuste de muestras finitas que usan los autores. Esta corrección consiste en multiplicar la matriz de sándwich agrupada CR0 por \\(\\frac{G(N-1)}{(G-1)(N-p)}\\), donde \\(G\\) es el número de grupos, \\(N\\) es el número total de observaciones y \\(p\\) es el número de regresores.↩︎\nCrépon, B., Devoto, F., Duflo, E., & Parienté, W. (2015). Estimating the impact of microcredit on those who take it up: Evidence from a randomized experiment in Morocco. American Economic Journal: Applied Economics, 7(1), 123-50.↩︎\nAngrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. American Economic Journal: Applied Economics, 1(1), 136-63.↩︎\nBanerjee, A. et al. (2015). A multifaceted program causes lasting progress for the very poor: Evidence from six countries. Science, 348(6236).↩︎"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#sesgo-de-selección",
+    "href": "diapositivas/emparejamiento.html#sesgo-de-selección",
+    "title": "Métodos de emparejamiento",
+    "section": "Sesgo de selección",
+    "text": "Sesgo de selección\nLas razones que determinan la asignación del tratamiento pueden también determinar el valor de \\(Y\\). Entonces, una comparación observacional nos da el efecto del tratamiento más el sesgo de selección:\n\\[\n\\begin{aligned}\nE(y_i|D_i=1)-E(y_i|D_i=0)=&\\overbrace{ E(y_{1i}|D_i=1)-E(y_{0i}|D_i=1)}^{\\text{Efecto promedio en los tratados}}+\\\\& \\underbrace{E(y_{0i}|D_i=1)-E(y_{oi}|D_i=0)}_{\\text{Sesgo de selección}}\n\\end{aligned}\n\\]\nUna forma de eliminar el sesgo de selección es mediante la asignación aleatoria del tratamiento, sin embargo, esto no siempre es posible por lo que recurrimos a supuestos para eliminar el sesgo de selección."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#supuesto-de-independencia",
+    "href": "diapositivas/emparejamiento.html#supuesto-de-independencia",
+    "title": "Métodos de emparejamiento",
+    "section": "Supuesto de independencia",
+    "text": "Supuesto de independencia\nEl supuesto de independencia condicional dice que al controlar por una serie de características \\(X_i\\), el tratamiento es como si fuera aleatorio:\n\\[\nE(Y(1)|D=1,X)=E(Y(1)|D=0,X)\n\\]\n\\[\nE(Y(0)|D=1,X)=E(Y(0)|D=0,X)\n\\]\nEsto es, los valores esperados de \\(Y(1)\\) y \\(Y(0)\\) son iguales cuando nos fijamos en cada valor de \\(X\\)."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#matching-exacto",
+    "href": "diapositivas/emparejamiento.html#matching-exacto",
+    "title": "Métodos de emparejamiento",
+    "section": "Matching exacto",
+    "text": "Matching exacto\nUn estimador de matching exacto consiste en emparejar individuos tratados y no tratados para cada valor específico de las \\(X\\) y luego tomar el promedio ponderado de las diferencias.\nTenemos datos observacionales de individuos que recibieron y no recibieron un tratamiento y tenemos una serie de características discretizadas en \\(X_i\\).\nAsumimos que controlando por las características \\(X_i\\) podemos obtener diferencias causales y luego hacemos un promedio de dichas diferencias."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-programa-hipotético-de-empleo",
+    "href": "diapositivas/emparejamiento.html#ejemplo-programa-hipotético-de-empleo",
+    "title": "Métodos de emparejamiento",
+    "section": "Ejemplo: programa hipotético de empleo",
+    "text": "Ejemplo: programa hipotético de empleo\nUsemos el ejemplo de MT (The Mixtape):\n\n\nread_data &lt;- function(df)\n{\n  full_path &lt;- paste(\"https://raw.github.com/scunning1975/mixtape/master/\", \n                     df, sep = \"\")\n  df &lt;- read_dta(full_path)\n  return(df)\n}\n\ntraining_example &lt;- read_data(\"training_example.dta\") %&gt;% \n  slice(1:20)\n\ndata.treat &lt;- training_example %&gt;% \n  select(unit_treat, age_treat, earnings_treat) %&gt;% \n  slice(1:10) %&gt;% \n  mutate(earnings_treat=as.numeric(earnings_treat))\n\ndata.control &lt;- training_example %&gt;% \n  select(unit_control, age_control, earnings_control)\n\ndata.matched &lt;- training_example %&gt;% \n  select(unit_matched, age_matched, earnings_matched) %&gt;% \n  slice(1:10)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-programa-hipotético-de-empleo-1",
+    "href": "diapositivas/emparejamiento.html#ejemplo-programa-hipotético-de-empleo-1",
+    "title": "Métodos de emparejamiento",
+    "section": "Ejemplo: programa hipotético de empleo",
+    "text": "Ejemplo: programa hipotético de empleo\n\n\nLos individuos tratados:\n\ndata.treat\n\n# A tibble: 10 × 3\n   unit_treat age_treat earnings_treat\n        &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;\n 1          1        18           9500\n 2          2        29          12250\n 3          3        24          11000\n 4          4        27          11750\n 5          5        33          13250\n 6          6        22          10500\n 7          7        19           9750\n 8          8        20          10000\n 9          9        21          10250\n10         10        30          12500\n\n\n\nMientras que los no tratados:\n\ndata.control\n\n# A tibble: 20 × 3\n   unit_control age_control earnings_control\n          &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;\n 1            1          20             8500\n 2            2          27            10075\n 3            3          21             8725\n 4            4          39            12775\n 5            5          38            12550\n 6            6          29            10525\n 7            7          39            12775\n 8            8          33            11425\n 9            9          24             9400\n10           10          30            10750\n11           11          33            11425\n12           12          36            12100\n13           13          22             8950\n14           14          18             8050\n15           15          43            13675\n16           16          39            12775\n17           17          19             8275\n18           18          30             9000\n19           19          51            15475\n20           20          48            14800"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#comparación-observacional",
+    "href": "diapositivas/emparejamiento.html#comparación-observacional",
+    "title": "Métodos de emparejamiento",
+    "section": "Comparación observacional",
+    "text": "Comparación observacional\nSi hiciéramos diferencias simples obtendríamos:\n\nmean(data.treat$earnings_treat)\n\n[1] 11075\n\nmean(data.control$earnings_control)\n\n[1] 11101.25\n\n#Diferencia\nmean(data.treat$earnings_treat)- mean(data.control$earnings_control)\n\n[1] -26.25\n\n\nParece que en el grupo de control ganan más (efecto de tratamiento negativo).\nEl principal problema con esta diferencia es que sabemos que los ingresos crecen con la edad. Pero notemos que la muestra de no tratados tiene mayor edad promedio:\n\nmean(data.treat$age_treat)\n\n[1] 24.3\n\nmean(data.control$age_control)\n\n[1] 31.95\n\n#Diferencia\nmean(data.treat$age_treat)- mean(data.control$age_control)\n\n[1] -7.65\n\n\nEs decir, estaríamos confundido el efecto de la edad."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#muestra-emparejada",
+    "href": "diapositivas/emparejamiento.html#muestra-emparejada",
+    "title": "Métodos de emparejamiento",
+    "section": "Muestra emparejada",
+    "text": "Muestra emparejada\nConstruyamos la muestra apareada: para cada individuo en el grupo tratado, buscaremos uno en el de control que tenga la misma edad. Cuando le encontramos un individuo no tratado al tratado con la misma edad decimos que esa pareja hizo match.\nPor ejemplo, la primera unidad tratada, con 18 años y un ingreso de 9500 estaría emparejada con la unidad 14 del grupo de control, que tiene también 18 años y un ingreso de 9500. Para el individuo 18 construimos su ingreso contrafactual.\nCuando hay varias unidades en el grupo de control que pueden ser empatadas con la de tratamiento, podemos construir el ingreso contrafactual calulando el promedio.Del grupo de control, los individuos 10 y 18 tienen 30 años, con ingresos 10750 y 9000, por lo que usamos el promedio (9875) para crear el contrafactual."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estimador-de-matching-exacto",
+    "href": "diapositivas/emparejamiento.html#estimador-de-matching-exacto",
+    "title": "Métodos de emparejamiento",
+    "section": "Estimador de matching exacto",
+    "text": "Estimador de matching exacto\nLo anterior nos permite definir el estimador de matching exacto del TOT como:\n\\[\\hat{\\delta}_{TOT}=\\frac{1}{N_T}\\sum_{D_i=1}\\left(Y_i-\\left(\\frac{1}{M}\\sum_{m=1}^{M}Y_{jm(i)}\\right)\\right)\\]"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#importancia-del-soporte-común",
+    "href": "diapositivas/emparejamiento.html#importancia-del-soporte-común",
+    "title": "Métodos de emparejamiento",
+    "section": "Importancia del soporte común",
+    "text": "Importancia del soporte común\nObservemos lo que ocurre con la distribución de edades en ambos grupos:\n\n\nPara los tratados:\n\nggplot(training_example, aes(x=age_treat)) +\n  stat_bin(bins = 10, na.rm = TRUE)\n\n\n\n\n\n\n\n\n\nMientras que para los no tratados:\n\nggplot(training_example, aes(x=age_control)) +\n  geom_histogram(bins = 10, na.rm = TRUE)\n\n\n\n\n\n\n\n\n\n\nEl supuesto de traslape débil para identificar el TOT significa que para cada unidad tratada, hay al menos un no tratado. De otra forma, no podemos hacer la comparación."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#muestra-emparejada-1",
+    "href": "diapositivas/emparejamiento.html#muestra-emparejada-1",
+    "title": "Métodos de emparejamiento",
+    "section": "Muestra emparejada",
+    "text": "Muestra emparejada\nLa muestra emparejada o contrafactual será:\n\n\ndata.matched\n\n\n# A tibble: 10 × 3\n   unit_matched age_matched earnings_matched\n          &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;\n 1            1          18             8050\n 2            2          29            10525\n 3            3          24             9400\n 4            4          27            10075\n 5            5          33            11425\n 6            6          22             8950\n 7            7          19             8275\n 8            8          20             8500\n 9            9          21             8725\n10           10          30             9875"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#muestra-emparejada-2",
+    "href": "diapositivas/emparejamiento.html#muestra-emparejada-2",
+    "title": "Métodos de emparejamiento",
+    "section": "Muestra emparejada",
+    "text": "Muestra emparejada\nNoten que la edad es la misma entre los tratados y la muestra apareada:\n\n\nMuestra de tratados:\n\nmean(data.treat$age_treat)\n\n[1] 24.3\n\n\n\nMuestra emparejada:\n\nmean(data.matched$age_matched)\n\n[1] 24.3\n\n\n\n\nEn este caso, decimos que la edad está balanceada.\nY entonces podemos calcular el efecto de tratamiento como la diferencia de ingresos entre los tratados y los no tratados en la muestra emparejada:\n\n#Diferencia\nmean(data.treat$earnings_treat)- mean(data.matched$earnings_matched)\n\n[1] 1695\n\n\nEn este caso, encontramos un efecto positivo del programa de 1695 unidades monetarias."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#matching-exacto-1",
+    "href": "diapositivas/emparejamiento.html#matching-exacto-1",
+    "title": "Métodos de emparejamiento",
+    "section": "Matching exacto",
+    "text": "Matching exacto\nUn estimador de matching exacto consiste en emparejar individuos tratados y no tratados para cada valor específico de las \\(X\\) y luego tomar el promedio ponderado de las diferencias.\nTenemos datos observacionales de individuos que recibieron y no recibieron un tratamiento y tenemos una serie de características discretizadas en \\(X_i\\).\nAsumimos que controlando por las características \\(X_i\\) podemos obtener diferencias causales y luego hacemos un promedio de dichas diferencias."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-de-la-vida-real",
+    "href": "diapositivas/emparejamiento.html#ejemplo-de-la-vida-real",
+    "title": "Métodos de emparejamiento",
+    "section": "Ejemplo de la vida real",
+    "text": "Ejemplo de la vida real\n\nTenemos varias características en \\(X_i\\), no solo la edad\nEsto hace que cada valor \\(X_i=x_i\\) este representado por una celda\n\\(X_i\\) incluye, por ejemplo, raza, año de solicitud de ingreso al programa, escolaridad, calificación en examen de aptitud, año de nacimiento (son las características del ejemplo que vermeos más adelante)\nEstas características definen celdas y dentro de cada celda tenemos tratados y no tratados"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#efecto-del-tratamiento-con-matching-exacto",
+    "href": "diapositivas/emparejamiento.html#efecto-del-tratamiento-con-matching-exacto",
+    "title": "Métodos de emparejamiento",
+    "section": "Efecto del tratamiento con matching exacto",
+    "text": "Efecto del tratamiento con matching exacto\n\nEl TOT asumiendo inconfundibilidad:\n\n\\[\n\\begin{aligned}\n\\delta^M=TOT&=E\\left\\{ E(y_{1i}|X_i,D_i=1)-E(y_{0i}|X_i,D_i=0)|D_i=1\\right\\} \\\\\n&=E\\left\\{\\delta_X | D_i=1\\right\\}\n\\end{aligned}\n\\]\n\n\\(\\delta_X\\) es la diferencia de ingresos promedio entre estados de tratamiento para cada valor de \\(X_i\\)\nCon \\(X_i\\) discreta y con una muestra disponible:\n\n\\[\n\\delta^M=\\sum_{x} \\delta_x P(X_i=x|D_i=1)\n\\]"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos",
+    "href": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos",
+    "title": "Métodos de emparejamiento",
+    "section": "Ejemplo: veteranos de guerra en Estados Unidos",
+    "text": "Ejemplo: veteranos de guerra en Estados Unidos\n\nAngrist (1998), Estimating the Labor Market Impact of Voluntary Military Service Using Social Security Data on Military Applicants\nEl tratamiento es haber servido en el ejercito, algo que claramente tiene autoselección\nSe trata de estimar el efecto en el ingreso\nLos autores construyen celdas de acuerdo a las características antes mencionadas\n\nRaza, año de solicitud de ingreso al programa, escolaridad, calificación en examen de aptitud, año de nacimiento"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-1",
+    "href": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-1",
+    "title": "Métodos de emparejamiento",
+    "section": "Ejemplo: veteranos de guerra en Estados Unidos",
+    "text": "Ejemplo: veteranos de guerra en Estados Unidos\n\nEfectos estimados usando distintas metodologías\nLos impactos estimados usando el matching exacto se encuentran bajo la columna Controlled contrast"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-2",
+    "href": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-2",
+    "title": "Métodos de emparejamiento",
+    "section": "Ejemplo: veteranos de guerra en Estados Unidos",
+    "text": "Ejemplo: veteranos de guerra en Estados Unidos\n\nNoten que la columna (2) muestra lo que se hubiera concluido si solo se comparan diferencias de medias\nAntes de 1980, las diferencias eran muy pequeñas (cero en términos prácticos)\nEn esta aplicación esta comparación llevaría a conclusiones incorrectas\nAdemás, las diferencias para no-blancos y blancos son distintas\nHay un pico en los afectos alrededor de 1982\nEn esta aplicación, los resultados por matching y regresión son muy parecidos hasta 1984\nLa conclusión es que existe evidencia de efectos negativos en los ingresos por haber servido en el ejército en los blancos y efectos positivos para los individuos de otras razas"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-3",
+    "href": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-3",
+    "title": "Métodos de emparejamiento",
+    "section": "Ejemplo: veteranos de guerra en Estados Unidos",
+    "text": "Ejemplo: veteranos de guerra en Estados Unidos\n\n\nPara personas identificadas como blancas:\n\n\n\n\n\n\n\n\n\n\nPara personas identificadas como no blancas:"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#métodos-de-apareamiento-o-matching",
+    "href": "diapositivas/emparejamiento.html#métodos-de-apareamiento-o-matching",
+    "title": "Métodos de emparejamiento",
+    "section": "Métodos de apareamiento o matching",
+    "text": "Métodos de apareamiento o matching\n\nLos métodos apareamiento o matching recaen en el supuesto de independencia condicional\nAl controlar por una serie de características \\(X_i\\), el tratamiento es como si fuera aleatorio\nPodemos escribir\n\n\\[\nE(Y(1)|D=1,X)=E(Y(1)|D=0,X)\n\\]\n\\[\nE(Y(0)|D=1,X)=E(Y(0)|D=0,X)\n\\]\n\nEsto es, los valores esperados de \\(Y(1)\\) y \\(Y(0)\\) son iguales cuando nos fijamos en cada valor de \\(X\\)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#supuestos-de-identificación-del-tot",
+    "href": "diapositivas/emparejamiento.html#supuestos-de-identificación-del-tot",
+    "title": "Métodos de emparejamiento",
+    "section": "Supuestos de identificación del TOT",
+    "text": "Supuestos de identificación del TOT\nSupuesto 1. Inconfundibilidad\n\\[\nY(0), Y(1) \\perp  D|X\n\\]\n\nDado un conjunto de variables \\(X\\), los resultados potenciales son independientes del tratamiento\n\\(X\\) debe incluir todas las variables que determinan el tratamiento y los resultados potenciales\n\nSupuesto 2: Traslape\n\\[\n0&lt; P(D=1|X) &lt; 1\n\\]\n\n\\(X\\) no predice \\(D\\) perfectamente\nPersonas con el mismo \\(X\\) tienen probabilidad positiva de ser tratados y no tratados"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#supuestos-de-identificación-del-tot-1",
+    "href": "diapositivas/emparejamiento.html#supuestos-de-identificación-del-tot-1",
+    "title": "Métodos de emparejamiento",
+    "section": "Supuestos de identificación del TOT",
+    "text": "Supuestos de identificación del TOT\n\nCuando se cumple Supuesto 1 \\(+\\) Supuesto 2 se conoce como ignorabilidad fuerte\nHeckman (1998) muestra que estás condiciones son demasiado estrictas\nPara identificar el \\(TOT\\) es suficiente:\nSupuesto 1a. Inconfundibilidad en el control\n\n\\[\nY(0) \\perp  D | X\n\\]\n\nSupuesto 2a. Traslape débil\n\n\\[\nP(D=1|X) &lt; 1\n\\]"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#matching-exacto-es-impráctico",
+    "href": "diapositivas/emparejamiento.html#matching-exacto-es-impráctico",
+    "title": "Métodos de emparejamiento",
+    "section": "Matching exacto es impráctico",
+    "text": "Matching exacto es impráctico\n\nEn la práctica es difícil manejar problemas en espacios de múltiples dimensiones: maldición de la dimensionalidad\nEl problema de la maldición de la dimensionalidad se exacerba con el tamaño limitado de las bases de datos\nSi \\(X\\) tuviera solo indicadores binarios, el número de posibles combinaciones sería \\(2^s\\)\nPor ejemplo, si solo tuviéramos \\(X_1=\\{\\text{menor de 35 años}, \\text{con 35 años o más}\\}\\), \\(X_2=\\{\\text{más que preparatoria}, \\text{menos que preparatoria}\\}\\), \\(X_3=\\{\\text{indígena}, \\text{no indígena}\\}\\), tendríamos que hacer ocho comparaciones:\n\nmenor de 35 años, más que preparatoria, indígena\nmenor de 35 años, más que preparatoria, no indígena\n…\ncon 35 años o más, menos que preparatoria, no indígena\n\nPero Si \\(X\\) incluye muchas variables, algunas tomando muchos valores, esto se vuelve imposible de realizar"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#maldición-de-la-dimensionalidad",
+    "href": "diapositivas/emparejamiento.html#maldición-de-la-dimensionalidad",
+    "title": "Métodos de emparejamiento",
+    "section": "Maldición de la dimensionalidad",
+    "text": "Maldición de la dimensionalidad\n\nEl requerimiento de soporte común significa que debemos tener tratados y no tratados para cada valor de \\(X_i\\) para hacer comparaciónes\nCuando \\(X_i\\) tiene muchas dimensiones, resulta un problema de escasez o sparseness\nAlgunas celdas estarán vacías, o solo tendrán tratados, o solo tendrán no tratados\nSi tenemos unidades en todas las celdas de control, aún podemos estimar el TOT\n\nNoten que cuando completamos la pase pareada en el ejemplo hipotético siempre encontramos a alguien en el grupo de control para asignárselo a un tratado\nPero al revés, no siempre es posible: por ejemplo, no hay ningún tratado de 48 años"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#teorema-del-ps-rosenbaum-y-rubin-1983",
+    "href": "diapositivas/emparejamiento.html#teorema-del-ps-rosenbaum-y-rubin-1983",
+    "title": "Métodos de emparejamiento",
+    "section": "Teorema del PS (Rosenbaum y Rubin, 1983)",
+    "text": "Teorema del PS (Rosenbaum y Rubin, 1983)\n\nCorolario 1. Inconfundibilidad dado el propensity score\nEl Supuesto 1 implica:\n\n\\[\nY(0), Y(1) \\perp  D|P(X)\n\\]\ndonde \\(P(X)=P(D=1|X)\\) es la probabilidad de ser tratado dado un conjunto de covariables \\(X\\), el propensity score o PS"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estimación",
+    "href": "diapositivas/emparejamiento.html#estimación",
+    "title": "Métodos de emparejamiento",
+    "section": "Estimación",
+    "text": "Estimación\n\nDebemos por tanto primero calcular el PS\nSe empatan o se hace match de unidades que fueron tratadas con unidades que no lo fueron usando el PS\nSe mide la diferencia en la variable de resultados entre estos grupos\nSe hace un promedio ponderado de las diferencias"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estimación-1",
+    "href": "diapositivas/emparejamiento.html#estimación-1",
+    "title": "Métodos de emparejamiento",
+    "section": "Estimación",
+    "text": "Estimación\n\nDebemos por tanto primero calcular el PS\nSe empatan o se hace match de unidades que fueron tratadas con unidades que no lo fueron usando el PS\nSe mide la diferencia en la variable de resultados entre estos grupos\nSe hace un promedio ponderado de las diferencias"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#implementación",
+    "href": "diapositivas/emparejamiento.html#implementación",
+    "title": "Métodos de emparejamiento",
+    "section": "Implementación",
+    "text": "Implementación\n\nEstimación del PS\nEscoger el algoritmo de matching\nComprobar la calidad del matching\nEstimar el \\(TOT\\)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#especificar-el-modelo-del-ps",
+    "href": "diapositivas/emparejamiento.html#especificar-el-modelo-del-ps",
+    "title": "Métodos de emparejamiento",
+    "section": "Especificar el modelo del PS",
+    "text": "Especificar el modelo del PS\n\nSe usa un modelo probit o logit\n\nPrueba y error. Maximizar la tasa clasificación de tratamientos y controles usando \\(\\bar{P}\\), la proporción de tratamientos en la muestra\nSignificancia estadística. Usar solo las variables estadísticamente significativas, comenzando con un modelo muy básico\nValidación cruzada. Comenzar con un modelo simple y agregar grupos de variables comparando las que reduzcan el error cuadrático promedio\n\nEl propósito del PS es sobre todo generar balance de las variables en \\(X\\)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#recomendaciones-prácticas",
+    "href": "diapositivas/emparejamiento.html#recomendaciones-prácticas",
+    "title": "Métodos de emparejamiento",
+    "section": "Recomendaciones prácticas",
+    "text": "Recomendaciones prácticas\n\nLas características \\(X\\) que determinan la probabilidad de tratamiento deben ser observables\nLas variables usadas para calcular el PS no deben haber sido afectadas por el tratamiento\nIdealmente usamos variables \\(X\\) pre-intervención\nCuando no hay \\(X\\) pre-intervención, a veces se puede obtener el PS con variables post-intervención siempre y cuando estas no hayan sido afectadas por el tratamieto (pocas veces recomendado)\nSe recomienda ampliamente ver:\n\nCaliendo, M., & Kopeinig, S. (2008). Some practical guidance for the implementation of propensity score matching. Journal of economic surveys, 22(1), 31-72."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estimador-de-matching-exacto-1",
+    "href": "diapositivas/emparejamiento.html#estimador-de-matching-exacto-1",
+    "title": "Métodos de emparejamiento",
+    "section": "Estimador de matching exacto",
+    "text": "Estimador de matching exacto\n\nHasta aquí, solo hemos imputado el contrafactual para cada unidad en el grupo tratado\nSi podemos imputar también, para cada unidad no tratada, su correspondiente contrafactual tratado, podemos estimar el ATE\nY un estimador de matching exacto del ATE sería:\n\n\\[\\hat{\\delta}_{ATE}=\\frac{1}{N}\\sum_{i}^N(2D_i-1)\\left(Y_i-\\left(\\frac{1}{M}\\sum_{m=1}^{M}Y_{jm(i)}\\right)\\right)\\]"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#efecto-del-tratamiento",
+    "href": "diapositivas/emparejamiento.html#efecto-del-tratamiento",
+    "title": "Métodos de emparejamiento",
+    "section": "Efecto del tratamiento",
+    "text": "Efecto del tratamiento\n\nEl efecto del tratamiento, bajo el supuesto de inconfundibilidad dado el propensity score, es:\n\n\\[\nTOT^{PSM}=E_{P(X)|D=1} \\left(E(Y(1)|D=1, P(X))-E(Y(0)|D=0,P(X)) \\right)\n\\]\n\nEl \\(TOT\\) es la diferencia en la variable de resultados de los tratados y los no tratados pesada por la distribución del PS en los tratados"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#vecino-más-cercano",
+    "href": "diapositivas/emparejamiento.html#vecino-más-cercano",
+    "title": "Métodos de emparejamiento",
+    "section": "Vecino más cercano",
+    "text": "Vecino más cercano\n\nA cada individuo del grupo tratado se le asigna uno del grupo de comparación en términos del PS\nPuede hacerse con remplazo o sin remplazo\nPuede emplearse también sobremuestreo (oversampling), es decir, asignar más de un individuo del grupo de comparación\nPor ejemplo NN 5 significa que a cada individuo tratado se le asignan los cinco individuos del grupo no tratado con los PS estimados más cercanos"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#vecino-más-cercano-1",
+    "href": "diapositivas/emparejamiento.html#vecino-más-cercano-1",
+    "title": "Métodos de emparejamiento",
+    "section": "Vecino más cercano",
+    "text": "Vecino más cercano\n\n\n\n\n\nTratados\n\\(\\hat{p}\\)\n\n\n\n\na\n0.031\n\n\nb\n0.042\n\n\nc\n0.07\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\n\nNo tratados\n\\(\\hat{p}\\)\n\n\n\n\nA\n0.034\n\n\nB\n0.068\n\n\nC\n0.21\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\nCon vecino más cercano, el individuo \\(a\\) tratado estaría emparejado con el \\(A\\) no tratado\nSi el emparejamiento es con reemplazo, \\(A\\) podría ser usado otra vez y \\(b\\) también sería emparejado con \\(A\\)\nPero si el emparejamiento es sin reemplazo, \\(A\\) ya no puede ser usado y a \\(b\\) se le emparejaría con \\(B\\)\nCuando hacemos el pareamiento sin reemplazo, debemos tener una muestra lo suficientemente grande\nEl pareamiento sin reemplazo depende del orden en que se realice el procedimiento"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#caliper-y-radio",
+    "href": "diapositivas/emparejamiento.html#caliper-y-radio",
+    "title": "Métodos de emparejamiento",
+    "section": "Caliper y radio",
+    "text": "Caliper y radio\n\nEl método de vecino más cercano puede generar malos emparejamientos si el vecino más cercano está muy lejos en términos del PS\nEspecificar un caliper consiste en definir una vecindad aceptable de matching (el caliper) y elegir solo el vecino más cercano dentro del caliper\nCon las funciones de R que usaremos más adelante, el radio consiste en definir cuántos individuos deberán ser apareados dado que están dentro del caliper"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#caliper",
+    "href": "diapositivas/emparejamiento.html#caliper",
+    "title": "Métodos de emparejamiento",
+    "section": "Caliper",
+    "text": "Caliper\n\n\n\n\n\nTratados\n\\(\\hat{p}\\)\n\n\n\n\na\n0.031\n\n\nb\n0.042\n\n\nc\n0.07\n\n\nd\n0.11\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\n\nNo tratados\n\\(\\hat{p}\\)\n\n\n\n\nA\n0.034\n\n\nB\n0.068\n\n\nC\n0.21\n\n\nD\n0.40\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\nEl primer paso es fijar el caliper, por ejemplo, de 0.1\nEl caliper implica buscar al vecino más cercano dentro de una vecindad de 0.1\nEn este ejemplo \\(c\\) podría ser solo emparejado con \\(B\\) si \\(B\\) aún está disponible (porque no ha sido emparejado con nadie o porque aunque haya sido emparejado, el procedimiento se hace con reemplazo)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#caliper-con-sobremuestreo",
+    "href": "diapositivas/emparejamiento.html#caliper-con-sobremuestreo",
+    "title": "Métodos de emparejamiento",
+    "section": "Caliper con sobremuestreo",
+    "text": "Caliper con sobremuestreo\n\n\n\n\n\nTratados\n\\(\\hat{p}\\)\n\n\n\n\nd\n0.31\n\n\ne\n0.39\n\n\nf\n0.44\n\n\ng\n0.52\n\n\nh\n0.55\n\n\ni\n0.62\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\n\nNo tratados\n\\(\\hat{p}\\)\n\n\n\n\nR\n0.27\n\n\nS\n0.29\n\n\nT\n0.33\n\n\nU\n0.49\n\n\nV\n0.57\n\n\nW\n0.61\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\nSi el caliper se realiza con sobremuestreo, con un caliper de 0.10 y 2 vecinos a \\(g\\) se le asignarían \\(U\\) y \\(V\\) (si estuvieran disponibles)\nEs decir, dentro del caliper, los dos individuos con el PS más cercano"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#radio",
+    "href": "diapositivas/emparejamiento.html#radio",
+    "title": "Métodos de emparejamiento",
+    "section": "Radio",
+    "text": "Radio\n\n\n\n\n\nTratados\n\\(\\hat{p}\\)\n\n\n\n\nd\n0.31\n\n\ne\n0.39\n\n\nf\n0.44\n\n\ng\n0.52\n\n\nh\n0.55\n\n\ni\n0.62\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\n\nNo tratados\n\\(\\hat{p}\\)\n\n\n\n\nR\n0.27\n\n\nS\n0.29\n\n\nT\n0.33\n\n\nU\n0.49\n\n\nV\n0.57\n\n\nW\n0.61\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\nPero si ahora implementamos radio con un caliper de 0.10, a \\(g\\) se le asignarían \\(U\\), \\(V\\) y \\(W\\) (si estuvieran disponibles)\nEs decir, todos los individuos dentro del caliper"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estratificación",
+    "href": "diapositivas/emparejamiento.html#estratificación",
+    "title": "Métodos de emparejamiento",
+    "section": "Estratificación",
+    "text": "Estratificación\n\nPartir la región de soporte común en bloques de acuerdo al PS\nEstimar el efecto de tratamiento dentro de cada bloque\nNo hay una regla sobre cuántos estratos usar. Se aconsajan generalmente cinco\nDentro de cada estrato debe haber balance de los covariables"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#kernel-y-métodos-no-paramétricos",
+    "href": "diapositivas/emparejamiento.html#kernel-y-métodos-no-paramétricos",
+    "title": "Métodos de emparejamiento",
+    "section": "Kernel y métodos no paramétricos",
+    "text": "Kernel y métodos no paramétricos\n\nLos métodos anteriores escogen solo unas cuantas unidades del grupo de comparación\nPodemos escoger usar muchas o incluso todas las observaciones del grupo de comparación y pesarlas apropiadamente\nSe reduce la varianza pues usamos más información, pero se sacrifica precisión pues se usan observaciones potencialmente muy distantes\nSe le otorga más peso a las observaciones más cercanas y menos a las más distantes"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#kernel",
+    "href": "diapositivas/emparejamiento.html#kernel",
+    "title": "Métodos de emparejamiento",
+    "section": "Kernel",
+    "text": "Kernel\n\n\n\n\n\nTratados\n\\(\\hat{p}\\)\n\n\n\n\nd\n0.31\n\n\ne\n0.39\n\n\nf\n0.44\n\n\ng\n0.52\n\n\nh\n0.55\n\n\ni\n0.62\n\n\n\n\n\n\n\nNo tratados\n\\(\\hat{p}\\)\n\n\n\n\nR\n0.27\n\n\nS\n0.29\n\n\nT\n0.33\n\n\nU\n0.49\n\n\nV\n0.57\n\n\nW\n0.61\n\n\n\n\n\n\nSupongamos que estos son todos nuestros datos\nCon un emparejamiento por kernel, a \\(d\\) lo compararemos con todos los individuos, desde \\(R\\) hasta \\(W\\)\nLa función kernel le dará más peso a \\(R\\), un poco menos a \\(S\\) y así hasta darle muy poco o casi nada de peso a \\(W\\)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#qué-método-usar",
+    "href": "diapositivas/emparejamiento.html#qué-método-usar",
+    "title": "Métodos de emparejamiento",
+    "section": "¿Qué método usar?",
+    "text": "¿Qué método usar?\n\nNo hay un método claramente superior a todos los demás\nMás aún, el desempeño de cada método depende de cada aplicación\nLa ruta más seguida es usar varios algoritmos y mostrar la robustez de los resultados a esta elección"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#comprobar-empíricamente-los-supuestos",
+    "href": "diapositivas/emparejamiento.html#comprobar-empíricamente-los-supuestos",
+    "title": "Métodos de emparejamiento",
+    "section": "Comprobar empíricamente los supuestos",
+    "text": "Comprobar empíricamente los supuestos\n\nEl parámetro \\(TOT\\) solo se calcula sobre la región de sporte común por lo que se debe verificar el traslape del PS calculado para los tratados y no tratados\nOtro de los teoremas de Rosenbaum y Rubin (1983) implica que\n\n\\[\nX \\perp  D|P(X)\n\\]\n\nEsto es, que al controlar por el PS, las variables \\(X\\) no deben proveer información sobre \\(D\\)\nSe recomienda también hacer una prueba de estratificación\n\nDividir el rango del soporte común en bloques\nHacer una prueba de medias del PS entre grupos dentro de cada bloque\nHacer una prueba de medias de cada variable en \\(X_i\\) entre grupos dentro de cada bloque"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ilustración-del-soporte-común",
+    "href": "diapositivas/emparejamiento.html#ilustración-del-soporte-común",
+    "title": "Métodos de emparejamiento",
+    "section": "Ilustración del soporte común",
+    "text": "Ilustración del soporte común"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#paquetes",
+    "href": "diapositivas/emparejamiento.html#paquetes",
+    "title": "Métodos de emparejamiento",
+    "section": "Paquetes",
+    "text": "Paquetes\nUsaremos dos paquetes nuevos: MatchIt y cobalt, que pueden descargar como cualquier otro paquete desde CRAN."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#datos-no-experimentales-de-una-muestra-de-mujeres",
+    "href": "diapositivas/emparejamiento.html#datos-no-experimentales-de-una-muestra-de-mujeres",
+    "title": "Métodos de emparejamiento",
+    "section": "Datos no experimentales de una muestra de mujeres",
+    "text": "Datos no experimentales de una muestra de mujeres\nLos datos en cattaneo_smoking.csv (Cattaneo, 2010) son de una muestra de mujeres que incluye un indicador de si la madre fumó durante el embarazo. El propósito es evaluar el efecto de fumar sobre el peso de los bebés al nacer. Se incluyen una serie de covariables que usaremos para modelar el propensity score."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#matchit-para-realizar-los-emparejamientos",
+    "href": "diapositivas/emparejamiento.html#matchit-para-realizar-los-emparejamientos",
+    "title": "Métodos de emparejamiento",
+    "section": "matchit para realizar los emparejamientos",
+    "text": "matchit para realizar los emparejamientos\nLa función que usaremos para hacer los emparejamientos es matchit de la librería MatchIt. Antes de hacer los emparejamientos, construimos la dummy de tratamiento, smoke, una dummy para mujeres casadas, married, y una dummy para si el caso en cuestión es el primer bebé. firstbaby:\n\ndata.smoking&lt;-read_csv(\n  \"./cattaneo_smoking.csv\",\n  locale = locale(encoding = \"latin1\")) %&gt;% \n  clean_names() %&gt;% \n  mutate(smoke=ifelse(mbsmoke==\"smoker\",1,0)) %&gt;% \n  mutate(married=ifelse(mmarried==\"married\",1,0)) %&gt;% \n  mutate(firstbaby=ifelse(fbaby==\"Yes\",1,0))\n\n#Asegurarse que no hay NA, matchit no acepta NA\ndata.smoking &lt;- data.smoking[complete.cases(data.smoking), ]\n\n#Una semilla para todo el trabajo\nset.seed(1021)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estimación-del-ps",
+    "href": "diapositivas/emparejamiento.html#estimación-del-ps",
+    "title": "Métodos de emparejamiento",
+    "section": "Estimación del PS",
+    "text": "Estimación del PS\nUna manera de hacer más eficiente el uso de las fórmulas es usando as.formula:\n\nbinaria &lt;- \"smoke\"\nvariables &lt;- c(\"married\", \"firstbaby\", \"medu\", \"nprenatal\", \"foreign\", \"mhisp\", \"fage\")\n\nps &lt;- as.formula(paste(binaria,\n                         paste(variables,\n                               collapse =\"+\"),\n                         sep= \" ~ \"))\nprint(ps)\n\nsmoke ~ married + firstbaby + medu + nprenatal + foreign + mhisp + \n    fage\n\n\nUsamos matchit para estimar el PS y realizar los emparejamientos con el algoritmo que indiquemos:\n\nm.out &lt;- matchit(formula=ps,\n                 method = \"nearest\",\n                 ratio = 1,\n                 distance= \"logit\",\n                 replace = FALSE,\n                 data = data.smoking)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#verificación-del-balance",
+    "href": "diapositivas/emparejamiento.html#verificación-del-balance",
+    "title": "Métodos de emparejamiento",
+    "section": "Verificación del balance",
+    "text": "Verificación del balance\n\n\nGráfico de nube:\n\nplot(m.out, type = \"jitter\")\n\n\n\n\n\n\n\n\nTo identify the units, use first mouse button; to stop, use second.\n\n\n\nHistograma:\n\nplot(m.out, type = \"hist\")"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#loveplot",
+    "href": "diapositivas/emparejamiento.html#loveplot",
+    "title": "Métodos de emparejamiento",
+    "section": "Loveplot",
+    "text": "Loveplot\nUsando la librería cobalt podemos construir un love plot que representa gráficamente las diferencias antes y después del emparejamiento\n\n\nlove.plot(bal.tab(m.out),\n          threshold = .1)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#efecto-de-tratamiento",
+    "href": "diapositivas/emparejamiento.html#efecto-de-tratamiento",
+    "title": "Métodos de emparejamiento",
+    "section": "Efecto de tratamiento",
+    "text": "Efecto de tratamiento\nExisten muchas maneras de explotar la muestra emparejada. Aquí veremos la más sencilla. Simplemente consideremos a la muestra emparejada como si viniera de un experimento. Sin embargo, debemos poner especial atención a la forma de hacer inferencia pues no debemos ignorar que el PS es estimado.\nDependiendo de si el emparejamiento ocurre con o sin reemplazo, y de la naturaleza de la variable dependiente, se recomiendan distintas maneras de estimar el efecto del tratamiento y hacer inferencia. Una buena guía está en la documentación de MatchIt.\nPor ejemplo, cuando se realiza el emparejamiento sin reemplazo, Abadie & Spiess (2019) muestran que podemos estimar los errores estándar simplemente agrupando a nivel de pareja (o grupo) emparejado (subclass es una columna que enumera a las parejas o grupos emparejados y es construida automáticamente por matchit)."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#conclusión",
+    "href": "diapositivas/emparejamiento.html#conclusión",
+    "title": "Métodos de emparejamiento",
+    "section": "Conclusión",
+    "text": "Conclusión\n\nLas técnicas de PSM dependen de varios supuestos téoricos fuertes\nLa implementación implica que las variables en \\(X\\) son aquellas que permiten hacer los supuestos de inconfundibilidad dado el PS\nEn la estimación del PS se toma la decisión sobre la forma funcional\nLos efectos de tratamiento pueden ser distintos entre diferentes algoritmos de emparejamiento y la especificación del PS\nLa crítica más importante es que la mayoría de las veces nos preocupa más la autoselección basada en no observables que en observables\nPero muchas veces es todo lo que tenemos a la mano\nHay que hacer análisis de sensibilidad a las distintas decisiones\nPresentar resultados transparentes"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#comparación-observacional-1",
+    "href": "diapositivas/emparejamiento.html#comparación-observacional-1",
+    "title": "Métodos de emparejamiento",
+    "section": "Comparación observacional",
+    "text": "Comparación observacional\nNotemos que, si solo comparamos a las mujeres que fuman con las que no fuman, estamos comparando personas muy diferentes:\n\n\ndatasummary_balance(~smoke,\n                    fmt = \"%.2f\",\n                    data = select(data.smoking, smoke, married, firstbaby, medu, nprenatal, foreign, mhisp, fage),\n                    dinm_statistic = \"p.value\",\n                    title = \"Pruebas de balance\",\n                    notes = \"Fuente: Cattaneo (2009)\")\n\n\n \n\n  \n    \n    \n    tinytable_1lsywiap0udluzc6gvjv\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n\n \n0\n1\n \n \n\n        Pruebas de balance\n              \n                 \n                Mean\n                Std. Dev.\n                Mean\n                Std. Dev.\n                Diff. in Means\n                p\n              \n        \n        Fuente: Cattaneo (2009)\n        \n                \n                  married  \n                  0.75 \n                  0.43\n                  0.47 \n                  0.50 \n                  -0.28\n                  0.00\n                \n                \n                  firstbaby\n                  0.45 \n                  0.50\n                  0.37 \n                  0.48 \n                  -0.08\n                  0.00\n                \n                \n                  medu     \n                  12.93\n                  2.53\n                  11.64\n                  2.17 \n                  -1.29\n                  0.00\n                \n                \n                  nprenatal\n                  10.96\n                  3.52\n                  9.86 \n                  4.21 \n                  -1.10\n                  0.00\n                \n                \n                  foreign  \n                  0.06 \n                  0.24\n                  0.03 \n                  0.16 \n                  -0.03\n                  0.00\n                \n                \n                  mhisp    \n                  0.04 \n                  0.19\n                  0.02 \n                  0.15 \n                  -0.01\n                  0.05\n                \n                \n                  fage     \n                  27.84\n                  8.79\n                  24.74\n                  11.15\n                  -3.10\n                  0.00"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estimación-del-ps-1",
+    "href": "diapositivas/emparejamiento.html#estimación-del-ps-1",
+    "title": "Métodos de emparejamiento",
+    "section": "Estimación del PS",
+    "text": "Estimación del PS\nEl resumen del procedimiento da bastante información sobre el pareamiento:\n\nsummary(m.out)\n\n\nCall:\nmatchit(formula = ps, data = data.smoking, method = \"nearest\", \n    distance = \"logit\", replace = FALSE, ratio = 1)\n\nSummary of Balance for All Data:\n          Means Treated Means Control Std. Mean Diff. Var. Ratio eCDF Mean\ndistance         0.2568        0.1700          0.6673     1.4475    0.2002\nmarried          0.4734        0.7515         -0.5569          .    0.2781\nfirstbaby        0.3715        0.4531         -0.1689          .    0.0816\nmedu            11.6389       12.9299         -0.5955     0.7316    0.0717\nnprenatal        9.8623       10.9629         -0.2616     1.4301    0.0376\nforeign          0.0255        0.0598         -0.2181          .    0.0344\nmhisp            0.0243        0.0363         -0.0776          .    0.0120\nfage            24.7431       27.8444         -0.2782     1.6070    0.0468\n          eCDF Max\ndistance    0.3329\nmarried     0.2781\nfirstbaby   0.0816\nmedu        0.2549\nnprenatal   0.1259\nforeign     0.0344\nmhisp       0.0120\nfage        0.1377\n\nSummary of Balance for Matched Data:\n          Means Treated Means Control Std. Mean Diff. Var. Ratio eCDF Mean\ndistance         0.2568        0.2564          0.0033     1.0110    0.0005\nmarried          0.4734        0.4769         -0.0070          .    0.0035\nfirstbaby        0.3715        0.3981         -0.0551          .    0.0266\nmedu            11.6389       11.6019          0.0171     0.7064    0.0161\nnprenatal        9.8623        9.8588          0.0008     1.1543    0.0059\nforeign          0.0255        0.0174          0.0514          .    0.0081\nmhisp            0.0243        0.0231          0.0075          .    0.0012\nfage            24.7431       24.5799          0.0146     1.0787    0.0124\n          eCDF Max Std. Pair Dist.\ndistance    0.0093          0.0046\nmarried     0.0035          0.2202\nfirstbaby   0.0266          0.4575\nmedu        0.0417          0.5168\nnprenatal   0.0185          0.7039\nforeign     0.0081          0.2425\nmhisp       0.0012          0.2781\nfage        0.0556          0.6457\n\nSample Sizes:\n          Control Treated\nAll          3778     864\nMatched       864     864\nUnmatched    2914       0\nDiscarded       0       0"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#muestra-emparejada-3",
+    "href": "diapositivas/emparejamiento.html#muestra-emparejada-3",
+    "title": "Métodos de emparejamiento",
+    "section": "Muestra emparejada",
+    "text": "Muestra emparejada\nPodemos guardar un objeto con la muestra emparejada usando match.data y observar quién hace match con quién:\n\n\nm.data &lt;- match.data(m.out)\n\nhead(m.out$match.matrix)\n\n\n   [,1]  \n11 \"4130\"\n20 \"2234\"\n25 \"1740\"\n43 \"2857\"\n47 \"305\" \n49 \"1442\""
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#muestra-emparejada-4",
+    "href": "diapositivas/emparejamiento.html#muestra-emparejada-4",
+    "title": "Métodos de emparejamiento",
+    "section": "Muestra emparejada",
+    "text": "Muestra emparejada\nUna propuesta para determinar si el emparejamiento fue exitoso es observar las diferencias promedio estandarizadas (SMD) entre los grupos tratados y no tratados, antes y después del emparejamiento.\n\\[SMD_X=\\frac{\\bar{X}_T-\\bar{X}_{NT}}{\\sqrt{S^2_T+S^2_{NT}}}\\]\nTambién vale la pena no perder de vista la razón de varianzas (VR). Se espera que este ratio no sea muy distinto de 1 después de hacer el emparejamiento:\n\\[VR=\\frac{S^2_T}{S^2_{NT}}\\]\nComo regla de dedo, una diferencia de 0.1 o menos en el SMD se considera un buen balance. Por ejemplo, la escolaridad de la madre tenía un SDM de -0.5955 en la muestra en bruto, pero con el emparejamiento el SDM se vuelve de solo 0.0171."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#efecto-de-tratamiento-1",
+    "href": "diapositivas/emparejamiento.html#efecto-de-tratamiento-1",
+    "title": "Métodos de emparejamiento",
+    "section": "Efecto de tratamiento",
+    "text": "Efecto de tratamiento\nUsando una regresión con la muestra emparejada\n\ntt1 &lt;- lm(bweight ~ smoke,\n          data = m.data,\n          weights = weights)\n\n#Errores agrupados a nivel subclass\ncoeftest(tt1,\n         vcov. = vcovCL,\n         cluster = ~subclass)\n\n\nt test of coefficients:\n\n            Estimate Std. Error  t value  Pr(&gt;|t|)    \n(Intercept) 3331.473     21.424 155.5033 &lt; 2.2e-16 ***\nsmoke       -193.814     28.137  -6.8882 7.889e-12 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#efecto-de-tratamiento-2",
+    "href": "diapositivas/emparejamiento.html#efecto-de-tratamiento-2",
+    "title": "Métodos de emparejamiento",
+    "section": "Efecto de tratamiento",
+    "text": "Efecto de tratamiento\nAlgunos autores incluyen los covariables en su estimación:\n\ntt2 &lt;- lm(bweight ~ smoke + married + firstbaby + medu + nprenatal + foreign + mhisp + fage,\n          data = m.data,\n          weights = weights)\n\n#Errores agrupados a nivel subclass\ncoeftest(tt2,\n         vcov. = vcovCL,\n         cluster = ~subclass)\n\n\nt test of coefficients:\n\n              Estimate Std. Error t value  Pr(&gt;|t|)    \n(Intercept) 2984.54803   76.55850 38.9839 &lt; 2.2e-16 ***\nsmoke       -195.50844   27.96378 -6.9915 3.879e-12 ***\nmarried      113.92672   30.76389  3.7033 0.0002196 ***\nfirstbaby    -62.70697   30.19829 -2.0765 0.0379953 *  \nmedu           0.12530    5.38318  0.0233 0.9814333    \nnprenatal     32.29921    4.49984  7.1779 1.049e-12 ***\nforeign       25.99372  109.26081  0.2379 0.8119829    \nmhisp        111.67360   85.14066  1.3116 0.1898179    \nfage          -0.21788    1.43015 -0.1523 0.8789301    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nCuando el emparejamiento es con reemplazo, las unidades no tratadas son emparejadas varias veces (aparecen repetidas en la muestra emparejada), lo cual debe ser considerado para estimar los efectos del tratamiento y hacer inferencia. Por ejemplo, se puede usar bootstrap para obtener el error estándar del efecto del tratamiento cuando la variable de impacto es continua."
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nConsideremos el siguiente problema de adopción escalonada\n\nObservamos \\(T\\) periodos\n\\(k\\) denota la unidad tratada temprano\n\\(l\\) denota la unidad tratada tarde\nDenotamos \\(\\bar{D}_k\\) al tiempo que \\(k\\) pasa tratado\nSimilarmente, \\(\\bar{D}_l\\)\n\\(n_k\\) es el número de unidades tratadas temprano\n\\(n_l\\) es el número de unidades tratadas tarde\n\\(n_U\\) es el número de unidades nunca tratadas\nPara cualesquiera dos grupos \\(a\\) y \\(b\\), \\(a_{ab}=\\frac{n_a}{n_a+n_b}\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-1",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-1",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-2",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-2",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nTenemos cuatro posibles comparaciones \\(2x2\\)\n\nLas comparaciones con las unidades nunca tratadas:\n\n\\[\\hat{\\beta}_{jU}=\\left(\\bar{y}_j^{POST(j)}-\\bar{y}_j^{PRE(j)}\\right)-\\left(\\bar{y}_U^{POST(j)}-\\bar{y}_U^{PRE(j)}\\right),\\;j=\\{k,l\\}\\]\n\nLa comparación entre \\(k\\) y \\(l\\) cuando \\(k\\) es tratada, usando los periodos antes de que \\(l\\) sea tratada\n\n\\[\\hat{\\beta}^{k}_{kl}=\\left(\\bar{y}_k^{MID(k,l)}-\\bar{y}_k^{PRE(k)}\\right)-\\left(\\bar{y}_l^{MID(k,l)}-\\bar{y}_l^{PRE(k)}\\right)\\]\n\nLa comparación entre \\(l\\) y \\(k\\) cuando \\(l\\) es tratada, usando los periodos después de que \\(k\\) fue tratada\n\n\\[\\hat{\\beta}^{l}_{kl}=\\left(\\bar{y}_l^{POST(l)}-\\bar{y}_l^{MID(k,l)}\\right)-\\left(\\bar{y}_k^{POST(l)}-\\bar{y}_k^{MID(k,l)}\\right)\\]"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-3",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-3",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-son-los-pesos",
+    "href": "diapositivas/did.html#qué-son-los-pesos",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nGoodman-Bacon (2021) muestra que los pesos están dados por:\n\n\\(s_{kU}=\\frac{(n_k+n_U)^2\\hat{V}_{kU}^D}{\\hat{V}^D}\\)\n\\(s_{lU}=\\frac{(n_l+n_U)^2\\hat{V}_{lU}^D}{\\hat{V}^D}\\)\n\\(s_{kl}^k=\\frac{[(n_k+n_l)(1-\\bar{D}_l)]^2\\hat{V}_{kl}^{D,k}}{\\hat{V}^D}\\)\n\\(s_{kl}^l=\\frac{[(n_k+n_l)\\bar{D}_k]^2\\hat{V}_{kl}^{D,l}}{\\hat{V}^D}\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-son-los-pesos-1",
+    "href": "diapositivas/did.html#qué-son-los-pesos-1",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nLas varianzas del tratamiento en la submuestra tienen las siguientes formas:\n\n\\(s_{kU}=\\frac{(n_k+n_U)^2\\hat{V}_{kU}^D}{\\hat{V}^D}=\\frac{(n_k+n_U)^2n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)}{\\hat{V}^D}\\)\n\\(s_{lU}=\\frac{(n_l+n_U)^2\\hat{V}_{lU}^D}{\\hat{V}^D}=\\frac{(n_l+n_U)^2n_{lU}(1-n_{lU})\\bar{D}_l(1-\\bar{D}_l)}{\\hat{V}^D}\\)\n\\(s_{kl}^k=\\frac{[(n_k+n_l)(1-\\bar{D}_l)]^2\\hat{V}_{kl}^{D,k}}{\\hat{V}^D}=\\frac{[(n_k+n_l)(1-\\bar{D}_l)]^2n_{kl}(1-n_{kl}) \\frac{\\bar{D}_k-\\bar{D}_l}{1-\\bar{D}_l}\\frac{1-\\bar{D}_k}{1-\\bar{D}_l}}{\\hat{V}^D}\\)\n\\(s_{kl}^l=\\frac{[(n_k+n_l)\\bar{D}_k]^2\\hat{V}_{kl}^{D,l}}{\\hat{V}^D}=\\frac{[(n_k+n_l)\\bar{D}_k]^2n_{kl}(1-n_{kl})\\frac{\\bar{D}_l}{\\bar{D}_k}\\frac{\\bar{D}_k-\\bar{D}_l}{\\bar{D}_k}}{\\hat{V}^D}\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-4",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-4",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nDenotamos \\(D_{it}=1\\) cuando la unidad \\(i\\) es tratada en el periodo \\(0\\)\nPor el teorema de Frisch-Waugh-Lovell sabemos que podemos purgar de efectos fijos a la variable \\(D_{it}\\)\nEs decir, podemos estimar por MCO:\n\\[D_{it}=\\sum_t \\gamma_t P_t + \\sum_i \\pi S_i + \\varepsilon_{it}\\]\ndonde \\(P_t\\) son dummies temporales y \\(S_i\\) son dummies individuales\nLuego obtenemos\n\\[\\tilde{D}_{it}=D_{it}-\\hat{D}_{it}\\] Y entonces el estimador de TWFE puede escribirse como el coeficiente de una regresión bivariada:\n\\[\\hat{\\beta}_{DD}=\\frac{\\hat{C}(y_{it}, \\tilde{D}_{it})}{\\hat{V}^D}\\] \\(\\hat{V}^D\\) es la varianza de la variable de tratamiento purgada de efectos fijos"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-5",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-5",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nGoodman-Bacon (2021) muestra que el estimador de TWFE puede descomponerse como:\n\\[\\hat{\\beta}_{DD}=s_{kU}\\hat{\\beta}_{kU}+s_{lU}\\hat{\\beta}_{lU}+s_{kl}^k\\hat{\\beta}_{kl}^k+s_{kl}^l\\hat{\\beta}_{kl}^l\\]"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-son-los-pesos-2",
+    "href": "diapositivas/did.html#qué-son-los-pesos-2",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nPongamos atención a uno de los pesos, \\(s_{kU}\\) para ver la intuición\nVimos que:\n\\[s_{kU}=\\frac{(n_k+n_U)^2\\hat{V}_{kU}^D}{\\hat{V}^D}=\\frac{(n_k+n_U)^2n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)}{\\hat{V}^D}\\]\nPrimero, noten que el peso depende de \\((n_k+n_u)^2\\), es decir, la parte de la submuestra que se usa para estimar cada comparación \\(2x2\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-son-los-pesos-3",
+    "href": "diapositivas/did.html#qué-son-los-pesos-3",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nAhora veamos la varianza que entra en este peso:\n\\[\\hat{V}_{kU}^D=n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)\\] Una primer cosa que entra en juego es \\(n_{kU}=\\frac{n_k}{n_k+n_U}\\), el peso relativo del grupo tratado temprano en la submuestra\nRecordemos que \\(\\bar{D}_k\\) indica la fracción del tiempo del panel que \\(k\\) permanece tratado\nDado que \\(D_{it}\\) es binaria, \\(\\bar{D}_k(1-\\bar{D}_k\\) es la varianza de \\(D_{it}\\)\n¿Qué es lo más grande que puede ser \\(\\bar{D}_k(1-\\bar{D}_k)\\)?\nClaramente esto es a lo más 0.5, es decir, la contribución se maximiza cuando el tratamiento ocurre lo más cercano a la mitad del panel"
+  },
+  {
+    "objectID": "diapositivas/did.html#estimador-de-callaway-y-santanna-1",
+    "href": "diapositivas/did.html#estimador-de-callaway-y-santanna-1",
+    "title": "Diferencia en diferencias",
+    "section": "Estimador de Callaway y Sant’Anna",
+    "text": "Estimador de Callaway y Sant’Anna"
+  },
+  {
+    "objectID": "diapositivas/did.html#estimador-de-callaway-santanna-1",
+    "href": "diapositivas/did.html#estimador-de-callaway-santanna-1",
+    "title": "Diferencia en diferencias",
+    "section": "Estimador de Callaway & Sant’Anna",
+    "text": "Estimador de Callaway & Sant’Anna\nEl estimador de Callaway & Sant’Anna (2021) es una forma muy sencilla de explotar la información del desfase del tratamiento\nAdemás permite una presentación muy intuitiva de los efectos de tratamiento\nEsencialmente consiste en definir una serie de cohortes de unidades y estimar los impactos para cada cohorte\nLuego podemos agregar los impactos por cohorte o presentar la dinámica de los impactos de forma gráfica"
+  },
+  {
+    "objectID": "diapositivas/did.html#definiciones",
+    "href": "diapositivas/did.html#definiciones",
+    "title": "Diferencia en diferencias",
+    "section": "Definiciones",
+    "text": "Definiciones\n\n\\(G_i=\\min\\{t:D_{it}=1\\}\\) es el primer periodo en que \\(i\\) es tratado\n\\(G_i=\\infty\\) indoca que \\(i\\) nunca es tratado\n\\(t=1,\\ldots,T\\) son los periodos\n\\(D_{it}=1\\;\\forall\\;t\\geq G_i\\) indica tratamiento absorbente\n\nDefinamos el efecto del tratamiento al periodo \\(t\\) para el cohorte que empezó a ser tratado en \\(g\\):\n\\[ATT(g,t)=E(y_{it}(g)-y_{it}(\\infty)|G_i=g)\\] Por ejemplo, \\(ATT(2014,2016)\\) es el efecto del tratamiento en 2016 para aquellos tratados empezando en 2014"
+  },
+  {
+    "objectID": "diapositivas/did.html#supuestos",
+    "href": "diapositivas/did.html#supuestos",
+    "title": "Diferencia en diferencias",
+    "section": "Supuestos",
+    "text": "Supuestos\nTendencias paralelas en el contexto escalonado\n\\[E(y_{it}(\\infty)-y_{it'}(\\infty)|G_i=g)=E(y_{it}(\\infty)-y_{it'}(\\infty)|G_i=g')\\quad\\forall\\;t\\neq t',\\; g\\neq q'\\]\nEste supuesto indica que en el estado contrafactual de nunca haber sido tratados, dos grupos tratados en dos momentos diferentes \\(g\\) y \\(g'\\) habrían tenido una trayectoria igual entre los periodos \\(t\\) y \\(t'\\)\nTendencias paralelas en el contexto escalonado (a)\nModifica el supuesto anterior pero \\(\\forall \\;t,t'\\geq g_{min}-1\\) donde \\(g_{min}=\\min G\\) es el primer periodo en donde alguna unidad es tratada (Callaway y Sant’Anna solo usan este supuesto más débil)"
+  },
+  {
+    "objectID": "diapositivas/did.html#supuestos-1",
+    "href": "diapositivas/did.html#supuestos-1",
+    "title": "Diferencia en diferencias",
+    "section": "Supuestos",
+    "text": "Supuestos\nNo anticipación en el contexto escalonado\n\\[y_{it}(g)=y_{it}(\\infty)\\quad \\forall\\;i \\;\\text{y}\\;\\forall\\;t&lt;g\\]"
+  },
+  {
+    "objectID": "diapositivas/did.html#estimador-de-callaway-santanna-2",
+    "href": "diapositivas/did.html#estimador-de-callaway-santanna-2",
+    "title": "Diferencia en diferencias",
+    "section": "Estimador de Callaway & Sant’Anna",
+    "text": "Estimador de Callaway & Sant’Anna\nEl estimador de Callaway & Sant’Anna (2021) se define como:\n\\[ATT(g,t)=E(y_{it}-y_{i,g-1}|G_i=g)-E(y_{it}-y_{i,g-1}|G_i\\in\\mathcal{G}_{comp})\\] Queremos comparar el valor de la variable de impacto entre el periodo \\(g-1\\) y el \\(t\\) para el grupo que fue tratado en \\(g\\) con algún grupo de comparación denominado \\(\\mathcal{G}_{comp}\\)\nSustituyendo por el análogo muestral:\n\\[\\hat{ATT}(g,t)=\\frac{1}{N_g}\\sum_{i:\\;G_i=g}(y_{it}-y_{i,g-1})-\\frac{1}{N_{\\mathcal{G}_{comp}}}\\sum_{i\\;G_i\\in \\mathcal{G}_{comp}}(y_{it}-y_{i,g-1})\\]\n¿Qué es \\(\\mathcal{G}_{comp}\\)?\n\n\\(\\mathcal{G}_{comp}=\\{\\infty \\}\\): aquellas unidades nunca tratadas\n\\(\\mathcal{G}_{comp}=\\{g':g'&gt;t \\}\\): aquellas unidades aún no tratadas al periodo \\(t\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#reportar-resultados",
+    "href": "diapositivas/did.html#reportar-resultados",
+    "title": "Diferencia en diferencias",
+    "section": "Reportar resultados",
+    "text": "Reportar resultados\nSi tenemos pocos periodos y cohortes puede ser práctico reportar todos los \\(\\hat{ATT}(g,t)\\)\nTambién podemos construir medidas agregadas:\n\\[\\theta = \\sum_{g\\in\\mathcal{G}}\\sum_{t=2}^{\\mathcal{T}}w(g,t)ATT(g,t)\\]"
+  },
+  {
+    "objectID": "tareas/tarea-2.knit.html",
+    "href": "tareas/tarea-2.knit.html",
+    "title": "Tarea 2",
+    "section": "",
+    "text": "Fecha de entrega: miércoles 2 de octubre a las 20:00\nLa tarea deberá entregarse en Teams. Deberá incluir dos documentos:\nUn primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.\nUn segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad.\n\n\ncrepon_morocco_balance.csv\ncrepon_morocco_analysis.csv\nSTAR_public_use.csv\n\n\n\nEn esta pregunta usaremos un ejemplo de el estudio con asignación experimental de Banerjee et al. (2015)1 para fijar algunas ideas referentes al análisis de una intervención de este tipo. A diferencia de otros ejemplos vistos en clase, este es un experimento a gran escala. Por favor, utilice la versión publicada, así como el material suplementario.\n\n[5 puntos] Describa brevemente en qué consiste la intervención que se discute en el artículo.\n[5 puntos] Describa brevemente en qué consiste el diseño experimental, es decir, ¿cómo se construye la variación que permite identificar el efecto del tratamiento? ¿Cómo se construyen los grupos de tratamiento y control?\n[5 puntos] En la página 1260799-7 se presenta una subsección denominada Atrition. Describa brevemente el propósito de este análisis y qué se concluye al respecto.\n[5 puntos] En la página 1260799-7, la subsección Compliance with treatment assignment concluye que los efectos estimados en el artículo se refieren a un efecto de intención a tratar o intent-to-treat o ITT. ¿Por qué?\n[5 puntos] En la página 1260799-8 se discuten dos métodos para tomar en cuenta la prueba de hipótesis múltiples. Describa brevemente por qué puede ser problemático probar múltiples hipótesis y cuáles son las dos formas en que los autores enfrentan este problema.\n[5 puntos] En la página 1260799-12 se discute la posible presencia de efectos de derramamiento o Spillovers. Describa brevemente en qué consisten dichos efectos de derramamiento y cómo los autores muestran la presencia o ausencia de dichos efectos usando regresiones.\n\n\n\n\nEn Crepon et al. (2015)2 se estudia una intervención en Marruecos en la que se analiza el efecto de la adopción de microfinanzas, a través de un experimento de campo. En 81 de 162 localidades estudiadas se introdujo aleatoriamente una empresa de microfinanzas. Para seleccionar las localidades de tratamiento, primero se emparejaron localidades de acuerdo a características observables y, para cada pareja se asignó a tratamiento y otra a control. La variable que identifica a las parejas es paire. La base de datos crepon_morocco_balance.csv contiene los datos de este estudio usados para mostrar la integridad del diseño. La variable treatment es la variable de asignación aleatoria, mientras que la variable client es la variable de adopción\n\n[3 puntos] Primero recordaremos cómo mostrar que el tratamiento efectivamente fue asignado de manera aleatoria. El siguiente código lee los datos que debemos usar y se queda con las observaciones de la línea base. Con estos datos, mostraremos que la variable members_resid_bl, que indica el número de personas que viven en cada hogar está balanceado entre los grupos asignados a tratamiento y control. Noten que la media del número de personas que viven en el hogar en el grupo de control es 5.14 (d.e. 2.70) y que hay 2,266 hogares en dicho grupo de control. Esto es exactamente lo que se reporta en la fila correspondiente a Number members en la tabla 1 del artículo.\n\ndata.morocco&lt;-read_csv(\"../files/crepon_morocco_balance.csv\",\n                       locale = locale(encoding = \"latin1\")) %&gt;% \n  clean_names() %&gt;% \n  filter(merge_indicator!=1)\n\ndata.morocco %&gt;% \n  group_by(treatment) %&gt;%\n  summarize(mean=mean(members_resid_bl, na.rm=T),\n            std=sd(members_resid_bl, na.rm=T),\n            n=n()) %&gt;% \n  ungroup()\n\n# A tibble: 2 × 4\n  treatment  mean   std     n\n      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;\n1         0  5.14  2.69  2266\n2         1  5.19  2.76  2199\n\n\nObtenga ahora el valor de la diferencia entre el grupo de tratamiento y el de control, así como su valor \\(p\\) (últimas dos columnas). Para ello, estime una regresión en la que la variable dependiente sea número de personas que vive en el hogar members_resid_bl, en función de la variable de asignación treatment y variables dummy de pareja de localidad (la variable paire indica cuáles son las parejas). La regresión permite recuperar la diferencia de 0.04 personas que se reporta en la fila correspondiente en la tabla 1. Para recuperar el valor \\(p\\), estime errores agrupados usando la variable demi_paire, que es la clave de las distintas localidades, como variable de agrupación. Una forma de realizar esto es con la función coef_test del paquete clubSandwich.3\n[2 puntos] Ahora mostremos que efectivamente este es un ejemplo de una intervención con cumplimiento imperfecto. Genere un cuadro que indique: 1) cuántas personas que fueron asignadas a recibir el tratamiento efectivamente fueron clientes; 2) cuántas personas que fueron asignadas a recibir el tratamiento no se convirtieron en clientes; 3) cuántas personas que no fueron asignadas a recibir el tratamiento sí se convirtieron en clientes; y 4) cuántas personas que no fueron asignadas a recibir el tratamiento tampoco se convirtieron en clientes.\n[5 puntos] Ahora mostraremos que la adopción, es decir, convertirse en cliente, no es independiente de las características de los hogares. Considere las variables members_resid_bl y act_number_bl, que indican el número de miembros del hogar y el número de actividades económicas del hogar. Para cada una de estas dos variables, utilice la misma especificación que en la parte a., pero ahora usando la variable cliente como regresor. ¿Qué concluye?\n[5 puntos] Con estos elementos estamos convencidos de que es necesario emplear lo que sabemos sobre cumplimiento imperfecto. Usaremos ahora los datos en crepon_morocco_analysis.csv, que contiene los datos empleados para evaluar el impacto de la adopción. Estos datos están listos para analizarse. Estime la forma reducida del efecto de ser asignado al tratamiento sobre gasto total, expense_total. Comente los resultados, en particular, comente sobre la magnitud y la significancia estadística de la variable treatment. Aquí y en adelante, incluya los siguientes controles en la regresión: members_resid_bl, nadults_resid_bl, head_age_bl, act_livestock_bl, act_business_bl, borrowed_total_bl, members_resid_d_bl, nadults_resid_d_bl, head_age_d_bl, act_livestock_d_bl, act_business_d_bl, borrowed_total_d_bl, ccm_resp_activ, other_resp_activ, ccm_resp_activ_d y other_resp_activ_d. Además, incluya efectos fijos por pareja introduciendo la variable paire como factor. Use los mismos errores estándar que en la parte a. Con esto deberá poder recuperar el coeficiente y el error estándar de la columna (3) de la tabla 3.\n[5 puntos] Estime ahora la primera etapa, es decir, estime por MCO el efecto causal de la asignación sobre la adopción. Comente sobre la magnitud, la significancia estadística y la interpretación de la variable treatment en términos del comportamiento de los cumplidores. Debería poder replicar el coeficiente y el error estándar de la columna 1 en la tabla 2 del artículo.\n[5 puntos] Considere la columna 3 del panel A en la Tabla 9 del artículo. Aquí se reporta la estimación por MCO de la relación entre client y gasto total, con los mismos controles y tipo de errores que antes. Replique este resultado. ¿Se puede interpretar de forma causal el coeficiente sobre client?\n[5 puntos] ¿Cuáles son los dos supuestos econométricos que permiten la estimación del Local Average Treatment Effect (LATE) en el contexto de este problema? Comente sobre la evidencia que respalda el supuesto de que los instrumentos no son débiles en este problema.\n[5 puntos] Estime el efecto del cumplimiento sobre el gasto total, usando la asignación aleatoria como instrumento del cumplimiento. Es decir, estime el LATE. Use los mismos controles y tipo de errores que en c. Este resultado se reporta en la columna 3 del panel B en la Tabla 9. ¿Cuál es la interpretación del coeficiente de la variable client? En R, la función ivreg del paquete AER le permite hacer la estimación de MC2E.\n\n\n\n\nSea una variable de resultados \\(y_i\\), una variable de asignación aleatoria \\(Z_i\\) y una variable de adopción \\(D_i\\). El estimador de Wald se define como:\n\\[\\hat{\\beta}_{Wald}=\\frac{\\bar{Y}_{Z_i=1}-\\bar{Y}_{Z_i=0}}{\\bar{D}_{Z_i=1}-\\bar{D}_{Z_i=0}}\\]\nEn esta pregunta mostraremos cómo el estimador de Wald es equivalente al estimador de VI cuando no hay controles. Use nuevamente los datos en crepon_morocco_analysis.csv.\n\n[5 puntos] Obtenga el estimador de Wald como el cociente de la diferencia en gasto total promedio entre los hogares asignados a tratamiento y control dividido por la diferencia en la probabilidad de adopción entre los hogares asignados a tratamiento y control. Recuerde que la variable del gasto total es expense_total.\n[5 puntos] Ahora estime por MC2E el efecto de la adopción sobre el gasto total, usando la variable de asignación como instrumento para la adopción. ¿Qué ventaja observa con respecto al estimador de Wald?\n\n\n\n\nConsidere nuevamente la base STAR_public_use.csv usada en la Tarea 1 del artículo Angrist, Lang y Oreopoulos (2009)4. En esta pregunta nos concentraremos en los efectos de la intervención en el año 2, mostrados en la columna (4) de la Tabla 6, sobre dos variables, el promedio de calificaciones gpa_year2 y los créditos completados credits_earned2.\nEl propósito de esta pregunta es mostrar la función de los \\(z\\)-scores en el análisis de efectos de tratamiento. De nuevo, puede quedarse solo con las observaciones que tienen noshow igual a 0. Antes de comenzar su análisis, sustituya por NA los valores en credits_earned2 para aquellas observaciones que tienen \\(NA\\) en la variable prob_year1.\n\n[5 puntos] Para tener un punto de comparación, estime la ecuación del efecto de tratamiento para gpa_year2 usando la misma especificación que en la pregunta 5 de la Tarea 1. Use también errores robustos. Deberá poder replicar los coeficientes y errores estándar del panel A, columna (4). ¿Cómo se interpretan el coeficiente sobre la variable ssp?\n[5 puntos] Genere un \\(z\\)-score para la variable gpa_year2 al que llame gpa_year2_sd. Para ello, calcule la media y desviación estándar de gpa_year2 para el grupo de control y luego genere gpa_year2_sd restándole a gpa_year2 la media obtenida y dividiendo esta diferencia por la desviación estándar obtenida. Compruebe que si calcula la media y la desviación estándar de gpa_year2_sd, en el grupo de control estas deberían ser 0 y 1, respectivamente.\n[5 puntos] Realice la misma estimación que en la parte a., pero ahora use como variable dependiente gpa_year2_sd. ¿Cómo se interpreta el coeficiente sobre ssp? ¿Qué es diferente y qué es igual entre los resultados obtenidos en esta parte y los obtenidos en la parte a.?\n[5 puntos] Ahora realizaremos un índice de mejora en educación, al agregar los resultados de estos dos indicadores en una sola variable, como se describe en Banerjee et al. (2015)5. Para ello, primero genere credits_earned2_sd, que será la versión estandarizada de credits_earned2, siguiendo el mismo procedimiento que en la parte b. En seguida, genere una nueva variable llamada indice_escolar, que será el promedio de credits_earned2_sd y gpa_year2_sd. Luego, calcule la media y la desviación estándar de indice_escolar en el grupo de control. Finalmente, genere una nueva variable indice_escolar_sd restándole a indice_escolar la media antes calculada y dividiendo esta diferencia por la desviación estándar antes calculada. Muestre que la variable indice_escolar_sd tiene media 0 y desviación estándar 1 en el grupo de control.\n[5 puntos] Estime ahora el efecto de tratamiento sobre indice_escolar_sd, siguiendo la misma especificación econométrica que en la parte a. y usando errores robustos. ¿Qué concluye?"
+  },
+  {
+    "objectID": "tareas/tarea-2.knit.html#datos",
+    "href": "tareas/tarea-2.knit.html#datos",
+    "title": "Tarea 2",
+    "section": "",
+    "text": "crepon_morocco_balance.csv\ncrepon_morocco_analysis.csv\nSTAR_public_use.csv"
+  },
+  {
+    "objectID": "tareas/tarea-2.knit.html#pregunta-1",
+    "href": "tareas/tarea-2.knit.html#pregunta-1",
+    "title": "Tarea 2",
+    "section": "",
+    "text": "En esta pregunta usaremos un ejemplo de el estudio con asignación experimental de Banerjee et al. (2015)1 para fijar algunas ideas referentes al análisis de una intervención de este tipo. A diferencia de otros ejemplos vistos en clase, este es un experimento a gran escala. Por favor, utilice la versión publicada, así como el material suplementario.\n\n[5 puntos] Describa brevemente en qué consiste la intervención que se discute en el artículo.\n[5 puntos] Describa brevemente en qué consiste el diseño experimental, es decir, ¿cómo se construye la variación que permite identificar el efecto del tratamiento? ¿Cómo se construyen los grupos de tratamiento y control?\n[5 puntos] En la página 1260799-7 se presenta una subsección denominada Atrition. Describa brevemente el propósito de este análisis y qué se concluye al respecto.\n[5 puntos] En la página 1260799-7, la subsección Compliance with treatment assignment concluye que los efectos estimados en el artículo se refieren a un efecto de intención a tratar o intent-to-treat o ITT. ¿Por qué?\n[5 puntos] En la página 1260799-8 se discuten dos métodos para tomar en cuenta la prueba de hipótesis múltiples. Describa brevemente por qué puede ser problemático probar múltiples hipótesis y cuáles son las dos formas en que los autores enfrentan este problema.\n[5 puntos] En la página 1260799-12 se discute la posible presencia de efectos de derramamiento o Spillovers. Describa brevemente en qué consisten dichos efectos de derramamiento y cómo los autores muestran la presencia o ausencia de dichos efectos usando regresiones."
+  },
+  {
+    "objectID": "tareas/tarea-2.knit.html#pregunta-2",
+    "href": "tareas/tarea-2.knit.html#pregunta-2",
+    "title": "Tarea 2",
+    "section": "",
+    "text": "En Crepon et al. (2015)2 se estudia una intervención en Marruecos en la que se analiza el efecto de la adopción de microfinanzas, a través de un experimento de campo. En 81 de 162 localidades estudiadas se introdujo aleatoriamente una empresa de microfinanzas. Para seleccionar las localidades de tratamiento, primero se emparejaron localidades de acuerdo a características observables y, para cada pareja se asignó a tratamiento y otra a control. La variable que identifica a las parejas es paire. La base de datos crepon_morocco_balance.csv contiene los datos de este estudio usados para mostrar la integridad del diseño. La variable treatment es la variable de asignación aleatoria, mientras que la variable client es la variable de adopción\n\n[3 puntos] Primero recordaremos cómo mostrar que el tratamiento efectivamente fue asignado de manera aleatoria. El siguiente código lee los datos que debemos usar y se queda con las observaciones de la línea base. Con estos datos, mostraremos que la variable members_resid_bl, que indica el número de personas que viven en cada hogar está balanceado entre los grupos asignados a tratamiento y control. Noten que la media del número de personas que viven en el hogar en el grupo de control es 5.14 (d.e. 2.70) y que hay 2,266 hogares en dicho grupo de control. Esto es exactamente lo que se reporta en la fila correspondiente a Number members en la tabla 1 del artículo.\n\ndata.morocco&lt;-read_csv(\"../files/crepon_morocco_balance.csv\",\n                       locale = locale(encoding = \"latin1\")) %&gt;% \n  clean_names() %&gt;% \n  filter(merge_indicator!=1)\n\ndata.morocco %&gt;% \n  group_by(treatment) %&gt;%\n  summarize(mean=mean(members_resid_bl, na.rm=T),\n            std=sd(members_resid_bl, na.rm=T),\n            n=n()) %&gt;% \n  ungroup()\n\n# A tibble: 2 × 4\n  treatment  mean   std     n\n      &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;\n1         0  5.14  2.69  2266\n2         1  5.19  2.76  2199\n\n\nObtenga ahora el valor de la diferencia entre el grupo de tratamiento y el de control, así como su valor \\(p\\) (últimas dos columnas). Para ello, estime una regresión en la que la variable dependiente sea número de personas que vive en el hogar members_resid_bl, en función de la variable de asignación treatment y variables dummy de pareja de localidad (la variable paire indica cuáles son las parejas). La regresión permite recuperar la diferencia de 0.04 personas que se reporta en la fila correspondiente en la tabla 1. Para recuperar el valor \\(p\\), estime errores agrupados usando la variable demi_paire, que es la clave de las distintas localidades, como variable de agrupación. Una forma de realizar esto es con la función coef_test del paquete clubSandwich.3\n[2 puntos] Ahora mostremos que efectivamente este es un ejemplo de una intervención con cumplimiento imperfecto. Genere un cuadro que indique: 1) cuántas personas que fueron asignadas a recibir el tratamiento efectivamente fueron clientes; 2) cuántas personas que fueron asignadas a recibir el tratamiento no se convirtieron en clientes; 3) cuántas personas que no fueron asignadas a recibir el tratamiento sí se convirtieron en clientes; y 4) cuántas personas que no fueron asignadas a recibir el tratamiento tampoco se convirtieron en clientes.\n[5 puntos] Ahora mostraremos que la adopción, es decir, convertirse en cliente, no es independiente de las características de los hogares. Considere las variables members_resid_bl y act_number_bl, que indican el número de miembros del hogar y el número de actividades económicas del hogar. Para cada una de estas dos variables, utilice la misma especificación que en la parte a., pero ahora usando la variable cliente como regresor. ¿Qué concluye?\n[5 puntos] Con estos elementos estamos convencidos de que es necesario emplear lo que sabemos sobre cumplimiento imperfecto. Usaremos ahora los datos en crepon_morocco_analysis.csv, que contiene los datos empleados para evaluar el impacto de la adopción. Estos datos están listos para analizarse. Estime la forma reducida del efecto de ser asignado al tratamiento sobre gasto total, expense_total. Comente los resultados, en particular, comente sobre la magnitud y la significancia estadística de la variable treatment. Aquí y en adelante, incluya los siguientes controles en la regresión: members_resid_bl, nadults_resid_bl, head_age_bl, act_livestock_bl, act_business_bl, borrowed_total_bl, members_resid_d_bl, nadults_resid_d_bl, head_age_d_bl, act_livestock_d_bl, act_business_d_bl, borrowed_total_d_bl, ccm_resp_activ, other_resp_activ, ccm_resp_activ_d y other_resp_activ_d. Además, incluya efectos fijos por pareja introduciendo la variable paire como factor. Use los mismos errores estándar que en la parte a. Con esto deberá poder recuperar el coeficiente y el error estándar de la columna (3) de la tabla 3.\n[5 puntos] Estime ahora la primera etapa, es decir, estime por MCO el efecto causal de la asignación sobre la adopción. Comente sobre la magnitud, la significancia estadística y la interpretación de la variable treatment en términos del comportamiento de los cumplidores. Debería poder replicar el coeficiente y el error estándar de la columna 1 en la tabla 2 del artículo.\n[5 puntos] Considere la columna 3 del panel A en la Tabla 9 del artículo. Aquí se reporta la estimación por MCO de la relación entre client y gasto total, con los mismos controles y tipo de errores que antes. Replique este resultado. ¿Se puede interpretar de forma causal el coeficiente sobre client?\n[5 puntos] ¿Cuáles son los dos supuestos econométricos que permiten la estimación del Local Average Treatment Effect (LATE) en el contexto de este problema? Comente sobre la evidencia que respalda el supuesto de que los instrumentos no son débiles en este problema.\n[5 puntos] Estime el efecto del cumplimiento sobre el gasto total, usando la asignación aleatoria como instrumento del cumplimiento. Es decir, estime el LATE. Use los mismos controles y tipo de errores que en c. Este resultado se reporta en la columna 3 del panel B en la Tabla 9. ¿Cuál es la interpretación del coeficiente de la variable client? En R, la función ivreg del paquete AER le permite hacer la estimación de MC2E."
+  },
+  {
+    "objectID": "tareas/tarea-2.knit.html#pregunta-3",
+    "href": "tareas/tarea-2.knit.html#pregunta-3",
+    "title": "Tarea 2",
+    "section": "",
+    "text": "Sea una variable de resultados \\(y_i\\), una variable de asignación aleatoria \\(Z_i\\) y una variable de adopción \\(D_i\\). El estimador de Wald se define como:\n\\[\\hat{\\beta}_{Wald}=\\frac{\\bar{Y}_{Z_i=1}-\\bar{Y}_{Z_i=0}}{\\bar{D}_{Z_i=1}-\\bar{D}_{Z_i=0}}\\]\nEn esta pregunta mostraremos cómo el estimador de Wald es equivalente al estimador de VI cuando no hay controles. Use nuevamente los datos en crepon_morocco_analysis.csv.\n\n[5 puntos] Obtenga el estimador de Wald como el cociente de la diferencia en gasto total promedio entre los hogares asignados a tratamiento y control dividido por la diferencia en la probabilidad de adopción entre los hogares asignados a tratamiento y control. Recuerde que la variable del gasto total es expense_total.\n[5 puntos] Ahora estime por MC2E el efecto de la adopción sobre el gasto total, usando la variable de asignación como instrumento para la adopción. ¿Qué ventaja observa con respecto al estimador de Wald?"
+  },
+  {
+    "objectID": "tareas/tarea-2.knit.html#pregunta-4",
+    "href": "tareas/tarea-2.knit.html#pregunta-4",
+    "title": "Tarea 2",
+    "section": "",
+    "text": "Considere nuevamente la base STAR_public_use.csv usada en la Tarea 1 del artículo Angrist, Lang y Oreopoulos (2009)4. En esta pregunta nos concentraremos en los efectos de la intervención en el año 2, mostrados en la columna (4) de la Tabla 6, sobre dos variables, el promedio de calificaciones gpa_year2 y los créditos completados credits_earned2.\nEl propósito de esta pregunta es mostrar la función de los \\(z\\)-scores en el análisis de efectos de tratamiento. De nuevo, puede quedarse solo con las observaciones que tienen noshow igual a 0. Antes de comenzar su análisis, sustituya por NA los valores en credits_earned2 para aquellas observaciones que tienen \\(NA\\) en la variable prob_year1.\n\n[5 puntos] Para tener un punto de comparación, estime la ecuación del efecto de tratamiento para gpa_year2 usando la misma especificación que en la pregunta 5 de la Tarea 1. Use también errores robustos. Deberá poder replicar los coeficientes y errores estándar del panel A, columna (4). ¿Cómo se interpretan el coeficiente sobre la variable ssp?\n[5 puntos] Genere un \\(z\\)-score para la variable gpa_year2 al que llame gpa_year2_sd. Para ello, calcule la media y desviación estándar de gpa_year2 para el grupo de control y luego genere gpa_year2_sd restándole a gpa_year2 la media obtenida y dividiendo esta diferencia por la desviación estándar obtenida. Compruebe que si calcula la media y la desviación estándar de gpa_year2_sd, en el grupo de control estas deberían ser 0 y 1, respectivamente.\n[5 puntos] Realice la misma estimación que en la parte a., pero ahora use como variable dependiente gpa_year2_sd. ¿Cómo se interpreta el coeficiente sobre ssp? ¿Qué es diferente y qué es igual entre los resultados obtenidos en esta parte y los obtenidos en la parte a.?\n[5 puntos] Ahora realizaremos un índice de mejora en educación, al agregar los resultados de estos dos indicadores en una sola variable, como se describe en Banerjee et al. (2015)5. Para ello, primero genere credits_earned2_sd, que será la versión estandarizada de credits_earned2, siguiendo el mismo procedimiento que en la parte b. En seguida, genere una nueva variable llamada indice_escolar, que será el promedio de credits_earned2_sd y gpa_year2_sd. Luego, calcule la media y la desviación estándar de indice_escolar en el grupo de control. Finalmente, genere una nueva variable indice_escolar_sd restándole a indice_escolar la media antes calculada y dividiendo esta diferencia por la desviación estándar antes calculada. Muestre que la variable indice_escolar_sd tiene media 0 y desviación estándar 1 en el grupo de control.\n[5 puntos] Estime ahora el efecto de tratamiento sobre indice_escolar_sd, siguiendo la misma especificación econométrica que en la parte a. y usando errores robustos. ¿Qué concluye?"
+  },
+  {
+    "objectID": "tareas/tarea-2.knit.html#footnotes",
+    "href": "tareas/tarea-2.knit.html#footnotes",
+    "title": "Tarea 2",
+    "section": "Notas",
+    "text": "Notas\n\n\nBanerjee, A. et al. (2015). A multifaceted program causes lasting progress for the very poor: Evidence from six countries. Science, 348(6236).↩︎\nPor ejemplo, suponga que estima un modelo al que llame modelo1. Entonces, si ejecuta\n\ncoef_test(modelo1,\n          vcov=\"CR1S\",\n          cluster=mis_datos$demi_paire)[1:2,]\n\nobtendrá los coeficientes con los errores agrupados requeridos. La opción CR1S toma en cuenta el número de grupos o clusters para realizar inferencia. Puede leer más al respecto en la ayuda al ejecutar ?vcovCR. Este es el tipo de ajuste de muestras finitas que usan los autores. Esta corrección consiste en multiplicar la matriz de sándwich agrupada CR0 por \\(\\frac{G(N-1)}{(G-1)(N-p)}\\), donde \\(G\\) es el número de grupos, \\(N\\) es el número total de observaciones y \\(p\\) es el número de regresores.↩︎\nCrépon, B., Devoto, F., Duflo, E., & Parienté, W. (2015). Estimating the impact of microcredit on those who take it up: Evidence from a randomized experiment in Morocco. American Economic Journal: Applied Economics, 7(1), 123-50.↩︎\nAngrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. American Economic Journal: Applied Economics, 1(1), 136-63.↩︎\nBanerjee, A. et al. (2015). A multifaceted program causes lasting progress for the very poor: Evidence from six countries. Science, 348(6236).↩︎"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html",
+    "href": "diapositivas/did.knit.html",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "La estrategia de diferencia en diferencias especifica las condiciones bajo las cuales es posible identificar el efecto del tratamiento al comparar unidades tratadas y no tratadas, cuando se dispone de información antes y después de la intervención\nEsta estrategia es ampliamente utilizada para analizar el efecto de leyes y políticas que afectan a un grupo de individuos al mismo tiempo\nAdemás, constituye el fundamento para otro de los métodos en donde la investigación actual es muy activa, el control sintético\n\n\n\n\n\n\nAngrist & Pischke (2014) describen lo sucedido con el sector bancario en Mississippi durante la Gran Depresión\nEn EUA, la FED tiene 12 bancos regionales y cada uno tiene autonomía para tomar ciertas decisiones de política monetaria\nEn particular, Mississippi tiene una parte del estado bajo el mando del distrito 6 (Atlanta) y la otra mitad en el distrito 8 (San Luis)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nComo respuesta a las corridas bancarias que caracterizaron la crisis de 1929, los bancos comerciales en Mississippi se vieron expuestos a dos políticas distintas\n\n\\[\nT=\n\\begin{cases}\n1\\quad\\quad \\text{proveer liquidez adicional (distrito 6)} \\\\\n0\\quad\\quad \\text{dar igual o menos liquidez (distrito 8)} \\\\\n\\end{cases}\n\\]\n\nSi estamos interesados en la cantidad de bancos que sobrevivieron y decir algo sobre qué política es más efectiva, ¿qué podemos hacer?\nUna primera respuesta sería contar la diferencia después de la crisis:\n\n\n\n\nDistrito 8\nDistrito 6\nDiferencia\n\n\n\n\n\\(T=0\\)\n\\(T=1\\)\n\n\n\n132 bancos\n121 bancos\n11 bancos\n\n\n\n\nPareciera que la política de proveer liquidez, easy money, causó que quebraran más bancos\nSin embargo, esta comparación claramente ignora las condiciones iniciales\n\n\n\n\n\nGráficamente observamos\n\n\nbanks&lt;-read_csv(\"banks_mm.csv\",\n                       locale = locale(encoding = \"latin1\"))\nbanks &lt;- banks %&gt;%\n  filter(month(date) == 7L,\n         mday(date) == 1L) %&gt;%\n  mutate(year = year(date)) %&gt;%\n  select(year,\n         matches(\"bi[ob][68]\")) %&gt;% \n  select(year,bib6,bib8) %&gt;% \n  gather(distrito,banks,bib6:bib8) %&gt;% \n  mutate(treatment=ifelse(distrito==\"bib6\",1,0)) %&gt;% \n  mutate(post=ifelse(year&gt;=1931,1,0))\n\nbanks %&gt;% \n  mutate(banks=ifelse(year==1930 | year==1931,banks,NA)) %&gt;% \n  filter(year &lt;= 1932) %&gt;% \n  ggplot(aes(x=year, y=banks, color=distrito)) +\n  geom_line(size=2) +\n  scale_y_continuous(limits=c(100,180))\n\n\n\n\n\n\n\n\n\n\n\n\nDel distrito 8 (no tratado) podemos obtener la pendiente:\n\n\\[m_{NT}=\\frac{Y_{8,post}-Y_{8,pre}}{X_{8,post}-X_{8,pre}}=\\frac{132-165}{1931-1930}=-33\\]\n\nY entonces, podemos encontrar cuál hubiera sido el número de bancos en el distrio 6 (tratado) si hubiera seguido la pendiente del distrito 8:\n\n\\[m_T=\\frac{\\tilde{Y}_{6,post}-Y_{6,pre}}{X_{6,post}-X_{6,pre}}=\\frac{\\tilde{Y}_{6,post}-135}{1931-1930}=-33\\] - Por tanto, \\(\\tilde{Y}_{6,post}=102\\) es el número de bancos que el distrito 6 hubiera tenido si hubiera seguido una tendencia paralela a la del distrito 8\n\n\n\n\nPodemos contruir el contrafactual para el distrito 6 observando la pendiente del distrito 8\n\n\nbanks_contrafactual &lt;- banks %&gt;%\n    mutate(banks=ifelse(year==1930 | year==1931,banks,NA)) %&gt;% \n  filter(year &lt;= 1932) %&gt;% \n  mutate(tipo=\"observado\")\n  \nd6_contrafactual &lt;- banks_contrafactual %&gt;% \n  filter(distrito==\"bib6\") %&gt;% \n  mutate(banks=ifelse(year==1931,102,banks),\n         tipo=\"contrafactual\")\n\nbanks_contrafactual &lt;- rbind(banks_contrafactual,d6_contrafactual)\n\ndd_grafica &lt;- banks_contrafactual %&gt;% \n  ggplot(aes(x=year, y=banks, color=distrito, linetype=tipo))+\n  geom_line(size=2) +\n  scale_linetype_manual(values=c(\"dashed\", \"solid\")) +\n  scale_y_continuous(limits=c(100,180)) \n\n\ndd_grafica\n\n\n\n\n\n\n\n\n\n\n\n\nPodemos dar así una primera definición de lo que es la diferencia en diferencias del número de bancos que sobrevivieron a la Gran Depresión en Mississippi\n\n\\[\n\\begin{aligned}\n\\delta_{DID}&=(Y_{6,post}-Y_{6,pre})-(Y_{8,post}-Y_{8,pre}) \\\\\n&=(Y_{6,1931}-Y_{6,1930})-(Y_{8,1931}-Y_{8,1930}) \\\\\n&=(121-135)-(132-165) \\\\\n&=-14+33 = 19\n\\end{aligned}\n\\]\n\nEl estimador de DID toma en cuenta las diferencias inciales\nEn este caso, el distrito 8 ya tenía más bancos abiertos que el 6 antes de la crisis\nDID construye un contrafactual para las unidades tratadas usando la pendiente de las unidades no tratadas\n\n\n\n\n\nEl supuesto fundamental es el de tendencias comunes, es decir, que en ausencia del tratamiento, el grupo de tratamiento se hubiera comportado igual al grupo de control\nSi hay varios puntos pre intervención, el supuesto de tendencias comunes puede probarse empíricamente\n\n\n\n\n\nEl método puede generalizarse a más periodos de tiempo\nAquí, una regresión nos permite identificar el efecto del tratamiento\nTenemos datos sobre el número de bancos en cada distrito en cada año (1929-1934)\n\n\\[y_{dt}=\\alpha+\\beta T_d+\\gamma POST_t + \\delta_{r,DID}(T_d\\times POST_t)+e_{dt}\\] - \\(T_d\\) es una dummy para los distritos tratados (distrito 6 en este caso)\n\nLes llamamos efectos fijos individuales y sirven para controlar diferencias entre distritos que no cambian en el tiempo\n\\(POST_t\\) es una dummy para los periodos post tratamiento (1931 en adelante)\nAl término \\(T_d\\times POST_t\\) se le conoce como el término de interacción, que es una dummy igual a 1 para los distritos tratados en los años post intervención\n\\(\\delta_{r,DID}\\) es el estimador de DID del efecto del tratamiento\n\n\n\n\n\nUsemos los datos del archivo banks_mm.csv que se utilizan en el libro\nEs una forma muy básica de datos en panel: cada fila representa un distrito en un periodo de tiempo\nPodemos identificar si cada fila pertenece a un distrito tratado o no o a un periodo posterior a al tratamiento o no\n\n\nbanks\n\n# A tibble: 12 × 5\n    year distrito banks treatment  post\n   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;\n 1  1929 bib6       141         1     0\n 2  1930 bib6       135         1     0\n 3  1931 bib6       121         1     1\n 4  1932 bib6       113         1     1\n 5  1933 bib6       102         1     1\n 6  1934 bib6       102         1     1\n 7  1929 bib8       169         0     0\n 8  1930 bib8       165         0     0\n 9  1931 bib8       132         0     1\n10  1932 bib8       120         0     1\n11  1933 bib8       111         0     1\n12  1934 bib8       109         0     1\n\n\n\n\n\n\nEstimemos la regresión que acabamos de motivar usando todos los periodos en el panel\n\n\ndid_bank &lt;- lm(banks ~ treatment + post+ treatment*post,\n               data=banks)\n\nsummary(did_bank)\n\n\nCall:\nlm(formula = banks ~ treatment + post + treatment * post, data = banks)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-9.000 -7.125  0.000  3.125 14.000 \n\nCoefficients:\n               Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     167.000      6.190  26.980 3.83e-09 ***\ntreatment       -29.000      8.754  -3.313 0.010652 *  \npost            -49.000      7.581  -6.464 0.000195 ***\ntreatment:post   20.500     10.721   1.912 0.092224 .  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 8.754 on 8 degrees of freedom\nMultiple R-squared:  0.8906,    Adjusted R-squared:  0.8496 \nF-statistic: 21.71 on 3 and 8 DF,  p-value: 0.0003369\n\n\n\n\n\n\nNoten que si solo usamos dos años, obtenemos exactamente lo que obtendríamos haciendo las diferencias a mano\n\n\\[\\delta_{DiD}=(Y_{6,1931}-Y_{6,1930})-(Y_{8,1931}-Y_{8,1930})=19\\]\n\ndid_bank2 &lt;- lm(banks ~ treatment + post+ treatment*post,\n               data=filter(banks,year==1930 | year==1931))\n\n\nsummary(did_bank2)\n\n\nCall:\nlm(formula = banks ~ treatment + post + treatment * post, data = filter(banks, \n    year == 1930 | year == 1931))\n\nResiduals:\nALL 4 residuals are 0: no residual degrees of freedom!\n\nCoefficients:\n               Estimate Std. Error t value Pr(&gt;|t|)\n(Intercept)         165        NaN     NaN      NaN\ntreatment           -30        NaN     NaN      NaN\npost                -33        NaN     NaN      NaN\ntreatment:post       19        NaN     NaN      NaN\n\nResidual standard error: NaN on 0 degrees of freedom\nMultiple R-squared:      1, Adjusted R-squared:    NaN \nF-statistic:   NaN on 3 and 0 DF,  p-value: NA\n\n\n\n\n\n\nConsideremos cosas que podrían salir mal con respecto al supuesto de tendencias paralelas\nSupongamos que un tratamiento ocurre en el periodo marcado con la línea vertical, por ejemplo, un cambio en una legislación\nEn este ejemplo algo sucedió en Allatsea que produjo un cambio en la trayectoria de mortalidad antes del cambio en la legislación\nEl supuesto de tendencias paralelas sí se sostenía hasta antes de este cambio\nSin embargo, nuestra estrategia de DID atribuiría el efecto al cambio en la legislación cuando en realidad cuando ese cambio ocurrió ya nole pasó nada a Allatsea\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEn este segundo ejemplo, el supuesto de tendencias paralelas pre intervención se viola\nAunque en el momento del cambio de la política, la línea de Allatsea es más inclinada, estimar esta relación por DID de nuevo atribuiría a la política diferencias que ya existían antes de la intervención\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEn este tercer ejemplo hay tendencias que no son paralelas pre intervención\nSin embargo, después de la intervención, la trayectoria de Allatsea tiene una pendiente claramente más inclinada que antes de la intervención"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#introducción",
+    "href": "diapositivas/did.knit.html#introducción",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "Angrist & Pischke (2014) describen lo sucedido con el sector bancario en Mississippi durante la Gran Depresión\nEn EUA, la FED tiene 12 bancos regionales y cada uno tiene autonomía para tomar ciertas decisiones de política monetaria\nEn particular, Mississippi tiene una parte del estado bajo el mando del distrito 6 (Atlanta) y la otra mitad en el distrito 8 (San Luis)"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#diferencia-en-diferencias-1",
+    "href": "diapositivas/did.knit.html#diferencia-en-diferencias-1",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "Como respuesta a las corridas bancarias que caracterizaron la crisis de 1929, los bancos comerciales en Mississippi se vieron expuestos a dos políticas distintas\n\n\\[\nT=\n\\begin{cases}\n1\\quad\\quad \\text{proveer liquidez adicional (distrito 6)} \\\\\n0\\quad\\quad \\text{dar igual o menos liquidez (distrito 8)} \\\\\n\\end{cases}\n\\]\n\nSi estamos interesados en la cantidad de bancos que sobrevivieron y decir algo sobre qué política es más efectiva, ¿qué podemos hacer?\nUna primera respuesta sería contar la diferencia después de la crisis:\n\n\n\n\nDistrito 8\nDistrito 6\nDiferencia\n\n\n\n\n\\(T=0\\)\n\\(T=1\\)\n\n\n\n132 bancos\n121 bancos\n11 bancos\n\n\n\n\nPareciera que la política de proveer liquidez, easy money, causó que quebraran más bancos\nSin embargo, esta comparación claramente ignora las condiciones iniciales"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#representación-gráfica",
+    "href": "diapositivas/did.knit.html#representación-gráfica",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "Gráficamente observamos\n\n\nbanks&lt;-read_csv(\"banks_mm.csv\",\n                       locale = locale(encoding = \"latin1\"))\nbanks &lt;- banks %&gt;%\n  filter(month(date) == 7L,\n         mday(date) == 1L) %&gt;%\n  mutate(year = year(date)) %&gt;%\n  select(year,\n         matches(\"bi[ob][68]\")) %&gt;% \n  select(year,bib6,bib8) %&gt;% \n  gather(distrito,banks,bib6:bib8) %&gt;% \n  mutate(treatment=ifelse(distrito==\"bib6\",1,0)) %&gt;% \n  mutate(post=ifelse(year&gt;=1931,1,0))\n\nbanks %&gt;% \n  mutate(banks=ifelse(year==1930 | year==1931,banks,NA)) %&gt;% \n  filter(year &lt;= 1932) %&gt;% \n  ggplot(aes(x=year, y=banks, color=distrito)) +\n  geom_line(size=2) +\n  scale_y_continuous(limits=c(100,180))"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#representación-gráfica-1",
+    "href": "diapositivas/did.knit.html#representación-gráfica-1",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "Del distrito 8 (no tratado) podemos obtener la pendiente:\n\n\\[m_{NT}=\\frac{Y_{8,post}-Y_{8,pre}}{X_{8,post}-X_{8,pre}}=\\frac{132-165}{1931-1930}=-33\\]\n\nY entonces, podemos encontrar cuál hubiera sido el número de bancos en el distrio 6 (tratado) si hubiera seguido la pendiente del distrito 8:\n\n\\[m_T=\\frac{\\tilde{Y}_{6,post}-Y_{6,pre}}{X_{6,post}-X_{6,pre}}=\\frac{\\tilde{Y}_{6,post}-135}{1931-1930}=-33\\] - Por tanto, \\(\\tilde{Y}_{6,post}=102\\) es el número de bancos que el distrito 6 hubiera tenido si hubiera seguido una tendencia paralela a la del distrito 8"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#representación-gráfica-2",
+    "href": "diapositivas/did.knit.html#representación-gráfica-2",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "Podemos contruir el contrafactual para el distrito 6 observando la pendiente del distrito 8\n\n\nbanks_contrafactual &lt;- banks %&gt;%\n    mutate(banks=ifelse(year==1930 | year==1931,banks,NA)) %&gt;% \n  filter(year &lt;= 1932) %&gt;% \n  mutate(tipo=\"observado\")\n  \nd6_contrafactual &lt;- banks_contrafactual %&gt;% \n  filter(distrito==\"bib6\") %&gt;% \n  mutate(banks=ifelse(year==1931,102,banks),\n         tipo=\"contrafactual\")\n\nbanks_contrafactual &lt;- rbind(banks_contrafactual,d6_contrafactual)\n\ndd_grafica &lt;- banks_contrafactual %&gt;% \n  ggplot(aes(x=year, y=banks, color=distrito, linetype=tipo))+\n  geom_line(size=2) +\n  scale_linetype_manual(values=c(\"dashed\", \"solid\")) +\n  scale_y_continuous(limits=c(100,180)) \n\n\ndd_grafica"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#diferencia-en-diferencias-2",
+    "href": "diapositivas/did.knit.html#diferencia-en-diferencias-2",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "Podemos dar así una primera definición de lo que es la diferencia en diferencias del número de bancos que sobrevivieron a la Gran Depresión en Mississippi\n\n\\[\n\\begin{aligned}\n\\delta_{DID}&=(Y_{6,post}-Y_{6,pre})-(Y_{8,post}-Y_{8,pre}) \\\\\n&=(Y_{6,1931}-Y_{6,1930})-(Y_{8,1931}-Y_{8,1930}) \\\\\n&=(121-135)-(132-165) \\\\\n&=-14+33 = 19\n\\end{aligned}\n\\]\n\nEl estimador de DID toma en cuenta las diferencias inciales\nEn este caso, el distrito 8 ya tenía más bancos abiertos que el 6 antes de la crisis\nDID construye un contrafactual para las unidades tratadas usando la pendiente de las unidades no tratadas"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#diferencia-en-diferencias-3",
+    "href": "diapositivas/did.knit.html#diferencia-en-diferencias-3",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "El supuesto fundamental es el de tendencias comunes, es decir, que en ausencia del tratamiento, el grupo de tratamiento se hubiera comportado igual al grupo de control\nSi hay varios puntos pre intervención, el supuesto de tendencias comunes puede probarse empíricamente"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#regresión-en-did",
+    "href": "diapositivas/did.knit.html#regresión-en-did",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "El método puede generalizarse a más periodos de tiempo\nAquí, una regresión nos permite identificar el efecto del tratamiento\nTenemos datos sobre el número de bancos en cada distrito en cada año (1929-1934)\n\n\\[y_{dt}=\\alpha+\\beta T_d+\\gamma POST_t + \\delta_{r,DID}(T_d\\times POST_t)+e_{dt}\\] - \\(T_d\\) es una dummy para los distritos tratados (distrito 6 en este caso)\n\nLes llamamos efectos fijos individuales y sirven para controlar diferencias entre distritos que no cambian en el tiempo\n\\(POST_t\\) es una dummy para los periodos post tratamiento (1931 en adelante)\nAl término \\(T_d\\times POST_t\\) se le conoce como el término de interacción, que es una dummy igual a 1 para los distritos tratados en los años post intervención\n\\(\\delta_{r,DID}\\) es el estimador de DID del efecto del tratamiento"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#regresión-en-did-1",
+    "href": "diapositivas/did.knit.html#regresión-en-did-1",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "Usemos los datos del archivo banks_mm.csv que se utilizan en el libro\nEs una forma muy básica de datos en panel: cada fila representa un distrito en un periodo de tiempo\nPodemos identificar si cada fila pertenece a un distrito tratado o no o a un periodo posterior a al tratamiento o no\n\n\nbanks\n\n# A tibble: 12 × 5\n    year distrito banks treatment  post\n   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;\n 1  1929 bib6       141         1     0\n 2  1930 bib6       135         1     0\n 3  1931 bib6       121         1     1\n 4  1932 bib6       113         1     1\n 5  1933 bib6       102         1     1\n 6  1934 bib6       102         1     1\n 7  1929 bib8       169         0     0\n 8  1930 bib8       165         0     0\n 9  1931 bib8       132         0     1\n10  1932 bib8       120         0     1\n11  1933 bib8       111         0     1\n12  1934 bib8       109         0     1"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#regresión-en-did-2",
+    "href": "diapositivas/did.knit.html#regresión-en-did-2",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "Estimemos la regresión que acabamos de motivar usando todos los periodos en el panel\n\n\ndid_bank &lt;- lm(banks ~ treatment + post+ treatment*post,\n               data=banks)\n\nsummary(did_bank)\n\n\nCall:\nlm(formula = banks ~ treatment + post + treatment * post, data = banks)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-9.000 -7.125  0.000  3.125 14.000 \n\nCoefficients:\n               Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     167.000      6.190  26.980 3.83e-09 ***\ntreatment       -29.000      8.754  -3.313 0.010652 *  \npost            -49.000      7.581  -6.464 0.000195 ***\ntreatment:post   20.500     10.721   1.912 0.092224 .  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 8.754 on 8 degrees of freedom\nMultiple R-squared:  0.8906,    Adjusted R-squared:  0.8496 \nF-statistic: 21.71 on 3 and 8 DF,  p-value: 0.0003369"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#regresión-en-did-3",
+    "href": "diapositivas/did.knit.html#regresión-en-did-3",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "Noten que si solo usamos dos años, obtenemos exactamente lo que obtendríamos haciendo las diferencias a mano\n\n\\[\\delta_{DiD}=(Y_{6,1931}-Y_{6,1930})-(Y_{8,1931}-Y_{8,1930})=19\\]\n\ndid_bank2 &lt;- lm(banks ~ treatment + post+ treatment*post,\n               data=filter(banks,year==1930 | year==1931))\n\n\nsummary(did_bank2)\n\n\nCall:\nlm(formula = banks ~ treatment + post + treatment * post, data = filter(banks, \n    year == 1930 | year == 1931))\n\nResiduals:\nALL 4 residuals are 0: no residual degrees of freedom!\n\nCoefficients:\n               Estimate Std. Error t value Pr(&gt;|t|)\n(Intercept)         165        NaN     NaN      NaN\ntreatment           -30        NaN     NaN      NaN\npost                -33        NaN     NaN      NaN\ntreatment:post       19        NaN     NaN      NaN\n\nResidual standard error: NaN on 0 degrees of freedom\nMultiple R-squared:      1, Adjusted R-squared:    NaN \nF-statistic:   NaN on 3 and 0 DF,  p-value: NA"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#violación-a-los-supuestos",
+    "href": "diapositivas/did.knit.html#violación-a-los-supuestos",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "Consideremos cosas que podrían salir mal con respecto al supuesto de tendencias paralelas\nSupongamos que un tratamiento ocurre en el periodo marcado con la línea vertical, por ejemplo, un cambio en una legislación\nEn este ejemplo algo sucedió en Allatsea que produjo un cambio en la trayectoria de mortalidad antes del cambio en la legislación\nEl supuesto de tendencias paralelas sí se sostenía hasta antes de este cambio\nSin embargo, nuestra estrategia de DID atribuiría el efecto al cambio en la legislación cuando en realidad cuando ese cambio ocurrió ya nole pasó nada a Allatsea"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#violación-a-los-supuestos-1",
+    "href": "diapositivas/did.knit.html#violación-a-los-supuestos-1",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "En este segundo ejemplo, el supuesto de tendencias paralelas pre intervención se viola\nAunque en el momento del cambio de la política, la línea de Allatsea es más inclinada, estimar esta relación por DID de nuevo atribuiría a la política diferencias que ya existían antes de la intervención"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#violación-a-los-supuestos-2",
+    "href": "diapositivas/did.knit.html#violación-a-los-supuestos-2",
+    "title": "Diferencia en diferencias",
+    "section": "",
+    "text": "En este tercer ejemplo hay tendencias que no son paralelas pre intervención\nSin embargo, después de la intervención, la trayectoria de Allatsea tiene una pendiente claramente más inclinada que antes de la intervención"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#adopción-escalonada-en-la-antiguedad",
+    "href": "diapositivas/did.knit.html#adopción-escalonada-en-la-antiguedad",
+    "title": "Diferencia en diferencias",
+    "section": "Adopción escalonada en la antiguedad",
+    "text": "Adopción escalonada en la antiguedad\n\nDID es uno de esos campos tan activos en la investigación que cosas que pensábamos superadas o completamente estudiadas se han modificado en los últimos años\nEn esta sección mostramos el tratamiento que MHE y MM dan a los problemas de adopción escalonada\nLa adopción escalonada ocurre cuando existen varios periodos de tratamiento y algunas unidades van siendo tratadas de forma desfasada\nPor ejemplo, en Méxio las leyes de despenalización del aborto o las que reconocen las uniones entre personas del mismo sexo son buenos ejemplos de tratamientos con adopción escalonada\nHasta los trabajos de Goodman-Bacon (2021) y Chaisemartin & D’Haultfœuille (2020), los problemas con adopción escalonada se abordaban econométricamente de la misma forma que hemos descrito hasta ahora, conocida como efectos fijos en bidireccionales (sí, suena horrible dicha traducción) o two-way fixed effects\nEsta sección presenta el tipo de tratamiento que hoy ya consideramos inapropiado\nMás adelante se presentan alternativas para los problemas de adopción escalonada"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#edad-legal-para-beber-en-eua",
+    "href": "diapositivas/did.knit.html#edad-legal-para-beber-en-eua",
+    "title": "Diferencia en diferencias",
+    "section": "Edad legal para beber en EUA",
+    "text": "Edad legal para beber en EUA\n\nDiferencias en la edad legal para beber en Estados Unidos\n¿Las restricciones a la edad mínima para comprar alcohol tienen un impacto en la mortalidad?\nAlabama redujo la edad legal a 19 en 1975, mientras que, por ejemplo, Arkansas mantuvo la edad en 21\nTenemos datos de mortalidad de 1970 a 1983 para personas de entre 18 y 20 años\nLo que hemos aprendido hasta ahora nos sugiere estimar el impacto por DID comos sigue\n\n\\[y_{st}=\\alpha+\\beta T_s+\\gamma POST_t+\\delta_{DID}(T_s\\times POST_t)+e_{st}\\] - \\(T_s\\) es una dummy igual a 0 para Arkansas en todos los periodos e igual a 1 para Alabama en todos los periodos\n\n\\(POST_t\\) es igual a cero para el periodo 1970-1975 e igual a 1 para el periodo 1976-1983\n\\(T_s\\times POST_t\\) es igual a 1 para las observaciones de Alabama en los años en los que la nueva política ya está en vigor"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#más-de-un-estado",
+    "href": "diapositivas/did.knit.html#más-de-un-estado",
+    "title": "Diferencia en diferencias",
+    "section": "Más de un estado",
+    "text": "Más de un estado\n\n¿Por qué quedarnos solo con la comparación con Arkansas?\nPodemos incluir más unidades que implementen cambios en la política en distintos momentos\nEn vez de \\(POST_t\\) usamos efectos fijos por año\nY en vez de una dummy de tratamiento, incluimos efectos fijos por unidad\nAdemás, en el cambio en la ley podría no ser el mismo\n\nAlgunos estados mueven la edad a 18, otros a 19 y otros a 20\nPodemos definir \\(LEGAL_{st}\\) como la proporción de individuos de entre 18 y 20 años autorizados para beber en el estado \\(s\\) y en el año \\(t\\)\n\n\n\\[y_{st}=\\alpha+\\delta_{DID}LEGAL_{st}+\\sum_k\\beta_k STATE_{ks}+\\sum_j \\gamma_j YEAR_{jt}+e_{st}\\]"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#estructura-de-datos-en-panel",
+    "href": "diapositivas/did.knit.html#estructura-de-datos-en-panel",
+    "title": "Diferencia en diferencias",
+    "section": "Estructura de datos en panel",
+    "text": "Estructura de datos en panel\n\nLos datos que acabamos de describir tienen una estructura de panel\nLa variable de panel es el estado \\(s\\) y la variable de tiempo es el año \\(t\\)\nEn nuestros datos, cada estado se encuentra presente en varios años, y para cada estado y año sabemos la mortalidad y la fracción de personas de 18 a 20 años que pueden beber\nEfectos fijos \\(STATE_{ks}\\): diferencias entre estados que no cambian con el tiempo\nEfectos año \\(YEAR_{jt}\\): factores que afectan a todas las unidades por igual en un momento del tiempo"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#interpretación",
+    "href": "diapositivas/did.knit.html#interpretación",
+    "title": "Diferencia en diferencias",
+    "section": "Interpretación",
+    "text": "Interpretación\n\n\n\nMuertes por 100,000 habs.:\n\\(\\hat{\\delta}_{DID}\\)\n\n\n\n\nTodas\n10.80\n\n\n\n(4.59)\n\n\nAccidentes en vehículos\n7.59\n\n\n\n(2.50)\n\n\nSuicidio\n0.59\n\n\n\n(0.59)\n\n\nCausas internas\n1.33\n\n\n\n(1.59)\n\n\n\n\nLa interpretación de los resultados es directa\nEl acceso a alcohol causa un incremento de casi 11 muertes adicionales por cada 100,000 habitantes y este efecto es estadísticamente significativo\nNo hay efectos donde no esperaríamos tenerlos"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe",
+    "href": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nConsideremos el siguiente problema de adopción escalonada\n\nObservamos \\(T=5\\) periodos\n\\(k\\) denota la unidad tratada temprano en \\(t=2\\)\n\\(l\\) denota la unidad tratada tarde en \\(t=4%\\)\nDenotamos \\(\\bar{D}_k=0.8\\) al tiempo que \\(k\\) pasa tratado\nSimilarmente, \\(\\bar{D}_l=0.4\\)\n\\(n_k\\) es el número de unidades tratadas temprano\n\\(n_l\\) es el número de unidades tratadas tarde\n\\(n_U\\) es el número de unidades nunca tratadas\nPara cualesquiera dos grupos \\(a\\) y \\(b\\), \\(a_{ab}=\\frac{n_a}{n_a+n_b}\\)"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-1",
+    "href": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-1",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-2",
+    "href": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-2",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nTenemos cuatro posibles comparaciones \\(2x2\\)\n\nLas comparaciones con las unidades nunca tratadas:\n\n\\[\\hat{\\beta}_{jU}=\\left(\\bar{y}_j^{POST(j)}-\\bar{y}_j^{PRE(j)}\\right)-\\left(\\bar{y}_U^{POST(j)}-\\bar{y}_U^{PRE(j)}\\right),\\;j=\\{k,l\\}\\]\n\nLa comparación entre \\(k\\) y \\(l\\) cuando \\(k\\) es tratada, usando los periodos antes de que \\(l\\) sea tratada\n\n\\[\\hat{\\beta}^{k}_{kl}=\\left(\\bar{y}_k^{MID(k,l)}-\\bar{y}_k^{PRE(k)}\\right)-\\left(\\bar{y}_l^{MID(k,l)}-\\bar{y}_l^{PRE(k)}\\right)\\]\n\nLa comparación entre \\(l\\) y \\(k\\) cuando \\(l\\) es tratada, usando los periodos después de que \\(k\\) fue tratada\n\n\\[\\hat{\\beta}^{l}_{kl}=\\left(\\bar{y}_l^{POST(l)}-\\bar{y}_l^{MID(k,l)}\\right)-\\left(\\bar{y}_k^{POST(l)}-\\bar{y}_k^{MID(k,l)}\\right)\\]"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-3",
+    "href": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-3",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-4",
+    "href": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-4",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nDenotamos \\(D_{it}=1\\) cuando la unidad \\(i\\) es tratada en el periodo \\(0\\)\nPor el teorema de Frisch-Waugh-Lovell sabemos que podemos purgar de efectos fijos a la variable \\(D_{it}\\)\nEs decir, podemos estimar por MCO:\n\\[D_{it}=\\sum_t \\gamma_t P_t + \\sum_i \\pi S_i + \\varepsilon_{it}\\]\ndonde \\(P_t\\) son dummies temporales y \\(S_i\\) son dummies individuales\nLuego obtenemos\n\\[\\tilde{D}_{it}=D_{it}-\\hat{D}_{it}\\] Y entonces el estimador de TWFE puede escribirse como el coeficiente de una regresión bivariada:\n\\[\\hat{\\beta}_{DD}=\\frac{\\hat{C}(y_{it}, \\tilde{D}_{it})}{\\hat{V}^D}\\]"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-5",
+    "href": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-5",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nGoodman-Bacon (2021) muestra que el estimador de TWFE puede descomponerse como:\n\\[\\hat{\\beta}_{DD}=s_{kU}\\hat{\\beta}_{kU}+s_{lU}\\hat{\\beta}_{lU}+s_{kl}^k\\hat{\\beta}_{kl}^k+s_{kl}^l\\hat{\\beta}_{kl}^l\\]"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-son-los-pesos",
+    "href": "diapositivas/did.knit.html#qué-son-los-pesos",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nGoodman-Bacon (2021) muestra que los pesos están dados por:\n\n\\(s_{kU}=\\frac{(n_k+n_U)^2\\hat{V}_{kU}^D}{\\hat{V}^D}\\)\n\\(s_{lU}=\\frac{(n_l+n_U)^2\\hat{V}_{lU}^D}{\\hat{V}^D}\\)\n\\(s_{kl}^k=\\frac{[(n_k+n_l)(1-\\bar{D}_l)]^2\\hat{V}_{kl}^{D,k}}{\\hat{V}^D}\\)\n\\(s_{kl}^l=\\frac{[(n_k+n_l)\\bar{D}_k]^2\\hat{V}_{kl}^{D,l}}{\\hat{V}^D}\\)\n\nEn resumen, los pesos están dados por\n\\[pesos = \\frac{(\\text{participación de la submuestra})^2(\\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}\\]"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-son-los-pesos-1",
+    "href": "diapositivas/did.knit.html#qué-son-los-pesos-1",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nLas varianzas del tratamiento en la submuestra tienen las siguientes formas:\n\n\\(s_{kU}=\\frac{(n_k+n_U)^2\\hat{V}_{kU}^D}{\\hat{V}^D}=\\frac{(n_k+n_U)^2n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)}{\\hat{V}^D}\\)\n\\(s_{lU}=\\frac{(n_l+n_U)^2\\hat{V}_{lU}^D}{\\hat{V}^D}=\\frac{(n_l+n_U)^2n_{lU}(1-n_{lU})\\bar{D}_l(1-\\bar{D}_l)}{\\hat{V}^D}\\)\n\\(s_{kl}^k=\\frac{[(n_k+n_l)(1-\\bar{D}_l)]^2\\hat{V}_{kl}^{D,k}}{\\hat{V}^D}=\\frac{[(n_k+n_l)(1-\\bar{D}_l)]^2n_{kl}(1-n_{kl}) \\frac{\\bar{D}_k-\\bar{D}_l}{1-\\bar{D}_l}\\frac{1-\\bar{D}_k}{1-\\bar{D}_l}}{\\hat{V}^D}\\)\n\\(s_{kl}^l=\\frac{[(n_k+n_l)\\bar{D}_k]^2\\hat{V}_{kl}^{D,l}}{\\hat{V}^D}=\\frac{[(n_k+n_l)\\bar{D}_k]^2n_{kl}(1-n_{kl})\\frac{\\bar{D}_l}{\\bar{D}_k}\\frac{\\bar{D}_k-\\bar{D}_l}{\\bar{D}_k}}{\\hat{V}^D}\\)"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-son-los-pesos-2",
+    "href": "diapositivas/did.knit.html#qué-son-los-pesos-2",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nPongamos atención a la varianza que entra en uno de los pesos:\n\\[\\hat{V}_{kU}^D=n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)\\]\nRecordemos que \\(\\bar{D}_k\\) indica la fracción del tiempo del panel que \\(k\\) permanece tratado\nEntonces, esta varianza es más grande en tanto"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#estimador-de-callaway-santanna-1",
+    "href": "diapositivas/did.knit.html#estimador-de-callaway-santanna-1",
+    "title": "Diferencia en diferencias",
+    "section": "Estimador de Callaway & Sant’Anna",
+    "text": "Estimador de Callaway & Sant’Anna\nEl estimador de Callaway & Sant’Anna (2021) es una forma muy sencilla de explotar la información del desfase del tratamiento\nAdemás permite una presentación muy intuitiva de los efectos de tratamiento\nEsencialmente consiste en definir una serie de cohortes de unidades y estimar los impactos para cada cohorte\nLuego podemos agregar los impactos por cohorte o presentar la dinámica de los impactos de forma gráfica"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#definiciones",
+    "href": "diapositivas/did.knit.html#definiciones",
+    "title": "Diferencia en diferencias",
+    "section": "Definiciones",
+    "text": "Definiciones\n\n\\(G_i=\\min\\{t:D_{it}=1\\}\\) es el primer periodo en que \\(i\\) es tratado\n\\(G_i=\\infty\\) indoca que \\(i\\) nunca es tratado\n\\(t=1,\\ldots,T\\) son los periodos\n\\(D_{it}=1\\;\\forall\\;t\\geq G_i\\) indica tratamiento absorbente\n\nDefinamos el efecto del tratamiento al periodo \\(t\\) para el cohorte que empezó a ser tratado en \\(g\\):\n\\[ATT(g,t)=E(y_{it}(g)-y_{it}(\\infty)|G_i=g)\\] Por ejemplo, \\(ATT(2014,2016)\\) es el efecto del tratamiento en 2016 para aquellos tratados empezando en 2014"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#supuestos",
+    "href": "diapositivas/did.knit.html#supuestos",
+    "title": "Diferencia en diferencias",
+    "section": "Supuestos",
+    "text": "Supuestos\nTendencias paralelas en el contexto escalonado\n\\[E(y_{it}(\\infty)-y_{it'}(\\infty)|G_i=g)=E(y_{it}(\\infty)-y_{it'}(\\infty)|G_i=g')\\quad\\forall\\;t\\neq t',\\; g\\neq q'\\]\nEste supuesto indica que en el estado contrafactual de nunca haber sido tratados, dos grupos tratados en dos momentos diferentes \\(g\\) y \\(g'\\) habrían tenido una trayectoria igual entre los periodos \\(t\\) y \\(t'\\)\nTendencias paralelas en el contexto escalonado (a)\nModifica el supuesto anterior pero \\(\\forall \\;t,t'\\geq g_{min}-1\\) donde \\(g_{min}=\\min G\\) es el primer periodo en donde alguna unidad es tratada (Callaway y Sant’Anna solo usan este supuesto más débil)"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#supuestos-1",
+    "href": "diapositivas/did.knit.html#supuestos-1",
+    "title": "Diferencia en diferencias",
+    "section": "Supuestos",
+    "text": "Supuestos\nNo anticipación en el contexto escalonado\n\\[y_{it}(g)=y_{it}(\\infty)\\quad \\forall\\;i \\;\\text{y}\\;\\forall\\;t&lt;g\\]"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#estimador-de-callaway-santanna-2",
+    "href": "diapositivas/did.knit.html#estimador-de-callaway-santanna-2",
+    "title": "Diferencia en diferencias",
+    "section": "Estimador de Callaway & Sant’Anna",
+    "text": "Estimador de Callaway & Sant’Anna\nEl estimador de Callaway & Sant’Anna (2021) se define como:\n\\[ATT(g,t)=E(y_{it}-y_{i,g-1}|G_i=g)-E(y_{it}-y_{i,g-1}|G_i\\in\\mathcal{G}_{comp})\\] Queremos comparar el valor de la variable de impacto entre el periodo \\(g-1\\) y el \\(t\\) para el grupo que fue tratado en \\(g\\) con algún grupo de comparación denominado \\(\\mathcal{G}_{comp}\\)\nSustituyendo por el análogo muestral:\n\\[\\hat{ATT}(g,t)=\\frac{1}{N_g}\\sum_{i:\\;G_i=g}(y_{it}-y_{i,g-1})-\\frac{1}{N_{\\mathcal{G}_{comp}}}\\sum_{i\\;G_i\\in \\mathcal{G}_{comp}}(y_{it}-y_{i,g-1})\\] ## Grupo de comparación\n¿Qué es \\(\\mathcal{G}_{comp}\\)?\n\n\\(\\mathcal{G}_{comp}=\\{\\infty \\}\\): aquellas unidades nunca tratadas\n\\(\\mathcal{G}_{comp}=\\{g':g'&gt;t \\}\\): aquellas unidades aún no tratadas al periodo \\(t\\)"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#reportar-resultados",
+    "href": "diapositivas/did.knit.html#reportar-resultados",
+    "title": "Diferencia en diferencias",
+    "section": "Reportar resultados",
+    "text": "Reportar resultados\nSi tenemos pocos periodos y cohortes puede ser práctico reportar todos los \\(\\hat{ATT}(g,t)\\)\nTambién podemos construir medidas agregadas:\n\\[\\theta = \\sum_{g\\in\\mathcal{G}}\\sum_{t=2}^{\\mathcal{T}}w(g,t)ATT(g,t)\\] ## Ventajas del estimador\nToma en cuenta la heterogeneidad de los efectos de tratamiento\nLos pesos son especificados por el investigador y no mecánicamente con en TWFE\nHace explícito el grupo de comparación (nunca tratados o aún no tratados)"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-nos-dice-la-descomposición",
+    "href": "diapositivas/did.html#qué-nos-dice-la-descomposición",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué nos dice la descomposición?",
+    "text": "¿Qué nos dice la descomposición?\nTodos los grupos funcionan como controles (algunas veces)\nLos pesos en cada comparación \\(2x2\\) dependen del tamaño de la muestra usada para estimarlos y del tiempo que las unidades permanecen tratadas\nEl efecto estimado se modificaría solo por agregar más años al final del panel\nLos términos que dominen pueden incluso cambiar el signo del efecto estimado\nGoodman-Bacon (2021) muestra que, en general usar TWFE solo recupera un efecto de tratamiento bajo supuestos muy fuertes, el más crucial, bajo efectos de tratamiento que no varían en el tiempo (no hay efectos dinámicos)"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-son-los-pesos-4",
+    "href": "diapositivas/did.html#qué-son-los-pesos-4",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nEn resumen, los pesos están dados por\n\\[pesos = \\frac{(\\text{participación de la submuestra})^2(\\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}\\]"
+  },
+  {
+    "objectID": "diapositivas/did.html#formas-de-agregación",
+    "href": "diapositivas/did.html#formas-de-agregación",
+    "title": "Diferencia en diferencias",
+    "section": "Formas de agregación",
+    "text": "Formas de agregación\nLa notación usada en el artículo es densa pero en resumen, algunas agregaciones posibles son:\nEfecto de tratamiento por duración de exposición\n\nPodemos calcular \\(\\theta(e)\\), el efecto promedio \\(e\\) periodos después del tratamiento, donde \\(e=t-g\\) es el tiempo que ocurre desde que se realizó el tratamiento\nPodemos hacer un gráfico de \\(\\theta(e)\\)\n\nEfecto de tratamiento por grupo o cohorte\n\nLo llamamos \\(\\theta(\\tilde{g})\\) y nos permite conocer si el efecto del tratamiento es distinto para cohortes que fueron tratados temprano o tarde\n\nEfecto de tratamiento acumulado\n\nLo llamamos \\(\\theta(\\tilde{t})\\) y lo definimos como el efecto promedio por participar en el tratamiento hasta una fecha dada \\(\\tilde{t}\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#ventajas-del-estimador",
+    "href": "diapositivas/did.html#ventajas-del-estimador",
+    "title": "Diferencia en diferencias",
+    "section": "Ventajas del estimador",
+    "text": "Ventajas del estimador\nToma en cuenta la heterogeneidad de los efectos de tratamiento\nLos pesos son especificados por el investigador y no mecánicamente con en TWFE\nHace explícito el grupo de comparación (nunca tratados o aún no tratados)"
   }
 ]

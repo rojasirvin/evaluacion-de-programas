@@ -831,6 +831,192 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <li><p>El acceso a alcohol causa un incremento de casi 11 muertes adicionales por cada 100,000 habitantes y este efecto es estadísticamente significativo</p></li>
 <li><p>No hay efectos donde no esperaríamos tenerlos</p></li>
 </ul>
+</section></section>
+<section>
+<section id="descomposición-de-goodman-bacon" class="title-slide slide level1 center">
+<h1>Descomposición de Goodman-Bacon</h1>
+
+</section>
+<section id="qué-hace-el-estimador-de-twfe" class="slide level2">
+<h2>¿Qué hace el estimador de TWFE?</h2>
+<p>Consideremos el siguiente problema de adopción escalonada</p>
+<ul>
+<li>Observamos <span class="math inline">\(T\)</span> periodos</li>
+<li><span class="math inline">\(k\)</span> denota la unidad tratada temprano</li>
+<li><span class="math inline">\(l\)</span> denota la unidad tratada tarde</li>
+<li>Denotamos <span class="math inline">\(\bar{D}_k\)</span> al tiempo que <span class="math inline">\(k\)</span> pasa tratado</li>
+<li>Similarmente, <span class="math inline">\(\bar{D}_l\)</span></li>
+<li><span class="math inline">\(n_k\)</span> es el número de unidades tratadas temprano</li>
+<li><span class="math inline">\(n_l\)</span> es el número de unidades tratadas tarde</li>
+<li><span class="math inline">\(n_U\)</span> es el número de unidades nunca tratadas</li>
+<li>Para cualesquiera dos grupos <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, <span class="math inline">\(a_{ab}=\frac{n_a}{n_a+n_b}\)</span></li>
+</ul>
+</section>
+<section id="qué-hace-el-estimador-de-twfe-1" class="slide level2">
+<h2>¿Qué hace el estimador de TWFE?</h2>
+
+<img data-src="gb-decomposition-a.png" width="847" class="r-stretch"></section>
+<section id="qué-hace-el-estimador-de-twfe-2" class="slide level2">
+<h2>¿Qué hace el estimador de TWFE?</h2>
+<p>Tenemos cuatro posibles comparaciones <span class="math inline">\(2x2\)</span></p>
+<ul>
+<li>Las comparaciones con las unidades nunca tratadas:</li>
+</ul>
+<p><span class="math display">\[\hat{\beta}_{jU}=\left(\bar{y}_j^{POST(j)}-\bar{y}_j^{PRE(j)}\right)-\left(\bar{y}_U^{POST(j)}-\bar{y}_U^{PRE(j)}\right),\;j=\{k,l\}\]</span></p>
+<ul>
+<li>La comparación entre <span class="math inline">\(k\)</span> y <span class="math inline">\(l\)</span> cuando <span class="math inline">\(k\)</span> es tratada, usando los periodos antes de que <span class="math inline">\(l\)</span> sea tratada</li>
+</ul>
+<p><span class="math display">\[\hat{\beta}^{k}_{kl}=\left(\bar{y}_k^{MID(k,l)}-\bar{y}_k^{PRE(k)}\right)-\left(\bar{y}_l^{MID(k,l)}-\bar{y}_l^{PRE(k)}\right)\]</span></p>
+<ul>
+<li>La comparación entre <span class="math inline">\(l\)</span> y <span class="math inline">\(k\)</span> cuando <span class="math inline">\(l\)</span> es tratada, usando los periodos después de que <span class="math inline">\(k\)</span> fue tratada</li>
+</ul>
+<p><span class="math display">\[\hat{\beta}^{l}_{kl}=\left(\bar{y}_l^{POST(l)}-\bar{y}_l^{MID(k,l)}\right)-\left(\bar{y}_k^{POST(l)}-\bar{y}_k^{MID(k,l)}\right)\]</span></p>
+</section>
+<section id="qué-hace-el-estimador-de-twfe-3" class="slide level2">
+<h2>¿Qué hace el estimador de TWFE?</h2>
+
+<img data-src="gb-decomposition-b.png" width="1036" class="r-stretch"></section>
+<section id="qué-hace-el-estimador-de-twfe-4" class="slide level2">
+<h2>¿Qué hace el estimador de TWFE?</h2>
+<p>Denotamos <span class="math inline">\(D_{it}=1\)</span> cuando la unidad <span class="math inline">\(i\)</span> es tratada en el periodo <span class="math inline">\(0\)</span></p>
+<p>Por el teorema de Frisch-Waugh-Lovell sabemos que podemos <em>purgar</em> de efectos fijos a la variable <span class="math inline">\(D_{it}\)</span></p>
+<p>Es decir, podemos estimar por MCO:</p>
+<p><span class="math display">\[D_{it}=\sum_t \gamma_t P_t + \sum_i \pi S_i + \varepsilon_{it}\]</span></p>
+<p>donde <span class="math inline">\(P_t\)</span> son dummies temporales y <span class="math inline">\(S_i\)</span> son dummies individuales</p>
+<p>Luego obtenemos</p>
+<p><span class="math display">\[\tilde{D}_{it}=D_{it}-\hat{D}_{it}\]</span> Y entonces el estimador de TWFE puede escribirse como el coeficiente de una regresión bivariada:</p>
+<p><span class="math display">\[\hat{\beta}_{DD}=\frac{\hat{C}(y_{it}, \tilde{D}_{it})}{\hat{V}^D}\]</span> <span class="math inline">\(\hat{V}^D\)</span> es la varianza de la variable de tratamiento <em>purgada</em> de efectos fijos</p>
+</section>
+<section id="qué-hace-el-estimador-de-twfe-5" class="slide level2">
+<h2>¿Qué hace el estimador de TWFE?</h2>
+<p>Goodman-Bacon (2021) muestra que el estimador de TWFE puede descomponerse como:</p>
+<p><span class="math display">\[\hat{\beta}_{DD}=s_{kU}\hat{\beta}_{kU}+s_{lU}\hat{\beta}_{lU}+s_{kl}^k\hat{\beta}_{kl}^k+s_{kl}^l\hat{\beta}_{kl}^l\]</span></p>
+</section>
+<section id="qué-son-los-pesos" class="slide level2">
+<h2>¿Qué son los pesos?</h2>
+<p>Goodman-Bacon (2021) muestra que los pesos están dados por:</p>
+<ul>
+<li><p><span class="math inline">\(s_{kU}=\frac{(n_k+n_U)^2\hat{V}_{kU}^D}{\hat{V}^D}\)</span></p></li>
+<li><p><span class="math inline">\(s_{lU}=\frac{(n_l+n_U)^2\hat{V}_{lU}^D}{\hat{V}^D}\)</span></p></li>
+<li><p><span class="math inline">\(s_{kl}^k=\frac{[(n_k+n_l)(1-\bar{D}_l)]^2\hat{V}_{kl}^{D,k}}{\hat{V}^D}\)</span></p></li>
+<li><p><span class="math inline">\(s_{kl}^l=\frac{[(n_k+n_l)\bar{D}_k]^2\hat{V}_{kl}^{D,l}}{\hat{V}^D}\)</span></p></li>
+</ul>
+</section>
+<section id="qué-son-los-pesos-1" class="slide level2">
+<h2>¿Qué son los pesos?</h2>
+<p>Las varianzas del tratamiento en la submuestra tienen las siguientes formas:</p>
+<ul>
+<li><p><span class="math inline">\(s_{kU}=\frac{(n_k+n_U)^2\hat{V}_{kU}^D}{\hat{V}^D}=\frac{(n_k+n_U)^2n_{kU}(1-n_{kU})\bar{D}_k(1-\bar{D}_k)}{\hat{V}^D}\)</span></p></li>
+<li><p><span class="math inline">\(s_{lU}=\frac{(n_l+n_U)^2\hat{V}_{lU}^D}{\hat{V}^D}=\frac{(n_l+n_U)^2n_{lU}(1-n_{lU})\bar{D}_l(1-\bar{D}_l)}{\hat{V}^D}\)</span></p></li>
+<li><p><span class="math inline">\(s_{kl}^k=\frac{[(n_k+n_l)(1-\bar{D}_l)]^2\hat{V}_{kl}^{D,k}}{\hat{V}^D}=\frac{[(n_k+n_l)(1-\bar{D}_l)]^2n_{kl}(1-n_{kl}) \frac{\bar{D}_k-\bar{D}_l}{1-\bar{D}_l}\frac{1-\bar{D}_k}{1-\bar{D}_l}}{\hat{V}^D}\)</span></p></li>
+<li><p><span class="math inline">\(s_{kl}^l=\frac{[(n_k+n_l)\bar{D}_k]^2\hat{V}_{kl}^{D,l}}{\hat{V}^D}=\frac{[(n_k+n_l)\bar{D}_k]^2n_{kl}(1-n_{kl})\frac{\bar{D}_l}{\bar{D}_k}\frac{\bar{D}_k-\bar{D}_l}{\bar{D}_k}}{\hat{V}^D}\)</span></p></li>
+</ul>
+</section>
+<section id="qué-son-los-pesos-2" class="slide level2">
+<h2>¿Qué son los pesos?</h2>
+<p>Pongamos atención a uno de los pesos, <span class="math inline">\(s_{kU}\)</span> para ver la intuición</p>
+<p>Vimos que:</p>
+<p><span class="math display">\[s_{kU}=\frac{(n_k+n_U)^2\hat{V}_{kU}^D}{\hat{V}^D}=\frac{(n_k+n_U)^2n_{kU}(1-n_{kU})\bar{D}_k(1-\bar{D}_k)}{\hat{V}^D}\]</span></p>
+<p>Primero, noten que el peso depende de <span class="math inline">\((n_k+n_u)^2\)</span>, es decir, la parte de la submuestra que se usa para estimar cada comparación <span class="math inline">\(2x2\)</span></p>
+</section>
+<section id="qué-son-los-pesos-3" class="slide level2">
+<h2>¿Qué son los pesos?</h2>
+<p>Ahora veamos la varianza que entra en este peso:</p>
+<p><span class="math display">\[\hat{V}_{kU}^D=n_{kU}(1-n_{kU})\bar{D}_k(1-\bar{D}_k)\]</span> Una primer cosa que entra en juego es <span class="math inline">\(n_{kU}=\frac{n_k}{n_k+n_U}\)</span>, el peso relativo del grupo tratado temprano en la submuestra</p>
+<p>Recordemos que <span class="math inline">\(\bar{D}_k\)</span> indica la fracción del tiempo del panel que <span class="math inline">\(k\)</span> permanece tratado</p>
+<p>Dado que <span class="math inline">\(D_{it}\)</span> es binaria, <span class="math inline">\(\bar{D}_k(1-\bar{D}_k\)</span> es la varianza de <span class="math inline">\(D_{it}\)</span></p>
+<p>¿Qué es lo más grande que puede ser <span class="math inline">\(\bar{D}_k(1-\bar{D}_k)\)</span>?</p>
+<p>Claramente esto es a lo más 0.5, es decir, la contribución se maximiza cuando el tratamiento ocurre lo más cercano a la mitad del panel</p>
+</section>
+<section id="qué-son-los-pesos-4" class="slide level2">
+<h2>¿Qué son los pesos?</h2>
+<p>En resumen, los pesos están dados por</p>
+<p><span class="math display">\[pesos = \frac{(\text{participación de la submuestra})^2(\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}\]</span></p>
+</section>
+<section id="qué-nos-dice-la-descomposición" class="slide level2">
+<h2>¿Qué nos dice la descomposición?</h2>
+<p>Todos los grupos funcionan como <em>controles</em> (algunas veces)</p>
+<p>Los pesos en cada comparación <span class="math inline">\(2x2\)</span> dependen del tamaño de la muestra usada para estimarlos y del tiempo que las unidades permanecen tratadas</p>
+<p>El efecto estimado se modificaría solo por agregar más años al final del panel</p>
+<p>Los términos que dominen pueden incluso cambiar el signo del efecto estimado</p>
+<p>Goodman-Bacon (2021) muestra que, en general usar TWFE solo recupera un efecto de tratamiento bajo supuestos muy fuertes, el más crucial, bajo efectos de tratamiento que no varían en el tiempo (no hay efectos dinámicos)</p>
+</section></section>
+<section>
+<section id="estimador-de-callaway-santanna" class="title-slide slide level1 center">
+<h1>Estimador de Callaway &amp; Sant’Anna</h1>
+
+</section>
+<section id="estimador-de-callaway-santanna-1" class="slide level2">
+<h2>Estimador de Callaway &amp; Sant’Anna</h2>
+<p>El estimador de Callaway &amp; Sant’Anna (2021) es una forma muy sencilla de explotar la información del desfase del tratamiento</p>
+<p>Además permite una presentación muy intuitiva de los efectos de tratamiento</p>
+<p>Esencialmente consiste en definir una serie de cohortes de unidades y estimar los impactos para cada cohorte</p>
+<p>Luego podemos agregar los impactos por cohorte o presentar la dinámica de los impactos de forma gráfica</p>
+</section>
+<section id="definiciones" class="slide level2">
+<h2>Definiciones</h2>
+<ul>
+<li><span class="math inline">\(G_i=\min\{t:D_{it}=1\}\)</span> es el primer periodo en que <span class="math inline">\(i\)</span> es tratado</li>
+<li><span class="math inline">\(G_i=\infty\)</span> indoca que <span class="math inline">\(i\)</span> nunca es tratado</li>
+<li><span class="math inline">\(t=1,\ldots,T\)</span> son los periodos</li>
+<li><span class="math inline">\(D_{it}=1\;\forall\;t\geq G_i\)</span> indica tratamiento absorbente</li>
+</ul>
+<p>Definamos el efecto del tratamiento al periodo <span class="math inline">\(t\)</span> para el cohorte que empezó a ser tratado en <span class="math inline">\(g\)</span>:</p>
+<p><span class="math display">\[ATT(g,t)=E(y_{it}(g)-y_{it}(\infty)|G_i=g)\]</span> Por ejemplo, <span class="math inline">\(ATT(2014,2016)\)</span> es el efecto del tratamiento en 2016 para aquellos tratados empezando en 2014</p>
+</section>
+<section id="supuestos" class="slide level2">
+<h2>Supuestos</h2>
+<p><strong>Tendencias paralelas en el contexto escalonado</strong></p>
+<p><span class="math display">\[E(y_{it}(\infty)-y_{it'}(\infty)|G_i=g)=E(y_{it}(\infty)-y_{it'}(\infty)|G_i=g')\quad\forall\;t\neq t',\; g\neq q'\]</span></p>
+<p>Este supuesto indica que en el estado contrafactual de nunca haber sido tratados, dos grupos tratados en dos momentos diferentes <span class="math inline">\(g\)</span> y <span class="math inline">\(g'\)</span> habrían tenido una trayectoria igual entre los periodos <span class="math inline">\(t\)</span> y <span class="math inline">\(t'\)</span></p>
+<p><strong>Tendencias paralelas en el contexto escalonado (a)</strong></p>
+<p>Modifica el supuesto anterior pero <span class="math inline">\(\forall \;t,t'\geq g_{min}-1\)</span> donde <span class="math inline">\(g_{min}=\min G\)</span> es el primer periodo en donde alguna unidad es tratada (Callaway y Sant’Anna solo usan este supuesto más débil)</p>
+</section>
+<section id="supuestos-1" class="slide level2">
+<h2>Supuestos</h2>
+<p><strong>No anticipación en el contexto escalonado</strong></p>
+<p><span class="math display">\[y_{it}(g)=y_{it}(\infty)\quad \forall\;i \;\text{y}\;\forall\;t&lt;g\]</span></p>
+</section>
+<section id="estimador-de-callaway-santanna-2" class="slide level2">
+<h2>Estimador de Callaway &amp; Sant’Anna</h2>
+<p>El estimador de Callaway &amp; Sant’Anna (2021) se define como:</p>
+<p><span class="math display">\[ATT(g,t)=E(y_{it}-y_{i,g-1}|G_i=g)-E(y_{it}-y_{i,g-1}|G_i\in\mathcal{G}_{comp})\]</span> Queremos comparar el valor de la variable de impacto entre el periodo <span class="math inline">\(g-1\)</span> y el <span class="math inline">\(t\)</span> para el grupo que fue tratado en <span class="math inline">\(g\)</span> con algún grupo de comparación denominado <span class="math inline">\(\mathcal{G}_{comp}\)</span></p>
+<p>Sustituyendo por el análogo muestral:</p>
+<p><span class="math display">\[\hat{ATT}(g,t)=\frac{1}{N_g}\sum_{i:\;G_i=g}(y_{it}-y_{i,g-1})-\frac{1}{N_{\mathcal{G}_{comp}}}\sum_{i\;G_i\in \mathcal{G}_{comp}}(y_{it}-y_{i,g-1})\]</span></p>
+<p>¿Qué es <span class="math inline">\(\mathcal{G}_{comp}\)</span>?</p>
+<ul>
+<li><span class="math inline">\(\mathcal{G}_{comp}=\{\infty \}\)</span>: aquellas unidades nunca tratadas</li>
+<li><span class="math inline">\(\mathcal{G}_{comp}=\{g':g'&gt;t \}\)</span>: aquellas unidades aún no tratadas al periodo <span class="math inline">\(t\)</span></li>
+</ul>
+</section>
+<section id="reportar-resultados" class="slide level2">
+<h2>Reportar resultados</h2>
+<p>Si tenemos pocos periodos y cohortes puede ser práctico reportar todos los <span class="math inline">\(\hat{ATT}(g,t)\)</span></p>
+<p>También podemos construir medidas agregadas:</p>
+<p><span class="math display">\[\theta = \sum_{g\in\mathcal{G}}\sum_{t=2}^{\mathcal{T}}w(g,t)ATT(g,t)\]</span></p>
+</section>
+<section id="formas-de-agregación" class="slide level2">
+<h2>Formas de agregación</h2>
+<p>La notación usada en el artículo es densa pero en resumen, algunas agregaciones posibles son:</p>
+<p><strong>Efecto de tratamiento por duración de exposición</strong></p>
+<ul>
+<li><p>Podemos calcular <span class="math inline">\(\theta(e)\)</span>, el efecto promedio <span class="math inline">\(e\)</span> periodos después del tratamiento, donde <span class="math inline">\(e=t-g\)</span> es el tiempo que ocurre desde que se realizó el tratamiento</p></li>
+<li><p>Podemos hacer un gráfico de <span class="math inline">\(\theta(e)\)</span></p></li>
+</ul>
+<p><strong>Efecto de tratamiento por grupo o cohorte</strong></p>
+<ul>
+<li>Lo llamamos <span class="math inline">\(\theta(\tilde{g})\)</span> y nos permite conocer si el efecto del tratamiento es distinto para cohortes que fueron tratados temprano o tarde</li>
+</ul>
+<p><strong>Efecto de tratamiento acumulado</strong></p>
+<ul>
+<li>Lo llamamos <span class="math inline">\(\theta(\tilde{t})\)</span> y lo definimos como el efecto promedio por participar en el tratamiento hasta una fecha dada <span class="math inline">\(\tilde{t}\)</span></li>
+</ul>
+</section>
+<section id="ventajas-del-estimador" class="slide level2">
+<h2>Ventajas del estimador</h2>
+<p>Toma en cuenta la heterogeneidad de los efectos de tratamiento</p>
+<p>Los pesos son especificados por el investigador y no mecánicamente con en TWFE</p>
+<p>Hace explícito el grupo de comparación (nunca tratados o aún no tratados)</p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

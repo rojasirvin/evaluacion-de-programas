@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -337,15 +402,1561 @@ Irvin Rojas
 </div>
 
 </section>
-<section class="slide level2">
+<section id="sesgo-de-selección" class="slide level2">
+<h2>Sesgo de selección</h2>
+<p>Las razones que determinan la asignación del tratamiento pueden también determinar el valor de <span class="math inline">\(Y\)</span>. Entonces, una comparación observacional nos da el efecto del tratamiento más el sesgo de selección:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E(y_i|D_i=1)-E(y_i|D_i=0)=&amp;\overbrace{ E(y_{1i}|D_i=1)-E(y_{0i}|D_i=1)}^{\text{Efecto promedio en los tratados}}+\\&amp; \underbrace{E(y_{0i}|D_i=1)-E(y_{oi}|D_i=0)}_{\text{Sesgo de selección}}
+\end{aligned}
+\]</span></p>
+<p>Una forma de eliminar el sesgo de selección es mediante la asignación aleatoria del tratamiento, sin embargo, esto no siempre es posible por lo que recurrimos a supuestos para eliminar el sesgo de selección.</p>
+</section>
+<section id="supuesto-de-independencia" class="slide level2">
+<h2>Supuesto de independencia</h2>
+<p>El <em>supuesto de independencia</em> condicional dice que al <em>controlar</em> por una serie de características <span class="math inline">\(X_i\)</span>, el tratamiento es <em>como</em> si fuera aleatorio:</p>
+<p><span class="math display">\[
+E(Y(1)|D=1,X)=E(Y(1)|D=0,X)
+\]</span></p>
+<p><span class="math display">\[
+E(Y(0)|D=1,X)=E(Y(0)|D=0,X)
+\]</span></p>
+<p>Esto es, los valores esperados de <span class="math inline">\(Y(1)\)</span> y <span class="math inline">\(Y(0)\)</span> son iguales cuando nos fijamos en cada valor de <span class="math inline">\(X\)</span>.</p>
+</section>
+<section>
+<section id="matching-exacto" class="title-slide slide level1 center">
+<h1>Matching exacto</h1>
 
+</section>
+<section id="matching-exacto-1" class="slide level2">
+<h2>Matching exacto</h2>
+<p>Un estimador de matching exacto consiste en <em>emparejar</em> individuos tratados y no tratados para cada valor específico de las <span class="math inline">\(X\)</span> y luego tomar el promedio ponderado de las diferencias.</p>
+<p>Tenemos datos observacionales de individuos que recibieron y no recibieron un tratamiento y tenemos una serie de características discretizadas en <span class="math inline">\(X_i\)</span>.</p>
+<p>Asumimos que controlando por las características <span class="math inline">\(X_i\)</span> podemos obtener diferencias causales y luego hacemos un promedio de dichas diferencias.</p>
+</section>
+<section id="ejemplo-programa-hipotético-de-empleo" class="slide level2">
+<h2>Ejemplo: programa hipotético de empleo</h2>
+<p>Usemos <a href="https://mixtape.scunning.com/matching-and-subclassification.html?panelset=r-code">el ejemplo</a> de MT (The Mixtape):</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>read_data <span class="ot">&lt;-</span> <span class="cf">function</span>(df)</span>
+<span id="cb1-2"><a></a>{</span>
+<span id="cb1-3"><a></a>  full_path <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"https://raw.github.com/scunning1975/mixtape/master/"</span>, </span>
+<span id="cb1-4"><a></a>                     df, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb1-5"><a></a>  df <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(full_path)</span>
+<span id="cb1-6"><a></a>  <span class="fu">return</span>(df)</span>
+<span id="cb1-7"><a></a>}</span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a>training_example <span class="ot">&lt;-</span> <span class="fu">read_data</span>(<span class="st">"training_example.dta"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-10"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>)</span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a>data.treat <span class="ot">&lt;-</span> training_example <span class="sc">%&gt;%</span> </span>
+<span id="cb1-13"><a></a>  <span class="fu">select</span>(unit_treat, age_treat, earnings_treat) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-14"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-15"><a></a>  <span class="fu">mutate</span>(<span class="at">earnings_treat=</span><span class="fu">as.numeric</span>(earnings_treat))</span>
+<span id="cb1-16"><a></a></span>
+<span id="cb1-17"><a></a>data.control <span class="ot">&lt;-</span> training_example <span class="sc">%&gt;%</span> </span>
+<span id="cb1-18"><a></a>  <span class="fu">select</span>(unit_control, age_control, earnings_control)</span>
+<span id="cb1-19"><a></a></span>
+<span id="cb1-20"><a></a>data.matched <span class="ot">&lt;-</span> training_example <span class="sc">%&gt;%</span> </span>
+<span id="cb1-21"><a></a>  <span class="fu">select</span>(unit_matched, age_matched, earnings_matched) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-22"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+
+</div>
+</div>
+</section>
+<section id="ejemplo-programa-hipotético-de-empleo-1" class="slide level2">
+<h2>Ejemplo: programa hipotético de empleo</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Los individuos tratados:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>data.treat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 3
+   unit_treat age_treat earnings_treat
+        &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;
+ 1          1        18           9500
+ 2          2        29          12250
+ 3          3        24          11000
+ 4          4        27          11750
+ 5          5        33          13250
+ 6          6        22          10500
+ 7          7        19           9750
+ 8          8        20          10000
+ 9          9        21          10250
+10         10        30          12500</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Mientras que los no tratados:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>data.control</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 3
+   unit_control age_control earnings_control
+          &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
+ 1            1          20             8500
+ 2            2          27            10075
+ 3            3          21             8725
+ 4            4          39            12775
+ 5            5          38            12550
+ 6            6          29            10525
+ 7            7          39            12775
+ 8            8          33            11425
+ 9            9          24             9400
+10           10          30            10750
+11           11          33            11425
+12           12          36            12100
+13           13          22             8950
+14           14          18             8050
+15           15          43            13675
+16           16          39            12775
+17           17          19             8275
+18           18          30             9000
+19           19          51            15475
+20           20          48            14800</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparación-observacional" class="slide level2">
+<h2>Comparación observacional</h2>
+<p>Si hiciéramos diferencias simples obtendríamos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">mean</span>(data.treat<span class="sc">$</span>earnings_treat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11075</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">mean</span>(data.control<span class="sc">$</span>earnings_control)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11101.25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co">#Diferencia</span></span>
+<span id="cb10-2"><a></a><span class="fu">mean</span>(data.treat<span class="sc">$</span>earnings_treat)<span class="sc">-</span> <span class="fu">mean</span>(data.control<span class="sc">$</span>earnings_control)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -26.25</code></pre>
+</div>
+</div>
+<p>Parece que en el grupo de control ganan más (efecto de tratamiento negativo).</p>
+<p>El principal problema con esta diferencia es que sabemos que los ingresos crecen con la edad. Pero notemos que la muestra de no tratados tiene mayor edad promedio:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">mean</span>(data.treat<span class="sc">$</span>age_treat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">mean</span>(data.control<span class="sc">$</span>age_control)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 31.95</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co">#Diferencia</span></span>
+<span id="cb16-2"><a></a><span class="fu">mean</span>(data.treat<span class="sc">$</span>age_treat)<span class="sc">-</span> <span class="fu">mean</span>(data.control<span class="sc">$</span>age_control)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -7.65</code></pre>
+</div>
+</div>
+<p>Es decir, estaríamos <em>confundido</em> el efecto de la edad.</p>
+</section>
+<section id="muestra-emparejada" class="slide level2">
+<h2>Muestra emparejada</h2>
+<p>Construyamos la muestra apareada: para cada individuo en el grupo tratado, buscaremos uno en el de control que tenga la misma edad. Cuando le encontramos un individuo no tratado al tratado con la misma edad decimos que esa pareja hizo <em>match</em>.</p>
+<p>Por ejemplo, la primera unidad tratada, con 18 años y un ingreso de 9500 estaría emparejada con la unidad 14 del grupo de control, que tiene también 18 años y un ingreso de 9500. Para el individuo 18 construimos su ingreso contrafactual.</p>
+<p>Cuando hay varias unidades en el grupo de control que pueden ser empatadas con la de tratamiento, podemos construir el ingreso contrafactual calulando el promedio.Del grupo de control, los individuos 10 y 18 tienen 30 años, con ingresos 10750 y 9000, por lo que usamos el promedio (9875) para crear el contrafactual.</p>
+</section>
+<section id="muestra-emparejada-1" class="slide level2">
+<h2>Muestra emparejada</h2>
+<p>La muestra emparejada o contrafactual será:</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>data.matched</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 3
+   unit_matched age_matched earnings_matched
+          &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
+ 1            1          18             8050
+ 2            2          29            10525
+ 3            3          24             9400
+ 4            4          27            10075
+ 5            5          33            11425
+ 6            6          22             8950
+ 7            7          19             8275
+ 8            8          20             8500
+ 9            9          21             8725
+10           10          30             9875</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="muestra-emparejada-2" class="slide level2">
+<h2>Muestra emparejada</h2>
+<p>Noten que la edad es la misma entre los tratados y la muestra apareada:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Muestra de tratados:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">mean</span>(data.treat<span class="sc">$</span>age_treat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24.3</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Muestra emparejada:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">mean</span>(data.matched<span class="sc">$</span>age_matched)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24.3</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>En este caso, decimos que la edad <em>está balanceada</em>.</p>
+<p>Y entonces podemos calcular el efecto de tratamiento como la diferencia de ingresos entre los tratados y los no tratados en la muestra emparejada:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co">#Diferencia</span></span>
+<span id="cb24-2"><a></a><span class="fu">mean</span>(data.treat<span class="sc">$</span>earnings_treat)<span class="sc">-</span> <span class="fu">mean</span>(data.matched<span class="sc">$</span>earnings_matched)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1695</code></pre>
+</div>
+</div>
+<p>En este caso, encontramos un efecto positivo del programa de 1695 unidades monetarias.</p>
+</section>
+<section id="estimador-de-matching-exacto" class="slide level2">
+<h2>Estimador de matching exacto</h2>
+<p>Lo anterior nos permite definir el <strong>estimador de matching exacto del TOT</strong> como:</p>
+<p><span class="math display">\[\hat{\delta}_{TOT}=\frac{1}{N_T}\sum_{D_i=1}\left(Y_i-\left(\frac{1}{M}\sum_{m=1}^{M}Y_{jm(i)}\right)\right)\]</span></p>
+</section>
+<section id="importancia-del-soporte-común" class="slide level2">
+<h2>Importancia del soporte común</h2>
+<p>Observemos lo que ocurre con la distribución de edades en ambos grupos:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Para los tratados:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="fu">ggplot</span>(training_example, <span class="fu">aes</span>(<span class="at">x=</span>age_treat)) <span class="sc">+</span></span>
+<span id="cb26-2"><a></a>  <span class="fu">stat_bin</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="emparejamiento_files/figure-revealjs/grafica_tratados-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Mientras que para los no tratados:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">ggplot</span>(training_example, <span class="fu">aes</span>(<span class="at">x=</span>age_control)) <span class="sc">+</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="emparejamiento_files/figure-revealjs/grafica_notratados-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>El supuesto de traslape débil para identificar el TOT significa que para cada unidad tratada, hay al menos un no tratado. De otra forma, no podemos hacer la comparación.</p>
+</section>
+<section id="estimador-de-matching-exacto-1" class="slide level2">
+<h2>Estimador de matching exacto</h2>
+<ul>
+<li><p>Hasta aquí, solo hemos imputado el contrafactual para cada unidad en el grupo tratado</p></li>
+<li><p>Si podemos imputar también, para cada unidad no tratada, su correspondiente contrafactual tratado, podemos estimar el ATE</p></li>
+<li><p>Y un <strong>estimador de matching exacto del ATE</strong> sería:</p></li>
+</ul>
+<p><span class="math display">\[\hat{\delta}_{ATE}=\frac{1}{N}\sum_{i}^N(2D_i-1)\left(Y_i-\left(\frac{1}{M}\sum_{m=1}^{M}Y_{jm(i)}\right)\right)\]</span></p>
+</section>
+<section id="ejemplo-de-la-vida-real" class="slide level2">
+<h2>Ejemplo de la vida real</h2>
+<ul>
+<li><p>Tenemos varias características en <span class="math inline">\(X_i\)</span>, no solo la edad</p></li>
+<li><p>Esto hace que cada valor <span class="math inline">\(X_i=x_i\)</span> este representado por una <em>celda</em></p></li>
+<li><p><span class="math inline">\(X_i\)</span> incluye, por ejemplo, raza, año de solicitud de ingreso al programa, escolaridad, calificación en examen de aptitud, año de nacimiento (son las características del ejemplo que vermeos más adelante)</p></li>
+<li><p>Estas características definen <em>celdas</em> y dentro de cada celda tenemos tratados y no tratados</p></li>
+</ul>
+</section>
+<section id="efecto-del-tratamiento-con-matching-exacto" class="slide level2">
+<h2>Efecto del tratamiento con matching exacto</h2>
+<ul>
+<li>El TOT asumiendo inconfundibilidad:</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\delta^M=TOT&amp;=E\left\{ E(y_{1i}|X_i,D_i=1)-E(y_{0i}|X_i,D_i=0)|D_i=1\right\} \\
+&amp;=E\left\{\delta_X | D_i=1\right\}
+\end{aligned}
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\delta_X\)</span> es la diferencia de ingresos promedio entre estados de tratamiento para cada valor de <span class="math inline">\(X_i\)</span></p></li>
+<li><p>Con <span class="math inline">\(X_i\)</span> discreta y con una muestra disponible:</p></li>
+</ul>
+<p><span class="math display">\[
+\delta^M=\sum_{x} \delta_x P(X_i=x|D_i=1)
+\]</span></p>
+</section>
+<section id="ejemplo-veteranos-de-guerra-en-estados-unidos" class="slide level2">
+<h2>Ejemplo: veteranos de guerra en Estados Unidos</h2>
+<ul>
+<li><p><a href="https://www.jstor.org/stable/2998558">Angrist (1998)</a>, Estimating the Labor Market Impact of Voluntary Military Service Using Social Security Data on Military Applicants</p></li>
+<li><p>El tratamiento es haber servido en el ejercito, algo que claramente tiene autoselección</p></li>
+<li><p>Se trata de estimar el efecto en el ingreso</p></li>
+<li><p>Los autores construyen celdas de acuerdo a las características antes mencionadas</p>
+<ul>
+<li>Raza, año de solicitud de ingreso al programa, escolaridad, calificación en examen de aptitud, año de nacimiento</li>
+</ul></li>
+</ul>
+</section>
+<section id="ejemplo-veteranos-de-guerra-en-estados-unidos-1" class="slide level2">
+<h2>Ejemplo: veteranos de guerra en Estados Unidos</h2>
+<ul>
+<li><p>Efectos estimados usando distintas metodologías</p></li>
+<li><p>Los impactos estimados usando el matching exacto se encuentran bajo la columna <em>Controlled contrast</em></p></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ExactMatching_effects_table_a.jpg" width="1021"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ExactMatching_effects_table_b.jpg" width="1018"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplo-veteranos-de-guerra-en-estados-unidos-2" class="slide level2">
+<h2>Ejemplo: veteranos de guerra en Estados Unidos</h2>
+<ul>
+<li><p>Noten que la columna (2) muestra lo que se hubiera concluido si solo se comparan diferencias de medias</p></li>
+<li><p>Antes de 1980, las diferencias eran muy pequeñas (cero en términos prácticos)</p></li>
+<li><p>En esta aplicación esta comparación llevaría a conclusiones incorrectas</p></li>
+<li><p>Además, las diferencias para no-blancos y blancos son distintas</p></li>
+<li><p>Hay un pico en los afectos alrededor de 1982</p></li>
+<li><p>En esta aplicación, los resultados por <em>matching</em> y regresión son muy parecidos hasta 1984</p></li>
+<li><p>La conclusión es que existe evidencia de efectos negativos en los ingresos por haber servido en el ejército en los blancos y efectos positivos para los individuos de otras razas</p></li>
+</ul>
+</section>
+<section id="ejemplo-veteranos-de-guerra-en-estados-unidos-3" class="slide level2">
+<h2>Ejemplo: veteranos de guerra en Estados Unidos</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Para personas identificadas como blancas:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ExactMatching_effects_graph_a.jpg" width="1127"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Para personas identificadas como no blancas:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="ExactMatching_effects_graph_b.jpg" width="1129"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="propensity-score-matching" class="title-slide slide level1 center">
+<h1>Propensity Score Matching</h1>
+
+</section>
+<section id="métodos-de-apareamiento-o-matching" class="slide level2">
+<h2>Métodos de apareamiento o <em>matching</em></h2>
+<ul>
+<li><p>Los métodos apareamiento o <em>matching</em> recaen en el <strong>supuesto de independencia condicional</strong></p></li>
+<li><p>Al <em>controlar</em> por una serie de características <span class="math inline">\(X_i\)</span>, el tratamiento es <em>como</em> si fuera aleatorio</p></li>
+<li><p>Podemos escribir</p></li>
+</ul>
+<p><span class="math display">\[
+E(Y(1)|D=1,X)=E(Y(1)|D=0,X)
+\]</span></p>
+<p><span class="math display">\[
+E(Y(0)|D=1,X)=E(Y(0)|D=0,X)
+\]</span></p>
+<ul>
+<li>Esto es, los valores esperados de <span class="math inline">\(Y(1)\)</span> y <span class="math inline">\(Y(0)\)</span> son iguales cuando nos fijamos en cada valor de <span class="math inline">\(X\)</span></li>
+</ul>
+</section>
+<section id="supuestos-de-identificación-del-tot" class="slide level2">
+<h2>Supuestos de identificación del TOT</h2>
+<p><strong>Supuesto 1. Inconfundibilidad</strong></p>
+<p><span class="math display">\[
+Y(0), Y(1) \perp  D|X
+\]</span></p>
+<ul>
+<li><p>Dado un conjunto de variables <span class="math inline">\(X\)</span>, los resultados potenciales son independientes del tratamiento</p></li>
+<li><p><span class="math inline">\(X\)</span> debe incluir todas las variables que determinan el tratamiento y los resultados potenciales</p></li>
+</ul>
+<p><strong>Supuesto 2: Traslape</strong></p>
+<p><span class="math display">\[
+0&lt; P(D=1|X) &lt; 1
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(X\)</span> no predice <span class="math inline">\(D\)</span> perfectamente</p></li>
+<li><p>Personas con el mismo <span class="math inline">\(X\)</span> tienen probabilidad positiva de ser tratados y no tratados</p></li>
+</ul>
+</section>
+<section id="supuestos-de-identificación-del-tot-1" class="slide level2">
+<h2>Supuestos de identificación del TOT</h2>
+<ul>
+<li><p>Cuando se cumple <strong>Supuesto 1</strong> <span class="math inline">\(+\)</span> <strong>Supuesto 2</strong> se conoce como <strong>ignorabilidad fuerte</strong></p></li>
+<li><p>Heckman (1998) muestra que estás condiciones son demasiado estrictas</p></li>
+<li><p>Para identificar el <span class="math inline">\(TOT\)</span> es suficiente:</p></li>
+<li><p><strong>Supuesto 1a. Inconfundibilidad en el control</strong></p></li>
+</ul>
+<p><span class="math display">\[
+Y(0) \perp  D | X
+\]</span></p>
+<ul>
+<li><strong>Supuesto 2a. Traslape débil</strong></li>
+</ul>
+<p><span class="math display">\[
+P(D=1|X) &lt; 1
+\]</span></p>
+</section>
+<section id="matching-exacto-es-impráctico" class="slide level2">
+<h2>Matching exacto es impráctico</h2>
+<ul>
+<li><p>En la práctica es difícil manejar problemas en espacios de múltiples dimensiones: <strong>maldición de la dimensionalidad</strong></p></li>
+<li><p>El problema de la maldición de la dimensionalidad se exacerba con el tamaño limitado de las bases de datos</p></li>
+<li><p>Si <span class="math inline">\(X\)</span> tuviera solo indicadores binarios, el número de posibles combinaciones sería <span class="math inline">\(2^s\)</span></p></li>
+<li><p>Por ejemplo, si solo tuviéramos <span class="math inline">\(X_1=\{\text{menor de 35 años}, \text{con 35 años o más}\}\)</span>, <span class="math inline">\(X_2=\{\text{más que preparatoria}, \text{menos que preparatoria}\}\)</span>, <span class="math inline">\(X_3=\{\text{indígena}, \text{no indígena}\}\)</span>, tendríamos que hacer ocho comparaciones:</p>
+<ul>
+<li>menor de 35 años, más que preparatoria, indígena</li>
+<li>menor de 35 años, más que preparatoria, no indígena</li>
+<li>…</li>
+<li>con 35 años o más, menos que preparatoria, no indígena</li>
+</ul></li>
+<li><p>Pero Si <span class="math inline">\(X\)</span> incluye muchas variables, algunas tomando muchos valores, esto se vuelve imposible de realizar</p></li>
+</ul>
+</section>
+<section id="maldición-de-la-dimensionalidad" class="slide level2">
+<h2>Maldición de la dimensionalidad</h2>
+<ul>
+<li><p>El requerimiento de soporte común significa que debemos tener tratados y no tratados para cada valor de <span class="math inline">\(X_i\)</span> para hacer comparaciónes</p></li>
+<li><p>Cuando <span class="math inline">\(X_i\)</span> tiene muchas dimensiones, resulta un problema de <em>escasez</em> o <em>sparseness</em></p></li>
+<li><p>Algunas celdas estarán vacías, o solo tendrán tratados, o solo tendrán no tratados</p></li>
+<li><p>Si tenemos unidades en todas las celdas de control, <strong>aún podemos estimar el TOT</strong></p>
+<ul>
+<li><p>Noten que cuando completamos la pase pareada en el ejemplo hipotético siempre encontramos a alguien en el grupo de control para asignárselo a un tratado</p></li>
+<li><p>Pero al revés, no siempre es posible: por ejemplo, no hay ningún tratado de 48 años</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="teorema-del-ps-rosenbaum-y-rubin-1983" class="slide level2">
+<h2>Teorema del PS (Rosenbaum y Rubin, 1983)</h2>
+<ul>
+<li><p><strong>Corolario 1. Inconfundibilidad dado el propensity score</strong></p></li>
+<li><p>El <strong>Supuesto 1</strong> implica:</p></li>
+</ul>
+<p><span class="math display">\[
+Y(0), Y(1) \perp  D|P(X)
+\]</span></p>
+<p>donde <span class="math inline">\(P(X)=P(D=1|X)\)</span> es la probabilidad de ser tratado dado un conjunto de covariables <span class="math inline">\(X\)</span>, el <em>propensity score</em> o PS</p>
+</section>
+<section id="efecto-del-tratamiento" class="slide level2">
+<h2>Efecto del tratamiento</h2>
+<ul>
+<li>El efecto del tratamiento, bajo el supuesto de inconfundibilidad dado el propensity score, es:</li>
+</ul>
+<p><span class="math display">\[
+TOT^{PSM}=E_{P(X)|D=1} \left(E(Y(1)|D=1, P(X))-E(Y(0)|D=0,P(X)) \right)
+\]</span></p>
+<ul>
+<li>El <span class="math inline">\(TOT\)</span> es la diferencia en la variable de resultados de los tratados y los no tratados pesada por la distribución del PS en los tratados</li>
+</ul>
+</section>
+<section id="estimación" class="slide level2">
+<h2>Estimación</h2>
+<ul>
+<li><p>Debemos por tanto primero calcular el PS</p></li>
+<li><p>Se empatan o se hace match de unidades que fueron tratadas con unidades que no lo fueron usando el PS</p></li>
+<li><p>Se mide la diferencia en la variable de resultados entre estos grupos</p></li>
+<li><p>Se hace un promedio ponderado de las diferencias</p></li>
+</ul>
+</section>
+<section id="implementación" class="slide level2">
+<h2>Implementación</h2>
+<ol type="1">
+<li><p>Estimación del PS</p></li>
+<li><p>Escoger el algoritmo de matching</p></li>
+<li><p>Comprobar la calidad del matching</p></li>
+<li><p>Estimar el <span class="math inline">\(TOT\)</span></p></li>
+</ol>
+</section>
+<section id="especificar-el-modelo-del-ps" class="slide level2">
+<h2>Especificar el modelo del PS</h2>
+<ul>
+<li><p>Se usa un modelo <em>probit</em> o <em>logit</em></p>
+<ul>
+<li><p><strong>Prueba y error</strong>. Maximizar la tasa clasificación de tratamientos y controles usando <span class="math inline">\(\bar{P}\)</span>, la proporción de tratamientos en la muestra</p></li>
+<li><p><strong>Significancia estadística</strong>. Usar solo las variables estadísticamente significativas, comenzando con un modelo muy básico</p></li>
+<li><p><strong>Validación cruzada</strong>. Comenzar con un modelo simple y agregar grupos de variables comparando las que reduzcan el error cuadrático promedio</p></li>
+</ul></li>
+<li><p>El propósito del PS es sobre todo generar balance de las variables en <span class="math inline">\(X\)</span></p></li>
+</ul>
+</section></section>
+<section>
+<section id="algoritmos-de-matching" class="title-slide slide level1 center">
+<h1>Algoritmos de matching</h1>
+
+</section>
+<section id="vecino-más-cercano" class="slide level2">
+<h2>Vecino más cercano</h2>
+<ul>
+<li><p>A cada individuo del grupo tratado se le asigna uno del grupo de comparación en términos del PS</p></li>
+<li><p>Puede hacerse con remplazo o sin remplazo</p></li>
+<li><p>Puede emplearse también sobremuestreo (<em>oversampling</em>), es decir, asignar más de un individuo del grupo de comparación</p></li>
+<li><p>Por ejemplo NN 5 significa que a cada individuo tratado se le asignan los cinco individuos del grupo no tratado con los PS estimados más cercanos</p></li>
+</ul>
+</section>
+<section id="vecino-más-cercano-1" class="slide level2">
+<h2>Vecino más cercano</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Tratados</th>
+<th style="text-align: center;"><span class="math inline">\(\hat{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">a</td>
+<td style="text-align: center;">0.031</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">0.042</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">c</td>
+<td style="text-align: center;">0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">No tratados</th>
+<th style="text-align: center;"><span class="math inline">\(\hat{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">0.034</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">0.068</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">0.21</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li><p>Con vecino más cercano, el individuo <span class="math inline">\(a\)</span> tratado estaría emparejado con el <span class="math inline">\(A\)</span> no tratado</p></li>
+<li><p>Si el emparejamiento es con reemplazo, <span class="math inline">\(A\)</span> podría ser usado otra vez y <span class="math inline">\(b\)</span> también sería emparejado con <span class="math inline">\(A\)</span></p></li>
+<li><p>Pero si el emparejamiento es sin reemplazo, <span class="math inline">\(A\)</span> ya no puede ser usado y a <span class="math inline">\(b\)</span> se le emparejaría con <span class="math inline">\(B\)</span></p></li>
+<li><p>Cuando hacemos el pareamiento sin reemplazo, debemos tener una muestra lo suficientemente grande</p></li>
+<li><p>El pareamiento sin reemplazo depende del orden en que se realice el procedimiento</p></li>
+</ul>
+</section>
+<section id="caliper-y-radio" class="slide level2">
+<h2>Caliper y radio</h2>
+<ul>
+<li><p>El método de vecino más cercano puede generar malos emparejamientos si el vecino más cercano está muy lejos en términos del PS</p></li>
+<li><p>Especificar un <em>caliper</em> consiste en definir una vecindad aceptable de matching (el caliper) y elegir solo el vecino más cercano dentro del caliper</p></li>
+<li><p>Con las funciones de R que usaremos más adelante, el <em>radio</em> consiste en definir cuántos individuos deberán ser apareados dado que están dentro del caliper</p></li>
+</ul>
+</section>
+<section id="caliper" class="slide level2">
+<h2>Caliper</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Tratados</th>
+<th style="text-align: center;"><span class="math inline">\(\hat{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">a</td>
+<td style="text-align: center;">0.031</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">b</td>
+<td style="text-align: center;">0.042</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">c</td>
+<td style="text-align: center;">0.07</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">d</td>
+<td style="text-align: center;">0.11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">No tratados</th>
+<th style="text-align: center;"><span class="math inline">\(\hat{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">0.034</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">0.068</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">0.21</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">0.40</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li><p>El primer paso es fijar el caliper, por ejemplo, de 0.1</p></li>
+<li><p>El caliper implica buscar al vecino más cercano dentro de una vecindad de 0.1</p></li>
+<li><p>En este ejemplo <span class="math inline">\(c\)</span> podría ser solo emparejado con <span class="math inline">\(B\)</span> si <span class="math inline">\(B\)</span> aún está disponible (porque no ha sido emparejado con nadie o porque aunque haya sido emparejado, el procedimiento se hace con reemplazo)</p></li>
+</ul>
+</section>
+<section id="caliper-con-sobremuestreo" class="slide level2">
+<h2>Caliper con sobremuestreo</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Tratados</th>
+<th style="text-align: center;"><span class="math inline">\(\hat{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">d</td>
+<td style="text-align: center;">0.31</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">e</td>
+<td style="text-align: center;">0.39</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">f</td>
+<td style="text-align: center;">0.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">g</td>
+<td style="text-align: center;">0.52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">h</td>
+<td style="text-align: center;">0.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">i</td>
+<td style="text-align: center;">0.62</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">No tratados</th>
+<th style="text-align: center;"><span class="math inline">\(\hat{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">0.27</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">S</td>
+<td style="text-align: center;">0.29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">0.33</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">U</td>
+<td style="text-align: center;">0.49</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">V</td>
+<td style="text-align: center;">0.57</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W</td>
+<td style="text-align: center;">0.61</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li><p>Si el caliper se realiza con sobremuestreo, con un caliper de 0.10 y 2 vecinos a <span class="math inline">\(g\)</span> se le asignarían <span class="math inline">\(U\)</span> y <span class="math inline">\(V\)</span> (si estuvieran disponibles)</p></li>
+<li><p>Es decir, dentro del caliper, los dos individuos con el PS más cercano</p></li>
+</ul>
+</section>
+<section id="radio" class="slide level2">
+<h2>Radio</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Tratados</th>
+<th style="text-align: center;"><span class="math inline">\(\hat{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">d</td>
+<td style="text-align: center;">0.31</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">e</td>
+<td style="text-align: center;">0.39</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">f</td>
+<td style="text-align: center;">0.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">g</td>
+<td style="text-align: center;">0.52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">h</td>
+<td style="text-align: center;">0.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">i</td>
+<td style="text-align: center;">0.62</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">No tratados</th>
+<th style="text-align: center;"><span class="math inline">\(\hat{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">0.27</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">S</td>
+<td style="text-align: center;">0.29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">0.33</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">U</td>
+<td style="text-align: center;">0.49</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">V</td>
+<td style="text-align: center;">0.57</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W</td>
+<td style="text-align: center;">0.61</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li><p>Pero si ahora implementamos radio con un caliper de 0.10, a <span class="math inline">\(g\)</span> se le asignarían <span class="math inline">\(U\)</span>, <span class="math inline">\(V\)</span> y <span class="math inline">\(W\)</span> (si estuvieran disponibles)</p></li>
+<li><p>Es decir, todos los individuos dentro del caliper</p></li>
+</ul>
+</section>
+<section id="estratificación" class="slide level2">
+<h2>Estratificación</h2>
+<ul>
+<li><p>Partir la región de soporte común en bloques de acuerdo al PS</p></li>
+<li><p>Estimar el efecto de tratamiento dentro de cada bloque</p></li>
+<li><p>No hay una regla sobre cuántos estratos usar. Se aconsajan generalmente cinco</p></li>
+<li><p>Dentro de cada estrato debe haber balance de los covariables</p></li>
+</ul>
+</section>
+<section id="kernel-y-métodos-no-paramétricos" class="slide level2">
+<h2>Kernel y métodos no paramétricos</h2>
+<ul>
+<li><p>Los métodos anteriores escogen solo unas cuantas unidades del grupo de comparación</p></li>
+<li><p>Podemos escoger usar muchas o incluso todas las observaciones del grupo de comparación y pesarlas apropiadamente</p></li>
+<li><p>Se reduce la varianza pues usamos más información, pero se sacrifica precisión pues se usan observaciones potencialmente muy distantes</p></li>
+<li><p>Se le otorga más peso a las observaciones más cercanas y menos a las más distantes</p></li>
+</ul>
+</section>
+<section id="kernel" class="slide level2">
+<h2>Kernel</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Tratados</th>
+<th style="text-align: center;"><span class="math inline">\(\hat{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">d</td>
+<td style="text-align: center;">0.31</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">e</td>
+<td style="text-align: center;">0.39</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">f</td>
+<td style="text-align: center;">0.44</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">g</td>
+<td style="text-align: center;">0.52</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">h</td>
+<td style="text-align: center;">0.55</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">i</td>
+<td style="text-align: center;">0.62</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">No tratados</th>
+<th style="text-align: center;"><span class="math inline">\(\hat{p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">0.27</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">S</td>
+<td style="text-align: center;">0.29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">0.33</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">U</td>
+<td style="text-align: center;">0.49</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">V</td>
+<td style="text-align: center;">0.57</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">W</td>
+<td style="text-align: center;">0.61</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li><p>Supongamos que estos son todos nuestros datos</p></li>
+<li><p>Con un emparejamiento por kernel, a <span class="math inline">\(d\)</span> lo compararemos con todos los individuos, desde <span class="math inline">\(R\)</span> hasta <span class="math inline">\(W\)</span></p></li>
+<li><p>La función kernel le dará más peso a <span class="math inline">\(R\)</span>, un poco menos a <span class="math inline">\(S\)</span> y así hasta darle muy poco o casi nada de peso a <span class="math inline">\(W\)</span></p></li>
+</ul>
+</section>
+<section id="qué-método-usar" class="slide level2">
+<h2>¿Qué método usar?</h2>
+<ul>
+<li><p>No hay un método claramente superior a todos los demás</p></li>
+<li><p>Más aún, el desempeño de cada método depende de cada aplicación</p></li>
+<li><p>La ruta más seguida es usar varios algoritmos y mostrar la robustez de los resultados a esta elección</p></li>
+</ul>
+</section>
+<section id="comprobar-empíricamente-los-supuestos" class="slide level2">
+<h2>Comprobar empíricamente los supuestos</h2>
+<ul>
+<li><p>El parámetro <span class="math inline">\(TOT\)</span> solo se calcula sobre la región de sporte común por lo que se debe verificar el traslape del PS calculado para los tratados y no tratados</p></li>
+<li><p>Otro de los teoremas de Rosenbaum y Rubin (1983) implica que</p></li>
+</ul>
+<p><span class="math display">\[
+X \perp  D|P(X)
+\]</span></p>
+<ul>
+<li><p>Esto es, que al controlar por el PS, las variables <span class="math inline">\(X\)</span> no deben proveer información sobre <span class="math inline">\(D\)</span></p></li>
+<li><p>Se recomienda también hacer una prueba de estratificación</p>
+<ol type="1">
+<li><p>Dividir el rango del soporte común en bloques</p></li>
+<li><p>Hacer una prueba de medias del PS entre grupos dentro de cada bloque</p></li>
+<li><p>Hacer una prueba de medias de cada variable en <span class="math inline">\(X_i\)</span> entre grupos dentro de cada bloque</p></li>
+</ol></li>
+</ul>
+</section>
+<section id="ilustración-del-soporte-común" class="slide level2">
+<h2>Ilustración del soporte común</h2>
+
+<img data-src="Gertler_PSOverlap.png" width="218" class="r-stretch"></section></section>
+<section>
+<section id="ejemplo-en-r" class="title-slide slide level1 center">
+<h1>Ejemplo en R</h1>
+
+</section>
+<section id="paquetes" class="slide level2">
+<h2>Paquetes</h2>
+<p>Usaremos dos paquetes nuevos: <em>MatchIt</em> y <em>cobalt</em>, que pueden descargar como cualquier otro paquete desde CRAN.</p>
+</section>
+<section id="datos-no-experimentales-de-una-muestra-de-mujeres" class="slide level2">
+<h2>Datos no experimentales de una muestra de mujeres</h2>
+<p>Los datos en <a href="cattaneo_smoking.csv">cattaneo_smoking.csv</a> (Cattaneo, 2010) son de una muestra de mujeres que incluye un indicador de si la madre fumó durante el embarazo. El propósito es evaluar el efecto de fumar sobre el peso de los bebés al nacer. Se incluyen una serie de covariables que usaremos para modelar el <em>propensity score</em>.</p>
+</section>
+<section id="matchit-para-realizar-los-emparejamientos" class="slide level2">
+<h2><em>matchit</em> para realizar los emparejamientos</h2>
+<p>La función que usaremos para hacer los emparejamientos es <em>matchit</em> de la librería <em>MatchIt</em>. Antes de hacer los emparejamientos, construimos la dummy de tratamiento, <strong>smoke</strong>, una dummy para mujeres casadas, <strong>married</strong>, y una dummy para si el caso en cuestión es el primer bebé. <strong>firstbaby</strong>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>data.smoking<span class="ot">&lt;-</span><span class="fu">read_csv</span>(</span>
+<span id="cb28-2"><a></a>  <span class="st">"./cattaneo_smoking.csv"</span>,</span>
+<span id="cb28-3"><a></a>  <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"latin1"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-4"><a></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb28-5"><a></a>  <span class="fu">mutate</span>(<span class="at">smoke=</span><span class="fu">ifelse</span>(mbsmoke<span class="sc">==</span><span class="st">"smoker"</span>,<span class="dv">1</span>,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-6"><a></a>  <span class="fu">mutate</span>(<span class="at">married=</span><span class="fu">ifelse</span>(mmarried<span class="sc">==</span><span class="st">"married"</span>,<span class="dv">1</span>,<span class="dv">0</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-7"><a></a>  <span class="fu">mutate</span>(<span class="at">firstbaby=</span><span class="fu">ifelse</span>(fbaby<span class="sc">==</span><span class="st">"Yes"</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb28-8"><a></a></span>
+<span id="cb28-9"><a></a><span class="co">#Asegurarse que no hay NA, matchit no acepta NA</span></span>
+<span id="cb28-10"><a></a>data.smoking <span class="ot">&lt;-</span> data.smoking[<span class="fu">complete.cases</span>(data.smoking), ]</span>
+<span id="cb28-11"><a></a></span>
+<span id="cb28-12"><a></a><span class="co">#Una semilla para todo el trabajo</span></span>
+<span id="cb28-13"><a></a><span class="fu">set.seed</span>(<span class="dv">1021</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="comparación-observacional-1" class="slide level2">
+<h2>Comparación observacional</h2>
+<p>Notemos que, si solo comparamos a las mujeres que fuman con las que no fuman, estamos comparando personas muy diferentes:</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">datasummary_balance</span>(<span class="sc">~</span>smoke,</span>
+<span id="cb29-2"><a></a>                    <span class="at">fmt =</span> <span class="st">"%.2f"</span>,</span>
+<span id="cb29-3"><a></a>                    <span class="at">data =</span> <span class="fu">select</span>(data.smoking, smoke, married, firstbaby, medu, nprenatal, foreign, mhisp, fage),</span>
+<span id="cb29-4"><a></a>                    <span class="at">dinm_statistic =</span> <span class="st">"p.value"</span>,</span>
+<span id="cb29-5"><a></a>                    <span class="at">title =</span> <span class="st">"Pruebas de balance"</span>,</span>
+<span id="cb29-6"><a></a>                    <span class="at">notes =</span> <span class="st">"Fuente: Cattaneo (2009)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+ 
+
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tinytable_1lsywiap0udluzc6gvjv</title>
+    <style>
+.table td.tinytable_css_7iwzvwo8ievt8a5r85cx, .table th.tinytable_css_7iwzvwo8ievt8a5r85cx {    border-bottom: solid 0.1em #d3d8dc; }
+.table td.tinytable_css_3id45jijsyjuc3wp3aot, .table th.tinytable_css_3id45jijsyjuc3wp3aot {    text-align: center; }
+.table td.tinytable_css_umnueof0n8yq031ujkae, .table th.tinytable_css_umnueof0n8yq031ujkae {    border-bottom: solid 0.05em #d3d8dc; }
+.table td.tinytable_css_eltsai7ik4e8w99izzyl, .table th.tinytable_css_eltsai7ik4e8w99izzyl {    text-align: left; }
+.table td.tinytable_css_f3s0wqemcvfbl0m11iqn, .table th.tinytable_css_f3s0wqemcvfbl0m11iqn {    text-align: right; }
+.table td.tinytable_css_71qvw9fysovn9zfbqnn4, .table th.tinytable_css_71qvw9fysovn9zfbqnn4 {    text-align: right; }
+.table td.tinytable_css_esek394erecdtvh5r366, .table th.tinytable_css_esek394erecdtvh5r366 {    text-align: right; }
+.table td.tinytable_css_fojzj1u6xt4oewgttt98, .table th.tinytable_css_fojzj1u6xt4oewgttt98 {    text-align: right; }
+.table td.tinytable_css_c7kr4hy318b2jwjdfkgj, .table th.tinytable_css_c7kr4hy318b2jwjdfkgj {    text-align: right; }
+.table td.tinytable_css_ntxa9u3c8bckmvq1xouy, .table th.tinytable_css_ntxa9u3c8bckmvq1xouy {    text-align: right; }
+.table td.tinytable_css_t8lk1ctzssdgyx1e6jak, .table th.tinytable_css_t8lk1ctzssdgyx1e6jak {    text-align: center; }
+    </style>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+  
+
+  
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_1lsywiap0udluzc6gvjv" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+<tr>
+<th scope="col" align="center" colspan="1"> </th>
+<th scope="col" align="center" colspan="2">0</th>
+<th scope="col" align="center" colspan="2">1</th>
+<th scope="col" align="center" colspan="1"> </th>
+<th scope="col" align="center" colspan="1"> </th>
+</tr>
+        </thead><caption>Pruebas de balance</caption>
+              <tbody><tr>
+                <th scope="col"> </th>
+                <th scope="col">Mean</th>
+                <th scope="col">Std. Dev.</th>
+                <th scope="col">Mean</th>
+                <th scope="col">Std. Dev.</th>
+                <th scope="col">Diff. in Means</th>
+                <th scope="col">p</th>
+              </tr>
+        
+        </tbody><tfoot><tr><td colspan="7">Fuente: Cattaneo (2009)</td></tr></tfoot>
+        <tbody>
+                <tr>
+                  <td>married  </td>
+                  <td>0.75 </td>
+                  <td>0.43</td>
+                  <td>0.47 </td>
+                  <td>0.50 </td>
+                  <td>-0.28</td>
+                  <td>0.00</td>
+                </tr>
+                <tr>
+                  <td>firstbaby</td>
+                  <td>0.45 </td>
+                  <td>0.50</td>
+                  <td>0.37 </td>
+                  <td>0.48 </td>
+                  <td>-0.08</td>
+                  <td>0.00</td>
+                </tr>
+                <tr>
+                  <td>medu     </td>
+                  <td>12.93</td>
+                  <td>2.53</td>
+                  <td>11.64</td>
+                  <td>2.17 </td>
+                  <td>-1.29</td>
+                  <td>0.00</td>
+                </tr>
+                <tr>
+                  <td>nprenatal</td>
+                  <td>10.96</td>
+                  <td>3.52</td>
+                  <td>9.86 </td>
+                  <td>4.21 </td>
+                  <td>-1.10</td>
+                  <td>0.00</td>
+                </tr>
+                <tr>
+                  <td>foreign  </td>
+                  <td>0.06 </td>
+                  <td>0.24</td>
+                  <td>0.03 </td>
+                  <td>0.16 </td>
+                  <td>-0.03</td>
+                  <td>0.00</td>
+                </tr>
+                <tr>
+                  <td>mhisp    </td>
+                  <td>0.04 </td>
+                  <td>0.19</td>
+                  <td>0.02 </td>
+                  <td>0.15 </td>
+                  <td>-0.01</td>
+                  <td>0.05</td>
+                </tr>
+                <tr>
+                  <td>fage     </td>
+                  <td>27.84</td>
+                  <td>8.79</td>
+                  <td>24.74</td>
+                  <td>11.15</td>
+                  <td>-3.10</td>
+                  <td>0.00</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      function styleCell_tinytable_4tbnwr5y4kyrk2iwttum(i, j, css_id) {
+        var table = document.getElementById("tinytable_1lsywiap0udluzc6gvjv");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_1lsywiap0udluzc6gvjv');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_tinytable_4tbnwr5y4kyrk2iwttum(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_1lsywiap0udluzc6gvjv");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 0, 'tinytable_css_7iwzvwo8ievt8a5r85cx') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 1, 'tinytable_css_7iwzvwo8ievt8a5r85cx') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 2, 'tinytable_css_7iwzvwo8ievt8a5r85cx') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 3, 'tinytable_css_7iwzvwo8ievt8a5r85cx') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 4, 'tinytable_css_7iwzvwo8ievt8a5r85cx') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 5, 'tinytable_css_7iwzvwo8ievt8a5r85cx') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 6, 'tinytable_css_7iwzvwo8ievt8a5r85cx') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 0, 'tinytable_css_3id45jijsyjuc3wp3aot') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 1, 'tinytable_css_3id45jijsyjuc3wp3aot') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 2, 'tinytable_css_3id45jijsyjuc3wp3aot') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 3, 'tinytable_css_3id45jijsyjuc3wp3aot') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 4, 'tinytable_css_3id45jijsyjuc3wp3aot') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 5, 'tinytable_css_3id45jijsyjuc3wp3aot') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 6, 'tinytable_css_3id45jijsyjuc3wp3aot') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 1, 'tinytable_css_umnueof0n8yq031ujkae') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 2, 'tinytable_css_umnueof0n8yq031ujkae') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 0, 'tinytable_css_eltsai7ik4e8w99izzyl') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 0, 'tinytable_css_eltsai7ik4e8w99izzyl') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(2, 0, 'tinytable_css_eltsai7ik4e8w99izzyl') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(3, 0, 'tinytable_css_eltsai7ik4e8w99izzyl') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(4, 0, 'tinytable_css_eltsai7ik4e8w99izzyl') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(5, 0, 'tinytable_css_eltsai7ik4e8w99izzyl') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(6, 0, 'tinytable_css_eltsai7ik4e8w99izzyl') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(7, 0, 'tinytable_css_eltsai7ik4e8w99izzyl') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(8, 0, 'tinytable_css_eltsai7ik4e8w99izzyl') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 1, 'tinytable_css_f3s0wqemcvfbl0m11iqn') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 1, 'tinytable_css_f3s0wqemcvfbl0m11iqn') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(2, 1, 'tinytable_css_f3s0wqemcvfbl0m11iqn') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(3, 1, 'tinytable_css_f3s0wqemcvfbl0m11iqn') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(4, 1, 'tinytable_css_f3s0wqemcvfbl0m11iqn') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(5, 1, 'tinytable_css_f3s0wqemcvfbl0m11iqn') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(6, 1, 'tinytable_css_f3s0wqemcvfbl0m11iqn') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(7, 1, 'tinytable_css_f3s0wqemcvfbl0m11iqn') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(8, 1, 'tinytable_css_f3s0wqemcvfbl0m11iqn') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 2, 'tinytable_css_71qvw9fysovn9zfbqnn4') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 2, 'tinytable_css_71qvw9fysovn9zfbqnn4') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(2, 2, 'tinytable_css_71qvw9fysovn9zfbqnn4') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(3, 2, 'tinytable_css_71qvw9fysovn9zfbqnn4') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(4, 2, 'tinytable_css_71qvw9fysovn9zfbqnn4') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(5, 2, 'tinytable_css_71qvw9fysovn9zfbqnn4') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(6, 2, 'tinytable_css_71qvw9fysovn9zfbqnn4') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(7, 2, 'tinytable_css_71qvw9fysovn9zfbqnn4') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(8, 2, 'tinytable_css_71qvw9fysovn9zfbqnn4') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 3, 'tinytable_css_esek394erecdtvh5r366') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 3, 'tinytable_css_esek394erecdtvh5r366') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(2, 3, 'tinytable_css_esek394erecdtvh5r366') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(3, 3, 'tinytable_css_esek394erecdtvh5r366') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(4, 3, 'tinytable_css_esek394erecdtvh5r366') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(5, 3, 'tinytable_css_esek394erecdtvh5r366') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(6, 3, 'tinytable_css_esek394erecdtvh5r366') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(7, 3, 'tinytable_css_esek394erecdtvh5r366') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(8, 3, 'tinytable_css_esek394erecdtvh5r366') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 4, 'tinytable_css_fojzj1u6xt4oewgttt98') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 4, 'tinytable_css_fojzj1u6xt4oewgttt98') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(2, 4, 'tinytable_css_fojzj1u6xt4oewgttt98') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(3, 4, 'tinytable_css_fojzj1u6xt4oewgttt98') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(4, 4, 'tinytable_css_fojzj1u6xt4oewgttt98') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(5, 4, 'tinytable_css_fojzj1u6xt4oewgttt98') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(6, 4, 'tinytable_css_fojzj1u6xt4oewgttt98') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(7, 4, 'tinytable_css_fojzj1u6xt4oewgttt98') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(8, 4, 'tinytable_css_fojzj1u6xt4oewgttt98') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 5, 'tinytable_css_c7kr4hy318b2jwjdfkgj') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 5, 'tinytable_css_c7kr4hy318b2jwjdfkgj') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(2, 5, 'tinytable_css_c7kr4hy318b2jwjdfkgj') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(3, 5, 'tinytable_css_c7kr4hy318b2jwjdfkgj') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(4, 5, 'tinytable_css_c7kr4hy318b2jwjdfkgj') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(5, 5, 'tinytable_css_c7kr4hy318b2jwjdfkgj') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(6, 5, 'tinytable_css_c7kr4hy318b2jwjdfkgj') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(7, 5, 'tinytable_css_c7kr4hy318b2jwjdfkgj') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(8, 5, 'tinytable_css_c7kr4hy318b2jwjdfkgj') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 6, 'tinytable_css_ntxa9u3c8bckmvq1xouy') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(1, 6, 'tinytable_css_ntxa9u3c8bckmvq1xouy') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(2, 6, 'tinytable_css_ntxa9u3c8bckmvq1xouy') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(3, 6, 'tinytable_css_ntxa9u3c8bckmvq1xouy') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(4, 6, 'tinytable_css_ntxa9u3c8bckmvq1xouy') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(5, 6, 'tinytable_css_ntxa9u3c8bckmvq1xouy') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(6, 6, 'tinytable_css_ntxa9u3c8bckmvq1xouy') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(7, 6, 'tinytable_css_ntxa9u3c8bckmvq1xouy') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(8, 6, 'tinytable_css_ntxa9u3c8bckmvq1xouy') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 0, 'tinytable_css_t8lk1ctzssdgyx1e6jak') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 1, 'tinytable_css_t8lk1ctzssdgyx1e6jak') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 2, 'tinytable_css_t8lk1ctzssdgyx1e6jak') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 3, 'tinytable_css_t8lk1ctzssdgyx1e6jak') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 4, 'tinytable_css_t8lk1ctzssdgyx1e6jak') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 5, 'tinytable_css_t8lk1ctzssdgyx1e6jak') })
+window.addEventListener('load', function () { styleCell_tinytable_4tbnwr5y4kyrk2iwttum(0, 6, 'tinytable_css_t8lk1ctzssdgyx1e6jak') })
+    </script>
+
+  
+
+
+</div>
+</div>
+</div>
+</section>
+<section id="estimación-del-ps" class="slide level2">
+<h2>Estimación del PS</h2>
+<p>Una manera de hacer más eficiente el uso de las <em>fórmulas</em> es usando <em>as.formula</em>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>binaria <span class="ot">&lt;-</span> <span class="st">"smoke"</span></span>
+<span id="cb30-2"><a></a>variables <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"married"</span>, <span class="st">"firstbaby"</span>, <span class="st">"medu"</span>, <span class="st">"nprenatal"</span>, <span class="st">"foreign"</span>, <span class="st">"mhisp"</span>, <span class="st">"fage"</span>)</span>
+<span id="cb30-3"><a></a></span>
+<span id="cb30-4"><a></a>ps <span class="ot">&lt;-</span> <span class="fu">as.formula</span>(<span class="fu">paste</span>(binaria,</span>
+<span id="cb30-5"><a></a>                         <span class="fu">paste</span>(variables,</span>
+<span id="cb30-6"><a></a>                               <span class="at">collapse =</span><span class="st">"+"</span>),</span>
+<span id="cb30-7"><a></a>                         <span class="at">sep=</span> <span class="st">" ~ "</span>))</span>
+<span id="cb30-8"><a></a><span class="fu">print</span>(ps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>smoke ~ married + firstbaby + medu + nprenatal + foreign + mhisp + 
+    fage</code></pre>
+</div>
+</div>
+<p>Usamos <em>matchit</em> para estimar el PS y realizar los emparejamientos con el algoritmo que indiquemos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>m.out <span class="ot">&lt;-</span> <span class="fu">matchit</span>(<span class="at">formula=</span>ps,</span>
+<span id="cb32-2"><a></a>                 <span class="at">method =</span> <span class="st">"nearest"</span>,</span>
+<span id="cb32-3"><a></a>                 <span class="at">ratio =</span> <span class="dv">1</span>,</span>
+<span id="cb32-4"><a></a>                 <span class="at">distance=</span> <span class="st">"logit"</span>,</span>
+<span id="cb32-5"><a></a>                 <span class="at">replace =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb32-6"><a></a>                 <span class="at">data =</span> data.smoking)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="estimación-del-ps-1" class="slide level2">
+<h2>Estimación del PS</h2>
+<p>El resumen del procedimiento da bastante información sobre el pareamiento:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">summary</span>(m.out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+matchit(formula = ps, data = data.smoking, method = "nearest", 
+    distance = "logit", replace = FALSE, ratio = 1)
+
+Summary of Balance for All Data:
+          Means Treated Means Control Std. Mean Diff. Var. Ratio eCDF Mean
+distance         0.2568        0.1700          0.6673     1.4475    0.2002
+married          0.4734        0.7515         -0.5569          .    0.2781
+firstbaby        0.3715        0.4531         -0.1689          .    0.0816
+medu            11.6389       12.9299         -0.5955     0.7316    0.0717
+nprenatal        9.8623       10.9629         -0.2616     1.4301    0.0376
+foreign          0.0255        0.0598         -0.2181          .    0.0344
+mhisp            0.0243        0.0363         -0.0776          .    0.0120
+fage            24.7431       27.8444         -0.2782     1.6070    0.0468
+          eCDF Max
+distance    0.3329
+married     0.2781
+firstbaby   0.0816
+medu        0.2549
+nprenatal   0.1259
+foreign     0.0344
+mhisp       0.0120
+fage        0.1377
+
+Summary of Balance for Matched Data:
+          Means Treated Means Control Std. Mean Diff. Var. Ratio eCDF Mean
+distance         0.2568        0.2564          0.0033     1.0110    0.0005
+married          0.4734        0.4769         -0.0070          .    0.0035
+firstbaby        0.3715        0.3981         -0.0551          .    0.0266
+medu            11.6389       11.6019          0.0171     0.7064    0.0161
+nprenatal        9.8623        9.8588          0.0008     1.1543    0.0059
+foreign          0.0255        0.0174          0.0514          .    0.0081
+mhisp            0.0243        0.0231          0.0075          .    0.0012
+fage            24.7431       24.5799          0.0146     1.0787    0.0124
+          eCDF Max Std. Pair Dist.
+distance    0.0093          0.0046
+married     0.0035          0.2202
+firstbaby   0.0266          0.4575
+medu        0.0417          0.5168
+nprenatal   0.0185          0.7039
+foreign     0.0081          0.2425
+mhisp       0.0012          0.2781
+fage        0.0556          0.6457
+
+Sample Sizes:
+          Control Treated
+All          3778     864
+Matched       864     864
+Unmatched    2914       0
+Discarded       0       0</code></pre>
+</div>
+</div>
+</section>
+<section id="verificación-del-balance" class="slide level2">
+<h2>Verificación del balance</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Gráfico de nube:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="fu">plot</span>(m.out, <span class="at">type =</span> <span class="st">"jitter"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="emparejamiento_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>To identify the units, use first mouse button; to stop, use second.</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Histograma:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">plot</span>(m.out, <span class="at">type =</span> <span class="st">"hist"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="emparejamiento_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="muestra-emparejada-3" class="slide level2">
+<h2>Muestra emparejada</h2>
+<p>Podemos guardar un objeto con la muestra emparejada usando <em>match.data</em> y observar quién hace match con quién:</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>m.data <span class="ot">&lt;-</span> <span class="fu">match.data</span>(m.out)</span>
+<span id="cb38-2"><a></a></span>
+<span id="cb38-3"><a></a><span class="fu">head</span>(m.out<span class="sc">$</span>match.matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output cell-output-stdout">
+<pre><code>   [,1]  
+11 "4130"
+20 "2234"
+25 "1740"
+43 "2857"
+47 "305" 
+49 "1442"</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="muestra-emparejada-4" class="slide level2">
+<h2>Muestra emparejada</h2>
+<p>Una propuesta para determinar si el emparejamiento fue exitoso es observar las diferencias promedio estandarizadas (SMD) entre los grupos tratados y no tratados, antes y después del emparejamiento.</p>
+<p><span class="math display">\[SMD_X=\frac{\bar{X}_T-\bar{X}_{NT}}{\sqrt{S^2_T+S^2_{NT}}}\]</span></p>
+<p>También vale la pena no perder de vista la razón de varianzas (VR). Se espera que este ratio no sea muy distinto de 1 después de hacer el emparejamiento:</p>
+<p><span class="math display">\[VR=\frac{S^2_T}{S^2_{NT}}\]</span></p>
+<p>Como regla de dedo, una diferencia de 0.1 o menos en el SMD se considera un buen balance. Por ejemplo, la escolaridad de la madre tenía un SDM de -0.5955 en la muestra en bruto, pero con el emparejamiento el SDM se vuelve de solo 0.0171.</p>
+</section>
+<section id="loveplot" class="slide level2">
+<h2><em>Loveplot</em></h2>
+<p>Usando la librería <em>cobalt</em> podemos construir un <em>love plot</em> que representa gráficamente las diferencias antes y después del emparejamiento</p>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">love.plot</span>(<span class="fu">bal.tab</span>(m.out),</span>
+<span id="cb40-2"><a></a>          <span class="at">threshold =</span> .<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="emparejamiento_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="efecto-de-tratamiento" class="slide level2">
+<h2>Efecto de tratamiento</h2>
+<p>Existen muchas maneras de explotar la muestra emparejada. Aquí veremos la más sencilla. Simplemente consideremos a la muestra emparejada como si viniera de un experimento. Sin embargo, debemos poner especial atención a la forma de hacer inferencia pues no debemos ignorar que el PS es estimado.</p>
+<p>Dependiendo de si el emparejamiento ocurre con o sin reemplazo, y de la naturaleza de la variable dependiente, se recomiendan distintas maneras de estimar el efecto del tratamiento y hacer inferencia. Una buena guía está en la documentación de <a href="https://kosukeimai.github.io/MatchIt/articles/estimating-effects.html">MatchIt</a>.</p>
+<p>Por ejemplo, cuando se realiza el emparejamiento sin reemplazo, <a href="https://www.tandfonline.com/doi/full/10.1080/01621459.2020.1840383?casa_token=7VdQFPydVtIAAAAA%3A3VRshT4TmqjnyzS2Nz2EBmFi54NlHDIWdtD-mDdAdPHuv51BhbXh1qYOwsRo8yH_WhA1UoUbvP0Kqg">Abadie &amp; Spiess (2019)</a> muestran que podemos estimar los errores estándar simplemente agrupando a nivel de pareja (o grupo) emparejado (<strong>subclass</strong> es una columna que enumera a las parejas o grupos emparejados y es construida automáticamente por <em>matchit</em>).</p>
+</section>
+<section id="efecto-de-tratamiento-1" class="slide level2">
+<h2>Efecto de tratamiento</h2>
+<p>Usando una regresión con la muestra emparejada</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>tt1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bweight <span class="sc">~</span> smoke,</span>
+<span id="cb41-2"><a></a>          <span class="at">data =</span> m.data,</span>
+<span id="cb41-3"><a></a>          <span class="at">weights =</span> weights)</span>
+<span id="cb41-4"><a></a></span>
+<span id="cb41-5"><a></a><span class="co">#Errores agrupados a nivel subclass</span></span>
+<span id="cb41-6"><a></a><span class="fu">coeftest</span>(tt1,</span>
+<span id="cb41-7"><a></a>         <span class="at">vcov. =</span> vcovCL,</span>
+<span id="cb41-8"><a></a>         <span class="at">cluster =</span> <span class="sc">~</span>subclass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+t test of coefficients:
+
+            Estimate Std. Error  t value  Pr(&gt;|t|)    
+(Intercept) 3331.473     21.424 155.5033 &lt; 2.2e-16 ***
+smoke       -193.814     28.137  -6.8882 7.889e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+</section>
+<section id="efecto-de-tratamiento-2" class="slide level2">
+<h2>Efecto de tratamiento</h2>
+<p>Algunos autores incluyen los covariables en su estimación:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>tt2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(bweight <span class="sc">~</span> smoke <span class="sc">+</span> married <span class="sc">+</span> firstbaby <span class="sc">+</span> medu <span class="sc">+</span> nprenatal <span class="sc">+</span> foreign <span class="sc">+</span> mhisp <span class="sc">+</span> fage,</span>
+<span id="cb43-2"><a></a>          <span class="at">data =</span> m.data,</span>
+<span id="cb43-3"><a></a>          <span class="at">weights =</span> weights)</span>
+<span id="cb43-4"><a></a></span>
+<span id="cb43-5"><a></a><span class="co">#Errores agrupados a nivel subclass</span></span>
+<span id="cb43-6"><a></a><span class="fu">coeftest</span>(tt2,</span>
+<span id="cb43-7"><a></a>         <span class="at">vcov. =</span> vcovCL,</span>
+<span id="cb43-8"><a></a>         <span class="at">cluster =</span> <span class="sc">~</span>subclass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+t test of coefficients:
+
+              Estimate Std. Error t value  Pr(&gt;|t|)    
+(Intercept) 2984.54803   76.55850 38.9839 &lt; 2.2e-16 ***
+smoke       -195.50844   27.96378 -6.9915 3.879e-12 ***
+married      113.92672   30.76389  3.7033 0.0002196 ***
+firstbaby    -62.70697   30.19829 -2.0765 0.0379953 *  
+medu           0.12530    5.38318  0.0233 0.9814333    
+nprenatal     32.29921    4.49984  7.1779 1.049e-12 ***
+foreign       25.99372  109.26081  0.2379 0.8119829    
+mhisp        111.67360   85.14066  1.3116 0.1898179    
+fage          -0.21788    1.43015 -0.1523 0.8789301    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p>Cuando el emparejamiento es con reemplazo, las unidades no tratadas son emparejadas varias veces (aparecen repetidas en la muestra emparejada), lo cual debe ser considerado para estimar los efectos del tratamiento y hacer inferencia. Por ejemplo, se puede usar <em>bootstrap</em> para obtener el error estándar del efecto del tratamiento cuando la variable de impacto es continua.</p>
+</section>
+<section id="recomendaciones-prácticas" class="slide level2">
+<h2>Recomendaciones prácticas</h2>
+<ul>
+<li><p>Las características <span class="math inline">\(X\)</span> que determinan la probabilidad de tratamiento deben ser observables</p></li>
+<li><p>Las variables usadas para calcular el PS no deben haber sido afectadas por el tratamiento</p></li>
+<li><p>Idealmente usamos variables <span class="math inline">\(X\)</span> pre-intervención</p></li>
+<li><p>Cuando no hay <span class="math inline">\(X\)</span> pre-intervención, a veces se puede obtener el PS con variables post-intervención siempre y cuando estas no hayan sido afectadas por el tratamieto (pocas veces recomendado)</p></li>
+<li><p>Se recomienda ampliamente ver:</p>
+<ul>
+<li>Caliendo, M., &amp; Kopeinig, S. (2008). Some practical guidance for the implementation of propensity score matching. <em>Journal of economic surveys</em>, 22(1), 31-72.</li>
+</ul></li>
+</ul>
+</section>
+<section id="conclusión" class="slide level2">
+<h2>Conclusión</h2>
+<ul>
+<li><p>Las técnicas de PSM dependen de varios supuestos téoricos fuertes</p></li>
+<li><p>La implementación implica que las variables en <span class="math inline">\(X\)</span> son aquellas que permiten hacer los supuestos de inconfundibilidad dado el PS</p></li>
+<li><p>En la estimación del PS se toma la decisión sobre la forma funcional</p></li>
+<li><p>Los efectos de tratamiento pueden ser distintos entre diferentes algoritmos de emparejamiento y la especificación del PS</p></li>
+<li><p>La crítica más importante es que la mayoría de las veces nos preocupa más la autoselección basada en no observables que en observables</p></li>
+<li><p>Pero muchas veces es todo lo que tenemos a la mano</p></li>
+<li><p>Hay que hacer análisis de sensibilidad a las distintas decisiones</p></li>
+<li><p>Presentar resultados transparentes</p></li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

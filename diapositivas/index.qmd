@@ -5,3 +5,4 @@ title: "Diapositivas"
 
 [Diferencia en diferencias](./did.qmd)
 
+[Métodos de emparejamiento](./emparejamiento.qmd)
