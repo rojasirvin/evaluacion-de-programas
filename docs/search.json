@@ -1188,7 +1188,7 @@
     "href": "diapositivas/did.html#qué-son-los-pesos-3",
     "title": "Diferencia en diferencias",
     "section": "¿Qué son los pesos?",
-    "text": "¿Qué son los pesos?\nAhora veamos la varianza que entra en este peso:\n\\[\\hat{V}_{kU}^D=n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)\\] Una primer cosa que entra en juego es \\(n_{kU}=\\frac{n_k}{n_k+n_U}\\), el peso relativo del grupo tratado temprano en la submuestra\nRecordemos que \\(\\bar{D}_k\\) indica la fracción del tiempo del panel que \\(k\\) permanece tratado\nDado que \\(D_{it}\\) es binaria, \\(\\bar{D}_k(1-\\bar{D}_k\\) es la varianza de \\(D_{it}\\)\n¿Qué es lo más grande que puede ser \\(\\bar{D}_k(1-\\bar{D}_k)\\)?\nClaramente esto es a lo más 0.5, es decir, la contribución se maximiza cuando el tratamiento ocurre lo más cercano a la mitad del panel"
+    "text": "¿Qué son los pesos?\nAhora veamos la varianza que entra en este peso:\n\\[\\hat{V}_{kU}^D=n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)\\] Una primer cosa que entra en juego es \\(n_{kU}=\\frac{n_k}{n_k+n_U}\\), el peso relativo del grupo tratado temprano en la submuestra\nRecordemos que \\(\\bar{D}_k\\) indica la fracción del tiempo del panel que \\(k\\) permanece tratado\nDado que \\(D_{it}\\) es binaria, \\(\\bar{D}_k(1-\\bar{D}_k)\\) es la varianza de \\(D_{it}\\)\n¿Qué es lo más grande que puede ser \\(\\bar{D}_k(1-\\bar{D}_k)\\)?\nClaramente esto es a lo más 0.5, es decir, la contribución se maximiza cuando el tratamiento ocurre lo más cercano a la mitad del panel"
   },
   {
     "objectID": "diapositivas/did.html#estimador-de-callaway-y-santanna-1",

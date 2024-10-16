@@ -8,25 +8,11 @@ format:
     height: 900
 ---
 
+::: {.cell}
 
-```{r setup}
-#| echo: false
-#| warning: false 
-#| message: false
-knitr::opts_chunk$set(echo = TRUE,
-                      warning = FALSE,
-                      message = FALSE)
-library(tidyverse)
-library(knitr)
-library(stargazer)
-library(janitor)
-library(sandwich)
-library(nnet)
-library(marginaleffects)
-library(foreign)
-library(AER)
-library(ggbrace)
-```
+:::
+
+
 
 
 
@@ -53,10 +39,15 @@ library(ggbrace)
 :::
 
 ::: {.column width="50%"}
-```{r}
-#| echo: false
-knitr::include_graphics("banks_map.png")
-```
+
+
+::: {.cell}
+::: {.cell-output-display}
+![](banks_map.png)
+:::
+:::
+
+
 :::
 
 ::::
@@ -97,10 +88,11 @@ $$
 
 - Gráficamente observamos
 
-```{r}
-#| output-location: column
-#| code-line-numbers: "40"
 
+
+::: {.cell output-location='column'}
+
+```{.r .cell-code  code-line-numbers="40"}
 banks<-read_csv("banks_mm.csv",
                        locale = locale(encoding = "latin1"))
 banks <- banks %>%
@@ -121,6 +113,13 @@ banks %>%
   geom_line(size=2) +
   scale_y_continuous(limits=c(100,180))
 ```
+
+::: {.cell-output-display}
+![](did_files/figure-revealjs/unnamed-chunk-2-1.png){width=960}
+:::
+:::
+
+
 ## Representación gráfica
 
 - Del distrito 8 (no tratado) podemos obtener la pendiente:
@@ -138,9 +137,11 @@ $$m_T=\frac{\tilde{Y}_{6,post}-Y_{6,pre}}{X_{6,post}-X_{6,pre}}=\frac{\tilde{Y}_
 
 - Podemos contruir el contrafactual para el distrito 6 observando la pendiente del distrito 8
 
-```{r}
-#| output-location: column
 
+
+::: {.cell output-location='column'}
+
+```{.r .cell-code}
 banks_contrafactual <- banks %>%
     mutate(banks=ifelse(year==1930 | year==1931,banks,NA)) %>% 
   filter(year <= 1932) %>% 
@@ -162,6 +163,13 @@ dd_grafica <- banks_contrafactual %>%
 
 dd_grafica
 ```
+
+::: {.cell-output-display}
+![](did_files/figure-revealjs/unnamed-chunk-3-1.png){width=960}
+:::
+:::
+
+
 
 
 
@@ -224,9 +232,39 @@ $$y_{dt}=\alpha+\beta T_d+\gamma POST_t + \delta_{r,DID}(T_d\times POST_t)+e_{dt
 
 - Podemos identificar si cada fila pertenece a un distrito tratado o no o a un periodo posterior a al tratamiento o no
 
-```{r}
+
+
+::: {.cell}
+
+```{.r .cell-code}
 banks
 ```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 12 × 5
+    year distrito banks treatment  post
+   <dbl> <chr>    <dbl>     <dbl> <dbl>
+ 1  1929 bib6       141         1     0
+ 2  1930 bib6       135         1     0
+ 3  1931 bib6       121         1     1
+ 4  1932 bib6       113         1     1
+ 5  1933 bib6       102         1     1
+ 6  1934 bib6       102         1     1
+ 7  1929 bib8       169         0     0
+ 8  1930 bib8       165         0     0
+ 9  1931 bib8       132         0     1
+10  1932 bib8       120         0     1
+11  1933 bib8       111         0     1
+12  1934 bib8       109         0     1
+```
+
+
+:::
+:::
+
+
 
 
 
@@ -234,12 +272,47 @@ banks
 
 - Estimemos la regresión que acabamos de motivar usando todos los periodos en el panel
 
-```{r}
+
+
+::: {.cell}
+
+```{.r .cell-code}
 did_bank <- lm(banks ~ treatment + post+ treatment*post,
                data=banks)
 
 summary(did_bank)
 ```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+
+Call:
+lm(formula = banks ~ treatment + post + treatment * post, data = banks)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-9.000 -7.125  0.000  3.125 14.000 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)     167.000      6.190  26.980 3.83e-09 ***
+treatment       -29.000      8.754  -3.313 0.010652 *  
+post            -49.000      7.581  -6.464 0.000195 ***
+treatment:post   20.500     10.721   1.912 0.092224 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 8.754 on 8 degrees of freedom
+Multiple R-squared:  0.8906,	Adjusted R-squared:  0.8496 
+F-statistic: 21.71 on 3 and 8 DF,  p-value: 0.0003369
+```
+
+
+:::
+:::
+
+
 
 
 
@@ -249,13 +322,46 @@ summary(did_bank)
 
 $$\delta_{DiD}=(Y_{6,1931}-Y_{6,1930})-(Y_{8,1931}-Y_{8,1930})=19$$
 
-```{r}
+
+
+::: {.cell}
+
+```{.r .cell-code}
 did_bank2 <- lm(banks ~ treatment + post+ treatment*post,
                data=filter(banks,year==1930 | year==1931))
 
 
 summary(did_bank2)
 ```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+
+Call:
+lm(formula = banks ~ treatment + post + treatment * post, data = filter(banks, 
+    year == 1930 | year == 1931))
+
+Residuals:
+ALL 4 residuals are 0: no residual degrees of freedom!
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)
+(Intercept)         165        NaN     NaN      NaN
+treatment           -30        NaN     NaN      NaN
+post                -33        NaN     NaN      NaN
+treatment:post       19        NaN     NaN      NaN
+
+Residual standard error: NaN on 0 degrees of freedom
+Multiple R-squared:      1,	Adjusted R-squared:    NaN 
+F-statistic:   NaN on 3 and 0 DF,  p-value: NA
+```
+
+
+:::
+:::
+
+
 
 
 
@@ -273,10 +379,15 @@ summary(did_bank2)
 
 - Sin embargo, nuestra estrategia de DID atribuiría el efecto al cambio en la legislación cuando en realidad cuando ese cambio ocurrió ya nole pasó nada a Allatsea
 
-```{r}
-#| echo: false
-knitr::include_graphics("trends_1.png")
-```
+
+
+::: {.cell}
+::: {.cell-output-display}
+![](trends_1.png)
+:::
+:::
+
+
 
 
 
@@ -289,10 +400,15 @@ knitr::include_graphics("trends_1.png")
 
 - Aunque en el momento del cambio de la política, la línea de Allatsea es más inclinada, estimar esta relación por DID de nuevo atribuiría a la política diferencias que ya existían antes de la intervención
 
-```{r}
-#| echo: false
-knitr::include_graphics("trends_2.png")
-```
+
+
+::: {.cell}
+::: {.cell-output-display}
+![](trends_2.png)
+:::
+:::
+
+
 
 
 
@@ -303,10 +419,15 @@ knitr::include_graphics("trends_2.png")
 
 - Sin embargo, después de la intervención, la trayectoria de Allatsea tiene una pendiente claramente más inclinada que antes de la intervención
 
-```{r}
-#| echo: false
-knitr::include_graphics("trends_3.png")
-```
+
+
+::: {.cell}
+::: {.cell-output-display}
+![](trends_3.png)
+:::
+:::
+
+
 
 
 
@@ -426,10 +547,15 @@ Consideremos el siguiente problema de adopción escalonada
 
 ## ¿Qué hace el estimador de TWFE?
 
-```{r}
-#| echo: false
-knitr::include_graphics("gb-decomposition-a.png")
-```
+
+
+::: {.cell}
+::: {.cell-output-display}
+![](gb-decomposition-a.png)
+:::
+:::
+
+
 
 
 ## ¿Qué hace el estimador de TWFE?
@@ -450,10 +576,15 @@ $$\hat{\beta}^{l}_{kl}=\left(\bar{y}_l^{POST(l)}-\bar{y}_l^{MID(k,l)}\right)-\le
 
 ## ¿Qué hace el estimador de TWFE?
 
-```{r}
-#| echo: false
-knitr::include_graphics("gb-decomposition-b.png")
-```
+
+
+::: {.cell}
+::: {.cell-output-display}
+![](gb-decomposition-b.png)
+:::
+:::
+
+
 
 
 
@@ -648,3 +779,4 @@ Toma en cuenta la heterogeneidad de los efectos de tratamiento
 Los pesos son especificados por el investigador y no mecánicamente con en TWFE
 
 Hace explícito el grupo de comparación (nunca tratados o aún no tratados)
+
