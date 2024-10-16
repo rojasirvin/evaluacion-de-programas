@@ -3,6 +3,6 @@ title: "Diapositivas"
 ---
 
 
-[Diferencia en diferencias](./did.qmd)
+[Diferencia en diferencias](./did.qmd){target="_blank"}
 
-[Métodos de emparejamiento](./emparejamiento.qmd)
+[Métodos de emparejamiento](./emparejamiento.qmd){target="_blank"}

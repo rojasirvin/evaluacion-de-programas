@@ -1433,7 +1433,7 @@
     "href": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe",
     "title": "Diferencia en diferencias",
     "section": "¿Qué hace el estimador de TWFE?",
-    "text": "¿Qué hace el estimador de TWFE?\nConsideremos el siguiente problema de adopción escalonada\n\nObservamos \\(T=5\\) periodos\n\\(k\\) denota la unidad tratada temprano en \\(t=2\\)\n\\(l\\) denota la unidad tratada tarde en \\(t=4%\\)\nDenotamos \\(\\bar{D}_k=0.8\\) al tiempo que \\(k\\) pasa tratado\nSimilarmente, \\(\\bar{D}_l=0.4\\)\n\\(n_k\\) es el número de unidades tratadas temprano\n\\(n_l\\) es el número de unidades tratadas tarde\n\\(n_U\\) es el número de unidades nunca tratadas\nPara cualesquiera dos grupos \\(a\\) y \\(b\\), \\(a_{ab}=\\frac{n_a}{n_a+n_b}\\)"
+    "text": "¿Qué hace el estimador de TWFE?\nConsideremos el siguiente problema de adopción escalonada\n\nObservamos \\(T\\) periodos\n\\(k\\) denota la unidad tratada temprano\n\\(l\\) denota la unidad tratada tarde\nDenotamos \\(\\bar{D}_k\\) al tiempo que \\(k\\) pasa tratado\nSimilarmente, \\(\\bar{D}_l\\)\n\\(n_k\\) es el número de unidades tratadas temprano\n\\(n_l\\) es el número de unidades tratadas tarde\n\\(n_U\\) es el número de unidades nunca tratadas\nPara cualesquiera dos grupos \\(a\\) y \\(b\\), \\(a_{ab}=\\frac{n_a}{n_a+n_b}\\)"
   },
   {
     "objectID": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-1",
@@ -1461,7 +1461,7 @@
     "href": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-4",
     "title": "Diferencia en diferencias",
     "section": "¿Qué hace el estimador de TWFE?",
-    "text": "¿Qué hace el estimador de TWFE?\nDenotamos \\(D_{it}=1\\) cuando la unidad \\(i\\) es tratada en el periodo \\(0\\)\nPor el teorema de Frisch-Waugh-Lovell sabemos que podemos purgar de efectos fijos a la variable \\(D_{it}\\)\nEs decir, podemos estimar por MCO:\n\\[D_{it}=\\sum_t \\gamma_t P_t + \\sum_i \\pi S_i + \\varepsilon_{it}\\]\ndonde \\(P_t\\) son dummies temporales y \\(S_i\\) son dummies individuales\nLuego obtenemos\n\\[\\tilde{D}_{it}=D_{it}-\\hat{D}_{it}\\] Y entonces el estimador de TWFE puede escribirse como el coeficiente de una regresión bivariada:\n\\[\\hat{\\beta}_{DD}=\\frac{\\hat{C}(y_{it}, \\tilde{D}_{it})}{\\hat{V}^D}\\]"
+    "text": "¿Qué hace el estimador de TWFE?\nDenotamos \\(D_{it}=1\\) cuando la unidad \\(i\\) es tratada en el periodo \\(0\\)\nPor el teorema de Frisch-Waugh-Lovell sabemos que podemos purgar de efectos fijos a la variable \\(D_{it}\\)\nEs decir, podemos estimar por MCO:\n\\[D_{it}=\\sum_t \\gamma_t P_t + \\sum_i \\pi S_i + \\varepsilon_{it}\\]\ndonde \\(P_t\\) son dummies temporales y \\(S_i\\) son dummies individuales\nLuego obtenemos\n\\[\\tilde{D}_{it}=D_{it}-\\hat{D}_{it}\\] Y entonces el estimador de TWFE puede escribirse como el coeficiente de una regresión bivariada:\n\\[\\hat{\\beta}_{DD}=\\frac{\\hat{C}(y_{it}, \\tilde{D}_{it})}{\\hat{V}^D}\\] \\(\\hat{V}^D\\) es la varianza de la variable de tratamiento purgada de efectos fijos"
   },
   {
     "objectID": "diapositivas/did.knit.html#qué-hace-el-estimador-de-twfe-5",
@@ -1475,7 +1475,7 @@
     "href": "diapositivas/did.knit.html#qué-son-los-pesos",
     "title": "Diferencia en diferencias",
     "section": "¿Qué son los pesos?",
-    "text": "¿Qué son los pesos?\nGoodman-Bacon (2021) muestra que los pesos están dados por:\n\n\\(s_{kU}=\\frac{(n_k+n_U)^2\\hat{V}_{kU}^D}{\\hat{V}^D}\\)\n\\(s_{lU}=\\frac{(n_l+n_U)^2\\hat{V}_{lU}^D}{\\hat{V}^D}\\)\n\\(s_{kl}^k=\\frac{[(n_k+n_l)(1-\\bar{D}_l)]^2\\hat{V}_{kl}^{D,k}}{\\hat{V}^D}\\)\n\\(s_{kl}^l=\\frac{[(n_k+n_l)\\bar{D}_k]^2\\hat{V}_{kl}^{D,l}}{\\hat{V}^D}\\)\n\nEn resumen, los pesos están dados por\n\\[pesos = \\frac{(\\text{participación de la submuestra})^2(\\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}\\]"
+    "text": "¿Qué son los pesos?\nGoodman-Bacon (2021) muestra que los pesos están dados por:\n\n\\(s_{kU}=\\frac{(n_k+n_U)^2\\hat{V}_{kU}^D}{\\hat{V}^D}\\)\n\\(s_{lU}=\\frac{(n_l+n_U)^2\\hat{V}_{lU}^D}{\\hat{V}^D}\\)\n\\(s_{kl}^k=\\frac{[(n_k+n_l)(1-\\bar{D}_l)]^2\\hat{V}_{kl}^{D,k}}{\\hat{V}^D}\\)\n\\(s_{kl}^l=\\frac{[(n_k+n_l)\\bar{D}_k]^2\\hat{V}_{kl}^{D,l}}{\\hat{V}^D}\\)"
   },
   {
     "objectID": "diapositivas/did.knit.html#qué-son-los-pesos-1",
@@ -1489,7 +1489,7 @@
     "href": "diapositivas/did.knit.html#qué-son-los-pesos-2",
     "title": "Diferencia en diferencias",
     "section": "¿Qué son los pesos?",
-    "text": "¿Qué son los pesos?\nPongamos atención a la varianza que entra en uno de los pesos:\n\\[\\hat{V}_{kU}^D=n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)\\]\nRecordemos que \\(\\bar{D}_k\\) indica la fracción del tiempo del panel que \\(k\\) permanece tratado\nEntonces, esta varianza es más grande en tanto"
+    "text": "¿Qué son los pesos?\nPongamos atención a uno de los pesos, \\(s_{kU}\\) para ver la intuición\nVimos que:\n\\[s_{kU}=\\frac{(n_k+n_U)^2\\hat{V}_{kU}^D}{\\hat{V}^D}=\\frac{(n_k+n_U)^2n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)}{\\hat{V}^D}\\]\nPrimero, noten que el peso depende de \\((n_k+n_u)^2\\), es decir, la parte de la submuestra que se usa para estimar cada comparación \\(2x2\\)"
   },
   {
     "objectID": "diapositivas/did.knit.html#estimador-de-callaway-santanna-1",
@@ -1524,14 +1524,14 @@
     "href": "diapositivas/did.knit.html#estimador-de-callaway-santanna-2",
     "title": "Diferencia en diferencias",
     "section": "Estimador de Callaway & Sant’Anna",
-    "text": "Estimador de Callaway & Sant’Anna\nEl estimador de Callaway & Sant’Anna (2021) se define como:\n\\[ATT(g,t)=E(y_{it}-y_{i,g-1}|G_i=g)-E(y_{it}-y_{i,g-1}|G_i\\in\\mathcal{G}_{comp})\\] Queremos comparar el valor de la variable de impacto entre el periodo \\(g-1\\) y el \\(t\\) para el grupo que fue tratado en \\(g\\) con algún grupo de comparación denominado \\(\\mathcal{G}_{comp}\\)\nSustituyendo por el análogo muestral:\n\\[\\hat{ATT}(g,t)=\\frac{1}{N_g}\\sum_{i:\\;G_i=g}(y_{it}-y_{i,g-1})-\\frac{1}{N_{\\mathcal{G}_{comp}}}\\sum_{i\\;G_i\\in \\mathcal{G}_{comp}}(y_{it}-y_{i,g-1})\\] ## Grupo de comparación\n¿Qué es \\(\\mathcal{G}_{comp}\\)?\n\n\\(\\mathcal{G}_{comp}=\\{\\infty \\}\\): aquellas unidades nunca tratadas\n\\(\\mathcal{G}_{comp}=\\{g':g'&gt;t \\}\\): aquellas unidades aún no tratadas al periodo \\(t\\)"
+    "text": "Estimador de Callaway & Sant’Anna\nEl estimador de Callaway & Sant’Anna (2021) se define como:\n\\[ATT(g,t)=E(y_{it}-y_{i,g-1}|G_i=g)-E(y_{it}-y_{i,g-1}|G_i\\in\\mathcal{G}_{comp})\\] Queremos comparar el valor de la variable de impacto entre el periodo \\(g-1\\) y el \\(t\\) para el grupo que fue tratado en \\(g\\) con algún grupo de comparación denominado \\(\\mathcal{G}_{comp}\\)\nSustituyendo por el análogo muestral:\n\\[\\hat{ATT}(g,t)=\\frac{1}{N_g}\\sum_{i:\\;G_i=g}(y_{it}-y_{i,g-1})-\\frac{1}{N_{\\mathcal{G}_{comp}}}\\sum_{i\\;G_i\\in \\mathcal{G}_{comp}}(y_{it}-y_{i,g-1})\\]\n¿Qué es \\(\\mathcal{G}_{comp}\\)?\n\n\\(\\mathcal{G}_{comp}=\\{\\infty \\}\\): aquellas unidades nunca tratadas\n\\(\\mathcal{G}_{comp}=\\{g':g'&gt;t \\}\\): aquellas unidades aún no tratadas al periodo \\(t\\)"
   },
   {
     "objectID": "diapositivas/did.knit.html#reportar-resultados",
     "href": "diapositivas/did.knit.html#reportar-resultados",
     "title": "Diferencia en diferencias",
     "section": "Reportar resultados",
-    "text": "Reportar resultados\nSi tenemos pocos periodos y cohortes puede ser práctico reportar todos los \\(\\hat{ATT}(g,t)\\)\nTambién podemos construir medidas agregadas:\n\\[\\theta = \\sum_{g\\in\\mathcal{G}}\\sum_{t=2}^{\\mathcal{T}}w(g,t)ATT(g,t)\\] ## Ventajas del estimador\nToma en cuenta la heterogeneidad de los efectos de tratamiento\nLos pesos son especificados por el investigador y no mecánicamente con en TWFE\nHace explícito el grupo de comparación (nunca tratados o aún no tratados)"
+    "text": "Reportar resultados\nSi tenemos pocos periodos y cohortes puede ser práctico reportar todos los \\(\\hat{ATT}(g,t)\\)\nTambién podemos construir medidas agregadas:\n\\[\\theta = \\sum_{g\\in\\mathcal{G}}\\sum_{t=2}^{\\mathcal{T}}w(g,t)ATT(g,t)\\]"
   },
   {
     "objectID": "diapositivas/did.html#qué-nos-dice-la-descomposición",
@@ -1557,6 +1557,41 @@
   {
     "objectID": "diapositivas/did.html#ventajas-del-estimador",
     "href": "diapositivas/did.html#ventajas-del-estimador",
+    "title": "Diferencia en diferencias",
+    "section": "Ventajas del estimador",
+    "text": "Ventajas del estimador\nToma en cuenta la heterogeneidad de los efectos de tratamiento\nLos pesos son especificados por el investigador y no mecánicamente con en TWFE\nHace explícito el grupo de comparación (nunca tratados o aún no tratados)"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-son-los-pesos-3",
+    "href": "diapositivas/did.knit.html#qué-son-los-pesos-3",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nAhora veamos la varianza que entra en este peso:\n\\[\\hat{V}_{kU}^D=n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)\\] Una primer cosa que entra en juego es \\(n_{kU}=\\frac{n_k}{n_k+n_U}\\), el peso relativo del grupo tratado temprano en la submuestra\nRecordemos que \\(\\bar{D}_k\\) indica la fracción del tiempo del panel que \\(k\\) permanece tratado\nDado que \\(D_{it}\\) es binaria, \\(\\bar{D}_k(1-\\bar{D}_k)\\) es la varianza de \\(D_{it}\\)\n¿Qué es lo más grande que puede ser \\(\\bar{D}_k(1-\\bar{D}_k)\\)?\nClaramente esto es a lo más 0.5, es decir, la contribución se maximiza cuando el tratamiento ocurre lo más cercano a la mitad del panel"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-son-los-pesos-4",
+    "href": "diapositivas/did.knit.html#qué-son-los-pesos-4",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nEn resumen, los pesos están dados por\n\\[pesos = \\frac{(\\text{participación de la submuestra})^2(\\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}\\]"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#qué-nos-dice-la-descomposición",
+    "href": "diapositivas/did.knit.html#qué-nos-dice-la-descomposición",
+    "title": "Diferencia en diferencias",
+    "section": "¿Qué nos dice la descomposición?",
+    "text": "¿Qué nos dice la descomposición?\nTodos los grupos funcionan como controles (algunas veces)\nLos pesos en cada comparación \\(2x2\\) dependen del tamaño de la muestra usada para estimarlos y del tiempo que las unidades permanecen tratadas\nEl efecto estimado se modificaría solo por agregar más años al final del panel\nLos términos que dominen pueden incluso cambiar el signo del efecto estimado\nGoodman-Bacon (2021) muestra que, en general usar TWFE solo recupera un efecto de tratamiento bajo supuestos muy fuertes, el más crucial, bajo efectos de tratamiento que no varían en el tiempo (no hay efectos dinámicos)"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#formas-de-agregación",
+    "href": "diapositivas/did.knit.html#formas-de-agregación",
+    "title": "Diferencia en diferencias",
+    "section": "Formas de agregación",
+    "text": "Formas de agregación\nLa notación usada en el artículo es densa pero en resumen, algunas agregaciones posibles son:\nEfecto de tratamiento por duración de exposición\n\nPodemos calcular \\(\\theta(e)\\), el efecto promedio \\(e\\) periodos después del tratamiento, donde \\(e=t-g\\) es el tiempo que ocurre desde que se realizó el tratamiento\nPodemos hacer un gráfico de \\(\\theta(e)\\)\n\nEfecto de tratamiento por grupo o cohorte\n\nLo llamamos \\(\\theta(\\tilde{g})\\) y nos permite conocer si el efecto del tratamiento es distinto para cohortes que fueron tratados temprano o tarde\n\nEfecto de tratamiento acumulado\n\nLo llamamos \\(\\theta(\\tilde{t})\\) y lo definimos como el efecto promedio por participar en el tratamiento hasta una fecha dada \\(\\tilde{t}\\)"
+  },
+  {
+    "objectID": "diapositivas/did.knit.html#ventajas-del-estimador",
+    "href": "diapositivas/did.knit.html#ventajas-del-estimador",
     "title": "Diferencia en diferencias",
     "section": "Ventajas del estimador",
     "text": "Ventajas del estimador\nToma en cuenta la heterogeneidad de los efectos de tratamiento\nLos pesos son especificados por el investigador y no mecánicamente con en TWFE\nHace explícito el grupo de comparación (nunca tratados o aún no tratados)"

@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Irvin Rojas">
 
-<title>Evaluación de Programas 2024 - Diferencia en diferencias</title>
+<title>Diferencia en diferencias – Evaluación de Programas 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -101,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -140,13 +140,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Diferencia en diferencias</li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -271,6 +271,9 @@ window.Quarto = {
   <li><a href="#qué-son-los-pesos" id="toc-qué-son-los-pesos" class="nav-link" data-scroll-target="#qué-son-los-pesos">¿Qué son los pesos?</a></li>
   <li><a href="#qué-son-los-pesos-1" id="toc-qué-son-los-pesos-1" class="nav-link" data-scroll-target="#qué-son-los-pesos-1">¿Qué son los pesos?</a></li>
   <li><a href="#qué-son-los-pesos-2" id="toc-qué-son-los-pesos-2" class="nav-link" data-scroll-target="#qué-son-los-pesos-2">¿Qué son los pesos?</a></li>
+  <li><a href="#qué-son-los-pesos-3" id="toc-qué-son-los-pesos-3" class="nav-link" data-scroll-target="#qué-son-los-pesos-3">¿Qué son los pesos?</a></li>
+  <li><a href="#qué-son-los-pesos-4" id="toc-qué-son-los-pesos-4" class="nav-link" data-scroll-target="#qué-son-los-pesos-4">¿Qué son los pesos?</a></li>
+  <li><a href="#qué-nos-dice-la-descomposición" id="toc-qué-nos-dice-la-descomposición" class="nav-link" data-scroll-target="#qué-nos-dice-la-descomposición">¿Qué nos dice la descomposición?</a></li>
   </ul></li>
   <li><a href="#estimador-de-callaway-santanna" id="toc-estimador-de-callaway-santanna" class="nav-link" data-scroll-target="#estimador-de-callaway-santanna">Estimador de Callaway &amp; Sant’Anna</a>
   <ul class="collapse">
@@ -280,6 +283,8 @@ window.Quarto = {
   <li><a href="#supuestos-1" id="toc-supuestos-1" class="nav-link" data-scroll-target="#supuestos-1">Supuestos</a></li>
   <li><a href="#estimador-de-callaway-santanna-2" id="toc-estimador-de-callaway-santanna-2" class="nav-link" data-scroll-target="#estimador-de-callaway-santanna-2">Estimador de Callaway &amp; Sant’Anna</a></li>
   <li><a href="#reportar-resultados" id="toc-reportar-resultados" class="nav-link" data-scroll-target="#reportar-resultados">Reportar resultados</a></li>
+  <li><a href="#formas-de-agregación" id="toc-formas-de-agregación" class="nav-link" data-scroll-target="#formas-de-agregación">Formas de agregación</a></li>
+  <li><a href="#ventajas-del-estimador" id="toc-ventajas-del-estimador" class="nav-link" data-scroll-target="#ventajas-del-estimador">Ventajas del estimador</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="did.knit.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
@@ -333,7 +338,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="banks_map.png" class="img-fluid figure-img" width="295"></p>
+<p><img src="banks_map.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -613,7 +618,7 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="trends_1.png" class="img-fluid figure-img" width="205"></p>
+<p><img src="trends_1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -629,7 +634,7 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="trends_2.png" class="img-fluid figure-img" width="204"></p>
+<p><img src="trends_2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -645,7 +650,7 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="trends_3.png" class="img-fluid figure-img" width="203"></p>
+<p><img src="trends_3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -763,11 +768,11 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <h2 class="anchored" data-anchor-id="qué-hace-el-estimador-de-twfe">¿Qué hace el estimador de TWFE?</h2>
 <p>Consideremos el siguiente problema de adopción escalonada</p>
 <ul>
-<li>Observamos <span class="math inline">\(T=5\)</span> periodos</li>
-<li><span class="math inline">\(k\)</span> denota la unidad tratada temprano en <span class="math inline">\(t=2\)</span></li>
-<li><span class="math inline">\(l\)</span> denota la unidad tratada tarde en <span class="math inline">\(t=4%\)</span></li>
-<li>Denotamos <span class="math inline">\(\bar{D}_k=0.8\)</span> al tiempo que <span class="math inline">\(k\)</span> pasa tratado</li>
-<li>Similarmente, <span class="math inline">\(\bar{D}_l=0.4\)</span></li>
+<li>Observamos <span class="math inline">\(T\)</span> periodos</li>
+<li><span class="math inline">\(k\)</span> denota la unidad tratada temprano</li>
+<li><span class="math inline">\(l\)</span> denota la unidad tratada tarde</li>
+<li>Denotamos <span class="math inline">\(\bar{D}_k\)</span> al tiempo que <span class="math inline">\(k\)</span> pasa tratado</li>
+<li>Similarmente, <span class="math inline">\(\bar{D}_l\)</span></li>
 <li><span class="math inline">\(n_k\)</span> es el número de unidades tratadas temprano</li>
 <li><span class="math inline">\(n_l\)</span> es el número de unidades tratadas tarde</li>
 <li><span class="math inline">\(n_U\)</span> es el número de unidades nunca tratadas</li>
@@ -780,7 +785,7 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="gb-decomposition-a.png" class="img-fluid figure-img" width="847"></p>
+<p><img src="gb-decomposition-a.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -808,7 +813,7 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="gb-decomposition-b.png" class="img-fluid figure-img" width="1036"></p>
+<p><img src="gb-decomposition-b.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -823,7 +828,7 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <p>donde <span class="math inline">\(P_t\)</span> son dummies temporales y <span class="math inline">\(S_i\)</span> son dummies individuales</p>
 <p>Luego obtenemos</p>
 <p><span class="math display">\[\tilde{D}_{it}=D_{it}-\hat{D}_{it}\]</span> Y entonces el estimador de TWFE puede escribirse como el coeficiente de una regresión bivariada:</p>
-<p><span class="math display">\[\hat{\beta}_{DD}=\frac{\hat{C}(y_{it}, \tilde{D}_{it})}{\hat{V}^D}\]</span></p>
+<p><span class="math display">\[\hat{\beta}_{DD}=\frac{\hat{C}(y_{it}, \tilde{D}_{it})}{\hat{V}^D}\]</span> <span class="math inline">\(\hat{V}^D\)</span> es la varianza de la variable de tratamiento <em>purgada</em> de efectos fijos</p>
 </section>
 <section id="qué-hace-el-estimador-de-twfe-5" class="level2">
 <h2 class="anchored" data-anchor-id="qué-hace-el-estimador-de-twfe-5">¿Qué hace el estimador de TWFE?</h2>
@@ -839,8 +844,6 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <li><p><span class="math inline">\(s_{kl}^k=\frac{[(n_k+n_l)(1-\bar{D}_l)]^2\hat{V}_{kl}^{D,k}}{\hat{V}^D}\)</span></p></li>
 <li><p><span class="math inline">\(s_{kl}^l=\frac{[(n_k+n_l)\bar{D}_k]^2\hat{V}_{kl}^{D,l}}{\hat{V}^D}\)</span></p></li>
 </ul>
-<p>En resumen, los pesos están dados por</p>
-<p><span class="math display">\[pesos = \frac{(\text{participación de la submuestra})^2(\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}\]</span></p>
 </section>
 <section id="qué-son-los-pesos-1" class="level2">
 <h2 class="anchored" data-anchor-id="qué-son-los-pesos-1">¿Qué son los pesos?</h2>
@@ -854,10 +857,32 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 </section>
 <section id="qué-son-los-pesos-2" class="level2">
 <h2 class="anchored" data-anchor-id="qué-son-los-pesos-2">¿Qué son los pesos?</h2>
-<p>Pongamos atención a la varianza que entra en uno de los pesos:</p>
-<p><span class="math display">\[\hat{V}_{kU}^D=n_{kU}(1-n_{kU})\bar{D}_k(1-\bar{D}_k)\]</span></p>
+<p>Pongamos atención a uno de los pesos, <span class="math inline">\(s_{kU}\)</span> para ver la intuición</p>
+<p>Vimos que:</p>
+<p><span class="math display">\[s_{kU}=\frac{(n_k+n_U)^2\hat{V}_{kU}^D}{\hat{V}^D}=\frac{(n_k+n_U)^2n_{kU}(1-n_{kU})\bar{D}_k(1-\bar{D}_k)}{\hat{V}^D}\]</span></p>
+<p>Primero, noten que el peso depende de <span class="math inline">\((n_k+n_u)^2\)</span>, es decir, la parte de la submuestra que se usa para estimar cada comparación <span class="math inline">\(2x2\)</span></p>
+</section>
+<section id="qué-son-los-pesos-3" class="level2">
+<h2 class="anchored" data-anchor-id="qué-son-los-pesos-3">¿Qué son los pesos?</h2>
+<p>Ahora veamos la varianza que entra en este peso:</p>
+<p><span class="math display">\[\hat{V}_{kU}^D=n_{kU}(1-n_{kU})\bar{D}_k(1-\bar{D}_k)\]</span> Una primer cosa que entra en juego es <span class="math inline">\(n_{kU}=\frac{n_k}{n_k+n_U}\)</span>, el peso relativo del grupo tratado temprano en la submuestra</p>
 <p>Recordemos que <span class="math inline">\(\bar{D}_k\)</span> indica la fracción del tiempo del panel que <span class="math inline">\(k\)</span> permanece tratado</p>
-<p>Entonces, esta varianza es más grande en tanto</p>
+<p>Dado que <span class="math inline">\(D_{it}\)</span> es binaria, <span class="math inline">\(\bar{D}_k(1-\bar{D}_k)\)</span> es la varianza de <span class="math inline">\(D_{it}\)</span></p>
+<p>¿Qué es lo más grande que puede ser <span class="math inline">\(\bar{D}_k(1-\bar{D}_k)\)</span>?</p>
+<p>Claramente esto es a lo más 0.5, es decir, la contribución se maximiza cuando el tratamiento ocurre lo más cercano a la mitad del panel</p>
+</section>
+<section id="qué-son-los-pesos-4" class="level2">
+<h2 class="anchored" data-anchor-id="qué-son-los-pesos-4">¿Qué son los pesos?</h2>
+<p>En resumen, los pesos están dados por</p>
+<p><span class="math display">\[pesos = \frac{(\text{participación de la submuestra})^2(\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}\]</span></p>
+</section>
+<section id="qué-nos-dice-la-descomposición" class="level2">
+<h2 class="anchored" data-anchor-id="qué-nos-dice-la-descomposición">¿Qué nos dice la descomposición?</h2>
+<p>Todos los grupos funcionan como <em>controles</em> (algunas veces)</p>
+<p>Los pesos en cada comparación <span class="math inline">\(2x2\)</span> dependen del tamaño de la muestra usada para estimarlos y del tiempo que las unidades permanecen tratadas</p>
+<p>El efecto estimado se modificaría solo por agregar más años al final del panel</p>
+<p>Los términos que dominen pueden incluso cambiar el signo del efecto estimado</p>
+<p>Goodman-Bacon (2021) muestra que, en general usar TWFE solo recupera un efecto de tratamiento bajo supuestos muy fuertes, el más crucial, bajo efectos de tratamiento que no varían en el tiempo (no hay efectos dinámicos)</p>
 </section>
 </section>
 <section id="estimador-de-callaway-santanna" class="level1">
@@ -898,7 +923,7 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <p>El estimador de Callaway &amp; Sant’Anna (2021) se define como:</p>
 <p><span class="math display">\[ATT(g,t)=E(y_{it}-y_{i,g-1}|G_i=g)-E(y_{it}-y_{i,g-1}|G_i\in\mathcal{G}_{comp})\]</span> Queremos comparar el valor de la variable de impacto entre el periodo <span class="math inline">\(g-1\)</span> y el <span class="math inline">\(t\)</span> para el grupo que fue tratado en <span class="math inline">\(g\)</span> con algún grupo de comparación denominado <span class="math inline">\(\mathcal{G}_{comp}\)</span></p>
 <p>Sustituyendo por el análogo muestral:</p>
-<p><span class="math display">\[\hat{ATT}(g,t)=\frac{1}{N_g}\sum_{i:\;G_i=g}(y_{it}-y_{i,g-1})-\frac{1}{N_{\mathcal{G}_{comp}}}\sum_{i\;G_i\in \mathcal{G}_{comp}}(y_{it}-y_{i,g-1})\]</span> ## Grupo de comparación</p>
+<p><span class="math display">\[\hat{ATT}(g,t)=\frac{1}{N_g}\sum_{i:\;G_i=g}(y_{it}-y_{i,g-1})-\frac{1}{N_{\mathcal{G}_{comp}}}\sum_{i\;G_i\in \mathcal{G}_{comp}}(y_{it}-y_{i,g-1})\]</span></p>
 <p>¿Qué es <span class="math inline">\(\mathcal{G}_{comp}\)</span>?</p>
 <ul>
 <li><span class="math inline">\(\mathcal{G}_{comp}=\{\infty \}\)</span>: aquellas unidades nunca tratadas</li>
@@ -909,7 +934,27 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <h2 class="anchored" data-anchor-id="reportar-resultados">Reportar resultados</h2>
 <p>Si tenemos pocos periodos y cohortes puede ser práctico reportar todos los <span class="math inline">\(\hat{ATT}(g,t)\)</span></p>
 <p>También podemos construir medidas agregadas:</p>
-<p><span class="math display">\[\theta = \sum_{g\in\mathcal{G}}\sum_{t=2}^{\mathcal{T}}w(g,t)ATT(g,t)\]</span> ## Ventajas del estimador</p>
+<p><span class="math display">\[\theta = \sum_{g\in\mathcal{G}}\sum_{t=2}^{\mathcal{T}}w(g,t)ATT(g,t)\]</span></p>
+</section>
+<section id="formas-de-agregación" class="level2">
+<h2 class="anchored" data-anchor-id="formas-de-agregación">Formas de agregación</h2>
+<p>La notación usada en el artículo es densa pero en resumen, algunas agregaciones posibles son:</p>
+<p><strong>Efecto de tratamiento por duración de exposición</strong></p>
+<ul>
+<li><p>Podemos calcular <span class="math inline">\(\theta(e)\)</span>, el efecto promedio <span class="math inline">\(e\)</span> periodos después del tratamiento, donde <span class="math inline">\(e=t-g\)</span> es el tiempo que ocurre desde que se realizó el tratamiento</p></li>
+<li><p>Podemos hacer un gráfico de <span class="math inline">\(\theta(e)\)</span></p></li>
+</ul>
+<p><strong>Efecto de tratamiento por grupo o cohorte</strong></p>
+<ul>
+<li>Lo llamamos <span class="math inline">\(\theta(\tilde{g})\)</span> y nos permite conocer si el efecto del tratamiento es distinto para cohortes que fueron tratados temprano o tarde</li>
+</ul>
+<p><strong>Efecto de tratamiento acumulado</strong></p>
+<ul>
+<li>Lo llamamos <span class="math inline">\(\theta(\tilde{t})\)</span> y lo definimos como el efecto promedio por participar en el tratamiento hasta una fecha dada <span class="math inline">\(\tilde{t}\)</span></li>
+</ul>
+</section>
+<section id="ventajas-del-estimador" class="level2">
+<h2 class="anchored" data-anchor-id="ventajas-del-estimador">Ventajas del estimador</h2>
 <p>Toma en cuenta la heterogeneidad de los efectos de tratamiento</p>
 <p>Los pesos son especificados por el investigador y no mecánicamente con en TWFE</p>
 <p>Hace explícito el grupo de comparación (nunca tratados o aún no tratados)</p>
@@ -954,18 +999,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -997,7 +1031,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1005,7 +1061,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
