@@ -6,3 +6,5 @@ title: "Diapositivas"
 [Diferencia en diferencias](./did.qmd){target="_blank"}
 
 [Métodos de emparejamiento](./emparejamiento.qmd){target="_blank"}
+
+[Métodos con discontinuidades](./discontinuidades.qmd){target="_blank"}
