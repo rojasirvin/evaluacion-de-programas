@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.555">
 
   <meta name="author" content="Irvin Rojas">
-  <title>Evaluación de Programas 2024 - Diseños con discontinuidades</title>
+  <title>Evaluación de Programas 2024 - Control sintético</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,71 +29,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -391,7 +326,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Diseños con discontinuidades</h1>
+  <h1 class="title">Control sintético</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -403,26 +338,67 @@ Irvin Rojas
 
 </section>
 <section>
-<section id="diseños-con-discontinuidades" class="title-slide slide level1 center">
-<h1>Diseños con discontinuidades</h1>
+<section id="control-sintético" class="title-slide slide level1 center">
+<h1>Control sintético</h1>
 
 </section>
-<section id="ejemplo-edad-legal-para-tomar-en-eu" class="slide level2">
-<h2>Ejemplo: edad legal para tomar en EU</h2>
+<section id="motivación" class="slide level2">
+<h2>Motivación</h2>
+<ul>
+<li><p>Hasta ahora hemos usado situaciones en las que varios individuos resultan tratados y varios resultan no ser tratados</p></li>
+<li><p>Los métodos no experimentales nos permiten identificar el efecto de un tratamiento por medio de supuestos</p></li>
+<li><p>Tratamos de aproximar una situación experimental</p></li>
+<li><p>Los estudios de evento ocurren cuando una política o programa se lleva a cabo a nivel agregado y afecta a unas pocas (a veces una) unidades</p></li>
+</ul>
+</section>
+<section id="motivación-1" class="slide level2">
+<h2>Motivación</h2>
+<ul>
+<li><p>El método de <em>control sintético</em> (CS) ha sido empleado para estudiar el efecto de algunas políticas (o eventos):</p>
+<ul>
+<li><p>El impacto del terrorismo en la región de Cataluña</p></li>
+<li><p>El efecto de una legislación contra el tabaco en California</p></li>
+<li><p>El efecto sobre el crecimiento de la reunificación de Alemania</p></li>
+<li><p>El efecto del flujo masivo de inmigrantes a Miami</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="partimos-del-concepto-de-did" class="slide level2">
+<h2>Partimos del concepto de DID</h2>
+<ul>
+<li><p>Consideremos un modelo simple de diferencia en diferencias</p></li>
+<li><p>Observamos una unidad tratada y una que nunca lo fue antes y después del tratamiento</p></li>
+<li><p>Bajo ciertos supuestos, el estimador de DID es el efecto del tratamiento</p></li>
+<li><p>La implementación consiste en comparar la unidad tratada con una o varias no tratadas</p></li>
+</ul>
+</section>
+<section id="cuál-es-el-efecto-de-la-inmigración-en-los-mercados-laborales" class="slide level2">
+<h2>¿Cuál es el efecto de la inmigración en los mercados laborales?</h2>
+<ul>
+<li><p>Card (1990) empleó datos a nivel individual sobre salarios y empleo en el área metropolitana de Miami y los comparó con el promedio de otras cuatro ciudades con proporciones similares de hispanos y negros</p></li>
+<li><p>Al comparar las tendencias en empleo y salarios con las de este conjunto de ciudades Card concluye que la llegada de inmigrantes no tuvo ningún efecto negativo</p></li>
+</ul>
+</section>
+<section id="los-marieles" class="slide level2">
+<h2>Los marieles</h2>
+
+<img data-src="marieles_newspaper.jpg" width="1000" class="r-stretch"></section>
+<section id="los-marieles-1" class="slide level2">
+<h2>Los marieles</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p>En Estados Unidos la edad legal para tomar es de 21 años</p></li>
-<li><p>¿Por qué tenemos una ley para prohibir el consumo de alcohol antes de los 21 (o 18) años?</p></li>
-<li><p>La ley genera una discontinuidad en el acceso a alcohol justo a los 21 años</p></li>
-<li><p>Podemos evaluar la efectividad de la política</p></li>
+<li><p>¿Cuál es el efecto de la inmigración en los mercados laborales?</p></li>
+<li><p>Card (1990) empleó datos a nivel individual sobre salarios y empleo en el área metropolitana de Miami y los comparó con el promedio de otras cuatro ciudades con proporciones similares de hispanos y negros</p></li>
+<li><p>Se compara a Miami con el promedio de Atlanta, Houston, Los Angeles y Tampa</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="birthdays_funerals.png" width="7162"></p>
+<p><img data-src="Miami_immigrants_characteristics.png" width="292"></p>
+<figcaption>Fuente: Card (1990)</figcaption>
 </figure>
 </div>
 </div>
@@ -430,21 +406,259 @@ Irvin Rojas
 </div>
 </div>
 </section>
-<section id="qué-pasa-en-el-cumpleaños-21" class="slide level2">
-<h2>¿Qué pasa en el cumpleaños 21?</h2>
+<section id="los-marieles-2" class="slide level2">
+<h2>Los marieles</h2>
+
+<img data-src="Miami_earnings_comparison.png" width="849" class="r-stretch quarto-figure-center"><p class="caption">Fuente: Card (1990)</p></section>
+<section id="los-marieles-3" class="slide level2">
+<h2>Los marieles</h2>
+
+<img data-src="Miami_unemployment_comparison.png" width="906" class="r-stretch quarto-figure-center"><p class="caption">Fuente: Card (1990)</p></section>
+<section id="los-marieles-4" class="slide level2">
+<h2>Los marieles</h2>
+<ul>
+<li><p>Al comparar las tendencias en empleo y salarios con las de este conjunto de ciudades Card concluye que la llegada de inmigrantes no tuvo ningún efecto negativo</p></li>
+<li><p>Tampoco encuentran evidencia de que la distribución de ingresos de los no cubanos se hubiera hecho más desigual</p></li>
+<li><p>Tampoco hubo efectos concentrados en los grupos menos educados</p></li>
+<li><p>Se concluye que Miami tuvo la capacidad para absorber el choque de oferta de trabajo sin efectos en el resto del empleo</p></li>
+</ul>
+</section>
+<section id="crítica-a-did" class="slide level2">
+<h2>Crítica a DID</h2>
+<ul>
+<li><p>¿Cómo escogemos las unidades de comparación?</p></li>
+<li><p>¿Cómo podemos saber qué tan buena es la unidad de comparación como contrafactual para reproducir lo que le hubiera pasado a la unidad tratada de no haber recibido el tratamiento?</p></li>
+</ul>
+</section>
+<section id="extender-did-sistemáticamente" class="slide level2">
+<h2>Extender DID sistemáticamente</h2>
+<ul>
+<li><p>El CS permite estudiar sistemáticamente estudios de eventos</p></li>
+<li><p>En otras ciencias sociales los estudios de eventos regularmente se realizan mediante un análisis detallado de las condiciones institucionales, políticas e históricas de la unidad tratada</p></li>
+<li><p>El CS nos permite seleccionar sistemáticamente las unidades de comparación</p></li>
+<li><p>Con las características de las unidades no tratadas se construye una unidad sintética que se emplea para compararla con la unidad tratada y medir el efecto del tratamiento</p></li>
+<li><p>Se trata de crear una unidad sintética que representa a la unidad tratada como si no hubiera recibido el tratamiento</p></li>
+</ul>
+</section>
+<section id="lo-único-que-podemos-hacer-son-estudios-cualitativos" class="slide level2">
+<h2>¿Lo único que podemos hacer son estudios cualitativos?</h2>
+
+<img data-src="marieles_castro.jpg" width="758" class="r-stretch"></section>
+<section id="extensión-sistemática-de-los-estudios-de-evento" class="slide level2">
+<h2>Extensión sistemática de los estudios de evento</h2>
+<ul>
+<li><p>El control sintético permite estudiar sistemáticamente estudios de eventos.</p></li>
+<li><p>En otras ciencias sociales los estudios de eventos regularmente se realizan mediante un análisis detallado de las condiciones institucionales, políticas e históricas de la unidad tratada.</p></li>
+<li><p>El control sintético nos permite seleccionar sistemáticamente las unidades de comparación.</p></li>
+<li><p>Con las características de las unidades no tratadas, el control sintético construye una unidad sintética que se emplea para compararla con la unidad tratada y medir el efecto del tratamiento.</p></li>
+<li><p>El método consiste en construir una unidad sintética que representa a la unidad tratada como si no hubiera recibido el tratamiento.</p></li>
+</ul>
+</section>
+<section id="el-modelo" class="slide level2">
+<h2>El modelo</h2>
+<ul>
+<li><p>Consideremos <span class="math inline">\(J+1\)</span> unidades, siendo <span class="math inline">\({2,...,J+1}\)</span> las no tratadas, mientras que <span class="math inline">\(t=1,...,T\)</span> denota el tiempo.</p></li>
+<li><p>Asumimos que en <span class="math inline">\(T_0\)</span> ocurre una intervención que solo afecta a <span class="math inline">\(1\)</span>.</p></li>
+<li><p>Consideremos los resultados contrafactuales <span class="math inline">\(Y_{it}^I\)</span> para un individuo intervenido, mientras que <span class="math inline">\(Y_{it}^N\)</span> para uno no intervenido.</p></li>
+<li><p>Asumimos que antes de la intervención, ninguna unidad fue afectada, por lo que <span class="math inline">\(Y_{it}^N=Y_{it}^I \quad \forall i,t &lt; T_0\)</span>.</p></li>
+<li><p>El efecto del tratamiento en es:</p></li>
+</ul>
+<p><span class="math display">\[\alpha_1=\left(\alpha_{1T_0+1},..., \alpha_{1T}\right)\]</span></p>
+<p>con <span class="math inline">\(t\geq T_0\)</span> y <span class="math inline">\(\alpha_{1t}=Y_{1t}^I-Y_{1t}^N\)</span></p>
+</section>
+<section id="proceso-generador-de-datos" class="slide level2">
+<h2>Proceso generador de datos</h2>
+<ul>
+<li>Consideremos un modelo bastante general para la variable de interés (modelo de factores):</li>
+</ul>
+<p><span class="math display">\[Y_{it}^N=\delta_t+\theta_t Z_i + \lambda_t\mu_i+\varepsilon_{it}\]</span></p>
+<ul>
+<li><p><span class="math inline">\(Z_i\)</span> son variables no afectadas por la intervención</p></li>
+<li><p><span class="math inline">\(\theta_t\)</span> es un vector de parámetros (que varía en el tiempo)</p></li>
+<li><p><span class="math inline">\(\delta_t\)</span> son factores comúnes desconocidos (efectos temporales en un modelo de panel)</p></li>
+<li><p><span class="math inline">\(\mu_i\)</span> es un vector de factores no observados (<em>unknown loadings</em>)</p></li>
+<li><p><span class="math inline">\(\lambda_t\)</span> son factores comúnes no observables</p></li>
+</ul>
+</section>
+<section id="control-sintético-1" class="slide level2">
+<h2>Control sintético</h2>
+<ul>
+<li><p>Consideremos un vector de pesos <span class="math inline">\(W=\left(w_2,...,w_{J+1}\right)\)</span>, con <span class="math inline">\(w_j \geq 0 \quad \forall j\geq 2\)</span></p></li>
+<li><p>Los pesos están normalizados tales que <span class="math inline">\(w_2+\ldots+w_{J+1}=1\)</span></p></li>
+<li><p>Cada vector <span class="math inline">\(W\)</span> diferente representa un potencial control sintético, es decir, un promedio ponderado de las unidades no tratadas</p></li>
+<li><p>La variable de resultados para un control sintético (definido por <span class="math inline">\(W\)</span>) es:</p></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+Y_{Wt}^N&amp;=\sum_{j=2}^{J+1} w_j Y_{jt}= \\
+    &amp;=\delta_t+\theta_t \left(\sum_{j=2}^{J+1} w_j Z_j\right) + \lambda_t \left(\sum_{j=2}^{J+1} w_j \mu_j \right) + \left(\sum_{j=2}^{J+1} w_j\varepsilon_{jt} \right)
+\end{aligned}
+\]</span></p>
+</section>
+<section id="control-sintético-2" class="slide level2">
+<h2>Control sintético</h2>
+<ul>
+<li><p>Hay una infinidad de CS, pues hay una infinidad de maneras de asignar los pesos a las unidades no tratadas</p></li>
+<li><p>Supongamos que existe una matriz <span class="math inline">\(W^*\)</span> tal que el control sintético replica la unidad tratada antes de la intervención</p></li>
+</ul>
+<p><span class="math display">\[\sum_{j=2}^{J+1} w^*_j Z_j=Z_1\]</span></p>
+<ul>
+<li>El control sintético replica la variable de resultados pre-intervención:</li>
+</ul>
+<p><span class="math display">\[\sum_{j=2}^{J+1} w^*_j Y_{jt}=Y_{1t} \quad \forall t\in{1,...,T_0}\]</span></p>
+</section>
+<section id="control-sintético-3" class="slide level2">
+<h2>Control sintético</h2>
+<ul>
+<li><p>Abadie, Diamond y Hainmueller (2010) dan las condiciones bajo las que el sesgo del control sintético queda acotado</p></li>
+<li><p>Una de estas condiciones es tener suficientes periodos pre intervención.</p></li>
+<li><p>Por tanto, el efecto del tratamiento puede estimarse como:</p></li>
+</ul>
+<p><span class="math display">\[\hat{\alpha}_{1t}=Y_{1t}-\sum_{j=2}^{J+1} w^*_j Y_{jt}=Y_{1t}-Y_{W^*t}\]</span> para <span class="math inline">\(t\in \{T_0+1,\ldots,T\}\)</span>.</p>
+</section>
+<section id="estimación" class="slide level2">
+<h2>Estimación</h2>
+<ul>
+<li><p>Necesitamos datos de panel pre y post intervención para la variable dependiente</p></li>
+<li><p>Además de algunos puntos pre intervención para las variables <span class="math inline">\(Z\)</span></p></li>
+<li><p>Requerimos suficientes periodos pre intervención para asegurarnos que el control sintético replica bien a la unidad tratada antes de la intervención</p></li>
+<li><p>Definamos <span class="math inline">\(X_1=(Z_1',\tilde{Y}_1^{K_1},\ldots,\tilde{Y}_1^{K_M})\)</span> el vector que colecciona las características de la unidad tratada preintervención</p></li>
+</ul>
+</section>
+<section id="estimación-1" class="slide level2">
+<h2>Estimación</h2>
+<ul>
+<li><p>En el vector <span class="math inline">\(X_1\)</span> permitimos que haya <span class="math inline">\(M\)</span> combinaciones lineales de la variable de resultados pre-intervención</p></li>
+<li><p>Por ejemplo, una combinación lineal de la variable de resultados pre-intervención es:</p></li>
+</ul>
+<p><span class="math display">\[\tilde{Y}_i^K=\sum_{s=1}^{T_0}k_sY_{is},\quad\quad K=(k_1,\ldots,k_{T_0})'\]</span></p>
+<p>es decir, podemos incluir el valor de la variable de resultados en algunos años pre intervención o el promedio de todos los años pre intervención</p>
+<ul>
+<li><p>Definimos lo análogo, pero para las unidades no tratadas, como la matrix <span class="math inline">\(X_0\)</span></p></li>
+<li><p>Definimos <span class="math inline">\(X_1-X_0W\)</span> como una medida de discrepancia entre <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_0W\)</span></p></li>
+</ul>
+</section>
+<section id="estimación-2" class="slide level2">
+<h2>Estimación</h2>
+<ul>
+<li>Planteamos entonces una función objetivo para minimizar las discrepancias:</li>
+</ul>
+<p><span class="math display">\[\min_{W\in\mathcal{W}}(X_1-X_0W)V'(X_1-X_0W)\]</span></p>
+<p>donde <span class="math inline">\(V\)</span> es una matriz positiva definida</p>
+<ul>
+<li><p>La solución a este problema de optimización es <span class="math inline">\(W^*(V)\)</span>, que depende de <span class="math inline">\(V\)</span>. <span class="math inline">\(V\)</span> es un vector de pesos que refleja la importancia relativa de las variables en <span class="math inline">\(X_1\)</span> y <span class="math inline">\(X_0\)</span></p></li>
+<li><p>Siguiendo a Abadie &amp; Gardeazabal (2003), podemos realizar un proceso que minimice la distancia entre el valor observado de la variable de resultados y el el contrafactual definido por <span class="math inline">\(W^*(V)\)</span></p></li>
+</ul>
+</section>
+<section id="estimación-3" class="slide level2">
+<h2>Estimación</h2>
+<ul>
+<li><p>Definamos <span class="math inline">\(\mathcal{Y_1}\)</span> como el vector de variables de resultados en la unidad tratada para los periodos pre intervención y <span class="math inline">\(\mathcal{Y_0}\)</span> a la matriz de las mismas variables para los no tratados</p></li>
+<li><p>Podemos encontrar la <span class="math inline">\(V\)</span> óptima como la solución a:</p></li>
+</ul>
+<p><span class="math display">\[V^*=\arg\min_{V\in\mathcal{V}}(\mathcal{Y}_1-\mathcal{Y}_0W^*(V))'(\mathcal{Y}_1-\mathcal{Y}_0W^*(V))\]</span></p>
+<ul>
+<li>Por lo tanto, los pesos para el control sintético estarán dados por <span class="math inline">\(W^*(V^*)\)</span>.</li>
+</ul>
+</section></section>
+<section>
+<section id="aplicación-la-proposición-99-en-california" class="title-slide slide level1 center">
+<h1>Aplicación: la proposición 99 en California</h1>
+
+</section>
+<section id="la-proposición-99-en-california" class="slide level2">
+<h2>La proposición 99 en California</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p>¿Efecto fiesta?</p></li>
-<li><p>Hay una tendendencia a la baja a ambos lados de la discotinuidad</p></li>
-<li><p>Sin embargo, hay un claro salto en el número de muertes a los 21 años</p></li>
+<li><p>En 1988 se pusieron en marcha una serie de medidas en el estado de California para tratar de reducir el consumo de tabaco</p></li>
+<li><p>Las medidas incluyeron nuevos impuestos, campañas publicitarias, establecimiento de espacios libres de humo, etc</p></li>
+<li><p>Para conocer el impacto de la medida en el consumo per cápita, Abadie, Diamond y Hainmueller (2010) construyen un CS</p></li>
+<li><p>¿Qué pasaría si comparamos California con el resto de los estados de EUA?</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="alcohol_sharpRD.png" width="7066"></p>
+<p><img data-src="Proposition99_CA_allstates.png" width="588"></p>
+<figcaption>Fuente: Abadie, Diamond y Hainmueller (2010).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="resultados" class="slide level2">
+<h2>Resultados</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Comparar a California con el resto de los estados no es lo más apropiado</p></li>
+<li><p>El consumo de tabaco ya venía cayendo en todo el país, pero en California la tendencia era más pronunciada</p></li>
+<li><p>La implementación del CS consiste en escoger a los estados no tratados de forma que puedan reproducir el comportamiento de California antes de la Proposición 99</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Proposition99_CA_synthetic.png" width="588"></p>
+<figcaption>Fuente: Abadie, Diamond y Hainmueller (2010).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="el-cs-se-parece-más-a-california" class="slide level2">
+<h2>El CS se parece más a California</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Al escoger los pesos apropiadamente el CS es más parecido a California que lo que era el promedio de todos los demás estados</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Proposition99_statistics.png" width="843"></p>
+<figcaption>Fuente: Abadie, Diamond y Hainmueller (2010).</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pesos-estimados" class="slide level2">
+<h2>Pesos estimados</h2>
+<ul>
+<li><p>El control sintético se caracteriza por una matriz de pesos</p></li>
+<li><p>Muchas unidades no contribuyen para la construcción del contrafactual</p></li>
+<li><p>Tenemos un método que nos permite asignar estos pesos de sistemática y dando más peso a los estados más parecidos a California</p></li>
+</ul>
+
+<img data-src="Proposition99_weights.png" width="991" class="r-stretch quarto-figure-center"><p class="caption">Fuente: Abadie, Diamond y Hainmueller (2010).</p></section>
+<section id="efecto-del-tratamiento" class="slide level2">
+<h2>Efecto del tratamiento</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>El efecto del tratamiento está dado por la diferencia entre el consumo per cápita de cigarrillos en California y el del CS</p></li>
+<li><p>Esto es la distancia vertical entre las curvas</p></li>
+<li><p>Al graficar las diferencias obtenemos una gráfica más clara del efecto del tratamiento</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Proposition99_gap.png" width="588"></p>
+<figcaption>Fuente: Abadie, Diamond y Hainmueller (2010).</figcaption>
 </figure>
 </div>
 </div>
@@ -453,76 +667,35 @@ Irvin Rojas
 </div>
 </section></section>
 <section>
-<section id="discontinuidades-nítidas" class="title-slide slide level1 center">
-<h1>Discontinuidades nítidas</h1>
+<section id="inferencia" class="title-slide slide level1 center">
+<h1>Inferencia</h1>
 
 </section>
-<section id="discontinuidades-nítidas-1" class="slide level2">
-<h2>Discontinuidades nítidas</h2>
+<section id="inferencia-1" class="slide level2">
+<h2>Inferencia</h2>
 <ul>
-<li><span class="math inline">\(D_a\)</span> es el estado del tratamiento</li>
-</ul>
-<p><span class="math display">\[
-D_a =
-\begin{cases}
-1  &amp; \text{si } a \geq 21 \\
-0  &amp; \text{si } a &lt; 21
-\end{cases}
-\]</span></p>
-<ul>
-<li><p><span class="math inline">\(a\)</span> es conocida como <em>running variable</em>, <em>score</em>, variable de selección, variable de asignación, etc.</p></li>
-<li><p>El tratamiento es una función determinística de <span class="math inline">\(a\)</span></p>
-<ul>
-<li>Si conocemos <span class="math inline">\(a\)</span> entonces conocemos <span class="math inline">\(D_a\)</span></li>
-</ul></li>
-<li><p>El tratamiento es discontinuo sobre <span class="math inline">\(a\)</span></p>
-<ul>
-<li>No importa qué tanto nos acercamos al corte, el estatus de tratamiento es el mismo hasta <span class="math inline">\(a\)</span></li>
-</ul></li>
+<li><p>A diferencia de las técnicas basadas en regresión, aquí no tenemos errores estándar para hacer inferencia sobre si las diferencias son estadísticamente significativas</p></li>
+<li><p>Se propone hacer inferencia basada en placebos</p></li>
+<li><p>Para cada estado (incluyendo a los no tratados) podemos estimar su control sintético</p></li>
+<li><p>Esto es un ejercicio placebo porque sabemos que para las unidades del grupo donador no ocurrió una intervención</p></li>
+<li><p>Para cada placebo obtenemos una gráfica del efecto del tratamiento, aunque sabemos que este efecto debería ser cercano a cero</p></li>
+<li><p>La inferencia estará basada en analizar qué tan común es ver efectos de la magnitud del encontrado con el control sintético para la unidad tratada.</p></li>
 </ul>
 </section>
-<section id="discontinuidades-níticas-y-regresión" class="slide level2">
-<h2>Discontinuidades níticas y regresión</h2>
-<ul>
-<li><p>Muchas cosas cambian con la edad</p></li>
-<li><p>Riesgo de enfermedades, muerte por otras causas</p></li>
-<li><p>Usamos regresión para aislar los efectos de la regla</p></li>
-</ul>
-<p><span class="math display">\[
-\bar{M}_a=\alpha+\rho D_a + \gamma a + \epsilon_a
-\]</span></p>
-<ul>
-<li><p><span class="math inline">\(\bar{M}_a\)</span> es la tasa de mortalidad en el mes <span class="math inline">\(a\)</span></p></li>
-<li><p><span class="math inline">\(\rho\)</span> captura el salto en la mortalidad a los 21 años</p></li>
-<li><p><span class="math inline">\(\hat{\rho}=7.66\)</span> : número de muertes adicionales a los 21 años</p></li>
-</ul>
-</section>
-<section id="diferencia-con-otros-diseños" class="slide level2">
-<h2>Diferencia con otros diseños</h2>
-<ul>
-<li><p>A diferencia de los métodos de regresión o pareamiento donde controlamos por un vector <span class="math inline">\(X\)</span> y esperamos que el tratamiento sea aleatorio controlando por <span class="math inline">\(X\)</span></p></li>
-<li><p>Aquí no hay valores de <span class="math inline">\(a\)</span> para los que observemos individuos en ambos estados del tratamiento</p></li>
-<li><p>La interpretación de la RD es en la vecindad de la discontinuidad</p></li>
-</ul>
-</section>
-<section id="no-linealidad-vs-discontinuidad" class="slide level2">
-<h2>No linealidad vs discontinuidad</h2>
+<section id="inferencia-2" class="slide level2">
+<h2>Inferencia</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p>Estimar el modelo de RD cuando la relación entre <span class="math inline">\(E[Y|X]\)</span> es como en el tercer panel nos llevaría a inferir un salto donde no existe</p></li>
-<li><p>Al usar RD debemos asegurarnos que estamos identificando una discontinuidad</p>
-<ul>
-<li><p>Modelar la no linearidad (enfoque <em>antiguo</em>)</p></li>
-<li><p>Concentrarnos solo en una ventana cercana a <span class="math inline">\(a_0\)</span> (enfoque más <em>moderno</em>)</p></li>
-</ul></li>
+<li>Analizamos qué tan común es ver efectos de la magnitud del encontrado con el CS de California</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
-<div>
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="discontinuity_nonlinearity.png" width="4402"></p>
+<p><img data-src="Proposition99_placebos.png" width="623"></p>
+<figcaption>Fuente: Abadie, Diamond y Hainmueller (2010)</figcaption>
 </figure>
 </div>
 </div>
@@ -530,237 +703,41 @@ D_a =
 </div>
 </div>
 </section>
-<section id="no-linealidades" class="slide level2">
-<h2>No linealidades</h2>
+<section id="error-de-predicción-cuadrado-medio-mspe" class="slide level2">
+<h2>Error de predicción cuadrado medio (MSPE)</h2>
 <ul>
-<li><p>Podemos usar polinomios de <span class="math inline">\(a\)</span></p></li>
-<li><p>Idealmente, las conclusiones no deberían cambiar de acuerdo al grado del polinomio usado</p></li>
-<li><p>El consejo es intentar varias especificaciones y no solo la que se ajuste más a nuestras expectativas de los resultados</p></li>
-<li><p>La Figura 4.2 parece tener una leve curvatura a la derecha de <span class="math inline">\(a\)</span></p></li>
-<li><p>Podemos ajustar directamente un polinomio de la edad:</p></li>
+<li><p>Podemos construir el MSPE, interpretado como una medida del ajuste del control sintético estimado</p></li>
+<li><p>Definamos el promedio de las discrepancias cuadradas entre la unidad verdadera y su control sintético para la unidad <span class="math inline">\(j\)</span> como:</p></li>
 </ul>
-<p><span class="math display">\[
-\bar{M}_a=\alpha+\rho D_a + \gamma_1 a + \gamma_2 a^2 + \epsilon_a
-\]</span></p>
-</section>
-<section id="no-linealidades-1" class="slide level2">
-<h2>No linealidades</h2>
+<p><span class="math display">\[ratio_{j}^{MSPE}=\frac{MSPE_{j, post}}{MSPE_{j, pre}}\]</span></p>
 <ul>
-<li>O podemos espcificar un coeficiente diferente para <span class="math inline">\(a\)</span> antes y después de <span class="math inline">\(a_0\)</span>:</li>
-</ul>
-<p><span class="math display">\[
-\bar{M}_a=\alpha+\rho D_a + \gamma(a-a_0) + \delta[(a-a_0)D_a] + \epsilon_a
-\]</span></p>
-<ul>
-<li>Notemos que en este caso el efecto del tratamiento es:</li>
-</ul>
-<p><span class="math display">\[
-\rho+\delta(a-a_0)
-\]</span></p>
-<ul>
-<li><p>Es decir, un efecto que depende de la distancia con <span class="math inline">\(a_0\)</span></p></li>
-<li><p>Sin embargo, ¿qué tan válido es evaluar el efecto en, digamos, <span class="math inline">\(a=30\)</span>? ¿O en <span class="math inline">\(a=10\)</span>?</p></li>
+<li><p>Podemos construir dicho estadístico para cada una de las unidades, ordenarlos de menor a mayor y observar en dónde se ubica <span class="math inline">\(ratio_1^{MSPE}\)</span></p></li>
+<li><p>Esperaríamos que se encontrara en el 5% más grande de los ratio estimados.</p></li>
 </ul>
 </section>
-<section id="no-linealidades-2" class="slide level2">
-<h2>No linealidades</h2>
+<section id="error-de-predicción-cuadrado-medio-mspe-1" class="slide level2">
+<h2>Error de predicción cuadrado medio (MSPE)</h2>
 <ul>
-<li>Podemos emplear una combinación de no linearidades y cambios en pendiente:</li>
+<li><p>En esta aplicación <span class="math inline">\(ratio_{CA}^{MSPE}\approx130\)</span></p></li>
+<li><p>Podemos ver la distribución:</p></li>
 </ul>
-<p><span class="math display">\[
-\begin{aligned}
-\bar{M}_a&amp;=\alpha+\rho D_a + \gamma_1(a-a_0) +\gamma_2(a-a_0)^2+\delta_1[(a-a_0)D_a]+ \delta_2[(a-a_0)^2D_a] + \epsilon_a
-\end{aligned}
-\]</span></p>
-<ul>
-<li><p>En esta especificación los términos lineal y cuadrático cambian en <span class="math inline">\(a_0\)</span></p></li>
-<li><p>Y el efecto del tratamiento en este caso es:</p></li>
-<li><p>Notemos que en este caso el efecto del tratamiento es:</p></li>
-</ul>
-<p><span class="math display">\[
-\rho+\delta_1(a-a_0)+\delta_2(a-a_0)^2
-\]</span></p>
-<ul>
-<li>En los dos casos anteriores, regularmente se interpreta solo a <span class="math inline">\(\rho\)</span> como el efecto del tratamiento</li>
-</ul>
-</section>
-<section id="no-linealidades-3" class="slide level2">
-<h2>No linealidades</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li><p><span class="math inline">\(\hat{\rho}=9.55\)</span></p></li>
-<li><p>Modelo más elaborado con mejor ajuste</p></li>
-<li><p>Es evidente gráficamente que hay un salto a los 21 años y una caída suave después</p></li>
-<li><p>¿Qué tan robustos son los resultados?</p></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"alcohol_sharp_flexible.png"</span>,</span>
-<span id="cb1-2"><a></a>                        <span class="at">dpi =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="alcohol_sharp_flexible.png" width="4502"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="efectos-estimados" class="slide level2">
-<h2>Efectos estimados</h2>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"RDestimates.png"</span>,</span>
-<span id="cb2-2"><a></a>                        <span class="at">dpi =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-</div>
-<img data-src="RDestimates.png" style="width:48.0%" class="r-stretch quarto-figure-center"><p class="caption">Fuente: Angrist &amp; Pischke (2014)</p></section>
-<section id="efectos-estimados-1" class="slide level2">
-<h2>Efectos estimados</h2>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"alcohol_sharp_flexible_otheroutcomes.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="alcohol_sharp_flexible_otheroutcomes.png" style="width:65.0%" class="r-stretch quarto-figure-center"><p class="caption">Fuente: Angrist &amp; Pischke (2014)</p></section></section>
-<section>
-<section id="ejemplo-transferencias-gubernamentales-y-apoyo-político" class="title-slide slide level1 center">
-<h1>Ejemplo: Transferencias gubernamentales y apoyo político</h1>
-
+<img data-src="Proposition99_MSPE.png" width="304" class="r-stretch quarto-figure-center"><p class="caption">Fuente: Abadie, Diamond y Hainmueller (2010)</p></section>
+<section id="materiales-adicionales" class="slide level2">
+<h2>Materiales adicionales</h2>
+<ul>
+<li><p>El texto de Abadie (2019), <a href="https://www.aeaweb.org/articles?id=10.1257/jel.20191450">Using synthetic controls: Feasibility, data requirements, and methodological aspects</a> provee una revisión detallada del estimador de control sintético, así como una guía para la implementación.</p></li>
+<li><p>Además, aquí puden encontrar una clase del mismo Alberto Abadie:</p></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nKzNp-qpE-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
 </section>
-<section id="transferencias-gubernamentales-y-apoyo-político" class="slide level2">
-<h2>Transferencias gubernamentales y apoyo político</h2>
+<section id="conclusión" class="slide level2">
+<h2>Conclusión</h2>
 <ul>
-<li><p>Manacorda, M., E. Miguel y A. Vigorito (2011), Government Transfers and Political Support</p></li>
-<li><p>¿Los programas gubernamentales generan lealtades?</p></li>
-<li><p>Programa Nacional de Emergencia Social (PANES) basado en un índice de pobreza</p></li>
-<li><p>Existe una discontinudad en el acceso al programa</p></li>
-</ul>
-</section>
-<section id="contexto" class="slide level2">
-<h2>Contexto</h2>
-<ul>
-<li><p>¿Qué pasó en Uruguay?</p></li>
-<li><p>Crisis económica a inicios de los 2000</p></li>
-<li><p>En abril de 2005 el Frente Amplio toma el poder</p></li>
-<li><p>Expansión del gasto público contra la pobreza (0.41% del PIB)</p></li>
-<li><p>PANES</p>
-<ul>
-<li><p>Ingreso ciudadano: US$70</p></li>
-<li><p>Otros componentes: alimenticio, empleo, salud, etc.</p></li>
-<li><p>Alcanzó al 10% de los hogares y 14% de la población</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="regla-de-asignación" class="slide level2">
-<h2>Regla de asignación</h2>
-<ul>
-<li><p>¿Cómo se decidió quién recibiría el PANES?</p></li>
-<li><p>Focalizado a los más pobres</p></li>
-<li><p>Modelo probit de ingreso ajustado</p></li>
-<li><p>El ingreso observado puede ser un indicador muy ruidoso</p></li>
-<li><p>Se asignó el programa solo a aquellos por debajo de un umbral de ingreso ajustado</p></li>
-</ul>
-</section>
-<section id="datos" class="slide level2">
-<h2>Datos</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li><p>Se recolectó información de los hogares alrededor de la discontinuidad (tratados y no tratados)</p></li>
-<li><p>Se realizaron dos rondas de seguimiento en 2006-07 y en 2008</p></li>
-<li><p>Variable de interés: apoyo político al gobierno en turno</p></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="PANES_implementation.png" width="671"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="cómo-medir-el-apoyo-político" class="slide level2">
-<h2>¿Cómo medir el apoyo político?</h2>
-<ul>
-<li><p>Construcción de un índice del 0 al 1</p></li>
-<li><p>Los hogares que reciben PANES tenían un apoyo político cercano a 0.90</p></li>
-<li><p>Los no elegibles mostraban un apoyo de 0.77</p></li>
-<li><p>Esto implica un incremento de 13 puntos porcentuales</p></li>
-</ul>
-</section>
-<section id="evidencia-gráfica" class="slide level2">
-<h2>Evidencia gráfica</h2>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"PANES_effect2007.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="PANES_effect2007.png" style="width:55.0%" class="r-stretch quarto-figure-center"><p class="caption">Fuente: Manacorda et al.&nbsp;(2011)</p></section>
-<section id="resultados-de-regresión" class="slide level2">
-<h2>Resultados de regresión</h2>
-<ul>
-<li><p><span class="math inline">\(E\)</span> es el umbral de elegibilidad de PANES</p></li>
-<li><p><span class="math inline">\(N_i=S_i-E\)</span> es el score normalizado</p></li>
-</ul>
-<p><span class="math display">\[
-y_i=\beta_0+\beta_1 \mathcal{I}(N_i&lt;0) + f_1(N_i) + \mathcal{I}f_2(N_i)+u_i
-\]</span></p>
-<ul>
-<li><span class="math inline">\(\beta_1\)</span> captura el impacto del programa</li>
-</ul>
-</section>
-<section id="efectos-estimados-2" class="slide level2">
-<h2>Efectos estimados</h2>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"PANES_regressionresults.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="PANES_regressionresults.png" style="width:70.0%" class="r-stretch quarto-figure-center"><p class="caption">Fuente: Manacorda et al.&nbsp;(2011)</p></section>
-<section id="evidencia-gráfica-en-2008" class="slide level2">
-<h2>Evidencia gráfica en 2008</h2>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"PANES_effect2008.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="PANES_effect2008.png" style="width:50.0%" class="r-stretch quarto-figure-center"><p class="caption">Fuente: Manacorda et al.&nbsp;(2011)</p></section>
-<section id="robustez" class="slide level2">
-<h2>Robustez</h2>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"PANES_validation.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="PANES_validation.png" style="width:60.0%" class="r-stretch quarto-figure-center"><p class="caption">Fuente: Manacorda et al.&nbsp;(2011)</p></section>
-<section id="discontinuidades-nítidas-resumen" class="slide level2">
-<h2>Discontinuidades nítidas: resumen</h2>
-<ul>
-<li>RD nítida se usa cuando el tratamiento es una función determinística de una variable <span class="math inline">\(x\)</span></li>
-</ul>
-<p><span class="math display">\[
-D_i =
-\begin{cases}
-1  &amp; \mbox{if } x_i \geq x_0 \\
-0  &amp; \mbox{if } x_i &lt; x_0
-\end{cases}
-\]</span></p>
-<ul>
-<li><p><span class="math inline">\(x_0\)</span> es el <em>umbral</em> o <em>corte</em></p></li>
-<li><p><span class="math inline">\(D_i\)</span> es una función determinística de <span class="math inline">\(x_i\)</span> pues una vez que conocemos <span class="math inline">\(x_i\)</span> entonces conocemos <span class="math inline">\(D_i\)</span></p></li>
-<li><p><span class="math inline">\(D_i\)</span> es una función discontinua en <span class="math inline">\(x_i\)</span> pues no importa que tanto nos acerquemos por la izquierda o por la derecha a <span class="math inline">\(x_0\)</span>, el estado del tratamiento no cambia</p></li>
-</ul>
-</section>
-<section id="discontinuidades-nítidas-resumen-1" class="slide level2">
-<h2>Discontinuidades nítidas: resumen</h2>
-<ul>
-<li><p>A diferencia de los modelos de regresión o de pareamiento, no hay valor de <span class="math inline">\(x_i\)</span> en el que observemos a individuos tratados y no tratados</p></li>
-<li><p>La interpretación del efecto estimado por RD es un efecto local en la vecindad de <span class="math inline">\(x_0\)</span>, donde podemos tener confianza que los individuos tratados y no tratados son similares en todas las dimensiones excepto en su posición respecto a <span class="math inline">\(x_0\)</span></p></li>
-<li><p>Una especificación flexible permite no confundir una discontinuidad con una no linealidad</p></li>
-<li><p>En la práctica, el polinomio de <span class="math inline">\(x_i\)</span> puede ser tan complejo como se desee pero se espera que los resultados no sean muy sensibles a especificaciones de este</p></li>
-<li><p>El método no paramétrico consiste en la estimación de <span class="math inline">\(\rho\)</span> en vecindades cada vez más pequeñas alrededor de <span class="math inline">\(x_0\)</span></p></li>
+<li><p>La construcción del control sintético se basa en lo que dicen los datos (<em>data driven</em>) para la selección de las unidades que son usadas en la construcción del contrafactual y los pesos que se le asignan a dichas unidades</p></li>
+<li><p>El investigador debe ser transparente al mostrar qué tan bueno es el control sintético que construye</p></li>
+<li><p>Para construir el control sintético no se usan los datos post intervención por lo que, al menos en teoría, el investigador no debería seleccionar el control sintético guiado por las conclusiones que resultan.</p></li>
 </ul>
 
 <div class="quarto-auto-generated-content">

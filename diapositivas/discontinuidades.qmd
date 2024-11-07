@@ -362,7 +362,7 @@ knitr::include_graphics("PANES_effect2007.png")
 
 
 $$
-y_i=\beta_0+\beta_1 \mathcal{I}(N_i<1) + f_1(N_i) + \mathcal{I}f_2(N_i)+u_i
+y_i=\beta_0+\beta_1 \mathcal{I}(N_i<0) + f_1(N_i) + \mathcal{I}f_2(N_i)+u_i
 $$
 
 

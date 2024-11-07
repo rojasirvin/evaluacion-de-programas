@@ -1,0 +1,493 @@
+---
+title: "Control sintético"
+author: "Irvin Rojas"
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+---
+
+
+```{r setup}
+#| echo: false
+#| warning: false 
+#| message: false
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+library(tidyverse)
+library(janitor)
+library(sandwich)
+library(readr)
+library(clubSandwich)
+library(modelsummary)
+library(estimatr)
+library(lubridate)
+library(Synth)
+```
+
+# Control sintético
+
+## Motivación
+ 
+- Hasta ahora hemos usado situaciones en las que varios individuos resultan tratados y varios resultan no ser tratados
+ 
+- Los métodos no experimentales nos permiten identificar el efecto de un tratamiento por medio de supuestos
+ 
+- Tratamos de aproximar una situación experimental
+ 
+- Los estudios de evento ocurren cuando una política o programa se lleva a cabo a nivel agregado y afecta a unas pocas (a veces una) unidades
+ 
+
+
+## Motivación
+
+- El método de *control sintético* (CS) ha sido empleado para estudiar el efecto de algunas políticas (o eventos):
+ 
+  - El impacto del terrorismo en la región de Cataluña
+
+  - El efecto de una legislación contra el tabaco en California
+
+  - El efecto sobre el crecimiento de la reunificación de Alemania
+
+  - El efecto del flujo masivo de inmigrantes a Miami
+
+ 
+## Partimos del concepto de DID
+
+- Consideremos un modelo simple de diferencia en diferencias
+
+- Observamos una unidad tratada y una que nunca lo fue antes y después del tratamiento
+
+- Bajo ciertos supuestos, el estimador de DID es el efecto del tratamiento
+
+- La implementación consiste en comparar la unidad tratada con una o varias no tratadas
+	 
+## ¿Cuál es el efecto de la inmigración en los mercados laborales?
+
+- Card (1990) empleó datos a nivel individual sobre salarios y empleo en el área metropolitana de Miami y los comparó con el promedio de otras cuatro ciudades con proporciones similares de hispanos y negros
+
+- Al comparar las tendencias en empleo y salarios con las de este conjunto de ciudades Card concluye que la llegada de inmigrantes no tuvo ningún efecto negativo
+
+## Los marieles
+
+```{r}
+knitr::include_graphics("marieles_newspaper.jpg")
+```
+
+
+## Los marieles
+	
+:::: {.columns}
+
+::: {.column width="50%"}
+- ¿Cuál es el efecto de la inmigración en los mercados laborales?
+
+- Card (1990) empleó datos a nivel individual sobre salarios y empleo en el área metropolitana de Miami y los comparó con el promedio de otras cuatro ciudades con proporciones similares de hispanos y negros
+
+- Se compara a Miami con el promedio de Atlanta, Houston, Los Angeles y Tampa
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-cap: 'Fuente: Card (1990)'
+knitr::include_graphics("Miami_immigrants_characteristics.png")
+```
+:::
+
+::::
+
+
+
+
+## Los marieles
+
+```{r}
+#| fig-cap: 'Fuente: Card (1990)'
+knitr::include_graphics("Miami_earnings_comparison.png")
+```
+
+
+
+## Los marieles
+
+```{r}
+#| fig-cap: 'Fuente: Card (1990)'
+knitr::include_graphics("Miami_unemployment_comparison.png")
+```
+
+## Los marieles
+	 
+- Al comparar las tendencias en empleo y salarios con las de este conjunto de ciudades Card concluye que la llegada de inmigrantes no tuvo ningún efecto negativo
+
+- Tampoco encuentran evidencia de que la distribución de ingresos de los no cubanos se hubiera hecho más desigual
+
+- Tampoco hubo efectos concentrados en los grupos menos educados
+
+- Se concluye que Miami tuvo la capacidad para absorber el choque de oferta de trabajo sin efectos en el resto del empleo
+
+## Crítica a DID
+
+- ¿Cómo escogemos las unidades de comparación?
+
+- ¿Cómo podemos saber qué tan buena es la unidad de comparación como contrafactual para reproducir lo que le hubiera pasado a la unidad tratada de no haber recibido el tratamiento?
+	 
+
+## Extender DID sistemáticamente
+	 
+- El CS permite estudiar sistemáticamente estudios de eventos
+
+- En otras ciencias sociales los estudios de eventos regularmente se realizan mediante un análisis detallado de las condiciones institucionales, políticas e históricas de la unidad tratada
+
+- El CS nos permite seleccionar sistemáticamente las unidades de comparación
+
+- Con las características de las unidades no tratadas se construye una unidad sintética que se emplea para compararla con la unidad tratada y medir el efecto del tratamiento
+
+- Se trata de crear una unidad sintética que representa a la unidad tratada como si no hubiera recibido el tratamiento
+	 
+## ¿Lo único que podemos hacer son estudios cualitativos?
+
+```{r}
+knitr::include_graphics("marieles_castro.jpg")
+```
+
+
+## Extensión sistemática de los estudios de evento
+	 
+- El control sintético permite estudiar sistemáticamente estudios de eventos.
+
+- En otras ciencias sociales los estudios de eventos regularmente se realizan mediante un análisis detallado de las condiciones institucionales, políticas e históricas de la unidad tratada.
+
+- El control sintético nos permite seleccionar sistemáticamente las unidades de comparación.
+
+- Con las características de las unidades no tratadas, el control sintético construye una unidad sintética que se emplea para compararla con la unidad tratada y medir el efecto del tratamiento. 
+
+- El método consiste en construir una unidad sintética que representa a la unidad tratada como si no hubiera recibido el tratamiento.
+
+
+## El modelo
+ 
+- Consideremos $J+1$ unidades, siendo ${2,...,J+1}$ las no tratadas, mientras que $t=1,...,T$ denota el tiempo.
+
+- Asumimos que en $T_0$ ocurre una intervención que solo afecta a $1$.
+
+- Consideremos los resultados contrafactuales $Y_{it}^I$ para un individuo intervenido, mientras que $Y_{it}^N$ para uno no intervenido.
+
+- Asumimos que antes de la intervención, ninguna unidad fue afectada, por lo que $Y_{it}^N=Y_{it}^I \quad \forall i,t < T_0$.
+
+- El efecto del tratamiento en es:
+
+$$\alpha_1=\left(\alpha_{1T_0+1},..., \alpha_{1T}\right)$$
+ 
+con $t\geq T_0$ y $\alpha_{1t}=Y_{1t}^I-Y_{1t}^N$
+
+
+## Proceso generador de datos
+ 
+- Consideremos un modelo bastante general para la variable de interés (modelo de factores):
+		 
+$$Y_{it}^N=\delta_t+\theta_t Z_i + \lambda_t\mu_i+\varepsilon_{it}$$
+
+- $Z_i$ son variables no afectadas por la intervención
+
+- $\theta_t$ es un vector de parámetros (que varía en el tiempo)
+
+- $\delta_t$ son factores comúnes desconocidos (efectos temporales en un modelo de panel)
+
+- $\mu_i$ es un vector de factores no observados (*unknown loadings*)
+
+- $\lambda_t$ son factores comúnes no observables
+
+
+## Control sintético
+ 
+- Consideremos un vector de pesos $W=\left(w_2,...,w_{J+1}\right)$, con $w_j \geq 0 \quad \forall j\geq 2$
+
+- Los pesos están normalizados tales que $w_2+\ldots+w_{J+1}=1$
+
+- Cada vector $W$ diferente representa un potencial control sintético, es decir, un promedio ponderado de las unidades no tratadas
+
+- La variable de resultados para un control sintético (definido por $W$) es:
+ 
+$$
+\begin{aligned}
+Y_{Wt}^N&=\sum_{j=2}^{J+1} w_j Y_{jt}= \\
+	&=\delta_t+\theta_t \left(\sum_{j=2}^{J+1} w_j Z_j\right) + \lambda_t \left(\sum_{j=2}^{J+1} w_j \mu_j \right) + \left(\sum_{j=2}^{J+1} w_j\varepsilon_{jt} \right)
+\end{aligned}
+$$
+
+
+## Control sintético
+
+- Hay una infinidad de CS, pues hay una infinidad de maneras de asignar los pesos a las unidades no tratadas
+
+- Supongamos que existe una matriz $W^*$ tal que el control sintético replica la unidad tratada antes de la intervención
+
+$$\sum_{j=2}^{J+1} w^*_j Z_j=Z_1$$
+
+- El control sintético replica la variable de resultados pre-intervención:
+
+$$\sum_{j=2}^{J+1} w^*_j Y_{jt}=Y_{1t} \quad \forall t\in{1,...,T_0}$$
+
+## Control sintético
+
+- Abadie, Diamond y Hainmueller (2010) dan las condiciones bajo las que el sesgo del control sintético queda acotado
+
+- Una de estas condiciones es tener suficientes periodos pre intervención.
+
+- Por tanto, el efecto del tratamiento puede estimarse como:
+
+$$\hat{\alpha}_{1t}=Y_{1t}-\sum_{j=2}^{J+1} w^*_j Y_{jt}=Y_{1t}-Y_{W^*t}$$
+para $t\in \{T_0+1,\ldots,T\}$.
+
+ 
+## Estimación
+ 
+- Necesitamos datos de panel pre y post intervención para la variable dependiente
+
+- Además de algunos puntos pre intervención para las variables $Z$
+
+- Requerimos suficientes periodos pre intervención para asegurarnos que el control sintético replica bien a la unidad tratada antes de la intervención
+ 
+- Definamos $X_1=(Z_1',\tilde{Y}_1^{K_1},\ldots,\tilde{Y}_1^{K_M})$ el vector que colecciona las características de la unidad tratada preintervención
+
+## Estimación
+
+
+- En el vector $X_1$ permitimos que haya $M$ combinaciones lineales de la variable de resultados pre-intervención
+
+- Por ejemplo, una combinación lineal de la variable de resultados pre-intervención es:
+
+$$\tilde{Y}_i^K=\sum_{s=1}^{T_0}k_sY_{is},\quad\quad K=(k_1,\ldots,k_{T_0})'$$
+
+es decir, podemos incluir el valor de la variable de resultados en algunos años pre intervención o el promedio de todos los años pre intervención
+
+- Definimos lo análogo, pero para las unidades no tratadas, como la matrix $X_0$
+
+- Definimos $X_1-X_0W$ como una medida de discrepancia entre $X_1$ y $X_0W$
+
+## Estimación
+
+- Planteamos entonces una función objetivo para minimizar las discrepancias:
+
+$$\min_{W\in\mathcal{W}}(X_1-X_0W)V'(X_1-X_0W)$$
+
+donde $V$ es una matriz positiva definida
+
+- La solución a este problema de optimización es $W^*(V)$, que depende de $V$. $V$ es un vector de pesos que refleja la importancia relativa de las variables en $X_1$ y $X_0$
+
+- Siguiendo a Abadie & Gardeazabal (2003), podemos realizar un proceso que minimice la distancia entre el valor observado de la variable de resultados y el el contrafactual definido por $W^*(V)$
+
+
+## Estimación
+
+- Definamos $\mathcal{Y_1}$ como el vector de variables de resultados en la unidad tratada para los periodos pre intervención y $\mathcal{Y_0}$ a la matriz de las mismas variables para los no tratados
+
+- Podemos encontrar la $V$ óptima como la solución a:
+
+$$V^*=\arg\min_{V\in\mathcal{V}}(\mathcal{Y}_1-\mathcal{Y}_0W^*(V))'(\mathcal{Y}_1-\mathcal{Y}_0W^*(V))$$
+
+- Por lo tanto, los pesos para el control sintético estarán dados por $W^*(V^*)$.
+
+
+
+# Aplicación: la proposición 99 en California
+
+## La proposición 99 en California
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- En 1988 se pusieron en marcha una serie de medidas en el estado de California para tratar de reducir el consumo de tabaco
+ 
+- Las medidas incluyeron nuevos impuestos, campañas publicitarias, establecimiento de espacios libres de humo, etc
+ 
+- Para conocer el impacto de la medida en el consumo per cápita, Abadie, Diamond y Hainmueller (2010) construyen un CS
+ 
+- ¿Qué pasaría si comparamos California con el resto de los estados de EUA?
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-cap: 'Fuente: Abadie, Diamond y Hainmueller (2010).'
+knitr::include_graphics("Proposition99_CA_allstates.png")
+```
+:::
+
+::::
+
+
+
+## Resultados
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Comparar a California con el resto de los estados no es lo más apropiado
+ 
+- El consumo de tabaco ya venía cayendo en todo el país, pero en California la tendencia era más pronunciada
+ 
+- La implementación del CS consiste en escoger a los estados no tratados de forma que puedan reproducir el comportamiento de California antes de la Proposición 99
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-cap: 'Fuente: Abadie, Diamond y Hainmueller (2010).'
+knitr::include_graphics("Proposition99_CA_synthetic.png")
+```
+:::
+
+::::
+
+
+
+## El CS se parece más a California
+ 
+ 
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Al escoger los pesos apropiadamente el CS es más parecido a California que lo que era el promedio de todos los demás estados
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-cap: 'Fuente: Abadie, Diamond y Hainmueller (2010).'
+knitr::include_graphics("Proposition99_statistics.png")
+```
+:::
+
+::::
+
+
+
+
+
+
+## Pesos estimados
+
+- El control sintético se caracteriza por una matriz de pesos
+
+- Muchas unidades no contribuyen para la construcción del contrafactual
+
+- Tenemos un método que nos permite asignar estos pesos de sistemática y dando más peso a los estados más parecidos a California
+
+```{r}
+#| fig-cap: 'Fuente: Abadie, Diamond y Hainmueller (2010).'
+knitr::include_graphics("Proposition99_weights.png")
+```
+
+
+
+## Efecto del tratamiento
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- El efecto del tratamiento está dado por la diferencia entre el consumo per cápita de cigarrillos en California y el del CS
+ 
+- Esto es la distancia vertical entre las curvas
+ 
+- Al graficar las diferencias obtenemos una gráfica más clara del efecto del tratamiento
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-cap: 'Fuente: Abadie, Diamond y Hainmueller (2010).'
+knitr::include_graphics("Proposition99_gap.png")
+```
+:::
+
+::::
+
+# Inferencia
+
+## Inferencia
+ 
+- A diferencia de las técnicas basadas en regresión, aquí no tenemos errores estándar para hacer inferencia sobre si las diferencias son estadísticamente significativas
+
+- Se propone hacer inferencia basada en placebos
+
+- Para cada estado (incluyendo a los no tratados) podemos estimar su control sintético
+
+- Esto es un ejercicio placebo porque sabemos que para las unidades del grupo donador no ocurrió una intervención
+
+- Para cada placebo obtenemos una gráfica del efecto del tratamiento, aunque sabemos que este efecto debería ser cercano a cero
+ 
+- La inferencia estará basada en analizar qué tan común es ver efectos de la magnitud del encontrado con el control sintético para la unidad tratada.
+
+
+
+## Inferencia
+
+	
+:::: {.columns}
+
+::: {.column width="50%"}
+- Analizamos qué tan común es ver efectos de la magnitud del encontrado con el CS de California
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-cap: 'Fuente: Abadie, Diamond y Hainmueller (2010)'
+knitr::include_graphics("Proposition99_placebos.png")
+```
+:::
+
+::::
+
+ 
+
+
+
+## Error de predicción cuadrado medio (MSPE)
+
+- Podemos construir el MSPE, interpretado como una medida del ajuste del control sintético estimado
+
+- Definamos el promedio de las discrepancias cuadradas entre la unidad verdadera y su control sintético para la unidad $j$ como:
+
+$$ratio_{j}^{MSPE}=\frac{MSPE_{j, post}}{MSPE_{j, pre}}$$
+
+- Podemos construir dicho estadístico para cada una de las unidades, ordenarlos de menor a mayor y observar en dónde se ubica $ratio_1^{MSPE}$
+
+- Esperaríamos que se encontrara en el 5% más grande de los ratio estimados.
+
+
+
+## Error de predicción cuadrado medio (MSPE)
+
+- En esta aplicación $ratio_{CA}^{MSPE}\approx130$
+
+- Podemos ver la distribución:
+
+```{r}
+#| fig-cap: 'Fuente: Abadie, Diamond y Hainmueller (2010)'
+knitr::include_graphics("Proposition99_MSPE.png")
+```
+
+## Materiales adicionales
+
+- El texto de Abadie (2019), [Using synthetic controls: Feasibility, data requirements, and methodological aspects](https://www.aeaweb.org/articles?id=10.1257/jel.20191450) provee una revisión detallada del estimador de control sintético, así como una guía para la implementación.
+
+- Además, aquí puden encontrar una clase del mismo Alberto Abadie:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nKzNp-qpE-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Conclusión
+
+- La construcción del control sintético se basa en lo que dicen los datos (*data driven*) para la selección de las unidades que son usadas en la construcción del contrafactual y los pesos que se le asignan a dichas unidades
+
+- El investigador debe ser transparente al mostrar qué tan bueno es el control sintético que construye
+
+- Para construir el control sintético no se usan los datos post intervención por lo que, al menos en teoría, el investigador no debería seleccionar el control sintético guiado por las conclusiones que resultan.
+

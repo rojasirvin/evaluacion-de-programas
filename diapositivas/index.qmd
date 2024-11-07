@@ -8,3 +8,5 @@ title: "Diapositivas"
 [Métodos de emparejamiento](./emparejamiento.qmd){target="_blank"}
 
 [Métodos con discontinuidades](./discontinuidades.qmd){target="_blank"}
+
+[Control sintético](./sintetico.qmd){target="_blank"}
