@@ -28,6 +28,9 @@ title: "Tareas"
 
 - [Preguntas](./tarea-3.qmd)
 
+- [Respuestas](./tarea-3-respuestas.qmd)
+
+
 ---
 
 # Tarea 4
