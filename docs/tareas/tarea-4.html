@@ -293,7 +293,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
 <p>El archivo <em>data_germany.csv</em> contiene los datos empleados por Abadie, Diamond y Hainmueller (2015) para estimar el efecto de la reunificación de Alemania en el PIB per cápita (<strong>gdp</strong>) usando el método de control sintético.</p>
 <ol type="a">
-<li><p>[15 puntos] Estime el control sintético del PIB per cápita de Alemania del Oeste usando como <em>grupo donador</em> a los 21 países incluidos en los datos. Esto es, encuentre la matriz <span class="math inline">\(W\)</span> que otorga pesos a las distintas regiones usando una serie de predictores observables. Para este propósito, use como predictores el promedio de las siguientes variables para el periodo 1964-1969:</p>
+<li><p>[15 puntos] Estime el control sintético del PIB per cápita de Alemania del Oeste usando como <em>grupo donador</em> a los 21 países incluidos en los datos. Esto es, encuentre la matriz <span class="math inline">\(W\)</span> que otorga pesos a las distintas regiones usando una serie de predictores observables. Para este propósito, use como predictores el promedio de las siguientes variables para el periodo 1981-1990:</p>
 <ul>
 <li>La apertura comercial, <strong>trade</strong></li>
 <li>La tasa de inflación, <strong>infrate</strong></li>
@@ -319,8 +319,7 @@ window.Quarto = {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>time.predictors.prior <span class="ot">=</span> <span class="dv">1960</span><span class="sc">:</span><span class="dv">1964</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>time.optimize.ssr <span class="ot">=</span> <span class="dv">1965</span><span class="sc">:</span><span class="dv">1975</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>unit.names.variable <span class="ot">=</span> <span class="dv">2</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>time.plot <span class="ot">=</span> <span class="dv">1960</span><span class="sc">:</span><span class="dv">1990</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>time.plot <span class="ot">=</span> <span class="dv">1960</span><span class="sc">:</span><span class="dv">1990</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Posteriormente, use el vector <span class="math inline">\(V\)</span> obtenido con el procedimiento de entrenamiento anterior para estimar el control sintético, pero ahora con los siguientes predictores y periodos de referencia (el periodo de validación). Para indicar una matriz <span class="math inline">\(V\)</span> en específico explore las opciones de la función <em>synth</em>.</p>
 <div class="cell">
@@ -332,8 +331,7 @@ window.Quarto = {
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>time.predictors.prior <span class="ot">=</span> <span class="dv">1965</span><span class="sc">:</span><span class="dv">1975</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>time.optimize.ssr <span class="ot">=</span> <span class="dv">1960</span><span class="sc">:</span><span class="dv">1975</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>unit.names.variable <span class="ot">=</span> <span class="dv">2</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>time.plot <span class="ot">=</span> <span class="dv">1960</span><span class="sc">:</span><span class="dv">1990</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>time.plot <span class="ot">=</span> <span class="dv">1960</span><span class="sc">:</span><span class="dv">1990</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finalmente, obtenga el gráfico de trayectorias y compruebe que replica la figura 4 del artículo.</p></li>
 </ol>

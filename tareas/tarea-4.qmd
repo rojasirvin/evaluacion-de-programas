@@ -63,7 +63,7 @@ a. [5 puntos] Use *rdrobust* para estimar el efecto usando un polinomio de orden
 
 El archivo *data_germany.csv* contiene los datos empleados por Abadie, Diamond y Hainmueller (2015) para estimar el efecto de la reunificación de Alemania en el PIB per cápita (**gdp**) usando el método de control sintético.
 
-a. [15 puntos] Estime el control sintético del PIB per cápita de Alemania del Oeste usando como *grupo donador* a los 21 países incluidos en los datos. Esto es, encuentre la matriz $W$ que otorga pesos a las distintas regiones usando una serie de predictores observables. Para este propósito, use como predictores el promedio de las siguientes variables para el periodo 1964-1969:
+a. [15 puntos] Estime el control sintético del PIB per cápita de Alemania del Oeste usando como *grupo donador* a los 21 países incluidos en los datos. Esto es, encuentre la matriz $W$ que otorga pesos a las distintas regiones usando una serie de predictores observables. Para este propósito, use como predictores el promedio de las siguientes variables para el periodo 1981-1990:
 
     - La apertura comercial, **trade**
     - La tasa de inflación, **infrate**
@@ -99,7 +99,6 @@ special.predictors = list(
     
 time.predictors.prior = 1960:1964
 time.optimize.ssr = 1965:1975
-unit.names.variable = 2
 time.plot = 1960:1990
 
 ```
@@ -117,7 +116,6 @@ special.predictors = list(
 
 time.predictors.prior = 1965:1975
 time.optimize.ssr = 1960:1975
-unit.names.variable = 2
 time.plot = 1960:1990
 
 ```
