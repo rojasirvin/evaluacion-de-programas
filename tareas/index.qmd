@@ -37,3 +37,5 @@ title: "Tareas"
 
 - Fecha de entrega: jueves 28 de noviembre a las 20:00 en Teams
 
+- [Preguntas](./tarea-4.qmd)
+

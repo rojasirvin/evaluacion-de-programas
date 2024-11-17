@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.555">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Evaluación de Programas 2024 - Tareas</title>
+<title>Evaluación de Programas 2024 - Respuestas a la tarea 4</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -52,20 +86,49 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -76,11 +139,11 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tareas/index.html">Tareas</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Respuestas a la tarea 4</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -102,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -145,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tareas/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../tareas/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tareas</span></a>
   </div>
 </li>
@@ -168,13 +231,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#tarea-1" id="toc-tarea-1" class="nav-link active" data-scroll-target="#tarea-1">Tarea 1</a></li>
-  <li><a href="#tarea-2" id="toc-tarea-2" class="nav-link" data-scroll-target="#tarea-2">Tarea 2</a></li>
-  <li><a href="#tarea-3" id="toc-tarea-3" class="nav-link" data-scroll-target="#tarea-3">Tarea 3</a></li>
-  <li><a href="#tarea-4" id="toc-tarea-4" class="nav-link" data-scroll-target="#tarea-4">Tarea 4</a></li>
+  <li><a href="#preguntas" id="toc-preguntas" class="nav-link active" data-scroll-target="#preguntas">Preguntas</a></li>
+  <li><a href="#datos" id="toc-datos" class="nav-link" data-scroll-target="#datos">Datos</a></li>
+  <li><a href="#pregunta-1" id="toc-pregunta-1" class="nav-link" data-scroll-target="#pregunta-1">Pregunta 1</a></li>
+  <li><a href="#pregunta-2" id="toc-pregunta-2" class="nav-link" data-scroll-target="#pregunta-2">Pregunta 2</a></li>
   </ul>
 </nav>
     </div>
@@ -183,7 +246,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tareas</h1>
+<h1 class="title">Respuestas a la tarea 4</h1>
 </div>
 
 
@@ -200,39 +263,80 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="tarea-1" class="level1">
-<h1>Tarea 1</h1>
-<ul>
-<li><p>Fecha de entrega: martes 17 de septiembre a las 20:00 en Teams</p></li>
-<li><p><a href="../tareas/tarea-1.html">Preguntas</a></p></li>
-<li><p><a href="../tareas/tarea-1-respuestas.html">Respuestas</a></p></li>
-</ul>
-<hr>
+<section id="preguntas" class="level2">
+<h2 class="anchored" data-anchor-id="preguntas">Preguntas</h2>
+<p>Fecha de entrega: <strong>jueves 28 de noviembre a las 20:00 en Teams</strong></p>
+<p>La tarea deberá entregarse en Teams. Deberá incluir dos documentos:</p>
+<p>Un primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.</p>
+<p>Un segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad.</p>
 </section>
-<section id="tarea-2" class="level1">
-<h1>Tarea 2</h1>
-<ul>
-<li><p>Fecha de entrega: miércoles 2 de octubre a las 20:00 en Teams</p></li>
-<li><p><a href="../tareas/tarea-2.html">Preguntas</a></p></li>
-<li><p><a href="../tareas/tarea-2-respuestas.html">Respuestas</a></p></li>
-</ul>
-<hr>
+<section id="datos" class="level2">
+<h2 class="anchored" data-anchor-id="datos">Datos</h2>
+<p><a href="../files/salud_peru.csv">salud_peru.csv</a></p>
+<p><a href="../files/data_germany.csv">data_germany.csv</a></p>
 </section>
-<section id="tarea-3" class="level1">
-<h1>Tarea 3</h1>
-<ul>
-<li><p>Fecha de entrega: jueves 7 de noviembre a las 20:00 en Teams</p></li>
-<li><p><a href="../tareas/tarea-3.html">Preguntas</a></p></li>
-<li><p><a href="../tareas/tarea-3-respuestas.html">Respuestas</a></p></li>
-</ul>
-<hr>
+<section id="pregunta-1" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
+<p>Los datos del archivo <em>salud_peru.csv</em> contienen información de una encuesta en hogares realizada en Perú. Un programa del gobierno otorgó un seguro de salud para cubrir a hogares de trabajadores informales y pobres, típicamente excluidos de los servicios de salud. Para ello, se uso un índice de ingreso (IFH), expresado en soles, para determinar la elegibilidad. Aquellos hogares con un IFH menor o igual a 55 soles son considerados pobres. Se desea estimar el efecto del programa en la probabilidad de recibir algún tipo de anteción médica, <strong>curative</strong>, y sobre la probabilidad de recibir algún tipo de asistencia médica en un hospital o con un doctor, <strong>hospinter</strong>. La columna <strong>ifh</strong> contiene el indicador del ingreso.</p>
+<ol type="a">
+<li><p>[10 puntos] Genere una gráfica donde muestre evidencia de una discontinuidad en la variable <strong>curative</strong> para aquellos hogares que recibieron los beneficios del programa. Debe usar solo a los trabajadores informales, <em>formal==0</em>. Primero, realice la gráfica con una ventana de 100 soles a la izquierda y 100 soles a la derecha del corte de elegibilidad y en la que cada punto represente la media de la variable <strong>curative</strong> en <em>bins</em> de 5 soles. Agregue una línea de regresión lineal para cada lado del corte de elegibilidad.</p></li>
+<li><p>[5 puntos] Genere el mismo gráfico que en la parte a., pero ahora con una ventana de 2 soles a cada lado de la discontinuidad.</p></li>
+<li><p>[5 puntos] Genere el mismo gráfico que en la parte a., pero calcule la media de la variable <strong>curative</strong> en <em>bins</em> de 10 soles.</p></li>
+<li><p>[5 puntos] Ahora use <em>rdplot</em> del paquete <em>rdrobust</em> para construir el mismo gráfico.</p></li>
+<li><p>[10 puntos] Estime la versión más básica de un modelo de regresión discontinua para el efecto del programa sobre <strong>hospinter</strong>. Reporte el coeficiente estimado del efecto del tratamiento y su significancia estadística. Use una ventana de 20 soles en el IFH antes y después del corte de elegibilidad. Interprete sus resultados.</p></li>
+<li><p>[5 puntos] Estime la misma especificación que en la parte d., pero ahora con una ventana de 10 soles en el IFH. Interprete sus resultados.</p></li>
+<li><p>[5 puntos] Regrese a una ventana de 20 soles como en la parte d., pero ahora permita un coeficiente distinto para el IFH antes y después del corte, y un polinomio de orden 2 para la variable de asignación. Interprete sus resultados.</p></li>
+<li><p>[5 puntos] Use <em>rdrobust</em> para estimar el efecto usando un polinomio de orden 2 y una regresión local no paramétrica. Use algún selector de ancho de banda óptimo.</p></li>
+</ol>
 </section>
-<section id="tarea-4" class="level1">
-<h1>Tarea 4</h1>
+<section id="pregunta-2" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
+<p>El archivo <em>data_germany.csv</em> contiene los datos empleados por Abadie, Diamond y Hainmueller (2015) para estimar el efecto de la reunificación de Alemania en el PIB per cápita (<strong>gdp</strong>) usando el método de control sintético.</p>
+<ol type="a">
+<li><p>[15 puntos] Estime el control sintético del PIB per cápita de Alemania del Oeste usando como <em>grupo donador</em> a los 21 países incluidos en los datos. Esto es, encuentre la matriz <span class="math inline">\(W\)</span> que otorga pesos a las distintas regiones usando una serie de predictores observables. Para este propósito, use como predictores el promedio de las siguientes variables para el periodo 1964-1969:</p>
 <ul>
-<li><p>Fecha de entrega: jueves 28 de noviembre a las 20:00 en Teams</p></li>
-<li><p><a href="../tareas/tarea-4.html">Preguntas</a></p></li>
+<li>La apertura comercial, <strong>trade</strong></li>
+<li>La tasa de inflación, <strong>infrate</strong></li>
 </ul>
+<p>Además, use como <em>predictores especiales</em> los siguientes valores:</p>
+<ul>
+<li>El promedio de la participación de la industria en el PIB, <strong>industry</strong>, de 1981 a 1990</li>
+<li>El promedio de la escolaridad, <strong>schooling</strong>, de 1980 y 1985</li>
+<li>La tasa de inversión, <strong>invest80</strong>, de 1980</li>
+</ul>
+<p>Note que Alemania Occidental está identificada con el número 7 de la columna <strong>index</strong>. Realice el procedimiento de optimización para minimizar las discrepancias entre la unidad tratada y su sintético usando el periodo 1960-1989.</p>
+<p>¿Qué regiones y con qué pesos contribuyen a construir la Alemania Occidental sintética? Use el procedimiento que vimos en clase, aunque no podrá replicar exactamente los resultados del artículo, por ahora. Notará esto en los valores que obtenga para <span class="math inline">\(W\)</span>.</p></li>
+<li><p>[10 puntos] Obtenga un gráfico en donde represente las series de tiempo del PIB per cápita de Alemania Occidental que efectivamente se realizó, la de su correspondiente control sintético y la del promedio simple del resto de países.</p></li>
+<li><p>[10 puntos] Genere una gráfica de brecha que muestre el efecto del terrorismo sobre el PIB per cápita. La brecha es la diferencia entre la serie de tiempo realizada y su contraparte sintética.</p></li>
+<li><p>[15 puntos] Ahora seguiremos la estrategia de estimación que siguen los autores en el artículo. Mostraremos que, con su método, podemos obtener el gráfico de placebo en el tiempo de la figura 4 del artículo.</p>
+<p>Los autores siguen un procedimiento de validación cruzada o <em>cross-validation</em>, muy usado también en ciencia de datos. Para ello, dividen la muestra pre intervención en un periodo de entrenamiento y otro de validación. La idea es obtener <span class="math inline">\(V\)</span> en el periodo de entrenamiento y usar dicho vector como pesos en la estimación de <span class="math inline">\(W\)</span> en el periodo de validación.</p>
+<p>Primero, estime el control sintético para el periodo de validación, usando los siguientes predictores y periodos de optimización:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>special.predictors <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="st">"industry"</span>,<span class="dv">1971</span>, <span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="st">"schooling"</span>,<span class="fu">c</span>(<span class="dv">1960</span>,<span class="dv">1965</span>), <span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="st">"invest60"</span> ,<span class="dv">1980</span>, <span class="fu">c</span>(<span class="st">"mean"</span>)))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>time.predictors.prior <span class="ot">=</span> <span class="dv">1960</span><span class="sc">:</span><span class="dv">1964</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>time.optimize.ssr <span class="ot">=</span> <span class="dv">1965</span><span class="sc">:</span><span class="dv">1975</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>unit.names.variable <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>time.plot <span class="ot">=</span> <span class="dv">1960</span><span class="sc">:</span><span class="dv">1990</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Posteriormente, use el vector <span class="math inline">\(V\)</span> obtenido con el procedimiento de entrenamiento anterior para estimar el control sintético, pero ahora con los siguientes predictores y periodos de referencia (el periodo de validación). Para indicar una matriz <span class="math inline">\(V\)</span> en específico explore las opciones de la función <em>synth</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>special.predictors <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(<span class="st">"industry"</span> ,<span class="dv">1971</span><span class="sc">:</span><span class="dv">1975</span>, <span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(<span class="st">"schooling"</span>,<span class="fu">c</span>(<span class="dv">1970</span>,<span class="dv">1975</span>), <span class="fu">c</span>(<span class="st">"mean"</span>)),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(<span class="st">"invest70"</span> ,<span class="dv">1980</span>, <span class="fu">c</span>(<span class="st">"mean"</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>time.predictors.prior <span class="ot">=</span> <span class="dv">1965</span><span class="sc">:</span><span class="dv">1975</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>time.optimize.ssr <span class="ot">=</span> <span class="dv">1960</span><span class="sc">:</span><span class="dv">1975</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>unit.names.variable <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>time.plot <span class="ot">=</span> <span class="dv">1960</span><span class="sc">:</span><span class="dv">1990</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finalmente, obtenga el gráfico de trayectorias y compruebe que replica la figura 4 del artículo.</p></li>
+</ol>
 
 
 </section>
@@ -292,12 +396,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
