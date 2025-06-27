@@ -19,7 +19,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c("rmarkdown", "knitr", "tidyverse", "stargazer", "janitor", "sandwich", "gt", "gtExtras"), repos="https://cloud.r-project.org")'
+          Rscript -e '.libPaths("/opt/R/4.5.1/lib/R/library"); install.packages(c("rmarkdown", "knitr", "tidyverse", "stargazer", "janitor", "sandwich", "gt", "gtExtras"), repos="https://cloud.r-project.org")'
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
