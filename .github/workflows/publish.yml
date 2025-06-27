@@ -20,7 +20,13 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render and Publish
+      - name: Verify R installation
+        run: Rscript -e "sessionInfo()"
+
+      - name: Render site with Quarto
+        run: quarto render .
+
+      - name: Publish to gh-pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
