@@ -410,17 +410,6 @@ knitr::include_graphics("ExactMatching_effects_graph_b.jpg", dpi = 50)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 # Propensity Score Matching
 
 
@@ -1108,17 +1097,17 @@ Cuando el emparejamiento es con reemplazo, las unidades no tratadas son empareja
  
 - Idealmente usamos variables $X$ pre-intervención
  
-- Cuando no hay $X$ pre-intervención, a veces se puede obtener el PS con variables post-intervención siempre y cuando estas no hayan sido afectadas por el tratamieto (pocas veces recomendado)
+- Cuando no hay $X$ pre-intervención, a veces se puede obtener el PS con variables post-intervención siempre y cuando estas no hayan sido afectadas por el tratamiento (pocas veces recomendado)
 
 - Se recomienda ampliamente ver:
 
-  - Caliendo, M., & Kopeinig, S. (2008). Some practical guidance for the implementation of propensity score matching. *Journal of economic surveys*, 22(1), 31-72.
+  - Caliendo, M., & Kopeinig, S. (2008). Some practical guidance for the implementation of propensity score matching. *Journal of Economic Surveys*, 22(1), 31-72.
   
   
   
 ## Conclusión
 
-- Las técnicas de PSM dependen de varios supuestos téoricos fuertes
+- Las técnicas de PSM dependen de varios supuestos teoricos fuertes
 
 - La implementación implica que las variables en $X$ son aquellas que permiten hacer los supuestos de inconfundibilidad dado el PS
 

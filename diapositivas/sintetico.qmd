@@ -68,7 +68,7 @@ library(Synth)
 
 - Card (1990) empleó datos a nivel individual sobre salarios y empleo en el área metropolitana de Miami y los comparó con el promedio de otras cuatro ciudades con proporciones similares de hispanos y negros
 
-- Al comparar las tendencias en empleo y salarios con las de este conjunto de ciudades Card concluye que la llegada de inmigrantes no tuvo ningún efecto negativo
+- Al comparar las tendencias en empleo y salarios con las de este conjunto de ciudades, Card concluye que la llegada de inmigrantes no tuvo ningún efecto negativo
 
 ## Los marieles
 
@@ -119,7 +119,7 @@ knitr::include_graphics("Miami_unemployment_comparison.png")
 
 ## Los marieles
 	 
-- Al comparar las tendencias en empleo y salarios con las de este conjunto de ciudades Card concluye que la llegada de inmigrantes no tuvo ningún efecto negativo
+- Al comparar las tendencias en empleo y salarios con las de este conjunto de ciudades, Card concluye que la llegada de inmigrantes no tuvo ningún efecto negativo
 
 - Tampoco encuentran evidencia de que la distribución de ingresos de los no cubanos se hubiera hecho más desigual
 
@@ -354,7 +354,7 @@ knitr::include_graphics("Proposition99_CA_synthetic.png")
 :::: {.columns}
 
 ::: {.column width="50%"}
-- Al escoger los pesos apropiadamente el CS es más parecido a California que lo que era el promedio de todos los demás estados
+- Al escoger los pesos apropiadamente, el CS es más parecido a California que lo que era el promedio de todos los demás estados
 :::
 
 ::: {.column width="50%"}
@@ -377,7 +377,7 @@ knitr::include_graphics("Proposition99_statistics.png")
 
 - Muchas unidades no contribuyen para la construcción del contrafactual
 
-- Tenemos un método que nos permite asignar estos pesos de sistemática y dando más peso a los estados más parecidos a California
+- Tenemos un método que nos permite asignar estos pesos de manera sistemática y dando más peso a los estados más parecidos a California
 
 ```{r}
 #| fig-cap: 'Fuente: Abadie, Diamond y Hainmueller (2010).'
@@ -479,7 +479,7 @@ knitr::include_graphics("Proposition99_MSPE.png")
 
 - El texto de Abadie (2019), [Using synthetic controls: Feasibility, data requirements, and methodological aspects](https://www.aeaweb.org/articles?id=10.1257/jel.20191450) provee una revisión detallada del estimador de control sintético, así como una guía para la implementación.
 
-- Además, aquí puden encontrar una clase del mismo Alberto Abadie:
+- Además, aquí pueden encontrar una clase del mismo Alberto Abadie:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nKzNp-qpE-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
