@@ -1,1 +1,10 @@
 /* css styles */
+
+.table-smaller {
+  width: 50% !important;
+  margin: 0 auto;
+}
+
+.code-smaller pre code {
+  font-size: 60%;
+}
