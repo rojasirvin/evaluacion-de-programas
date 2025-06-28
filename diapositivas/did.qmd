@@ -6,6 +6,7 @@ format:
     slide-number: c/t
     width: 1600
     height: 900
+    scrollable: true
 ---
 
 
@@ -179,7 +180,7 @@ $$
 \end{aligned}
 $$
 
-- El estimador de DID toma en cuenta las diferencias inciales
+- El estimador de DID toma en cuenta las diferencias iniciales
 
 - En este caso, el distrito 8 ya tenía más bancos abiertos que el 6 antes de la crisis
 
@@ -541,13 +542,13 @@ Claramente esto es a lo más 0.5, es decir, la contribución se maximiza cuando 
 
 En resumen, los pesos están dados por
 
-$$pesos = \frac{(\text{participación de la submuestra})^2(\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}$$
+$$\scriptsize  pesos = \frac{(\text{participación de la submuestra})^2(\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}$$
 
 ## ¿Qué nos dice la descomposición?
 
 Todos los grupos funcionan como *controles* (algunas veces)
 
-Los pesos en cada comparación $2x2$ dependen del tamaño de la muestra usada para estimarlos y del tiempo que las unidades permanecen tratadas
+Los pesos en cada comparación $2 \times 2$ dependen del tamaño de la muestra usada para estimarlos y del tiempo que las unidades permanecen tratadas
 
 El efecto estimado se modificaría solo por agregar más años al final del panel
 

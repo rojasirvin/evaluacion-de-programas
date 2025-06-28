@@ -111,6 +111,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -374,7 +375,7 @@ T=
 \end{aligned}
 \]</span></p>
 <ul>
-<li><p>El estimador de DID toma en cuenta las diferencias inciales</p></li>
+<li><p>El estimador de DID toma en cuenta las diferencias iniciales</p></li>
 <li><p>En este caso, el distrito 8 ya tenía más bancos abiertos que el 6 antes de la crisis</p></li>
 <li><p>DID construye un contrafactual para las unidades tratadas usando la pendiente de las unidades no tratadas</p></li>
 </ul>
@@ -730,12 +731,12 @@ F-statistic:   NaN on 3 and 0 DF,  p-value: NA</code></pre>
 <section id="qué-son-los-pesos-4" class="slide level2">
 <h2>¿Qué son los pesos?</h2>
 <p>En resumen, los pesos están dados por</p>
-<p><span class="math display">\[pesos = \frac{(\text{participación de la submuestra})^2(\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}\]</span></p>
+<p><span class="math display">\[\scriptsize  pesos = \frac{(\text{participación de la submuestra})^2(\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}\]</span></p>
 </section>
 <section id="qué-nos-dice-la-descomposición" class="slide level2">
 <h2>¿Qué nos dice la descomposición?</h2>
 <p>Todos los grupos funcionan como <em>controles</em> (algunas veces)</p>
-<p>Los pesos en cada comparación <span class="math inline">\(2x2\)</span> dependen del tamaño de la muestra usada para estimarlos y del tiempo que las unidades permanecen tratadas</p>
+<p>Los pesos en cada comparación <span class="math inline">\(2 \times 2\)</span> dependen del tamaño de la muestra usada para estimarlos y del tiempo que las unidades permanecen tratadas</p>
 <p>El efecto estimado se modificaría solo por agregar más años al final del panel</p>
 <p>Los términos que dominen pueden incluso cambiar el signo del efecto estimado</p>
 <p>Goodman-Bacon (2021) muestra que, en general usar TWFE solo recupera un efecto de tratamiento bajo supuestos muy fuertes, el más crucial, bajo efectos de tratamiento que no varían en el tiempo (no hay efectos dinámicos)</p>
