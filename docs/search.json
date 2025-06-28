@@ -306,7 +306,7 @@
     "href": "diapositivas/discontinuidades.html#no-linealidad-vs-discontinuidad",
     "title": "Diseños con discontinuidades",
     "section": "No linealidad vs discontinuidad",
-    "text": "No linealidad vs discontinuidad\n\n\n\nEstimar el modelo de RD cuando la relación entre \\(E[Y|X]\\) es como en el tercer panel nos llevaría a inferir un salto donde no existe\nAl usar RD debemos asegurarnos que estamos identificando una discontinuidad\n\nModelar la no linearidad (enfoque antiguo)\nConcentrarnos solo en una ventana cercana a \\(a_0\\) (enfoque más moderno)"
+    "text": "No linealidad vs discontinuidad\n\n\n\nEstimar el modelo de RD cuando la relación entre \\(E[Y|X]\\) es como en el tercer panel nos llevaría a inferir un salto donde no existe\nAl usar RD debemos asegurarnos que estamos identificando una discontinuidad\n\nModelar la no linealidad (enfoque antiguo)\nConcentrarnos solo en una ventana cercana a \\(a_0\\) (enfoque más moderno)"
   },
   {
     "objectID": "diapositivas/discontinuidades.html#no-linealidades",
@@ -327,28 +327,28 @@
     "href": "diapositivas/discontinuidades.html#no-linealidades-2",
     "title": "Diseños con discontinuidades",
     "section": "No linealidades",
-    "text": "No linealidades\n\nPodemos emplear una combinación de no linearidades y cambios en pendiente:\n\n\\[\n\\begin{aligned}\n\\bar{M}_a&=\\alpha+\\rho D_a + \\gamma_1(a-a_0) +\\gamma_2(a-a_0)^2+\\delta_1[(a-a_0)D_a]+ \\delta_2[(a-a_0)^2D_a] + \\epsilon_a\n\\end{aligned}\n\\]\n\nEn esta especificación los términos lineal y cuadrático cambian en \\(a_0\\)\nY el efecto del tratamiento en este caso es:\nNotemos que en este caso el efecto del tratamiento es:\n\n\\[\n\\rho+\\delta_1(a-a_0)+\\delta_2(a-a_0)^2\n\\]\n\nEn los dos casos anteriores, regularmente se interpreta solo a \\(\\rho\\) como el efecto del tratamiento"
+    "text": "No linealidades\n\nPodemos emplear una combinación de no linealidades y cambios en pendiente:\n\n\\[\n\\begin{aligned}\n\\bar{M}_a&=\\alpha+\\rho D_a + \\gamma_1(a-a_0) +\\gamma_2(a-a_0)^2+\\delta_1[(a-a_0)D_a]+ \\delta_2[(a-a_0)^2D_a] + \\epsilon_a\n\\end{aligned}\n\\]\n\nEn esta especificación los términos lineal y cuadrático cambian en \\(a_0\\)\nY el efecto del tratamiento en este caso es:\nNotemos que en este caso el efecto del tratamiento es:\n\n\\[\n\\rho+\\delta_1(a-a_0)+\\delta_2(a-a_0)^2\n\\]\n\nEn los dos casos anteriores, regularmente se interpreta solo a \\(\\rho\\) como el efecto del tratamiento"
   },
   {
     "objectID": "diapositivas/discontinuidades.html#no-linealidades-3",
     "href": "diapositivas/discontinuidades.html#no-linealidades-3",
     "title": "Diseños con discontinuidades",
     "section": "No linealidades",
-    "text": "No linealidades\n\n\n\n\\(\\hat{\\rho}=9.55\\)\nModelo más elaborado con mejor ajuste\nEs evidente gráficamente que hay un salto a los 21 años y una caída suave después\n¿Qué tan robustos son los resultados?\n\n\n\nknitr::include_graphics(\"alcohol_sharp_flexible.png\",\n                        dpi = 10)"
+    "text": "No linealidades\n\n\n\n\\(\\hat{\\rho}=9.55\\)\nModelo más elaborado con mejor ajuste\nEs evidente gráficamente que hay un salto a los 21 años y una caída suave después\n¿Qué tan robustos son los resultados?"
   },
   {
     "objectID": "diapositivas/discontinuidades.html#efectos-estimados",
     "href": "diapositivas/discontinuidades.html#efectos-estimados",
     "title": "Diseños con discontinuidades",
     "section": "Efectos estimados",
-    "text": "Efectos estimados\n\nknitr::include_graphics(\"RDestimates.png\",\n                        dpi = 10)\n\n\nFuente: Angrist & Pischke (2014)"
+    "text": "Efectos estimados\n\nFuente: Angrist & Pischke (2014)"
   },
   {
     "objectID": "diapositivas/discontinuidades.html#efectos-estimados-1",
     "href": "diapositivas/discontinuidades.html#efectos-estimados-1",
     "title": "Diseños con discontinuidades",
     "section": "Efectos estimados",
-    "text": "Efectos estimados\n\nknitr::include_graphics(\"alcohol_sharp_flexible_otheroutcomes.png\")\n\n\nFuente: Angrist & Pischke (2014)"
+    "text": "Efectos estimados\n\nFuente: Angrist & Pischke (2014)"
   },
   {
     "objectID": "diapositivas/discontinuidades.html#transferencias-gubernamentales-y-apoyo-político",
@@ -390,7 +390,7 @@
     "href": "diapositivas/discontinuidades.html#evidencia-gráfica",
     "title": "Diseños con discontinuidades",
     "section": "Evidencia gráfica",
-    "text": "Evidencia gráfica\n\nknitr::include_graphics(\"PANES_effect2007.png\")\n\n\nFuente: Manacorda et al. (2011)"
+    "text": "Evidencia gráfica\n\nFuente: Manacorda et al. (2011)"
   },
   {
     "objectID": "diapositivas/discontinuidades.html#resultados-de-regresión",
@@ -404,21 +404,21 @@
     "href": "diapositivas/discontinuidades.html#efectos-estimados-2",
     "title": "Diseños con discontinuidades",
     "section": "Efectos estimados",
-    "text": "Efectos estimados\n\nknitr::include_graphics(\"PANES_regressionresults.png\")\n\n\nFuente: Manacorda et al. (2011)"
+    "text": "Efectos estimados\n\nFuente: Manacorda et al. (2011)"
   },
   {
     "objectID": "diapositivas/discontinuidades.html#evidencia-gráfica-en-2008",
     "href": "diapositivas/discontinuidades.html#evidencia-gráfica-en-2008",
     "title": "Diseños con discontinuidades",
     "section": "Evidencia gráfica en 2008",
-    "text": "Evidencia gráfica en 2008\n\nknitr::include_graphics(\"PANES_effect2008.png\")\n\n\nFuente: Manacorda et al. (2011)"
+    "text": "Evidencia gráfica en 2008\n\nFuente: Manacorda et al. (2011)"
   },
   {
     "objectID": "diapositivas/discontinuidades.html#robustez",
     "href": "diapositivas/discontinuidades.html#robustez",
     "title": "Diseños con discontinuidades",
     "section": "Robustez",
-    "text": "Robustez\n\nknitr::include_graphics(\"PANES_validation.png\")\n\n\nFuente: Manacorda et al. (2011)"
+    "text": "Robustez\n\nFuente: Manacorda et al. (2011)"
   },
   {
     "objectID": "diapositivas/discontinuidades.html#discontinuidades-nítidas-resumen",
@@ -1777,5 +1777,12 @@
     "title": "Respuestas a la tarea 4",
     "section": "Notas",
     "text": "Notas\n\n\nBernal, N., Carpio, M. A., & Klein, T. J. (2017). The effects of access to health insurance: evidence from a regression discontinuity design in Peru. Journal of Public Economics, 154, 122-136.↩︎"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#discontinuidades-nítidas-y-regresión",
+    "href": "diapositivas/discontinuidades.html#discontinuidades-nítidas-y-regresión",
+    "title": "Diseños con discontinuidades",
+    "section": "Discontinuidades nítidas y regresión",
+    "text": "Discontinuidades nítidas y regresión\n\nMuchas cosas cambian con la edad\nRiesgo de enfermedades, muerte por otras causas\nUsamos regresión para aislar los efectos de la regla\n\n\\[\n\\bar{M}_a=\\alpha+\\rho D_a + \\gamma a + \\epsilon_a\n\\]\n\n\\(\\bar{M}_a\\) es la tasa de mortalidad en el mes \\(a\\)\n\\(\\rho\\) captura el salto en la mortalidad a los 21 años\n\\(\\hat{\\rho}=7.66\\) : número de muertes adicionales a los 21 años"
   }
 ]

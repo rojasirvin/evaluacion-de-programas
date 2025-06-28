@@ -111,7 +111,7 @@ $$
   - No importa qué tanto nos acercamos al corte, el estatus de tratamiento es el mismo hasta $a$
  
 
-## Discontinuidades níticas y regresión
+## Discontinuidades nítidas y regresión
  
 - Muchas cosas cambian con la edad
 
@@ -148,14 +148,14 @@ $$
  
 - Al usar RD debemos asegurarnos que estamos identificando una discontinuidad
  
-  - Modelar la no linearidad (enfoque *antiguo*)
+  - Modelar la no linealidad (enfoque *antiguo*)
   
   - Concentrarnos solo en una ventana cercana a $a_0$ (enfoque más *moderno*)
 :::
 
 ::: {.column width="50%"}
-```{r}
-#| echo: false
+```{r }
+#| echo: FALSE
 knitr::include_graphics("discontinuity_nonlinearity.png",
                         dpi = 7)
 ```
@@ -204,7 +204,7 @@ $$
 
 ## No linealidades
 
-- Podemos emplear una combinación de no linearidades y cambios en pendiente:
+- Podemos emplear una combinación de no linealidades y cambios en pendiente:
 
 $$
 \begin{aligned}
@@ -244,6 +244,7 @@ $$
 
 ::: {.column width="50%"}
 ```{r}
+#| echo: FALSE
 knitr::include_graphics("alcohol_sharp_flexible.png",
                         dpi = 10)
 ```
@@ -257,6 +258,7 @@ knitr::include_graphics("alcohol_sharp_flexible.png",
 ## Efectos estimados
 
 ```{r, out.width="48%",fig.cap='Fuente: Angrist & Pischke (2014)',fig.align='center'}
+#| echo: FALSE
 knitr::include_graphics("RDestimates.png",
                         dpi = 10)
 ```
@@ -266,6 +268,7 @@ knitr::include_graphics("RDestimates.png",
 ## Efectos estimados
 
 ```{r, out.width="65%",fig.cap='Fuente: Angrist & Pischke (2014)',fig.align='center'}
+#| echo: FALSE
 knitr::include_graphics("alcohol_sharp_flexible_otheroutcomes.png")
 ```
 
@@ -351,6 +354,7 @@ knitr::include_graphics("PANES_implementation.png")
 ## Evidencia gráfica
  
 ```{r, out.width="55%",fig.cap='Fuente: Manacorda et al. (2011)',fig.align='center'}
+#| echo: FALSE
 knitr::include_graphics("PANES_effect2007.png")
 ```
 
@@ -374,6 +378,7 @@ $$
 
  
 ```{r, out.width="70%",fig.cap='Fuente: Manacorda et al. (2011)',fig.align='center'}
+#| echo: FALSE
 knitr::include_graphics("PANES_regressionresults.png")
 ```
 
@@ -381,6 +386,7 @@ knitr::include_graphics("PANES_regressionresults.png")
 ## Evidencia gráfica en 2008
 
 ```{r, out.width="50%",fig.cap='Fuente: Manacorda et al. (2011)',fig.align='center'}
+#| echo: FALSE
 knitr::include_graphics("PANES_effect2008.png")
 ```
   
@@ -389,6 +395,7 @@ knitr::include_graphics("PANES_effect2008.png")
 ## Robustez
 
 ```{r, out.width="60%",fig.cap='Fuente: Manacorda et al. (2011)',fig.align='center'}
+#| echo: FALSE
 knitr::include_graphics("PANES_validation.png")
 ```
 
