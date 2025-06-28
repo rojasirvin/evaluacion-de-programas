@@ -22,7 +22,7 @@ jobs:
 
       - name: Install R packages and render
         run: |
-          Rscript -e 'install.packages(c("rmarkdown", "knitr", "tidyverse", "stargazer", "janitor", "sandwich", "gt", "gtExtras"), repos="https://cloud.r-project.org")'
+          Rscript -e 'install.packages(c("rmarkdown", "knitr", "tidyverse", "stargazer", "janitor", "sandwich", "gt", "gtExtras", "googledrive", "googlesheets4", "httr", "ragg", "rvest"), repos="https://cloud.r-project.org")' 
           quarto render .
 
       - name: Publish to gh-pages
