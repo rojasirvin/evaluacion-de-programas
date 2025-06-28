@@ -1,5 +1,5 @@
 ---
-title: "Evaluación de Programas 2024"
+title: "Inferencia Causal"
 ---
 
 ---
@@ -16,4 +16,4 @@ Horario de oficina: martes y jueves (18:00).
 
 **¡Bienvenidas, bienvenidos!**
 
-Este es un sitio para las y los estudiantes del curso de Evaluación de Programas de la Licenciatura y Maestría en Economía del CIDE. Sin embargo, otras personas pueden encontrar útiles los recursos de este sitio, como el programa del curso, las tareas y la lista de lecturas.
+Este es un sitio para las y los estudiantes del curso de Inferencia Causal de la Licenciatura y Maestría en Economía del CIDE. Sin embargo, otras personas pueden encontrar útiles los recursos de este sitio, como el programa del curso, las tareas y la lista de lecturas.
