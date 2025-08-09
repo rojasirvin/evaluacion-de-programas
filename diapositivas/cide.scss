@@ -1,0 +1,77 @@
+/*-- scss:defaults --*/
+// Aquí podrías redefinir variables si lo deseas
+$bodyColor: #333;
+$headingColor: #00573F;
+$backgroundColor: #ffffff;
+
+/*-- scss:rules --*/
+.reveal {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: $bodyColor;
+}
+
+/* Slide de portada institucional */
+.reveal .portada {
+  background-color: #ffffff;
+  color: #00573F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 2em;
+}
+
+.reveal .portada h1,
+.reveal .portada h2 {
+  color: #00573F;
+}
+
+/* Títulos centrados */
+.reveal h1.centrado,
+.reveal h2.centrado {
+  text-align: center;
+}
+
+/* Color institucional */
+.reveal .cide-color {
+  color: #00573F;
+}
+
+
+/* Fragmentos destacados */
+.reveal .fragmento {
+  border-left: 4px solid #00573F;
+  padding-left: 1em;
+  margin: 1em 0;
+}
+
+/* Código con fondo suave */
+.reveal pre code {
+  background-color: #f4f4f4;
+  padding: 1em;
+  border-radius: 6px;
+}
+
+.reveal .transicion {
+  background-color: #00573F;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 2em;
+}
+
+.reveal .transicion h1,
+.reveal .transicion h2 {
+  color: white;
+}
+
+.scroll-diapo {
+  max-height: 800px;
+  overflow-y: auto;
+}

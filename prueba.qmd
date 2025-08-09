@@ -1,0 +1,9 @@
+---
+title: "Prueba Reveal"
+format: revealjs
+---
+
+## Slide con estilo {.inverse .center .middle}
+
+Este slide debería tener fondo oscuro y texto centrado.
+---

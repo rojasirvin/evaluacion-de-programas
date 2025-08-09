@@ -2,6 +2,21 @@
 title: "Diapositivas"
 ---
 
+[Clase 1](./clase_1.html){target="_blank"}
+
+[Clase 2](./clase_2.html){target="_blank"}
+
+[Clase 3](./clase_3.html){target="_blank"}
+
+[Clase 4](./clase_4.html){target="_blank"}
+
+[Clase 5](./clase_5.html){target="_blank"}
+
+[Clase 6](./clase_6.html){target="_blank"}
+
+[Clase 7](./clase_7.html){target="_blank"}
+
+[Clase 10](./clase_10.html){target="_blank"}
 
 [Diferencia en diferencias](./did.qmd){target="_blank"}
 
