@@ -122,13 +122,13 @@ División de Economía
 # Para los que aman los mapas
 :::: {.columns}
 
-::: {.columns width="50%}
+::: {.column width="50%}
 ```{r, out.width="90%", fig.align='center', fig.cap='Source: Smithsonian Magazine'}
 knitr::include_graphics("https://thumbs-prod.si-cdn.com/trC5qb_ILIffjzsnX3kEbvscwM0=/fit-in/1072x0/https://public-media.si-cdn.com/filer/20110520102403643px-Snow-cholera-map-1-300x279.jpg")
 ```
 :::
 
-::: {.columns width="50%}
+::: {.column width="50%}
 <iframe width='100%' height='450' frameborder='0' src='https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2013/3/14/1363276040034/John-Snows-cholera-map-of-008.jpg?width=700&dpr=2&s=none&crop=none' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 :::
 ::::
@@ -140,7 +140,7 @@ knitr::include_graphics("https://thumbs-prod.si-cdn.com/trC5qb_ILIffjzsnX3kEbvsc
 
 :::: {.columns}
 
-::: {.columns width="50%}
+::: {.column width="50%}
 - La Tabla 1 nos muestra la idea básica de su **diseño**
 - Es como si hubiera habido un experimento: casas comparativamente iguales recibían agua de distintas compañías
 - Podemos notar las diferencias en el número de muertes por compañía
@@ -149,7 +149,7 @@ knitr::include_graphics("https://thumbs-prod.si-cdn.com/trC5qb_ILIffjzsnX3kEbvsc
 - En muchos sentidos Snow hizo un trabajo de detective
 :::
 
-::: {.columns width="50%}
+::: {.column width="50%}
 ```{r table.snow, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 
 ciudad <- c("Southwark y Vauxhall", "Lambeth", "Resto de Londres")
@@ -265,6 +265,7 @@ $$y_{Hena}=\begin{cases}
 y_{1,Hena}=0\\
 y_{0,Hena}=0
 \end{cases}$$
+
 - **Efecto causal para un individuo**: el tratamiento tiene un efecto causal para $i$ si $y_{1i}\neq y_{0i}$
 - En nuestro ejemplo, el tratamiento tuvo un efecto causal en Zeus, pero no en Hena
 

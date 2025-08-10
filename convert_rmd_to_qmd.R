@@ -43,7 +43,7 @@ convert_rmd_to_qmd <- function(input_path, output_path = NULL) {
 }
 
 
-for(i in c(15,17,18, 20, 21, 23, 24, 26, 27)){
+for(i in c(29)){
   path = paste0("diapositivas/clase_",i,".Rmd")
   convert_rmd_to_qmd(path)
 }

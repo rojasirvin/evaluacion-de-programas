@@ -3,3 +3,7 @@
   overflow-y: auto;
   margin-top: 1em;
 }
+
+.reveal .fragment {
+  text-align: left;
+}

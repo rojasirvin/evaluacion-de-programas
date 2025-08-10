@@ -312,7 +312,7 @@ V(\bar{y})&amp;=V\left(\frac{1}{n}\sum_i y_i\right) \\
 <section id="distribución-normal-1" class="title-slide slide level1 center">
 <h1>Distribución normal</h1>
 <div class="columns">
-<div class="columns" width="&quot;50%">
+<div class="column" style="width:&quot;50%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -322,14 +322,13 @@ V(\bar{y})&amp;=V\left(\frac{1}{n}\sum_i y_i\right) \\
 </div>
 </div>
 </div>
-</div><div class="columns" width="&quot;50%">
+</div><div class="column" style="width:&quot;50%;">
 <ul>
 <li><p>Por ejemplo, sabemos que el 95% de las realizaciones se encuentran en el intervalo <span class="math inline">\([\mu-1.96\sigma, \mu+1.96\sigma]\)</span></p></li>
 <li><p>De aquí surge que, cuando trabajamos al 95% de confianza (típico en economía), se usa una <em>regla de dedo</em> de 2 para juzgar el valor de un estadístico <span class="math inline">\(t\)</span></p></li>
 <li><p>Un estadístico <span class="math inline">\(t\)</span> mayor que <span class="math inline">\(|2|\)</span> indica que la <span class="math inline">\(H_0\)</span> de que <span class="math inline">\(\mu=0\)</span> es altamente improbable</p></li>
 </ul>
-</div>
-</div>
+</div></div>
 </section>
 
 <section id="intervalos-de-confianza" class="title-slide slide level1 center">
@@ -476,36 +475,40 @@ V(\bar{y})&amp;=V\left(\frac{1}{n}\sum_i y_i\right) \\
 <section id="nota-sobre-los-valores-t-críticos" class="title-slide slide level1 center">
 <h1>Nota sobre los valores <span class="math inline">\(t\)</span> críticos</h1>
 <div class="columns">
-<div class="columns" width="&quot;50%">
+<div class="column" style="width:&quot;50%;">
 <ul>
 <li><p>Los correspondientes valores del estadístico <span class="math inline">\(t\)</span> en muestras grandes para <span class="math inline">\(\alpha\)</span> de 0.10, 0.05 y 0.01 son 2.56, 1.96 y 1.64</p></li>
 <li><p>¿Cómo puedo encontrar el valor <span class="math inline">\(p\)</span> exacto de un estadístico <span class="math inline">\(t\)</span> dado?</p></li>
-</ul><div class="cell" data-evaluate="true">
+</ul>
+<div class="cell" data-evaluate="true">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>(<span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(<span class="fu">abs</span>(<span class="fl">1.644854</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.04999996</code></pre>
 </div>
-</div><ul>
+</div>
+<ul>
 <li>O uno menos arbitrario</li>
-</ul><div class="cell" data-evaluate="true">
+</ul>
+<div class="cell" data-evaluate="true">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>(<span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(<span class="fu">abs</span>(<span class="sc">-</span><span class="fl">1.3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.09680048</code></pre>
 </div>
 </div>
-</div><div class="columns" width="&quot;50%">
+</div><div class="column" style="width:&quot;50%;">
 <ul>
 <li>Y al revés, puedo siempre encontrar el estadístico <span class="math inline">\(t\)</span> asociado a cierto valor <span class="math inline">\(p\)</span></li>
-</ul><div class="cell" data-evaluate="true">
+</ul>
+<div class="cell" data-evaluate="true">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span>(.<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.644854</code></pre>
 </div>
-</div><ul>
+</div>
+<ul>
 <li>El 2 en las expresiones anteriores viene de que estamos en pruebas de dos colas con una distribución simétrica</li>
 </ul>
-</div>
-</div>
+</div></div>
 </section>
 
 <section id="prueba-de-hipótesis-en-evaluación" class="title-slide slide level1 center">

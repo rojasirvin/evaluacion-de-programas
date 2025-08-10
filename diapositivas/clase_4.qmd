@@ -87,7 +87,7 @@ $$E(y_i|X_i=x_i)=\sum_t t P(y_i=t|X_i=x_i)$$
 
 :::: {.columns}
 
-::: {.columns width="50%}
+::: {.column width="50%}
 - La figura 3.3.1 en MHE muestra la FEC de salarios en Estados Unidos
 - Para cada año de educación, vemos cuál es el (log) del ingreso semanal
 - La figura muestra dos cosas principales:
@@ -95,7 +95,7 @@ $$E(y_i|X_i=x_i)=\sum_t t P(y_i=t|X_i=x_i)$$
   - La gran variabilidad en salarios para un nivel de educación dado
 :::
 
-::: {columns width="50%}
+::: {.column width="50%}
 
 ```{r, out.width="100%",fig.cap='Fuente: Angrist & Pischke (2009)',fig.align='center'}
 knitr::include_graphics("figures/fec_mhe.png")
@@ -126,17 +126,17 @@ knitr::include_graphics("figures/fec_mhe.png")
 
 :::: {.columns}
 
-::: {.columns width="50%}
+::: {.column width="50%}
 - La figura 3.1.2 en MHE ilustra este teorema
 - La línea sólida es la FEC de la relación años de educación - salario
 - La línea sólida muestra los promedios del salario para cada año de educación
 - La línea quebrada muestra la línea de regresión usando microdatos
   - Graficar el coeficiente $\beta$ que resulta al correr $y_i=\alpha+\beta s_i+u_i$
-- El teorema de la regresion de la FEC dice que obtenemos la misma recta si hacemos una regresión de $E(y_i|s_i)=\alpha+\beta s +u$
+- El teorema de la regresión de la FEC dice que obtenemos la misma recta si hacemos una regresión de $E(y_i|s_i)=\alpha+\beta s +u$
 
 :::
 
-::: {.columns width="50%}
+::: {.column width="50%}
 ```{r, out.width="80%",fig.cap='Fuente: Angrist & Pischke (2009)',fig.align='center'}
 knitr::include_graphics("figures/regresion_fec_mhe.png")
 ```

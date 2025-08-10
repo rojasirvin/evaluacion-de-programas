@@ -277,7 +277,7 @@ $$Y^k_i=\alpha + \beta_1 T_i + \beta Z_i^k + P_i + S_i + E_i + \varepsilon_i$$
 
 :::: {.columns}
 
-::: {.columns width="50%}
+::: {.column width="50%}
 - ¿Cuál es la evidencia (tabla o gráfica) más importante que resume los efectos del programa?
 
 - ¿Qué se encuentra?
@@ -285,7 +285,7 @@ $$Y^k_i=\alpha + \beta_1 T_i + \beta Z_i^k + P_i + S_i + E_i + \varepsilon_i$$
 
 ::: {.fragment}
 
-::: {.columns width="50%}
+::: {.column width="50%}
 ```{r, out.width="85%",fig.cap='Fuente: Banerjee et al. (2015)',fig.align='center'}
 knitr::include_graphics("figures/sixcountries_treatmenteffect.png")
 ```

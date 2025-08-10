@@ -172,14 +172,14 @@ normal_curve <-normal_curve+stat_function(fun=funcShaded, geom="area", fill="bla
 
 :::: {.columns}
 
-::: {.columns width="50%}
+::: {.column width="50%}
 ```{r comment='#', echo=FALSE, collapse=TRUE, fig.height=5}
 normal_curve
 ```
 :::
 
 
-::: {.columns width="50%}
+::: {.column width="50%}
 
 - Por ejemplo, sabemos que el 95% de las realizaciones se encuentran en el intervalo $[\mu-1.96\sigma, \mu+1.96\sigma]$
 
@@ -359,7 +359,7 @@ knitr::include_graphics("figures/pvalue.jpg")
 
 :::: {.columns}
 
-::: {.columns width="50%}
+::: {.column width="50%}
 - Los correspondientes valores del estadístico $t$ en muestras grandes para $\alpha$ de 0.10, 0.05 y 0.01 son 2.56, 1.96 y 1.64
 
 - ¿Cómo puedo encontrar el valor $p$ exacto de un estadístico $t$ dado?
@@ -375,7 +375,7 @@ knitr::include_graphics("figures/pvalue.jpg")
 ```
 :::
 
-::: {.columns width="50%}
+::: {.column width="50%}
 - Y al revés, puedo siempre encontrar el estadístico $t$ asociado a cierto valor $p$
 
 ```{r echo=T, evaluate=T, include=T }

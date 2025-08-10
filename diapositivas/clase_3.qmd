@@ -196,7 +196,7 @@ $$
 
 :::: {.columns}
 
-::: {.columns width="50%}
+::: {.column width="50%}
 - ¿Qué vemos en la Tabla 2.2.1 de MHE
 - ¿Qué nos indican los valores $p$?
 - ¿Cuál es la hipótesis nula?
@@ -204,7 +204,7 @@ $$
 - ¿Se logró el objetivo del experimento?
 :::
 
-::: {.columns width="50%}
+::: {.column width="50%}
 ```{r table.balance, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 
 variable <- c("Lunch gratis", "Blanco / asiático", "Edad (1985)", "Atrición", "Tamaño de clase","Calificación")
