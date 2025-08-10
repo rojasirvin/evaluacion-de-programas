@@ -18,6 +18,32 @@ title: "Diapositivas"
 
 [Clase 10](./clase_10.html){target="_blank"}
 
+[Clase 11](./clase_11.html){target="_blank"}
+
+[Clase 12](./clase_12.html){target="_blank"}
+
+[Clase 13](./clase_13.html){target="_blank"}
+
+[Clase 15](./clase_15.html){target="_blank"}
+
+[Clase 17](./clase_17.html){target="_blank"}
+
+[Clase 18](./clase_18.html){target="_blank"}
+
+[Clase 20](./clase_20.html){target="_blank"}
+
+[Clase 21](./clase_21.html){target="_blank"}
+
+[Clase 23](./clase_23.html){target="_blank"}
+
+[Clase 24](./clase_24.html){target="_blank"}
+
+[Clase 26](./clase_26.html){target="_blank"}
+
+[Clase 27](./clase_27.html){target="_blank"}
+
+[Clase 29](./clase_29.html){target="_blank"}
+
 [Diferencia en diferencias](./did.qmd){target="_blank"}
 
 [Métodos de emparejamiento](./emparejamiento.qmd){target="_blank"}
