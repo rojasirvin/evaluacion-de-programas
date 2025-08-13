@@ -67,7 +67,7 @@ División de Economía
 
 - En la sesión anterior vimos que el SIC nos dice que, condicional en $X_i$, los resultados potenciales son independientes del tratamiento
 
-- Cuando el tratamiento se asigna de manera aleatoria y el diseño experimental se, el supuesto es válido
+- Cuando el tratamiento se asigna de manera aleatoria y el diseño experimental se mantiene íntegro, el supuesto es válido
 
 - Más aún, bajo asignación aleatoria, podemos hacer un supuesto aún más fuerte:
 
