@@ -94,8 +94,10 @@ table.hospital %>%
 ```
 
 ::: {.fragment}
+
 - ¿Tiene sentido? ¿Los hospitales enferman?
 - ¿Qué sucede?
+
 :::
 
 # Comparaciones observacionales
@@ -111,7 +113,9 @@ y_{0i}=0 \quad \text{si } D_i=0
 - Solo vemos al individuo en una situación, $y_i$:
 
 $$y_i=y_{0i}+(y_{1i}-y_{0i})D_i$$
+
 ::: {.fragment}
+
 - ¿Qué nos dicen las comparaciones observacionales?
 - Supongamos que tenemos acceso a datos sobre tratados y no tratados
 - Podemos calcular $E(y_i|D_i=1)-E(y_i|D_i=0)$:
@@ -154,6 +158,7 @@ $$
 E(y_i|D_i=1)-E(y_i|D_i=0)=&E(y_{1i}|D_i=1)-E(y_{0i}|D_i=0)
 \end{aligned}
 $$
+
 - Sustituyendo el resultado de independencia:
 
 $$
@@ -168,11 +173,14 @@ $$
 
 - La aleatorización resuelve muchas cosas, pero muchas veces no es factible
 - ¿Qué tendríamos que hacer en el caso de estudio, "¿Los hospitales matan?"
+
 ::: {.fragment}
+
 - Pensemos en un programa de empleo para ex convictos
 - Seguramente una comparación observacional indicaría que estos ganan menos que el resto de la población
 - Pero esto no significa que el programa cause un efecto negativo en el ingreso
 - Siempre tenemos que pensar en el contrafactual
+
 :::
 
 # El experimento STAR
@@ -180,15 +188,19 @@ $$
 - ¿En qué consistió?
 
 ::: {.fragment}
+
 - Dos tipos de tratamiento:
   - $T_1$: clase pequeña (13-17) con maestro de tiempo completo
   - $T_2$: tamaño normal pero con asistente para el maestro
 - Un grupo $C$ al que no se le hizo cambio alguno (22.3 alumnos en promedio)
+
 :::
 
 ::: {.fragment}
+
 - ¿Cuál es el efecto de tener clases más pequeñas?
 - ¿Por qué esto sería relevante? ¿Qué implicaciones de política tendría?
+
 :::
 
 
@@ -202,6 +214,7 @@ $$
 - ¿Cuál es la hipótesis nula?
 - ¿Qué significa *atrición*?
 - ¿Se logró el objetivo del experimento?
+
 :::
 
 ::: {.column width="50%}
@@ -229,7 +242,9 @@ table.balance %>%
            footnote_as_chunk = T)
 
 ```
+
 :::
+
 ::::
 
 
@@ -243,6 +258,7 @@ table.balance %>%
 - A veces es posible hacer experimentos, a veces es muy difícil y a veces es imposible
 
 - Usando métodos no experimentales, Angrist y Lavy (1999) encuentran resultados parecidos (pero con otros métodos)
+
 :::
 
 # Motivación con un modelo de efectos constantes {.inverse .center .middle}
@@ -283,17 +299,25 @@ E(y|D_i=1)-E(y|D_i=0)&=\rho+\overbrace{E(\nu_i|D_i=1)-E(\nu_i|D_i=0)}^{\text{Ses
 &=\rho+E(y_{0i}|D_i=1)-E(y_{0i}|D_i=0)
 \end{aligned}
 $$
+
 - Es decir, el sesgo de selección es igual a la correlación entre el término de error y $D_i$
+
 - Y, de acuerdo a la segunda línea, también es igual a la diferencia en el resultado potencial (de no tratamiento), entre aquellos que son tratados y los que no son tratados
+
 - En nuestro ejemplo del hospital, es muy probable que el sesgo de selección sea negativo porque los tratados son quienes tienen peor salud (en el estado no tratado)
+
 - Como vimos antes, con asignación aleatoria, el sesgo de selección desaparece, por lo que una regresión de $y_i$ en $D_i$ estima el efecto causal $\rho$
 
 # Regresión como herramienta
 
 - Usaremos muy frecuentemente la regresión para la estimación de efectos causales
+
 - La interpretación causal de los estimadores no surge de la herramienta, sino del diseño
+
 - Debemos tener en mente siempre si los estimadores están o no libres del sesgo de selección
+
 - Antes vimos que en el experimento STAR las medias de las calificaciones entre grupos eran distintas
+
 - La regresión nos servirá para hacer esencialmente lo mismo: comparación de $y_i$ entre grupos
 
 # El impacto de STAR con regresión
@@ -340,11 +364,15 @@ table.star %>%
 - Con un tratamiento binario y asignado aleatoriamente, podemos estimar el efecto usando una regresión:
 
 $$y_i=\alpha+\beta T_i + u_i$$
+
 - Es muy común, sin embargo, usar **controles**
+
 - Si una serie de características $X$ no está correlacionada con $T_i$, se puede incluir en una versión larga de la regresión antes descrita:
 
 $$y_i=\alpha+\beta T_i + X_i'\gamma + u_i$$
+
 - El valor numérico de $\hat{\beta}$ en la regresión larga será muy cercano al obtenido con la regresión corta, pero se incrementa la precisión de los parámetros estimados
+
 - Dado que emplearemos regresión ampliamente en este curso, es necesario fijar algunas ideas sobre cómo entendemos y cómo usamos la regresión en la práctica
 
 # Próxima sesión

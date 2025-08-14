@@ -76,7 +76,6 @@ Asumimos que controlando por las características $X_i$ podemos obtener diferenc
 Usemos [el ejemplo](https://mixtape.scunning.com/matching-and-subclassification.html?panelset=r-code) de MT (The Mixtape):
 
 ```{r}
-#| output-location: column
 
 read_data <- function(df)
 {

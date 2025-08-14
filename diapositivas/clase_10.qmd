@@ -131,11 +131,14 @@ $$\text{Efecto de la adopción en }Y=\frac{\text{Efecto de la asignación en }Y}
 **Supuesto 2**: asignación aleatoria
 
 - La asignación de $Z_i$ es aleatoria, es decir, $P(Z=C)=P(Z=C')$ para todo $C$ y $C'$
+
 ::: {.fragment}
+
 - Los supuestos 1 y 2 nos permiten identificar los efectos causales de $Z$ en $Y$ y de $Z$ en $D$ calculando diferencias de medias por grupos de $Z$:
   - $ITT_Y$ comparar las medias de $y$ entre quienes $Z=1$ y quienes $Z=0$
   - $ITT_D$ comparar las medias de $D$ entre quienes $Z=1$ y quienes $Z=0$
 - $ITT$ se conoce como **intención a tratar** o **intention to treat**
+
 
 :::
 
@@ -160,6 +163,7 @@ $$Y(Z,D)=Y(Z',D)\quad \forall \quad Z,Z',D$$
 - Este supuesto implica que podemos escribir:
 
 $$Y_i(1,d)=Y_i(0,d) \quad d=\{0,1\}$$
+
 - Es decir, resuleve el problema contrafactual
 
 ::: {.fragment}
@@ -183,6 +187,7 @@ $$Y_i(D_i)=Y_i(Z,D)$$
 ::: {.fragment}
 **Supuesto 5**: monotonicidad
 $$D_i(1)\geq D_i(0) \quad \forall\quad i=1,\ldots N$$
+
 - Este supuesto simplemente dice que no hay un individuo que:
 
   - Cuando se le asigna, no cumple
@@ -191,6 +196,7 @@ $$D_i(1)\geq D_i(0) \quad \forall\quad i=1,\ldots N$$
 - Noten que este supuesto se debe pensar en términos contrafactuales
 
 - A un individuo que no cumple cuando se le asigna y cumple cuando no se le asigna se le conoce como **retador** o *defier*
+
 :::
 
 
@@ -276,7 +282,9 @@ $$
 ::: {.fragment}
 - La intuición de este valor esperado es obtener el efecto en la variable de interés bajo los distintos posibles efectos de $Z$ sobre $D$
 - El segundo término de la suma es cero y corresponde a aquellos para quienes la asignación no modificó el cumplimento, por lo que $E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=0)=0$
-- Usando el supuesto 5 de monotonicidad, sabemos $D_i(1)-D_i(0)$ es igual a uno o cero, es decir, $P(D_i(1)-D_i(0)=-1)=0$
+- Usando el supuesto 5 de monotonicidad, sabemos $D_i(1)-D_i(0)$ es igual a uno o cero, es decir, 
+$P(D_i(1)-D_i(0)=-1)=0$
+
 :::
 
 
@@ -292,6 +300,7 @@ $$
 
 ::: {.fragment}
 - Es decir, el efecto causal promedio de $Z$ sobre $Y$ es igual al producto del efecto causal promedio de $D$ sobre $Y$ en aquellos individuos que cuando se les asigna cumplen y cuando no se les asigna no cumplen, $D_i(0)=0$ y $D_i(1)=1$, y la proporción de estos individuos en la población
+
 :::
 
 
@@ -318,9 +327,9 @@ $$E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=1)=\frac{E(Y_i(D_i(1),1))-Y_i(D_i(0),0)}{E(D_i(1
 
 ```{r tipologia, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
 
-col1 <- c("","\\(D_i(1)=0\\)","","","","\\(D_i(1)=1\\)","")
+col1 <- c("","\\(D_i(1)=0\\)","","","","\\( D_i(1)=1 \\)","")
 col2 <- c("\\(D_i(0)=0\\)","\\(Y_i(1,0)-Y_i(0,0)=0\\)","Nunca cumplidor","","","\\(Y_i(1,1)-Y_i(0,0)=Y_i(1)-Y_i(0)\\)","Cumplidor")
-col3 <- c("\\)D_i(0)=1\\)","\\(Y_i(1,0)-Y_i(0,1)=-(Y_i(1)-Y_i(0))\\)","Retador","","","\\)Y_i(1,1)-Y_i(0,1)=0\\)","Siempre adoptador")
+col3 <- c("\\)D_i(0)=1\\)","\\(Y_i(1,0)-Y_i(0,1)=-(Y_i(1)-Y_i(0))\\)","Retador","","","\\(Y_i(1,1)-Y_i(0,1)=0\\)","Siempre adoptador")
 
 
 tipologia <- data.frame(cbind(col1, col2, col3))
@@ -384,6 +393,7 @@ scroll_box(t1, height="40%")
 
 ::: {.fragment}
 - En la práctica de evaluación recurrimos a la econometría con variables instrumentales
+
 :::
 
 
@@ -418,6 +428,7 @@ $$\lambda_{LATE}=\frac{\rho}{\phi}$$
 
 ::: {.fragment}
 - Se muestra como el ITT puede no reflejar la efectividad de la intervención debido al efecto de *dilusión* provocado, en este caso, por desviaciones con respecto a la forma de enfrentar un episodio policíaco
+
 :::
 
 
@@ -490,6 +501,7 @@ scroll_box(t, height="60%")
 - Sabemos que el LATE está dado por $\lambda_{LATE}=\frac{ITT_y}{ITT_D}=\frac{0.114}{0.786}=0.145$
 - Los datos de los autores reportan que si nos fijáramos solo en las diferencias por tipo de tratamiento obtendríamos, $E(y_i|D_i=1)-E(y_i|D_i=0)=0.216-0.129=0.087$, es decir, casi la mitad del LATE
 - Pero como $D$ no es aleatoria, dicha comparación no es correcta
+
 :::
 
 
@@ -542,6 +554,7 @@ $$y_i=X_i'\beta+\lambda D_i+\varepsilon_i$$
 $$D_i=X_i'\phi_0+\phi_1z_i+\eta_i$$
 donde $\phi_i$ es el efecto causal de la asignación sobre el cumplimiento
 - Cuado $D_i$ y $z_i$ son ambas dicotómicas, $\phi_1$ da la proporción de la población que son cumplidores
+
 :::
 
 
@@ -552,13 +565,16 @@ donde $\phi_i$ es el efecto causal de la asignación sobre el cumplimiento
 $$y_i=X_i'\beta+\lambda \hat{D}_i+\varepsilon_i$$
 
 ::: {.fragment}
+
 - Esta es la forma de pensar el procedimiento, pero en la práctica nunca hacemos esto manualmente
   - Noten que $\hat{D}_i$ es estimada, por lo cual se ignora la variabilidad muestral de la primera etapa y los errores estándar serían inconsistentes
 
 :::
 
 ::: {.fragment}
+
 - Nota: el estimador de Wald es igual al estimador de MC2E cuando no hay $X$ y cuando $Z$ y $D$ son binarias
+
 :::
 
 

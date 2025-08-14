@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Respuestas a la tarea 3 – Inferencia Causal 2025</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-209d9ab60904f1bb8f31161fafd02104.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Respuestas a la tarea 3</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../iconoEvaluaciondeProgramasSociales.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/rojasirvin/evaluacion-de-programas" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../programa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reglas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reglas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lecturas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecturas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../presentaciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentaciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cronograma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cronograma</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tareas/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tareas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notas/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../diapositivas/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diapositivas</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#respuestas" id="toc-respuestas" class="nav-link active" data-scroll-target="#respuestas">Respuestas</a>
+  <ul class="collapse">
+  <li><a href="#pregunta-1" id="toc-pregunta-1" class="nav-link" data-scroll-target="#pregunta-1">Pregunta 1</a></li>
+  <li><a href="#pregunta-2" id="toc-pregunta-2" class="nav-link" data-scroll-target="#pregunta-2">Pregunta 2</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Respuestas a la tarea 3</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="respuestas" class="level1">
+<h1>Respuestas</h1>
+<section id="pregunta-1" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
+<p>Stevenson, B. &amp; Wolfers, J. (2006)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> estudian los efectos de la introducción de leyes que permiten el divorcio unilateral en los Estados Unidos. La librería <em>bacondecomp</em> incluye los datos usados en dicho artículo (debe instalar y cargar la librería). Usaremos los datos de 1964 a 1996 para mostrar cómo impactan las leyes de divorcio express (unilateral) a la tasa de suicidios en mujeres.</p>
+<p>Al correr el pedazo de código anterior, obtendrá un objeto de datos <strong>wd</strong> en donde la variable de impacto es la tasa de suicidios en mujeres, <strong>suicide_rate</strong>, <strong>st</strong> identifica a los estados, <strong>year</strong> identifica a los años y <strong>divyear</strong> es el año en que se introdujo la legislación del divorcio unilateral. La última fila del código crea el indicador de tratamiento <strong>unilaterial</strong>, que toma el valor de 1 para los estados tratados en los periodos post tratamiento.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>wd <span class="ot">&lt;-</span> divorce <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(year<span class="sc">&gt;=</span><span class="dv">1964</span> <span class="sc">&amp;</span> year<span class="sc">&lt;=</span><span class="dv">1996</span> <span class="sc">&amp;</span> sex<span class="sc">==</span><span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">suicide_rate=</span>suicide<span class="sc">*</span><span class="dv">1000000</span><span class="sc">/</span>(stpop<span class="sc">*</span>fshare),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">year=</span><span class="fu">as.numeric</span>(year),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   <span class="at">divyear =</span> <span class="fu">ifelse</span>(divyear<span class="sc">&gt;</span><span class="dv">1996</span>, <span class="cn">Inf</span>, divyear),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>   <span class="at">unilateral=</span><span class="fu">ifelse</span>(year<span class="sc">&gt;</span>divyear, <span class="dv">1</span>, <span class="dv">0</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li><p>[5 puntos] Presente una tabla donde muestre el número de estados que es tratado en cada periodo del panel. ¿Cuántos estados son nunca tratados? ¿Cuántos estados son siempre tratados?</p>
+<p><em>Si hacemos un tabulado de <strong>divyear</strong> para un año fijo, notamos cuántos estados se vuelven tratados en cada año. Solo 5 estados son nunca tratados. Por otro lado, como el panel comienza en 1964 y hay 9 estados tratados en 1950, estos 9 estados son siempre tratados.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">filter</span>(wd, year<span class="sc">==</span><span class="dv">1996</span>)<span class="sc">$</span>divyear)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+1950 1969 1970 1971 1972 1973 1974 1975 1976 1977 1980 1984 1985  Inf 
+   9    2    2    7    3   11    3    2    1    3    1    1    1    5 </code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Como punto de partida, estime el efecto del tratamiento sobre <strong>suicide_rate</strong> usando efectos fijos por estado y año (TWFE) y empleando una librería específica para efectos fijos, como <em>felm</em>. Tome en cuenta la agrupación de los errores. Interprete sus resultados.</p>
+<p><em>Usando felm podemos incorporar ya el nivel de agrupación de los errores:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">felm</span>(suicide_rate <span class="sc">~</span> unilateral <span class="sc">|</span> st <span class="sc">+</span> year <span class="sc">|</span> <span class="dv">0</span> <span class="sc">|</span> st,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> wd))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+   felm(formula = suicide_rate ~ unilateral | st + year | 0 | st,      data = wd) 
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-37.517  -6.157  -0.141   5.577  57.004 
+
+Coefficients:
+           Estimate Cluster s.e. t value Pr(&gt;|t|)  
+unilateral   -3.777        2.201  -1.716   0.0923 .
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 10.85 on 1599 degrees of freedom
+Multiple R-squared(full model): 0.6844   Adjusted R-squared: 0.668 
+Multiple R-squared(proj model): 0.007963   Adjusted R-squared: -0.04353 
+F-statistic(full model, *iid*):41.77 on 83 and 1599 DF, p-value: &lt; 2.2e-16 
+F-statistic(proj model): 2.945 on 1 and 50 DF, p-value: 0.09231 </code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Compruebe que puede obtener el mismo resultado con una regresión lineal usando el paquete <em>lm</em> e incluyendo, además de la variable de tratamiento, dummies de estado y de año.</p>
+<p><em>Estimamos con dummies:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(suicide_rate <span class="sc">~</span> unilateral <span class="sc">+</span> <span class="fu">factor</span>(st) <span class="sc">+</span> <span class="fu">factor</span>(year),</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> wd))<span class="sc">$</span>coef[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Estimate Std. Error   t value
+(Intercept) 56.732642   2.468251 22.984953
+unilateral  -3.776552   1.054148 -3.582562</code></pre>
+</div>
+</div>
+<p><em>Luego estimamos errores agrupados:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(<span class="fu">list</span>(m1),</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">output =</span> <span class="st">'gt'</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">vcov=</span>clubSandwich<span class="sc">::</span><span class="fu">vcovCR</span>(m1, <span class="at">type=</span><span class="st">'CR1'</span>, <span class="at">cluster=</span>wd<span class="sc">$</span>st),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">coef_map =</span> <span class="st">"unilateral"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">gof_map =</span> <span class="st">"nobs"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="gujhrvrxdr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gujhrvrxdr table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gujhrvrxdr thead, #gujhrvrxdr tbody, #gujhrvrxdr tfoot, #gujhrvrxdr tr, #gujhrvrxdr td, #gujhrvrxdr th {
+  border-style: none;
+}
+
+#gujhrvrxdr p {
+  margin: 0;
+  padding: 0;
+}
+
+#gujhrvrxdr .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gujhrvrxdr .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#gujhrvrxdr .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gujhrvrxdr .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gujhrvrxdr .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gujhrvrxdr .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gujhrvrxdr .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gujhrvrxdr .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gujhrvrxdr .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gujhrvrxdr .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gujhrvrxdr .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gujhrvrxdr .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gujhrvrxdr .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#gujhrvrxdr .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#gujhrvrxdr .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gujhrvrxdr .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gujhrvrxdr .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gujhrvrxdr .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gujhrvrxdr .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gujhrvrxdr .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#gujhrvrxdr .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#gujhrvrxdr .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#gujhrvrxdr .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gujhrvrxdr .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#gujhrvrxdr .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#gujhrvrxdr .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gujhrvrxdr .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gujhrvrxdr .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gujhrvrxdr .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gujhrvrxdr .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gujhrvrxdr .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gujhrvrxdr .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gujhrvrxdr .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gujhrvrxdr .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gujhrvrxdr .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gujhrvrxdr .gt_left {
+  text-align: left;
+}
+
+#gujhrvrxdr .gt_center {
+  text-align: center;
+}
+
+#gujhrvrxdr .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gujhrvrxdr .gt_font_normal {
+  font-weight: normal;
+}
+
+#gujhrvrxdr .gt_font_bold {
+  font-weight: bold;
+}
+
+#gujhrvrxdr .gt_font_italic {
+  font-style: italic;
+}
+
+#gujhrvrxdr .gt_super {
+  font-size: 65%;
+}
+
+#gujhrvrxdr .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#gujhrvrxdr .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#gujhrvrxdr .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#gujhrvrxdr .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#gujhrvrxdr .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#gujhrvrxdr .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#gujhrvrxdr .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#gujhrvrxdr .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#gujhrvrxdr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="a-" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
+<th id="a(1)" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">(1)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">unilateral</td>
+<td class="gt_row gt_center" headers="(1)">-3.777</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers=" " style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000"></td>
+<td class="gt_row gt_center" headers="(1)" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #000000">(2.200)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers=" ">Num.Obs.</td>
+<td class="gt_row gt_center" headers="(1)">1683</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><em>Obtenemos los mismos coeficientes. Aquí también podrán volver a comprobar la importancia de usar errores agrupados. El error agrupado es más de dos veces más grande que el error clásico.</em></p></li>
+<li><p>[10 puntos] Ahora muestre que podemos obtener el coeficiente de TWFE a partir de una regresión bivariada entre la tasa de suicidios y <strong>unilateral</strong>, una vez <em>purgada</em> por efectos fijos. Para ello, primero estime una regresión de <strong>unilateral</strong> en función de los efectos fijos. Obtenga la predicción y luego defina una nueva variable igual a la diferencia entre <strong>unilateral</strong> y la predicción que acaba de obtener. Finalmente, obtenga el coeficiente de TWFE con una regresión de la tasa de suicidios en función de la diferencia antes definida.</p>
+<p><em>Corremos la primera regresión para purgar los efectos fijos:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(unilateral <span class="sc">~</span> <span class="fu">factor</span>(st) <span class="sc">+</span> <span class="fu">factor</span>(year),</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> wd)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Definimos la nueva variable:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>wd <span class="ot">&lt;-</span> wd <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">unilateral_hat =</span> unilateral<span class="sc">-</span><span class="fu">predict</span>(d1))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Y finalmente estimamos:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(suicide_rate <span class="sc">~</span> unilateral_hat,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> wd))<span class="sc">$</span>coef[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                Estimate Std. Error    t value
+(Intercept)    54.422503  0.4585884 118.673960
+unilateral_hat -3.776552  1.8276582  -2.066334</code></pre>
+</div>
+</div>
+<p><em>Obtenemos el mismo coeficiente. Frisch–Waugh–Lovell tenían razón.</em></p></li>
+<li><p>[10 puntos] Realice la descomposición de Goodman-Bacon (2021). Construya un gráfico donde muestre en el eje <span class="math inline">\(x\)</span> el peso otorgado a cada comparación 2x2 que el estimador de TWFE realiza mecánicamente y en el eje <span class="math inline">\(y\)</span> el efecto estimado correspondiente a cada comparación. Interprete el gráfico obtenido.</p>
+<p><em>Como vimos en laboratorio, la descomposición de Bacon se puede obtener con la función bacon:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Goodman-Bacon decomposition</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_bacon <span class="ot">&lt;-</span> <span class="fu">bacon</span>(suicide_rate <span class="sc">~</span> unilateral,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> wd,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">id_var =</span> <span class="st">"st"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">time_var =</span> <span class="st">"year"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                      type  weight  avg_est
+1 Earlier vs Later Treated 0.11558  0.13489
+2  Later vs Always Treated 0.41990 -6.95245
+3 Later vs Earlier Treated 0.23125  2.33743
+4     Treated vs Untreated 0.23328 -6.05881</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>coef_bacon <span class="ot">&lt;-</span> <span class="fu">sum</span>(df_bacon<span class="sc">$</span>estimate <span class="sc">*</span> df_bacon<span class="sc">$</span>weight)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Suma ponderada de la descomposición ="</span>, <span class="fu">round</span>(coef_bacon, <span class="dv">4</span>)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Suma ponderada de la descomposición = -3.7766"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>twfe <span class="ot">&lt;-</span> <span class="fu">felm</span>(suicide_rate <span class="sc">~</span> unilateral <span class="sc">|</span> st <span class="sc">+</span> year <span class="sc">|</span> <span class="dv">0</span> <span class="sc">|</span> st,</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">data =</span> wd)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Gráfico----</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>df_bacon <span class="sc">%&gt;%</span> </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>weight,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>             <span class="at">y=</span>estimate,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape=</span>type)) <span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">round</span>(twfe<span class="sc">$</span>coefficients, <span class="dv">4</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tarea-3-respuestas_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>Las comparaciones que más pesan en el estimador de efectos fijos son las de estados tratados con los que siempre estuvieron tratados en el panel, recibiendo dos de esas comparaciones alrededor de 13 y el 7% del peso (los dos triángulos más hacia la derecha). otra comparación que recibe alrededor de 7% del peso es la de los tratados con los nunca tratados (cruz más hacia la derecha). En total, las comparaciones con los estados que iniciaron siendo tratados se llevan el 42% del peso. Las comparaciones entre los tratados tarde y los tratados temprano también reciben un peso alto de 23%.</em></p></li>
+<li><p>[10 puntos] Implemente el estimador de Callaway &amp; Sant’Anna (2021) para estimar los efectos del tratamiento específicos para cada cohorte, usando el paquete <em>did</em>. Utilice como grupo de comparación los estados <em>no tratados aún</em>. La columna <strong>stid</strong> es un identificador numérico de los estados (lo requerirá cuando use <em>att_gt</em> del paquete <em>did</em>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>atts_nyt <span class="ot">&lt;-</span> <span class="fu">att_gt</span>(<span class="at">yname =</span> <span class="st">"suicide_rate"</span>,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">tname =</span> <span class="st">"year"</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">idname =</span> <span class="st">"stid"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">gname =</span> <span class="st">"divyear"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">data =</span> wd,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">control_group =</span> <span class="st">"notyettreated"</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">est_method =</span> <span class="st">'reg'</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">bstrap =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">biters =</span> <span class="dv">1000</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">print_details =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">panel =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(atts_nyt)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+att_gt(yname = "suicide_rate", tname = "year", idname = "stid", 
+    gname = "divyear", data = wd, panel = TRUE, control_group = "notyettreated", 
+    bstrap = TRUE, biters = 1000, est_method = "reg", print_details = FALSE)
+
+Reference: Callaway, Brantly and Pedro H.C. Sant'Anna.  "Difference-in-Differences with Multiple Time Periods." Journal of Econometrics, Vol. 225, No. 2, pp. 200-230, 2021. &lt;https://doi.org/10.1016/j.jeconom.2020.12.001&gt;, &lt;https://arxiv.org/abs/1803.09015&gt; 
+
+Group-Time Average Treatment Effects:
+ Group Time ATT(g,t) Std. Error [95% Simult.  Conf. Band]  
+  1969 1965  -1.9053     5.1627      -24.8568     21.0462  
+  1969 1966   4.5124     5.9848      -22.0938     31.1187  
+  1969 1967   0.5622     4.8758      -21.1138     22.2383  
+  1969 1968   5.1789     2.7956       -7.2496     17.6075  
+  1969 1969  -0.7447     4.4855      -20.6855     19.1962  
+  1969 1970 -10.2717     7.3072      -42.7573     22.2139  
+  1969 1971 -12.3880     6.4264      -40.9575     16.1816  
+  1969 1972  -4.1259     3.4621      -19.5173     11.2654  
+  1969 1973   1.4524     6.5103      -27.4901     30.3949  
+  1969 1974  -1.4022     4.5998      -21.8513     19.0468  
+  1969 1975  -0.9265     4.1027      -19.1660     17.3129  
+  1969 1976 -12.7344     6.5993      -42.0728     16.6040  
+  1969 1977  -2.3415     8.8306      -41.5996     36.9165  
+  1969 1978 -11.4247     6.9098      -42.1434     19.2940  
+  1969 1979  -6.0427     8.5362      -43.9918     31.9064  
+  1969 1980  -7.9345     5.3831      -31.8659     15.9968  
+  1969 1981  -1.7430     9.5703      -44.2896     40.8036  
+  1969 1982  -6.7020     7.6464      -40.6952     27.2911  
+  1969 1983   4.7154     9.8153      -38.9202     48.3510  
+  1969 1984  -9.5175    11.7280      -61.6564     42.6214  
+  1969 1985   5.9598    16.8090      -68.7676     80.6871  
+  1969 1986  -8.5962    10.9912      -57.4594     40.2670  
+  1969 1987  -8.6897     7.3489      -41.3605     23.9812  
+  1969 1988 -11.9815     7.9439      -47.2974     23.3344  
+  1969 1989  -5.9781    14.7507      -71.5549     59.5988  
+  1969 1990  -7.7327    10.8247      -55.8558     40.3904  
+  1969 1991 -14.7659    11.0449      -63.8680     34.3362  
+  1969 1992  -6.6956     6.5026      -35.6038     22.2126  
+  1969 1993   0.5290     9.7286      -42.7210     43.7789  
+  1969 1994  -6.1575    15.1239      -73.3935     61.0784  
+  1969 1995  -6.7870    15.4085      -75.2882     61.7143  
+  1969 1996   3.0338    13.1112      -55.2540     61.3217  
+  1970 1965   2.4919     3.3012      -12.1843     17.1681  
+  1970 1966   1.8500     3.3146      -12.8855     16.5856  
+  1970 1967  -2.0438     4.1649      -20.5597     16.4721  
+  1970 1968  -3.7538     7.2802      -36.1194     28.6117  
+  1970 1969   9.0725     3.7355       -7.5343     25.6793  
+  1970 1970   0.3548     4.7836      -20.9113     21.6210  
+  1970 1971  -1.9698     3.1820      -16.1159     12.1764  
+  1970 1972  -1.4067     6.4847      -30.2353     27.4219  
+  1970 1973 -11.2801     3.6243      -27.3924      4.8322  
+  1970 1974 -11.1775     3.4880      -26.6841      4.3291  
+  1970 1975 -12.0330     6.3408      -40.2220     16.1560  
+  1970 1976 -17.7592     8.0442      -53.5212     18.0027  
+  1970 1977 -16.3994     4.8510      -37.9652      5.1664  
+  1970 1978 -29.1877    10.8327      -77.3463     18.9709  
+  1970 1979 -26.8802    12.2281      -81.2422     27.4819  
+  1970 1980 -39.5660    11.5900      -91.0912     11.9593  
+  1970 1981 -30.0122    11.6053      -81.6056     21.5812  
+  1970 1982 -36.1714    10.5221      -82.9490     10.6061  
+  1970 1983 -31.0969    17.4117     -108.5036     46.3099  
+  1970 1984 -31.4749    18.6773     -114.5082     51.5583  
+  1970 1985 -30.6346    19.3379     -116.6043     55.3351  
+  1970 1986 -37.0754    20.2897     -127.2769     53.1260  
+  1970 1987 -37.6630    23.4784     -142.0401     66.7140  
+  1970 1988 -43.0563    21.6326     -139.2276     53.1149  
+  1970 1989 -45.1314    17.9619     -124.9841     34.7213  
+  1970 1990 -43.1765    21.0074     -136.5686     50.2156  
+  1970 1991 -49.9116    20.1250     -139.3807     39.5575  
+  1970 1992 -50.9515    17.3083     -127.8984     25.9954  
+  1970 1993 -44.5526    22.5578     -144.8372     55.7320  
+  1970 1994 -51.5405    17.7129     -130.2862     27.2051  
+  1970 1995 -48.4108    21.0256     -141.8836     45.0621  
+  1970 1996 -48.0618    21.2992     -142.7509     46.6274  
+  1971 1965  -2.2110     3.8429      -19.2951     14.8732  
+  1971 1966  -5.9450     3.3268      -20.7349      8.8448  
+  1971 1967   6.1535     3.9761      -11.5231     23.8301  
+  1971 1968   5.3039     3.8319      -11.7313     22.3392  
+  1971 1969  -4.8826     3.8523      -22.0088     12.2437  
+  1971 1970   0.5878     5.5445      -24.0613     25.2370  
+  1971 1971  -7.5805     5.9654      -34.1007     18.9397  
+  1971 1972 -11.4260     7.5927      -45.1808     22.3288  
+  1971 1973  -5.8221     8.4354      -43.3232     31.6790  
+  1971 1974   5.7926     5.1951      -17.3033     28.8885  
+  1971 1975   0.0590     5.5803      -24.7494     24.8674  
+  1971 1976  -0.7920     8.3838      -38.0634     36.4795  
+  1971 1977   0.5899     8.4901      -37.1544     38.3342  
+  1971 1978  -9.5946     9.7994      -53.1595     33.9703  
+  1971 1979  -8.8180     6.0002      -35.4928     17.8569  
+  1971 1980 -15.0039     6.7369      -44.9539     14.9461  
+  1971 1981  -6.0810     7.9625      -41.4796     29.3177  
+  1971 1982 -15.5575     9.1421      -56.2001     25.0850  
+  1971 1983  -6.7973     5.5718      -31.5678     17.9731  
+  1971 1984  -8.1090     7.2039      -40.1352     23.9171  
+  1971 1985  -9.3683     8.5271      -47.2771     28.5406  
+  1971 1986 -16.9260     7.8249      -51.7130     17.8610  
+  1971 1987 -12.9962    10.3595      -59.0510     33.0586  
+  1971 1988 -14.6487     8.5976      -52.8707     23.5732  
+  1971 1989 -18.7126     8.8152      -57.9022     20.4771  
+  1971 1990 -17.6198     6.8498      -48.0715     12.8320  
+  1971 1991 -17.2789     9.1980      -58.1700     23.6123  
+  1971 1992 -22.1825    10.0445      -66.8368     22.4719  
+  1971 1993  -9.1278     9.4945      -51.3374     33.0818  
+  1971 1994 -13.7091     8.8985      -53.2687     25.8505  
+  1971 1995 -15.3270     7.6460      -49.3188     18.6647  
+  1971 1996 -11.2124     9.4941      -53.4201     30.9953  
+  1972 1965   1.9641     1.9080       -6.5184     10.4465  
+  1972 1966   2.3826     5.8077      -23.4364     28.2016  
+  1972 1967  -3.8865     5.3693      -27.7565     19.9835  
+  1972 1968   7.6954     2.6553       -4.1093     19.5000  
+  1972 1969  -8.7084     2.7914      -21.1179      3.7010  
+  1972 1970   0.1004     2.3546      -10.3673     10.5682  
+  1972 1971   1.1463     3.4569      -14.2219     16.5144  
+  1972 1972  -4.8115     4.6668      -25.5585     15.9354  
+  1972 1973  -2.3073     5.8809      -28.4519     23.8374  
+  1972 1974   0.7950     5.0336      -21.5826     23.1725  
+  1972 1975  -2.8930     4.7730      -24.1121     18.3262  
+  1972 1976  -2.9838     9.5737      -45.5452     39.5777  
+  1972 1977   2.8759     5.9490      -23.5711     29.3230  
+  1972 1978 -13.9499     7.1649      -45.8025     17.9026  
+  1972 1979  -4.7118     9.3109      -46.1051     36.6814  
+  1972 1980  -9.9424     6.7451      -39.9288     20.0440  
+  1972 1981   0.7622     6.8776      -29.8133     31.3377  
+  1972 1982  -5.7949     7.5906      -39.5403     27.9505  
+  1972 1983  -2.5286     7.4178      -35.5056     30.4485  
+  1972 1984  -5.7192     7.7158      -40.0213     28.5828  
+  1972 1985  -8.5492     8.1483      -44.7741     27.6756  
+  1972 1986  -3.2909     6.6524      -32.8652     26.2835  
+  1972 1987 -14.5853     7.8455      -49.4637     20.2932  
+  1972 1988 -12.6795     6.2906      -40.6455     15.2865  
+  1972 1989 -10.9845     7.1656      -42.8403     20.8714  
+  1972 1990  -7.7794     7.7009      -42.0152     26.4564  
+  1972 1991 -13.7033     5.3675      -37.5655     10.1590  
+  1972 1992 -11.0100     8.6255      -49.3562     27.3363  
+  1972 1993 -17.3770     7.1556      -49.1885     14.4345  
+  1972 1994 -16.6543     8.0225      -52.3198     19.0111  
+  1972 1995 -16.0626     6.8083      -46.3302     14.2049  
+  1972 1996 -13.6292     5.4019      -37.6443     10.3860  
+  1973 1965  -1.6544     3.2615      -16.1540     12.8451  
+  1973 1966  -3.5308     3.8298      -20.5570     13.4954  
+  1973 1967   5.5388     5.9827      -21.0581     32.1358  
+  1973 1968  -4.1286     5.5521      -28.8114     20.5541  
+  1973 1969   1.9470     3.8179      -15.0263     18.9203  
+  1973 1970   0.3836     4.8617      -21.2297     21.9969  
+  1973 1971  -0.4064     6.2679      -28.2714     27.4586  
+  1973 1972  -0.7103     6.1198      -27.9167     26.4961  
+  1973 1973   9.0122     6.7291      -20.9031     38.9275  
+  1973 1974   7.0826     6.5472      -22.0242     36.1894  
+  1973 1975   8.7932     9.8494      -34.9941     52.5806  
+  1973 1976   5.5815     6.7988      -24.6439     35.8069  
+  1973 1977   9.2638     7.0111      -21.9053     40.4329  
+  1973 1978  -2.8479     8.1120      -38.9113     33.2155  
+  1973 1979   3.5441     7.5238      -29.9042     36.9925  
+  1973 1980  -3.7998     8.9366      -43.5289     35.9294  
+  1973 1981   3.7874     8.3689      -33.4181     40.9928  
+  1973 1982  -2.3342     9.4918      -44.5318     39.8634  
+  1973 1983   0.3746     7.7055      -33.8817     34.6309  
+  1973 1984  -4.0602     9.4560      -46.0986     37.9781  
+  1973 1985  -3.3503     7.3364      -35.9654     29.2648  
+  1973 1986  -9.9416     5.0055      -32.1945     12.3113  
+  1973 1987 -10.5611     8.8119      -49.7359     28.6137  
+  1973 1988 -13.3770    10.1535      -58.5162     31.7622  
+  1973 1989  -9.7072     7.3882      -42.5529     23.1384  
+  1973 1990 -12.5464     6.5009      -41.4474     16.3545  
+  1973 1991 -15.9396     7.7230      -50.2734     18.3942  
+  1973 1992 -17.9985     7.8940      -53.0927     17.0958  
+  1973 1993 -13.8426     8.7538      -52.7589     25.0738  
+  1973 1994  -9.0985     6.4046      -37.5712     19.3743  
+  1973 1995 -12.4104     4.2635      -31.3647      6.5438  
+  1973 1996 -14.4985     5.7125      -39.8942     10.8972  
+  1974 1965  -3.4980     5.2132      -26.6743     19.6783  
+  1974 1966   4.0405     5.6434      -21.0483     29.1294  
+  1974 1967  -2.4469     2.7363      -14.6117      9.7180  
+  1974 1968  -4.1701     5.9395      -30.5750     22.2347  
+  1974 1969   3.0794     1.9100       -5.4120     11.5708  
+  1974 1970   3.9844     2.5908       -7.5333     15.5022  
+  1974 1971  -7.0304     2.9824      -20.2893      6.2284  
+  1974 1972   6.3385     3.5149       -9.2877     21.9648  
+  1974 1973   0.5656     5.4428      -23.6311     24.7623  
+  1974 1974  -2.4409     4.2908      -21.5164     16.6347  
+  1974 1975   1.3647     5.2231      -21.8557     24.5851  
+  1974 1976  -3.5756     6.3325      -31.7280     24.5768  
+  1974 1977  -4.0728     5.6513      -29.1965     21.0510  
+  1974 1978  -8.9231     5.6601      -34.0862     16.2399  
+  1974 1979  -1.7408     6.2521      -29.5354     26.0537  
+  1974 1980  -9.7770     5.3604      -33.6074     14.0534  
+  1974 1981  -2.8322     5.9579      -29.3192     23.6547  
+  1974 1982  -7.4517     4.7845      -28.7221     13.8188  
+  1974 1983  -4.3400     6.9250      -35.1262     26.4461  
+  1974 1984  -7.8279     6.6504      -37.3935     21.7376  
+  1974 1985   0.9048    10.4097      -45.3731     47.1828  
+  1974 1986  -3.4953     9.2214      -44.4907     37.5000  
+  1974 1987  -9.3045     9.0886      -49.7096     31.1005  
+  1974 1988  -9.0434     8.4795      -46.7406     28.6537  
+  1974 1989  -6.4758    10.0506      -51.1574     38.2058  
+  1974 1990  -7.6369     8.6247      -45.9796     30.7058  
+  1974 1991 -14.7133     7.5175      -48.1336     18.7070  
+  1974 1992 -14.7711     8.1298      -50.9134     21.3713  
+  1974 1993 -11.2274     8.9583      -51.0531     28.5982  
+  1974 1994 -14.4350    10.7449      -62.2031     33.3331  
+  1974 1995 -13.4194    10.0662      -58.1705     31.3318  
+  1974 1996 -14.8017    10.3039      -60.6095     31.0062  
+  1975 1965  18.6039    14.0795      -43.9892     81.1969  
+  1975 1966  -3.3872     3.8648      -20.5690     13.7945  
+  1975 1967  -2.4321     2.2977      -12.6469      7.7828  
+  1975 1968   7.3667     5.1438      -15.5010     30.2345  
+  1975 1969  -4.2480     6.0198      -31.0099     22.5140  
+  1975 1970 -11.4912     7.5640      -45.1183     22.1360  
+  1975 1971   5.6632     8.2554      -31.0375     42.3638  
+  1975 1972 -15.6310     7.1543      -47.4367     16.1747  
+  1975 1973  16.2449     6.8398      -14.1626     46.6524  
+  1975 1974  -0.4082     6.2469      -28.1800     27.3635  
+  1975 1975  -2.3510     2.7609      -14.6248      9.9229  
+  1975 1976  -2.3824     5.9557      -28.8597     24.0948  
+  1975 1977  -4.1345     8.2330      -40.7356     32.4666  
+  1975 1978  -7.0822     6.2789      -34.9961     20.8318  
+  1975 1979 -12.0112    13.7639      -73.2008     49.1783  
+  1975 1980 -10.7602     5.1644      -33.7196     12.1991  
+  1975 1981  -7.1236     5.1907      -30.1996     15.9524  
+  1975 1982 -10.5685     7.1460      -42.3372     21.2002  
+  1975 1983  -9.0308     6.0012      -35.7101     17.6486  
+  1975 1984   9.8022     5.3573      -14.0146     33.6189  
+  1975 1985  -5.6163     8.3059      -42.5415     31.3088  
+  1975 1986  -5.2183     4.9430      -27.1933     16.7566  
+  1975 1987  -0.8638     5.2844      -24.3565     22.6290  
+  1975 1988 -15.3668    10.3470      -61.3659     30.6324  
+  1975 1989  -5.4933     5.9178      -31.8019     20.8152  
+  1975 1990   8.5067     5.6803      -16.7461     33.7595  
+  1975 1991   0.7631     6.1256      -26.4693     27.9955  
+  1975 1992  -4.2255     6.0728      -31.2230     22.7720  
+  1975 1993   1.1200     2.6263      -10.5556     12.7956  
+  1975 1994  -8.3655     7.7875      -42.9863     26.2554  
+  1975 1995   1.8041     4.1836      -16.7948     20.4030  
+  1975 1996  -6.9207     5.4995      -31.3697     17.5283  
+  1976 1965 -11.0522     1.6686      -18.4703     -3.6340 *
+  1976 1966   0.1018     2.0342       -8.9416      9.1451  
+  1976 1967  -5.9143     2.1975      -15.6838      3.8552  
+  1976 1968  -1.6479     1.9141      -10.1574      6.8616  
+  1976 1969  -6.6407     1.7973      -14.6309      1.3494  
+  1976 1970   8.5784     2.1121       -0.8115     17.9683  
+  1976 1971   4.0973     2.5291       -7.1464     15.3410  
+  1976 1972  -0.9903     2.8921      -13.8476     11.8670  
+  1976 1973 -20.1263     3.9372      -37.6297     -2.6229 *
+  1976 1974  39.6133     2.4322       28.8006     50.4259 *
+  1976 1975  -3.5747     2.5658      -14.9814      7.8320  
+  1976 1976   3.7698     5.1549      -19.1471     26.6867  
+  1976 1977  33.5942     4.4347       13.8791     53.3094 *
+  1976 1978  -3.1195     2.4746      -14.1206      7.8815  
+  1976 1979   1.3342     6.9881      -29.7327     32.4011  
+  1976 1980 -10.4124     3.7397      -27.0380      6.2131  
+  1976 1981 -10.4368     5.6960      -35.7593     14.8857  
+  1976 1982 -12.4922     3.3600      -27.4295      2.4450  
+  1976 1983 -15.8081     6.1939      -43.3440     11.7278  
+  1976 1984 -20.6870     2.6970      -32.6768     -8.6972 *
+  1976 1985  -0.2053     6.9868      -31.2661     30.8555  
+  1976 1986 -27.7992     8.3181      -64.7786      9.1802  
+  1976 1987  -9.9985     4.4562      -29.8091      9.8122  
+  1976 1988 -22.8540     6.0525      -49.7616      4.0536  
+  1976 1989 -14.3020     6.6385      -43.8146     15.2106  
+  1976 1990 -16.7275     3.7508      -33.4023     -0.0527 *
+  1976 1991 -29.9838     4.5513      -50.2174     -9.7503 *
+  1976 1992 -35.9431     6.2168      -63.5808     -8.3054 *
+  1976 1993 -33.5630     5.7015      -58.9100     -8.2161 *
+  1976 1994 -19.1785     7.2180      -51.2674     12.9103  
+  1976 1995 -18.8943     8.2444      -55.5462     17.7576  
+  1976 1996 -20.0712     8.0000      -55.6364     15.4940  
+  1977 1965   6.8982    12.1546      -47.1372     60.9337  
+  1977 1966 -11.1214     8.4855      -48.8453     26.6025  
+  1977 1967  10.8566     5.9128      -15.4298     37.1430  
+  1977 1968 -11.0425    12.2332      -65.4273     43.3422  
+  1977 1969  10.1932    12.3101      -44.5336     64.9199  
+  1977 1970   2.9004     5.9538      -23.5681     29.3688  
+  1977 1971   3.0530     8.6554      -35.4260     41.5320  
+  1977 1972  -0.6535     9.5546      -43.1300     41.8230  
+  1977 1973   3.1405     8.4762      -34.5417     40.8227  
+  1977 1974 -14.4506     6.0272      -41.2457     12.3444  
+  1977 1975  -0.1240     5.3894      -24.0833     23.8354  
+  1977 1976   5.5263    19.4412      -80.9030     91.9556  
+  1977 1977  -0.1462    16.5023      -73.5100     73.2176  
+  1977 1978 -17.4422    18.3087      -98.8366     63.9522  
+  1977 1979  -7.6652    30.4659     -143.1066    127.7761  
+  1977 1980 -12.0752    25.0123     -123.2718     99.1214  
+  1977 1981 -11.8110    22.0364     -109.7778     86.1558  
+  1977 1982 -18.5556    18.4771     -100.6988     63.5877  
+  1977 1983   4.2551    31.5275     -135.9058    144.4159  
+  1977 1984  -3.0226    24.8443     -113.4722    107.4270  
+  1977 1985 -14.8995    20.8419     -107.5559     77.7568  
+  1977 1986 -12.3230    14.7030      -77.6878     53.0419  
+  1977 1987 -23.6769    28.9615     -152.4300    105.0762  
+  1977 1988 -25.5547    22.8764     -127.2558     76.1464  
+  1977 1989  -9.2602    32.4048     -153.3213    134.8008  
+  1977 1990 -13.7369    29.6879     -145.7194    118.2456  
+  1977 1991 -25.9731    26.5168     -143.8582     91.9120  
+  1977 1992 -29.9220    24.4014     -138.4024     78.5584  
+  1977 1993 -14.9531    27.9282     -139.1128    109.2067  
+  1977 1994 -11.6033    35.0417     -167.3872    144.1805  
+  1977 1995 -29.0098    23.3018     -132.6019     74.5823  
+  1977 1996 -16.0590    23.7780     -121.7681     89.6501  
+  1980 1965  -4.7817     1.7143      -12.4031      2.8396  
+  1980 1966  -2.0295     2.0459      -11.1249      7.0658  
+  1980 1967   0.2462     2.2434       -9.7273     10.2198  
+  1980 1968   4.9725     1.9262       -3.5906     13.5355  
+  1980 1969  -5.6981     1.7985      -13.6937      2.2975  
+  1980 1970   7.6920     2.0888       -1.5942     16.9782  
+  1980 1971  -9.5134     2.4814      -20.5449      1.5182  
+  1980 1972   5.9170     2.8114       -6.5815     18.4155  
+  1980 1973  -3.6509     3.9809      -21.3486     14.0467  
+  1980 1974   1.1846     4.4362      -18.5375     20.9067  
+  1980 1975  -1.4249     2.7669      -13.7256     10.8758  
+  1980 1976   1.5220     5.7146      -23.8834     26.9274  
+  1980 1977  -1.8998     2.7184      -13.9847     10.1852  
+  1980 1978  -6.1099     4.7791      -27.3561     15.1363  
+  1980 1979   6.0177     8.1746      -30.3240     42.3594  
+  1980 1980 -11.0694     5.3019      -34.6397     12.5009  
+  1980 1981  -7.3267     2.5402      -18.6194      3.9660  
+  1980 1982  -9.2663     9.3084      -50.6483     32.1158  
+  1980 1983   1.6316     3.0140      -11.7676     15.0308  
+  1980 1984  -2.4538     5.2385      -25.7425     20.8348  
+  1980 1985   4.4467     5.1164      -18.2990     27.1924  
+  1980 1986  -9.5981     7.0565      -40.9689     21.7726  
+  1980 1987 -10.0537    11.3335      -60.4388     40.3314  
+  1980 1988 -10.9789     9.1300      -51.5677     29.6100  
+  1980 1989  -6.9527     5.4821      -31.3243     17.4190  
+  1980 1990  -5.3312     6.2450      -33.0943     22.4319  
+  1980 1991  -8.8820     7.9543      -44.2444     26.4804  
+  1980 1992 -12.0023     8.8737      -51.4518     27.4472  
+  1980 1993  -8.3192     7.7315      -42.6907     26.0523  
+  1980 1994 -12.5474     7.9100      -47.7129     22.6180  
+  1980 1995  -6.7308     8.7926      -45.8198     32.3582  
+  1980 1996  -9.1678     7.0565      -40.5389     22.2032  
+  1984 1965   2.2727     1.6965       -5.2695      9.8148  
+  1984 1966  -1.6070     2.0263      -10.6154      7.4014  
+  1984 1967  -1.8538     2.2354      -11.7915      8.0839  
+  1984 1968  -1.3557     1.9383       -9.9728      7.2614  
+  1984 1969   2.1619     1.7932       -5.8101     10.1339  
+  1984 1970  -0.3449     2.1432       -9.8729      9.1830  
+  1984 1971 -10.9305     2.5181      -22.1252      0.2642  
+  1984 1972   5.8536     2.9009       -7.0429     18.7500  
+  1984 1973  -1.9239     4.0421      -19.8937     16.0459  
+  1984 1974  -7.1605     4.3515      -26.5060     12.1850  
+  1984 1975  -1.6437     2.7694      -13.9556     10.6682  
+  1984 1976   5.6685     5.8241      -20.2235     31.5605  
+  1984 1977   3.2342     2.7903       -9.1704     15.6387  
+  1984 1978  -7.3151     5.5215      -31.8621     17.2318  
+  1984 1979   1.9466     8.1768      -34.4048     38.2980  
+  1984 1980  -8.6205     6.1577      -35.9958     18.7548  
+  1984 1981  10.4692     4.8613      -11.1427     32.0811  
+  1984 1982  -5.4364     7.6113      -39.2738     28.4009  
+  1984 1983  12.0264     8.4379      -25.4858     49.5387  
+  1984 1984  -0.7730     2.7483      -12.9908     11.4449  
+  1984 1985   4.0744     1.1821       -1.1806      9.3294  
+  1984 1986  -8.0341     2.9464      -21.1329      5.0647  
+  1984 1987 -10.4189     8.0305      -46.1197     25.2819  
+  1984 1988  -7.8277     5.4597      -32.0995     16.4442  
+  1984 1989  -9.2894     3.8762      -26.5217      7.9430  
+  1984 1990  -6.2529     2.9419      -19.3318      6.8259  
+  1984 1991 -10.1584     4.5533      -30.4009     10.0841  
+  1984 1992 -11.4694     4.6630      -32.1996      9.2608  
+  1984 1993  -9.2844     4.4284      -28.9717     10.4028  
+  1984 1994 -14.6630     7.1472      -46.4372     17.1113  
+  1984 1995 -12.5044     4.1193      -30.8175      5.8086  
+  1984 1996 -10.2449     3.2047      -24.4919      4.0021  
+  1985 1965  -4.3499     1.7292      -12.0375      3.3376  
+  1985 1966  37.6989     1.9362       29.0913     46.3065 *
+  1985 1967 -19.2838     2.1282      -28.7450     -9.8226 *
+  1985 1968  -4.2545     1.9569      -12.9541      4.4451  
+  1985 1969  10.5295     1.7799        2.6166     18.4424 *
+  1985 1970   7.2143     2.0793       -2.0298     16.4584  
+  1985 1971   6.9735     2.4888       -4.0907     18.0377  
+  1985 1972   5.8781     2.8150       -6.6367     18.3928  
+  1985 1973 -38.9329     3.1900      -53.1147    -24.7511 *
+  1985 1974   8.7158     4.4061      -10.8721     28.3037  
+  1985 1975  -7.1533     2.5585      -18.5275      4.2209  
+  1985 1976  -0.8308     5.7239      -26.2773     24.6158  
+  1985 1977  -2.2605     2.7423      -14.4518      9.9308  
+  1985 1978   7.7405     5.9201      -18.5785     34.0595  
+  1985 1979  -4.9814     8.3846      -42.2567     32.2938  
+  1985 1980   2.9209     6.3161      -25.1586     31.0004  
+  1985 1981  -4.4773     5.7224      -29.9171     20.9625  
+  1985 1982  13.7629     8.6731      -24.7949     52.3207  
+  1985 1983  -7.4210     8.6868      -46.0396     31.1975  
+  1985 1984  -5.5493     3.0237      -18.9915      7.8928  
+  1985 1985  11.4728     5.1053      -11.2235     34.1692  
+  1985 1986  10.1715     3.4372       -5.1093     25.4524  
+  1985 1987  17.5291     4.9075       -4.2881     39.3463  
+  1985 1988  -9.6423     3.7230      -26.1933      6.9088  
+  1985 1989  19.8229     5.3527       -3.9735     43.6192  
+  1985 1990  26.2350     1.7402       18.4985     33.9715 *
+  1985 1991   6.2209     3.3361       -8.6104     21.0522  
+  1985 1992  18.3602     4.8122       -3.0331     39.7535  
+  1985 1993  23.0343     2.9074       10.1090     35.9596 *
+  1985 1994  15.2612     6.1539      -12.0968     42.6192  
+  1985 1995  15.4633     4.4738       -4.4258     35.3524  
+  1985 1996  26.5282     3.5826       10.6011     42.4554 *
+---
+Signif. codes: `*' confidence band does not cover 0
+
+Control Group:  Not Yet Treated,  Anticipation Periods:  0
+Estimation Method:  Outcome Regression</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdid</span>(atts_nyt)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tarea-3-respuestas_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div></li>
+<li><p>[5 puntos] Reporte los resultados agregados obtenidos a partir del estimador Callaway &amp; Sant’Anna (2021), usando una agregación dinámica que muestre los efectos promedio para cada periodo antes y después del tratamiento. Grafique e interprete los resultados.</p>
+<p><em>Graficamos:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>agg.es <span class="ot">&lt;-</span> <span class="fu">aggte</span>(atts_nyt,</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">type =</span> <span class="st">"dynamic"</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(agg.es)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+aggte(MP = atts_nyt, type = "dynamic")
+
+Reference: Callaway, Brantly and Pedro H.C. Sant'Anna.  "Difference-in-Differences with Multiple Time Periods." Journal of Econometrics, Vol. 225, No. 2, pp. 200-230, 2021. &lt;https://doi.org/10.1016/j.jeconom.2020.12.001&gt;, &lt;https://arxiv.org/abs/1803.09015&gt; 
+
+
+Overall summary of ATT's based on event-study/dynamic aggregation:  
+    ATT    Std. Error     [ 95%  Conf. Int.]  
+ -9.628        3.7063   -16.8921     -2.3638 *
+
+
+Dynamic Effects:
+ Event time Estimate Std. Error [95% Simult.  Conf. Band]  
+        -20  -4.3499     1.6475       -8.8072      0.1073  
+        -19  19.9858    13.5127      -16.5729     56.5445  
+        -18 -10.4454     7.1335      -29.7451      8.8544  
+        -17  -3.0542     1.1194       -6.0828     -0.0255 *
+        -16   4.5869     2.1022       -1.1006     10.2744  
+        -15   1.5315     3.4154       -7.7088     10.7719  
+        -14   1.5330     2.4649       -5.1358      8.2018  
+        -13  -1.6021     4.8668      -14.7693     11.5652  
+        -12  -1.2353     9.2017      -26.1307     23.6600  
+        -11  -6.1889     4.8512      -19.3139      6.9361  
+        -10   7.0286     5.2799       -7.2561     21.3134  
+         -9  -5.6915     3.4215      -14.9483      3.5652  
+         -8   1.1876     2.3289       -5.1131      7.4884  
+         -7  -0.6219     1.8793       -5.7064      4.4626  
+         -6   1.1581     2.7613       -6.3125      8.6287  
+         -5  -2.9106     2.1291       -8.6708      2.8496  
+         -4   2.9082     1.5775       -1.3598      7.1762  
+         -3  -1.9822     2.5866       -8.9802      5.0159  
+         -2   0.7311     2.6360       -6.4005      7.8627  
+         -1   1.4763     2.4025       -5.0236      7.9762  
+          0   0.5890     2.8646       -7.1611      8.3392  
+          1  -1.2422     3.2918      -10.1482      7.6637  
+          2  -0.3815     4.1749      -11.6766     10.9136  
+          3  -0.4662     3.7824      -10.6995      9.7671  
+          4  -0.3563     4.2499      -11.8544     11.1418  
+          5  -3.4207     4.1641      -14.6867      7.8452  
+          6  -2.4065     4.4563      -14.4631      9.6501  
+          7  -6.4250     4.8248      -19.4784      6.6285  
+          8  -5.8964     5.1929      -19.9457      8.1529  
+          9  -6.3944     4.5600      -18.7314      5.9427  
+         10  -7.7061     5.0291      -21.3124      5.9002  
+         11  -8.8186     5.3954      -23.4159      5.7788  
+         12  -7.2921     4.3378      -19.0281      4.4438  
+         13 -11.1384     4.0408      -22.0709     -0.2060 *
+         14 -11.1558     4.4061      -23.0765      0.7649  
+         15 -14.8167     5.1686      -28.8003     -0.8331 *
+         16 -11.6965     5.0642      -25.3976      2.0046  
+         17 -14.3232     4.5511      -26.6362     -2.0101 *
+         18 -17.1010     5.0320      -30.7150     -3.4871 *
+         19 -17.4748     4.1559      -28.7186     -6.2310 *
+         20 -14.9783     4.8629      -28.1349     -1.8217 *
+         21 -15.8960     4.7360      -28.7091     -3.0828 *
+         22 -15.2219     4.4312      -27.2105     -3.2332 *
+         23 -16.2453     4.9675      -29.6849     -2.8056 *
+         24 -17.8714     6.9762      -36.7455      1.0027  
+         25 -17.0567     9.9465      -43.9669      9.8536  
+         26 -27.4244    18.5096      -77.5019     22.6532  
+         27   3.0338    13.1707      -32.5996     38.6673  
+---
+Signif. codes: `*' confidence band does not cover 0
+
+Control Group:  Not Yet Treated,  Anticipation Periods:  0
+Estimation Method:  Outcome Regression</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdid</span>(agg.es)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tarea-3-respuestas_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>Se obtiene una reducción en la tasa de suicidios que es estadísticamente significativa a partir de 13 años después de la introducción de la legislación.</em></p></li>
+<li><p>[5 puntos] Reporte los resultados agregados obtenidos a partir del estimador Callaway &amp; Sant’Anna (2021), usando una agregación or grupos que muestre los efectos promedio para cada cohorte del tratamiento. Grafique e interprete los resultados.</p>
+<p><em>Graficamos:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>agg.es <span class="ot">&lt;-</span> <span class="fu">aggte</span>(atts_nyt,</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">type =</span> <span class="st">"group"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(agg.es)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+aggte(MP = atts_nyt, type = "group")
+
+Reference: Callaway, Brantly and Pedro H.C. Sant'Anna.  "Difference-in-Differences with Multiple Time Periods." Journal of Econometrics, Vol. 225, No. 2, pp. 200-230, 2021. &lt;https://doi.org/10.1016/j.jeconom.2020.12.001&gt;, &lt;https://arxiv.org/abs/1803.09015&gt; 
+
+
+Overall summary of ATT's based on group/cohort aggregation:  
+     ATT    Std. Error     [ 95%  Conf. Int.]  
+ -8.2876        3.3566   -14.8664     -1.7087 *
+
+
+Group Effects:
+ Group Estimate Std. Error [95% Simult.  Conf. Band]  
+  1969  -5.3569     8.3210      -24.3538     13.6400  
+  1970 -30.6010    12.0723      -58.1622     -3.0397 *
+  1971 -10.3173     6.0002      -24.0160      3.3814  
+  1972  -7.9006     4.2890      -17.6924      1.8913  
+  1973  -4.5364     5.7505      -17.6650      8.5922  
+  1974  -7.3929     6.3096      -21.7978      7.0120  
+  1975  -4.3417     3.2756      -11.8200      3.1365  
+  1976 -13.5133     4.4831      -23.7483     -3.2782 *
+  1977 -14.6717    34.8283      -94.1855     64.8421  
+  1980  -7.3295     5.9407      -20.8922      6.2332  
+  1984  -8.2189     2.1728      -13.1796     -3.2583 *
+  1985  15.0381     2.6844        8.9096     21.1666 *
+---
+Signif. codes: `*' confidence band does not cover 0
+
+Control Group:  Not Yet Treated,  Anticipation Periods:  0
+Estimation Method:  Outcome Regression</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdid</span>(agg.es)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tarea-3-respuestas_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>Notamos un efecto negativo en la tasa de suicidos que es estadísticamente significativa para los estados que fueron tratados en 1970, 1986 y 1984.</em></p></li>
+<li><p>[5 puntos] ¿Cuáles son las ventajas del estimador de Callaway &amp; Sant’Anna (2021) respecto al estimador de TWFE?</p>
+<p><em>Las ventajas del estimador de Callaway &amp; Sant’Anna respecto a TWFE son las siguientes:</em> <em>- Evita las comapraciones prohibidas (usar unidades tratadas como controles para unidades que son tratadas en periodos posteriores)</em> <em>- Hace explícito el grupo de comparación que se usa para comparar a las unidades tratadas</em> <em>- Hace explícita la manera en que se agregan los resultados de cada comparación <span class="math inline">\(ATT(g,t)\)</span></em> <em>- No impone efectos monótonos en el tiempo ni homogéneos entre unidades</em></p></li>
+</ol>
+</section>
+<section id="pregunta-2" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
+<p>La ENIGH 2020 incluyó un módulo para la evaluación del Programa Jóvenes Construyendo el futuro. Se buscó que la cobertura de la encuesta pudiera incluir suficientes participantes del programa para poder compararlos con los no participantes. Los datos en <em>datos_jcf_analisis.csv</em> fueron construidos a partir de dicha encuesta. En este ejercicio estimaremos el efecto de participar en el programa sobre el ingreso trimestral, <strong>ingtot_tri</strong>, usando métodos de matching.</p>
+<p>Las siguientes variables están incluidas en el archivo de datos: <strong>mujer</strong> (dummy de sexo), <strong>indigena</strong> (dummy de pertenencia a una etnia), <strong>rural</strong> (dummy del ámbito rural), <strong>escoacum</strong> (años de escolaridad), <strong>casadounion</strong> (dummy para casados o en unión libre), <strong>jefehog</strong> (dummy para jefes del hogar), <strong>haymenores</strong> (dummy para la presencia de menores de edad en el hogar), <strong>proggob</strong> (dummy para beneficiarios de programas de gobierno), y <strong>tot_integ</strong> (número de miembros del hogar). También se incluye la clave de las entidades, <strong>cve_ent</strong>.</p>
+<ol type="a">
+<li><p>[5 puntos] Considere la comparación para el ingreso trimestral, <strong>ingtot_tri</strong>, entre beneficiarios y su grupo de comparación, que serán los jóvenes que no asisten a la escuela y no están empleados. Los beneficiarios tienen <em>jcf2==1</em> y los jóvenes que no asisten a la escuela y no están empleados tienen <em>jcf2==0</em>. Muestre qué tan similares o qué tan diferentes son los individuos en ambos grupos en términos de las características indicadas anteriormente y del ingreso trimestral.</p>
+<p><em>Estadística descriptiva:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>data.jcf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../files/datos_jcf_analisis.csv"</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1023</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Aquí usé datasummary para calcular la estadística descriptiva por grupos:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datasummary</span>(ingtot_tri <span class="sc">+</span> mujer <span class="sc">+</span> indigena <span class="sc">+</span> rural <span class="sc">+</span> escoacum <span class="sc">+</span> casadounion <span class="sc">+</span> jefehog <span class="sc">+</span> haymenores <span class="sc">+</span> proggob <span class="sc">+</span> tot_integ <span class="sc">~</span> <span class="fu">factor</span>(jcf2) <span class="sc">*</span> (mean <span class="sc">+</span> sd) <span class="sc">*</span> <span class="fu">Arguments</span>(<span class="at">na.rm=</span><span class="cn">TRUE</span>),</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">fmt =</span> <span class="st">"%.2f"</span>,</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> data.jcf)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script>
+
+      function styleCell_o319cneo8effsfcg38ue(i, j, css_id) {
+          var table = document.getElementById("tinytable_o319cneo8effsfcg38ue");
+          var cell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+          if (cell) {
+              console.log(`Styling cell at (${i}, ${j}) with class ${css_id}`);
+              cell.classList.add(css_id);
+          } else {
+              console.warn(`Cell at (${i}, ${j}) not found.`);
+          }
+      }
+      function spanCell_o319cneo8effsfcg38ue(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_o319cneo8effsfcg38ue");
+        const targetCell = table.querySelector(`[data-row="${i}"][data-col="${j}"]`);
+        if (!targetCell) {
+          console.warn(`Cell at (${i}, ${j}) not found.`);
+        }
+
+        // Get all cells that need to be removed
+        const cellsToRemove = [];
+        for (let r = 0; r < rowspan; r++) {
+          for (let c = 0; c < colspan; c++) {
+            if (r === 0 && c === 0) continue; // Skip the target cell
+            const cell = table.querySelector(`[data-row="${i + r}"][data-col="${j + c}"]`);
+            if (cell) {
+              cellsToRemove.push(cell);
+            }
+          }
+        }
+
+        // Remove all cells
+        cellsToRemove.forEach(cell => cell.remove());
+
+        // Set rowspan and colspan of the target cell if it exists
+        if (targetCell) {
+          targetCell.rowSpan = rowspan;
+          targetCell.colSpan = colspan;
+        }
+      }
+      // tinytable span after
+      window.addEventListener('load', function () {
+          var cellsToStyle = [
+            // tinytable style arrays after
+          { positions: [ { i: '-1', j: 4 }, { i: '-1', j: 3 },  ], css_id: 'tinytable_css_0yqui8arvthnnaij9ef1',}, 
+          { positions: [ { i: '10', j: 1 }, { i: '10', j: 3 }, { i: '10', j: 2 }, { i: '10', j: 4 },  ], css_id: 'tinytable_css_uy949959h4oavhy4bb3w',}, 
+          { positions: [ { i: '1', j: 1 }, { i: '2', j: 1 }, { i: '3', j: 1 }, { i: '4', j: 1 }, { i: '5', j: 1 }, { i: '6', j: 1 }, { i: '7', j: 1 }, { i: '8', j: 1 }, { i: '1', j: 2 }, { i: '2', j: 2 }, { i: '3', j: 2 }, { i: '4', j: 2 }, { i: '5', j: 2 }, { i: '6', j: 2 }, { i: '7', j: 2 }, { i: '8', j: 2 }, { i: '9', j: 2 }, { i: '9', j: 1 }, { i: '3', j: 3 }, { i: '1', j: 4 }, { i: '1', j: 3 }, { i: '2', j: 3 }, { i: '7', j: 3 }, { i: '4', j: 3 }, { i: '5', j: 3 }, { i: '6', j: 3 }, { i: '3', j: 4 }, { i: '8', j: 3 }, { i: '9', j: 3 }, { i: '2', j: 4 }, { i: '7', j: 4 }, { i: '4', j: 4 }, { i: '5', j: 4 }, { i: '6', j: 4 }, { i: '8', j: 4 }, { i: '9', j: 4 },  ], css_id: 'tinytable_css_5z7kieg41eh3ajo5xwpf',}, 
+          { positions: [ { i: '-1', j: 1 }, { i: '-1', j: 2 },  ], css_id: 'tinytable_css_xz4jsovqyj368hcdqj43',}, 
+          { positions: [ { i: '0', j: 1 }, { i: '0', j: 4 }, { i: '0', j: 3 }, { i: '0', j: 2 },  ], css_id: 'tinytable_css_p4cqrq4zc0yzpl955wnh',}, 
+          { positions: [ { i: '10', j: 0 },  ], css_id: 'tinytable_css_vo1f9z8qq1hckx65an83',}, 
+          { positions: [ { i: '1', j: 0 }, { i: '2', j: 0 }, { i: '3', j: 0 }, { i: '4', j: 0 }, { i: '5', j: 0 }, { i: '6', j: 0 }, { i: '7', j: 0 }, { i: '8', j: 0 }, { i: '9', j: 0 },  ], css_id: 'tinytable_css_lb3olvsqqn1vp6y6vaxw',}, 
+          { positions: [ { i: '-1', j: 0 },  ], css_id: 'tinytable_css_4vgw1gktcznutol253vj',}, 
+          { positions: [ { i: '0', j: 0 },  ], css_id: 'tinytable_css_zyruoz028ig4ioptxxgm',}, 
+          ];
+
+          // Loop over the arrays to style the cells
+          cellsToStyle.forEach(function (group) {
+              group.positions.forEach(function (cell) {
+                  styleCell_o319cneo8effsfcg38ue(cell.i, cell.j, group.css_id);
+              });
+          });
+      });
+    </script>
+
+    <style>
+      /* tinytable css entries after */
+      .table td.tinytable_css_0yqui8arvthnnaij9ef1, .table th.tinytable_css_0yqui8arvthnnaij9ef1 { text-align: right; text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_uy949959h4oavhy4bb3w, .table th.tinytable_css_uy949959h4oavhy4bb3w { text-align: right; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_5z7kieg41eh3ajo5xwpf, .table th.tinytable_css_5z7kieg41eh3ajo5xwpf { text-align: right; }
+      .table td.tinytable_css_xz4jsovqyj368hcdqj43, .table th.tinytable_css_xz4jsovqyj368hcdqj43 { text-align: right; text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_p4cqrq4zc0yzpl955wnh, .table th.tinytable_css_p4cqrq4zc0yzpl955wnh { text-align: right; border-bottom: solid #d3d8dc 0.05em; }
+      .table td.tinytable_css_vo1f9z8qq1hckx65an83, .table th.tinytable_css_vo1f9z8qq1hckx65an83 { text-align: left; border-bottom: solid #d3d8dc 0.1em; }
+      .table td.tinytable_css_lb3olvsqqn1vp6y6vaxw, .table th.tinytable_css_lb3olvsqqn1vp6y6vaxw { text-align: left; }
+      .table td.tinytable_css_4vgw1gktcznutol253vj, .table th.tinytable_css_4vgw1gktcznutol253vj { text-align: left; text-align: center; border-top: solid #d3d8dc 0.1em; text-align: center; }
+      .table td.tinytable_css_zyruoz028ig4ioptxxgm, .table th.tinytable_css_zyruoz028ig4ioptxxgm { text-align: left; border-bottom: solid #d3d8dc 0.05em; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_o319cneo8effsfcg38ue" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+<tr>
+<th scope="col" align="center" colspan="1" data-row="-1" data-col="0"> </th>
+<th scope="col" align="center" colspan="2" data-row="-1" data-col="1">0</th>
+<th scope="col" align="center" colspan="2" data-row="-1" data-col="2">1</th>
+</tr>
+
+              <tr>
+                <th scope="col" data-row="0" data-col="0"> </th>
+                <th scope="col" data-row="0" data-col="1">mean</th>
+                <th scope="col" data-row="0" data-col="2">sd</th>
+                <th scope="col" data-row="0" data-col="3">mean</th>
+                <th scope="col" data-row="0" data-col="4">sd</th>
+              </tr>
+        </thead>
+
+        <tbody>
+                <tr>
+                  <td data-row="1" data-col="0">ingtot_tri</td>
+                  <td data-row="1" data-col="1">1510.36</td>
+                  <td data-row="1" data-col="2">8478.60</td>
+                  <td data-row="1" data-col="3">9643.06</td>
+                  <td data-row="1" data-col="4">6632.56</td>
+                </tr>
+                <tr>
+                  <td data-row="2" data-col="0">mujer</td>
+                  <td data-row="2" data-col="1">0.76</td>
+                  <td data-row="2" data-col="2">0.43</td>
+                  <td data-row="2" data-col="3">0.59</td>
+                  <td data-row="2" data-col="4">0.49</td>
+                </tr>
+                <tr>
+                  <td data-row="3" data-col="0">indigena</td>
+                  <td data-row="3" data-col="1">0.22</td>
+                  <td data-row="3" data-col="2">0.41</td>
+                  <td data-row="3" data-col="3">0.59</td>
+                  <td data-row="3" data-col="4">0.49</td>
+                </tr>
+                <tr>
+                  <td data-row="4" data-col="0">rural</td>
+                  <td data-row="4" data-col="1">0.40</td>
+                  <td data-row="4" data-col="2">0.49</td>
+                  <td data-row="4" data-col="3">0.35</td>
+                  <td data-row="4" data-col="4">0.48</td>
+                </tr>
+                <tr>
+                  <td data-row="5" data-col="0">escoacum</td>
+                  <td data-row="5" data-col="1">10.39</td>
+                  <td data-row="5" data-col="2">3.23</td>
+                  <td data-row="5" data-col="3">12.03</td>
+                  <td data-row="5" data-col="4">2.70</td>
+                </tr>
+                <tr>
+                  <td data-row="6" data-col="0">casadounion</td>
+                  <td data-row="6" data-col="1">0.53</td>
+                  <td data-row="6" data-col="2">0.50</td>
+                  <td data-row="6" data-col="3">0.41</td>
+                  <td data-row="6" data-col="4">0.49</td>
+                </tr>
+                <tr>
+                  <td data-row="7" data-col="0">jefehog</td>
+                  <td data-row="7" data-col="1">0.06</td>
+                  <td data-row="7" data-col="2">0.23</td>
+                  <td data-row="7" data-col="3">0.14</td>
+                  <td data-row="7" data-col="4">0.35</td>
+                </tr>
+                <tr>
+                  <td data-row="8" data-col="0">haymenores</td>
+                  <td data-row="8" data-col="1">0.66</td>
+                  <td data-row="8" data-col="2">0.47</td>
+                  <td data-row="8" data-col="3">0.54</td>
+                  <td data-row="8" data-col="4">0.50</td>
+                </tr>
+                <tr>
+                  <td data-row="9" data-col="0">proggob</td>
+                  <td data-row="9" data-col="1">0.19</td>
+                  <td data-row="9" data-col="2">0.39</td>
+                  <td data-row="9" data-col="3">0.21</td>
+                  <td data-row="9" data-col="4">0.41</td>
+                </tr>
+                <tr>
+                  <td data-row="10" data-col="0">tot_integ</td>
+                  <td data-row="10" data-col="1">4.82</td>
+                  <td data-row="10" data-col="2">1.97</td>
+                  <td data-row="10" data-col="3">4.25</td>
+                  <td data-row="10" data-col="4">2.00</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+<p><em>Claramente los individuos que participan en el programa son diferentes a los que no. En el programa hay una proporción menor de mujeres que en el grupo no tratado; en el grupo tratado hay un nivel mayor de escolaridad acumulada; y los individuos del grupo tratado viven en hogares más pequeños que los del grupo no tratado. Entre muchas otras diferencias.</em></p>
+<p><em>El problema entonces es que existen factores que influyen en la probabilidad de recibir el tratamiento y en el ingreso, por lo que una comparación simple de individuos tratados y no tratados confundirá el efecto del tratamiento.</em></p></li>
+<li><p>[5 puntos] Estime el TOT (TT o ATT) del programa en el ingreso trimestral, <strong>ingtot_tri</strong> usando el algoritmo de <em>vecino más cercano</em>. Para estimar el impacto en el ingreso trimestral se comparan a los beneficiarios de JCF con los jóvenes que no asisten a la escuela y no están empleados. Los beneficiarios tienen <em>jcf2==1</em> y los jóvenes que no asisten a la escuela y no están empleados tienen <em>jcf2==0</em>. Escoja la especificación del <em>propensity score</em> que más le parezca adecuada. Realice la inferencia estadística con errores agrupados a nivel grupo de emparejamiento. ¿De qué tamaño es el TOT estimado y es este efecto estadísticamente significativo?</p>
+<p><em>Este es el modelo para el propensity score que yo escogí:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>sub.data <span class="ot">&lt;-</span> data.jcf <span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(ingtot_tri, jcf2, mujer, indigena, cve_ent, rural, escoacum, casadounion,</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    jefehog, haymenores, proggob, tot_integ, factor.x)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>sub.data <span class="ot">&lt;-</span> sub.data[<span class="fu">complete.cases</span>(sub.data), ]</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>m.out.a <span class="ot">&lt;-</span> <span class="fu">matchit</span>(<span class="at">formula=</span>jcf2 <span class="sc">~</span> mujer <span class="sc">+</span> indigena <span class="sc">+</span> <span class="fu">factor</span>(cve_ent) <span class="sc">+</span> rural  <span class="sc">+</span> escoacum <span class="sc">+</span> casadounion <span class="sc">+</span> jefehog <span class="sc">+</span> haymenores <span class="sc">+</span> proggob <span class="sc">+</span> tot_integ,</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"nearest"</span>,</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">distance=</span> <span class="st">"glm"</span>,</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">replace =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> sub.data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Estimamos el efecto del tratamiento:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>tt1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(ingtot_tri <span class="sc">~</span> jcf2,</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> <span class="fu">match.data</span>(m.out.a))</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Errores agrupados a nivel subclass</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(tt1,</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">vcov. =</span> vcovCL,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">cluster =</span> <span class="sc">~</span>subclass)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+t test of coefficients:
+
+            Estimate Std. Error t value  Pr(&gt;|t|)    
+(Intercept)  1669.95     407.99  4.0931 5.735e-05 ***
+jcf2         7973.11     708.27 11.2572 &lt; 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p><em>Se estima un efecto de 7973 pesos adicionales de ingreso trimestral para los participantes en el programa.</em></p></li>
+<li><p>[5 puntos] En el matching de la parte b., evalúe qué tan bueno es el procedimiento en balancear las características observadas una vez realizado el matching. Cree un <em>love plot</em> para evaluar qué tan bueno es el procedimiento de matching para obtener una muestra balanceada.</p>
+<p><em>bal.tab del paquete cobalt nos permite ver un resumen del balance:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Con esto elimino las dummies de estado de la salida</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">bal.tab</span>(m.out.a, <span class="at">m.threshold=</span><span class="fl">0.1</span>, <span class="at">un=</span>T)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Balance Measures
+                       Type Diff.Un Diff.Adj        M.Threshold
+distance           Distance  1.1091   0.0881     Balanced, &lt;0.1
+mujer                Binary -0.1660   0.0551     Balanced, &lt;0.1
+indigena             Binary  0.3714   0.0551     Balanced, &lt;0.1
+factor(cve_ent)_01   Binary -0.1720  -0.0157     Balanced, &lt;0.1
+factor(cve_ent)_02   Binary -0.3428  -0.0079     Balanced, &lt;0.1
+factor(cve_ent)_03   Binary  0.0168   0.0079     Balanced, &lt;0.1
+factor(cve_ent)_04   Binary  0.5524   0.0157     Balanced, &lt;0.1
+factor(cve_ent)_05   Binary -0.0544   0.0000     Balanced, &lt;0.1
+rural                Binary -0.0553   0.0709     Balanced, &lt;0.1
+escoacum            Contin.  0.6086  -0.2096 Not Balanced, &gt;0.1
+casadounion          Binary -0.1170   0.0709     Balanced, &lt;0.1
+jefehog              Binary  0.0831   0.0551     Balanced, &lt;0.1
+haymenores           Binary -0.1193   0.0787     Balanced, &lt;0.1
+proggob              Binary  0.0220   0.0079     Balanced, &lt;0.1
+tot_integ           Contin. -0.2856   0.0158     Balanced, &lt;0.1
+
+Balance tally for mean differences
+                   count
+Balanced, &lt;0.1        14
+Not Balanced, &gt;0.1     1
+
+Variable with the greatest mean difference
+ Variable Diff.Adj        M.Threshold
+ escoacum  -0.2096 Not Balanced, &gt;0.1
+
+Sample sizes
+          Control Treated
+All          1894     127
+Matched       127     127
+Unmatched    1767       0</code></pre>
+</div>
+</div>
+<p><em>Y finalmente el loveplot:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>m.out.a[[<span class="st">"X"</span>]][[<span class="st">"factor(cve_ent)"</span>]] <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">love.plot</span>(<span class="fu">bal.tab</span>(m.out.a),</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">threshold =</span> .<span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="tarea-3-respuestas_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>Parece haber un buen balance, aunque la educación es la única variable que no queda bien balanceada. Después del emparejamiento, las medias (estandarizadas) entre tratados y no tratados difieren en más de 0.1.</em></p></li>
+<li><p>[5 puntos] Estime ahora el TOT en el ingreso trimestral, como en la parte b., pero usando un caliper de 0.05 y 5 vecinos a ser emparejados. ¿Cómo cambian sus resultados respecto a los de la parte b.?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sub.data <span class="ot">&lt;-</span> data.jcf <span class="sc">%&gt;%</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(ingtot_tri, jcf2, mujer, indigena, cve_ent, rural, escoacum, </span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>           casadounion, jefehog, haymenores, proggob, tot_integ, factor.x)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>sub.data <span class="ot">&lt;-</span> sub.data[<span class="fu">complete.cases</span>(sub.data), ] </span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>m.out.c <span class="ot">&lt;-</span> <span class="fu">matchit</span>(<span class="at">formula=</span>jcf2 <span class="sc">~</span> mujer <span class="sc">+</span> indigena <span class="sc">+</span> <span class="fu">factor</span>(cve_ent) <span class="sc">+</span> rural  <span class="sc">+</span> escoacum <span class="sc">+</span> casadounion <span class="sc">+</span> jefehog <span class="sc">+</span> haymenores <span class="sc">+</span> proggob <span class="sc">+</span> tot_integ,</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">method =</span> <span class="st">"nearest"</span>,</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">distance=</span> <span class="st">"glm"</span>,</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">ratio =</span> <span class="dv">5</span>,</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">caliper =</span> <span class="fl">0.05</span>,</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">replace =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> sub.data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Estimamos el efecto del tratamiento:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>tt3 <span class="ot">&lt;-</span> <span class="fu">lm</span>(ingtot_tri <span class="sc">~</span> jcf2,</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> <span class="fu">match.data</span>(m.out.c))</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Errores agrupados a nivel subclass</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(tt3,</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">vcov. =</span> vcovCL,</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">cluster =</span> <span class="sc">~</span>subclass)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+t test of coefficients:
+
+            Estimate Std. Error t value  Pr(&gt;|t|)    
+(Intercept)  2135.55     372.22  5.7374 1.717e-08 ***
+jcf2         7155.74     699.21 10.2341 &lt; 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p><em>Se estima ahora un efecto de 7155 pesos, menor al efecto de 7973 pesos estimado en la parte b.</em></p></li>
+</ol>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
+
+<ol>
+<li id="fn1"><p>Stevenson, B. &amp; Wolfers, J. (2006). Bargaining in the Shadow of the Law: Divorce Laws and Family Distress. <em>The Quarterly Journal of Economics</em>, 121(1), 267-288.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

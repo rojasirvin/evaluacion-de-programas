@@ -329,6 +329,7 @@ tabla.descriptiva <- datasummary(noshow+age+female~ ssp*(mean + sd)*Arguments(na
                     title = "Pruebas de balance",
                     notes = "Fuente: Angrist, Lang & Oreopoulos (2009)")
 ```
+
 :::
 
 ::: {.column width="50%}
@@ -355,6 +356,7 @@ tabla.balance <- datasummary_balance(~ssp,
                     notes = "Fuente: Angrist, Lang & Oreopoulos (2009)")
 
 ```
+
 :::
 
 ::: {.column width="50%}
@@ -382,6 +384,7 @@ donde $x_k$ está correlacionado con $u$
 $$x_K=\delta_0+\delta_1 x_1+\delta_2 x_2+\ldots+\delta_{K-1}x_{K-1}+\theta_1 z_1+e_K$$
 
 donde $E(e_K)=0$ y $x_K$ no está correlacionado con las $x_j$ ni con $z_1$
+
 :::
 
 ::: {.fragment}
@@ -404,6 +407,7 @@ $$E(z'y)=E(z'x)\beta+E(z'u)$$
 ::: {.fragment}
 - Por la condición de exclusión sabemos que $E(z'u)=0$, por tanto, si $E(z'x)$ es de rango completo:
 $$\beta=E(z'x)^{-1}E(z'y)$$
+
 :::
 
 
@@ -412,6 +416,7 @@ $$\beta=E(z'x)^{-1}E(z'y)$$
 - Y sustituyendo los análogos muestrales:
 
 $$\hat{\beta}_{VI}=\left(\frac{1}{N}\sum_iz_i'x_i\right)^{-1}\left(\frac{1}{N}\sum_iz_i'y_i\right)=(Z'X)^{-1}Z'Y$$
+
 :::
 
 
@@ -427,6 +432,7 @@ $$\hat{\beta}_{VI}=\left(\frac{1}{N}\sum_iz_i'x_i\right)^{-1}\left(\frac{1}{N}\s
 - En la práctica, puede haber más de un instrumento y más de una variable endógena y el método de estimación usado es **mínimimos cuadrados en dos etapas**
 - Reservaremos el término *estimador de variables instrumentales* al caso en que tenemos tantas variables endógenas como instrumentos, es decir, cuando el modelo esta *exactamente identificado*
 - En este curso solo usaremos modelos exactamente identificados
+
 :::
 
 
@@ -451,6 +457,7 @@ donde $F$ es el estadístico $F$ en una prueba de significancia conjunta de los 
 - Es decir, el sesgo se aproxima al sesgo del estimador de MCO cuando no hay primera etapa
 - En la práctica, nos fijamos que la primera etapa sea válida al observar los coeficientes estimados sobre $Z_i$
 - Y la regla de dedo usada en econometría es que $F>10$ en la primera etapa
+
 :::
 
 
@@ -465,6 +472,7 @@ donde $F$ es el estadístico $F$ en una prueba de significancia conjunta de los 
 - Los autores estudian con detalle el efecto de la adopción
 - En 81 de 162 localidades se **introdujo** aleatoriamente una empresa de microfinanzas
 - Para seleccionar las localidades de tratamiento, primer se emparejaron localidades de acuerdo a características observables y, para cada pareja se asignó a tratamiento y otra a control
+
 :::
 
 
@@ -540,6 +548,7 @@ coef_test(dif_members_client, vcov = "CR1",
 ```
 
 ::: {.fragment}
+
 ```{r echo=TRUE,warning=FALSE, message=FALSE}
 #¿El número de actividades es independiente de ser cliente?
 dif_activities_client <- lm(act_number_bl ~ client + factor(paire), data=data.morocco)
@@ -547,6 +556,7 @@ coef_test(dif_activities_client, vcov = "CR1",
           cluster = data.morocco$demi_paire, test = "naive-t")[1:2,]
 
 ```
+
 :::
 
 

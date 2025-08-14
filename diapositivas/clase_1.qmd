@@ -76,6 +76,7 @@ División de Economía
 - Pero no podemos actuar como si nada pasara
 
 ::: {.fragment}
+
 - Cosas parecidas
   - Búsquenme para platicar en horas de oficina sobre sus dudas  
   - Lean antes de clase  
@@ -89,6 +90,7 @@ División de Economía
   - No grabaremos las sesiones  
   - Trataré de partir la clase en bloques: teoría, artículos, código, exposiciones, etc.  
   - Tienen que colaborar **más** para la clase con algunos de los bloques
+  
 :::
 
 # Inferencia Causal: diseño y econometría {.inverse .center .middle}
@@ -107,6 +109,7 @@ División de Economía
   1. La importancia de las preguntas  
   2. El diseño para responder dichas preguntas  
   3. Las técnicas apropiadas para implementar el diseño
+  
 :::
 
 
@@ -136,12 +139,14 @@ División de Economía
   - Disponibilidad de microdatos  
   - Demanda por probar empíricamente modelos más ricos  
   - Capacidad de cómputo  
+  
 :::
 
 ::: {.fragment}
 - De hecho, algunos macroeconomistas están volteando a ver los métodos de la microeconomía aplicada:  
   - Estudios de evento  
   - Controles sintéticos
+  
 :::
 
 # Tipos de problemas de evaluación
@@ -160,6 +165,7 @@ División de Economía
 - Problema parecido a determinar la demanda de un bien recién introducido al mercado  
 - Se imponen condiciones fuertes  
 - Se trata de estimar una serie de parámetros que caracterizan las preferencias y tecnología de individuos, hogares y empresas  
+
 :::
 
 # Ejemplo: impuestos
@@ -175,6 +181,7 @@ División de Economía
   1. Un impuesto que ya ha existido antes en una población y queremos saber su efecto en la misma población, caracterizada por su distribución de $(W,X,U)$  
   2. El impuesto ha existido antes, pero queremos conocer su efecto en una población distinta, con una distribución distinta de $(W,X,U)$  
   3. El impuesto nunca ha sido implementado y queremos predecir su efecto en la población usada para estimar la oferta laboral o en otra población  
+  
 :::
 
 # Caso 1. Un impuesto ya conocido en la misma población
