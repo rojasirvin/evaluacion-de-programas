@@ -1,3 +1,3 @@
-# Evaluación de Programas 2024
+# Inferencia Causal 2025
 
-Este es el repositorio del curso de Evaluación de Programas 2024 para estudiantes de la Licenciatura y Maestría en Economía del CIDE.
+Este es el repositorio del curso de Inferencia Causal 2025 para estudiantes de la Licenciatura y Maestría en Economía del CIDE.
