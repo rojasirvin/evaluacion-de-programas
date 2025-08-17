@@ -28,7 +28,7 @@ xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
 ```
 
 
-# Clase 2. Inferencia causal {.portada}
+# Inferencia causal {.portada}
 <div style="text-align: center; font-size: 1.2em; font-weight: bold;">
   Inferencia Causal
 </div>
@@ -55,29 +55,7 @@ xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
 **Centro de Investigación y Docencia Económicas**
 División de Economía
 
-
-# Agenda
-
-1. ¿Por qué evaluar?
-1. Sobre la importancia del diseño
-1. Definición de causalidad
-
-# ¿Por qué evaluar? {.inverse .center .middle}
-
-# ¿Por qué evaluar?
-
-- Probar teoría económica
-- Explicar las características de los abundantes datos microeconómicos
-- Desde la perspectiva de políticas públicas
-  - Rendición de cuentas
-  - Estimación de relaciones costo-beneficio
-  - Replicabilidad
-  - Competencia por fondos
-  
-::: {.fragment}
-- Queremos evidencia más allá de las anécdotas
-- Una evaluación responde a la pregunta de *qué parte de un cambio $\Delta y$ en una variable de interés se puede atribuir a un programa $T$*
-:::
+# Los problemas de inferencia con los que trataremos {.inverse .center .middle}
 
 # Programas implementados de forma deliberada
 
@@ -119,21 +97,6 @@ División de Economía
   1. Experimentó cortando el suministro de compañías sospechosas
   :::  
 
-# Para los que aman los mapas
-:::: {.columns}
-
-::: {.column width="50%}
-```{r, out.width="90%", fig.align='center', fig.cap='Source: Smithsonian Magazine'}
-knitr::include_graphics("https://thumbs-prod.si-cdn.com/trC5qb_ILIffjzsnX3kEbvscwM0=/fit-in/1072x0/https://public-media.si-cdn.com/filer/20110520102403643px-Snow-cholera-map-1-300x279.jpg")
-```
-:::
-
-::: {.column width="50%}
-<iframe width='100%' height='450' frameborder='0' src='https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2013/3/14/1363276040034/John-Snows-cholera-map-of-008.jpg?width=700&dpr=2&s=none&crop=none' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-:::
-::::
-
-- Acá les dejo una nota en [The Guardian](https://www.theguardian.com/news/datablog/2013/mar/15/john-snow-cholera-map) sobre los mapas para hacer periodismo
 
 
 # El problema era el agua
@@ -333,17 +296,13 @@ table.personas %>%
 
 # Próxima sesión
 
-- Pregunta: ¿están libres el lunes por la mañana?
 - Introduciremos el concepto de sesgo de selección
 - Veremos un ejemplo de un experimento para identificar efectos causales
   - MHE, Capítulo 2
+- Estudiaremos la regresión como una herramienta para estimar diferencias (ojalá causales)
 
 
 # {.inverse .center .middle}
-
-Presentación creada usando el paquete [**xaringan**](https://github.com/yihui/xaringan) en R.
-
-El *chakra* viene de [remark.js](https://remarkjs.com), [**knitr**](http://yihui.org/knitr), y [R Markdown](https://rmarkdown.rstudio.com).
 
 Material de clase en versión preliminar.
 
