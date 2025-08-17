@@ -1581,7 +1581,7 @@
     "href": "index.html",
     "title": "Inferencia Causal",
     "section": "",
-    "text": "Profesor: Irvin Rojas (irvin.rojas@cide.edu).\nHorario de clases: martes (8:00 a 11:10).\nPlataforma del curso: Microsoft Teams.\nHorario de oficina: martes y jueves (18:00).\n\n¡Bienvenidas, bienvenidos!\nEste es un sitio para las y los estudiantes del curso de Inferencia Causal de la Licenciatura y Maestría en Economía del CIDE. Sin embargo, otras personas pueden encontrar útiles los recursos de este sitio, como el programa del curso, las tareas y la lista de lecturas.",
+    "text": "Profesor: Irvin Rojas (irvin.rojas@cide.edu).\nHorario de clases: martes (8:00 a 11:10).\nPlataforma del curso: Microsoft Teams.\nHorario de oficina: martes y jueves (18:00 a 19:00).\n\n¡Bienvenidas, bienvenidos!\nEste es un sitio para las y los estudiantes del curso de Inferencia Causal de la Maestría en Economía del CIDE. Sin embargo, otras personas pueden encontrar útiles los recursos de este sitio, como el programa del curso, las tareas y la lista de lecturas.",
     "crumbs": [
       "Home"
     ]
@@ -1628,8 +1628,8 @@
     "objectID": "prueba.html#slide-con-estilo",
     "href": "prueba.html#slide-con-estilo",
     "title": "Prueba Reveal",
-    "section": "Slide con estilo",
-    "text": "Slide con estilo"
+    "section": "",
+    "text": "Este slide debería tener fondo oscuro y texto centrado."
   },
   {
     "objectID": "prueba.html#este-slide-debería-tener-fondo-oscuro-y-texto-centrado.",
@@ -1791,5 +1791,12 @@
     "title": "Respuestas a la tarea 4",
     "section": "Notas",
     "text": "Notas\n\n\nBernal, N., Carpio, M. A., & Klein, T. J. (2017). The effects of access to health insurance: evidence from a regression discontinuity design in Peru. Journal of Public Economics, 154, 122-136.↩︎"
+  },
+  {
+    "objectID": "prueba.html",
+    "href": "prueba.html",
+    "title": "Prueba Reveal",
+    "section": "",
+    "text": "Este slide debería tener fondo oscuro y texto centrado."
   }
 ]
