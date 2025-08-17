@@ -25,7 +25,7 @@ library(reticulate)
 xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
 ```
 
-# Clase 1. Inferencia Causal: diseño y econometría {.portada}
+# Inferencia Causal: diseño y econometría {.portada}
 
 <div style="text-align: center; font-size: 1.2em; font-weight: bold;">
   Inferencia Causal
@@ -62,12 +62,12 @@ División de Economía
 
 # Descripción general del curso
 
-2. Evaluación  
-3. Tareas (entregadas en **Teams** sin comprimir)  
-4. Laboratorios  
-5. Presentaciones  
-6. Proyecto final  
-7. Usaré **Teams** para administrar tareas, exámenes y calificaciones
+1. Programa
+1. Tareas (entregadas en **Teams** sin comprimir)  
+1. Laboratorios  
+1. Presentaciones
+1. Proyecto final  
+1. Usaré **Teams** para administrar tareas, exámenes y calificaciones
 
 
 # Inferencia Causal: diseño y econometría {.inverse .center .middle}
@@ -100,7 +100,7 @@ División de Economía
 
 # La importancia de la teoría
 
-- En este curso enfatizaremos la evaluación relacionada a la respuesta de una relación teórica  
+- En este curso enfatizaremos el uso de datos para revelar la relación entre dos variables
 - Para los economistas, los datos no *hablan* solos  
 - La teoría es necesaria para establecer la relación entre $x$ y $y$  
 - Tenemos la fortuna de disponer cada vez de mejores datos  
@@ -126,7 +126,7 @@ División de Economía
   
 :::
 
-# Tipos de problemas de evaluación
+# Tipos de problemas de inferencia
 
 1. *Efectos de tratamiento*
 
@@ -191,12 +191,12 @@ División de Economía
 
 # 2. El diseño para responder las preguntas {.inverse .center .middle}
 
-# Causalidad y evaluación de políticas
+# Causalidad e inferencia
 
-- Los diseños experimentales han puesto pie firme como el *gold standard* para la evaluación de políticas
+- Los diseños experimentales han puesto pie firme como el *gold standard* para la inferencia causal
 - Los investigadores pelean por fondos de gobiernos, ONGs y *think tanks* para evaluar políticas realizando asignaciones experimentales de tratamientos
 - Esther Duflo, Michael Kremer y Abhijit Banerjee ganaron el Nobel de Economía en 2019 por sus contribuciones a la lucha contra la pobreza, donde los experimentos tienen un papel primordial
-- El modelo de causal de Rubin o de *resultados potenciales* permite conceptualizar la mayoría de los problemas de evaluación pensando en qué *resultado* obtendría una unidad con y sin intervención
+- El modelo de causal de Rubin o de *resultados potenciales* permite conceptualizar la mayoría de los problemas de inferencia pensando en qué *resultado* obtendría una unidad con y sin intervención
 - Sin embargo, el **problema fundamental de la inferencia causal** implica que solo podemos observar a cada unidad en uno de los estados posibles
 
 # Sesgo de selección
@@ -248,7 +248,6 @@ División de Economía
 # Espero que al final del curso puedan
 
 - Identificar relaciones causales
-- Proponer estrategias para evaluar
 - Usar datos y programar sus estrategias empíricas
 - Identificar literatura relevante, huecos en ella y avenidas para investigación futura
 - Argumentar y presentar ideas de forma oral y escrita
@@ -261,20 +260,18 @@ División de Economía
 ::: {.fragment}
 - Se vale que estén en el curso el tiempo máximo que las reglas del CIDE permiten para dar de baja cursos e inscribirse en otros
 - Les pido la cortesía de enviarme un correo si deciden dar de baja el curso
-- Como ven, nuestro plan de exposiciones y del blog dependerá del número de estudiantes que estén inscritos
+- Como ven, nuestro plan de exposiciones dependerá del número de estudiantes que estén inscritos
 - Entre más pronto podamos conocer el número final de estudiantes, mejor para todos
 :::
 
 # Acuerdos
 
 - Horas de oficina (propuesta)
-  - Martes de 14:00 a 15:00
-  - Viernes de 12:00 a 13:00
-  - Podemos buscar extraordinariamente otro horario
-  - Hagamos cita en cualquier caso
-- Fecha de examen final (propuesta): martes 7 de diciembre
-- Los invito a la sesión introductoria de R que dará Federico Daverio para los alumnos de Econometría II de la ME
-  - Lunes 23 de agosto de 8:00 a 9:30
+  - Busquemos una cita
+- Fecha de examen parcial: 6 de octubre
+- Fecha de examen final: decídanla lo más pronto posible
+- Busquen un espacio para exponer los temas que les interesen
+- Tengamos una sesión especial de R y Quarto
 
 # Próxima sesión
 
