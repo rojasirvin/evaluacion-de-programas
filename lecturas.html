@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lecturas – Inferencia Causal 2025</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lecturas.html">Lecturas</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./iconoEvaluaciondeProgramasSociales.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/rojasirvin/evaluacion-de-programas" title="GitHub" class="quarto-navigation-tool px-1" aria-label="GitHub"><i class="bi bi-github"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./programa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programa</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reglas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reglas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lecturas.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lecturas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./presentaciones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentaciones</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cronograma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cronograma</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notas/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./diapositivas/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diapositivas</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#semana-1" id="toc-semana-1" class="nav-link active" data-scroll-target="#semana-1">Semana 1</a></li>
+  <li><a href="#semana-2" id="toc-semana-2" class="nav-link" data-scroll-target="#semana-2">Semana 2</a></li>
+  <li><a href="#semana-3" id="toc-semana-3" class="nav-link" data-scroll-target="#semana-3">Semana 3</a></li>
+  <li><a href="#semana-4" id="toc-semana-4" class="nav-link" data-scroll-target="#semana-4">Semana 4</a></li>
+  <li><a href="#semana-5" id="toc-semana-5" class="nav-link" data-scroll-target="#semana-5">Semana 5</a></li>
+  <li><a href="#semana-6" id="toc-semana-6" class="nav-link" data-scroll-target="#semana-6">Semana 6</a></li>
+  <li><a href="#semana-7" id="toc-semana-7" class="nav-link" data-scroll-target="#semana-7">Semana 7</a></li>
+  <li><a href="#semana-9" id="toc-semana-9" class="nav-link" data-scroll-target="#semana-9">Semana 9</a></li>
+  <li><a href="#semana-10" id="toc-semana-10" class="nav-link" data-scroll-target="#semana-10">Semana 10</a></li>
+  <li><a href="#semana-11" id="toc-semana-11" class="nav-link" data-scroll-target="#semana-11">Semana 11</a></li>
+  <li><a href="#semana-12" id="toc-semana-12" class="nav-link" data-scroll-target="#semana-12">Semana 12</a></li>
+  <li><a href="#semana-13" id="toc-semana-13" class="nav-link" data-scroll-target="#semana-13">Semana 13</a></li>
+  <li><a href="#semana-14" id="toc-semana-14" class="nav-link" data-scroll-target="#semana-14">Semana 14</a></li>
+  <li><a href="#otras-lecturas-sobre-temas-no-cubiertos-en-el-curso" id="toc-otras-lecturas-sobre-temas-no-cubiertos-en-el-curso" class="nav-link" data-scroll-target="#otras-lecturas-sobre-temas-no-cubiertos-en-el-curso">Otras lecturas sobre temas no cubiertos en el curso</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecturas</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Las lecturas obligatorias (marcadas con “*”) permiten una discusión informada en la clase. Las lecturas que serán presentadas en exposiciones también son obligatorias y están marcadas con “+”. El resto de las lecturas no serán cubiertas en clase, pero son ampliamente recomendables. En las sesiones de exposiciones se espera que el resto de la clase tenga el conocimiento suficiente sobre el material presentado para participar en la discusión.</p>
+<section id="semana-1" class="level2">
+<h2 class="anchored" data-anchor-id="semana-1">Semana 1</h2>
+<ul>
+<li>Diseño y econometría
+<ul>
+<li>* Freedman, D. A. (1991). Statistical models and shoe leather. <em>Sociological methodology</em>, 291-313.</li>
+<li>* Athey, S., &amp; Imbens, G. W. (2017). The state of applied econometrics: Causality and policy evaluation. <em>Journal of Economic Perspectives</em>, 31(2), 3-32.</li>
+<li>Heckman, J. J. (2001). Micro data, heterogeneity, and the evaluation of public policy: Nobel lecture. <em>Journal of political Economy</em>, 109(4), 673-748.<br>
+</li>
+<li>Heckman, J. J., &amp; Vytlacil, E. J. (2007). Econometric evaluation of social programs, part I: Causal models, structural models and econometric policy evaluation. <em>Handbook of econometrics</em>, 6, 4779-4874.</li>
+</ul></li>
+<li>Inferencia causal
+<ul>
+<li>GMPRV, Capítulo 3<br>
+</li>
+<li>* MHE, Capítulo 2 (The Experimental Ideal)</li>
+<li>MT, Capítulo 4 (Potential Outcomes Model)</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-2" class="level2">
+<h2 class="anchored" data-anchor-id="semana-2">Semana 2</h2>
+<ul>
+<li>Evaluación por métodos experimentales
+<ul>
+<li>* CT, Capítulo 25, Secciones 1, 2<br>
+</li>
+<li>GMPRV, Capítulo 4<br>
+</li>
+<li>CT, Capítulo 25, Sección 3</li>
+</ul></li>
+<li>Revisión de métodos de regresión
+<ul>
+<li>* MHE, Capítulo 3 (Making Regression Make Sense)</li>
+<li>MM, Capítulo 2 (Regression)</li>
+</ul></li>
+<li>Transparencia y replicabilidad
+<ul>
+<li>* Christensen, G., &amp; Miguel, E. (2018). Transparency, reproducibility, and the credibility of economics research. <em>Journal of Economic Literature</em>, 56(3), 920-80.</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-3" class="level2">
+<h2 class="anchored" data-anchor-id="semana-3">Semana 3</h2>
+<ul>
+<li>Inferencia estadística
+<ul>
+<li>* MM, Capítulo 1 (Randomized Trials), Apéndice (Mastering Inference)</li>
+<li>MT, Capítulo 2 (Probability and Regression Review)</li>
+</ul></li>
+<li>Errores estándar no estándar
+<ul>
+<li>Abadie, A., Athey, S., Imbens, G. W., &amp; Wooldridge, J. M. (2023). When should you adjust standard errors for clustering?. <em>The Quarterly Journal of Economics</em>, 138(1), 1-35.</li>
+<li>* MHE, Capítulo 8 (Nonstandard Standard Errors Issues)</li>
+<li>Cameron, A. C., &amp; Miller, D. L. (2015). A practitioner’s guide to cluster-robust inference. <em>Journal of Human Resources</em>, 50(2), 317-372.</li>
+<li>Stock, J. H. (2010). The other transformation in econometric practice: Robust tools for inference. <em>Journal of Economic Perspectives</em>, 24(2), 83-94.</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-4" class="level2">
+<h2 class="anchored" data-anchor-id="semana-4">Semana 4</h2>
+<ul>
+<li>Aplicaciones de evaluaciones experimentales
+<ul>
+<li>+ Arceo-Gomez, E. O., &amp; Campos-Vazquez, R. M. (2014). Race and marriage in the labor market: A discrimination correspondence study in a developing country. <em>American Economic Review</em>, 104(5), 376-80.</li>
+<li>+ Ascencio, S. J., &amp; Chang, H. I. (2024). Do primaries improve evaluations of public officials? Experimental evidence from Mexico. <em>Political Behavior</em>, 1-22.</li>
+<li>Baird, S., McIntosh, C., &amp; Özler, B. (2011). Cash or condition? Evidence from a cash transfer experiment. The <em>Quarterly journal of economics</em>, 126(4), 1709-1753.<br>
+</li>
+<li>* Banerjee, A., Duflo, E., Goldberg, N., Karlan, D., Osei, R., Parienté, W., Shapiro, J., Thuysbaert, B. &amp; Udry, C. (2015). A multifaceted program causes lasting progress for the very poor: Evidence from six countries. <em>Science</em>, 348(6236), 1260799.</li>
+<li>Blattman, C., Emeriau, M., &amp; Fiala, N. (2018). Do anti-poverty programs sway voters? Experimental evidence from Uganda. <em>Review of Economics and Statistics</em>, 100(5), 891-905.</li>
+<li>+ Bruhn, M., Karlan, D., &amp; Schoar, A. (2018). The impact of consulting services on small and medium enterprises: Evidence from a randomized trial in Mexico. <em>Journal of Political Economy</em>, 126(2), 635-687.</li>
+<li>+ Davies, E., Deffebach, P., Iacovone, L., &amp; Mckenzie, D. (2024). Training microentrepreneurs over Zoom: Experimental evidence from Mexico. <em>Journal of Development Economics</em>, 167, 103244.</li>
+<li>+ De La O, A. L., Fernández-Vázquez, P. &amp; García, F. M. (2023). Federal and state audits do not increase compliance with a grant program to improve municipal infrastructure: A pre-registered field experiment. <em>Journal of Development Economics</em>, 162, 103043.</li>
+<li>Duflo, E., Dupas, P., &amp; Kremer, M. (2015). Education, HIV, and early fertility: Experimental evidence from Kenya. <em>American Economic Review</em>, 105(9), 2757-97.<br>
+</li>
+<li>Dupas, P. (2011). Do teenagers respond to HIV risk information? Evidence from a field experiment in Kenya. <em>American Economic Journal</em>: Applied Economics, 3(1), 1-34.<br>
+</li>
+<li>+ Gertler, P. (2004). Do conditional cash transfers improve child health? Evidence from PROGRESA’s control randomized experiment. <em>American economic review</em>, 94(2), 336-341.</li>
+<li>+ Hoyos, R. D., Attanasio, O., &amp; Meghir, C. (2024). Targeting high school scholarships to the poor: the impact of a program in Mexico. <em>Economic Development and Cultural Change</em>, 72(4), 1747-1768.</li>
+<li>Londoño-Vélez, J., &amp; Querubin, P. (2022). The Impact of Emergency Cash Assistance in a Pandemic: Experimental Evidence from Colombia. <em>The Review of Economics and Statistics</em>, 1-27</li>
+<li>Martínez A, C., Puentes, E., &amp; Ruiz-Tagle, J. (2018). The effects of micro-entrepreneurship programs on labor market performance: experimental evidence from Chile. <em>American Economic Journal: Applied Economics</em>, 10(2), 101-24.</li>
+<li>Mousa, S. (2020). Building social cohesion between Christians and Muslims through soccer in post-ISIS Iraq. <em>Science</em>, 369(6505), 866-870.<br>
+</li>
+<li>Poertner, M. (2023). Does Political Representation Increase Participation? Evidence from Party Candidate Lotteries in Mexico. <em>American Political Science Review</em>, 117(2), 537-556.</li>
+<li>+ Sadka, J., Seira, E., &amp; Woodruff, C. (2024). Information and Bargaining through Agents: Experimental Evidence from Mexico’s Labour Courts. <em>Review of Economic Studies</em>, rdae003.</li>
+<li>+ Seira, E., Elizondo, A., &amp; Laguna-Müggenburg, E. (2017). Are information disclosures effective? evidence from the credit card market. <em>American Economic Journal: Economic Policy</em>, 9(1), 277-307.<br>
+</li>
+<li>+ Tagliati, F. (2022). Welfare effects of an in-kind transfer program: Evidence from Mexico. <em>Journal of Development Economics</em>, 154, 102753.</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-5" class="level2">
+<h2 class="anchored" data-anchor-id="semana-5">Semana 5</h2>
+<ul>
+<li>LATE y variables instrumentales
+<ul>
+<li>CT, Capítulo 25, Sección 7<br>
+</li>
+<li>GMPRV, Capítulo 5<br>
+</li>
+<li>MHE, Capítulo 4 (Instrumental Variables in Action)<br>
+</li>
+<li>* MM, Capítulo 3 (Instrumental Variables)</li>
+<li>MT, Capítulo 7 (Instrumental Variables)</li>
+</ul></li>
+<li>Corrección por prueba de múltiples hipótesis
+<ul>
+<li>* Angelucci, M., Karlan, D., &amp; Zinman, J. (2015). Microcredit impacts: Evidence from a randomized microcredit program placement experiment by Compartamos Banco. <em>American Economic Journal: Applied Economics</em>, 7(1), 151-82.</li>
+<li>* Benjamini, Y., &amp; Hochberg, Y. (1995). Controlling the false discovery rate: a practical and powerful approach to multiple testing. <em>Journal of the royal statistical society. Series B (Methodological)</em>, 289-300.<br>
+</li>
+<li>Brodeur, A., Lé, M., Sangnier, M., &amp; Zylberberg, Y. (2016). Star Wars: The empirics strike back. <em>American Economic Journal: Applied Economics</em>, 8(1), 1-32.<br>
+</li>
+<li>Savin, N. E. (1984). Multiple hypothesis testing. Handbook of econometrics, 2, 827-879.<br>
+</li>
+<li>* Shaffer, J. P. (1995). Multiple hypothesis testing. <em>Annual review of psychology</em>, 46(1), 561-584.</li>
+</ul></li>
+<li>ANCOVA
+<ul>
+<li>* McKenzie, D. (2012). Beyond baseline and follow-up: The case for more T in experiments. <em>Journal of development Economics</em>, 99(2), 210-221.</li>
+<li>Rojas Valdes, R.I., Wydick, B., &amp; Lybbert, T.J. (2021). Can Hope Elevate Microfinance? Evidence from Oaxaca, Mexico. <em>Oxford Economic Papers</em>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-6" class="level2">
+<h2 class="anchored" data-anchor-id="semana-6">Semana 6</h2>
+<ul>
+<li>Aplicaciones LATE
+<ul>
+<li>Angrist, J. D. (1990). Lifetime earnings and the Vietnam era draft lottery: evidence from social security administrative records. <em>The American Economic Review</em>, 313-336.<br>
+</li>
+<li>* Angrist, J. D. (2006). Instrumental variables methods in experimental criminological research: what, why and how. <em>Journal of Experimental Criminology</em>, 2(1), 23-44.<br>
+</li>
+<li>Angrist, J. D., Imbens, G., &amp; Rubin, D. B. (1996). Identification of causal effects using instrumental variables. <em>Journal of the American statistical Association</em>, 91(434), 444-455.<br>
+</li>
+<li>* Crépon, B., Devoto, F., Duflo, E., &amp; Parienté, W. (2015). Estimating the impact of microcredit on those who take it up: Evidence from a randomized experiment in Morocco. <em>American Economic Journal: Applied Economics</em>, 7(1), 123-50.<br>
+</li>
+<li>Devoto, F., Duflo, E., Dupas, P., Parienté, W., &amp; Pons, V. (2012). Happiness on tap: Piped water adoption in urban Morocco. <em>American Economic Journal: Economic Policy</em>, 4(4), 68-99.</li>
+<li>+ De La O, A. L. (2013). Do conditional cash transfers affect electoral behavior? Evidence from a randomized experiment in Mexico. <em>American Journal of Political Science</em>, 57(1), 1-14.<br>
+</li>
+<li>+ Gonzalez-Navarro, M., &amp; Quintana-Domeque, C. (2016). Paving streets for the poor: Experimental analysis of infrastructure effects. <em>Review of Economics and Statistics</em>, 98(2), 254-267.</li>
+<li>Heckman, J. J., &amp; Vytlacil, E. J. (2007). Econometric evaluation of social programs, part II: Using the marginal treatment effect to organize alternative econometric estimators to evaluate social programs, and to forecast their effects in new environments. <em>Handbook of econometrics</em>, 6, 4875-5143.<br>
+</li>
+<li>Imbens, G. W., &amp; Angrist, J. D. (1994). Identification and estimation of local average treatment effects. <em>Econometrica</em> (1986-1998), 62(2), 467.</li>
+<li>Kling, J. R., Liebman, J. B., &amp; Katz, L. F. (2007). Experimental analysis of neighborhood effects. <em>Econometrica</em>, 75(1), 83-119.</li>
+</ul></li>
+<li>Diferencia en diferencias
+<ul>
+<li>CT, Capítulo 25, Sección 25.5</li>
+<li>GMPRV, Capítulo 7<br>
+</li>
+<li>* MM, Capítulo 5 (Differences-in-differences)</li>
+<li>MT, Capítulo 9 (Difference in differences), secciones 1 a 5</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-7" class="level2">
+<h2 class="anchored" data-anchor-id="semana-7">Semana 7</h2>
+<ul>
+<li>DID desfasado
+<ul>
+<li>* MT, Capítulo 9 (Difference in differences), sección 9.6</li>
+<li>Baker, A. C., Larcker, D. F., &amp; Wang, C. C. (2022). How much should we trust staggered difference-in-differences estimates?. <em>Journal of Financial Economics</em>, 144(2), 370-395.</li>
+<li>Callaway, B., &amp; Sant’Anna, P. H. (2021). Difference-in-differences with multiple time periods. <em>Journal of Econometrics</em>, 225(2), 200-230.</li>
+<li>Goodman-Bacon, A. (2021). Difference-in-differences with variation in treatment timing. <em>Journal of Econometrics</em>, 225(2), 254-277.</li>
+<li>Marcus, M., &amp; Sant’Anna, P. H. (2021). The role of parallel trends in event study settings: An application to environmental economics. <em>Journal of the Association of Environmental and Resource Economists</em>, 8(2), 235-275.</li>
+<li>* Roth, J., Sant’Anna, P. H., Bilinski, A., &amp; Poe, J. (2023). What’s Trending in Difference-in-Differences? A Synthesis of the Recent Econometrics Literature. <em>Journal of Econometrics</em>, 235(2), 2218-2244.</li>
+</ul></li>
+<li>Métodos de pareamiento
+<ul>
+<li>GMPRV, Capítulo 8</li>
+<li>* MH, Capítulo 3, Sección 3.3</li>
+<li>* MT, Capítulo 5</li>
+</ul></li>
+<li>Aplicaciones del PSM
+<ul>
+<li>Abadie, A., &amp; Imbens, G. W. (2016). Matching on the estimated propensity score. <em>Econometrica</em>, 84(2), 781-807.<br>
+</li>
+<li>Angrist, J., Estimating the Labor Market Impact of Voluntary Military Service Using Social Security Data on Military Applicants, <em>Econometrica</em> 66(2), 1998, 249-288.</li>
+<li>+ Becerril, J., &amp; Abdulai, A. (2010). The impact of improved maize varieties on poverty in Mexico: a propensity score-matching approach. <em>World development</em>, 38(7), 1024-1035.</li>
+<li>* Caliendo, M., &amp; Kopeinig, S. (2008). Some practical guidance for the implementation of propensity score matching. <em>Journal of economic surveys</em>, 22(1), 31-72.<br>
+</li>
+<li>+ Chang, A., Miranda-Moreno, L., Cao, J., &amp; Welle, B. (2017). The effect of BRT implementation and streetscape redesign on physical activity: A case study of Mexico City. <em>Transportation Research Part A: Policy and Practice</em>, 100, 337-347.<br>
+</li>
+<li>* Dehejia, R. H., &amp; Wahba, S. (1999). Causal effects in nonexperimental studies: Reevaluating the evaluation of training programs. <em>Journal of the American statistical Association</em>, 94(448), 1053-1062.</li>
+<li>+ Diaz, J. J., &amp; Handa, S. (2006). An assessment of propensity score matching as a nonexperimental impact estimator evidence from Mexico’s PROGRESA program. <em>Journal of human resources</em>, 41(2), 319-345.</li>
+<li>+ Espinosa, V., &amp; Rubin, D. B. (2015). Did the military interventions in the Mexican drug war increase violence?. <em>The American Statistician</em>, 69(1), 17-27.</li>
+<li>+ García-Díaz, R., Sosa-Rubí, S. G., Serván-Mori, E., &amp; Nigenda, G. (2018). Welfare effects of health insurance in Mexico: The case of Seguro Popular de Salud. <em>PloS one</em>, 13(7), e0199876.<br>
+</li>
+<li>* LaLonde, R. J. (1986). Evaluating the econometric evaluations of training programs with experimental data. The <em>American economic review</em>, 604-620.</li>
+<li>Wellalage, N. H., &amp; Locke, S. (2020). Remittance and financial inclusion in refugee migrants: inverse probability of treatment weighting using the propensity score. <em>Applied Economics</em>, 52(9), 929-950.</li>
+<li>+ Stabridis, O., &amp; Salgado-Viveros, C. (2023). Efectos de género y etnicidad en la brecha salarial entre jornaleros agrícolas del noroeste mexicano. <em>Frontera Norte</em>, 35.</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-9" class="level2">
+<h2 class="anchored" data-anchor-id="semana-9">Semana 9</h2>
+<ul>
+<li>Aplicaciones de DID
+<ul>
+<li>* Bertrand, M., Duflo, E., &amp; Mullainathan, S. (2004). How much should we trust differences-in-differences estimates? <em>The Quarterly journal of economics</em>, 119(1), 249-275.</li>
+<li>+ Boruchowicz, C., Parker, S. W., &amp; Robbins, L. (2022). Time use of youth during a pandemic: Evidence from Mexico. <em>World Development</em>, 149, 105687.</li>
+<li>+ Cabrera-Hernández, F., Padilla-Romo, M., &amp; Peluffo, C. (2023). Full-time schools and educational trajectories: Evidence from high-stakes exams. <em>Economics of Education Review</em>, 96, 102443.</li>
+<li>Campos, R. M., Esquivel, G., &amp; Santillán, A. S. (2017). El impacto del salario mínimo en los ingresos y el empleo en México. <em>Revista CEPAL</em>.</li>
+<li>* Card, D. (1990). The impact of the Mariel boatlift on the Miami labor market. <em>ILR Review</em>, 43(2), 245-257.</li>
+<li>+ Chort, I., &amp; Öktem, B. (2024). Agricultural shocks, coping policies and deforestation: Evidence from the coffee leaf rust epidemic in Mexico. <em>American Journal of Agricultural Economics</em>, 106(3), 1020-1057.</li>
+<li>+ Djourelova, M. (2023). Persuasion through Slanted Language: Evidence from the Media Coverage of Immigration. <em>American Economic Review</em>, 113(3), 800-835.</li>
+<li>+ Conti, G., &amp; Ginja, R. (2023). Who Benefits from Free Health Insurance?: Evidence from Mexico. <em>Journal of Human Resources</em>, 58(1), 146-182.</li>
+<li>* Card, D., &amp; Krueger, A. B. (2000). Minimum wages and employment: a case study of the fast-food industry in New Jersey and Pennsylvania: reply. <em>American Economic Review</em>, 0(5), 1397-1420.</li>
+<li>Chen, H., Qian, W., &amp; Wen, Q. (2021). The impact of the COVID-19 pandemic on consumption: Learning from high-frequency transaction data. <em>AEA Papers and Proceedings</em>, 111, 307-11.</li>
+<li>+ Clarke, D., &amp; Mühlrad, H. (2021). Abortion laws and women’s health. <em>Journal of Health Economics</em>, 76, 102413.</li>
+<li>+ Gutiérrez Vázquez, E. Y., &amp; Parrado, E. A. (2016). Abortion legalization and childbearing in Mexico. <em>Studies in family planning</em>, 47(2), 113-128.<br>
+</li>
+<li>Qian, N. (2008). Missing women and the price of tea in China: The effect of sex-specific earnings on sex imbalance. <em>The Quarterly Journal of Economics</em>, 123(3), 1251-1285.</li>
+<li>Wolfers, J. (2006). Did unilateral divorce laws raise divorce rates? A reconciliation and new results. <em>American Economic Review</em>, 96(5), 1802-1820.</li>
+<li>Zhang, R., Li, Y., Zhang, A. L., Wang, Y., &amp; Molina, M. J. (2020). Identifying airborne transmission as the dominant route for the spread of COVID-19. <em>Proceedings of the National Academy of Sciences</em>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-10" class="level2">
+<h2 class="anchored" data-anchor-id="semana-10">Semana 10</h2>
+<ul>
+<li>Diseños con discontinuidades
+<ul>
+<li>GMPRV, Capítulo 6</li>
+</ul></li>
+<li>Discontinuidades nítidas y difusas
+<ul>
+<li>MHE, Capítulo 6<br>
+</li>
+<li>* MM, Capítulo 4</li>
+<li>* MT, Capítulo 6</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-11" class="level2">
+<h2 class="anchored" data-anchor-id="semana-11">Semana 11</h2>
+<ul>
+<li>Aplicaciones de diseños con discontinuidades
+<ul>
+<li>Abdulkadiroğlu, A., Angrist, J., &amp; Pathak, P. (2014). The elite illusion: Achievement effects at Boston and New York exam schools. <em>Econometrica</em>, 82(1), 137-196.</li>
+<li>+ Aguilar, A., Gutierrez, E., &amp; Seira, E. (2021). The effectiveness of sin food taxes: Evidence from Mexico. <em>Journal of Health Economics</em>, 77, 102455.</li>
+<li>+ Alix-Garcia, J., McIntosh, C., Sims, K. R., &amp; Welch, J. R. (2013). The ecological footprint of poverty alleviation: evidence from Mexico’s Oportunidades program. <em>Review of Economics and Statistics</em>, 95(2), 417-435.</li>
+<li>Anagol, S., &amp; Fujiwara, T. (2016). The runner-up effect. <em>Journal of Political Economy</em>, 124(4), 927-991.</li>
+<li>Angrist, J. D., &amp; Lavy, V. (1999). Using Maimonides’ rule to estimate the effect of class size on scholastic achievement. <em>The Quarterly Journal of Economics</em>, 114(2), 533-575.</li>
+<li>Bagues, M., &amp; Campa, P. (2021). Can gender quotas in candidate lists empower women? Evidence from a regression discontinuity design. <em>Journal of Public Economics</em>, 194, 104315.</li>
+<li>Bosch, M., &amp; Schady, N. (2019). The effect of welfare payments on work: Regression discontinuity evidence from Ecuador. <em>Journal of Development Economics</em>, 139, 17-27.<br>
+</li>
+<li>Calonico, S., Cattaneo, M. D., Farrell, M. H., &amp; Titiunik, R. (2019). Regression discontinuity designs using covariates. <em>Review of Economics and Statistics</em>, 101(3), 442-451.<br>
+</li>
+<li>+ Cañedo, A. P., Fabregas, R., &amp; Gupta, P. (2023). Emergency cash transfers for informal workers: Impact evidence from Mexico. <em>Journal of Public Economics</em>, 219, 104820.</li>
+<li>Card, D., Dobkin, C., &amp; Maestas, N. (2009). Does Medicare save lives? <em>The quarterly journal of economics</em>, 124(2), 597-636.<br>
+</li>
+<li>Carpenter, C., &amp; Dobkin, C. (2009). The effect of alcohol consumption on mortality: regression discontinuity evidence from the minimum drinking age. <em>American Economic Journal: Applied Economics</em>, 1(1), 164-82.<br>
+</li>
+<li>Cook, T. D., &amp; Wong, V. C. (2008). Empirical tests of the validity of the regression discontinuity design. <em>Annales d’Economie et de Statistique</em>, 127-150.<br>
+</li>
+<li>+ Davis, L. W. (2008). The effect of driving restrictions on air quality in Mexico City. <em>Journal of Political Economy</em>, 116(1), 38-81.<br>
+</li>
+<li>+ Davis, L. W. (2017). Saturday driving restrictions fail to improve air quality in Mexico City. <em>Scientific Reports</em>, 7, 41652.</li>
+<li>+ Del Valle, A., de Janvry, A., &amp; Sadoulet, E. (2020). Rules for recovery: Impact of indexed disaster funds on shock coping in Mexico. <em>American Economic Journal: Applied Economics</em>, 12(4), 164-95.</li>
+<li>+ Del Valle, A. (2024). Saving Lives with Indexed Disaster Funds: Evidence from Mexico. <em>American Economic Journal: Economic Policy</em>, 16(2), 442-479.</li>
+<li>+ Dell, M. (2015). Trafficking networks and the Mexican drug war. <em>American Economic Review</em>, 105(6), 1738-79.</li>
+<li>+ Goodwin, M. B., Gonzalez, F., &amp; Fontenla, M. (2024). The impact of daylight saving time in Mexico. <em>Applied Economics</em>, 56(1), 22-32.</li>
+<li>* Lee, D. S., &amp; Lemieux, T. (2010). Regression discontinuity designs in economics. <em>Journal of economic literature</em>, 48(2), 281-355.</li>
+<li>MacPherson, C., &amp; Sterck, O. (2021). Empowering refugees through cash and agriculture: A regression discontinuity design. <em>Journal of Development Economics</em>, 149, 102614.</li>
+<li>Makarin, A., Pique, R., &amp; Aragón, F. (2020). National or sub-national parties: Does party geographic scope matter? <em>Journal of Development Economics</em>, 102516.<br>
+</li>
+<li>* Manacorda, M., Miguel, E., &amp; Vigorito, A. (2011). Government transfers and political support. <em>American Economic Journal: Applied Economics</em>, 3(3), 1-28.<br>
+</li>
+<li>Moussa, W., Salti, N., Irani, A., Al Mokdad, R., Jamaluddine, Z., Chaaban, J., &amp; Ghattas, H. (2022). The impact of cash transfers on Syrian refugee children in Lebanon. <em>World Development</em>, 150, 105711.</li>
+<li>+ Sierra, G. D. R., Martínez, A. A. G., Cruz, M. Á. M., &amp; Barrientos, L. G. Z. (2024). The impact of subsidies on house prices in Mexico’s mortgage market for low-income households 2008–2019. <em>Journal of Housing Economics</em>, 63, 101970.</li>
+<li>Sohn, H., &amp; Lee, S. W. (2019). Causal Impact of Having a College Degree on Women’s Fertility: Evidence From Regression Kink Designs. <em>Demography</em>, 56(3), 969-990.</li>
+<li>Takaku, R., &amp; Yokoyama, I. (2021). What the COVID-19 school closure left in its wake: evidence from a regression discontinuity analysis in Japan. <em>Journal of Public Economics</em>, 195, 104364.</li>
+<li>Tuttle, C. (2019). Snapping Back: Food Stamp Bans and Criminal Recidivism. <em>American Economic Journal: Economic Policy</em>, 11(2), 301-27.</li>
+</ul></li>
+<li>Aplicaciones de discontinuidades geográficas
+<ul>
+<li>Gonzalez, R. M. (2021). Cell Phone Access and Election Fraud: Evidence from a Spatial Regression Discontinuity Design in Afghanistan. <em>American Economic Journal: Applied Economics</em>, 13(2), 1-51.</li>
+<li>* Keele, L. J., &amp; Titiunik, R. (2015). Geographic boundaries as regression discontinuities. <em>Political Analysis</em>, 23(1), 127-155.</li>
+<li>Keele, L., &amp; Titiunik, R. (2016). Natural experiments based on geography. <em>Political Science Research and Methods</em>, 4(1), 65-95.</li>
+</ul></li>
+<li>Pliegues en la regresión
+<ul>
+<li>Gamba, S., Jakobsson, N., &amp; Svensson, M. (2022). The impact of cost-sharing on prescription drug demand: evidence from a double-difference regression kink design. <em>The European Journal of Health Economics</em>, 1-9.</li>
+<li>Card, D., Lee, D. S., Pei, Z., &amp; Weber, A. (2017). Regression kink design: Theory and practice. NBER Working Paper 22781.<br>
+</li>
+<li>Lurie, I. Z., Sacks, D. W., &amp; Heim, B. (2021). Does the individual mandate affect insurance coverage? Evidence from tax returns. <em>American Economic Journal: Economic Policy</em>, 13(2), 378-407.</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-12" class="level2">
+<h2 class="anchored" data-anchor-id="semana-12">Semana 12</h2>
+<ul>
+<li>Control sintético
+<ul>
+<li>* MT, Capítulo 10</li>
+<li>* Abadie, A. (2019). Using synthetic controls: Feasibility, data requirements, and methodological aspects. <em>Journal of Economic Literature</em>.</li>
+<li>* Abadie, A., Diamond, A., &amp; Hainmueller, J. (2010). Synthetic control methods for comparative case studies: Estimating the effect of California’s tobacco control program. <em>Journal of the American statistical Association</em>, 105(490), 493-505.</li>
+<li>+ Abadie, A., Diamond, A., &amp; Hainmueller, J. (2015). Comparative politics and the synthetic control method. <em>American Journal of Political Science</em>, 59(2), 495-510.</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-13" class="level2">
+<h2 class="anchored" data-anchor-id="semana-13">Semana 13</h2>
+<ul>
+<li>Aplicaciones de control sintético
+<ul>
+<li>Absher, S., Grier, K., &amp; Grier, R. (2020). The economic consequences of durable left-populist regimes in Latin America. <em>Journal of Economic Behavior &amp; Organization</em>, 177, 787-817.<br>
+</li>
+<li>* Acemoglu, D., Johnson, S., Kermani, A., Kwak, J., &amp; Mitton, T. (2016). The value of connections in turbulent times: Evidence from the United States. <em>Journal of Financial Economics</em>, 121(2), 368-391.</li>
+<li>Alfano, V., Ercolano, S., &amp; Cicatiello, L. (2021). School openings and the COVID-19 outbreak in Italy. A provincial-level analysis using the synthetic control method. <em>Health Policy</em>.</li>
+<li>Arkhangelsky, D., Athey, S., Hirshberg, D. A., Imbens, G. W., &amp; Wager, S. (2021). Synthetic difference-in-differences. <em>American Economic Review</em>, 111(12), 4088-4118.</li>
+<li>+ Boly, M., &amp; Sanou, A. (2022). Biofuels and food security: Evidence from Indonesia and Mexico. <em>Energy Policy</em>, 163, 112834.</li>
+<li>Botosaru, I., &amp; Ferman, B. (2019). On the role of covariates in the synthetic control method. <em>The Econometrics Journal</em>, 22(2), 117-130.<br>
+</li>
+<li>Calderón, G., Robles, G., Díaz-Cayeros, A., &amp; Magaloni, B. (2015). The beheading of criminal organizations and the dynamics of violence in Mexico. <em>Journal of Conflict Resolution</em>, 59(8), 1455-1485.<br>
+</li>
+<li>+ Campos-Vazquez, R. M., &amp; Esquivel, G. (2020). The effect of doubling the minimum wage and decreasing taxes on inflation in Mexico. Economics Letters, 109051.<br>
+</li>
+<li>+ Campos-Vazquez, R. M., &amp; Esquivel, G. (2023). The Effect of the Minimum Wage on Poverty: Evidence from a Quasi-Experiment in Mexico. <em>The Journal of Development Studies</em>, 59(3), 360-380.</li>
+<li>+ Cepeda-Francese, C. A., &amp; Ramírez-Álvarez, A. A. (2023). Reforming justice under a security crisis: The case of the criminal justice reform in Mexico. World Development, 163, 106148.</li>
+<li>Geloso, V., &amp; Pavlik, J. B. (2021). The Cuban revolution and infant mortality: A synthetic control approach. <em>Explorations in Economic History</em>, 80, 101376.</li>
+<li>Grier, K., &amp; Maynard, N. (2016). The economic consequences of Hugo Chavez: A synthetic control analysis. <em>Journal of Economic Behavior &amp; Organization</em>, 125, 1-21.</li>
+<li>+ González-Rozada, M., &amp; Ruffo, H. (2024). Do trade agreements contribute to the decline in labor share? Evidence from Latin American countries. <em>World Development</em>, 177, 106561.</li>
+<li>Mitze, T., Kosfeld, R., Rode, J., &amp; Wälde, K. (2020). Face masks considerably reduce COVID-19 cases in Germany. <em>Proceedings of the National Academy of Sciences</em>, 117(51), 32293-32301.</li>
+<li>Peri, G., &amp; Yasenov, V. (2019). The Labor Market Effects of a Refugee Wave Synthetic Control Method Meets the Mariel Boatlift. <em>Journal of Human Resources</em>, 54(2), 267-309.</li>
+</ul></li>
+</ul>
+</section>
+<section id="semana-14" class="level2">
+<h2 class="anchored" data-anchor-id="semana-14">Semana 14</h2>
+<ul>
+<li>Aprendizaje automático y <em>big data</em>
+<ul>
+<li>Athey, S. (2017). Beyond prediction: Using big data for policy problems. <em>Science</em>, 355(6324), 483-485.<br>
+</li>
+<li>* Athey, S., &amp; Imbens, G. W. (2019). Machine learning methods that economists should know about. <em>Annual Review of Economics</em>, 11.</li>
+<li>+ Baiardi, A., &amp; Naghi, A. A. (2021). The value added of machine learning to causal inference: Evidence from revisited studies. arXiv preprint arXiv:2101.00878.</li>
+<li>Chetty, R. (2021). Improving equality of opportunity: New insights from big data. <em>Contemporary Economic Policy</em>, 39(1), 7-41.</li>
+<li>Chernozhukov, V., Chetverikov, D., Demirer, M., Duflo, E., Hansen, C., Newey, W., &amp; Robins, J. (2018). Double/debiased machine learning for treatment and structural parameters. <em>Econometrics Journal</em>, 21(1), pp.&nbsp;C1–C68.</li>
+<li>+ Chernozhukov, V., Demirer, M., Duflo, E., &amp; Fernandez-Val, I. (2018). Generic machine learning inference on heterogeneous treatment effects in randomized experiments, with an application to immunization in India. Woring Paper No.&nbsp;w24678. National Bureau of Economic Research.</li>
+<li>Cole, M. A., Elliott, R. J., &amp; Liu, B. (2020). The impact of the Wuhan Covid-19 lockdown on air pollution and health: a machine learning and augmented synthetic control approach. <em>Environmental and Resource Economics</em>, 76(4), 553-580.</li>
+<li>Dell, M. (2024). Deep Learning for Economists. arXiv preprint arXiv:2407.15339.</li>
+<li>Naimi, A. I., Mishler, A. E., &amp; Kennedy, E. H. (2017). Challenges in obtaining valid causal effect estimates with machine learning algorithms. ArXiv preprint 1711.07137.</li>
+<li>Storm, H., Baylis, K., &amp; Heckelei, T. (2020). Machine learning in agricultural and applied economics. <em>European Review of Agricultural Economics</em>, 47(3), 849-892.</li>
+<li>Torrats-Espinosa, G. (2021). Using machine learning to estimate the effect of racial segregation on COVID-19 mortality in the United States. <em>Proceedings of the National Academy of Sciences</em>, 118(7).</li>
+<li>+ Wager, S., &amp; Athey, S. (2018). Estimation and inference of heterogeneous treatment effects using random forests. <em>Journal of the American Statistical Association</em>, 113(523), 1228-1242.</li>
+<li>* Varian, H. R. (2014). Big data: New tricks for econometrics. <em>Journal of Economic Perspectives</em>, 28(2), 3-28</li>
+</ul></li>
+</ul>
+</section>
+<section id="otras-lecturas-sobre-temas-no-cubiertos-en-el-curso" class="level2">
+<h2 class="anchored" data-anchor-id="otras-lecturas-sobre-temas-no-cubiertos-en-el-curso">Otras lecturas sobre temas no cubiertos en el curso</h2>
+<ul>
+<li>Más allá de los experimentos
+<ul>
+<li>Barrett, C. B., &amp; Carter, M. R. (2010). The power and pitfalls of experiments in development economics: Some non-random reflections. <em>Applied economic perspectives and policy</em>, 32(4), 515-548.<br>
+</li>
+<li>Barrett, C. B., &amp; Carter, M. R. (2020). Finding our balance? Revisiting the randomization revolution in development economics ten years further on. <em>World Development</em>, 127, 104789.<br>
+</li>
+<li>Hjort, J., Moreira, D., Rao, G., &amp; Santini, J. F. (2021). How research affects policy: Experimental evidence from 2,150 Brazilian municipalities. <em>American Economic Review</em>, 111(5), 1442-80.</li>
+<li>Deaton, A., Case. (2019). Randomization in the tropics revisited: a theme and eleven variations. In <em>Randomized controlled trials in the field of development: A critical perspective</em>. Oxford University Press. Forthcoming.<br>
+</li>
+<li>Ravallion, Martin. (2020). Should the randomistas (continue to) rule? National Bureau of Economic Research, Working Paper 27554.</li>
+</ul></li>
+<li>Modelos estructurales en evaluación
+<ul>
+<li>Abbring, J. H., &amp; Heckman, J. J. (2007). Econometric evaluation of social programs, part III: Distributional treatment effects, dynamic treatment effects, dynamic discrete choice, and general equilibrium policy evaluation. <em>Handbook of econometrics</em>, 6, 5145-5303.<br>
+</li>
+<li>Attanasio, O. P., Meghir, C., &amp; Santiago, A. (2011). Education choices in Mexico: using a structural model and a randomized experiment to evaluate Progresa. <em>The Review of Economic Studies</em>, 79(1), 37-66.<br>
+</li>
+<li>Duflo, E., Hanna, R., &amp; Ryan, S. P. (2012). Incentives work: Getting teachers to come to school. <em>American Economic Review</em>, 102(4), 1241-78.}</li>
+<li>Hamilton, B. H., Hincapié, A., Miller, R. A., &amp; Papageorge, N. W. (2018). Innovation and Diffusion of Medical Treatment. National Bureau of Economic Working Paper 24577.<br>
+</li>
+<li>Keane, M. P. (2010). A structural perspective on the experimentalist school. <em>Journal of Economic Perspectives</em>, 24(2), 47-58.</li>
+<li>Keane, M. P., Todd, P. E., &amp; Wolpin, K. I. (2011). The structural estimation of behavioral models: Discrete choice dynamic programming methods and applications. In <em>Handbook of labor economics</em> (Vol. 4, pp.&nbsp;331-461). Elsevier.<br>
+</li>
+<li>Low, H., &amp; Meghir, C. (2017). The use of structural models in econometrics. <em>Journal of Economic Perspectives</em>, 31(2), 33-58.</li>
+<li>Ma, X., Lawell, C. Y. L., &amp; Rozelle, S. (2020). Peer effects and the use of subsidized goods: A structural econometric model of a health promotion program in rural China. Working paper, Cornell University.<br>
+</li>
+<li>Nevo, A., &amp; Whinston, M. D. (2010). Taking the dogma out of econometrics: Structural modeling and credible inference. <em>Journal of Economic Perspectives</em>, 24(2), 69-82.<br>
+</li>
+<li>Todd, P. E., &amp; Wolpin, K. I. (2010). Structural estimation and policy evaluation in developing countries. <em>Annu. Rev.&nbsp;Econ.</em>, 2(1), 21-50.</li>
+<li>Wolpin, K. I. (2013). The limits of inference without theory. MIT Press.</li>
+</ul></li>
+<li>Evaluaciones de impacto a nivel de economía local (LEWIE)
+<ul>
+<li>Taylor, J. E., Dyer, G. A., Stewart, M., Yunez-Naude, A., &amp; Ardila, S. (2003). The economics of ecotourism: A Galápagos Islands economy-wide perspective. <em>Economic Development and Cultural Change</em>, 51(4), 977-997.</li>
+<li>Taylor, J. E., &amp; Filipski, M. J. (2014). Beyond experiments in development economics: Local economy-wide impact evaluation. Oxford University Press.</li>
+<li>Taylor, J. E., Filipski, M. J., Alloush, M., Gupta, A., Rojas Valdes, R.I., &amp; Gonzalez-Estrada, E. (2016). Economic impact of refugees. <em>Proceedings of the National Academy of Sciences</em>, 201604566.</li>
+</ul></li>
+<li>Combinación de metodologías no experimentales
+<ul>
+<li>Cattaneo, M. D., Frandsen, B. R., &amp; Titiunik, R. (2015). Randomization inference in the regression discontinuity design: An application to party advantages in the US Senate. <em>Journal of Causal Inference</em>, 3(1), 1-24.<br>
+</li>
+<li>Donohue III, J. J., &amp; Ho, D. E. (2007). The Impact of Damage Caps on Malpractice Claims: Randomization Inference with Difference‐in‐Differences. <em>Journal of Empirical Legal Studies</em>, 4(1), 69-102.<br>
+</li>
+<li>Keele, L., Titiunik, R., &amp; Zubizarreta, J. R. (2015). Enhancing a geographic regression discontinuity design through matching to estimate the effect of ballot initiatives on voter turnout. <em>Journal of the Royal Statistical Society</em>. Series A (Statistics in Society), 223-239.
+<ul>
+<li>Levasseur, P. (2019). Can social programs break the vicious cycle between poverty and obesity? Evidence from urban Mexico. <em>World Development</em>, 113, 143-156.</li>
+</ul></li>
+<li>MacKinnon, J. G., &amp; Webb, M. D. (2020). Randomization inference for difference-in-differences with few treated clusters. <em>Journal of Econometrics</em>.<br>
+</li>
+<li>Parker, S. W., Saenz, J., &amp; Wong, R. (2018). Health insurance and the aging: Evidence from the Seguro Popular program in Mexico. <em>Demography</em>, 55(1), 361-386.</li>
+<li>Sant’Anna, P. H., &amp; Zhao, J. (2020). Doubly robust difference-in-differences estimators. <em>Journal of Econometrics</em>, 219(1), 101-122.</li>
+</ul></li>
+<li>Impactos de largo plazo
+<ul>
+<li>Athey, S., Chetty, R., Imbens, G. W., &amp; Kang, H. (2019). The surrogate index: Combining short-term proxies to estimate long-term treatment effects more rapidly and precisely, National Bureau of Economic Research, Working Paper 26463.</li>
+<li>Hamory, J., Miguel, E., Walker, M., Kremer, M., &amp; Baird, S. (2021). Twenty-year economic impacts of deworming. <em>Proceedings of the National Academy of Sciences</em>, 118(14).</li>
+<li>Dupas, P., Duflo, E. &amp; Kremer, M. (2021). The Impact of Free Secondary Education: Experimental Evidence from Ghana. Stanford University Working Paper.<br>
+</li>
+<li>Parker, S. W., &amp; Vogl, T. (2018). Do conditional cash transfers improve economic outcomes in the next generation? Evidence from Mexico (No.&nbsp;w24303). National Bureau of Economic Research.</li>
+</ul></li>
+<li>Etica
+<ul>
+<li>Humphreys, M. (2015). Reflections on the ethics of social experimentation. <em>Journal of Globalization and Development</em>, 6(1), 87-112.</li>
+<li>Lewis, J. (2020). Experimental Design: Ethics, Integrity, and the Scientific Method. <em>Handbook of Research Ethics and Scientific Integrity</em>, 459-474.</li>
+<li>Rayzberg, M. S. (2019). Fairness in the field: The ethics of resource allocation in randomized controlled field experiments. <em>Science, Technology, &amp; Human Values</em>, 44(3), 371-398.</li>
+</ul></li>
+<li>Credibilidad e inferencia estadística
+<ul>
+<li>Amrhein, V., Greenland, S., &amp; McShane, B. (2019). Scientists rise up against statistical significance. <em>Nature</em>. 567, 305-307.<br>
+</li>
+<li>Angrist, J. D., &amp; Pischke, J. S. (2010). The credibility revolution in empirical economics: How better research design is taking the con out of econometrics. <em>Journal of economic perspectives</em>, 24(2), 3-30.<br>
+</li>
+<li>Greenland, S., Senn, S. J., Rothman, K. J., Carlin, J. B., Poole, C., Goodman, S. N., &amp; Altman, D. G. (2016). Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. <em>European journal of epidemiology</em>, 31(4), 337-350.</li>
+<li>Leamer, E. E. (1983). Let’s take the con out of econometrics. <em>The American Economic Review</em>, 73(1), 31-43.</li>
+<li>Leamer, E. E. (2010). Tantalus on the Road to Asymptopia. <em>Journal of Economic Perspectives</em>, 24(2), 31-46.</li>
+<li>Nuzzo, R. (2014). Scientific method: statistical errors. <em>Nature News</em>, 506(7487), 150.</li>
+<li>Sims, C. A. (2010). But economics is not an experimental science. <em>Journal of Economic Perspectives</em>, 24(2), 59-68.</li>
+<li>Wasserstein, R. L., &amp; Lazar, N. A. (2016). The ASA statement on p-values: context, process, and purpose. <em>The American Statistician</em>, 70(2), 129-133.</li>
+</ul></li>
+<li>Inferencia por aleatorización
+<ul>
+<li>Abadie, A., Athey, S., Imbens, G. W., &amp; Wooldridge, J. M. (2020). Sampling‐Based versus Design‐Based Uncertainty in Regression Analysis. <em>Econometrica</em>, 88(1), 265-296.<br>
+</li>
+<li>Athey, S., &amp; Imbens, G. W. (2017). The econometrics of randomized experiments. In <em>Handbook of economic field experiments</em> (Vol. 1, pp.&nbsp;73-140). North-Holland.<br>
+</li>
+<li>Ho, D. E., &amp; Imai, K. (2006). Randomization inference with natural experiments: An analysis of ballot effects in the 2003 California recall election. <em>Journal of the American Statistical Association</em>, 101(475), 888-900.<br>
+</li>
+<li>Kerwin, J. T., &amp; Thornton, R. L. (2020). Making the grade: The sensitivity of education program effectiveness to input choices and outcome measures. <em>Review of Economics and Statistics</em>, 1-45.</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
