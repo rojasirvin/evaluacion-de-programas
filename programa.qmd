@@ -5,11 +5,12 @@ title: "Programa"
 
 ## Objetivos
 
-*	Identificar las condiciones que permiten la implementación de una evaluación de impacto.
-*	Conocer los fundamentos teóricos sobre los que se sustentan las metodologías de las evaluaciones de impacto.
-*	Implementar los métodos de evaluación empleando software, interpretar los resultados y reportar las conclusiones en forma de artículos científicos y/o reportes de política.
-*	Conocer e implementar buenas prácticas en el uso de software, orientadas a la transparencia y la replicabilidad en la investigación.
-*	Conocer los temas que conforman la literatura actual de evaluaciones de impacto.
+* Conocer las condiciones que permiten la identificación de efectos causales en economía y otras ciencias sociales.
+* Conocer los fundamentos teóricos sobre los que se sustentan las metodologías para la estimación de relaciones causales.
+* Implementar los métodos de inferencia causal empleando software, interpretar los resultados y reportar las conclusiones en forma de artículos científicos y/o reportes de política.
+* Conocer e implementar buenas prácticas en el uso de software, orientadas a la transparencia y la replicabilidad en la investigación.
+* Conocer los temas que conforman la literatura actual de inferencia causal.
+
 
 
 ## Referencias
@@ -24,11 +25,9 @@ El curso se basa en los siguientes textos:
 
 + (MT) Cunningham, S. (2021). Causal inference: The mixtape. Yale University Press. [Disponible en línea](https://mixtape.scunning.com/index.html).
 
-+ Huntington-Klein, N. (2021). *The effect: An introduction to research design and causality*. Chapman and Hall/CRC.
-
 + DiNardo, J. & D.S. Lee. (2011). Program Evaluation and Research Designs. En *Handbook of Labor Economics*, 4A: 463-536.
 
-+ (GMPRV) Gertler, P.J., S. Martinez, P. Premand, L.B., Rawlings, & C.M.J. Vermeersch. (2011). *La evaluación de impacto en la práctica*. Banco Interamericano de Desarrollo y Banco Mundial, segunda edición. [Disponible en línea](https://publications.iadb.org/publications/spanish/document/La-evaluaci%C3%B3n-de-impacto-en-la-pr%C3%A1ctica-Segunda-edici%C3%B3n.pdf).
++ Huntington-Klein, N. (2021). *The effect: An introduction to research design and causality*. Chapman and Hall/CRC.
 
 
 ## Contenido temático
@@ -39,12 +38,18 @@ Unidad 1. Introducción
   - Inferencia causal
   - Revisión de métodos de regresión
   
+* Inferencia causal
+  - Modelo de resultados potenciales
+  - Causalidad en economía y las ciencias sociales
+  - Revisión de métodos de regresión
+
+  
 * Replicabilidad y transparencia en la evaluación
   - Quarto para la generación de reportes científicos
 
-Unidad 2. Métodos de evaluación
+Unidad 2. Métodos para la inferencia causal
 
-* Evaluación experimental
+* Métodos experimentales
   - Asignación aleatoria
   - Errores estándar
   - *LATE* y variables instrumentales
@@ -72,15 +77,15 @@ Unidad 2. Métodos de evaluación
   - Pliegues en la regresión
   - Aplicaciones diseños con discontinuidades
 
-* Método del control sintético
+* Control sintético
   - Supuestos fundamentales
   - Inferencia basada en placebos
   - Aplicaciones de control sintético
 
-Unidad 3. Temas actuales de evaluación
+Unidad 3. Temas actuales de inferencia causal
 
 * Extensiones I
-  - Aprendizaje automatizado y _big data_ en la evaluación de impacto
+  - Aprendizaje automatizado y _big data_ para la inferencia causal
 
 
 ## Evaluación del curso
