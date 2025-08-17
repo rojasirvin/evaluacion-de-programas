@@ -110,6 +110,8 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + GMPRV, Capítulo 7  
   + \* MM, Capítulo 5 (Differences-in-differences)
   + MT, Capítulo 9 (Difference in differences), secciones 1 a 5
+  
+## Semana 7
 
 * DID desfasado
   + \* MT, Capítulo 9 (Difference in differences), sección 9.6
@@ -120,8 +122,29 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + \* Roth, J., Sant'Anna, P. H., Bilinski, A., & Poe, J. (2023). What's Trending in Difference-in-Differences? A Synthesis of the Recent Econometrics Literature. *Journal of Econometrics*, 235(2), 2218-2244.
 
   
-  
-## Semana 8
+* Métodos de pareamiento
+  + GMPRV, Capítulo 8
+  + \* MH, Capítulo 3, Sección 3.3
+  + \* MT, Capítulo 5
+
+
+
+* Aplicaciones del PSM  
+  + Abadie, A., & Imbens, G. W. (2016). Matching on the estimated propensity score. *Econometrica*, 84(2), 781-807.  
+  + Angrist, J., Estimating the Labor Market Impact of Voluntary Military Service Using Social Security Data on Military Applicants, *Econometrica* 66(2), 1998, 249-288.
+  + \+ Becerril, J., & Abdulai, A. (2010). The impact of improved maize varieties on poverty in Mexico: a propensity score-matching approach. *World development*, 38(7), 1024-1035.
+  + \* Caliendo, M., & Kopeinig, S. (2008). Some practical guidance for the implementation of propensity score matching. *Journal of economic surveys*, 22(1), 31-72.  
+  + \+ Chang, A., Miranda-Moreno, L., Cao, J., & Welle, B. (2017). The effect of BRT implementation and streetscape redesign on physical activity: A case study of Mexico City.   *Transportation Research Part A: Policy and Practice*, 100, 337-347.  
+  + \* Dehejia, R. H., & Wahba, S. (1999). Causal effects in nonexperimental studies: Reevaluating the evaluation of training programs. *Journal of the American statistical Association*, 94(448), 1053-1062.
+  + \+ Diaz, J. J., & Handa, S. (2006). An assessment of propensity score matching as a nonexperimental impact estimator evidence from Mexico’s PROGRESA program. *Journal of human resources*, 41(2), 319-345.
+  + \+ Espinosa, V., & Rubin, D. B. (2015). Did the military interventions in the Mexican drug war increase violence?. *The American Statistician*, 69(1), 17-27.
+  + \+ García-Díaz, R., Sosa-Rubí, S. G., Serván-Mori, E., & Nigenda, G. (2018). Welfare effects of health insurance in Mexico: The case of Seguro Popular de Salud. *PloS one*, 13(7), e0199876.  
+  + \* LaLonde, R. J. (1986). Evaluating the econometric evaluations of training programs with experimental data. The *American economic review*, 604-620.
+  + Wellalage, N. H., & Locke, S. (2020). Remittance and financial inclusion in refugee migrants: inverse probability of treatment weighting using the propensity score. *Applied Economics*, 52(9), 929-950.
+  + \+ Stabridis, O., & Salgado-Viveros, C. (2023). Efectos de género y etnicidad en la brecha salarial entre jornaleros agrícolas del noroeste mexicano. *Frontera Norte*, 35.
+
+
+## Semana 9
 
 * Aplicaciones de DID  
   + \* Bertrand, M., Duflo, E., & Mullainathan, S. (2004). How much should we trust differences-in-differences estimates? *The Quarterly journal of economics*, 119(1), 249-275.
@@ -141,12 +164,7 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + Zhang, R., Li, Y., Zhang, A. L., Wang, Y., & Molina, M. J. (2020). Identifying airborne transmission as the dominant route for the spread of COVID-19. *Proceedings of the National Academy of Sciences*.  
   
 
-## Semana 9
-
-* Métodos de pareamiento
-  + GMPRV, Capítulo 8
-  + \* MH, Capítulo 3, Sección 3.3
-  + \* MT, Capítulo 5
+## Semana 10
 
 * Diseños con discontinuidades
   + GMPRV, Capítulo 6
@@ -157,35 +175,7 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + \* MT, Capítulo 6
   
 
-## Semana 10
-
-* Aplicaciones del PSM  
-  + Abadie, A., & Imbens, G. W. (2016). Matching on the estimated propensity score. *Econometrica*, 84(2), 781-807.  
-  + Angrist, J., Estimating the Labor Market Impact of Voluntary Military Service Using Social Security Data on Military Applicants, *Econometrica* 66(2), 1998, 249-288.
-  + \+ Becerril, J., & Abdulai, A. (2010). The impact of improved maize varieties on poverty in Mexico: a propensity score-matching approach. *World development*, 38(7), 1024-1035.
-  + \* Caliendo, M., & Kopeinig, S. (2008). Some practical guidance for the implementation of propensity score matching. *Journal of economic surveys*, 22(1), 31-72.  
-  + \+ Chang, A., Miranda-Moreno, L., Cao, J., & Welle, B. (2017). The effect of BRT implementation and streetscape redesign on physical activity: A case study of Mexico City.   *Transportation Research Part A: Policy and Practice*, 100, 337-347.  
-  + \* Dehejia, R. H., & Wahba, S. (1999). Causal effects in nonexperimental studies: Reevaluating the evaluation of training programs. *Journal of the American statistical Association*, 94(448), 1053-1062.
-  + \+ Diaz, J. J., & Handa, S. (2006). An assessment of propensity score matching as a nonexperimental impact estimator evidence from Mexico’s PROGRESA program. *Journal of human resources*, 41(2), 319-345.
-  + \+ Espinosa, V., & Rubin, D. B. (2015). Did the military interventions in the Mexican drug war increase violence?. *The American Statistician*, 69(1), 17-27.
-  + \+ García-Díaz, R., Sosa-Rubí, S. G., Serván-Mori, E., & Nigenda, G. (2018). Welfare effects of health insurance in Mexico: The case of Seguro Popular de Salud. *PloS one*, 13(7), e0199876.  
-  + \* LaLonde, R. J. (1986). Evaluating the econometric evaluations of training programs with experimental data. The *American economic review*, 604-620.
-  + Wellalage, N. H., & Locke, S. (2020). Remittance and financial inclusion in refugee migrants: inverse probability of treatment weighting using the propensity score. *Applied Economics*, 52(9), 929-950.
-  + \+ Stabridis, O., & Salgado-Viveros, C. (2023). Efectos de género y etnicidad en la brecha salarial entre jornaleros agrícolas del noroeste mexicano. *Frontera Norte*, 35.
-
-
 ## Semana 11
-
-* Control sintético 
-  + \* MT, Capítulo 10
-  + \* Abadie, A. (2019). Using synthetic controls: Feasibility, data requirements, and methodological aspects. *Journal of Economic Literature*.
-  + \* Abadie, A., Diamond, A., & Hainmueller, J. (2010). Synthetic control methods for comparative case studies: Estimating the effect of California’s tobacco control program. *Journal of the American statistical Association*, 105(490), 493-505.
-  + \+ Abadie, A., Diamond, A., & Hainmueller, J. (2015). Comparative politics and the synthetic control method. *American Journal of Political Science*, 59(2), 495-510.  
-  
-
-
-
-## Semana 12
 
 * Aplicaciones de diseños con discontinuidades  
   + Abdulkadiroğlu, A., Angrist, J., & Pathak, P. (2014). The elite illusion: Achievement effects at Boston and New York exam schools. *Econometrica*, 82(1), 137-196.
@@ -226,6 +216,14 @@ Las lecturas obligatorias (marcadas con “*”) permiten una discusión informa
   + Card, D., Lee, D. S., Pei, Z., & Weber, A. (2017). Regression kink design: Theory and practice. NBER Working Paper 22781.  
   + Lurie, I. Z., Sacks, D. W., & Heim, B. (2021). Does the individual mandate affect insurance coverage? Evidence from tax returns. *American Economic Journal: Economic Policy*, 13(2), 378-407.
 
+## Semana 12
+
+* Control sintético 
+  + \* MT, Capítulo 10
+  + \* Abadie, A. (2019). Using synthetic controls: Feasibility, data requirements, and methodological aspects. *Journal of Economic Literature*.
+  + \* Abadie, A., Diamond, A., & Hainmueller, J. (2010). Synthetic control methods for comparative case studies: Estimating the effect of California’s tobacco control program. *Journal of the American statistical Association*, 105(490), 493-505.
+  + \+ Abadie, A., Diamond, A., & Hainmueller, J. (2015). Comparative politics and the synthetic control method. *American Journal of Political Science*, 59(2), 495-510.  
+  
 
 ## Semana 13
 
