@@ -34,10 +34,6 @@ El curso se basa en los siguientes textos:
 
 Unidad 1. Introducción
 
-* Fundamentos de la evaluación de impacto
-  - Inferencia causal
-  - Revisión de métodos de regresión
-  
 * Inferencia causal
   - Modelo de resultados potenciales
   - Causalidad en economía y las ciencias sociales
