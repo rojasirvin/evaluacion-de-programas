@@ -62,7 +62,6 @@ División de Economía
 
 # Descripción general del curso
 
-1. Clases en **Zoom**  
 2. Evaluación  
 3. Tareas (entregadas en **Teams** sin comprimir)  
 4. Laboratorios  
@@ -70,28 +69,6 @@ División de Economía
 6. Proyecto final  
 7. Usaré **Teams** para administrar tareas, exámenes y calificaciones
 
-# Modo a distancia
-
-- Trataremos de hacer la experiencia de aprendizaje lo más cercana posible a la experiencia presencial  
-- Pero no podemos actuar como si nada pasara
-
-::: {.fragment}
-
-- Cosas parecidas
-  - Búsquenme para platicar en horas de oficina sobre sus dudas  
-  - Lean antes de clase  
-  - Tienen que colaborar para la clase
-  
-:::
-
-::: {.fragment}
-- Cosas distintas
-  - Cámaras encendidas en clase  
-  - No grabaremos las sesiones  
-  - Trataré de partir la clase en bloques: teoría, artículos, código, exposiciones, etc.  
-  - Tienen que colaborar **más** para la clase con algunos de los bloques
-  
-:::
 
 # Inferencia Causal: diseño y econometría {.inverse .center .middle}
 
@@ -308,10 +285,6 @@ División de Economía
 
 # {.inverse .center .middle}
 
-Presentación creada usando el paquete [**xaringan**](https://github.com/yihui/xaringan) en R.  
-
-El *chakra* viene de [remark.js](https://remarkjs.com), [**knitr**](http://yihui.org/knitr), y [R Markdown](https://rmarkdown.rstudio.com).  
-
-Material de clase en versión preliminar.  
+Material de clase en versión preliminar.
 
 **No reproducir, no distribuir, no citar.**

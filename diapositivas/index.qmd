@@ -2,44 +2,6 @@
 title: "Diapositivas"
 ---
 
-[Clase 1](./clase_1.html){target="_blank"}
+[Introducción del curso](./introduccion.html){target="_blank"}
 
-[Clase 2](./clase_2.html){target="_blank"}
-
-[Clase 3](./clase_3.html){target="_blank"}
-
-[Clase 4](./clase_4.html){target="_blank"}
-
-[Clase 5](./clase_5.html){target="_blank"}
-
-[Clase 6](./clase_6.html){target="_blank"}
-
-[Clase 7](./clase_7.html){target="_blank"}
-
-[Clase 10](./clase_10.html){target="_blank"}
-
-[Clase 11](./clase_11.html){target="_blank"}
-
-[Clase 12](./clase_12.html){target="_blank"}
-
-[Clase 13](./did.qmd){target="_blank"}
-
-[Clase 15](./clase_15.html){target="_blank"}
-
-[Clase 17](./emparejamiento.qmd){target="_blank"}
-
-[Clase 18](./clase_18.html){target="_blank"}
-
-[Clase 20](./discontinuidades.qmd){target="_blank"}
-
-[Clase 21](./clase_21.html){target="_blank"}
-
-[Clase 23](./clase_23.html){target="_blank"}
-
-[Clase 24](./sintetico.qmd){target="_blank"}
-
-[Clase 26](./clase_26.html){target="_blank"}
-
-[Clase 27](./clase_27.html){target="_blank"}
-
-[Clase 29](./clase_29.html){target="_blank"}
+[Inferencia causal](./inferencia-causal.html){target="_blank"}
