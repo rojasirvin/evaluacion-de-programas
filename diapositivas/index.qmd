@@ -5,3 +5,5 @@ title: "Diapositivas"
 [Introducción del curso](./introduccion.html){target="_blank"}
 
 [Inferencia causal](./inferencia-causal.html){target="_blank"}
+
+[Diseños experimentales](./experimental.html){target="_blank"}
