@@ -7,3 +7,5 @@ title: "Diapositivas"
 [Inferencia causal](./inferencia-causal.html){target="_blank"}
 
 [Diseños experimentales](./experimental.html){target="_blank"}
+
+[Regresión](./regresion.html){target="_blank"}

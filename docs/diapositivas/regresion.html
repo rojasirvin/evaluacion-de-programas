@@ -11,7 +11,7 @@
 <link href="../site_libs/quarto-contrib/bootstrap-icons-1.13.1/bootstrap-icons.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>Inferencia Causal 2025 – experimental</title>
+  <title>Inferencia Causal 2025 – regresion</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -320,18 +320,14 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
-
-  <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 
-<section id="evaluación-experimental" class="title-slide slide level1 portada center">
-<h1>Evaluación experimental</h1>
+<section id="regresión-y-efectos-causales" class="title-slide slide level1 portada center">
+<h1>Regresión y efectos causales</h1>
 <div style="text-align: center; font-size: 1.2em; font-weight: bold;">
 <p>Inferencia Causal</p>
 </div>
@@ -351,471 +347,274 @@
 <p><strong>Centro de Investigación y Docencia Económicas</strong> División de Economía</p>
 </section>
 
-<section id="el-experimento-ideal" class="title-slide slide level1 inverse center middle">
-<h1>El experimento ideal</h1>
+<section id="agenda" class="title-slide slide level1 center">
+<h1>Agenda</h1>
+<ol type="1">
+<li><p>Motivar el uso de regresión para el análisis de efectos de tratamiento</p></li>
+<li><p>Estudiaremos el supuesto de independencia condicional</p></li>
+<li><p>Veremos un ejemplo de experimento aleatorio para relacionarlo con lo que ya sabemos y para identificar elementos que iremos descubriendo con el tiempo</p></li>
+</ol>
+</section>
+
+<section id="motivación-del-uso-de-regresión-en-evaluación" class="title-slide slide level1 inverse center middle">
+<h1>Motivación del uso de regresión en evaluación</h1>
 
 </section>
 
-<section id="el-efecto-de-los-hospitales" class="title-slide slide level1 center">
-<h1>El efecto de los hospitales</h1>
+<section id="regresión-como-función-de-esperanza-condicional" class="title-slide slide level1 center">
+<h1>Regresión como función de esperanza condicional</h1>
 <ul>
-<li>¿Los hospitales hacen que la gente sea más sana?</li>
-<li>Podemos conseguir datos de encuestas sobre cuántas veces las personas han ido al hospital en el último año</li>
+<li><p>Olvidemos por ahora la causalidad y centremonos en la conexión entre dos variables, <span class="math inline">\(y\)</span> y <span class="math inline">\(s\)</span> (ingreso y educación)</p></li>
+<li><p>La <strong>función de esperanza condicional</strong> es una forma de describir la relación entre estas dos variables</p></li>
+<li><p><strong>Función de esperanza condicional</strong>: la FEC de <span class="math inline">\(y_i\)</span> dado un vector de regresores <span class="math inline">\(X_i\)</span> es la esperanza o promedio poblacional de <span class="math inline">\(y_i\)</span> cuando mantenemos fijo <span class="math inline">\(X_i\)</span> y se denota <span class="math inline">\(E(y_i|X_i)\)</span></p></li>
+<li><p>Para representar una realización particular de <span class="math inline">\(X_i\)</span> escribimos <span class="math inline">\(X_i=x_i\)</span>, por lo que la FEC es <span class="math inline">\(E(y_i|X_i=x_i)\)</span></p></li>
+<li><p>Con <span class="math inline">\(y_i\)</span> discreta, la FEC se expresa como</p></li>
 </ul>
-<div class="cell" data-warnings="false">
-<table class="lightable-paper lightable-hover caption-top" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th colspan="4" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px; font-weight: bold; padding-right: 4px; padding-left: 4px; background-color: white !important;"><div style="TRUE">
-El efecto de los hospitales
-</div></th>
-</tr>
-<tr class="odd">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Grupo</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">N</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Salud (0-5)</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">Error estándar</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Hospitalizados</td>
-<td style="text-align: center;">7,774</td>
-<td style="text-align: center;">3.21</td>
-<td style="text-align: center;">0.014</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">No hospitalizados</td>
-<td style="text-align: center;">90,049</td>
-<td style="text-align: center;">3.93</td>
-<td style="text-align: center;">0.003</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Diferencia</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">0.72</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">(t)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">(58.9)</td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-<div class="fragment">
-<ul>
-<li>¿Tiene sentido? ¿Los hospitales enferman?</li>
-<li>¿Qué sucede?</li>
-</ul>
-</div>
+<p><span class="math display">\[E(y_i|X_i=x_i)=\sum_t t P(y_i=t|X_i=x_i)\]</span></p>
 </section>
 
-<section id="comparaciones-observacionales" class="title-slide slide level1 center">
-<h1>Comparaciones observacionales</h1>
-<ul>
-<li>Pensemos de nuevo en términos del <em>Modelo de Rubin</em> de resultados potenciales</li>
-</ul>
-<p><span class="math display">\[y_{i}=\begin{cases}
-y_{1i}=1\quad\text{si }D_i=1\\
-y_{0i}=0 \quad \text{si } D_i=0
-\end{cases}\]</span></p>
-<ul>
-<li>Solo vemos al individuo en una situación, <span class="math inline">\(y_i\)</span>:</li>
-</ul>
-<p><span class="math display">\[y_i=y_{0i}+(y_{1i}-y_{0i})D_i\]</span></p>
-<div class="fragment">
-<ul>
-<li>¿Qué nos dicen las comparaciones observacionales?</li>
-<li>Supongamos que tenemos acceso a datos sobre tratados y no tratados</li>
-<li>Podemos calcular <span class="math inline">\(E(y_i|D_i=1)-E(y_i|D_i=0)\)</span>:</li>
-</ul>
-<p><span class="math display">\[
-\begin{aligned}
-E(y_i|D_i=1)-E(y_i|D_i=0)=&amp;E(y_{1i}|D_i=1)-E(y_{oi}|D_i=0)+\\&amp; \underbrace{E(y_{0i}|D_i=1)-E(y_{0i}|D_i=1)}_0
-\end{aligned}
-\]</span></p>
-</div>
-</section>
-
-<section id="sesgo-de-selección" class="title-slide slide level1 center">
-<h1>Sesgo de selección</h1>
-<ul>
-<li>Reordenando:</li>
-</ul>
-<p><span class="math display">\[
-\begin{aligned}
-E(y_i|D_i=1)-E(y_i|D_i=0)=&amp;\overbrace{ E(y_{1i}|D_i=1)-E(y_{0i}|D_i=1)}^{\text{Efecto promedio en los tratados}}+\\&amp; \underbrace{E(y_{0i}|D_i=1)-E(y_{oi}|D_i=0)}_{\text{Sesgo de selección}}
-\end{aligned}
-\]</span></p>
-<ul>
-<li>El primer término nos da la diferencia promedio en la variable de salud entre los hospitalizados y lo que les hubiera pasado si no hubieran sido hospitalizados</li>
-<li>En nuestro ejemplo, el <strong>sesgo de selección</strong> es la diferencia en salud entre los hospitalizados y los no hospitalizados</li>
-<li>Específicamente, si quienes van al hospital tienen una peor salud, podemos esperar que <span class="math inline">\(E(y_{0i}|D_i=1)-E(y_{oi}|D_i=0)&lt;0\)</span></li>
-</ul>
-</section>
-
-<section id="sesgo-de-selección-1" class="title-slide slide level1 center">
-<h1>Sesgo de selección</h1>
-<ul>
-<li>Al hacer aseveraciones basadas en comparaciones observacionales se incluye el efecto causal del tratamiento, pero también el sesgo de selección</li>
-<li>El sesgo de selección puede ser positivo o negativo</li>
-<li>El objetivo de las estrategias de evaluación es eliminar el sesgo de selección</li>
-</ul>
-</section>
-
-<section id="tratamiento-aleatorio" class="title-slide slide level1 center">
-<h1>Tratamiento aleatorio</h1>
-<ul>
-<li>Supongamos que tenemos la posibilidad de aleatorizar el tratamiento, es decir, hacer que <span class="math inline">\(Y_i\)</span> y <span class="math inline">\(D_i\)</span> sean independientes</li>
-<li>En ese caso, por independencia: <span class="math inline">\(E(Y_{0i}|D_i=0)=E(Y_{0i}|D_i=1)\)</span></li>
-<li>De la definición de comparación observacional:</li>
-</ul>
-<p><span class="math display">\[
-\begin{aligned}
-E(y_i|D_i=1)-E(y_i|D_i=0)=&amp;E(y_{1i}|D_i=1)-E(y_{0i}|D_i=0)
-\end{aligned}
-\]</span></p>
-<ul>
-<li>Sustituyendo el resultado de independencia:</li>
-</ul>
-<p><span class="math display">\[
-\begin{aligned}
-E(y_i|D_i=1)-E(y_i|D_i=0)&amp;=E(y_{1i}|D_i=1)-E(y_{0i}|D_i=1) \\
-&amp; =E(y_{1i}-y_{0i}|D_i=1) \\
-&amp; =\underbrace{E(y_{1i}-y_{0i})}_{\text{Efecto causal}}
-\end{aligned}
-\]</span></p>
-</section>
-
-<section id="no-siempre-es-factible" class="title-slide slide level1 center">
-<h1>No siempre es factible</h1>
-<ul>
-<li>La aleatorización resuelve muchas cosas, pero muchas veces no es factible</li>
-<li>¿Qué tendríamos que hacer en el caso de estudio, “¿Los hospitales matan?”</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Pensemos en un programa de empleo para ex convictos</li>
-<li>Seguramente una comparación observacional indicaría que estos ganan menos que el resto de la población</li>
-<li>Pero esto no significa que el programa cause un efecto negativo en el ingreso</li>
-<li>Siempre tenemos que pensar en el contrafactual</li>
-</ul>
-</div>
-</section>
-
-<section id="el-experimento-star" class="title-slide slide level1 center">
-<h1>El experimento STAR</h1>
-<ul>
-<li>¿En qué consistió?</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Dos tipos de tratamiento:
-<ul>
-<li><span class="math inline">\(T_1\)</span>: clase pequeña (13-17) con maestro de tiempo completo</li>
-<li><span class="math inline">\(T_2\)</span>: tamaño normal pero con asistente para el maestro</li>
-</ul></li>
-<li>Un grupo <span class="math inline">\(C\)</span> al que no se le hizo cambio alguno (22.3 alumnos en promedio)</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>¿Cuál es el efecto de tener clases más pequeñas?</li>
-<li>¿Por qué esto sería relevante? ¿Qué implicaciones de política tendría?</li>
-</ul>
-</div>
-</section>
-
-<section id="el-balance" class="title-slide slide level1 center">
-<h1>El balance</h1>
+<section id="ejemplo-de-fec-salarios-y-educación-en-estados-unidos" class="title-slide slide level1 center">
+<h1>Ejemplo de FEC: salarios y educación en Estados Unidos</h1>
 <div class="columns">
 <div class="column" style="width:&quot;50%;">
 <ul>
-<li>¿Qué vemos en la Tabla 2.2.1 de MHE</li>
-<li>¿Qué nos indican los valores <span class="math inline">\(p\)</span>?</li>
-<li>¿Cuál es la hipótesis nula?</li>
-<li>¿Qué significa <em>atrición</em>?</li>
-<li>¿Se logró el objetivo del experimento?</li>
+<li>La figura 3.3.1 en MHE muestra la FEC de salarios en Estados Unidos</li>
+<li>Para cada año de educación, vemos cuál es el (log) del ingreso semanal</li>
+<li>La figura muestra dos cosas principales:
+<ul>
+<li>La clara relación positiva entre salarios y educación</li>
+<li>La gran variabilidad en salarios para un nivel de educación dado</li>
+</ul></li>
 </ul>
 </div><div class="column" style="width:&quot;50%;">
-<div class="cell" data-warnings="false">
-<table class="lightable-paper lightable-hover caption-top" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;border-bottom: 0;">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th colspan="5" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px; font-weight: bold; padding-right: 4px; padding-left: 4px; background-color: white !important;"><div style="TRUE">
-Balance de observables
-</div></th>
-</tr>
-<tr class="odd">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">\(T_1\)</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">\(C\)`</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">\(T_2\)</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">\(p\)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Lunch gratis</td>
-<td style="text-align: center;">0.47</td>
-<td style="text-align: center;">0.48</td>
-<td style="text-align: center;">0.5</td>
-<td style="text-align: center;">0.09</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Blanco / asiático</td>
-<td style="text-align: center;">0.68</td>
-<td style="text-align: center;">0.67</td>
-<td style="text-align: center;">0.66</td>
-<td style="text-align: center;">0.26</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Edad (1985)</td>
-<td style="text-align: center;">5.44</td>
-<td style="text-align: center;">5.43</td>
-<td style="text-align: center;">5.42</td>
-<td style="text-align: center;">0.32</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Atrición</td>
-<td style="text-align: center;">0.49</td>
-<td style="text-align: center;">0.52</td>
-<td style="text-align: center;">0.53</td>
-<td style="text-align: center;">0.02</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Tamaño de clase</td>
-<td style="text-align: center;">15.1</td>
-<td style="text-align: center;">22.4</td>
-<td style="text-align: center;">22.8</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Calificación</td>
-<td style="text-align: center;">54.7</td>
-<td style="text-align: center;">48.9</td>
-<td style="text-align: center;">50</td>
-<td style="text-align: center;">0</td>
-</tr>
-</tbody><tfoot>
-<tr class="even">
-<td style="text-align: left; padding: 0;"><span style="font-style: italic;">Nota:</span> <sup></sup> Tomada de Angrist y Pischke (2009), Tabla 2.2.1.</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tfoot>
-
-</table>
-
-
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/fec_mhe.png" style="width:100.0%"></p>
+<figcaption>Fuente: Angrist &amp; Pischke (2009)</figcaption>
+</figure>
+</div>
+</div>
 </div>
 </div></div>
 </section>
 
-<section id="desventajas" class="title-slide slide level1 center">
-<h1>Desventajas</h1>
+<section id="teorema-de-la-regresión-de-la-fec" class="title-slide slide level1 center">
+<h1>Teorema de la regresión de la FEC</h1>
 <ul>
-<li>Tiempo</li>
-<li>Costo: 12 millones de USD del proyecto STAR</li>
-<li>Preocupaciones legales y éticas</li>
+<li>MHE provee varias motivaciones de usar regresión al relacionar la función de regresión con la FEC</li>
+<li>Aquí vamos a rescatar el que considero más intuitivo</li>
+<li><strong>Teorema de la regresión de la FEC</strong>: la función <span class="math inline">\(X_i'\beta\)</span> es la aproximación lineal de mínimos errores cuadrados promedio de <span class="math inline">\(E(y_i|X_i)\)</span>: <span class="math display">\[\beta=\arg\min_b E((E(y_i|X_i)-X_i'b) ^2)\]</span></li>
+<li>Lo que nos dice este teorema es que si yo quiero <strong>aproximar</strong> la FEC y mi criterio para obtener la mejor aproximación es un problema de mínimos cuadrados promedio, entonces lo mejor que puedo hacer es que mi aproximación sea <span class="math inline">\(X'\beta\)</span></li>
+</ul>
+</section>
+
+<section id="teorema-de-la-regresión-de-la-fec-1" class="title-slide slide level1 center">
+<h1>Teorema de la regresión de la FEC</h1>
+<ul>
+<li>Este teorema nos dice que si pensamos en en aproximar <span class="math inline">\(E(y_i|X_i)\)</span>, incluso aunque la FEC no sea lineal, la función de regresión nos da la mejor aproximación lineal</li>
+<li>Este teorema es lo más cercano a como interpretamos la regresión en evaluación pues más que querer predicciones de <span class="math inline">\(y\)</span> para un individuo <span class="math inline">\(i\)</span>, nos interesa la relación promedio entre las variables</li>
+<li>Vale la pena notar que aquí hablamos de la función de regresión <strong>poblacional</strong>, es decir, aún tenemos que hablar sobre cómo estimarla</li>
+</ul>
+</section>
+
+<section id="teorema-de-la-regresión-de-la-fec-2" class="title-slide slide level1 center">
+<h1>Teorema de la regresión de la FEC</h1>
+<div class="columns">
+<div class="column" style="width:&quot;50%;">
+<ul>
+<li>La figura 3.1.2 en MHE ilustra este teorema</li>
+<li>La línea sólida es la FEC de la relación años de educación - salario</li>
+<li>La línea sólida muestra los promedios del salario para cada año de educación</li>
+<li>La línea quebrada muestra la línea de regresión usando microdatos
+<ul>
+<li>Graficar el coeficiente <span class="math inline">\(\beta\)</span> que resulta al correr <span class="math inline">\(y_i=\alpha+\beta s_i+u_i\)</span></li>
+</ul></li>
+<li>El teorema de la regresión de la FEC dice que obtenemos la misma recta si hacemos una regresión de <span class="math inline">\(E(y_i|s_i)=\alpha+\beta s +u\)</span></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/regresion_fec_mhe.png" style="width:80.0%"></p>
+<figcaption>Fuente: Angrist &amp; Pischke (2009)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Es decir, calculamos las medias del salario para cada nivel de educación y luego se hacemos una regresión de las medias en función de los niveles de educación (dándole más peso a las observaciones que aportaron más datos a la media de cada nivel)</li>
+</ul>
+</div></div>
+</section>
+
+<section id="modelos-saturados" class="title-slide slide level1 center">
+<h1>Modelos saturados</h1>
+<ul>
+<li><p>Son modelos de regresión donde incluimos una variable categórica para cada uno de los posibles valores que tomen las <span class="math inline">\(X_i\)</span></p></li>
+<li><p>Del ejemplo con los datos de EUA, hay 21 posibles años de educación, entonces un modelo saturado es:</p></li>
+</ul>
+<p><span class="math display">\[y_i=\alpha+\beta_1 c_{1i} + \beta_2 c_{2i} + \ldots + \beta_{21} c_{21i} + u_i\]</span> donde <span class="math inline">\(c_{ji}=1\)</span> si el individuo <span class="math inline">\(i\)</span> tiene una educación <span class="math inline">\(s_{i}=j\)</span></p>
+<div class="fragment">
+<ul>
+<li>El <span class="math inline">\(j\)</span>-ésimo coeficiente <span class="math inline">\(\beta_j\)</span> es el efecto de tener el nivel de educación <span class="math inline">\(j\)</span></li>
+<li>Además, <span class="math inline">\(\alpha=E(y_i|s_i=0)\)</span>, se conoce como la categoría omitida</li>
+<li>Podemos escoger la categoría omitida que tenga más sentido</li>
+</ul>
+</div>
+</section>
+
+<section id="modelos-saturados-1" class="title-slide slide level1 center">
+<h1>Modelos saturados</h1>
+<ul>
+<li>Si tuviéramos dos características, sexo y urbano-rural, un modelo saturado incluye un <em>término interacción</em>:</li>
+</ul>
+<p><span class="math display">\[y_i=\alpha+\beta_H x_{Hi} + \beta_R x_{Ri}+ \beta_{HR} x_{Hi}x_{Ri}+u_i\]</span></p>
+<ul>
+<li><p>A los coeficientes <span class="math inline">\(\beta_H\)</span> y <span class="math inline">\(\beta_U\)</span> se les conoce como <em>efectos principales</em></p></li>
+<li><p>El término de interacción <span class="math inline">\(\beta_{HR}\)</span> nos dice cómo cambia el ingreso entre individuos por tipo de localidad y por sexo</p></li>
 </ul>
 <div class="fragment">
 <ul>
-<li><p>A veces es posible hacer experimentos, a veces es muy difícil y a veces es imposible</p></li>
-<li><p>Usando métodos no experimentales, Angrist y Lavy (1999) encuentran resultados parecidos (pero con otros métodos)</p></li>
+<li>Un modelo saturado, si usamos sexo y <span class="math inline">\(\tau\)</span> categorías de educación, sería: <span class="math display">\[y_i=\alpha+\beta_H x_{Hi}+\sum_{j=1}^{\tau} \beta_j c_{ji} + \sum_{j=1}^{\tau}\beta_{Hj}(x_{Hi}c_{ji})  + u_i\]</span></li>
 </ul>
 </div>
 </section>
 
-<section id="motivación-con-un-modelo-de-efectos-constantes" class="title-slide slide level1 inverse center middle">
-<h1>Motivación con un modelo de efectos constantes</h1>
+<section id="regresión-y-causalidad" class="title-slide slide level1 inverse center middle">
+<h1>Regresión y causalidad</h1>
 
 </section>
 
-<section id="regresión-para-la-idenfiticación-de-efectos-causales" class="title-slide slide level1 center">
-<h1>Regresión para la idenfiticación de efectos causales</h1>
+<section id="regresión-y-causalidad-1" class="title-slide slide level1 center">
+<h1>Regresión y causalidad</h1>
 <ul>
-<li><p>Con fines de simplificación, asumamos un efecto de tratamiento constante: <span class="math inline">\(y_{1i}-y_{0i}=\rho\)</span></p></li>
-<li><p>Consideremos el valor observado para un individuo <span class="math display">\[y_i=y_{0i}+(y_{1i}-y_{0i})D_i\]</span></p></li>
-<li><p>Sumemos y restemos <span class="math inline">\(E(y_{0i})\)</span>:</p></li>
+<li><p>Lo que hemos visto hasta ahora nos dice que la regresión es nuestro mejor aproximación lineal a la FEC</p></li>
+<li><p>Pero la regresión será causal solo si la FEC es causal</p></li>
+<li><p>Con lo que hemos visto del modelo de resultados potenciales, podemos tener una interpretación causal de la FEC</p></li>
 </ul>
-<p><span class="math display">\[
-\begin{aligned}
-y_i&amp;=E(y_{0i})+(y_{1i}-y_{0i})D_i+y_{0i}-E(y_{0i}) \\
-&amp;=\underbrace{\alpha}_{E(y_{0i})}+\underbrace{\rho}_{(y_{1i}-y_{0i})} D_i + \underbrace{\nu_i}_{y_{0i}-E(y_{0i})}
-\end{aligned}
-\]</span></p>
+<div class="fragment">
 <ul>
-<li>Ahora evaluemos:</li>
+<li>La <strong>FEC es causal</strong> cuando describe las diferencias en resultados potenciales promedio para una población de referencia fija (Angrist and Pischke, 2009)</li>
+<li>En la relación entre educación y salarios, una FEC causal describiría lo que un individuo ganaría con distintos niveles de educación</li>
 </ul>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;E(y|D_i=1)=\alpha+\rho+E(\nu_i|D_i=1) \\
-&amp;E(y|D_i=0)=\alpha+E(\nu_i|D_i=0)
-\end{aligned}
-\]</span></p>
-</section>
-
-<section id="regresión-para-la-idenfiticación-de-efectos-causales-1" class="title-slide slide level1 center">
-<h1>Regresión para la idenfiticación de efectos causales</h1>
+</div>
+<div class="fragment">
 <ul>
-<li>Restando</li>
+<li>Hay otro caso en el que la regresión puede tener interpretación causal, cuando existe <strong>selección basada en observables</strong></li>
 </ul>
-<p><span class="math display">\[
-\begin{aligned}
-E(y|D_i=1)-E(y|D_i=0)&amp;=\rho+\overbrace{E(\nu_i|D_i=1)-E(\nu_i|D_i=0)}^{\text{Sesgo de selección}} \\
-&amp;=\rho+E(y_{0i}|D_i=1)-E(y_{0i}|D_i=0)
-\end{aligned}
-\]</span></p>
-<ul>
-<li><p>Es decir, el sesgo de selección es igual a la correlación entre el término de error y <span class="math inline">\(D_i\)</span></p></li>
-<li><p>Y, de acuerdo a la segunda línea, también es igual a la diferencia en el resultado potencial (de no tratamiento), entre aquellos que son tratados y los que no son tratados</p></li>
-<li><p>En nuestro ejemplo del hospital, es muy probable que el sesgo de selección sea negativo porque los tratados son quienes tienen peor salud (en el estado no tratado)</p></li>
-<li><p>Como vimos antes, con asignación aleatoria, el sesgo de selección desaparece, por lo que una regresión de <span class="math inline">\(y_i\)</span> en <span class="math inline">\(D_i\)</span> estima el efecto causal <span class="math inline">\(\rho\)</span></p></li>
-</ul>
-</section>
-
-<section id="regresión-como-herramienta" class="title-slide slide level1 center">
-<h1>Regresión como herramienta</h1>
-<ul>
-<li><p>Usaremos muy frecuentemente la regresión para la estimación de efectos causales</p></li>
-<li><p>La interpretación causal de los estimadores no surge de la herramienta, sino del diseño</p></li>
-<li><p>Debemos tener en mente siempre si los estimadores están o no libres del sesgo de selección</p></li>
-<li><p>Antes vimos que en el experimento STAR las medias de las calificaciones entre grupos eran distintas</p></li>
-<li><p>La regresión nos servirá para hacer esencialmente lo mismo: comparación de <span class="math inline">\(y_i\)</span> entre grupos</p></li>
-</ul>
-</section>
-
-<section id="el-impacto-de-star-con-regresión" class="title-slide slide level1 center">
-<h1>El impacto de STAR con regresión</h1>
-<p>La Tabla 2.2.2 en MHE muestra los efectos de tratamiento estimados con regresión:</p>
-<p><span class="math display">\[calificacion_i=\alpha+\beta_1 T_{1i} + \beta_2 T_{2i} + B'X_i + u_i\]</span></p>
-<div class="cell" data-warnings="false">
-<table class="lightable-paper lightable-hover caption-top" data-quarto-postprocess="true" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;border-bottom: 0;">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th colspan="5" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px; font-weight: bold; padding-right: 4px; padding-left: 4px; background-color: white !important;"><div style="TRUE">
-Efectos experimentales del tamaño del grupo en las calificaciones
-</div></th>
-</tr>
-<tr class="odd">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Variable explicativa</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">(1)</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">(2)</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">(3)</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">(4)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">\(T_1\): Clase pequeña</td>
-<td style="text-align: center;">4.82</td>
-<td style="text-align: center;">5.37</td>
-<td style="text-align: center;">5.36</td>
-<td style="text-align: center;">5.37</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: center;">(2.19)</td>
-<td style="text-align: center;">(1.26)</td>
-<td style="text-align: center;">(1.21)</td>
-<td style="text-align: center;">(1.19)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">\(T_2\): Clase pequeña y asistente</td>
-<td style="text-align: center;">0.12</td>
-<td style="text-align: center;">0.29</td>
-<td style="text-align: center;">0.53</td>
-<td style="text-align: center;">0.31</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: center;">(2.23)</td>
-<td style="text-align: center;">(1.13)</td>
-<td style="text-align: center;">(1.09)</td>
-<td style="text-align: center;">(1.07)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Efectos fijos de escuela</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">Sí</td>
-<td style="text-align: center;">Sí</td>
-<td style="text-align: center;">Sí</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Controles</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">No</td>
-<td style="text-align: center;">\(X_1\)</td>
-<td style="text-align: center;">\( X_1 + X_2 \)</td>
-</tr>
-</tbody><tfoot>
-<tr class="even">
-<td style="text-align: left; padding: 0;"><span style="font-style: italic;">Nota:</span> <sup></sup> Tabla 2.2.2 en Angrist y Pischke (2009)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tfoot>
-
-</table>
-
-
 </div>
 </section>
 
-<section id="el-impacto-de-star-con-regresión-1" class="title-slide slide level1 center">
-<h1>El impacto de STAR con regresión</h1>
+<section id="supuesto-de-independencia-condicional" class="title-slide slide level1 center">
+<h1>Supuesto de independencia condicional</h1>
 <ul>
-<li>¿Cómo se obtienen los resultados de esta tabla?</li>
-<li>¿Qué se deduce sobre los distintos tratamientos?</li>
-<li>¿Cuál es la variable dependiente?</li>
-<li>¿Cuál es la variable independiente clave?</li>
+<li>El <strong>supuesto de independencia condicional</strong> significa que, condicional en una serie de características <span class="math inline">\(X_i\)</span>, el sesgo de selección desaparece:</li>
+</ul>
+<p><span class="math display">\[\{y_{0i},y_{1i}\}\perp D_i | X_i\]</span></p>
+<div class="fragment">
+<ul>
+<li>Supongamos que <span class="math inline">\(D_i\)</span> es ir o no a la universidad y la variable de interés es el ingreso</li>
+<li>Sabemos que la comparación observacional nos da:</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+E(y_i|D_i=1)-E(y_i|D_i=0)=&amp;\overbrace{ E(y_{1i}-y_{0i}|D_i=1)}^{\text{Efecto promedio en los tratados}}+\\&amp; \underbrace{E(y_{0i}|D_i=1)-E(y_{oi}|D_i=0)}_{\text{Sesgo de selección}}
+\end{aligned}
+\]</span></p>
+<ul>
+<li>Es posible que aquellos que no fueron a la universidad de todos modos hubieran tenido un mayor salario, por lo que el sesgo de selección es positivo</li>
+</ul>
+</div>
+</section>
+
+<section id="supuesto-de-independencia-condicional-1" class="title-slide slide level1 center">
+<h1>Supuesto de independencia condicional</h1>
+<ul>
+<li><p>El SIC implica que si hacemos la comparación condicional en <span class="math inline">\(X_i\)</span>, el sesgo desaparece <span class="math display">\[
+\begin{aligned}
+E(y_i|X_i,D_i=1)-E(y_i|X_i,D_i=0)=E(y_{1i}-y_{0i}|X_i)
+\end{aligned}
+\]</span></p></li>
+<li><p>Es decir, que si comparamos a personas con y sin tratamiento, con los <span class="math inline">\(X_i\)</span> <em>fijos</em>, el sesgo de selección desaparece</p></li>
+<li><p><em>Mantener fijas</em> las <span class="math inline">\(X\)</span> es el análogo a obtener el promedio del salario en cada nivel de escolaridad en la gráfica de la FEC descrita anteriormente</p></li>
 </ul>
 </section>
 
-<section id="regresión-corta-y-larga" class="title-slide slide level1 center">
-<h1>Regresión corta y larga</h1>
+<section id="supuesto-de-independencia-condicional-2" class="title-slide slide level1 center">
+<h1>Supuesto de independencia condicional</h1>
 <ul>
-<li>Con un tratamiento binario y asignado aleatoriamente, podemos estimar el efecto usando una regresión:</li>
+<li><p>Para generalizar el concepto cuando la variable tiene más de dos valores (como con la educación <span class="math inline">\(s_i\)</span>), escribamos <span class="math inline">\(Y_{si}\equiv f_i(s)\)</span></p></li>
+<li><p>Esta función nos dice cuál sería el ingreso de <span class="math inline">\(i\)</span> bajo todos los posibles niveles de <span class="math inline">\(s\)</span></p></li>
+<li><p>En este caso, asumimos el SIC, que se traduce en:</p></li>
 </ul>
-<p><span class="math display">\[y_i=\alpha+\beta T_i + u_i\]</span></p>
+<p><span class="math display">\[Y_{si}\perp s_i | X_i\]</span> - En diseños experimentales, el SIC surge porque el tratamiento se asigna de forma aleatoria - Pero con datos <em>observacionales</em>, el SIC significa que <span class="math inline">\(s_i\)</span> es <em>casi como si fuera asignado de manera aleatoria</em> cuando condicionamos en <span class="math inline">\(X_i\)</span></p>
+</section>
+
+<section id="supuesto-de-independencia-condicional-3" class="title-slide slide level1 center">
+<h1>Supuesto de independencia condicional</h1>
 <ul>
-<li><p>Es muy común, sin embargo, usar <strong>controles</strong></p></li>
-<li><p>Si una serie de características <span class="math inline">\(X\)</span> no está correlacionada con <span class="math inline">\(T_i\)</span>, se puede incluir en una versión larga de la regresión antes descrita:</p></li>
+<li>En los datos solo observamos <span class="math inline">\(Y_i=f_i(s_i)\)</span></li>
+<li>Dado el SIC, podemos hacer comparaciones de ingreso promedio para distintos niveles de educación: <span class="math display">\[E(Y_i|X_i,s_i=s)-E(Y_i|X_i,s_i=s-1)=E(f_i(s)-f_i(s-1)|X_i)\]</span></li>
 </ul>
-<p><span class="math display">\[y_i=\alpha+\beta T_i + X_i'\gamma + u_i\]</span></p>
+<div class="fragment">
 <ul>
-<li><p>El valor numérico de <span class="math inline">\(\hat{\beta}\)</span> en la regresión larga será muy cercano al obtenido con la regresión corta, pero se incrementa la precisión de los parámetros estimados</p></li>
-<li><p>Dado que emplearemos regresión ampliamente en este curso, es necesario fijar algunas ideas sobre cómo entendemos y cómo usamos la regresión en la práctica</p></li>
+<li>Notemos que lo impráctico de esto es que tendríamos que hacer comparaciones en pares y luego tratar de hacer un promedio ponderado por el número de individuos en cada nivel de educación</li>
+</ul>
+</div>
+</section>
+
+<section id="regresión-para-hacer-las-comparasiones" class="title-slide slide level1 center">
+<h1>Regresión para hacer las comparasiones</h1>
+<ul>
+<li>Supongamos una función causal para el ingreso <span class="math display">\[f_i(s)=\alpha+\rho s+\nu_i\]</span></li>
+</ul>
+<p>que indica lo que un individuo ganaría para todo valor de <span class="math inline">\(s\)</span> (y no solo el valor realizado <span class="math inline">\(s_i\)</span>)</p>
+<ul>
+<li><p>La única parte aleatoria es el error con media cero <span class="math inline">\(\nu_i\)</span>, que captura los factores no observados que afectan los ingresos</p></li>
+<li><p>Sustituyendo el valor observado:</p></li>
+</ul>
+<p><span class="math display">\[Y_i=\alpha+\rho s_i+\nu_i\]</span></p>
+<ul>
+<li><span class="math inline">\(s_i\)</span> puede estar correlacionado con los resultados potenciales <span class="math inline">\(f_i(s)\)</span>, es decir, correlacionado con el error <span class="math inline">\(\nu_i\)</span></li>
+</ul>
+</section>
+
+<section id="regresión-para-hacer-las-comparasiones-1" class="title-slide slide level1 center">
+<h1>Regresión para hacer las comparasiones</h1>
+<ul>
+<li><p>Supongamos que el SIC se cumple dado un vector <span class="math inline">\(X_i\)</span></p></li>
+<li><p>Descompongamos el error en una función lineal de las características <span class="math inline">\(X_i\)</span> y un error <span class="math inline">\(u_i\)</span>: <span class="math display">\[\nu_i=X_i'\gamma+u_i\]</span></p></li>
+</ul>
+<p>donde se asume que <span class="math inline">\(E(\nu_i|X_i)=X_i'\gamma\)</span> y donde <span class="math inline">\(u_i\)</span> y <span class="math inline">\(X_i\)</span> no están correlacionados</p>
+<ul>
+<li>Si se cumple el SIC, entonces:</li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+E(f_i(s)|X_i,s_i)=E(f_i(s)|X_i)&amp;=\alpha+\rho s+E(\nu_i|X_i) \\
+&amp;=\alpha+\rho s + X_i'\gamma
+\end{aligned}
+\]</span></p>
+<ul>
+<li><p>Es decir, en el modelo de regresión causal <span class="math inline">\(Y_i=\alpha+\rho s_i+ X_i'\gamma+u_i\)</span>, <span class="math inline">\(u_i\)</span> no está correlacionado con los regresores <span class="math inline">\(X_i\)</span> y <span class="math inline">\(s_i\)</span></p></li>
+<li><p><span class="math inline">\(\rho\)</span> es el efecto causal de interés</p></li>
+<li><p>El supuesto clave es que la única razón por la cual <span class="math inline">\(\nu_i\)</span> y <span class="math inline">\(s_i\)</span> están correlacionados es <span class="math inline">\(X_i\)</span></p></li>
+</ul>
+</section>
+
+<section id="en-resumen" class="title-slide slide level1 center">
+<h1>En resumen</h1>
+<ul>
+<li><p>Las comparaciones observacionales están contaminadas por el sesgo de selección</p></li>
+<li><p>La aleatorización resuelve el problema de selección, es decir, al comparar la variable de resultados de interés entre individuos tratados y no tratados, obtenemos el efecto causal</p></li>
+<li><p>La FEC nos ayuda a describir la relación entre dos variables, por ejemplo, entre el estado de tratamiento y la variable de resultados</p></li>
+<li><p>La regresión es una aproximación lineal a la FEC, aún cuando la FEC no sea lineal</p></li>
+<li><p>Usaremos regresión como una herramienta para <strong>comparar</strong> la variable de resultados entre grupos</p></li>
+<li><p>La regresión tiene una interpretación causal si la FEC que trata de aproximar es cauusal</p></li>
+<li><p>El SIC le da una interpretación causal a la regresión, pero el SIC es un supuesto fuerte</p></li>
 </ul>
 </section>
 

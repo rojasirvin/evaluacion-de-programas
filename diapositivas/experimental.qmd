@@ -55,13 +55,6 @@ xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
 **Centro de Investigación y Docencia Económicas**
 División de Economía
 
-# Agenda
-
-1. Describiremos el experimento ideal
-1. Motivaremos un modelo de regresión a partir de un modelo de efectos constantes
-1. Aprenderemos a leer tablas de resultados
-  - Pruebas de balance
-  - Efectos de tratamiento
 
 # El experimento ideal {.inverse .center .middle}
 
@@ -375,19 +368,8 @@ $$y_i=\alpha+\beta T_i + X_i'\gamma + u_i$$
 
 - Dado que emplearemos regresión ampliamente en este curso, es necesario fijar algunas ideas sobre cómo entendemos y cómo usamos la regresión en la práctica
 
-# Próxima sesión
-
-- Analizaremos el papel de la regresión en el análisis de efectos de tratamiento
-  - MHE, Capítulo 3
-- Avancemos con un ejemplo de un experimento:
-  - Baird, S., McIntosh, C., & Özler, B. (2011). Cash or condition? Evidence from a cash transfer experiment. The *Quarterly journal of economics*, 126(4), 1709-1753.
-
-
 # {.inverse .center .middle}
 
-Presentación creada usando el paquete [**xaringan**](https://github.com/yihui/xaringan) en R.
-
-El *chakra* viene de [remark.js](https://remarkjs.com), [**knitr**](http://yihui.org/knitr), y [R Markdown](https://rmarkdown.rstudio.com).
 
 Material de clase en versión preliminar.
 
