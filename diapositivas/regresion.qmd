@@ -56,14 +56,6 @@ xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
 **Centro de Investigación y Docencia Económicas**
 División de Economía
 
-# Agenda
-
-1. Motivar el uso de regresión para el análisis de efectos de tratamiento
-
-1. Estudiaremos el supuesto de independencia condicional
-
-1. Veremos un ejemplo de experimento aleatorio para relacionarlo con lo que ya sabemos y para identificar elementos que iremos descubriendo con el tiempo
-
 
 
 # Motivación del uso de regresión en evaluación {.inverse .center .middle}
@@ -111,7 +103,10 @@ knitr::include_graphics("figures/fec_mhe.png")
 
 - MHE provee varias motivaciones de usar regresión al relacionar la función de regresión con la FEC
 - Aquí vamos a rescatar el que considero más intuitivo
-- **Teorema de la regresión de la FEC**: la función $X_i'\beta$ es la aproximación lineal de mínimos errores cuadrados promedio de $E(y_i|X_i)$: $$\beta=\arg\min_b E((E(y_i|X_i)-X_i'b) ^2)$$
+- **Teorema de la regresión de la FEC**: la función $X_i'\beta$ es la aproximación lineal de mínimos errores cuadrados promedio de $E(y_i|X_i)$:
+
+$$\beta=\arg\min_b E((E(y_i|X_i)-X_i'b) ^2)$$
+
 - Lo que nos dice este teorema es que si yo quiero **aproximar** la FEC y mi criterio para obtener la mejor aproximación es un problema de mínimos cuadrados promedio, entonces lo mejor que puedo hacer es que mi aproximación sea $X'\beta$
 
 
@@ -122,6 +117,21 @@ knitr::include_graphics("figures/fec_mhe.png")
 - Vale la pena notar que aquí hablamos de la función de regresión **poblacional**, es decir, aún tenemos que hablar sobre cómo estimarla
 
 
+# Teorema de la regresión de la FEC
+
+- **Demostración**: para la demostración, consideren el problema de regresión poblacional: $$\beta=\arg\min_b E((y_i-X_i'b)^2)$$
+
+- Podemos sumar y restar $E(y_i|X_i)$ y reescribir $(y_i-X_i'b)^2$ como: 
+
+$$(y_i-X_i'b)^2 = ((y_i-E(y_i|X_i))+(E(y_i|X_i)+X_i'b))^2= \\
+=(y_i-E(y_i|X_i))^2+(E(y_i|X_i)-X_i'b)^2+2(y_i-E(y_i|X_i))(E(y_i|X_i)-X_i'b)$$
+
+
+- El término $(y_i-E(y_i|X_i))^2$ no involucra $b$ por lo que no importa en el proceso de optimización
+
+- Por la **Propiedad de Descomposición de la FEC**, $2(y_i-E(y_i|X_i))(E(y_i|X_i-X_i'b))=0$
+
+- Nos queda $(E(y_i|X_i)+X_i'b)^2$, que es exactamente el mismo problema que el del **Teorema de la regresión de la FEC**
 
 # Teorema de la regresión de la FEC
 
@@ -250,10 +260,10 @@ $$
 
 - Esta función nos dice cuál sería el ingreso de $i$ bajo todos los posibles niveles de $s$
 
-- En este caso, asumimos el SIC, que se traduce en:
+- En este caso, asumimos el SIC, que se traduce en: $$Y_{si}\perp s_i | X_i$$
 
-$$Y_{si}\perp s_i | X_i$$
 - En diseños experimentales, el SIC surge porque el tratamiento se asigna de forma aleatoria
+
 - Pero con datos *observacionales*, el SIC significa que $s_i$ es *casi como si fuera asignado de manera aleatoria* cuando condicionamos en $X_i$
 
 # Supuesto de independencia condicional

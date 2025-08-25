@@ -347,15 +347,6 @@
 <p><strong>Centro de Investigación y Docencia Económicas</strong> División de Economía</p>
 </section>
 
-<section id="agenda" class="title-slide slide level1 center">
-<h1>Agenda</h1>
-<ol type="1">
-<li><p>Motivar el uso de regresión para el análisis de efectos de tratamiento</p></li>
-<li><p>Estudiaremos el supuesto de independencia condicional</p></li>
-<li><p>Veremos un ejemplo de experimento aleatorio para relacionarlo con lo que ya sabemos y para identificar elementos que iremos descubriendo con el tiempo</p></li>
-</ol>
-</section>
-
 <section id="motivación-del-uso-de-regresión-en-evaluación" class="title-slide slide level1 inverse center middle">
 <h1>Motivación del uso de regresión en evaluación</h1>
 
@@ -405,7 +396,10 @@
 <ul>
 <li>MHE provee varias motivaciones de usar regresión al relacionar la función de regresión con la FEC</li>
 <li>Aquí vamos a rescatar el que considero más intuitivo</li>
-<li><strong>Teorema de la regresión de la FEC</strong>: la función <span class="math inline">\(X_i'\beta\)</span> es la aproximación lineal de mínimos errores cuadrados promedio de <span class="math inline">\(E(y_i|X_i)\)</span>: <span class="math display">\[\beta=\arg\min_b E((E(y_i|X_i)-X_i'b) ^2)\]</span></li>
+<li><strong>Teorema de la regresión de la FEC</strong>: la función <span class="math inline">\(X_i'\beta\)</span> es la aproximación lineal de mínimos errores cuadrados promedio de <span class="math inline">\(E(y_i|X_i)\)</span>:</li>
+</ul>
+<p><span class="math display">\[\beta=\arg\min_b E((E(y_i|X_i)-X_i'b) ^2)\]</span></p>
+<ul>
 <li>Lo que nos dice este teorema es que si yo quiero <strong>aproximar</strong> la FEC y mi criterio para obtener la mejor aproximación es un problema de mínimos cuadrados promedio, entonces lo mejor que puedo hacer es que mi aproximación sea <span class="math inline">\(X'\beta\)</span></li>
 </ul>
 </section>
@@ -420,6 +414,21 @@
 </section>
 
 <section id="teorema-de-la-regresión-de-la-fec-2" class="title-slide slide level1 center">
+<h1>Teorema de la regresión de la FEC</h1>
+<ul>
+<li><p><strong>Demostración</strong>: para la demostración, consideren el problema de regresión poblacional: <span class="math display">\[\beta=\arg\min_b E((y_i-X_i'b)^2)\]</span></p></li>
+<li><p>Podemos sumar y restar <span class="math inline">\(E(y_i|X_i)\)</span> y reescribir <span class="math inline">\((y_i-X_i'b)^2\)</span> como:</p></li>
+</ul>
+<p><span class="math display">\[(y_i-X_i'b)^2 = ((y_i-E(y_i|X_i))+(E(y_i|X_i)+X_i'b))^2= \\
+=(y_i-E(y_i|X_i))^2+(E(y_i|X_i)-X_i'b)^2+2(y_i-E(y_i|X_i))(E(y_i|X_i)-X_i'b)\]</span></p>
+<ul>
+<li><p>El término <span class="math inline">\((y_i-E(y_i|X_i))^2\)</span> no involucra <span class="math inline">\(b\)</span> por lo que no importa en el proceso de optimización</p></li>
+<li><p>Por la <strong>Propiedad de Descomposición de la FEC</strong>, <span class="math inline">\(2(y_i-E(y_i|X_i))(E(y_i|X_i-X_i'b))=0\)</span></p></li>
+<li><p>Nos queda <span class="math inline">\((E(y_i|X_i)+X_i'b)^2\)</span>, que es exactamente el mismo problema que el del <strong>Teorema de la regresión de la FEC</strong></p></li>
+</ul>
+</section>
+
+<section id="teorema-de-la-regresión-de-la-fec-3" class="title-slide slide level1 center">
 <h1>Teorema de la regresión de la FEC</h1>
 <div class="columns">
 <div class="column" style="width:&quot;50%;">
@@ -548,9 +557,10 @@ E(y_i|X_i,D_i=1)-E(y_i|X_i,D_i=0)=E(y_{1i}-y_{0i}|X_i)
 <ul>
 <li><p>Para generalizar el concepto cuando la variable tiene más de dos valores (como con la educación <span class="math inline">\(s_i\)</span>), escribamos <span class="math inline">\(Y_{si}\equiv f_i(s)\)</span></p></li>
 <li><p>Esta función nos dice cuál sería el ingreso de <span class="math inline">\(i\)</span> bajo todos los posibles niveles de <span class="math inline">\(s\)</span></p></li>
-<li><p>En este caso, asumimos el SIC, que se traduce en:</p></li>
+<li><p>En este caso, asumimos el SIC, que se traduce en: <span class="math display">\[Y_{si}\perp s_i | X_i\]</span></p></li>
+<li><p>En diseños experimentales, el SIC surge porque el tratamiento se asigna de forma aleatoria</p></li>
+<li><p>Pero con datos <em>observacionales</em>, el SIC significa que <span class="math inline">\(s_i\)</span> es <em>casi como si fuera asignado de manera aleatoria</em> cuando condicionamos en <span class="math inline">\(X_i\)</span></p></li>
 </ul>
-<p><span class="math display">\[Y_{si}\perp s_i | X_i\]</span> - En diseños experimentales, el SIC surge porque el tratamiento se asigna de forma aleatoria - Pero con datos <em>observacionales</em>, el SIC significa que <span class="math inline">\(s_i\)</span> es <em>casi como si fuera asignado de manera aleatoria</em> cuando condicionamos en <span class="math inline">\(X_i\)</span></p>
 </section>
 
 <section id="supuesto-de-independencia-condicional-3" class="title-slide slide level1 center">

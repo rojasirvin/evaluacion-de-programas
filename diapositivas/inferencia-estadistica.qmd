@@ -29,7 +29,7 @@ xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
 ```
 
 
-# Clase 5. Inferencia estadística{.portada}
+# Inferencia estadística{.portada}
 
 <div style="text-align: center; font-size: 1.2em; font-weight: bold;">
   Inferencia Causal
@@ -56,12 +56,6 @@ xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
 
 **Centro de Investigación y Docencia Económicas**
 División de Economía
-
-# Agenda
-
-1. Estudiaremos medidas de variabilidad de estimadores
-
-1. Haremos un breve recordatorio de la *anatomía* y las propiedades del estimador de MCO
 
 
 # Medidas de variabilidad {.inverse .center .middle}
@@ -425,19 +419,7 @@ qnorm(1-(.1/2))
 :::
 
 
-
-# Próxima sesión
-
-- Haré algunas definiciones de la literatura de efectos de tratamiento
-
-  - CT, Capítulo 25, Secciones 1 y 2
-
-
 # {.inverse .center .middle}
-
-Presentación creada usando el paquete [**xaringan**](https://github.com/yihui/xaringan) en R.
-
-El *chakra* viene de [remark.js](https://remarkjs.com), [**knitr**](http://yihui.org/knitr), y [R Markdown](https://rmarkdown.rstudio.com).
 
 Material de clase en versión preliminar.
 

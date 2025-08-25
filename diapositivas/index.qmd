@@ -9,3 +9,5 @@ title: "Diapositivas"
 [Diseños experimentales](./experimental.html){target="_blank"}
 
 [Regresión](./regresion.html){target="_blank"}
+
+[Inferencia estadística](./inferencia-estadistica.html){target="_blank"}
