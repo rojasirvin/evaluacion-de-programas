@@ -6,13 +6,13 @@ Por favor, seleccione una de las lecturas marcadas con una "+" de la lista de le
 
 | **Autores** | **Tema** | **Presentador o presentadora** | **Fecha de exposición** |
 | --- | --- | --- | --- |
-|  | Experimental |   | Lunes 8 de septiembre |
-|  | Experimental |   | Lunes 8 de septiembre |
-|  | LATE |  | Lunes 22 de septiembre |
-|  | DID |   | Lunes 13 de octubre |
+| Ascencio & Chang (2024)  | Experimental | José Luis Valle  | Lunes 8 de septiembre |
+| Hoyos, Attanasio & Meghir (2024) | Experimental | Dulce López  | Lunes 8 de septiembre |
+| Gonzalez-Navarro & Quintana-Domeque (2016) | LATE | Emiliano Villacaña | Lunes 22 de septiembre |
+| Boruchowicz, Parker & Robbins (2022) | DID | José Luis Cadena  | Lunes 13 de octubre |
 |  | DID |   | Lunes 13 de octubre |
 |  | Discontinuidades |   | Lunes 27 de octubre |
 |  | Discontinuidades |   | Lunes 27 de octubre |
-|  | Control Sintético |   | Lunes 10 de noviembre |
+| González-Rozada & Ruffo (2024) | Control Sintético | José Luis Cadena | Lunes 10 de noviembre |
 |  | Control Sintético |   | Lunes 10 de noviembre |
 |  | Machine learning |   | Lunes 24 de noviembre |

@@ -243,7 +243,7 @@
     "href": "programa.html#contenido-temático",
     "title": "Programa",
     "section": "Contenido temático",
-    "text": "Contenido temático\nUnidad 1. Introducción\n\nFundamentos de la evaluación de impacto\n\nInferencia causal\nRevisión de métodos de regresión\n\nInferencia causal\n\nModelo de resultados potenciales\nCausalidad en economía y las ciencias sociales\nRevisión de métodos de regresión\n\nReplicabilidad y transparencia en la evaluación\n\nQuarto para la generación de reportes científicos\n\n\nUnidad 2. Métodos para la inferencia causal\n\nMétodos experimentales\n\nAsignación aleatoria\nErrores estándar\nLATE y variables instrumentales\nCorrección por prueba de múltiples hipótesis\nAplicaciones de métodos experimentales\n\nDiferencia en diferencias\n\nSupuestos fundamentales\nEfectos fijos individuales\nDID desfasado\nANCOVA\nAplicaciones de DID\n\nMétodos de pareamiento\n\nSupuestos fundamentales\nPareamiento exacto\nPareamiento por puntaje de propensión (PSM)\nAplicaciones del PSM\n\nDiseños con discontinuidades\n\nSupuestos fundamentales\nDiscontinuidades nítidas y difusas\nDiscontinuidades geográficas\nPliegues en la regresión\nAplicaciones diseños con discontinuidades\n\nControl sintético\n\nSupuestos fundamentales\nInferencia basada en placebos\nAplicaciones de control sintético\n\n\nUnidad 3. Temas actuales de inferencia causal\n\nExtensiones I\n\nAprendizaje automatizado y big data para la inferencia causal",
+    "text": "Contenido temático\nUnidad 1. Introducción\n\nInferencia causal\n\nModelo de resultados potenciales\nCausalidad en economía y las ciencias sociales\nRevisión de métodos de regresión\n\nReplicabilidad y transparencia en la evaluación\n\nQuarto para la generación de reportes científicos\n\n\nUnidad 2. Métodos para la inferencia causal\n\nMétodos experimentales\n\nAsignación aleatoria\nErrores estándar\nLATE y variables instrumentales\nCorrección por prueba de múltiples hipótesis\nAplicaciones de métodos experimentales\n\nDiferencia en diferencias\n\nSupuestos fundamentales\nEfectos fijos individuales\nDID desfasado\nANCOVA\nAplicaciones de DID\n\nMétodos de pareamiento\n\nSupuestos fundamentales\nPareamiento exacto\nPareamiento por puntaje de propensión (PSM)\nAplicaciones del PSM\n\nDiseños con discontinuidades\n\nSupuestos fundamentales\nDiscontinuidades nítidas y difusas\nDiscontinuidades geográficas\nPliegues en la regresión\nAplicaciones diseños con discontinuidades\n\nControl sintético\n\nSupuestos fundamentales\nInferencia basada en placebos\nAplicaciones de control sintético\n\n\nUnidad 3. Temas actuales de inferencia causal\n\nExtensiones I\n\nAprendizaje automatizado y big data para la inferencia causal",
     "crumbs": [
       "Programa"
     ]
@@ -253,7 +253,7 @@
     "href": "programa.html#evaluación-del-curso",
     "title": "Programa",
     "section": "Evaluación del curso",
-    "text": "Evaluación del curso\n\nExamen parcial: 20%\nExamen final: 30%\nProyecto final: 20%\nTareas (4): 20% (5% cada una)\nExposición: 10% (7% presentación y 3% resumen)",
+    "text": "Evaluación del curso\n\nExamen parcial: 20%\nExamen final: 30%\nProyecto final: 20%\nTareas (4): 20% (5% cada una)\nExposiciones (2): 10% (7% presentación y 3% resumen en cada una)",
     "crumbs": [
       "Programa"
     ]
@@ -562,7 +562,7 @@
     "href": "presentaciones.html",
     "title": "Presentaciones",
     "section": "",
-    "text": "Por favor, seleccione una de las lecturas marcadas con una “+” de la lista de lecturas y envíe un correo al profesor para que se le asigne una fecha de presentación.\n\n\n\n\n\n\n\n\n\nAutores\nTema\nPresentador o presentadora\nFecha de exposición\n\n\n\n\n\nExperimental\n\nLunes 8 de septiembre\n\n\n\nExperimental\n\nLunes 8 de septiembre\n\n\n\nLATE\n\nLunes 22 de septiembre\n\n\n\nDID\n\nLunes 13 de octubre\n\n\n\nDID\n\nLunes 13 de octubre\n\n\n\nDiscontinuidades\n\nLunes 27 de octubre\n\n\n\nDiscontinuidades\n\nLunes 27 de octubre\n\n\n\nControl Sintético\n\nLunes 10 de noviembre\n\n\n\nControl Sintético\n\nLunes 10 de noviembre\n\n\n\nMachine learning\n\nLunes 24 de noviembre",
+    "text": "Por favor, seleccione una de las lecturas marcadas con una “+” de la lista de lecturas y envíe un correo al profesor para que se le asigne una fecha de presentación.\n\n\n\n\n\n\n\n\n\nAutores\nTema\nPresentador o presentadora\nFecha de exposición\n\n\n\n\nAscencio & Chang (2024)\nExperimental\nJosé Luis Valle\nLunes 8 de septiembre\n\n\nHoyos, Attanasio & Meghir (2024)\nExperimental\nDulce López\nLunes 8 de septiembre\n\n\nGonzalez-Navarro & Quintana-Domeque (2016)\nLATE\nEmiliano Villacaña\nLunes 22 de septiembre\n\n\nBoruchowicz, Parker & Robbins (2022)\nDID\nJosé Luis Cadena\nLunes 13 de octubre\n\n\n\nDID\n\nLunes 13 de octubre\n\n\n\nDiscontinuidades\n\nLunes 27 de octubre\n\n\n\nDiscontinuidades\n\nLunes 27 de octubre\n\n\nGonzález-Rozada & Ruffo (2024)\nControl Sintético\nJosé Luis Cadena\nLunes 10 de noviembre\n\n\n\nControl Sintético\n\nLunes 10 de noviembre\n\n\n\nMachine learning\n\nLunes 24 de noviembre",
     "crumbs": [
       "Presentaciones"
     ]
