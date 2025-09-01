@@ -11,3 +11,5 @@ title: "Diapositivas"
 [Regresión](./regresion.html){target="_blank"}
 
 [Inferencia estadística](./inferencia-estadistica.html){target="_blank"}
+
+[Errores estándar e inferencia](./errores-estandar.html){target="_blank"}
