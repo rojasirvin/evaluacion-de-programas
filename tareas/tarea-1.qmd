@@ -26,7 +26,7 @@ library(gtExtras)
 
 ## Preguntas
 
-Fecha de entrega: **martes 17 de septiembre a las 20:00 en Teams**
+Fecha de entrega: **lunes 15 de septiembre a las 20:00 en Teams**
 
 La tarea deberá entregarse en Teams. Deberá incluir dos documentos:
 
@@ -43,80 +43,36 @@ Un segundo archivo deberá contener el código replicable usado para generar los
 
 ## Pregunta 1
 
-Se diseñó una intervención que consistió en entregar zapatos a niños en cuatro áreas con altos niveles de pobreza de cierto país. Se sabe que los niños caminan bastante para ir a la escuela y realizan una serie de tareas domésticas después de la escuela. Por tanto, se tiene la hipótesis de que la entrega de zapatos tendrá impactos en el desarrollo de los niños. Se seleccionaron aleatoriamente localidades de control y localidades de tratamiento. Dentro de las localidades asignadas al tratamiento, todos los niños de entre 7 y 12 años de edad recibieron zapatos. Los investigadores deciden usar un $\alpha=0.10$ durante el estudio.
+Suponga que para un experimento en un laboratorio se asignó a un grupo pacientes a un brazo de tratamiento o a uno de control. Antes de comenzar el experimento se recolectaron una serie de características $x_{ji}$, $j=1,\ldots 10$, de cada paciente. Se busca medir el efecto del tratamiento sobre una variable de resultados $y_i$. En el experimento, se trabaja con $\alpha=0.10$.
 
-La tabla 1 presenta información sobre una serie de características de los niños que participaron en el estudio en la línea base.
+a. [5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:
 
-```{r table.balance}
-#|  echo: false
-#|  message: false
-#|  warning: false
-#|  results: asis
+    *Para verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento $T_i$ para correr la siguiente regresión:*
+$$T_i=\alpha+\sum_{j=1}^{10}x_{ji}'\beta +\varepsilon_i$$
 
-variable <- c("Variables","Edad", "Sexo (masculino=1)","Jefe trabaja en agricultura", "Grado máximo de estudios en el hogar","Índice calidad de vivienda", "Índice de consumo de durables", "Número de pares de zapatos que posee","Horas que pasa sin zapatos","Días que no fue a la escuela", "Horas para dormir","Horas para comer","Horas para lavar", "Horas en escuela","Horas para trabajar","N")
+    *Después realicé una prueba $F$ de significancia conjunta sobre los coeficientes $\beta_j$ que resultó tener un valor $p$ de 0.043.*
 
-c <- c("Media control",9.486,0.545,0.462,5.836,0.492,0.441,2.060,2.090,0.701,10.68,1.931,0.732,4.613,0.409, 666)
+    Explique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.
 
-t <- c("Media tratamiento",9.332,0.497,0.522,5.346,0.593,0.467,1.825,1.963,0.886,9.98,1.934,0.835,4.154,0.572, 912)
-pvalue <- c("$$p$$","0.114","0.073*","0.435","0.406","0.447","0.829","0.213","0.917","0.465","0.388","0.986","0.228","0.168","0.082*", "1,578")
+b. [5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?
 
-table.balance <- data.frame(cbind(variable, c, t,pvalue))
+a. [5 puntos] Por otro lado, el investigador B le reporta lo siguiente:
 
-colnames(table.balance) = c(" ", "$$(1)$$","$$(2)$$","$$(3)$$")
+    *Yo realicé un análisis para determinar el balance en la asignación del tratamiento. Para cada una de las características $x_{ji}$ corrí la siguiente regresión:*
+$$x_{ji}=\gamma+\pi T_i+u_i$$
+*A continuación, le reporto una tabla con los valores p asociados al coeficiente estimado de $\pi$ en cada una de las 10 regresiones.*
 
+    | **Característica** |	**Valor $p$** || **Característica** |	**Valor $p$**
+    |--- | --- |---|---|---|
+    | $x_{1i}$	| 0.025 | |$x_{6i}$	| 0.015 |
+    | $x_{2i}$	| 0.012 | |$x_{7i}$	| 0.033 |
+    | $x_{3i}$	| 0.027 | |$x_{8i}$	| 0.019 |
+    | $x_{4i}$	| 0.076 | |$x_{9i}$	| 0.028 |
+    | $x_{5i}$	| 0.002 | |$x_{10i}$	| 0.017 |
+    
+    Explique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento,
 
-table.balance %>% 
-  gt() %>% 
-  tab_header("Tabla 1. Covariables entre grupos de tratamiento y control (datos en la línea base)") %>% 
-  tab_source_note(md("Nota: Los valores $p$ son de una prueba $t$ simple. * $p <0.10$, ** $p <0.05$, *** $p <0.01$.")) 
-
-```
-
-
-La tabla 2 muestra los resultados de estimar una regresión del tipo
-
-$$y_i=\alpha+X_i'\beta+\theta T_i+\varepsilon_i$$
-
-donde $T_i$ indica la pertenencia al grupo de tratamiento, $X_i$ es un vector de características observables usadas como controles y $y_i$ es cada una de las siguientes variables sobre las que se estima el impacto del programa: 1) número de zapatos que posee; 2) días que no fue a la escuela; y 3) horas para trabajar.
-
-
-```{r table.efectos}
-#|  echo: false
-#|  message: false
-#|  warning: false
-#|  results: asis
-#|  
-variable <- c("", "$$\\hat{\\theta}$$","(e.e)","N")
-
-zapatos <- c("Número de pares de zapatos que posee","0.075","(0.061)","1,302")
-dias <- c("Días que no fue a la escuela","-0.165**","(0.057)","664")
-trabajo <- c("Horas para trabajar","0.348","(0.243)","556")
-
-table.efectos <- data.frame(cbind(variable,zapatos,dias,trabajo))
-colnames(table.efectos) = c(" ","$$(1)$$","$$(2)$$","$$(3)$$")
-
-
-
-
-table.efectos %>% 
-  gt() %>% 
-  tab_header("Tabla 2. Efectos del tratamiento en variables seleccionadas") %>% 
-  tab_source_note(md("Nota: * $p <0.10$, ** $p <0.05$, *** $p <0.01$. Todas las regresiones controlan por edad, sexo, ocupación del jefe del hogar y calidad de la vivienda. Errores estándar agrupados a nivel localidad entre paréntesis. $\\hat{{\\theta}}$ se refiere al estimador de $\\theta$."))
-```
-
-a. [2 puntos] ¿Qué representan los valores $p$ reportados en la columna (3) en la tabla 1?
-
-b. [3 puntos] Un donante está preocupado por los resultados de la intervención porque considera que los niños que tenían más zapatos antes de que iniciara el programa tuvieron una menor probabilidad de estar en el grupo que recibió zapatos por parte del programa. ¿Considera esto una preocupación válida sobre la integridad del experimento?
-
-c. [5 puntos] ¿Cómo se interpreta el asterisco al lado del valor $p$ de 0.082 asociado a las horas para trabajar?
-
-d. [5 puntos] ¿Cuál es el impacto del programa en el número de pares zapatos que los niños en promedio poseen? Mencione la magnitud y significancia estadística de dicho impacto.
-
-e. [5 puntos] En columna (2) de la tabla 2, ¿qué interpretación tienen los dos asteriscos al lado de -0.165?
-
-f. [5 puntos] ¿Cuántos días sin ir a la escuela esperaríamos observar después de la intervención en los niños que recibieron zapatos?
-
-g. [5 puntos] La nota al pie de la tabla 2 indica que se reportan errores estándar agrupados? ¿Por qué los investigadores realizan la estimación de los errores estándar de esta manera?
+a. [5 puntos] ¿Cómo reconcilia la evidencia encontrada por el investigador A y el B y qué concluye sobre el balance en la asignación del tratamiento? ¿Qué características tendría una diferencia de medias de $y_i$ después del tratamiento como estimador del impacto de este?
 
 
 ## Pregunta 2
