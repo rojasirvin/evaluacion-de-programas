@@ -54,7 +54,7 @@ $$T_i=\alpha+\sum_{j=1}^{10}x_{ji}'\beta +\varepsilon_i$$
 
     Explique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.
 
-b. [5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?
+a. [5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?
 
 a. [5 puntos] Por otro lado, el investigador B le reporta lo siguiente:
 
@@ -77,15 +77,18 @@ a. [5 puntos] ¿Cómo reconcilia la evidencia encontrada por el investigador A y
 
 ## Pregunta 2
 
-Suponga que está interesado en conocer el impacto que tiene el acceso a las microfinanzas en un indicador de seguridad alimentaria $y_i$ de las familias. La idea detrás es que el acceso al crédito podría mejorar la habilidad de los hogares para suavizar el consumo. Afortunadamente, usted tiene acceso a una encuesta representativa a nivel nacional que incluye un índice de seguridad alimentaria así como una variable indicadora o *dummy*, $T_i$, que toma el valor de 1 si algún miembro del hogar tiene acceso a microfinanzas y de 0 en otro caso.
+Se implemetó un programa para la entrega de semilla mejorada para la producción de frijol. La semilla se entregó a productores de hasta 10 hectáreas que ya reciben servicios de asistencia técnica y fertilizantes por parte del gobierno. El gobierno está interesado en estimar el impacto de la semilla mejorada en los rendimientos de la producción de frijol una vez que se realiza la cosecha, $y_i$.
 
-Suponga que su asistente le sugiere que para evaluar el impacto de microfinanzas basta con estimar la siguiente regresión por MCO:
+Para responder esta pregunta, el gobierno invierte una gran cantidad de recursos en una encuesta representativa de los productores de frijol de hasta 10 hectáreas de todo el país y donde se identifica si el productor recibió o no la semilla mejorada ($T_i$), además de un amplio cuestionario sobre insumos usados en la producción, prácticas agrícolas y características socioeconómicas de los productores y sus familas.
 
-$$ y_i = \alpha + \beta T_i + \varepsilon_i $$
+a. [10 puntos] Se propone que para estimar el efecto del programa se comparen los rendimientos de los productores que recibieron la semilla con los que no la recibieron. Argumente en términos del sesgo de selección sobre la conveniencia de esta estrategia para estimar el efecto causal de la semilla mejorada.
 
-a. [5 puntos] ¿Cómo valora la propuesta de su asistente? ¿Qué podemos esperar de una comparación observacional como la de la propuesta?
+a. [5 puntos] Para implementar la propuesta del punto a., se propone estimar la siguiente regresión: $$ y_i = \alpha + \beta T_i + \varepsilon_i $$
 
-a. [5 puntos] Muestre si el estimador de MCO de $\beta$ es consistente o no para el efecto de tratamiento.
+    Muestre si el estimador de MCO de $\beta$ es consistente o no para el efecto de tratamiento.
+
+a. [5 puntos] Describa cómo realizaría el experimento ideal para la identificación del efecto causal de proveer semilla mejorada sobre el rendimiento. Describa cómo asignaría el tratamiento, qué condiciones deberían verificarse para asegurar la integridad del diseño y qué posibles obstáculos encontraría para la implementación de la estrategia que propone.
+
 
 ## Pregunta 3
 
@@ -94,13 +97,13 @@ a. [5 puntos] Muestre si el estimador de MCO de $\beta$ es consistente o no para
 
 ## Pregunta 4
 
-Use los datos del archivo *STAR_public_use.csv* para este problema. En este problema replicará la fila correspondiente a la variable *Age* (edad del o la estudiante) de la Tabla 1 en [Angrist et al. (2009)](https://pubs.aeaweb.org/doi/pdfplus/10.1257/app.1.1.136).[^1]
+Use los datos del archivo *STAR_public_use.csv* para este problema. En este problema replicará la fila correspondiente a la variable *High school GPA* (calificación en la preparatoria) de la Tabla 1 en [Angrist et al. (2009)](https://pubs.aeaweb.org/doi/pdfplus/10.1257/app.1.1.136).[^1]
   
 [^1]: Angrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. *American Economic Journal: Applied Economics*, 1(1), 136-63.
 
-a. [5 puntos] Obtenga la media y la desviación estándar de la edad, **age** en los datos, en el grupo de control (columna 1), restringiendo la muestra a aquellos individuos con **noshow** igual a 0.
+a. [5 puntos] Obtenga la media y la desviación estándar de la edad, **gpa0** en los datos, en el grupo de control (columna 1), restringiendo la muestra a aquellos individuos con **noshow** igual a 0.
 
-a. [10 puntos] Usando una regresión lineal, muestre que la edad no está correlacionada con la asignación a los tratamientos (**ssp**, **sfp** y **sfsp**). De nuevo, debe restringir la muestra quienes tienen **noshow** igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).
+a. [10 puntos] Usando una regresión lineal, muestre que la calificación en la preparatoria no está correlacionada con la asignación a los tratamientos (**ssp**, **sfp** y **sfsp**). De nuevo, debe restringir la muestra quienes tienen **noshow** igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).
 
 a. [5 puntos] Realice una prueba de significancia conjunta de los coeficientes obtenidos en el punto b. Reporte el estadístico $F$ y el valor $p$ asociado (columna 5).
 
@@ -108,8 +111,8 @@ a. [10 puntos] ¿Cuál es el propósito de la prueba F realizada en el punto c.?
 
 ## Pregunta 5
 
-Nuevamente, use los datos del archivo *STAR_public_use.csv* para este problema. En este problema, replicará dos columnas del efecto de tratamiento de la Tabla 5. Note que de nuevo se deben usar solo las observaciones que tienen **noshow** igual a 0. Los autores también sustituyen los valores de **gpa_year1** por *NA* cuando la variable **grade_20059_fall** es *NA*; y sustituyen **grade_20059_fall** por *NA* cuando la variable **gpa_year1** es *NA.* Además, note que se usan las siguientes variables de control: **sex**, **mtongue**, **hsgroup**, **numcourses_nov1**, **lastmin**, **mom_edn**, y **dad_edn**, todas ellas categóricas.
+Nuevamente, use los datos del archivo *STAR_public_use.csv*. En este problema, replicará dos columnas del efecto de tratamiento de la Tabla 5. Note que de nuevo se deben usar solo las observaciones que tienen **noshow** igual a 0. Los autores también sustituyen los valores de **gpa_year1** por *NA* cuando la variable **grade_20059_fall** es *NA*; y sustituyen **grade_20059_fall** por *NA* cuando la variable **gpa_year1** es *NA.* Además, note que se usan las siguientes variables de control: **sex**, **mtongue**, **hsgroup**, **numcourses_nov1**, **lastmin**, **mom_edn**, y **dad_edn**, todas ellas categóricas.
 
 a. [10 puntos] Estime el efecto de cada tipo de tratamiento sobre el promedio o *GPA*, denotado **gpa_year1** en los datos, para toda la muestra (Panel B, columna 1). Calcule correctamente los errores estándar. Interprete los resultados.
 
-a. [10 puntos] Estime el efecto sobre el *GPA* de recibir cada tipo de tratamiento, considerando los tratamientos SSP o SFP (de cualquier tipo) en los hombres de la muestra (Panel B, columna 5). Esto es, considere el tratamiento SSP como un primer tipo de tratamiento y, ya sea SFP o SFSP, como un segundo tipo de tratamiento. Calcule correctamente los errores estándar. Interprete sus resultados.
+a. [10 puntos] Estime el efecto sobre el *GPA* de recibir cada tipo de tratamiento, considerando los tratamientos SSP o SFP (de cualquier tipo) en las mujeres de la muestra (Panel B, columna 6). Esto es, considere el tratamiento SSP como un primer tipo de tratamiento y, ya sea SFP o SFSP, como un segundo tipo de tratamiento. Calcule correctamente los errores estándar. Interprete sus resultados.

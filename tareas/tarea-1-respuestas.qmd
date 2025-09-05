@@ -1,0 +1,308 @@
+---
+title: "Respuestas a la tarea 1"
+lang: es
+format: html
+---
+
+```{r setup}
+#| echo: false
+#| warning: false 
+#| message: false
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE)
+library(tidyverse)
+library(knitr)
+library(janitor)
+library(readr)
+library(kableExtra)
+library(stargazer)
+library(sandwich)
+library(lmtest)
+library(gt)
+library(gtExtras)
+```
+
+
+# Respuestas
+
+
+## Pregunta 1
+
+## Pregunta 2
+
+## Pregunta 3
+
+a. [10 puntos] Replique el ejercicio en MHE que ejemplifica el teorema de la regresión de la FEC. Para esto use el archivo de datos *muestra-enoe-123.csv*, que contiene una muestra del primer trimestre de 2023 de la ENOE e incluye personas que trabajan y reciben un ingreso. **lingreso** es el log del ingreso mensual y **escolaridad** son los años de educación. Primero, estime una regresión de **lingreso** en función de **escolaridad** usando los microdatos. Luego, obtenga la media de **lingreso** para cada nivel de **escolaridad** y estime una regresión de las medias en función de **escolaridad**, pesando por el número de observaciones usadas para construir cada media. Compare los coeficientes estimados.
+
+   *Corramos la regresión con los microdatos:*
+   
+```{r indent = "   "}
+#| echo: true
+
+df <- read_csv("../files/muestra-enoe-123.csv") 
+
+summary(lm(lingreso ~ escolaridad,
+data = df))
+
+
+```
+
+   *Cada año de escolaridad se asocia con un incremento de 6\% en el ingreso.*
+
+   *Ahora calculemos la media del ingreso por cada año de educación, asegurándonos de conservar también el número de observaciones empleada para hacer dicho cálculo:*
+    
+```{r indent = "   "}
+#| echo: true
+
+df.agregada <- df %>% 
+  group_by(escolaridad) %>% 
+  summarise(lingreso = mean(lingreso, na.rm=T),
+            n = n())
+```
+
+   *Corremos la regresión con los datos agregados, pesando por el número de observaciones en cada grupo:*
+   
+   
+    
+```{r indent = "   "}
+#| echo: true
+
+summary(lm(lingreso ~ escolaridad,
+              data = df.agregada,
+              weights = n))
+```
+
+   *El coeficiente estimado de los años de escolaridad es exactamente el mismo.*
+
+
+## Pregunta 4
+
+Use los datos del archivo *STAR_public_use.csv* para este problema. En este problema replicará la fila correspondiente a la variable *High school GPA* (calificación en la preparatoria) de la Tabla 1 en [Angrist et al. (2009)](https://pubs.aeaweb.org/doi/pdfplus/10.1257/app.1.1.136).[^1]
+  
+[^1]: Angrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. *American Economic Journal: Applied Economics*, 1(1), 136-63.
+
+a. [5 puntos] Obtenga la media y la desviación estándar de la edad, **gpa0** en los datos, en el grupo de control (columna 1), restringiendo la muestra a aquellos individuos con **noshow** igual a 0.
+
+    *Después de eliminar a lo sindividuos que tienen **noshow** igual a 1, obtenemos la media y desviación estándar reportadas en la tabla. Noten que deben restringir al grupo de control para obtener dichas cifras. La columna del tamaño de la muestra se obtiene sin restringir al grupo de control, aunque esto no se pedía en la pregunta.*
+
+```{r indent = "   "}
+#| echo: true
+
+data.angrist <- read_csv("../files/STAR_public_use.csv",
+                       locale = locale(encoding = "latin1"))   %>% 
+  clean_names() %>% 
+  filter(noshow==0)
+
+#Media y desviación estándar
+data.angrist %>% 
+  filter(control==1) %>% 
+  summarize(media=mean(gpa0, na.rm=T),
+            desvest=sd(gpa0, na.rm=T))
+
+#N
+data.angrist %>% 
+  summarize(n())
+```
+
+
+a. [10 puntos] Usando una regresión lineal, muestre que la calificación en la preparatoria no está correlacionada con la asignación a los tratamientos (**ssp**, **sfp** y **sfsp**). De nuevo, debe restringir la muestra quienes tienen **noshow** igual a 0. Reporte los coeficientes y los errores estándar (columnas 2 a 4).
+
+    *La regresión es:*
+
+```{r indent = "   "}
+#| echo: true
+
+summary(balance <- lm(gpa0 ~ ssp + sfp+ sfsp,
+            data = data.angrist))
+```
+
+
+a. [5 puntos] Realice una prueba de significancia conjunta de los coeficientes obtenidos en el punto b. Reporte el estadístico $F$ y el valor $p$ asociado (columna 5).
+
+     *El estadístico $F$ ya es calculado con la regresión. Basta con pedirlo:*
+
+```{r indent = "   "}
+#| echo: true
+
+summary(balance)$fstatistic
+```
+
+    *¿Pero cómo puedo calcular el valor $p$? Basta usar la definición, es la probabilidad de observar un valor más extremo que el estadístico, bajo la distribución teórica. En este caso, la distribución teórica es una $F$ y debemos especificar los grados de libertad en el numerador y en el denominador:*
+
+```{r indent = "   "}
+#| echo: true
+
+pf(q = summary(balance)$fstatistic[1],
+   df1 = summary(balance)$fstatistic[2],
+   df2 = summary(balance)$fstatistic[3],
+   lower.tail=FALSE)
+```
+
+
+a. [10 puntos] ¿Cuál es el propósito de la prueba F realizada en el punto c.? ¿Qué hipótesis nula prueban los autores?
+
+    *Aquí se busca probar que la asignación a los tres tipos de tratamiento no está correlacionada con la calificación en la preparatoria La $H_0$ es que $\beta_{SSP}=\beta_{SFP}=\beta_{SFSP}=0$. Si rechazamos la hipótesis nula concluiríamos que hay diferencias entre grupos en la calificación en la preparatoria En este caso, el estadístico $F$ es pequeño y su valor $p$ indica que es muy probable de observarlo bajo la hipótesis nula por lo que no hay bases para rechazarla.*
+
+
+
+
+
+
+
+
+
+
+
+
+## Pregunta 5
+
+Nuevamente, use los datos del archivo *STAR_public_use.csv*. En este problema, replicará dos columnas del efecto de tratamiento de la Tabla 5. Note que de nuevo se deben usar solo las observaciones que tienen **noshow** igual a 0. Los autores también sustituyen los valores de **gpa_year1** por *NA* cuando la variable **grade_20059_fall** es *NA*; y sustituyen **grade_20059_fall** por *NA* cuando la variable **gpa_year1** es *NA.* Además, note que se usan las siguientes variables de control: **sex**, **mtongue**, **hsgroup**, **numcourses_nov1**, **lastmin**, **mom_edn**, y **dad_edn**, todas ellas categóricas.
+
+
+a. [10 puntos] Estime el efecto de cada tipo de tratamiento sobre el promedio o *GPA*, denotado **gpa_year1** en los datos, para toda la muestra (Panel B, columna 1). Calcule correctamente los errores estándar. Interprete los resultados.
+
+    *Haciendo la sustitución sugerida por los autores, estimamos:*
+
+```{r indent = "   "}
+#| echo: true
+
+data.angrist <- data.angrist %>% 
+      mutate(gpa_year1=ifelse(is.na(grade_20059_fall),NA,gpa_year1),
+             grade_20059_fall=ifelse(is.na(gpa_year1),NA,grade_20059_fall))
+    
+reg1<-lm(gpa_year1 ~ ssp + sfp+ sfsp+
+           factor(sex)+
+           factor(mtongue)+
+           factor(hsgroup)+
+           factor(numcourses_nov1)+
+           factor(lastmin)+
+           factor(mom_edn)+
+           factor(dad_edn),
+         data=data.angrist)
+```
+
+     *Noten que los coeficientes estimados son correctos, pero no los errores estándar:*
+
+```{r indent = "   "}
+#| echo: true
+
+summary(reg1)$coef[1:4,]
+```
+     
+     *Los errores estándar correctos son los robustos:*
+     
+```{r indent = "   "}
+#| echo: true
+
+coeftest(reg1, vcov = vcovHC(reg1, "HC1"))[1:4,]
+```
+
+    *Finalmente, lo que se reporta en la tabla como la media del grupo de control no es la constante en la regresión, sino la media y desviación estándar. Noten que se usa la muestra que efectivamente se usa en la regresión, es decir, sin valores faltantes.*
+
+```{r indent = "   "}
+#| echo: true
+
+data.angrist %>%
+    filter(!is.na(gpa_year1) & !is.na(grade_20059_fall)
+     & !is.na(ssp)
+     & !is.na(sfp)
+     & !is.na(sfsp)
+     & !is.na(sex)
+     & !is.na(mtongue)
+     & !is.na(hsgroup)
+     & !is.na(numcourses_nov1)
+     & !is.na(lastmin)
+     & !is.na(mom_edn)
+     & !is.na(dad_edn)
+     & control==1) %>%
+  summarize(media=mean(gpa_year1,
+                       na.rm=TRUE),
+            desvest=sd(gpa_year1,
+                       na.rm=TRUE))
+
+data.angrist %>%
+  filter(!is.na(gpa_year1) & !is.na(grade_20059_fall)
+     & !is.na(ssp)
+     & !is.na(sfp)
+     & !is.na(sfsp)
+     & !is.na(sex)
+     & !is.na(mtongue)
+     & !is.na(hsgroup)
+     & !is.na(numcourses_nov1)
+     & !is.na(lastmin)
+     & !is.na(mom_edn)
+     & !is.na(dad_edn)) %>%
+  summarize(numero=n())
+```
+
+a. [10 puntos] Estime el efecto sobre el *GPA* de recibir cada tipo de tratamiento, considerando los tratamientos SSP o SFP (de cualquier tipo) en las mujeres de la muestra (Panel B, columna 6). Esto es, considere el tratamiento SSP como un primer tipo de tratamiento y, ya sea SFP o SFSP, como un segundo tipo de tratamiento. Calcule correctamente los errores estándar. Interprete sus resultados.
+
+    *Definimos la variable de recibir el tratamiento SFP o SFSP. Luego estimamos:*
+    
+```{r indent = "   "}
+#| echo: true
+
+data.angrist <- data.angrist %>%
+      mutate(sspany = ifelse(sfp == 1 | sfsp == 1, 1, 
+    0))
+    
+reg2<-lm(gpa_year1 ~ ssp + sspany+
+           factor(mtongue)+
+           factor(hsgroup)+
+           factor(numcourses_nov1)+
+           factor(lastmin)+
+           factor(mom_edn)+
+           factor(dad_edn),
+         data=filter(data.angrist,
+                     female==1))
+```
+
+    *Los coeficientes con los errores correctos son:*
+
+```{r indent = "   "}
+#| echo: true
+
+coeftest(reg2, vcov = vcovHC(reg2, "HC1"))[1:3,]
+```
+
+    *La media en el control:*
+
+```{r indent = "   "}
+#| echo: true
+
+data.angrist %>%
+  filter(!is.na(gpa_year1) & !is.na(grade_20059_fall)
+     & !is.na(ssp)
+     & !is.na(sfp)
+     & !is.na(sfsp)
+     & !is.na(sex)
+     & !is.na(mtongue)
+     & !is.na(hsgroup)
+     & !is.na(numcourses_nov1)
+     & !is.na(lastmin)
+     & !is.na(mom_edn)
+     & !is.na(dad_edn)
+     & control==1
+     & female==1) %>%
+  summarize(media=mean(gpa_year1,
+                       na.rm=TRUE),
+            desvest=sd(gpa_year1,
+                       na.rm=TRUE))
+
+data.angrist %>%
+  filter(!is.na(gpa_year1) & !is.na(grade_20059_fall)
+     & !is.na(ssp)
+     & !is.na(sfp)
+     & !is.na(sfsp)
+     & !is.na(sex)
+     & !is.na(mtongue)
+     & !is.na(hsgroup)
+     & !is.na(numcourses_nov1)
+     & !is.na(lastmin)
+     & !is.na(mom_edn)
+     & !is.na(dad_edn)
+     & female==1) %>%
+  summarize(numero=n())
+```
+
