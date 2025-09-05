@@ -27,6 +27,8 @@ website:
         text: Presentaciones
       - href: cronograma.qmd
         text: Cronograma
+      - href: tareas.qmd
+        text: Tareas
       - href: notas/index.qmd
         text: Notas
       - href: diapositivas/index.qmd
