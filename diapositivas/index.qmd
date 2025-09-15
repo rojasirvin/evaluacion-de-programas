@@ -13,3 +13,7 @@ title: "Diapositivas"
 [Inferencia estadística](./inferencia-estadistica.html){target="_blank"}
 
 [Errores estándar e inferencia](./errores-estandar.html){target="_blank"}
+
+[LATE y variables instrumentales](./late.html){target="_blank"}
+
+[Múltiples hipótesis](./multiples-hipotesis.html){target="_blank"}

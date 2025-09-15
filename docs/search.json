@@ -983,5 +983,96 @@
     "title": "Inferencia Causal 2025",
     "section": "LATE es igual ATET en este caso",
     "text": "LATE es igual ATET en este caso\n\nRecordemos que el grupo de quienes reciben el tratamiento está compuesto de los cumplidores y los siempre adoptadores\nEn este caso en particular: \\[\\lambda_{LATE}=E(y_{1i}-y_{0i}|C_i=1)=E(y_{1i}-y_{0i}|D_i=1)=ATET\\]\n\n\n\nEsto ocurre en los casos en que:\n\nAlgunos de los asignados al tratamiento, \\(z_i=1\\) lo reciben mientras otros no\nNadie de los asignados al control, \\(z_i=0\\) tiene acceso al tratamiento"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#hipótesis-múltiples-2",
+    "href": "diapositivas/multiples-hipotesis.html#hipótesis-múltiples-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Hipótesis múltiples",
+    "text": "Hipótesis múltiples\n\nError tipo I: concluir que hay un efecto de tratamiento cuando la \\(H_0\\) es verdadera, es decir, cuando \\(H_0:\\;\\beta_i=0\\)\nEn una investigación fijamos \\(\\alpha\\), la probabilidad de rechazar \\(H_0\\) cuando \\(H_0\\) es cierto\nEn economía trabajamos con \\(\\alpha=0.05\\) o \\(\\alpha=0.01\\)\nEl problema con probar múltiples hipótesis es que inflamos la tasa de error tipo I\n\n\n\nPor ejemplo, si tenemos 100 hipótesis y si usamos un valor estándar de \\(\\alpha=0.05\\), esperaríamos rechazar 5 hipótesis por suerte"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#hipótesis-múltiples-3",
+    "href": "diapositivas/multiples-hipotesis.html#hipótesis-múltiples-3",
+    "title": "Inferencia Causal 2025",
+    "section": "Hipótesis múltiples",
+    "text": "Hipótesis múltiples\n\n\n\nSi realizamos una prueba, la probabilidad de cometer un error es \\(\\alpha\\) y la de no cometer un error es \\(1-\\alpha\\)\nSi realizamos \\(n\\) pruebas, la probabilidad de no cometer un error es \\((1-\\alpha)^n\\) y la probabilidad de cometer al menos un error es \\(1-(1-\\alpha)^n\\)\nEs decir, la probabilidad de cometer al menos un error se incrementa exponencialmente\n\n\n\nalpha=0.05\nn &lt;- 1:1000\np &lt;- 1-(1-alpha)^n\n\nplot(p,n, xlab=\"n\", ylab=\"1-(1-alpha)^n\")"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#hipótesis-múltiples-4",
+    "href": "diapositivas/multiples-hipotesis.html#hipótesis-múltiples-4",
+    "title": "Inferencia Causal 2025",
+    "section": "Hipótesis múltiples",
+    "text": "Hipótesis múltiples\n\nDos estrategias que abordaremos son:\n\nControlar o ajustar \\(\\alpha\\)\nCrear índices que agreguen varias variables"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#control-del-error-tipo-i-1",
+    "href": "diapositivas/multiples-hipotesis.html#control-del-error-tipo-i-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Control del error tipo I",
+    "text": "Control del error tipo I\n\nPopper (1995), Multiple Hypothesis Testing\nDefinimos familias de variables\nHaremos el ajuste hacia adentro de estas familias\nAntes habíamos estudiado de Banerjee et al. (2015)\n\nSeguridad alimentaria\nConsumo\nActivos\nSalud mental\n\nDentro de cada familia tenemos \\(n\\) hipótesis \\(H_i\\), con un valor \\(p\\) asociado \\(p_i\\)\nRecordemos que \\(p_i\\) es la probabilidad de que el estadístico \\(T_i\\) exceda el valor teórico \\(t_i\\)\nOrdenamos las hipótesis de menor a mayor,con \\(p_1\\) siendo el valor más pequeño: \\(p_1\\leq p_2\\ldots \\leq p_n\\)"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#método-de-bonferroni",
+    "href": "diapositivas/multiples-hipotesis.html#método-de-bonferroni",
+    "title": "Inferencia Causal 2025",
+    "section": "Método de Bonferroni",
+    "text": "Método de Bonferroni\n\nEl método propuesto por Bonferroni controla la tasa de error por familia (FEWR por family-wise error rate) definida como la probabilidad de cometer al menos un error tipo I\n\n\n\nConsiste en rechazar \\(H_i\\) si \\(p_i\\leq \\alpha_i\\), donde \\(\\alpha_i\\) se escoge de forma que \\(\\sum_i\\alpha_i=\\alpha\\)\nUsualmente se hace \\(\\alpha_i=\\frac{\\alpha}{n}\\)\n\n\n\n\nPor ejemplo, con dos tests y \\(\\alpha=0.05\\), \\(\\alpha_i^B=0.025\\)\n\n\n\n\nNoten que esta corrección es bastante conservadora\nTambién podemos ver este test como crear unos valores \\(p^B\\) ajustados: \\(p_i^B=p_i\\times n\\)"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#por-qué-preocuparnos-por-la-fwer",
+    "href": "diapositivas/multiples-hipotesis.html#por-qué-preocuparnos-por-la-fwer",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Por qué preocuparnos por la FWER?",
+    "text": "¿Por qué preocuparnos por la FWER?\n\nLa idea de la FWER tiene sentido si nos preocupa tener incluso un solo falso positivo\nEn la práctica, podemos vivir con algunos falsos positivos"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#método-de-benjamini-y-hochberg",
+    "href": "diapositivas/multiples-hipotesis.html#método-de-benjamini-y-hochberg",
+    "title": "Inferencia Causal 2025",
+    "section": "Método de Benjamini y Hochberg",
+    "text": "Método de Benjamini y Hochberg\n\nEste método controla la tasa de falso descubrimiento\nSi \\(V\\) es el número de falsos rechazos (cuando rechazamos la \\(H_0\\) que es verdadera) y si \\(R\\) es el número total de rechazos, entonces \\(Q=V/R\\) es la proporción de falsos rechazos\nAl valor esperado de \\(Q\\) se le conoce como tasa de falsos rechazos (FDR por false discovery rate)\n\n\n\nSea \\(k\\) el más grande de los \\(i\\) tal que \\[p_i\\leq\\frac{i}{n}\\alpha\\] entonces rechazar todos los \\(H_i\\) para \\(i=1,2,\\ldots,k\\)\nEn la práctica usamos R"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#ejemplo-benjamini-hochberg-1995",
+    "href": "diapositivas/multiples-hipotesis.html#ejemplo-benjamini-hochberg-1995",
+    "title": "Inferencia Causal 2025",
+    "section": "Ejemplo: Benjamini & Hochberg (1995)",
+    "text": "Ejemplo: Benjamini & Hochberg (1995)\n\n\n\ndata.pvalues&lt;-read_csv(\"./data_benjamini_hochberg.csv\",\n                       locale = locale(encoding = \"latin1\"))  \nn &lt;- 15\nalpha &lt;- 0.05\n\n\n\ndata.pvalues\n\n# A tibble: 15 × 2\n   poriginal hipotesis\n       &lt;dbl&gt;     &lt;dbl&gt;\n 1    0.0001         1\n 2    0.0004         2\n 3    0.0019         3\n 4    0.0095         4\n 5    0.0201         5\n 6    0.0278         6\n 7    0.0298         7\n 8    0.0344         8\n 9    0.0459         9\n10    0.324         10\n11    0.426         11\n12    0.572         12\n13    0.653         13\n14    0.759         14\n15    1             15"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#ejemplo-bonferroni",
+    "href": "diapositivas/multiples-hipotesis.html#ejemplo-bonferroni",
+    "title": "Inferencia Causal 2025",
+    "section": "Ejemplo: Bonferroni",
+    "text": "Ejemplo: Bonferroni\n\n\n\n#Bonferroni\ndata.bonferroni &lt;- data.pvalues %&gt;% \n  mutate(bonferroni_alpha=alpha/n) %&gt;% \n  mutate(bonferrini_rechazar=ifelse(poriginal&lt;=bonferroni_alpha,1,0))\n\n\n\ndata.bonferroni\n\n# A tibble: 15 × 4\n   poriginal hipotesis bonferroni_alpha bonferrini_rechazar\n       &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt;               &lt;dbl&gt;\n 1    0.0001         1          0.00333                   1\n 2    0.0004         2          0.00333                   1\n 3    0.0019         3          0.00333                   1\n 4    0.0095         4          0.00333                   0\n 5    0.0201         5          0.00333                   0\n 6    0.0278         6          0.00333                   0\n 7    0.0298         7          0.00333                   0\n 8    0.0344         8          0.00333                   0\n 9    0.0459         9          0.00333                   0\n10    0.324         10          0.00333                   0\n11    0.426         11          0.00333                   0\n12    0.572         12          0.00333                   0\n13    0.653         13          0.00333                   0\n14    0.759         14          0.00333                   0\n15    1             15          0.00333                   0"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#ejemplo-benjamini-hochberg",
+    "href": "diapositivas/multiples-hipotesis.html#ejemplo-benjamini-hochberg",
+    "title": "Inferencia Causal 2025",
+    "section": "Ejemplo: Benjamini & Hochberg",
+    "text": "Ejemplo: Benjamini & Hochberg\n\n\n\n#Benjamini & Hochberg\ndata.bh &lt;- data.pvalues %&gt;% \n  mutate(bh_alpha=alpha*hipotesis/n) %&gt;% \n  mutate(bh_rechazar=ifelse(poriginal&lt;=bh_alpha,1,0))\n\n\n\ndata.bh\n\n# A tibble: 15 × 4\n   poriginal hipotesis bh_alpha bh_rechazar\n       &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;\n 1    0.0001         1  0.00333           1\n 2    0.0004         2  0.00667           1\n 3    0.0019         3  0.01              1\n 4    0.0095         4  0.0133            1\n 5    0.0201         5  0.0167            0\n 6    0.0278         6  0.02              0\n 7    0.0298         7  0.0233            0\n 8    0.0344         8  0.0267            0\n 9    0.0459         9  0.03              0\n10    0.324         10  0.0333            0\n11    0.426         11  0.0367            0\n12    0.572         12  0.04              0\n13    0.653         13  0.0433            0\n14    0.759         14  0.0467            0\n15    1             15  0.05              0"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#creación-de-z-scores",
+    "href": "diapositivas/multiples-hipotesis.html#creación-de-z-scores",
+    "title": "Inferencia Causal 2025",
+    "section": "Creación de \\(z\\)-scores",
+    "text": "Creación de \\(z\\)-scores\n\nOtra forma comúnmente usada de evitar el problema de las múltiples hipótesis es crear índices\nKling, Liebmand y Katz (2007) proponen el siguiente promedio de los \\(z\\)-score para generar un solo índice\n\nDefinir las familias y las variables que componen cada familia, donde \\(y_{ij}\\) es la \\(j\\)ésima variable en la familia con \\(J\\) variables\nDefinir las variables \\(y_{ij}\\) de tal forma que mayores valores se interpreten como mejora\nCrear \\(z_{ij}\\) como \\(z_{ij}=\\frac{y_{ij}-\\bar{y_j}^C}{sd(y_j)^C}\\sim(0,1)\\), es decir, estandarizar cada una de las \\(J\\) variables usando al grupo de control como referencia\nCrear \\(z_i\\), un solo índice para cada individuo que agregue los \\(J\\) índices creados antes\n\nEl procedimiento descrito en Banerjee et al. (2015) es bastante general, pues incluye el caso donde hay varias rondas de seguimiento y varios países"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#creación-de-z-scores-1",
+    "href": "diapositivas/multiples-hipotesis.html#creación-de-z-scores-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Creación de \\(z\\)-scores",
+    "text": "Creación de \\(z\\)-scores\n\nPodemos escribir el índice descrito como\n\\[z_i=\\frac{(\\frac{1}{J}\\sum_j z_{ij})-\\bar{z}_j^C}{sd(z_j^C)}\\]\nEsta transformación tiene la ventaja de que en la siguiente regresión de efecto de tratamiento\n\n\\[z_i=\\alpha+\\beta T_i + X_i'\\gamma+\\varepsilon_i\\]\nel coeficiente \\(\\beta\\) se interpreta como el efecto del tratamiento medido en desviaciones estándar con respecto a la media del grupo de control\n\n\nNoten que todos las variables dentro de la familia pesan igual\nQuizás nos gustaría tomar en cuenta la correlación entre las variables dentro del índice"
+  },
+  {
+    "objectID": "diapositivas/multiples-hipotesis.html#índice-de-anderson",
+    "href": "diapositivas/multiples-hipotesis.html#índice-de-anderson",
+    "title": "Inferencia Causal 2025",
+    "section": "Índice de Anderson",
+    "text": "Índice de Anderson\n\nAnderson (2008) propone el siguiente índice, que puede verse como una generalización del de Kling:\n\n\\[\\bar{s}_i=\\frac{1}{W_{i}}\\sum_{j\\in J} w_j z_{ij}\\]\n\n\\(w_j\\) es el peso para la variable \\(j\\) y \\(W_i=\\sum_{j\\in J}w_{j}\\)\nLos pesos son una función de la matriz de covarianzas entre las variables que conforman la familia"
   }
 ]

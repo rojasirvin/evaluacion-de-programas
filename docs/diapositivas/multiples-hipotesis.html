@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-contrib/bootstrap-icons-1.13.1/bootstrap-icons.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
-  <title>Inferencia Causal 2025 – errores-estandar</title>
+  <title>Inferencia Causal 2025 – multiples-hipotesis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-31fd4380ed2edc88e26f7c115086bfb8.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -127,8 +192,8 @@
     <div class="slides">
 
 
-<section id="errores-estándar-e-inferencia" class="title-slide slide level1 portada center">
-<h1>Errores estándar e inferencia</h1>
+<section id="hipótesis-múltiples" class="title-slide slide level1 portada center">
+<h1>Hipótesis múltiples</h1>
 <div style="text-align: center; font-size: 1.2em; font-weight: bold;">
 <p>Inferencia Causal</p>
 </div>
@@ -158,265 +223,282 @@
 </div>
 </section>
 
-<section id="errores-estándar-no-estándar" class="title-slide slide level1 inverse center middle">
-<h1>Errores estándar no estándar</h1>
+<section>
+<section id="hipótesis-múltiples-1" class="title-slide slide level1 inverse center middle">
+<h1>Hipótesis múltiples</h1>
 
 </section>
-
-<section id="errores-estándar-robustos" class="title-slide slide level1 center">
-<h1>Errores estándar robustos</h1>
+<section id="hipótesis-múltiples-2" class="slide level2">
+<h2>Hipótesis múltiples</h2>
 <ul>
-<li>Recordemos que con errores homocedásticos, la matriz de varianzas del estimador de MCO puede ser estimada como:</li>
-</ul>
-<p><span class="math display">\[\hat{V}(\beta_{MCO}^H)=\hat{\sigma}^2(X'X)^{-1}\]</span> donde <span class="math inline">\(\hat{\sigma}^2=\frac{1}{N-k}\hat{u}_i^2\)</span> y <span class="math inline">\(\hat{u}_i^2=(y_i-X_i'\hat{\beta}_{MCO})^2\)</span></p>
-<div class="fragment">
-<ul>
-<li>Una primera <em>desviación</em> respecto a los errores clásicos ocurre cuando relajamos el supuesto de homocedasticidad</li>
-<li>En la <a href="https://eps-2021.netlify.app/clases/clase_5.html#20">clase 3</a> estudiamos de manera general las propiedades asintóticas del estimador de MCO</li>
-<li>La varianza asintótica es:</li>
-</ul>
-<p><span class="math display">\[V(\hat{\beta}_{MCO}^{R})=(X'X)^{-1}X'\Omega X(X'X)^{-1}\]</span></p>
-</div>
-</section>
-
-<section id="errores-robustos-a-la-heterocedasticidad" class="title-slide slide level1 center">
-<h1>Errores robustos a la heterocedasticidad</h1>
-<ul>
-<li>Un estimador de la varianza del estimador de MCO que no asume homocedasticidad es el estimador propuesto por White (1980)</li>
-<li>Sabemos que la matriz de varianzas del estimador de MCO robusta a la heterocedasticidad es: <span class="math display">\[\hat{V}(\beta_{MCO}^R)=(X'X)^{-1}\left(\sum_i\hat{u}_i^2x_ix_i'\right)(X'X)^{-1}\]</span></li>
-<li><a href="http://mlwiki.org/index.php/Matrix-Matrix_Multiplication">Aquí un recordatorio</a> de por qué podemos escribir <span class="math inline">\(X'uu'X\)</span> como una sumatoria</li>
-<li>Consideremos la <em>carnita</em> del sándwich <span class="math display">\[\sum_i\hat{u}_i^2x_ix_i \equiv \sum_i \hat{\psi}_i x_ix_i'\]</span></li>
-</ul>
-</section>
-
-<section id="errores-estándar-robustos-1" class="title-slide slide level1 center">
-<h1>Errores estándar robustos</h1>
-<ul>
-<li><p>Dependiendo de cómo se especifique <span class="math inline">\(\hat{\psi}_i\)</span>, obtenemos distintas versiones del estimador de varianzas robusto</p></li>
-<li><p>La propuesta de White original es:</p></li>
-</ul>
-<p><span class="math display">\[HC0:\quad\hat{\psi}_i=\hat{u}_i^2\]</span></p>
-<ul>
-<li>Este estimador asintóticamente consistente</li>
+<li><p><strong>Error tipo I</strong>: concluir que hay un efecto de tratamiento cuando la <span class="math inline">\(H_0\)</span> es verdadera, es decir, cuando <span class="math inline">\(H_0:\;\beta_i=0\)</span></p></li>
+<li><p>En una investigación fijamos <span class="math inline">\(\alpha\)</span>, la probabilidad de rechazar <span class="math inline">\(H_0\)</span> cuando <span class="math inline">\(H_0\)</span> es cierto</p></li>
+<li><p>En economía trabajamos con <span class="math inline">\(\alpha=0.05\)</span> o <span class="math inline">\(\alpha=0.01\)</span></p></li>
+<li><p>El problema con probar múltiples hipótesis es que inflamos la tasa de error tipo I</p></li>
 </ul>
 <div class="fragment">
 <ul>
-<li>En muestras pequeñas, muchas veces se emplea la siguiente corrección:</li>
-</ul>
-<p><span class="math display">\[HC1:\quad\hat{\psi}_i=\frac{N}{N-k}\hat{u}_i^2\]</span></p>
-</div>
-</section>
-
-<section id="desviación-a-la-influencia" class="title-slide slide level1 center">
-<h1>Desviación a la influencia</h1>
-<ul>
-<li><p>Un par de resultados nos ayudarán a entender qué hacen las otras correcciones a la matriz robusta en el software</p></li>
-<li><p>Definimos la <strong>influencia</strong> de la observación <span class="math inline">\(i\)</span> como:</p></li>
-</ul>
-<p><span class="math display">\[h_{ii}=X_i'(X'X)^{-1}X_i\]</span></p>
-<ul>
-<li><p><span class="math inline">\(h_{ii}\)</span> nos dice qué tanto <em>jala</em> la observación <span class="math inline">\(i\)</span> a la línea de regresión</p></li>
-<li><p>En una regresión con un solo regresor <span class="math inline">\(x\)</span>, se puede mostrar que la influencia de la observación <span class="math inline">\(i\)</span> es:</p></li>
-</ul>
-<p><span class="math display">\[h_{ii}=\frac{1}{N}+\frac{(x_i-\bar{x})^2}{\sum(x_j-\bar{x})^2}\]</span> es decir, que la influencia se incrementa cuando <span class="math inline">\(x_i\)</span> se aleja de la media</p>
-<ul>
-<li>La influencia es un número entre 0 y 1 y además <span class="math inline">\(\sum_i h_{ii}=k\)</span>, siendo <span class="math inline">\(k\)</span> el número de regresores</li>
-</ul>
-</section>
-
-<section id="errores-estándar-robustos-2" class="title-slide slide level1 center">
-<h1>Errores estándar robustos</h1>
-<ul>
-<li><p>Algunos autores sugieren usar la influencia en la matriz de varianzas robusta</p></li>
-<li><p>Se proponen algunas alternativas:</p></li>
-</ul>
-<p><span class="math display">\[HC2:\quad\hat{\psi}_i=\frac{1}{1-h_{ii}}\hat{u}_i^2\]</span></p>
-<p><span class="math display">\[HC3:\quad\hat{\psi}_i=\frac{1}{(1-h_{ii})^2}\hat{u}_i^2\]</span></p>
-<div class="fragment">
-<ul>
-<li>Long &amp; Ervin (2000) realizaron un experimento de simulación y recomendaron usar <span class="math inline">\(HC3\)</span> en muestras pequeñas, por lo que el paquete <em>sandwich</em> en R usa <span class="math inline">\(HC3\)</span> por default</li>
-<li>Es importante tener en cuenta qué tipo de errores estándar piden que el software calcule</li>
+<li>Por ejemplo, si tenemos 100 hipótesis y si usamos un valor estándar de <span class="math inline">\(\alpha=0.05\)</span>, esperaríamos rechazar 5 hipótesis <em>por suerte</em></li>
 </ul>
 </div>
 </section>
-
-<section id="errores-agrupados" class="title-slide slide level1 inverse center middle">
-<h1>Errores agrupados</h1>
-
+<section id="hipótesis-múltiples-3" class="slide level2">
+<h2>Hipótesis múltiples</h2>
+<div class="columns">
+<div class="column" style="width:&quot;50%;">
+<ul>
+<li><p>Si realizamos una prueba, la probabilidad de cometer un error es <span class="math inline">\(\alpha\)</span> y la de no cometer un error es <span class="math inline">\(1-\alpha\)</span></p></li>
+<li><p>Si realizamos <span class="math inline">\(n\)</span> pruebas, la probabilidad de no cometer un error es <span class="math inline">\((1-\alpha)^n\)</span> y la probabilidad de cometer al menos un error es <span class="math inline">\(1-(1-\alpha)^n\)</span></p></li>
+<li><p>Es decir, la probabilidad de cometer al menos un error se incrementa exponencialmente</p></li>
+</ul>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>alpha<span class="ot">=</span><span class="fl">0.05</span></span>
+<span id="cb4-2"><a></a>n <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span></span>
+<span id="cb4-3"><a></a>p <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span>(<span class="dv">1</span><span class="sc">-</span>alpha)<span class="sc">^</span>n</span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a><span class="fu">plot</span>(p,n, <span class="at">xlab=</span><span class="st">"n"</span>, <span class="at">ylab=</span><span class="st">"1-(1-alpha)^n"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="figures/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
 </section>
-
-<section id="errores-agrupados-1" class="title-slide slide level1 center">
-<h1>Errores agrupados</h1>
+<section id="hipótesis-múltiples-4" class="slide level2">
+<h2>Hipótesis múltiples</h2>
 <ul>
-<li><p>Surgen naturalmente cuando las observaciones están agrupadas</p>
+<li>Dos estrategias que abordaremos son:
 <ul>
-<li>Niños en salones de clase</li>
-<li>Hogares en localidades</li>
-<li>Solicitudes de empleo en una empresa</li>
-<li>Ahorradoras en un banco</li>
+<li>Controlar o ajustar <span class="math inline">\(\alpha\)</span></li>
+<li>Crear índices que agreguen varias variables</li>
 </ul></li>
-<li><p>El supuesto de errores independientes claramente no se cumple</p></li>
 </ul>
-<div class="fragment">
-<ul>
-<li>Pensemos en un problema simple para entender la intución:</li>
-</ul>
-<p><span class="math display">\[y_{ig}=\beta_0+\beta_1 x_g+e_{ig}\]</span></p>
-<ul>
-<li><p>Aquí, <span class="math inline">\(x_g\)</span> es un regresor que es el mismo para todos los miembros del grupo <span class="math inline">\(g\)</span></p></li>
-<li><p>Asumamos que todos los grupos tienen tamaño <span class="math inline">\(n\)</span></p></li>
-</ul>
-</div>
-</section>
+</section></section>
+<section>
+<section id="control-del-error-tipo-i" class="title-slide slide level1 inverse center middle">
+<h1>Control del error tipo I</h1>
 
-<section id="errores-agrupados-2" class="title-slide slide level1 center">
-<h1>Errores agrupados</h1>
-<ul>
-<li><p>Podemos mostrar que la correlación de errores entre dos observaciones <span class="math inline">\(i\)</span> y <span class="math inline">\(j\)</span> que pertenecen a <span class="math inline">\(g\)</span> es <span class="math display">\[E(e_{ig}e_{jg})=\overbrace{\rho_e}^{\substack{\text{coeficiente de correlación} \\ \text{intraclase residual}}} \underbrace{\sigma_e^2}_{\text{varianza residual}}\]</span></p></li>
-<li><p>Le damos una estructura aditiva a los errores:</p></li>
-</ul>
-<p><span class="math display">\[e_{ig}=\nu_g+\eta_{ig}\]</span> donde <span class="math inline">\(\nu_g\)</span> captura toda la correlación dentro del grupo</p>
-<ul>
-<li><p><span class="math inline">\(\eta_{ig}\)</span> es un error idiosincrático con media cero e independiente de cualquier otro <span class="math inline">\(\eta_{jg}\)</span></p></li>
-<li><p>Como queremos analizar el problema del agrupamiento, asumimos que tanto <span class="math inline">\(v_g\)</span> y <span class="math inline">\(\eta_{ig}\)</span> son homocedásticos</p></li>
-</ul>
 </section>
-
-<section id="errores-agrupados-3" class="title-slide slide level1 center">
-<h1>Errores agrupados</h1>
+<section id="control-del-error-tipo-i-1" class="slide level2">
+<h2>Control del error tipo I</h2>
 <ul>
-<li>Con esta estructura de errores, el coeficiente de correlación intraclase es:</li>
-</ul>
-<p><span class="math display">\[\rho_e=\frac{\sigma_{\nu}^2}{\sigma_{\nu}^2+\sigma_{\eta}^2}\]</span> - Deberíamos calcular la matriz de varianzas <span class="math inline">\(V_C(\hat{\beta})\)</span> tomando en cuenta esta estructura</p>
-<div class="fragment">
+<li>Popper (1995), Multiple Hypothesis Testing</li>
+<li>Definimos <em>familias</em> de variables</li>
+<li>Haremos el ajuste <em>hacia adentro</em> de estas familias</li>
+<li>Antes habíamos estudiado de Banerjee et al.&nbsp;(2015)
 <ul>
-<li><p>¿Qué pasa si hacemos MCO en el contexto de este problema?</p></li>
-<li><p>Moulton (1984) muestra que:</p></li>
-</ul>
-<p><span class="math display">\[\frac{V_C(\hat{\beta})}{V_{MCO}(\hat{\beta})}=1+(n-1)\rho_e\]</span> - A <span class="math inline">\(\sqrt{\frac{V_C(\hat{\beta})}{V_{MCO}(\hat{\beta})}}\)</span> se le conoce como el <em>factor de Moulton</em></p>
-</div>
-</section>
-
-<section id="factor-de-moulton" class="title-slide slide level1 center">
-<h1>Factor de Moulton</h1>
-<ul>
-<li><p>El factor de Moulton nos dice qué tanto sobrestimamos la precisión al ignorar la correlación intra-clase</p></li>
-<li><p>Visto de otro modo:</p></li>
-</ul>
-<p><span class="math display">\[V_C(\hat{\beta})=\left(1+(n-1)\rho_e\right)V_{MCO}(\hat{\beta})\]</span></p>
-<ul>
-<li>Es decir entre más grande sea la correlación dentro de los grupos, más deberíamos <em>inflar</em> los errores de MCO</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><p>Consideremos el caso extremo de que <span class="math inline">\(\rho_e=1\)</span>, es decir, que todas las <span class="math inline">\(y_{ig}\)</span> dentro del mismo <span class="math inline">\(g\)</span> son iguales</p></li>
-<li><p>Entonces el factor de Moulton es simplemente <span class="math inline">\(\sqrt{n}\)</span></p></li>
-<li><p>Visto de otro modo, la matriz de varianzas correcta se obtendría multiplicando por <span class="math inline">\(n\)</span> la matriz <span class="math inline">\(V_{MCO}(\hat{\beta})\)</span></p></li>
-</ul>
-<p><span class="math display">\[V_C(\hat{\beta})=n V_{MCO}(\hat{\beta})\]</span></p>
-</div>
-</section>
-
-<section id="errores-agrupados-en-general" class="title-slide slide level1 center">
-<h1>Errores agrupados en general</h1>
-<ul>
-<li><p>En general, <span class="math inline">\(x_{ig}\)</span> varía a nivel individual y tenemos grupos de tamaño <span class="math inline">\(n_g\)</span></p></li>
-<li><p>En este caso, el factor de Moulton es la raíz cuadrada de:</p></li>
-</ul>
-<p><span class="math display">\[\frac{V_C(\hat{\beta})}{V_{MCO}(\hat{\beta})}=1+\left(\frac{V(n_g)}{\bar{n}}+\bar{n}-1\right)\rho_x\rho_e\]</span> donde <span class="math inline">\(\bar{n}\)</span> es el tamaño promedio del grupo y <span class="math inline">\(\rho_x\)</span> es la correlación intraclase de <span class="math inline">\(x_{ig}\)</span></p>
-<ul>
-<li>No es necesario asumir una forma para <span class="math inline">\(\rho_x\)</span> (se puede calcular)</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><p>Noten que el error que cometemos es más grande entre más heterogéneo es el tamaño de grupos y entre más grande es <span class="math inline">\(\rho_x\)</span></p></li>
-<li><p>Por tanto, cuando el tratamiento no varía entre grupos, este error es grande</p></li>
-</ul>
-</div>
-</section>
-
-<section id="soluciones-para-errores-agrupados" class="title-slide slide level1 center">
-<h1>Soluciones para errores agrupados</h1>
-<ul>
-<li><p>Solución paramétrica: calcular directamente el factor de Moulton e inflar los errores de MCO</p></li>
-<li><p>Bootstrap por bloques: en vez de hacer muestras bootrstrap remuestreando individuos, se remuestrean grupos</p></li>
-<li><p>Estimar los errores agrupados (<em>clustered standard errors</em>)</p></li>
-</ul>
-</section>
-
-<section id="errores-estándar-agrupados" class="title-slide slide level1 center">
-<h1>Errores estándar agrupados</h1>
-<ul>
-<li>Con errores agrupados podemos escribir el estimador de MCO como</li>
-</ul>
-<p><span class="math display">\[
-\begin{aligned}
-\hat{\beta}&amp;=\beta+(X'X)^{-1}X'u \\
-&amp;=(X'X)^{-1}\left(\sum_{g=1}^G X_gu_g\right)
-\end{aligned}
-\]</span> - Suponiendo independencia entre <span class="math inline">\(g\)</span> y correlación dentro de cada grupo:</p>
-<p><span class="math display">\[E(u_{ig}u_{jg'}|x_{ig}x_{jg'})=0\]</span> excepto cuando <span class="math inline">\(g=g'\)</span></p>
-<ul>
-<li>En este caso, el estimador de MCO tiene una varianza asintótica dada por</li>
-</ul>
-<p><span class="math display">\[V({\hat{\beta}}_{MCO})=(X'X)^{-1}\left(\sum_{g=1}^G X_g'u_gu_g'X\right)(X'X)^{-1}\]</span></p>
-</section>
-
-<section id="errores-estándar-agrupados-1" class="title-slide slide level1 center">
-<h1>Errores estándar agrupados</h1>
-<ul>
-<li>Con errores heterocedásticos, pero sin agrupamiento, la matriz de varianzas de White (1980) tiene una estructura como sigue:</li>
-</ul>
-<p><span class="math display">\[\hat{V}(\hat{\beta}_{R})=(X'X)^{-1}X'\hat{\Sigma} X (X'X)^{-1}\]</span></p>
-<ul>
-<li>Donde</li>
-</ul>
-<p><span class="math display">\[\hat{\Sigma}=\left(\begin{matrix} \hat{u}_{1}^2 &amp; 0  &amp; 0  &amp; \ldots &amp; 0 \\ 0 &amp; \hat{u}_{2}^2 &amp; 0 &amp; \ldots &amp; 0 \\ \vdots &amp; &amp; &amp; &amp; \\ 0 &amp; &amp; &amp;  \ldots &amp; \hat{u}_{n}^2\end{matrix}\right)\]</span></p>
-</section>
-
-<section id="errores-estándar-agrupados-2" class="title-slide slide level1 center">
-<h1>Errores estándar agrupados</h1>
-<ul>
-<li><p>Para estimar la varianza con errores agrupados empleamos una generalización de la propuesta de White para errores robustos</p></li>
-<li><p>Si <span class="math inline">\(G\to\infty\)</span>, el estimador de la matriz de errores agrupados robusta (CRVE) es consistente para estimar <span class="math inline">\(V(\hat{\beta})\)</span>:</p></li>
-</ul>
-<p><span class="math display">\[\hat{V}_{CR}(\hat{\beta})=(X'X)^{-1}\left(\sum_{g=1}^G X_g'\hat{u}_g\hat{u}_g'X_g\right)(X'X)^{-1}\]</span> donde <span class="math inline">\(\hat{u}_g\hat{u}_g'\)</span> es la matriz de varianzas para los individuos del grupo <span class="math inline">\(g\)</span></p>
-<ul>
-<li>De manera compacta</li>
-</ul>
-<p><span class="math display">\[\hat{V}_{CR}(\hat{\beta})=(X'X)^{-1}X'\hat{\Sigma} X(X'X)^{-1}\]</span></p>
-</section>
-
-<section id="errores-estándar-agrupados-3" class="title-slide slide level1 center">
-<h1>Errores estándar agrupados</h1>
-<ul>
-<li>Y en este caso la matriz <span class="math inline">\(\hat{\Sigma}\)</span> tiene una estructura agrupada</li>
-</ul>
-<p><span class="math display">\[\small \hat{\Sigma}=\left(\begin{matrix} \hat{u}_{1,1}^2 &amp; \hat{u}_{1,1}\hat{u}_{2,1} &amp; \ldots &amp; \hat{u}_{1,1} \hat{u}_{n,1}&amp; 0 &amp; 0 &amp; \ldots &amp;  0 &amp; \ldots &amp; 0 &amp; 0 &amp; \ldots &amp;  0 \\ \hat{u}_{2,1}\hat{u}_{1,1} &amp; \hat{u}_{2,1}^2 &amp; \ldots &amp; \hat{u}_{2,1}\hat{u}_{n,1} &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; \ldots  &amp; 0 &amp; 0 &amp; \ldots &amp;  0\\
-\vdots &amp; \vdots  &amp; &amp; \vdots &amp; \vdots &amp; \vdots  &amp; &amp;  \vdots&amp; &amp; \vdots &amp; \vdots &amp;  &amp;  \vdots \\ \hat{u}_{n,1}\hat{u}_{1,1} &amp; \hat{u}_{n,1}\hat{u}_{2,1}&amp; \ldots &amp; \hat{u}_{n,1}^2&amp; 0 &amp; 0 &amp;\ldots &amp; 0 &amp; \ldots &amp; 0 &amp; 0 &amp; \ldots &amp;  0 \\  0 &amp; 0 &amp; \ldots &amp;  0 &amp; \hat{u}_{1,2}^2 &amp; \hat{u}_{1,2}\hat{u}_{2,2} &amp; \ldots &amp; \hat{u}_{1,2}\hat{u}_{n,2} &amp;\ldots &amp; 0 &amp; 0 &amp; \ldots &amp;  0  \\ 0 &amp; 0 &amp; \ldots &amp;  0 &amp; \hat{u}_{2,2}\hat{u}_{1,2} &amp; \hat{u}_{2,2}^2 &amp; \ldots &amp; \hat{u}_{2,2}\hat{u}_{n,2} &amp;\ldots &amp; 0 &amp; 0 &amp; \ldots &amp;  0 \\ \vdots &amp; \vdots  &amp; &amp; \vdots &amp; \vdots &amp; \vdots  &amp; &amp;  \vdots&amp; &amp; \vdots &amp; \vdots &amp;  &amp;  \vdots  \\ 0 &amp; 0 &amp; \ldots &amp;  0 &amp; \hat{u}_{n,2}\hat{u}_{1,2} &amp; \hat{u}_{n,2}\hat{u}_{2,2} &amp; \ldots &amp; \hat{u}_{n,2}^2 &amp;\ldots &amp; 0 &amp; 0 &amp; \ldots &amp;  0 \\ \vdots &amp; \vdots  &amp; &amp; \vdots &amp; \vdots &amp; \vdots  &amp; &amp;  \vdots&amp; &amp; \vdots &amp; \vdots &amp;  &amp;  \vdots \\ 0 &amp; 0 &amp; \ldots &amp;  0 &amp; 0 &amp;  0 &amp; \ldots &amp; 0 &amp;\ldots &amp; \hat{u}_{1,G}^2 &amp; \hat{u}_{12,G}\hat{u}_{2,G} &amp; \ldots &amp;  \hat{u}_{1,G}\hat{u}_{n,G} \\  0 &amp; 0 &amp; \ldots &amp;  0 &amp; 0 &amp;  0 &amp; \ldots &amp; 0 &amp;\ldots &amp; \hat{u}_{2,G}\hat{u}_{1,G} &amp; \hat{u}_{2,G}^2 &amp; \ldots &amp;  \hat{u}_{2,G}\hat{u}_{n,G} \\ \vdots &amp; \vdots  &amp; &amp; \vdots &amp; \vdots &amp; \vdots  &amp; &amp;  \vdots&amp; &amp; \vdots &amp; \vdots &amp;  &amp;  \vdots \\  0 &amp; 0 &amp; \ldots &amp;  0 &amp; 0 &amp;  0 &amp; \ldots &amp; 0 &amp;\ldots &amp; \hat{u}_{n,G}\hat{u}_{1,G} &amp; \hat{u}_{n,G}\hat{u}_{2,G} &amp; \ldots &amp;  \hat{u}_{n,G}^2 \end{matrix}\right)\]</span></p>
-</section>
-
-<section id="errores-estándar-agrupados-4" class="title-slide slide level1 center">
-<h1>Errores estándar agrupados</h1>
-<ul>
-<li><p>El resultado asintótico de consistencia depende de que <span class="math inline">\(G\to\infty\)</span></p></li>
-<li><p>Si <span class="math inline">\(G\)</span> está fijo, no importa qué tan grande sea <span class="math inline">\(N\)</span>, <span class="math inline">\(\hat{V}_{CRVE}(\hat{\beta})\)</span> no será consistente</p></li>
-<li><p>Algunos paquetes ajustan esta matriz de varianzas haciendo una corrección parecida a <span class="math inline">\(HC1\)</span>, pero ahora tomando en cuanta también <span class="math inline">\(G\)</span> y no solo <span class="math inline">\(N\)</span> (ver por ejemplo, <em>vcovCR</em> en R)</p></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><p>Con pocos grupos, subestimamos los errores estándar y rechazamos la <span class="math inline">\(H_0\)</span> más veces de lo que deberíamos (<em>over-rejection</em>)</p></li>
-<li><p>Si tenemos pocos grupos, recurrimos a otras soluciones (ver Cameron y Miller, 2015)</p>
-<ul>
-<li>Inflar los errores con un corrector de sesgo</li>
-<li>Bootstrap agrupado con refinamiento asintótico</li>
+<li>Seguridad alimentaria</li>
+<li>Consumo</li>
+<li>Activos</li>
+<li>Salud mental</li>
 </ul></li>
-<li><p>La recomendación práctica es que se tomen en serio el problema de los pocos clusters</p></li>
-<li><p>¿Cuánto es poco? Cameron y Miller (2015) citan 50. (¡Qué raro, el número de estados en EUA!)</p></li>
+<li>Dentro de cada familia tenemos <span class="math inline">\(n\)</span> hipótesis <span class="math inline">\(H_i\)</span>, con un valor <span class="math inline">\(p\)</span> asociado <span class="math inline">\(p_i\)</span></li>
+<li>Recordemos que <span class="math inline">\(p_i\)</span> es la probabilidad de que el estadístico <span class="math inline">\(T_i\)</span> exceda el valor teórico <span class="math inline">\(t_i\)</span></li>
+<li>Ordenamos las hipótesis de menor a mayor,con <span class="math inline">\(p_1\)</span> siendo el valor más pequeño: <span class="math inline">\(p_1\leq p_2\ldots \leq p_n\)</span></li>
+</ul>
+</section>
+<section id="método-de-bonferroni" class="slide level2">
+<h2>Método de Bonferroni</h2>
+<ul>
+<li>El método propuesto por Bonferroni controla la <strong>tasa de error por familia</strong> (FEWR por <em>family-wise error rate</em>) definida como la probabilidad de cometer al menos un error tipo I</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Consiste en rechazar <span class="math inline">\(H_i\)</span> si <span class="math inline">\(p_i\leq \alpha_i\)</span>, donde <span class="math inline">\(\alpha_i\)</span> se escoge de forma que <span class="math inline">\(\sum_i\alpha_i=\alpha\)</span></p></li>
+<li><p>Usualmente se hace <span class="math inline">\(\alpha_i=\frac{\alpha}{n}\)</span></p></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Por ejemplo, con dos tests y <span class="math inline">\(\alpha=0.05\)</span>, <span class="math inline">\(\alpha_i^B=0.025\)</span></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Noten que esta corrección es bastante conservadora</li>
+<li>También podemos ver este test como crear unos valores <span class="math inline">\(p^B\)</span> ajustados: <span class="math inline">\(p_i^B=p_i\times n\)</span></li>
 </ul>
 </div>
 </section>
+<section id="por-qué-preocuparnos-por-la-fwer" class="slide level2">
+<h2>¿Por qué preocuparnos por la FWER?</h2>
+<ul>
+<li><p>La idea de la FWER tiene sentido si nos preocupa tener incluso un solo falso positivo</p></li>
+<li><p>En la práctica, podemos vivir con algunos falsos positivos</p></li>
+</ul>
+</section>
+<section id="método-de-benjamini-y-hochberg" class="slide level2">
+<h2>Método de Benjamini y Hochberg</h2>
+<ul>
+<li><p>Este método controla la tasa de falso descubrimiento</p></li>
+<li><p>Si <span class="math inline">\(V\)</span> es el número de falsos rechazos (cuando rechazamos la <span class="math inline">\(H_0\)</span> que es verdadera) y si <span class="math inline">\(R\)</span> es el número total de rechazos, entonces <span class="math inline">\(Q=V/R\)</span> es la proporción de falsos rechazos</p></li>
+<li><p>Al valor esperado de <span class="math inline">\(Q\)</span> se le conoce como <strong>tasa de falsos rechazos</strong> (FDR por <em>false discovery rate</em>)</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Sea <span class="math inline">\(k\)</span> el más grande de los <span class="math inline">\(i\)</span> tal que <span class="math display">\[p_i\leq\frac{i}{n}\alpha\]</span> entonces rechazar todos los <span class="math inline">\(H_i\)</span> para <span class="math inline">\(i=1,2,\ldots,k\)</span></p></li>
+<li><p>En la práctica usamos R</p></li>
+</ul>
+</div>
+</section>
+<section id="ejemplo-benjamini-hochberg-1995" class="slide level2">
+<h2>Ejemplo: Benjamini &amp; Hochberg (1995)</h2>
+<div class="columns">
+<div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>data.pvalues<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"./data_benjamini_hochberg.csv"</span>,</span>
+<span id="cb5-2"><a></a>                       <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"latin1"</span>))  </span>
+<span id="cb5-3"><a></a>n <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb5-4"><a></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>data.pvalues</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 2
+   poriginal hipotesis
+       &lt;dbl&gt;     &lt;dbl&gt;
+ 1    0.0001         1
+ 2    0.0004         2
+ 3    0.0019         3
+ 4    0.0095         4
+ 5    0.0201         5
+ 6    0.0278         6
+ 7    0.0298         7
+ 8    0.0344         8
+ 9    0.0459         9
+10    0.324         10
+11    0.426         11
+12    0.572         12
+13    0.653         13
+14    0.759         14
+15    1             15</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="ejemplo-bonferroni" class="slide level2">
+<h2>Ejemplo: Bonferroni</h2>
+<div class="columns">
+<div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co">#Bonferroni</span></span>
+<span id="cb8-2"><a></a>data.bonferroni <span class="ot">&lt;-</span> data.pvalues <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a></a>  <span class="fu">mutate</span>(<span class="at">bonferroni_alpha=</span>alpha<span class="sc">/</span>n) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a></a>  <span class="fu">mutate</span>(<span class="at">bonferrini_rechazar=</span><span class="fu">ifelse</span>(poriginal<span class="sc">&lt;=</span>bonferroni_alpha,<span class="dv">1</span>,<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>data.bonferroni</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 4
+   poriginal hipotesis bonferroni_alpha bonferrini_rechazar
+       &lt;dbl&gt;     &lt;dbl&gt;            &lt;dbl&gt;               &lt;dbl&gt;
+ 1    0.0001         1          0.00333                   1
+ 2    0.0004         2          0.00333                   1
+ 3    0.0019         3          0.00333                   1
+ 4    0.0095         4          0.00333                   0
+ 5    0.0201         5          0.00333                   0
+ 6    0.0278         6          0.00333                   0
+ 7    0.0298         7          0.00333                   0
+ 8    0.0344         8          0.00333                   0
+ 9    0.0459         9          0.00333                   0
+10    0.324         10          0.00333                   0
+11    0.426         11          0.00333                   0
+12    0.572         12          0.00333                   0
+13    0.653         13          0.00333                   0
+14    0.759         14          0.00333                   0
+15    1             15          0.00333                   0</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="ejemplo-benjamini-hochberg" class="slide level2">
+<h2>Ejemplo: Benjamini &amp; Hochberg</h2>
+<div class="columns">
+<div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co">#Benjamini &amp; Hochberg</span></span>
+<span id="cb11-2"><a></a>data.bh <span class="ot">&lt;-</span> data.pvalues <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a></a>  <span class="fu">mutate</span>(<span class="at">bh_alpha=</span>alpha<span class="sc">*</span>hipotesis<span class="sc">/</span>n) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-4"><a></a>  <span class="fu">mutate</span>(<span class="at">bh_rechazar=</span><span class="fu">ifelse</span>(poriginal<span class="sc">&lt;=</span>bh_alpha,<span class="dv">1</span>,<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:&quot;50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>data.bh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 4
+   poriginal hipotesis bh_alpha bh_rechazar
+       &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;       &lt;dbl&gt;
+ 1    0.0001         1  0.00333           1
+ 2    0.0004         2  0.00667           1
+ 3    0.0019         3  0.01              1
+ 4    0.0095         4  0.0133            1
+ 5    0.0201         5  0.0167            0
+ 6    0.0278         6  0.02              0
+ 7    0.0298         7  0.0233            0
+ 8    0.0344         8  0.0267            0
+ 9    0.0459         9  0.03              0
+10    0.324         10  0.0333            0
+11    0.426         11  0.0367            0
+12    0.572         12  0.04              0
+13    0.653         13  0.0433            0
+14    0.759         14  0.0467            0
+15    1             15  0.05              0</code></pre>
+</div>
+</div>
+</div></div>
+</section></section>
+<section>
+<section id="índices" class="title-slide slide level1 inverse center middle">
+<h1>Índices</h1>
 
+</section>
+<section id="creación-de-z-scores" class="slide level2">
+<h2>Creación de <span class="math inline">\(z\)</span>-scores</h2>
+<ul>
+<li><p>Otra forma comúnmente usada de evitar el problema de las múltiples hipótesis es crear índices</p></li>
+<li><p>Kling, Liebmand y Katz (2007) proponen el siguiente promedio de los <span class="math inline">\(z\)</span>-score para generar un solo índice</p>
+<ol type="1">
+<li><p>Definir las familias y las variables que componen cada familia, donde <span class="math inline">\(y_{ij}\)</span> es la <span class="math inline">\(j\)</span>ésima variable en la familia con <span class="math inline">\(J\)</span> variables</p></li>
+<li><p>Definir las variables <span class="math inline">\(y_{ij}\)</span> de tal forma que mayores valores se interpreten como <em>mejora</em></p></li>
+<li><p>Crear <span class="math inline">\(z_{ij}\)</span> como <span class="math inline">\(z_{ij}=\frac{y_{ij}-\bar{y_j}^C}{sd(y_j)^C}\sim(0,1)\)</span>, es decir, estandarizar cada una de las <span class="math inline">\(J\)</span> variables usando al grupo de control como referencia</p></li>
+<li><p>Crear <span class="math inline">\(z_i\)</span>, un solo índice para cada individuo que agregue los <span class="math inline">\(J\)</span> índices creados antes</p></li>
+</ol></li>
+<li><p>El procedimiento descrito en Banerjee et al.&nbsp;(2015) es bastante general, pues incluye el caso donde hay varias rondas de seguimiento y varios países</p></li>
+</ul>
+</section>
+<section id="creación-de-z-scores-1" class="slide level2">
+<h2>Creación de <span class="math inline">\(z\)</span>-scores</h2>
+<ul>
+<li><p>Podemos escribir el índice descrito como</p>
+<p><span class="math display">\[z_i=\frac{(\frac{1}{J}\sum_j z_{ij})-\bar{z}_j^C}{sd(z_j^C)}\]</span></p></li>
+<li><p>Esta transformación tiene la ventaja de que en la siguiente regresión de efecto de tratamiento</p></li>
+</ul>
+<p><span class="math display">\[z_i=\alpha+\beta T_i + X_i'\gamma+\varepsilon_i\]</span></p>
+<p>el coeficiente <span class="math inline">\(\beta\)</span> se interpreta como el efecto del tratamiento medido en desviaciones estándar con respecto a la media del grupo de control</p>
+<div class="fragment">
+<ul>
+<li><p>Noten que todos las variables dentro de la familia <em>pesan</em> igual</p></li>
+<li><p>Quizás nos gustaría tomar en cuenta la correlación entre las variables dentro del índice</p></li>
+</ul>
+</div>
+</section>
+<section id="índice-de-anderson" class="slide level2">
+<h2>Índice de Anderson</h2>
+<ul>
+<li><a href="https://are.berkeley.edu/~mlanderson/pdf/Anderson%202008a.pdf">Anderson (2008)</a> propone el siguiente índice, que puede verse como una generalización del de Kling:</li>
+</ul>
+<p><span class="math display">\[\bar{s}_i=\frac{1}{W_{i}}\sum_{j\in J} w_j z_{ij}\]</span></p>
+<ul>
+<li><p><span class="math inline">\(w_j\)</span> es el peso para la variable <span class="math inline">\(j\)</span> y <span class="math inline">\(W_i=\sum_{j\in J}w_{j}\)</span></p></li>
+<li><p>Los pesos son una función de la matriz de covarianzas entre las variables que conforman la familia</p></li>
+</ul>
+</section></section>
 <section id="section" class="title-slide slide level1 inverse center middle">
 <h1></h1>
 <p>Material de clase en versión preliminar.</p>
