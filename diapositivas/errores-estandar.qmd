@@ -72,7 +72,7 @@ xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
 # Errores estándar no estándar {.inverse .center .middle}
 
 
-# Errores estándar robustos
+## Errores estándar robustos
 
 - Recordemos que con errores homocedásticos, la matriz de varianzas del estimador de MCO puede ser estimada como:
 
@@ -89,7 +89,7 @@ $$V(\hat{\beta}_{MCO}^{R})=(X'X)^{-1}X'\Omega X(X'X)^{-1}$$
 ::::
 
 
-# Errores robustos a la heterocedasticidad
+## Errores robustos a la heterocedasticidad
 
 - Un estimador de la varianza del estimador de MCO que no asume homocedasticidad es el estimador propuesto por White (1980)
 - Sabemos que la matriz de varianzas del estimador de MCO robusta a la heterocedasticidad es:
@@ -100,7 +100,7 @@ $$\sum_i\hat{u}_i^2x_ix_i \equiv \sum_i \hat{\psi}_i x_ix_i'$$
 
 
 
-# Errores estándar robustos
+## Errores estándar robustos
 
 - Dependiendo de cómo se especifique $\hat{\psi}_i$, obtenemos distintas versiones del estimador de varianzas robusto
 
@@ -117,7 +117,7 @@ $$HC0:\quad\hat{\psi}_i=\hat{u}_i^2$$
 $$HC1:\quad\hat{\psi}_i=\frac{N}{N-k}\hat{u}_i^2$$
 :::
 
-# Desviación a la influencia
+## Desviación a la influencia
 
 - Un par de resultados nos ayudarán a entender qué hacen las otras correcciones a la matriz robusta en el software
 
@@ -136,7 +136,7 @@ es decir, que la influencia se incrementa cuando $x_i$ se aleja de la media
 
 
 
-# Errores estándar robustos
+## Errores estándar robustos
 
 - Algunos autores sugieren usar la influencia en la matriz de varianzas robusta
 
@@ -155,7 +155,7 @@ $$HC3:\quad\hat{\psi}_i=\frac{1}{(1-h_{ii})^2}\hat{u}_i^2$$
 # Errores agrupados {.inverse .center .middle}
 
 
-# Errores agrupados
+## Errores agrupados
 
 - Surgen naturalmente cuando las observaciones están agrupadas
 
@@ -177,7 +177,7 @@ $$y_{ig}=\beta_0+\beta_1 x_g+e_{ig}$$
 :::
 
 
-# Errores agrupados
+## Errores agrupados
 
 - Podemos mostrar que la correlación de errores entre dos observaciones $i$ y $j$ que pertenecen a $g$ es $$E(e_{ig}e_{jg})=\overbrace{\rho_e}^{\substack{\text{coeficiente de correlación} \\ \text{intraclase residual}}} \underbrace{\sigma_e^2}_{\text{varianza residual}}$$
 
@@ -193,7 +193,7 @@ donde $\nu_g$ captura toda la correlación dentro del grupo
 
 
 
-# Errores agrupados
+## Errores agrupados
 
 - Con esta estructura de errores, el coeficiente de correlación intraclase es:
 
@@ -213,7 +213,7 @@ $$\frac{V_C(\hat{\beta})}{V_{MCO}(\hat{\beta})}=1+(n-1)\rho_e$$
 
 :::
 
-# Factor de Moulton
+## Factor de Moulton
 
 - El factor de Moulton nos dice qué tanto sobrestimamos la precisión al ignorar la correlación intra-clase
 
@@ -234,7 +234,7 @@ $$V_C(\hat{\beta})=\left(1+(n-1)\rho_e\right)V_{MCO}(\hat{\beta})$$
 $$V_C(\hat{\beta})=n V_{MCO}(\hat{\beta})$$
 :::
 
-# Errores agrupados en general
+## Errores agrupados en general
 
 - En general, $x_{ig}$ varía a nivel individual y tenemos grupos de tamaño $n_g$
 
@@ -253,7 +253,7 @@ donde $\bar{n}$ es el tamaño promedio del grupo y $\rho_x$ es la correlación i
 
 :::
 
-# Soluciones para errores agrupados
+## Soluciones para errores agrupados
 
 - Solución paramétrica: calcular directamente el factor de Moulton e inflar los errores de MCO
 
@@ -263,7 +263,7 @@ donde $\bar{n}$ es el tamaño promedio del grupo y $\rho_x$ es la correlación i
 
 
 
-# Errores estándar agrupados
+## Errores estándar agrupados
 
 - Con errores agrupados podemos escribir el estimador de MCO como
 
@@ -284,7 +284,7 @@ excepto cuando $g=g'$
 $$V({\hat{\beta}}_{MCO})=(X'X)^{-1}\left(\sum_{g=1}^G X_g'u_gu_g'X\right)(X'X)^{-1}$$
 
 
-# Errores estándar agrupados
+## Errores estándar agrupados
 
 - Con errores heterocedásticos, pero sin agrupamiento, la matriz de varianzas de White (1980) tiene una estructura como sigue:
 
@@ -295,7 +295,7 @@ $$\hat{V}(\hat{\beta}_{R})=(X'X)^{-1}X'\hat{\Sigma} X (X'X)^{-1}$$
 $$\hat{\Sigma}=\left(\begin{matrix} \hat{u}_{1}^2 & 0  & 0  & \ldots & 0 \\ 0 & \hat{u}_{2}^2 & 0 & \ldots & 0 \\ \vdots & & & & \\ 0 & & &  \ldots & \hat{u}_{n}^2\end{matrix}\right)$$
 
 
-# Errores estándar agrupados
+## Errores estándar agrupados
 
 - Para estimar la varianza con errores agrupados empleamos una generalización de la propuesta de White para errores robustos
 
@@ -310,7 +310,7 @@ $$\hat{V}_{CR}(\hat{\beta})=(X'X)^{-1}X'\hat{\Sigma} X(X'X)^{-1}$$
 
 
 
-# Errores estándar agrupados
+## Errores estándar agrupados
 
 - Y en este caso la matriz $\hat{\Sigma}$ tiene una estructura agrupada
 
@@ -320,7 +320,7 @@ $$\small \hat{\Sigma}=\left(\begin{matrix} \hat{u}_{1,1}^2 & \hat{u}_{1,1}\hat{u
 
 
 
-# Errores estándar agrupados
+## Errores estándar agrupados
 
 - El resultado asintótico de consistencia depende de que $G\to\infty$
 

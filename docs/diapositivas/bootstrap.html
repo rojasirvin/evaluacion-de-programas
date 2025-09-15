@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-contrib/bootstrap-icons-1.13.1/bootstrap-icons.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
-  <title>Inferencia Causal 2025 – errores-estandar</title>
+  <title>Inferencia Causal 2025 – bootstrap</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-31fd4380ed2edc88e26f7c115086bfb8.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -127,8 +192,8 @@
     <div class="slides">
 
 
-<section id="errores-estándar-e-inferencia" class="title-slide slide level1 portada center">
-<h1>Errores estándar e inferencia</h1>
+<section id="bootstrap" class="title-slide slide level1 portada center">
+<h1>Bootstrap</h1>
 <div style="text-align: center; font-size: 1.2em; font-weight: bold;">
 <p>Inferencia Causal</p>
 </div>
@@ -159,247 +224,128 @@
 </section>
 
 <section>
-<section id="errores-estándar-no-estándar" class="title-slide slide level1 inverse center middle">
-<h1>Errores estándar no estándar</h1>
+<section id="bootstrap-1" class="title-slide slide level1 inverse center middle">
+<h1>Bootstrap</h1>
 
 </section>
-<section id="errores-estándar-robustos" class="slide level2">
-<h2>Errores estándar robustos</h2>
+<section id="introducción-a-bootstrap" class="slide level2">
+<h2>Introducción a bootstrap</h2>
 <ul>
-<li>Recordemos que con errores homocedásticos, la matriz de varianzas del estimador de MCO puede ser estimada como:</li>
+<li><p>A veces es difícil encontrar una expresión analítica de los errores estándar</p></li>
+<li><p>La idea de las técnicas bootstrap es consutrir una distribución empírica del estimador de interés</p></li>
+<li><p>Una muestra bootstrap es una muestra tomada de los mismos datos</p></li>
+<li><p>En las rutinas para errores bootstrap, pensamos en <span class="math inline">\(\{(y_1,x_1),\ldots,(y_N,X_n)\}\)</span> como la población</p></li>
+<li><p>Una muestra bootstrap es una muestra de tamaño <span class="math inline">\(N\)</span> tomada de la muestra original</p></li>
+<li><p>El procedimiento bootstrap más usado es el bootstrap no paramétrico o boostrap en parejas (nos enfocaremos en este tipo de bootstrap en el curso)</p></li>
+<li><p>La idea es remuestrear la pareja completa <span class="math inline">\((y_i,x_i)\)</span></p></li>
 </ul>
-<p><span class="math display">\[\hat{V}(\beta_{MCO}^H)=\hat{\sigma}^2(X'X)^{-1}\]</span> donde <span class="math inline">\(\hat{\sigma}^2=\frac{1}{N-k}\hat{u}_i^2\)</span> y <span class="math inline">\(\hat{u}_i^2=(y_i-X_i'\hat{\beta}_{MCO})^2\)</span></p>
-<div class="fragment">
-<ul>
-<li>Una primera <em>desviación</em> respecto a los errores clásicos ocurre cuando relajamos el supuesto de homocedasticidad</li>
-<li>En la <a href="https://eps-2021.netlify.app/clases/clase_5.html#20">clase 3</a> estudiamos de manera general las propiedades asintóticas del estimador de MCO</li>
-<li>La varianza asintótica es:</li>
-</ul>
-<p><span class="math display">\[V(\hat{\beta}_{MCO}^{R})=(X'X)^{-1}X'\Omega X(X'X)^{-1}\]</span></p>
+</section>
+<section id="algoritmo-para-errores-estándar-bootstrap" class="slide level2">
+<h2>Algoritmo para errores estándar bootstrap</h2>
+<ol type="1">
+<li><p>Dada una muestra <span class="math inline">\(W_1,\ldots,W_N\)</span>, obtener una muestra de tamaño <span class="math inline">\(N\)</span>, remuestreando de la muestra original <strong>con reemplazo</strong></p></li>
+<li><p>Calcular el estadístico <span class="math inline">\(\hat{\theta}_b\)</span> usado con la muestra bootstrap (coeficiente de regresión, diferencia de medias, función de coeficientes)</p></li>
+<li><p>Repetir los pasos 1 y 2 <span class="math inline">\(B\)</span> veces, donde <span class="math inline">\(B\)</span> es lo suficientemente grande (usualmente 1000 es suficiente)</p></li>
+<li><p>Usar las <span class="math inline">\(B\)</span> repeticiones para obtener el error estándar del estadístico como la raíz cuadrada de <span class="math inline">\(s^2_{\hat{\theta},B}\)</span>:</p></li>
+</ol>
+<p><span class="math display">\[s^2_{\hat{\theta},B}=\frac{1}{B-1}\sum_{b=1}^B(\hat{\theta}_{b}-\bar{\hat{\theta}})^2\]</span> donde <span class="math inline">\(\bar{\hat{\theta}}=\frac{1}{B}\sum_{b=1}^B\hat{\theta}_b\)</span></p>
+</section>
+<section id="cómo-hacer-remuestreo-en-r" class="slide level2">
+<h2>¿Cómo hacer remuestreo en R?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">set.seed</span>(<span class="dv">927</span>)</span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a>data.morocco<span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"./crepon_morocco_analysis.csv"</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a></a>  <span class="fu">select</span>(treatment,client,expense_total )</span>
+<span id="cb4-5"><a></a></span>
+<span id="cb4-6"><a></a>obs <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data.morocco)</span>
+<span id="cb4-7"><a></a>obs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4934</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co">#En la muestra original</span></span>
+<span id="cb6-2"><a></a><span class="fu">mean</span>(data.morocco<span class="sc">$</span>expense_total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 23294.83</code></pre>
+</div>
 </div>
 </section>
-<section id="errores-robustos-a-la-heterocedasticidad" class="slide level2">
-<h2>Errores robustos a la heterocedasticidad</h2>
-<ul>
-<li>Un estimador de la varianza del estimador de MCO que no asume homocedasticidad es el estimador propuesto por White (1980)</li>
-<li>Sabemos que la matriz de varianzas del estimador de MCO robusta a la heterocedasticidad es: <span class="math display">\[\hat{V}(\beta_{MCO}^R)=(X'X)^{-1}\left(\sum_i\hat{u}_i^2x_ix_i'\right)(X'X)^{-1}\]</span></li>
-<li><a href="http://mlwiki.org/index.php/Matrix-Matrix_Multiplication">Aquí un recordatorio</a> de por qué podemos escribir <span class="math inline">\(X'uu'X\)</span> como una sumatoria</li>
-<li>Consideremos la <em>carnita</em> del sándwich <span class="math display">\[\sum_i\hat{u}_i^2x_ix_i \equiv \sum_i \hat{\psi}_i x_ix_i'\]</span></li>
-</ul>
-</section>
-<section id="errores-estándar-robustos-1" class="slide level2">
-<h2>Errores estándar robustos</h2>
-<ul>
-<li><p>Dependiendo de cómo se especifique <span class="math inline">\(\hat{\psi}_i\)</span>, obtenemos distintas versiones del estimador de varianzas robusto</p></li>
-<li><p>La propuesta de White original es:</p></li>
-</ul>
-<p><span class="math display">\[HC0:\quad\hat{\psi}_i=\hat{u}_i^2\]</span></p>
-<ul>
-<li>Este estimador asintóticamente consistente</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>En muestras pequeñas, muchas veces se emplea la siguiente corrección:</li>
-</ul>
-<p><span class="math display">\[HC1:\quad\hat{\psi}_i=\frac{N}{N-k}\hat{u}_i^2\]</span></p>
+<section id="cómo-hacer-remuestreo-en-r-1" class="slide level2">
+<h2>¿Cómo hacer remuestreo en R?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co">#Una muestra bootstrap</span></span>
+<span id="cb8-2"><a></a>data.b <span class="ot">&lt;-</span>data.morocco[<span class="fu">sample</span>(<span class="fu">nrow</span>(data.morocco),obs, <span class="at">replace =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb8-3"><a></a></span>
+<span id="cb8-4"><a></a><span class="fu">mean</span>(data.b<span class="sc">$</span>expense_total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24995.96</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co">#Otra muestra bootstrap</span></span>
+<span id="cb10-2"><a></a>data.b <span class="ot">&lt;-</span>data.morocco[<span class="fu">sample</span>(<span class="fu">nrow</span>(data.morocco),obs, <span class="at">replace =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a><span class="fu">mean</span>(data.b<span class="sc">$</span>expense_total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25587.57</code></pre>
+</div>
 </div>
 </section>
-<section id="desviación-a-la-influencia" class="slide level2">
-<h2>Desviación a la influencia</h2>
+<section id="aplicaciones-comunes-de-bootstrap" class="slide level2">
+<h2>Aplicaciones comunes de bootstrap</h2>
 <ul>
-<li><p>Un par de resultados nos ayudarán a entender qué hacen las otras correcciones a la matriz robusta en el software</p></li>
-<li><p>Definimos la <strong>influencia</strong> de la observación <span class="math inline">\(i\)</span> como:</p></li>
-</ul>
-<p><span class="math display">\[h_{ii}=X_i'(X'X)^{-1}X_i\]</span></p>
-<ul>
-<li><p><span class="math inline">\(h_{ii}\)</span> nos dice qué tanto <em>jala</em> la observación <span class="math inline">\(i\)</span> a la línea de regresión</p></li>
-<li><p>En una regresión con un solo regresor <span class="math inline">\(x\)</span>, se puede mostrar que la influencia de la observación <span class="math inline">\(i\)</span> es:</p></li>
-</ul>
-<p><span class="math display">\[h_{ii}=\frac{1}{N}+\frac{(x_i-\bar{x})^2}{\sum(x_j-\bar{x})^2}\]</span> es decir, que la influencia se incrementa cuando <span class="math inline">\(x_i\)</span> se aleja de la media</p>
-<ul>
-<li>La influencia es un número entre 0 y 1 y además <span class="math inline">\(\sum_i h_{ii}=k\)</span>, siendo <span class="math inline">\(k\)</span> el número de regresores</li>
+<li><p>Métodos de varias etapas (por ejemplo, el estimador de dos etapas de Heckman)</p></li>
+<li><p>Funciones de estimadores (aunque aquí el método Delta también podría ser usado)</p></li>
+<li><p>Datos agrupados con pocos grupos (remuestrear grupos en vez de individuos)</p></li>
+<li><p>El consejo práctico es usar resultados teóricos cuando se puede (por ejemplo, las matrices robustas descritas antes)</p></li>
+<li><p>Pensemos siempre en la estructura de los datos antes de hacer boostrap</p></li>
+<li><p>Usar una semilla siempre para poder reproducir sus resultados</p></li>
 </ul>
 </section>
-<section id="errores-estándar-robustos-2" class="slide level2">
-<h2>Errores estándar robustos</h2>
+<section id="bootstrap-salvaje" class="slide level2">
+<h2>Bootstrap salvaje</h2>
 <ul>
-<li><p>Algunos autores sugieren usar la influencia en la matriz de varianzas robusta</p></li>
-<li><p>Se proponen algunas alternativas:</p></li>
+<li><p>En presencia de heterocedasticidad se prefiere usar bootstrap salvaje (<em>wild bootstrap</em>) (<a href="https://link.springer.com/chapter/10.1007%2F978-1-4614-1653-1_17#enumeration">MacKinnon, 2012</a>)</p></li>
+<li><p>Propuesto originalmente por Liu (1988), cada muestra bootstrap tiene la siguiente forma:</p></li>
 </ul>
-<p><span class="math display">\[HC2:\quad\hat{\psi}_i=\frac{1}{1-h_{ii}}\hat{u}_i^2\]</span></p>
-<p><span class="math display">\[HC3:\quad\hat{\psi}_i=\frac{1}{(1-h_{ii})^2}\hat{u}_i^2\]</span></p>
-<div class="fragment">
+<p><span class="math display">\[y_i^*=X_i\hat{\beta}+f(\hat{u}_i)v_i^*\]</span> - Noten que mantiene fijos los <span class="math inline">\(X_i\)</span> en cada muestra bootstrap</p>
 <ul>
-<li>Long &amp; Ervin (2000) realizaron un experimento de simulación y recomendaron usar <span class="math inline">\(HC3\)</span> en muestras pequeñas, por lo que el paquete <em>sandwich</em> en R usa <span class="math inline">\(HC3\)</span> por default</li>
-<li>Es importante tener en cuenta qué tipo de errores estándar piden que el software calcule</li>
-</ul>
-</div>
-</section></section>
-<section>
-<section id="errores-agrupados" class="title-slide slide level1 inverse center middle">
-<h1>Errores agrupados</h1>
-
-</section>
-<section id="errores-agrupados-1" class="slide level2">
-<h2>Errores agrupados</h2>
-<ul>
-<li><p>Surgen naturalmente cuando las observaciones están agrupadas</p>
-<ul>
-<li>Niños en salones de clase</li>
-<li>Hogares en localidades</li>
-<li>Solicitudes de empleo en una empresa</li>
-<li>Ahorradoras en un banco</li>
-</ul></li>
-<li><p>El supuesto de errores independientes claramente no se cumple</p></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Pensemos en un problema simple para entender la intución:</li>
-</ul>
-<p><span class="math display">\[y_{ig}=\beta_0+\beta_1 x_g+e_{ig}\]</span></p>
-<ul>
-<li><p>Aquí, <span class="math inline">\(x_g\)</span> es un regresor que es el mismo para todos los miembros del grupo <span class="math inline">\(g\)</span></p></li>
-<li><p>Asumamos que todos los grupos tienen tamaño <span class="math inline">\(n\)</span></p></li>
-</ul>
-</div>
-</section>
-<section id="errores-agrupados-2" class="slide level2">
-<h2>Errores agrupados</h2>
-<ul>
-<li><p>Podemos mostrar que la correlación de errores entre dos observaciones <span class="math inline">\(i\)</span> y <span class="math inline">\(j\)</span> que pertenecen a <span class="math inline">\(g\)</span> es <span class="math display">\[E(e_{ig}e_{jg})=\overbrace{\rho_e}^{\substack{\text{coeficiente de correlación} \\ \text{intraclase residual}}} \underbrace{\sigma_e^2}_{\text{varianza residual}}\]</span></p></li>
-<li><p>Le damos una estructura aditiva a los errores:</p></li>
-</ul>
-<p><span class="math display">\[e_{ig}=\nu_g+\eta_{ig}\]</span> donde <span class="math inline">\(\nu_g\)</span> captura toda la correlación dentro del grupo</p>
-<ul>
-<li><p><span class="math inline">\(\eta_{ig}\)</span> es un error idiosincrático con media cero e independiente de cualquier otro <span class="math inline">\(\eta_{jg}\)</span></p></li>
-<li><p>Como queremos analizar el problema del agrupamiento, asumimos que tanto <span class="math inline">\(v_g\)</span> y <span class="math inline">\(\eta_{ig}\)</span> son homocedásticos</p></li>
+<li><p>Una especificación comúnmente usada es hacer es <span class="math inline">\(f(\hat{u}_i)=\hat{u}_i\)</span> y <span class="math display">\[v_i^*=\begin{cases} 1 \quad\text{con probabilidad 0.5} \\ -1 \quad\text{con probabilidad 0.5} \end{cases}\]</span></p></li>
+<li><p><span class="math inline">\(\hat{\beta}\)</span> y <span class="math inline">\(\hat{u}_i\)</span> son estimados con la muestra original</p></li>
 </ul>
 </section>
-<section id="errores-agrupados-3" class="slide level2">
-<h2>Errores agrupados</h2>
+<section id="bootstrap-salvaje-1" class="slide level2">
+<h2>Bootstrap salvaje</h2>
 <ul>
-<li>Con esta estructura de errores, el coeficiente de correlación intraclase es:</li>
-</ul>
-<p><span class="math display">\[\rho_e=\frac{\sigma_{\nu}^2}{\sigma_{\nu}^2+\sigma_{\eta}^2}\]</span> - Deberíamos calcular la matriz de varianzas <span class="math inline">\(V_C(\hat{\beta})\)</span> tomando en cuenta esta estructura</p>
-<div class="fragment">
-<ul>
-<li><p>¿Qué pasa si hacemos MCO en el contexto de este problema?</p></li>
-<li><p>Moulton (1984) muestra que:</p></li>
-</ul>
-<p><span class="math display">\[\frac{V_C(\hat{\beta})}{V_{MCO}(\hat{\beta})}=1+(n-1)\rho_e\]</span> - A <span class="math inline">\(\sqrt{\frac{V_C(\hat{\beta})}{V_{MCO}(\hat{\beta})}}\)</span> se le conoce como el <em>factor de Moulton</em></p>
-</div>
-</section>
-<section id="factor-de-moulton" class="slide level2">
-<h2>Factor de Moulton</h2>
-<ul>
-<li><p>El factor de Moulton nos dice qué tanto sobrestimamos la precisión al ignorar la correlación intra-clase</p></li>
-<li><p>Visto de otro modo:</p></li>
-</ul>
-<p><span class="math display">\[V_C(\hat{\beta})=\left(1+(n-1)\rho_e\right)V_{MCO}(\hat{\beta})\]</span></p>
-<ul>
-<li>Es decir entre más grande sea la correlación dentro de los grupos, más deberíamos <em>inflar</em> los errores de MCO</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><p>Consideremos el caso extremo de que <span class="math inline">\(\rho_e=1\)</span>, es decir, que todas las <span class="math inline">\(y_{ig}\)</span> dentro del mismo <span class="math inline">\(g\)</span> son iguales</p></li>
-<li><p>Entonces el factor de Moulton es simplemente <span class="math inline">\(\sqrt{n}\)</span></p></li>
-<li><p>Visto de otro modo, la matriz de varianzas correcta se obtendría multiplicando por <span class="math inline">\(n\)</span> la matriz <span class="math inline">\(V_{MCO}(\hat{\beta})\)</span></p></li>
-</ul>
-<p><span class="math display">\[V_C(\hat{\beta})=n V_{MCO}(\hat{\beta})\]</span></p>
-</div>
-</section>
-<section id="errores-agrupados-en-general" class="slide level2">
-<h2>Errores agrupados en general</h2>
-<ul>
-<li><p>En general, <span class="math inline">\(x_{ig}\)</span> varía a nivel individual y tenemos grupos de tamaño <span class="math inline">\(n_g\)</span></p></li>
-<li><p>En este caso, el factor de Moulton es la raíz cuadrada de:</p></li>
-</ul>
-<p><span class="math display">\[\frac{V_C(\hat{\beta})}{V_{MCO}(\hat{\beta})}=1+\left(\frac{V(n_g)}{\bar{n}}+\bar{n}-1\right)\rho_x\rho_e\]</span> donde <span class="math inline">\(\bar{n}\)</span> es el tamaño promedio del grupo y <span class="math inline">\(\rho_x\)</span> es la correlación intraclase de <span class="math inline">\(x_{ig}\)</span></p>
-<ul>
-<li>No es necesario asumir una forma para <span class="math inline">\(\rho_x\)</span> (se puede calcular)</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><p>Noten que el error que cometemos es más grande entre más heterogéneo es el tamaño de grupos y entre más grande es <span class="math inline">\(\rho_x\)</span></p></li>
-<li><p>Por tanto, cuando el tratamiento no varía entre grupos, este error es grande</p></li>
-</ul>
-</div>
-</section>
-<section id="soluciones-para-errores-agrupados" class="slide level2">
-<h2>Soluciones para errores agrupados</h2>
-<ul>
-<li><p>Solución paramétrica: calcular directamente el factor de Moulton e inflar los errores de MCO</p></li>
-<li><p>Bootstrap por bloques: en vez de hacer muestras bootrstrap remuestreando individuos, se remuestrean grupos</p></li>
-<li><p>Estimar los errores agrupados (<em>clustered standard errors</em>)</p></li>
+<li><p>En cada una de las <span class="math inline">\(B\)</span> muestras bootstrap, mantenemos a los mismos individuos (no hay remuestreo)</p></li>
+<li><p>Tendremos <span class="math inline">\(B\)</span> muestras bootstrap, pero ahora la aleatoriedad viene por <span class="math inline">\(f(\hat{u}_i)v_i^*\)</span></p></li>
+<li><p>Pueden usarse otras funciones más complicadas para <span class="math inline">\(f(\hat{u}_i)\)</span></p></li>
+<li><p>La ventaja de este método es que conserva la relación entre las varianzas residuales y las <span class="math inline">\(X_i\)</span> observadas en los datos originales</p></li>
+<li><p><a href="https://www.sciencedirect.com/science/article/pii/S0304407608000833">Davidson &amp; Flachaire (2008)</a> utilizan simulaciones para mostrar que con esta forma para <span class="math inline">\(f(\hat{u}_i)v_i^*\)</span> la inferencia es más confiable que con otras especificaciones</p></li>
 </ul>
 </section>
-<section id="errores-estándar-agrupados" class="slide level2">
-<h2>Errores estándar agrupados</h2>
+<section id="refinamiento-asintótico" class="slide level2">
+<h2>Refinamiento asintótico</h2>
 <ul>
-<li>Con errores agrupados podemos escribir el estimador de MCO como</li>
+<li><p>Una aplicación de las técnicas bootstrap es el <em>refinamiento asintótico</em> de la prueba <span class="math inline">\(t\)</span> de coeficientes de regresión</p></li>
+<li><p>Supongamos que <span class="math inline">\(H_0:\quad \beta=0\)</span> y trabajamos con un nivel <span class="math inline">\(\alpha\)</span></p></li>
+<li><p>En cada repetición bootstrap el estadístico calculado es <span class="math inline">\(t_b\)</span></p></li>
+<li><p>Ordenamos los <span class="math inline">\(B\)</span> estadísticos obtenidos</p></li>
+<li><p>Rechazamos <span class="math inline">\(H_0\)</span> si <span class="math inline">\(|t|\)</span> está por encima del <span class="math inline">\((1-\alpha)\)</span>ésimo percentil de los <span class="math inline">\(|t_b|\)</span> en la distribución bootstrap</p></li>
+<li><p>A pesar de sus propiedades teóricas, el refinamiento asintótico es poco usado</p></li>
 </ul>
-<p><span class="math display">\[
-\begin{aligned}
-\hat{\beta}&amp;=\beta+(X'X)^{-1}X'u \\
-&amp;=(X'X)^{-1}\left(\sum_{g=1}^G X_gu_g\right)
-\end{aligned}
-\]</span> - Suponiendo independencia entre <span class="math inline">\(g\)</span> y correlación dentro de cada grupo:</p>
-<p><span class="math display">\[E(u_{ig}u_{jg'}|x_{ig}x_{jg'})=0\]</span> excepto cuando <span class="math inline">\(g=g'\)</span></p>
-<ul>
-<li>En este caso, el estimador de MCO tiene una varianza asintótica dada por</li>
-</ul>
-<p><span class="math display">\[V({\hat{\beta}}_{MCO})=(X'X)^{-1}\left(\sum_{g=1}^G X_g'u_gu_g'X\right)(X'X)^{-1}\]</span></p>
 </section>
-<section id="errores-estándar-agrupados-1" class="slide level2">
-<h2>Errores estándar agrupados</h2>
+<section id="jacknife" class="slide level2">
+<h2>Jacknife</h2>
 <ul>
-<li>Con errores heterocedásticos, pero sin agrupamiento, la matriz de varianzas de White (1980) tiene una estructura como sigue:</li>
+<li><p>Formalmente no es un método bootstrap</p></li>
+<li><p>Una muestra jacknife es una muestra de tamaño <span class="math inline">\(N-1\)</span> construida a partir de la muestra original donde una observación es eliminada a la vez</p></li>
+<li><p>En cada muestra jacknife estimamos el estadístico de interés <span class="math inline">\(\hat{\theta}_{(j)}\)</span> (tendremos <span class="math inline">\(N\)</span> estadísticos)</p></li>
+<li><p>El error estándar jacknife será</p></li>
 </ul>
-<p><span class="math display">\[\hat{V}(\hat{\beta}_{R})=(X'X)^{-1}X'\hat{\Sigma} X (X'X)^{-1}\]</span></p>
+<p><span class="math display">\[\hat{se}(\hat{\theta})=\left(\frac{N-1}{N}\sum_{j=1}^N\left(\hat{\theta}_{(j)}-\hat{\theta}\right)^2\right)^{1/2}\]</span></p>
 <ul>
-<li>Donde</li>
+<li><p>Funciona bien para <em>estadísticas suaves</em> y funciones lineales</p></li>
+<li><p>Se puede hacer jacknife por bloques <a href="http://jhr.uwpress.org/content/50/2/317.short?casa_token=LU3qZABduyQAAAAA:ULxVXC96LBZLgeri-TafnH4u4KH-N_FxSQ0Cx2gAED5k1yXSvCs1IgLo4sR-4zyM-Pq8yko57aL8">(Cameron y Miller, 2015)</a></p></li>
 </ul>
-<p><span class="math display">\[\hat{\Sigma}=\left(\begin{matrix} \hat{u}_{1}^2 &amp; 0  &amp; 0  &amp; \ldots &amp; 0 \\ 0 &amp; \hat{u}_{2}^2 &amp; 0 &amp; \ldots &amp; 0 \\ \vdots &amp; &amp; &amp; &amp; \\ 0 &amp; &amp; &amp;  \ldots &amp; \hat{u}_{n}^2\end{matrix}\right)\]</span></p>
-</section>
-<section id="errores-estándar-agrupados-2" class="slide level2">
-<h2>Errores estándar agrupados</h2>
-<ul>
-<li><p>Para estimar la varianza con errores agrupados empleamos una generalización de la propuesta de White para errores robustos</p></li>
-<li><p>Si <span class="math inline">\(G\to\infty\)</span>, el estimador de la matriz de errores agrupados robusta (CRVE) es consistente para estimar <span class="math inline">\(V(\hat{\beta})\)</span>:</p></li>
-</ul>
-<p><span class="math display">\[\hat{V}_{CR}(\hat{\beta})=(X'X)^{-1}\left(\sum_{g=1}^G X_g'\hat{u}_g\hat{u}_g'X_g\right)(X'X)^{-1}\]</span> donde <span class="math inline">\(\hat{u}_g\hat{u}_g'\)</span> es la matriz de varianzas para los individuos del grupo <span class="math inline">\(g\)</span></p>
-<ul>
-<li>De manera compacta</li>
-</ul>
-<p><span class="math display">\[\hat{V}_{CR}(\hat{\beta})=(X'X)^{-1}X'\hat{\Sigma} X(X'X)^{-1}\]</span></p>
-</section>
-<section id="errores-estándar-agrupados-3" class="slide level2">
-<h2>Errores estándar agrupados</h2>
-<ul>
-<li>Y en este caso la matriz <span class="math inline">\(\hat{\Sigma}\)</span> tiene una estructura agrupada</li>
-</ul>
-<p><span class="math display">\[\small \hat{\Sigma}=\left(\begin{matrix} \hat{u}_{1,1}^2 &amp; \hat{u}_{1,1}\hat{u}_{2,1} &amp; \ldots &amp; \hat{u}_{1,1} \hat{u}_{n,1}&amp; 0 &amp; 0 &amp; \ldots &amp;  0 &amp; \ldots &amp; 0 &amp; 0 &amp; \ldots &amp;  0 \\ \hat{u}_{2,1}\hat{u}_{1,1} &amp; \hat{u}_{2,1}^2 &amp; \ldots &amp; \hat{u}_{2,1}\hat{u}_{n,1} &amp; 0 &amp; 0 &amp; \ldots &amp; 0 &amp; \ldots  &amp; 0 &amp; 0 &amp; \ldots &amp;  0\\
-\vdots &amp; \vdots  &amp; &amp; \vdots &amp; \vdots &amp; \vdots  &amp; &amp;  \vdots&amp; &amp; \vdots &amp; \vdots &amp;  &amp;  \vdots \\ \hat{u}_{n,1}\hat{u}_{1,1} &amp; \hat{u}_{n,1}\hat{u}_{2,1}&amp; \ldots &amp; \hat{u}_{n,1}^2&amp; 0 &amp; 0 &amp;\ldots &amp; 0 &amp; \ldots &amp; 0 &amp; 0 &amp; \ldots &amp;  0 \\  0 &amp; 0 &amp; \ldots &amp;  0 &amp; \hat{u}_{1,2}^2 &amp; \hat{u}_{1,2}\hat{u}_{2,2} &amp; \ldots &amp; \hat{u}_{1,2}\hat{u}_{n,2} &amp;\ldots &amp; 0 &amp; 0 &amp; \ldots &amp;  0  \\ 0 &amp; 0 &amp; \ldots &amp;  0 &amp; \hat{u}_{2,2}\hat{u}_{1,2} &amp; \hat{u}_{2,2}^2 &amp; \ldots &amp; \hat{u}_{2,2}\hat{u}_{n,2} &amp;\ldots &amp; 0 &amp; 0 &amp; \ldots &amp;  0 \\ \vdots &amp; \vdots  &amp; &amp; \vdots &amp; \vdots &amp; \vdots  &amp; &amp;  \vdots&amp; &amp; \vdots &amp; \vdots &amp;  &amp;  \vdots  \\ 0 &amp; 0 &amp; \ldots &amp;  0 &amp; \hat{u}_{n,2}\hat{u}_{1,2} &amp; \hat{u}_{n,2}\hat{u}_{2,2} &amp; \ldots &amp; \hat{u}_{n,2}^2 &amp;\ldots &amp; 0 &amp; 0 &amp; \ldots &amp;  0 \\ \vdots &amp; \vdots  &amp; &amp; \vdots &amp; \vdots &amp; \vdots  &amp; &amp;  \vdots&amp; &amp; \vdots &amp; \vdots &amp;  &amp;  \vdots \\ 0 &amp; 0 &amp; \ldots &amp;  0 &amp; 0 &amp;  0 &amp; \ldots &amp; 0 &amp;\ldots &amp; \hat{u}_{1,G}^2 &amp; \hat{u}_{12,G}\hat{u}_{2,G} &amp; \ldots &amp;  \hat{u}_{1,G}\hat{u}_{n,G} \\  0 &amp; 0 &amp; \ldots &amp;  0 &amp; 0 &amp;  0 &amp; \ldots &amp; 0 &amp;\ldots &amp; \hat{u}_{2,G}\hat{u}_{1,G} &amp; \hat{u}_{2,G}^2 &amp; \ldots &amp;  \hat{u}_{2,G}\hat{u}_{n,G} \\ \vdots &amp; \vdots  &amp; &amp; \vdots &amp; \vdots &amp; \vdots  &amp; &amp;  \vdots&amp; &amp; \vdots &amp; \vdots &amp;  &amp;  \vdots \\  0 &amp; 0 &amp; \ldots &amp;  0 &amp; 0 &amp;  0 &amp; \ldots &amp; 0 &amp;\ldots &amp; \hat{u}_{n,G}\hat{u}_{1,G} &amp; \hat{u}_{n,G}\hat{u}_{2,G} &amp; \ldots &amp;  \hat{u}_{n,G}^2 \end{matrix}\right)\]</span></p>
-</section>
-<section id="errores-estándar-agrupados-4" class="slide level2">
-<h2>Errores estándar agrupados</h2>
-<ul>
-<li><p>El resultado asintótico de consistencia depende de que <span class="math inline">\(G\to\infty\)</span></p></li>
-<li><p>Si <span class="math inline">\(G\)</span> está fijo, no importa qué tan grande sea <span class="math inline">\(N\)</span>, <span class="math inline">\(\hat{V}_{CRVE}(\hat{\beta})\)</span> no será consistente</p></li>
-<li><p>Algunos paquetes ajustan esta matriz de varianzas haciendo una corrección parecida a <span class="math inline">\(HC1\)</span>, pero ahora tomando en cuanta también <span class="math inline">\(G\)</span> y no solo <span class="math inline">\(N\)</span> (ver por ejemplo, <em>vcovCR</em> en R)</p></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><p>Con pocos grupos, subestimamos los errores estándar y rechazamos la <span class="math inline">\(H_0\)</span> más veces de lo que deberíamos (<em>over-rejection</em>)</p></li>
-<li><p>Si tenemos pocos grupos, recurrimos a otras soluciones (ver Cameron y Miller, 2015)</p>
-<ul>
-<li>Inflar los errores con un corrector de sesgo</li>
-<li>Bootstrap agrupado con refinamiento asintótico</li>
-</ul></li>
-<li><p>La recomendación práctica es que se tomen en serio el problema de los pocos clusters</p></li>
-<li><p>¿Cuánto es poco? Cameron y Miller (2015) citan 50. (¡Qué raro, el número de estados en EUA!)</p></li>
-</ul>
-</div>
 </section></section>
 <section id="section" class="title-slide slide level1 inverse center middle">
 <h1></h1>
