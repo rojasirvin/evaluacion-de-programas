@@ -738,5 +738,250 @@
     "title": "Errores estándar e inferencia",
     "section": "",
     "text": "Errores estándar e inferencia\n\nInferencia Causal\n\n\nIrvin Rojas\n rojasirvin.com\n\n\n\n\n \n\n \n\n\n\nCentro de Investigación y Docencia Económicas División de Economía\n\n\n\n\n\nErrores estándar no estándar\n\n\nErrores estándar robustos\n\nRecordemos que con errores homocedásticos, la matriz de varianzas del estimador de MCO puede ser estimada como:\n\n\\[\\hat{V}(\\beta_{MCO}^H)=\\hat{\\sigma}^2(X'X)^{-1}\\] donde \\(\\hat{\\sigma}^2=\\frac{1}{N-k}\\hat{u}_i^2\\) y \\(\\hat{u}_i^2=(y_i-X_i'\\hat{\\beta}_{MCO})^2\\)\n\n\nUna primera desviación respecto a los errores clásicos ocurre cuando relajamos el supuesto de homocedasticidad\nEn la clase 3 estudiamos de manera general las propiedades asintóticas del estimador de MCO\nLa varianza asintótica es:\n\n\\[V(\\hat{\\beta}_{MCO}^{R})=(X'X)^{-1}X'\\Omega X(X'X)^{-1}\\]\n\n\n\nErrores robustos a la heterocedasticidad\n\nUn estimador de la varianza del estimador de MCO que no asume homocedasticidad es el estimador propuesto por White (1980)\nSabemos que la matriz de varianzas del estimador de MCO robusta a la heterocedasticidad es: \\[\\hat{V}(\\beta_{MCO}^R)=(X'X)^{-1}\\left(\\sum_i\\hat{u}_i^2x_ix_i'\\right)(X'X)^{-1}\\]\nAquí un recordatorio de por qué podemos escribir \\(X'uu'X\\) como una sumatoria\nConsideremos la carnita del sándwich \\[\\sum_i\\hat{u}_i^2x_ix_i \\equiv \\sum_i \\hat{\\psi}_i x_ix_i'\\]\n\n\n\nErrores estándar robustos\n\nDependiendo de cómo se especifique \\(\\hat{\\psi}_i\\), obtenemos distintas versiones del estimador de varianzas robusto\nLa propuesta de White original es:\n\n\\[HC0:\\quad\\hat{\\psi}_i=\\hat{u}_i^2\\]\n\nEste estimador asintóticamente consistente\n\n\n\nEn muestras pequeñas, muchas veces se emplea la siguiente corrección:\n\n\\[HC1:\\quad\\hat{\\psi}_i=\\frac{N}{N-k}\\hat{u}_i^2\\]\n\n\n\nDesviación a la influencia\n\nUn par de resultados nos ayudarán a entender qué hacen las otras correcciones a la matriz robusta en el software\nDefinimos la influencia de la observación \\(i\\) como:\n\n\\[h_{ii}=X_i'(X'X)^{-1}X_i\\]\n\n\\(h_{ii}\\) nos dice qué tanto jala la observación \\(i\\) a la línea de regresión\nEn una regresión con un solo regresor \\(x\\), se puede mostrar que la influencia de la observación \\(i\\) es:\n\n\\[h_{ii}=\\frac{1}{N}+\\frac{(x_i-\\bar{x})^2}{\\sum(x_j-\\bar{x})^2}\\] es decir, que la influencia se incrementa cuando \\(x_i\\) se aleja de la media\n\nLa influencia es un número entre 0 y 1 y además \\(\\sum_i h_{ii}=k\\), siendo \\(k\\) el número de regresores\n\n\n\nErrores estándar robustos\n\nAlgunos autores sugieren usar la influencia en la matriz de varianzas robusta\nSe proponen algunas alternativas:\n\n\\[HC2:\\quad\\hat{\\psi}_i=\\frac{1}{1-h_{ii}}\\hat{u}_i^2\\]\n\\[HC3:\\quad\\hat{\\psi}_i=\\frac{1}{(1-h_{ii})^2}\\hat{u}_i^2\\]\n\n\nLong & Ervin (2000) realizaron un experimento de simulación y recomendaron usar \\(HC3\\) en muestras pequeñas, por lo que el paquete sandwich en R usa \\(HC3\\) por default\nEs importante tener en cuenta qué tipo de errores estándar piden que el software calcule\n\n\n\n\nErrores agrupados\n\n\nErrores agrupados\n\nSurgen naturalmente cuando las observaciones están agrupadas\n\nNiños en salones de clase\nHogares en localidades\nSolicitudes de empleo en una empresa\nAhorradoras en un banco\n\nEl supuesto de errores independientes claramente no se cumple\n\n\n\nPensemos en un problema simple para entender la intución:\n\n\\[y_{ig}=\\beta_0+\\beta_1 x_g+e_{ig}\\]\n\nAquí, \\(x_g\\) es un regresor que es el mismo para todos los miembros del grupo \\(g\\)\nAsumamos que todos los grupos tienen tamaño \\(n\\)\n\n\n\n\nErrores agrupados\n\nPodemos mostrar que la correlación de errores entre dos observaciones \\(i\\) y \\(j\\) que pertenecen a \\(g\\) es \\[E(e_{ig}e_{jg})=\\overbrace{\\rho_e}^{\\substack{\\text{coeficiente de correlación} \\\\ \\text{intraclase residual}}} \\underbrace{\\sigma_e^2}_{\\text{varianza residual}}\\]\nLe damos una estructura aditiva a los errores:\n\n\\[e_{ig}=\\nu_g+\\eta_{ig}\\] donde \\(\\nu_g\\) captura toda la correlación dentro del grupo\n\n\\(\\eta_{ig}\\) es un error idiosincrático con media cero e independiente de cualquier otro \\(\\eta_{jg}\\)\nComo queremos analizar el problema del agrupamiento, asumimos que tanto \\(v_g\\) y \\(\\eta_{ig}\\) son homocedásticos\n\n\n\nErrores agrupados\n\nCon esta estructura de errores, el coeficiente de correlación intraclase es:\n\n\\[\\rho_e=\\frac{\\sigma_{\\nu}^2}{\\sigma_{\\nu}^2+\\sigma_{\\eta}^2}\\] - Deberíamos calcular la matriz de varianzas \\(V_C(\\hat{\\beta})\\) tomando en cuenta esta estructura\n\n\n¿Qué pasa si hacemos MCO en el contexto de este problema?\nMoulton (1984) muestra que:\n\n\\[\\frac{V_C(\\hat{\\beta})}{V_{MCO}(\\hat{\\beta})}=1+(n-1)\\rho_e\\] - A \\(\\sqrt{\\frac{V_C(\\hat{\\beta})}{V_{MCO}(\\hat{\\beta})}}\\) se le conoce como el factor de Moulton\n\n\n\nFactor de Moulton\n\nEl factor de Moulton nos dice qué tanto sobrestimamos la precisión al ignorar la correlación intra-clase\nVisto de otro modo:\n\n\\[V_C(\\hat{\\beta})=\\left(1+(n-1)\\rho_e\\right)V_{MCO}(\\hat{\\beta})\\]\n\nEs decir entre más grande sea la correlación dentro de los grupos, más deberíamos inflar los errores de MCO\n\n\n\nConsideremos el caso extremo de que \\(\\rho_e=1\\), es decir, que todas las \\(y_{ig}\\) dentro del mismo \\(g\\) son iguales\nEntonces el factor de Moulton es simplemente \\(\\sqrt{n}\\)\nVisto de otro modo, la matriz de varianzas correcta se obtendría multiplicando por \\(n\\) la matriz \\(V_{MCO}(\\hat{\\beta})\\)\n\n\\[V_C(\\hat{\\beta})=n V_{MCO}(\\hat{\\beta})\\]\n\n\n\nErrores agrupados en general\n\nEn general, \\(x_{ig}\\) varía a nivel individual y tenemos grupos de tamaño \\(n_g\\)\nEn este caso, el factor de Moulton es la raíz cuadrada de:\n\n\\[\\frac{V_C(\\hat{\\beta})}{V_{MCO}(\\hat{\\beta})}=1+\\left(\\frac{V(n_g)}{\\bar{n}}+\\bar{n}-1\\right)\\rho_x\\rho_e\\] donde \\(\\bar{n}\\) es el tamaño promedio del grupo y \\(\\rho_x\\) es la correlación intraclase de \\(x_{ig}\\)\n\nNo es necesario asumir una forma para \\(\\rho_x\\) (se puede calcular)\n\n\n\nNoten que el error que cometemos es más grande entre más heterogéneo es el tamaño de grupos y entre más grande es \\(\\rho_x\\)\nPor tanto, cuando el tratamiento no varía entre grupos, este error es grande\n\n\n\n\nSoluciones para errores agrupados\n\nSolución paramétrica: calcular directamente el factor de Moulton e inflar los errores de MCO\nBootstrap por bloques: en vez de hacer muestras bootrstrap remuestreando individuos, se remuestrean grupos\nEstimar los errores agrupados (clustered standard errors)\n\n\n\nErrores estándar agrupados\n\nCon errores agrupados podemos escribir el estimador de MCO como\n\n\\[\n\\begin{aligned}\n\\hat{\\beta}&=\\beta+(X'X)^{-1}X'u \\\\\n&=(X'X)^{-1}\\left(\\sum_{g=1}^G X_gu_g\\right)\n\\end{aligned}\n\\] - Suponiendo independencia entre \\(g\\) y correlación dentro de cada grupo:\n\\[E(u_{ig}u_{jg'}|x_{ig}x_{jg'})=0\\] excepto cuando \\(g=g'\\)\n\nEn este caso, el estimador de MCO tiene una varianza asintótica dada por\n\n\\[V({\\hat{\\beta}}_{MCO})=(X'X)^{-1}\\left(\\sum_{g=1}^G X_g'u_gu_g'X\\right)(X'X)^{-1}\\]\n\n\nErrores estándar agrupados\n\nCon errores heterocedásticos, pero sin agrupamiento, la matriz de varianzas de White (1980) tiene una estructura como sigue:\n\n\\[\\hat{V}(\\hat{\\beta}_{R})=(X'X)^{-1}X'\\hat{\\Sigma} X (X'X)^{-1}\\]\n\nDonde\n\n\\[\\hat{\\Sigma}=\\left(\\begin{matrix} \\hat{u}_{1}^2 & 0  & 0  & \\ldots & 0 \\\\ 0 & \\hat{u}_{2}^2 & 0 & \\ldots & 0 \\\\ \\vdots & & & & \\\\ 0 & & &  \\ldots & \\hat{u}_{n}^2\\end{matrix}\\right)\\]\n\n\nErrores estándar agrupados\n\nPara estimar la varianza con errores agrupados empleamos una generalización de la propuesta de White para errores robustos\nSi \\(G\\to\\infty\\), el estimador de la matriz de errores agrupados robusta (CRVE) es consistente para estimar \\(V(\\hat{\\beta})\\):\n\n\\[\\hat{V}_{CR}(\\hat{\\beta})=(X'X)^{-1}\\left(\\sum_{g=1}^G X_g'\\hat{u}_g\\hat{u}_g'X_g\\right)(X'X)^{-1}\\] donde \\(\\hat{u}_g\\hat{u}_g'\\) es la matriz de varianzas para los individuos del grupo \\(g\\)\n\nDe manera compacta\n\n\\[\\hat{V}_{CR}(\\hat{\\beta})=(X'X)^{-1}X'\\hat{\\Sigma} X(X'X)^{-1}\\]\n\n\nErrores estándar agrupados\n\nY en este caso la matriz \\(\\hat{\\Sigma}\\) tiene una estructura agrupada\n\n\\[\\small \\hat{\\Sigma}=\\left(\\begin{matrix} \\hat{u}_{1,1}^2 & \\hat{u}_{1,1}\\hat{u}_{2,1} & \\ldots & \\hat{u}_{1,1} \\hat{u}_{n,1}& 0 & 0 & \\ldots &  0 & \\ldots & 0 & 0 & \\ldots &  0 \\\\ \\hat{u}_{2,1}\\hat{u}_{1,1} & \\hat{u}_{2,1}^2 & \\ldots & \\hat{u}_{2,1}\\hat{u}_{n,1} & 0 & 0 & \\ldots & 0 & \\ldots  & 0 & 0 & \\ldots &  0\\\\\n\\vdots & \\vdots  & & \\vdots & \\vdots & \\vdots  & &  \\vdots& & \\vdots & \\vdots &  &  \\vdots \\\\ \\hat{u}_{n,1}\\hat{u}_{1,1} & \\hat{u}_{n,1}\\hat{u}_{2,1}& \\ldots & \\hat{u}_{n,1}^2& 0 & 0 &\\ldots & 0 & \\ldots & 0 & 0 & \\ldots &  0 \\\\  0 & 0 & \\ldots &  0 & \\hat{u}_{1,2}^2 & \\hat{u}_{1,2}\\hat{u}_{2,2} & \\ldots & \\hat{u}_{1,2}\\hat{u}_{n,2} &\\ldots & 0 & 0 & \\ldots &  0  \\\\ 0 & 0 & \\ldots &  0 & \\hat{u}_{2,2}\\hat{u}_{1,2} & \\hat{u}_{2,2}^2 & \\ldots & \\hat{u}_{2,2}\\hat{u}_{n,2} &\\ldots & 0 & 0 & \\ldots &  0 \\\\ \\vdots & \\vdots  & & \\vdots & \\vdots & \\vdots  & &  \\vdots& & \\vdots & \\vdots &  &  \\vdots  \\\\ 0 & 0 & \\ldots &  0 & \\hat{u}_{n,2}\\hat{u}_{1,2} & \\hat{u}_{n,2}\\hat{u}_{2,2} & \\ldots & \\hat{u}_{n,2}^2 &\\ldots & 0 & 0 & \\ldots &  0 \\\\ \\vdots & \\vdots  & & \\vdots & \\vdots & \\vdots  & &  \\vdots& & \\vdots & \\vdots &  &  \\vdots \\\\ 0 & 0 & \\ldots &  0 & 0 &  0 & \\ldots & 0 &\\ldots & \\hat{u}_{1,G}^2 & \\hat{u}_{12,G}\\hat{u}_{2,G} & \\ldots &  \\hat{u}_{1,G}\\hat{u}_{n,G} \\\\  0 & 0 & \\ldots &  0 & 0 &  0 & \\ldots & 0 &\\ldots & \\hat{u}_{2,G}\\hat{u}_{1,G} & \\hat{u}_{2,G}^2 & \\ldots &  \\hat{u}_{2,G}\\hat{u}_{n,G} \\\\ \\vdots & \\vdots  & & \\vdots & \\vdots & \\vdots  & &  \\vdots& & \\vdots & \\vdots &  &  \\vdots \\\\  0 & 0 & \\ldots &  0 & 0 &  0 & \\ldots & 0 &\\ldots & \\hat{u}_{n,G}\\hat{u}_{1,G} & \\hat{u}_{n,G}\\hat{u}_{2,G} & \\ldots &  \\hat{u}_{n,G}^2 \\end{matrix}\\right)\\]\n\n\nErrores estándar agrupados\n\nEl resultado asintótico de consistencia depende de que \\(G\\to\\infty\\)\nSi \\(G\\) está fijo, no importa qué tan grande sea \\(N\\), \\(\\hat{V}_{CRVE}(\\hat{\\beta})\\) no será consistente\nAlgunos paquetes ajustan esta matriz de varianzas haciendo una corrección parecida a \\(HC1\\), pero ahora tomando en cuanta también \\(G\\) y no solo \\(N\\) (ver por ejemplo, vcovCR en R)\n\n\n\nCon pocos grupos, subestimamos los errores estándar y rechazamos la \\(H_0\\) más veces de lo que deberíamos (over-rejection)\nSi tenemos pocos grupos, recurrimos a otras soluciones (ver Cameron y Miller, 2015)\n\nInflar los errores con un corrector de sesgo\nBootstrap agrupado con refinamiento asintótico\n\nLa recomendación práctica es que se tomen en serio el problema de los pocos clusters\n¿Cuánto es poco? Cameron y Miller (2015) citan 50. (¡Qué raro, el número de estados en EUA!)\n\n\n\n\nBootstrap\n\n\nBootstrap\n\nA veces es difícil encontrar una expresión analítica de los errores estándar\nLa idea de las técnicas bootstrap es consutrir una distribución empírica del estimador de interés\nUna muestra bootstrap es una muestra tomada de los mismos datos\n\n\n\nEn las rutinas para errores bootstrap, pensamos en \\(\\{(y_1,x_1),\\ldots,(y_N,X_n)\\}\\) como la población\nUna muestra bootstrap es una muestra de tamaño \\(N\\) tomada de la muestra original\n\n\n\n\nEl procedimiento bootstrap más usado es el bootstrap no paramétrico o bootstrap en parejas (nos enfocaremos en este tipo de bootstrap en el curso)\nLa idea es remuestrear la pareja completa \\((y_i,x_i)\\)\n\n\n\n\nAlgoritmo para errores estándar bootstrap\n\nDada una muestra \\(W_1,\\ldots,W_N\\), obtener una muestra de tamaño \\(N\\), remuestreando de la muestra original con reemplazo\nCalcular el estadístico \\(\\hat{\\theta}_b\\) usado con la muestra bootstrap (coeficiente de regresión, diferencia de medias, función de coeficientes)\nRepetir los pasos 1 y 2 \\(B\\) veces, donde \\(B\\) es lo suficientemente grande (usualmente 1000 es suficiente)\nUsar las \\(B\\) repeticiones para obtener el error estándar del estadístico como la raíz cuadrada de \\(s^2_{\\hat{\\theta},B}\\):\n\n\\[s^2_{\\hat{\\theta},B}=\\frac{1}{B-1}\\sum_{b=1}^B(\\hat{\\theta}_{b}-\\bar{\\hat{\\theta}})^2\\] donde \\(\\bar{\\hat{\\theta}}=\\frac{1}{B}\\sum_{b=1}^B\\hat{\\theta}_b\\)\n\n\n¿Cómo hacer remuestreo en R?\n\nUsaremos estos datos en las tareas. Veamos cómo luce una variable de gasto total en la muestra original:\n\n\nset.seed(927)\n\ndata.morocco&lt;- read.csv(\"./crepon_morocco_analysis.csv\")%&gt;%\n  select(treatment,client,expense_total )\n\nobs &lt;- nrow(data.morocco)\nobs\n\n[1] 4934\n\n#En la muestra original\nmean(data.morocco$expense_total)\n\n[1] 23294.83\n\n\n\n\n¿Cómo hacer remuestreo en R?\n\nObtenemos una muestra bootstrap al obtener una muestra del tamaño original a partir de los datos originales, con remplazo:\n\n\n#Una muestra bootstrap\ndata.b &lt;-data.morocco[sample(nrow(data.morocco),obs, replace = TRUE),]\n\nmean(data.b$expense_total)\n\n[1] 24995.96\n\n#Otra muestra bootstrap\ndata.b &lt;-data.morocco[sample(nrow(data.morocco),obs, replace = TRUE),]\n\nmean(data.b$expense_total)\n\n[1] 25587.57\n\n\n\n\nAplicaciones comunes de bootstrap\n\nMétodos de varias etapas (por ejemplo, el estimador de dos etapas de Heckman)\nFunciones de estimadores (aunque aquí el método Delta también podría ser usado)\nDatos agrupados con pocos grupos\n\n\n\nEl consejo práctico es usar resultados teóricos cuando se puede (por ejemplo, las matrices robustas descritas antes)\nPensemos siempre en la estructura de los datos antes de hacer bootstrap\nUsar una semilla siempre para poder reproducir sus resultados\n\n\n\n\nBootstrap salvaje\n\nEn presencia de heterocedasticidad se prefiere usar bootstrap salvaje (wild bootstrap) (MacKinnon, 2012)\nPropuesto originalmente por Liu (1988), cada muestra bootstrap tiene la siguiente forma:\n\n\\[y_i^*=X_i\\hat{\\beta}+f(\\hat{u}_i)v_i^*\\]\n\nNoten que mantiene fijos los \\(X_i\\) en cada muestra bootstrap\n\n\n\nUna especificación comúnmente usada es hacer es \\(f(\\hat{u}_i)=\\hat{u}_i\\) y \\[v_i^*=\\begin{cases} 1 \\quad\\text{con probabilidad 0.5} \\\\ -1 \\quad\\text{con probabilidad 0.5} \\end{cases}\\]\n\\(\\hat{\\beta}\\) y \\(\\hat{u}_i\\) son estimados con la muestra original\n\n\n\n\nBootstrap salvaje\n\nEn cada una de las \\(B\\) muestras bootstrap, mantenemos a los mismos individuos (no hay remuestreo)\nTendremos \\(B\\) muestras bootstrap, pero ahora la aleatoriedad viene por \\(f(\\hat{u}_i)v_i^*\\)\nPueden usarse otras funciones más complicadas para \\(f(\\hat{u}_i)\\)\nLa ventaja de este método es que conserva la relación entre las varianzas residuales y las \\(X_i\\) observadas en los datos originales\nDavidson & Flachaire (2008) utilizan simulaciones para mostrar que con esta forma para \\(f(\\hat{u}_i)v_i^*\\) la inferencia es más confiable que con otras especificaciones\n\n\n\nRefinamiento asintótico\n\nUna aplicación de las técnicas bootstrap es el refinamiento asintótico de la prueba \\(t\\) de coeficientes de regresión\nSupongamos que \\(H_0:\\quad \\beta=0\\) y trabajamos con un nivel \\(\\alpha\\)\n\n\n\nEn cada repetición bootstrap el estadístico calculado es \\(t_b\\)\nOrdenamos los \\(B\\) estadísticos obtenidos\nRechazamos \\(H_0\\) si \\(|t|\\) está por encima del \\((1-\\alpha)\\)ésimo percentil de los \\(|t_b|\\) en la distribución bootstrap\n\n\n\n\nA pesar de sus propiedades teóricas, el refinamiento asintótico es poco usado\n\n\n\n\nOtras aplicaciones\n\nBootstrap jacknife (útil para problemas con errores agrupados y pocos grupos)\n\n\n\n\nMaterial de clase en versión preliminar.\nNo reproducir, no distribuir, no citar."
+  },
+  {
+    "objectID": "diapositivas/late.html#fracasó-el-experimento",
+    "href": "diapositivas/late.html#fracasó-el-experimento",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Fracasó el experimento?",
+    "text": "¿Fracasó el experimento?\n\nFrecuentemente nos encontraremos con intervenciones donde la aleatorización ocurre de manera íntegra, pero no todos aquellos asignados a cierto tratamiento efectivamente lo reciben\nNos tomaremos en serio la diferencia entre ser asignado al tratamiento y recibir el tratamiento\n\nAl evaluar un programa que asigna aleatoriamente a niños a escuelas de prestigio, nos interesa el efecto de efectivamente asistir a dichas escuelas y, quizás no tanto, el efecto de haber sido sorteado para asistir a dichas escuelas"
+  },
+  {
+    "objectID": "diapositivas/late.html#fracasó-el-experimento-1",
+    "href": "diapositivas/late.html#fracasó-el-experimento-1",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Fracasó el experimento?",
+    "text": "¿Fracasó el experimento?\n\nUsaremos un estimador de variables instrumentales (VI) para relacionar los efectos de la asignación con los efectos de la adopción\nLlegaremos al siguiente resultado:\n\n\\[\\text{Efecto de la asignación en } Y=(\\text{Efecto de la asignación en la adopción})\\times (\\text{Efecto de la adopción en }Y)\\]\n\nPor tanto:\n\n\\[\\text{Efecto de la adopción en }Y=\\frac{\\text{Efecto de la asignación en }Y}{\\text{Efecto de las asignación en la adopción}}\\]\n\nAhora derivaremos formalmente este resultado, pero la intución es importante: el efecto causal de la adopción es el efecto de la asignación, escalado por el efecto de la asignación en la adopción"
+  },
+  {
+    "objectID": "diapositivas/late.html#identificación-de-efectos-causales-usando-vi",
+    "href": "diapositivas/late.html#identificación-de-efectos-causales-usando-vi",
+    "title": "Inferencia Causal 2025",
+    "section": "Identificación de efectos causales usando VI",
+    "text": "Identificación de efectos causales usando VI\n\nAngrist, Imbens & Rubin (1996)\nAsignación: \\(Z_i=\\begin{cases} 1 \\\\0 \\\\ \\end{cases}\\)\nCumplimiento: \\(D_i=\\begin{cases} 1 \\\\0 \\\\ \\end{cases}\\)\n\\(Y_i\\) variable de resultados\nNos importa el efecto de \\(D_i\\) sobre \\(Y_i\\)"
+  },
+  {
+    "objectID": "diapositivas/late.html#efectos-causales-y-vi",
+    "href": "diapositivas/late.html#efectos-causales-y-vi",
+    "title": "Inferencia Causal 2025",
+    "section": "Efectos causales y VI",
+    "text": "Efectos causales y VI\n\n\\(D_i(Z)\\) es el indicador de cumplir, dada la asignación \\(Z\\)\nCon cumplimiento perfecto tendríamos \\(D_i(Z)=Z_i\\)\nEn general, hay asignados que no cumplen y no asignados que cumplen\n\\(Y_i(Z,D)\\) es la variable de interés de \\(i\\)\n\\(Y_i(Z,D)\\) y \\(D_i(Z)\\) son resultados potenciales"
+  },
+  {
+    "objectID": "diapositivas/late.html#supuestos",
+    "href": "diapositivas/late.html#supuestos",
+    "title": "Inferencia Causal 2025",
+    "section": "Supuestos",
+    "text": "Supuestos\nSupuesto 1: Stable Unit Treatment Value Assumption (SUTVA)\n\nEste supuesto indica que los resultados potenciales de \\(i\\) no están correlacionados con los de los otros individuos\nPor tanto podemos escribir \\(Y_i(Z,D)=Y_i(Z_i,D_i)\\) y \\(D_i(Z)=D_i(Z_i)\\)\n\nSupuesto 2: asignación aleatoria\n\nLa asignación de \\(Z_i\\) es aleatoria, es decir, \\(P(Z=C)=P(Z=C')\\) para todo \\(C\\) y \\(C'\\)\n\n\n\nLos supuestos 1 y 2 nos permiten identificar los efectos causales de \\(Z\\) en \\(Y\\) y de \\(Z\\) en \\(D\\) calculando diferencias de medias por grupos de \\(Z\\):\n\n\\(ITT_Y\\) comparar las medias de \\(y\\) entre quienes \\(Z=1\\) y quienes \\(Z=0\\)\n\\(ITT_D\\) comparar las medias de \\(D\\) entre quienes \\(Z=1\\) y quienes \\(Z=0\\)\n\n\\(ITT\\) se conoce como intención a tratar o intention to treat"
+  },
+  {
+    "objectID": "diapositivas/late.html#parada-para-reflexionar",
+    "href": "diapositivas/late.html#parada-para-reflexionar",
+    "title": "Inferencia Causal 2025",
+    "section": "Parada para reflexionar",
+    "text": "Parada para reflexionar\n\nHasta ahora el supuesto crítico es la asignación aleatoria de \\(Z\\)\n\\(D_i\\) puede no serlo y, en general, no lo es\nPor tanto, una comparación de \\(y\\) entre grupos de \\(D\\) es inapropiada\nNecesitamos algunos supuestos para decir algo del efecto causal de \\(D\\) sobre \\(Y\\)"
+  },
+  {
+    "objectID": "diapositivas/late.html#más-supuestos",
+    "href": "diapositivas/late.html#más-supuestos",
+    "title": "Inferencia Causal 2025",
+    "section": "Más supuestos",
+    "text": "Más supuestos\nSupuesto 3: restricción de exclusión\n\\[Y(Z,D)=Y(Z',D)\\quad \\forall \\quad Z,Z',D\\]\n\nEste supuesto implica que podemos escribir:\n\n\\[Y_i(1,d)=Y_i(0,d) \\quad d=\\{0,1\\}\\]\n\nEs decir, resuleve el problema contrafactual\n\n\n\nCon el supuesto 3 podemos escribir: \\[Y(D)=Y(Z,D)=Y(Z',D)\\quad \\forall \\quad Z,Z',D\\]\n\n\n\n\nY por el supuesto 1: \\[Y_i(D_i)=Y_i(Z,D)\\]"
+  },
+  {
+    "objectID": "diapositivas/late.html#más-supuestos-1",
+    "href": "diapositivas/late.html#más-supuestos-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Más supuestos",
+    "text": "Más supuestos\nSupuesto 4: el efecto causal promedio de \\(Z\\) sobre \\(D\\) es distinto de cero\n\nEsto es, \\(E(D_i(1)-D_i(0))\\neq0\\)\nEn otras palabras, la asignación tiene efecto sobre el cumplimiento\n\n\nSupuesto 5: monotonicidad \\[D_i(1)\\geq D_i(0) \\quad \\forall\\quad i=1,\\ldots N\\]\n\nEste supuesto simplemente dice que no hay un individuo que:\n\nCuando se le asigna, no cumple\nCuando no se le asigna, cumple\n\nNoten que este supuesto se debe pensar en términos contrafactuales\nA un individuo que no cumple cuando se le asigna y cumple cuando no se le asigna se le conoce como retador o defier"
+  },
+  {
+    "objectID": "diapositivas/late.html#variable-instrumental",
+    "href": "diapositivas/late.html#variable-instrumental",
+    "title": "Inferencia Causal 2025",
+    "section": "Variable instrumental",
+    "text": "Variable instrumental\n\n\\(Z\\) es una variable instrumental para el efecto causal de \\(D\\) sobre \\(Y\\) si se cumplen los supuestos 1 al 5"
+  },
+  {
+    "objectID": "diapositivas/late.html#interpretación-del-estimador-de-vi",
+    "href": "diapositivas/late.html#interpretación-del-estimador-de-vi",
+    "title": "Inferencia Causal 2025",
+    "section": "Interpretación del estimador de VI",
+    "text": "Interpretación del estimador de VI\n\nComencemos escribiendo el efecto causal de \\(Z\\) en \\(Y\\), que por el supuesto de exclusión de \\(Z\\) es:\n\n\\[\n\\begin{aligned}\nY_i(1,D_i(1))-Y_i(0,D_i(0))=\\underbrace{Y_i(D_i(1))-Y_i(D_i(0))}_{A} \\\\\n\\end{aligned}\n\\]\n\n\nNotemos que el lado derecho, \\(A\\), puede calcularse siguiendo la notación de resultados potenciales: \\[\n\\begin{aligned}\nY(D)&=Y(0)+D(Z)(Y(1)-Y(0)) \\\\\nD(Z)&=D(0)+Z(D(1)-D(0))\\\\\n\\end{aligned}\n\\]\n\n\n\n\nSustituyendo \\(D\\) en \\(Y\\): \\[\n\\begin{aligned}\nY(D(Z))&=Y(0)+(D(0)+Z(D(1)-D(0)))(Y(1)-Y(0)) \\\\\n&=Y(0)D(0)(Y(1)-Y(0))+Z(D(1)-D(0))(Y(1)-Y(0))\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "diapositivas/late.html#interpretación-del-estimador-de-vi-1",
+    "href": "diapositivas/late.html#interpretación-del-estimador-de-vi-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Interpretación del estimador de VI",
+    "text": "Interpretación del estimador de VI\n\nPodemos evaluar entonces los dos valores de \\(Z\\) y obtener:\n\n\\[\n\\begin{aligned}\nY(D(1))&=Y(0)+D(1)(Y(1)-Y(0)) \\\\\nY(D(0))&=Y(0)+D(0)(Y(1))-Y(0) \\\\\n\\end{aligned}\n\\]\n\n\nY entonces: \\[\n\\begin{aligned}\nA&=Y_i(D_i(1))-Y_i(D_i(0)) \\\\\n&=(Y_i(1)-Y_i(0))(D_i(1)-D_i(0))\\\\\n\\end{aligned}\n\\]\n\n\n\n\nEs decir, el efecto causal de \\(Z\\) sobre \\(Y\\) para \\(i\\) es el producto del efecto causal de \\(D\\) sobre \\(Y\\) y del efecto causal de \\(Z\\) sobre \\(D\\):\n\n\\[\n\\underbrace{Y_i(1,D_i(1))-Y_i(0,D_i(0))}_B=(Y_i(1)-Y_i(0))(D_i(1)-D_i(0))\n\\]"
+  },
+  {
+    "objectID": "diapositivas/late.html#interpretación-causal-del-estimador-de-vi",
+    "href": "diapositivas/late.html#interpretación-causal-del-estimador-de-vi",
+    "title": "Inferencia Causal 2025",
+    "section": "Interpretación causal del estimador de VI",
+    "text": "Interpretación causal del estimador de VI\n\nConsideremos ahora \\(B\\) y obtengamos el valor esperado:\n\n\\[\n\\begin{aligned}\nE(Y_i(1,D_i(1))-Y_i(0,D_i(0)))&=E(Y_i(1)-Y_i(0))(D_i(1)-D_i(0))\\\\\n&=E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=1)P(D_i(1)-D_i(0)=1)\\\\\n&+E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=0)P(D_i(1)-D_i(0)=0)\\\\\n&+E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=-1)P(D_i(1)-D_i(0)=-1)\\\\\n\\end{aligned}\n\\]\n\n\nLa intuición de este valor esperado es obtener el efecto en la variable de interés bajo los distintos posibles efectos de \\(Z\\) sobre \\(D\\)\nEl segundo término de la suma es cero y corresponde a aquellos para quienes la asignación no modificó el cumplimento, por lo que \\(E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=0)=0\\)\nUsando el supuesto 5 de monotonicidad, sabemos \\(D_i(1)-D_i(0)\\) es igual a uno o cero, es decir, \\(P(D_i(1)-D_i(0)=-1)=0\\)"
+  },
+  {
+    "objectID": "diapositivas/late.html#interpretación-causal-del-estimador-de-vi-1",
+    "href": "diapositivas/late.html#interpretación-causal-del-estimador-de-vi-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Interpretación causal del estimador de VI",
+    "text": "Interpretación causal del estimador de VI\n\nPor tanto:\n\n\\[\n\\begin{aligned}\nE(Y_i(1,D_i(1))-Y_i(0,D_i(0)))=E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=1)P(D_i(1)-D_i(0)=1)\n\\end{aligned}\n\\]\n\n\nEs decir, el efecto causal promedio de \\(Z\\) sobre \\(Y\\) es igual al producto del efecto causal promedio de \\(D\\) sobre \\(Y\\) en aquellos individuos que cuando se les asigna cumplen y cuando no se les asigna no cumplen, \\(D_i(0)=0\\) y \\(D_i(1)=1\\), y la proporción de estos individuos en la población"
+  },
+  {
+    "objectID": "diapositivas/late.html#interpretación-causal-del-estimador-de-vi-2",
+    "href": "diapositivas/late.html#interpretación-causal-del-estimador-de-vi-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Interpretación causal del estimador de VI",
+    "text": "Interpretación causal del estimador de VI\nProposición 1 en Angrist, Imbens & Rubin (1996): interpretación causal del estimador de VI\n\nSi los supuestos 1 a 5 se cumplen, el estimador de VI es:\n\n\\[E(Y_i(1)-Y_i(0)|D_i(1)-D_i(0)=1)=\\frac{E(Y_i(D_i(1),1))-Y_i(D_i(0),0)}{E(D_i(1)-D_i(0)}=\\lambda_{LATE}\\]\n\nAngrist y coautores llaman a este parámetro el efecto local promedio del tratamiento o LATE\nEl LATE es el efecto causal promedio del tratamiento en un conjunto de individuos cuyo estatus de tratamiento puede ser modificado por la asignación aleatoria\nA estos individuos se les conoce como cumplidores o compliers"
+  },
+  {
+    "objectID": "diapositivas/late.html#tipos-de-individuos",
+    "href": "diapositivas/late.html#tipos-de-individuos",
+    "title": "Inferencia Causal 2025",
+    "section": "Tipos de individuos",
+    "text": "Tipos de individuos\n\nHay cuatro tipos de individuos:\n\n\n\n\n\n\n\n\n\n\n\n\nTipos de individuos\n\n\n\n\n\n\n\n\n\n\n\n\\(D_i(0)=0\\)\n\\(D_i(0)=1\\)\n\n\n\\(D_i(1)=0\\)\n\\(Y_i(1,0)-Y_i(0,0)=0\\)\n\\(Y_i(1,0)-Y_i(0,1)=-(Y_i(1)-Y_i(0))\\)\n\n\n\nNunca cumplidor\nRetador\n\n\n\n\n\n\n\n\n\n\n\n\n\\(D_i(1)=1\\)\n\\(Y_i(1,1)-Y_i(0,0)=Y_i(1)-Y_i(0)\\)\n\\(Y_i(1,1)-Y_i(0,1)=0\\)\n\n\n\nCumplidor\nSiempre adoptador\n\n\n\nNota:\n\n\n\n\n Adaptado de la tabla 1 en Angrist, Imbens & Rubin (1996)."
+  },
+  {
+    "objectID": "diapositivas/late.html#tipos-de-individuos-1",
+    "href": "diapositivas/late.html#tipos-de-individuos-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Tipos de individuos",
+    "text": "Tipos de individuos\n\nLos cumplidores cumplen con el tratamiento si se les asigna y no lo cumplen si no se les asigna\n\\(Z\\) es independiente de \\(D\\) para los nunca cumplidores y los siempre adoptadores y el efecto causal es 0 para ambos\nLos retadores hacen lo contrario a lo que les es asignado\n\nEl supuesto de monotonicidad descarta la existencia de retadores para la identificación del LATE\nEn la práctica, esperamos que sean pocos tal que podamos ignorarlos\n\nA la suma de nunca cumplidores, siempre adoptadores y retadores se le conoce como no cumplidores"
+  },
+  {
+    "objectID": "diapositivas/late.html#late-y-tt",
+    "href": "diapositivas/late.html#late-y-tt",
+    "title": "Inferencia Causal 2025",
+    "section": "LATE y TT",
+    "text": "LATE y TT\n\nEn general el LATE y el TT (TOT o ATET) difieren\nPero recordemos que \\(TT=E(y_{1i}-y_{0i}|D_i=1)\\)\nNoten que en el conjunto con \\(D_i=1\\) se encuentran los cumplidores y los siempre adoptadores\nSi podemos asegurar que no hay siempre adoptadores, el LATE y el TT son iguales"
+  },
+  {
+    "objectID": "diapositivas/late.html#resumiendo",
+    "href": "diapositivas/late.html#resumiendo",
+    "title": "Inferencia Causal 2025",
+    "section": "Resumiendo",
+    "text": "Resumiendo\n\nHemos mostrado que el efecto promedio de \\(Z\\) sobre \\(Y\\) es proporcional al efecto de \\(D\\) sobre \\(Y\\) para los cumplidores\nPor el supuesto 4, sabemos que la proporción de cumplidores es igual al efecto de \\(Z\\) sobre \\(D\\)\nDado que \\(Z\\) se asigna aleatoriamente, podemos estimar los dos ITT por separado para obtener \\(\\lambda=\\frac{ITT_Y}{ITT_D}\\)\n\n\n\nEn la práctica de evaluación recurrimos a la econometría con variables instrumentales"
+  },
+  {
+    "objectID": "diapositivas/late.html#terminología",
+    "href": "diapositivas/late.html#terminología",
+    "title": "Inferencia Causal 2025",
+    "section": "Terminología",
+    "text": "Terminología\n\nPrimera etapa: es el efecto causal de la asignación sobre el cumplimento\n\n\\[\\phi=E(D_i|Z_i=1)-E(D_i|Z_i=0)\\]\n\nForma reducida: es la diferencia en \\(y\\) entre grupos de asignación\n\n\\[\\rho=E(y_i|Z_i=1)-E(y_i|Z_i=0)\\]\n\nLATE: es la diferencia en \\(y\\) entre a quienes se les asigna el tratamiento y quienes no, dividida por la diferencia en cumplimiento entre a quienes se les asigna el tratamiento y quienes no\n\n\\[\\lambda_{LATE}=\\frac{\\rho}{\\phi}\\]"
+  },
+  {
+    "objectID": "diapositivas/late.html#variables-instrumentales-en-investigación-criminológica",
+    "href": "diapositivas/late.html#variables-instrumentales-en-investigación-criminológica",
+    "title": "Inferencia Causal 2025",
+    "section": "Variables instrumentales en investigación criminológica",
+    "text": "Variables instrumentales en investigación criminológica\n\nAngrist (2006) estudia un experimento bastante particular: aleatorizar la respuesta policíaca\n¿En qué consistió la intervención?\n\n\n\n\\(y_i\\): tasa de reincidencia en conductas de violencia doméstica\n\\(Z_i=\\begin{cases} 1\\quad \\text{si apercibido} \\\\ 0\\quad \\text{otro caso}\\ \\end{cases}\\)\n\n\n\n\nSe muestra como el ITT puede no reflejar la efectividad de la intervención debido al efecto de dilusión provocado, en este caso, por desviaciones con respecto a la forma de enfrentar un episodio policíaco"
+  },
+  {
+    "objectID": "diapositivas/late.html#diferencias-en-las-respuestas-efectivas",
+    "href": "diapositivas/late.html#diferencias-en-las-respuestas-efectivas",
+    "title": "Inferencia Causal 2025",
+    "section": "Diferencias en las respuestas efectivas",
+    "text": "Diferencias en las respuestas efectivas\n\n\n\n\n\n\n\n\n\n\n\n\nTratamiento asignado y recibido en casos de violencia doméstica\n\n\n\n\n\nTramiento recibido:\n\n\n\n\n\n\n\n\n\n\n\n\n\nArrestado\nApercibido\n\n\n\nTratamiento asignado:\n\n\nTotal\n\n\nArrestar\n98.91 (91)\n1.09 (1)\n29.3 (92)\n\n\nApercibir\n20.27 (45)\n79.73 (177)\n70.7 (222)\n\n\nTotal\n43.1 (136)\n56.69 (178)\n100 (314)\n\n\n\nNota:  Adaptado de la tabla 1 en Angrist (2006).\n\n\n\n\n\n\n\n\n\n\n\nEn el estudio original, lo que llamamos apercibir tuvo en realidad dos componentes: aconsejar y separar, pero para facilitar el análisis usaremos solo arrestar por un lado y apercibir por el otro\n¿Qué observamos sobre a las desviaciones con respecto al tratamiento asignado?"
+  },
+  {
+    "objectID": "diapositivas/late.html#diferencias-en-las-respuestas-efectivas-1",
+    "href": "diapositivas/late.html#diferencias-en-las-respuestas-efectivas-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Diferencias en las respuestas efectivas",
+    "text": "Diferencias en las respuestas efectivas\n\nNoten que cuando el tratamiento asignado era arrestar, efectivamente se arrestó al 98.91% de los individuos\nEn cambio, noten que 20.27 % de los 222 asignados a ser apercibidos fueron en efecto arrestados\n¿Cómo ocurre el sesgo de selección en este caso?"
+  },
+  {
+    "objectID": "diapositivas/late.html#sesgo-de-selección",
+    "href": "diapositivas/late.html#sesgo-de-selección",
+    "title": "Inferencia Causal 2025",
+    "section": "Sesgo de selección",
+    "text": "Sesgo de selección\n\nAlgunos individuos se comportaron violentos, por lo que fueron arrestados a pesar de ser asignados a apercibimiento\nPor tanto, si comparamos \\(y\\) entre aquellos individuos apercibidos y no apercibidos, no tomamos en cuenta que aquellos no apercibidos (por tanto, arrestados) pudieran ser más violentos, sobrestimando el efecto de la política de apercibimiento"
+  },
+  {
+    "objectID": "diapositivas/late.html#late",
+    "href": "diapositivas/late.html#late",
+    "title": "Inferencia Causal 2025",
+    "section": "LATE",
+    "text": "LATE\n\nLa primera etapa es el efecto causal en la probabilidad de recibir el tratamiento de apercibimiento por el hecho de haber sido asignado a ese tratamiento: \\(E(D_i|Z_i=1)-E(D_i|Z_i=0)=0.797-0.011=0.786\\)\nLa forma reducida es el efecto causal de la asignación al tratamiento sobre la tasa de reincidencia: \\(E(y_i|Z_i=1)-E(y_i|Z_i=0)=0.211-0.097=0.114\\)\n\n\n\nEl ITT ignora el hecho de que algunos asignados a apercibimiento fueron arrestados\nSabemos que el LATE está dado por \\(\\lambda_{LATE}=\\frac{ITT_y}{ITT_D}=\\frac{0.114}{0.786}=0.145\\)\nLos datos de los autores reportan que si nos fijáramos solo en las diferencias por tipo de tratamiento obtendríamos, \\(E(y_i|D_i=1)-E(y_i|D_i=0)=0.216-0.129=0.087\\), es decir, casi la mitad del LATE\nPero como \\(D\\) no es aleatoria, dicha comparación no es correcta"
+  },
+  {
+    "objectID": "diapositivas/late.html#motivación-con-un-estadístico-de-wald",
+    "href": "diapositivas/late.html#motivación-con-un-estadístico-de-wald",
+    "title": "Inferencia Causal 2025",
+    "section": "Motivación con un estadístico de Wald",
+    "text": "Motivación con un estadístico de Wald\n\nPensemos en un modelo con efectos constantes de tratamiento: \\(y_{1i}-y_{0i}=\\lambda\\)\nLa variable de resultados está determinada por \\(y_{0i}=\\alpha+\\varepsilon_i\\), donde \\(\\alpha=E(y_{0i})\\)\nEntonces, el modelo de resultados potenciales es:\n\n\\[y_i=\\alpha+\\lambda D_i+\\varepsilon_i\\]\n\nSi \\(D_i\\) no es independiente de \\(y_{0i}\\), es decir, \\(y_{0i}\\) no es independiente del error, entonces una diferencia de medias entre grupos de \\(D\\) no produce un estimador consistente de \\(\\lambda\\)"
+  },
+  {
+    "objectID": "diapositivas/late.html#motivación-con-un-estadístico-de-wald-1",
+    "href": "diapositivas/late.html#motivación-con-un-estadístico-de-wald-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Motivación con un estadístico de Wald",
+    "text": "Motivación con un estadístico de Wald\n\nAhora supongamos que tenemos un instrumento \\(z_i\\) tal que \\(z_i\\perp y_i\\), es decir, \\(E(\\varepsilon_i|z_i)=0\\)\n\n\n\nEvaluemos la esperanza de \\(y_i\\) cuando \\(z_i=1\\) y cuando \\(z_i=0\\): \\[\n\\begin{aligned}\nE(y_i|z_i=1)&=\\alpha+\\lambda E(D_i| z_i=1) \\\\\nE(y_i|z_i=0)&=\\alpha+\\lambda E(D_i| z_i=0) \\\\\n\\end{aligned}\n\\]\nRestando: \\[E(y_i|z_i=1)-E(y_i|z_i=0)=\\lambda(E(D_i| z_i=1)-E(D_i| z_i=0))\\]\nY despejando obtenemos \\[\\lambda=\\frac{E(y_i|z_i=1)-E(y_i|z_i=0)}{E(D_i| z_i=1)-E(D_i| z_i=0)}\\] que es conocido como un estadístico de Wald"
+  },
+  {
+    "objectID": "diapositivas/late.html#mínimos-cuadrados-en-dos-etapas-mc2e",
+    "href": "diapositivas/late.html#mínimos-cuadrados-en-dos-etapas-mc2e",
+    "title": "Inferencia Causal 2025",
+    "section": "Mínimos cuadrados en dos etapas (MC2E)",
+    "text": "Mínimos cuadrados en dos etapas (MC2E)\n\nEn la práctica, podemos plantear un modelo econométrico en dos etapas:\nModelo estructural\n\n\\[y_i=X_i'\\beta+\\lambda D_i+\\varepsilon_i\\]\n\n\nPrimera etapa\n\n\\[D_i=X_i'\\phi_0+\\phi_1z_i+\\eta_i\\] donde \\(\\phi_i\\) es el efecto causal de la asignación sobre el cumplimiento - Cuado \\(D_i\\) y \\(z_i\\) son ambas dicotómicas, \\(\\phi_1\\) da la proporción de la población que son cumplidores"
+  },
+  {
+    "objectID": "diapositivas/late.html#mínimos-cuadrados-en-dos-etapas-mc2e-1",
+    "href": "diapositivas/late.html#mínimos-cuadrados-en-dos-etapas-mc2e-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Mínimos cuadrados en dos etapas (MC2E)",
+    "text": "Mínimos cuadrados en dos etapas (MC2E)\n\nPodemos concebir el problema como uno en el que primero se estima la primera etapa y se sustituyen los valores ajustados de \\(D_i\\) en el modelo estructural\nSustituyendo la primera etapa en el modelo estructural \\[y_i=X_i'\\beta+\\lambda \\hat{D}_i+\\varepsilon_i\\]\n\n\n\nEsta es la forma de pensar el procedimiento, pero en la práctica nunca hacemos esto manualmente\n\nNoten que \\(\\hat{D}_i\\) es estimada, por lo cual se ignora la variabilidad muestral de la primera etapa y los errores estándar serían inconsistentes\n\n\n\n\n\nNota: el estimador de Wald es igual al estimador de MC2E cuando no hay \\(X\\) y cuando \\(Z\\) y \\(D\\) son binarias"
+  },
+  {
+    "objectID": "diapositivas/late.html#mínimos-cuadrados-en-dos-etapas-mc2e-2",
+    "href": "diapositivas/late.html#mínimos-cuadrados-en-dos-etapas-mc2e-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Mínimos cuadrados en dos etapas (MC2E)",
+    "text": "Mínimos cuadrados en dos etapas (MC2E)\n\nForma reducida\n\n\\[\n\\begin{aligned}\ny_i&=X_i'\\beta+\\lambda(X_i'\\phi_0+\\phi_1z_1+\\eta_i)+\\varepsilon_i \\\\\n&=X_i'\\rho_0+\\rho_1z_i+\\nu_i\n\\end{aligned}\n\\] donde \\(\\rho_1=\\lambda\\phi_1\\) es el coeficiente de forma reducida sobre la variable de asignación\n\n\nNoten que esto implica que \\(\\lambda=\\rho_1/\\phi_1\\)\nEs decir, \\(\\lambda_{MC2E}\\) puede interpretarse como la versión reescalada del coeficiente de forma reducida usando el efecto causal de la primera etapa para reescalar"
+  },
+  {
+    "objectID": "diapositivas/late.html#efectos-estimados",
+    "href": "diapositivas/late.html#efectos-estimados",
+    "title": "Inferencia Causal 2025",
+    "section": "Efectos estimados",
+    "text": "Efectos estimados\n\nRegresando a los resultados del experimento, ahora con econometría\n\nPrimera etapa\n\nVersión corta:\n\n\\[apercibido_i=\\phi_0+\\phi_1T_i+\\eta_i\\]\n\nCon controles: \\[apercibido_i=\\phi_0+\\phi_1T_i+X_i'\\Phi +\\eta_i\\]\nNoten que el 0.786 es exactamente lo que se encontraba al hacer las diferencias de medias\n\nForma reducida\n\nTambién conocido como ITT\n\n\\[reincidencia_i=\\rho_0+\\rho_1T_i+\\nu_i\\]"
+  },
+  {
+    "objectID": "diapositivas/late.html#efectos-estimados-1",
+    "href": "diapositivas/late.html#efectos-estimados-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Efectos estimados",
+    "text": "Efectos estimados\n\n\n\n\n\n\n\n\n\n\n\n\n\nPrimera etapa y forma reducida\n\n\n\n\n\nPrimera etapa\n\n\nForma reducida\n\n\n\n\n\nVariable dep.: fue apercibido\n\n\nVariable dep.: reincidencia\n\n\n\n\n(1)\n(2)*\n(3)\n(4)*\n\n\n\n\nAsignado a ser apercibido (\\(T\\))\n0.786 (0.043)\n0.733 (0.043)\n0.114 (0.047)\n0.108 (0.041)\n\n\nArma\n\n-0.064 (0.045)\n\n-0.004 (0.042)\n\n\nInfluencia químicos\n\n-0.088 (0.040)\n\n0.052 (0.038)\n\n\nMedia variable dep.\n0.567\n0.567\n0.178\n0.178\n\n\n\nNota:  Tabla 2 en Angrist (2006). * Indica que se incluyen como variables de control indicadoras para año, trimestre, raza no blanca y raza mixta.\n\n\n\n\n\n\n\n\n\n\n\n\nHabíamos obtenido antes la columna (1), pero como una diferencia de medias: \\(E(D_i|Z_i=1)-E(D_i|Z_i=0)=0.797-0.011=0.786\\)\nMientras que también habíamos encontrado (3): \\(E(y_i|Z_i=1)-E(y_i|Z_i=0)=0.211-0.097=0.0.114\\)"
+  },
+  {
+    "objectID": "diapositivas/late.html#efectos-estimados-2",
+    "href": "diapositivas/late.html#efectos-estimados-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Efectos estimados",
+    "text": "Efectos estimados\nEfecto del tratamiento\n\nNoten que con nuestro estimador de MC2E obtenemos exactamente lo que antes habíamos calculado como \\(\\lambda_{LATE}=\\frac{ITT_y}{ITT_D}=\\frac{E(y_i|Z_i=1)-E(y_i|Z_i=0)}{E(D_i|Z_i=1)-E(D_i|Z_i=0)}=0.145\\)\nVean que al estimar la ecuación estructural por MCO obtenemos un coeficiente cercano a 0.070\nMás aún, sabemos que el coeficiente de MCO es inconsistente"
+  },
+  {
+    "objectID": "diapositivas/late.html#efectos-estimados-3",
+    "href": "diapositivas/late.html#efectos-estimados-3",
+    "title": "Inferencia Causal 2025",
+    "section": "Efectos estimados",
+    "text": "Efectos estimados\n\n\n\n\n\n\n\n\n\n\n\n\n\nImpactos de ser apercibido en la reincidencia (MCO y LATE)\n\n\n\n\n\nMCO\n\n\nVI/MC2E\n\n\n\n\n\nVariable dep.: reincidencia\n\n\n\n\n(1)\n(2)*\n(3)\n(4)*\n\n\n\n\nApercibido\n0.087 (0.044)\n0.070 (0.038)\n0.145 (0.060)\n0.140 (0.053)\n\n\nArma\n\n0.010 (0.043)\n\n0.005 (0.043)\n\n\nInfluencia químicos\n\n0.057 (0.039)\n\n0.064 (0.039)\n\n\n\nNota:  Tabla 3 en Angrist (2006). * Indica que se incluyen como variables de control indicadoras para año, trimestre, raza no blanca y raza mixta.\n\n\n\n\n\n\n\n\n\n\n\n\nUsando el estimador de MC2E obtenemos exactamente lo que antes habíamos calculado como \\(\\lambda_{LATE}=\\frac{ITT_y}{ITT_D}=\\frac{E(y_i|Z_i=1)-E(y_i|Z_i=0)}{E(D_i|Z_i=1)-E(D_i|Z_i=0)}=0.145\\)\nAl estimar la ecuación estructural por MCO obtenemos un coeficiente cercano a 0.070\nPero sabemos que el coeficiente de MCO es inconsistente"
+  },
+  {
+    "objectID": "diapositivas/late.html#late-es-igual-atet-en-este-caso",
+    "href": "diapositivas/late.html#late-es-igual-atet-en-este-caso",
+    "title": "Inferencia Causal 2025",
+    "section": "LATE es igual ATET en este caso",
+    "text": "LATE es igual ATET en este caso\n\nNoten que este estudio tiene lo que se conoce como no cumplidores de un solo lado\n\n\n\n\n\n\n\n\n\n\n\n\nTipos de individuos\n\n\n\n\n\n\n\n\n\n\n\n\\(D_i(0)=0\\)\n\\(D_i(0)=1\\)\n\n\n\\(D_i(1)=0\\)\n\\(Y_i(1,0)-Y_i(0,0)=0\\)\n\\(Y_i(1,0)-Y_i(0,1)=-(Y_i(1)-Y_i(0))\\)\n\n\n\nNunca cumplidor\nRetador\n\n\n\n\n\n\n\n\n\n\n\n\n\\(D_i(1)=1\\)\n\\(Y_i(1,1)-Y_i(0,0)=Y_i(1)-Y_i(0)\\)\n\\(Y_i(1,1)-Y_i(0,1)=0\\)\n\n\n\nCumplidor\nSiempre adoptador\n\n\n\nNota:\n\n\n\n\n Adaptado de la tabla 1 en Angrist, Imbens & Rubin (1996).\n\n\n\n\n\n\n\n\n\n\nCuando la asignación es apercibir, en el 20.27% de los casos la acción fue arrestar y en el 79.73% efectivamente fue apercibir\nEn cambio, cuando se indica no apercibir, es decir, arrestar, la adopción es casi perfecto (salvo un caso)\n\n\n\nEn otras palabras, en este caso no hay siempre cumplidores\nNo hay individuos que hayan sido apercibidos independientemente de la asignación"
+  },
+  {
+    "objectID": "diapositivas/late.html#late-es-igual-atet-en-este-caso-1",
+    "href": "diapositivas/late.html#late-es-igual-atet-en-este-caso-1",
+    "title": "Inferencia Causal 2025",
+    "section": "LATE es igual ATET en este caso",
+    "text": "LATE es igual ATET en este caso\n\nRecordemos que el grupo de quienes reciben el tratamiento está compuesto de los cumplidores y los siempre adoptadores\nEn este caso en particular: \\[\\lambda_{LATE}=E(y_{1i}-y_{0i}|C_i=1)=E(y_{1i}-y_{0i}|D_i=1)=ATET\\]\n\n\n\nEsto ocurre en los casos en que:\n\nAlgunos de los asignados al tratamiento, \\(z_i=1\\) lo reciben mientras otros no\nNadie de los asignados al control, \\(z_i=0\\) tiene acceso al tratamiento"
   }
 ]
