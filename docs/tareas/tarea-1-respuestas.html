@@ -208,7 +208,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tareas.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../tareas/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tareas</span></a>
   </div>
 </li>
@@ -271,9 +271,93 @@ window.Quarto = {
 <h1>Respuestas</h1>
 <section id="pregunta-1" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
+<p>Suponga que para un experimento en un laboratorio se asignó a un grupo pacientes a un brazo de tratamiento o a uno de control. Antes de comenzar el experimento se recolectaron una serie de características <span class="math inline">\(x_{ji}\)</span>, <span class="math inline">\(j=1,\ldots 10\)</span>, de cada paciente. Se busca medir el efecto del tratamiento sobre una variable de resultados <span class="math inline">\(y_i\)</span>. En el experimento, se trabaja con <span class="math inline">\(\alpha=0.10\)</span>.</p>
+<ol type="a">
+<li><p>[5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:</p>
+<p><em>Para verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento <span class="math inline">\(T_i\)</span> para correr la siguiente regresión:</em> <span class="math display">\[T_i=\alpha+\sum_{j=1}^{10}x_{ji}'\beta +\varepsilon_i\]</span></p>
+<p><em>Después realicé una prueba <span class="math inline">\(F\)</span> de significancia conjunta sobre los coeficientes <span class="math inline">\(\beta_j\)</span> que resultó tener un valor <span class="math inline">\(p\)</span> de 0.043.</em></p>
+<p>Explique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.</p>
+<p><em>Si la integridad del diseño se mantuvo durante el experimento, se esperaría que las características observables no predijeran el estado de tratamiento. En otras palabras, esperaríamos que los coeficientes en su conjunto no fueran significativos. Es decir, <span class="math inline">\(H_0: \beta_1=\beta_2=\ldots=\beta_k=0\)</span>.</em></p></li>
+<li><p>[5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?</p>
+<p><em>En este caso, el valor <span class="math inline">\(p\)</span> indica una baja probabilidad de observar el estadístico <span class="math inline">\(F\)</span>, es decir, un valor de <span class="math inline">\(F\)</span> que no es consistente con la hipótesis nula. Por tanto, se concluye que los coeficientes no son iguales que cero al mismo tiempo o que hay características que permiten predecir el estatus de tratamiento.</em></p></li>
+<li><p>[5 puntos] Por otro lado, el investigador B le reporta lo siguiente:</p>
+<p><em>Yo realicé un análisis para determinar el balance en la asignación del tratamiento. Para cada una de las características <span class="math inline">\(x_{ji}\)</span> corrí la siguiente regresión:</em> <span class="math display">\[x_{ji}=\gamma+\pi T_i+u_i\]</span> <em>A continuación, le reporto una tabla con los valores p asociados al coeficiente estimado de <span class="math inline">\(\pi\)</span> en cada una de las 10 regresiones.</em></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Característica</strong></th>
+<th><strong>Valor <span class="math inline">\(p\)</span></strong></th>
+<th></th>
+<th><strong>Característica</strong></th>
+<th><strong>Valor <span class="math inline">\(p\)</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x_{1i}\)</span></td>
+<td>0.025</td>
+<td></td>
+<td><span class="math inline">\(x_{6i}\)</span></td>
+<td>0.015</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{2i}\)</span></td>
+<td>0.012</td>
+<td></td>
+<td><span class="math inline">\(x_{7i}\)</span></td>
+<td>0.033</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_{3i}\)</span></td>
+<td>0.027</td>
+<td></td>
+<td><span class="math inline">\(x_{8i}\)</span></td>
+<td>0.019</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{4i}\)</span></td>
+<td>0.076</td>
+<td></td>
+<td><span class="math inline">\(x_{9i}\)</span></td>
+<td>0.028</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_{5i}\)</span></td>
+<td>0.002</td>
+<td></td>
+<td><span class="math inline">\(x_{10i}\)</span></td>
+<td>0.017</td>
+</tr>
+</tbody>
+</table>
+<p>Explique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento,</p>
+<p><em>Otra forma de proveer evidencia de la integridad del tratamiento es analizando el balance de las características observadas entre grupos de tratamiento. En este caso, si las medias de cada <span class="math inline">\(x_{ij}\)</span> entre los grupos de tratados y de control son iguales, esperaríamos que el coeficiente <span class="math inline">\(\pi\)</span> fuera no significativo, es decir <span class="math inline">\(H_0: \pi=0\)</span>. Con el nivel de significancia de <span class="math inline">\(\alpha=0.10\)</span>, rechazamos la <span class="math inline">\(H_0\)</span> en todos los casos, por lo que se concluye que las característias no están balanceadas entre los grupos de tratamiento.</em></p></li>
+<li><p>[5 puntos] ¿Cómo reconcilia la evidencia encontrada por el investigador A y el B y qué concluye sobre el balance en la asignación del tratamiento? ¿Qué características tendría una diferencia de medias de <span class="math inline">\(y_i\)</span> después del tratamiento como estimador del impacto de este?</p>
+<p><em>Ambos investigadores aportan evidencia que indica que la asignación aleatoria estuvo comprometida y que no se crearon grupos similares entre los grupos de tratamiento y control. Por lo tanto, una comparación de medias de la variable de resultados entre los grupos de tratamiento y control sería un estimador sesgado e inconsistente para el valor poblacional de dicha diferencia.</em></p></li>
+</ol>
 </section>
 <section id="pregunta-2" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
+<p>Se implemetó un programa para la entrega de semilla mejorada para la producción de frijol. La semilla se entregó a productores de hasta 10 hectáreas que ya reciben servicios de asistencia técnica y fertilizantes por parte del gobierno. El gobierno está interesado en estimar el impacto de la semilla mejorada en los rendimientos de la producción de frijol una vez que se realiza la cosecha, <span class="math inline">\(y_i\)</span>.</p>
+<p>Para responder esta pregunta, el gobierno invierte una gran cantidad de recursos en una encuesta representativa de los productores de frijol de hasta 10 hectáreas de todo el país y donde se identifica si el productor recibió o no la semilla mejorada (<span class="math inline">\(T_i\)</span>), además de un amplio cuestionario sobre insumos usados en la producción, prácticas agrícolas y características socioeconómicas de los productores y sus familas.</p>
+<ol type="a">
+<li><p>[10 puntos] Se propone que para estimar el efecto del programa se comparen los rendimientos de los productores que recibieron la semilla con los que no la recibieron. Argumente en términos del sesgo de selección sobre la conveniencia de esta estrategia para estimar el efecto causal de la semilla mejorada.</p>
+<p><em>Es muy probable que los productores que ya se encontraban atendidos por el gobierno a través de asistencia técnica y fertilizantes sean muy distintos de quienes no estaban atendidos. Los productores ya atendidos seguramente tienen mejores prácticas productivas, que les permiten tener mayores rendimientos. Por tanto, al comparar el rendimiento de estos productores con los rendimientos de quienes no recibieron semilla sería imposible aislar el impacto solo de la semilla. En otras palabras, los productores ya atendidos tendrían un rendimiento superior en ausencia de tratamiento que los productores no tratados, es decir, esperaríamos un sesgo de selección positivo. Por tanto, a pesar de que se invirtieron una cantidad importante de recursos en levantar una encuesta representativa, la forma en que se asignó el programa impide que una comparación observacional permita estimar el efecto causal de la semilla.</em></p></li>
+<li><p>[5 puntos] Para implementar la propuesta del punto a., se propone estimar la siguiente regresión: <span class="math display">\[ y_i = \alpha + \beta T_i + \varepsilon_i\]</span></p>
+<p>Muestre si el estimador de MCO de <span class="math inline">\(\beta\)</span> es consistente o no para el efecto de tratamiento.</p>
+<p><em>Estimar una regresión por MCO produciría un estimador <span class="math inline">\(\hat{\beta}\)</span> inconsistente para el verdadero efecto de tratamiento <span class="math inline">\(\beta_0\)</span>. Para ver esto, recordemos que el estimador de MCO puede reescribirse como sigue:</em></p>
+<p><span class="math display">\[\hat{\beta}=\beta_0 + \left(N^{1-}\sum x_i x_i'\right)\left(N^{-1}\sum x_i u_i\right)\]</span></p>
+<p><em>Si podemos aplicar una LGN a <span class="math inline">\(\left(N^{1-}\sum x_i x_i'\right)\)</span>, sabemos que el límite es una matriz finita y no nula. Entonces, para que <span class="math inline">\(\hat{\beta} \overset{p}{\to} \beta_0\)</span> se requiere que, al aplicar una LGN a <span class="math inline">\(\left(N^{-1}\sum x_i u_i\right)\)</span>, la probabilidad límite sea 0. Esto ocurre si E(x_iu_i)=0, es decir, si no hay correlación entre los no observables y los regresores. Por los argumentos hechos arriba, esto es muy probable que se viole pues uno de los regresores es <span class="math inline">\(T_i\)</span>, que está correlacionado con observables y no observables que hacen más o menos probable que un productor reciba la semilla mejorada.</em></p></li>
+<li><p>[5 puntos] Describa cómo realizaría el experimento ideal para la identificación del efecto causal de proveer semilla mejorada sobre el rendimiento. Describa cómo asignaría el tratamiento, qué condiciones deberían verificarse para asegurar la integridad del diseño y qué posibles obstáculos encontraría para la implementación de la estrategia que propone.</p>
+<p><em>No hay respuestas correctas o incorrectas. Consideraré sus argumentos.</em></p></li>
+</ol>
 </section>
 <section id="pregunta-3" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-3">Pregunta 3</h2>

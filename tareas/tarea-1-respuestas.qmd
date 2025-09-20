@@ -29,7 +29,73 @@ library(gtExtras)
 
 ## Pregunta 1
 
+
+Suponga que para un experimento en un laboratorio se asignó a un grupo pacientes a un brazo de tratamiento o a uno de control. Antes de comenzar el experimento se recolectaron una serie de características $x_{ji}$, $j=1,\ldots 10$, de cada paciente. Se busca medir el efecto del tratamiento sobre una variable de resultados $y_i$. En el experimento, se trabaja con $\alpha=0.10$.
+
+a. [5 puntos] El investigador A quedó a cargo de comprobar el balance de la asignación del tratamiento y le reporta lo siguiente:
+
+    *Para verificar que la aleatorización fue exitosa, tomé la serie de variables pre-intervención y la dummy de asignación al tratamiento $T_i$ para correr la siguiente regresión:*
+$$T_i=\alpha+\sum_{j=1}^{10}x_{ji}'\beta +\varepsilon_i$$
+
+    *Después realicé una prueba $F$ de significancia conjunta sobre los coeficientes $\beta_j$ que resultó tener un valor $p$ de 0.043.*
+
+    Explique cuál es la hipótesis nula en la prueba realizada y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento.
+    
+    *Si la integridad del diseño se mantuvo durante el experimento, se esperaría que las características observables no predijeran el estado de tratamiento. En otras palabras, esperaríamos que los coeficientes en su conjunto no fueran significativos. Es decir, $H_0: \beta_1=\beta_2=\ldots=\beta_k=0$.*
+
+a. [5 puntos] ¿Qué concluye a partir de lo que le reporta el investigador A?
+
+    *En este caso, el valor $p$ indica una baja probabilidad de observar el estadístico $F$, es decir, un valor de $F$ que no es consistente con la hipótesis nula. Por tanto, se concluye que los coeficientes no son iguales que cero al mismo tiempo o que hay características que permiten predecir el estatus de tratamiento.*
+
+a. [5 puntos] Por otro lado, el investigador B le reporta lo siguiente:
+
+    *Yo realicé un análisis para determinar el balance en la asignación del tratamiento. Para cada una de las características $x_{ji}$ corrí la siguiente regresión:*
+$$x_{ji}=\gamma+\pi T_i+u_i$$
+*A continuación, le reporto una tabla con los valores p asociados al coeficiente estimado de $\pi$ en cada una de las 10 regresiones.*
+
+    | **Característica** |	**Valor $p$** || **Característica** |	**Valor $p$**
+    |--- | --- |---|---|---|
+    | $x_{1i}$	| 0.025 | |$x_{6i}$	| 0.015 |
+    | $x_{2i}$	| 0.012 | |$x_{7i}$	| 0.033 |
+    | $x_{3i}$	| 0.027 | |$x_{8i}$	| 0.019 |
+    | $x_{4i}$	| 0.076 | |$x_{9i}$	| 0.028 |
+    | $x_{5i}$	| 0.002 | |$x_{10i}$	| 0.017 |
+    
+    Explique la hipótesis nula detrás de las pruebas que realizó el investigador B y qué se esperaría de haberse logrado una aleatorización exitosa del tratamiento,
+    
+    *Otra forma de proveer evidencia de la integridad del tratamiento es analizando el balance de las características observadas entre grupos de tratamiento. En este caso, si las medias de cada $x_{ij}$ entre los grupos de tratados y de control son iguales, esperaríamos que el coeficiente $\pi$ fuera no significativo, es decir $H_0: \pi=0$. Con el nivel de significancia de $\alpha=0.10$, rechazamos la $H_0$ en todos los casos, por lo que se concluye que las característias no están balanceadas entre los grupos de tratamiento.*
+    
+a. [5 puntos] ¿Cómo reconcilia la evidencia encontrada por el investigador A y el B y qué concluye sobre el balance en la asignación del tratamiento? ¿Qué características tendría una diferencia de medias de $y_i$ después del tratamiento como estimador del impacto de este?
+
+    *Ambos investigadores aportan evidencia que indica que la asignación aleatoria estuvo comprometida y que no se crearon grupos similares entre los grupos de tratamiento y control. Por lo tanto, una comparación de medias de la variable de resultados entre los grupos de tratamiento y control sería un estimador sesgado e inconsistente para el valor poblacional de dicha diferencia.*
+
+
 ## Pregunta 2
+
+
+Se implemetó un programa para la entrega de semilla mejorada para la producción de frijol. La semilla se entregó a productores de hasta 10 hectáreas que ya reciben servicios de asistencia técnica y fertilizantes por parte del gobierno. El gobierno está interesado en estimar el impacto de la semilla mejorada en los rendimientos de la producción de frijol una vez que se realiza la cosecha, $y_i$.
+
+Para responder esta pregunta, el gobierno invierte una gran cantidad de recursos en una encuesta representativa de los productores de frijol de hasta 10 hectáreas de todo el país y donde se identifica si el productor recibió o no la semilla mejorada ($T_i$), además de un amplio cuestionario sobre insumos usados en la producción, prácticas agrícolas y características socioeconómicas de los productores y sus familas.
+
+a. [10 puntos] Se propone que para estimar el efecto del programa se comparen los rendimientos de los productores que recibieron la semilla con los que no la recibieron. Argumente en términos del sesgo de selección sobre la conveniencia de esta estrategia para estimar el efecto causal de la semilla mejorada.
+
+   *Es muy probable que los productores que ya se encontraban atendidos por el gobierno a través de asistencia técnica y fertilizantes sean muy distintos de quienes no estaban atendidos. Los productores ya atendidos seguramente tienen mejores prácticas productivas, que les permiten tener mayores rendimientos. Por tanto, al comparar el rendimiento de estos productores con los rendimientos de quienes no recibieron semilla sería imposible aislar el impacto solo de la semilla. En otras palabras, los productores ya atendidos tendrían un rendimiento superior en ausencia de tratamiento que los productores no tratados, es decir, esperaríamos un sesgo de selección positivo. Por tanto, a pesar de que se invirtieron una cantidad importante de recursos en levantar una encuesta representativa, la forma en que se asignó el programa impide que una comparación observacional permita estimar el efecto causal de la semilla.*
+
+a. [5 puntos] Para implementar la propuesta del punto a., se propone estimar la siguiente regresión: $$ y_i = \alpha + \beta T_i + \varepsilon_i$$
+
+    Muestre si el estimador de MCO de $\beta$ es consistente o no para el efecto de tratamiento.
+
+    *Estimar una regresión por MCO produciría un estimador $\hat{\beta}$ inconsistente para el verdadero efecto de tratamiento $\beta_0$. Para ver esto, recordemos que el estimador de MCO puede reescribirse como sigue:*
+    
+    
+    $$\hat{\beta}=\beta_0 + \left(N^{1-}\sum x_i x_i'\right)\left(N^{-1}\sum x_i u_i\right)$$
+    
+    *Si podemos aplicar una LGN a $\left(N^{1-}\sum x_i x_i'\right)$, sabemos que el límite es una matriz finita y no nula. Entonces, para que $\hat{\beta} \overset{p}{\to} \beta_0$ se requiere que, al aplicar una LGN a $\left(N^{-1}\sum x_i u_i\right)$, la probabilidad límite sea 0. Esto ocurre si E(x_iu_i)=0, es decir, si no hay correlación entre los no observables y los regresores. Por los argumentos hechos arriba, esto es muy probable que se viole pues uno de los regresores es $T_i$, que está correlacionado con observables y no observables que hacen más o menos probable que un productor reciba la semilla mejorada.*
+
+a. [5 puntos] Describa cómo realizaría el experimento ideal para la identificación del efecto causal de proveer semilla mejorada sobre el rendimiento. Describa cómo asignaría el tratamiento, qué condiciones deberían verificarse para asegurar la integridad del diseño y qué posibles obstáculos encontraría para la implementación de la estrategia que propone.
+
+   *No hay respuestas correctas o incorrectas. Consideraré sus argumentos.*
+
 
 ## Pregunta 3
 
