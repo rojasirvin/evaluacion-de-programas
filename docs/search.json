@@ -504,7 +504,7 @@
     "href": "diapositivas/index.html",
     "title": "Diapositivas",
     "section": "",
-    "text": "Introducción del curso\nInferencia causal\nDiseños experimentales\nRegresión\nInferencia estadística\nErrores estándar e inferencia\nBootstrap\nLATE y variables instrumentales\nMúltiples hipótesis",
+    "text": "Introducción del curso\nInferencia causal\nDiseños experimentales\nRegresión\nInferencia estadística\nErrores estándar e inferencia\nBootstrap\nLATE y variables instrumentales\nMúltiples hipótesis\nDiferencia en diferencias",
     "crumbs": [
       "Diapositivas"
     ]
@@ -1252,5 +1252,292 @@
     "title": "Inferencia Causal 2025",
     "section": "Jacknife",
     "text": "Jacknife\n\nFormalmente no es un método bootstrap\nUna muestra jacknife es una muestra de tamaño \\(N-1\\) construida a partir de la muestra original donde una observación es eliminada a la vez\nEn cada muestra jacknife estimamos el estadístico de interés \\(\\hat{\\theta}_{(j)}\\) (tendremos \\(N\\) estadísticos)\nEl error estándar jacknife será\n\n\\[\\hat{se}(\\hat{\\theta})=\\left(\\frac{N-1}{N}\\sum_{j=1}^N\\left(\\hat{\\theta}_{(j)}-\\hat{\\theta}\\right)^2\\right)^{1/2}\\]\n\nFunciona bien para estadísticas suaves y funciones lineales\nSe puede hacer jacknife por bloques (Cameron y Miller, 2015)"
+  },
+  {
+    "objectID": "diapositivas/did.html#introducción",
+    "href": "diapositivas/did.html#introducción",
+    "title": "Inferencia Causal 2025",
+    "section": "Introducción",
+    "text": "Introducción\n\n\n\nAngrist & Pischke (2014) describen lo sucedido con el sector bancario en Mississippi durante la Gran Depresión\nEn EUA, la FED tiene 12 bancos regionales y cada uno tiene autonomía para tomar ciertas decisiones de política monetaria\nEn particular, Mississippi tiene una parte del estado bajo el mando del distrito 6 (Atlanta) y la otra mitad en el distrito 8 (San Luis)"
+  },
+  {
+    "objectID": "diapositivas/did.html#diferencia-en-diferencias-2",
+    "href": "diapositivas/did.html#diferencia-en-diferencias-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Diferencia en diferencias",
+    "text": "Diferencia en diferencias\n\nLa estrategia de diferencia en diferencias especifica las condiciones bajo las cuales es posible identificar el efecto del tratamiento al comparar unidades tratadas y no tratadas, cuando se dispone de información antes y después de la intervención\nEsta estrategia es ampliamente utilizada para analizar el efecto de leyes y políticas que afectan a un grupo de individuos al mismo tiempo\nAdemás, constituye el fundamento para otro de los métodos en donde la investigación actual es muy activa, el control sintético"
+  },
+  {
+    "objectID": "diapositivas/did.html#representación-gráfica",
+    "href": "diapositivas/did.html#representación-gráfica",
+    "title": "Inferencia Causal 2025",
+    "section": "Representación gráfica",
+    "text": "Representación gráfica\n\nGráficamente observamos"
+  },
+  {
+    "objectID": "diapositivas/did.html#representación-gráfica-1",
+    "href": "diapositivas/did.html#representación-gráfica-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Representación gráfica",
+    "text": "Representación gráfica\n\nDel distrito 8 (no tratado) podemos obtener la pendiente:\n\n\\[m_{NT}=\\frac{Y_{8,post}-Y_{8,pre}}{X_{8,post}-X_{8,pre}}=\\frac{132-165}{1931-1930}=-33\\]\n\nY entonces, podemos encontrar cuál hubiera sido el número de bancos en el distrio 6 (tratado) si hubiera seguido la pendiente del distrito 8:\n\n\\[m_T=\\frac{\\tilde{Y}_{6,post}-Y_{6,pre}}{X_{6,post}-X_{6,pre}}=\\frac{\\tilde{Y}_{6,post}-135}{1931-1930}=-33\\] - Por tanto, \\(\\tilde{Y}_{6,post}=102\\) es el número de bancos que el distrito 6 hubiera tenido si hubiera seguido una tendencia paralela a la del distrito 8"
+  },
+  {
+    "objectID": "diapositivas/did.html#representación-gráfica-2",
+    "href": "diapositivas/did.html#representación-gráfica-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Representación gráfica",
+    "text": "Representación gráfica\n\nPodemos contruir el contrafactual para el distrito 6 observando la pendiente del distrito 8"
+  },
+  {
+    "objectID": "diapositivas/did.html#diferencia-en-diferencias-3",
+    "href": "diapositivas/did.html#diferencia-en-diferencias-3",
+    "title": "Inferencia Causal 2025",
+    "section": "Diferencia en diferencias",
+    "text": "Diferencia en diferencias\n\n\n\nAngrist & Pischke (2014) describen lo sucedido con el sector bancario en Mississippi durante la Gran Depresión\nEn EUA, la FED tiene 12 bancos regionales y cada uno tiene autonomía para tomar ciertas decisiones de política monetaria\nEn particular, Mississippi tiene una parte del estado bajo el mando del distrito 6 (Atlanta) y la otra mitad en el distrito 8 (San Luis)"
+  },
+  {
+    "objectID": "diapositivas/did.html#diferencia-en-diferencias-4",
+    "href": "diapositivas/did.html#diferencia-en-diferencias-4",
+    "title": "Inferencia Causal 2025",
+    "section": "Diferencia en diferencias",
+    "text": "Diferencia en diferencias\n\nComo respuesta a las corridas bancarias que caracterizaron la crisis de 1929, los bancos comerciales en Mississippi se vieron expuestos a dos políticas distintas\n\n\\[\nT=\n\\begin{cases}\n1\\quad\\quad \\text{proveer liquidez adicional (distrito 6)} \\\\\n0\\quad\\quad \\text{dar igual o menos liquidez (distrito 8)} \\\\\n\\end{cases}\n\\]\n\nSi estamos interesados en la cantidad de bancos que sobrevivieron y decir algo sobre qué política es más efectiva, ¿qué podemos hacer?\nUna primera respuesta sería contar la diferencia después de la crisis:\n\n\n\n\nDistrito 8\nDistrito 6\nDiferencia\n\n\n\n\n\\(T=0\\)\n\\(T=1\\)\n\n\n\n132 bancos\n121 bancos\n11 bancos\n\n\n\n\nPareciera que la política de proveer liquidez, easy money, causó que quebraran más bancos\nSin embargo, esta comparación claramente ignora las condiciones iniciales"
+  },
+  {
+    "objectID": "diapositivas/did.html#regresión-en-did",
+    "href": "diapositivas/did.html#regresión-en-did",
+    "title": "Inferencia Causal 2025",
+    "section": "Regresión en DID",
+    "text": "Regresión en DID\n\nEl método puede generalizarse a más periodos de tiempo\nAquí, una regresión nos permite identificar el efecto del tratamiento\nTenemos datos sobre el número de bancos en cada distrito en cada año (1929-1934)\n\n\\[y_{dt}=\\alpha+\\beta T_d+\\gamma POST_t + \\delta_{r,DID}(T_d\\times POST_t)+e_{dt}\\] - \\(T_d\\) es una dummy para los distritos tratados (distrito 6 en este caso)\n\nLes llamamos efectos fijos individuales y sirven para controlar diferencias entre distritos que no cambian en el tiempo\n\\(POST_t\\) es una dummy para los periodos post tratamiento (1931 en adelante)\nAl término \\(T_d\\times POST_t\\) se le conoce como el término de interacción, que es una dummy igual a 1 para los distritos tratados en los años post intervención\n\\(\\delta_{r,DID}\\) es el estimador de DID del efecto del tratamiento"
+  },
+  {
+    "objectID": "diapositivas/did.html#regresión-en-did-1",
+    "href": "diapositivas/did.html#regresión-en-did-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Regresión en DID",
+    "text": "Regresión en DID\n\nUsemos los datos del archivo banks_mm.csv que se utilizan en el libro\nEs una forma muy básica de datos en panel: cada fila representa un distrito en un periodo de tiempo\nPodemos identificar si cada fila pertenece a un distrito tratado o no o a un periodo posterior a al tratamiento o no\n\n\n\n# A tibble: 12 × 5\n    year distrito banks treatment  post\n   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;\n 1  1929 bib6       141         1     0\n 2  1930 bib6       135         1     0\n 3  1931 bib6       121         1     1\n 4  1932 bib6       113         1     1\n 5  1933 bib6       102         1     1\n 6  1934 bib6       102         1     1\n 7  1929 bib8       169         0     0\n 8  1930 bib8       165         0     0\n 9  1931 bib8       132         0     1\n10  1932 bib8       120         0     1\n11  1933 bib8       111         0     1\n12  1934 bib8       109         0     1"
+  },
+  {
+    "objectID": "diapositivas/did.html#regresión-en-did-2",
+    "href": "diapositivas/did.html#regresión-en-did-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Regresión en DID",
+    "text": "Regresión en DID\n\nEstimemos la regresión que acabamos de motivar usando todos los periodos en el panel\n\n\n\n\nCall:\nlm(formula = banks ~ treatment + post + treatment * post, data = banks)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-9.000 -7.125  0.000  3.125 14.000 \n\nCoefficients:\n               Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     167.000      6.190  26.980 3.83e-09 ***\ntreatment       -29.000      8.754  -3.313 0.010652 *  \npost            -49.000      7.581  -6.464 0.000195 ***\ntreatment:post   20.500     10.721   1.912 0.092224 .  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 8.754 on 8 degrees of freedom\nMultiple R-squared:  0.8906,    Adjusted R-squared:  0.8496 \nF-statistic: 21.71 on 3 and 8 DF,  p-value: 0.0003369"
+  },
+  {
+    "objectID": "diapositivas/did.html#regresión-en-did-3",
+    "href": "diapositivas/did.html#regresión-en-did-3",
+    "title": "Inferencia Causal 2025",
+    "section": "Regresión en DID",
+    "text": "Regresión en DID\n\nNoten que si solo usamos dos años, obtenemos exactamente lo que obtendríamos haciendo las diferencias a mano\n\n\\[\\delta_{DiD}=(Y_{6,1931}-Y_{6,1930})-(Y_{8,1931}-Y_{8,1930})=19\\]\n\n\n\nCall:\nlm(formula = banks ~ treatment + post + treatment * post, data = filter(banks, \n    year == 1930 | year == 1931))\n\nResiduals:\nALL 4 residuals are 0: no residual degrees of freedom!\n\nCoefficients:\n               Estimate Std. Error t value Pr(&gt;|t|)\n(Intercept)         165        NaN     NaN      NaN\ntreatment           -30        NaN     NaN      NaN\npost                -33        NaN     NaN      NaN\ntreatment:post       19        NaN     NaN      NaN\n\nResidual standard error: NaN on 0 degrees of freedom\nMultiple R-squared:      1, Adjusted R-squared:    NaN \nF-statistic:   NaN on 3 and 0 DF,  p-value: NA"
+  },
+  {
+    "objectID": "diapositivas/did.html#violación-a-los-supuestos",
+    "href": "diapositivas/did.html#violación-a-los-supuestos",
+    "title": "Inferencia Causal 2025",
+    "section": "Violación a los supuestos",
+    "text": "Violación a los supuestos\n\n\n\nConsideremos cosas que podrían salir mal con respecto al supuesto de tendencias paralelas\nSupongamos que un tratamiento ocurre en el periodo marcado con la línea vertical, por ejemplo, un cambio en una legislación\nEn este ejemplo algo sucedió en Allatsea que produjo un cambio en la trayectoria de mortalidad antes del cambio en la legislación\nEl supuesto de tendencias paralelas sí se sostenía hasta antes de este cambio\nSin embargo, nuestra estrategia de DID atribuiría el efecto al cambio en la legislación cuando en realidad cuando ese cambio ocurrió ya nole pasó nada a Allatsea"
+  },
+  {
+    "objectID": "diapositivas/did.html#violación-a-los-supuestos-1",
+    "href": "diapositivas/did.html#violación-a-los-supuestos-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Violación a los supuestos",
+    "text": "Violación a los supuestos\n\n\n\nEn este segundo ejemplo, el supuesto de tendencias paralelas pre intervención se viola\nAunque en el momento del cambio de la política, la línea de Allatsea es más inclinada, estimar esta relación por DID de nuevo atribuiría a la política diferencias que ya existían antes de la intervención"
+  },
+  {
+    "objectID": "diapositivas/did.html#violación-a-los-supuestos-2",
+    "href": "diapositivas/did.html#violación-a-los-supuestos-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Violación a los supuestos",
+    "text": "Violación a los supuestos\n\n\n\nEn este tercer ejemplo hay tendencias que no son paralelas pre intervención\nSin embargo, después de la intervención, la trayectoria de Allatsea tiene una pendiente claramente más inclinada que antes de la intervención"
+  },
+  {
+    "objectID": "diapositivas/did.html#adopción-escalonada-en-la-antiguedad",
+    "href": "diapositivas/did.html#adopción-escalonada-en-la-antiguedad",
+    "title": "Inferencia Causal 2025",
+    "section": "Adopción escalonada en la antiguedad",
+    "text": "Adopción escalonada en la antiguedad\n\nDID es uno de esos campos tan activos en la investigación que cosas que pensábamos superadas o completamente estudiadas se han modificado en los últimos años\nEn esta sección mostramos el tratamiento que MHE y MM dan a los problemas de adopción escalonada\nLa adopción escalonada ocurre cuando existen varios periodos de tratamiento y algunas unidades van siendo tratadas de forma desfasada\nPor ejemplo, en Méxio las leyes de despenalización del aborto o las que reconocen las uniones entre personas del mismo sexo son buenos ejemplos de tratamientos con adopción escalonada\nHasta los trabajos de Goodman-Bacon (2021) y Chaisemartin & D’Haultfœuille (2020), los problemas con adopción escalonada se abordaban econométricamente de la misma forma que hemos descrito hasta ahora, conocida como efectos fijos en bidireccionales (sí, suena horrible dicha traducción) o two-way fixed effects\nEsta sección presenta el tipo de tratamiento que hoy ya consideramos inapropiado\nMás adelante se presentan alternativas para los problemas de adopción escalonada"
+  },
+  {
+    "objectID": "diapositivas/did.html#edad-legal-para-beber-en-eua",
+    "href": "diapositivas/did.html#edad-legal-para-beber-en-eua",
+    "title": "Inferencia Causal 2025",
+    "section": "Edad legal para beber en EUA",
+    "text": "Edad legal para beber en EUA\n\nDiferencias en la edad legal para beber en Estados Unidos\n¿Las restricciones a la edad mínima para comprar alcohol tienen un impacto en la mortalidad?\nAlabama redujo la edad legal a 19 en 1975, mientras que, por ejemplo, Arkansas mantuvo la edad en 21\nTenemos datos de mortalidad de 1970 a 1983 para personas de entre 18 y 20 años\nLo que hemos aprendido hasta ahora nos sugiere estimar el impacto por DID comos sigue\n\n\\[y_{st}=\\alpha+\\beta T_s+\\gamma POST_t+\\delta_{DID}(T_s\\times POST_t)+e_{st}\\] - \\(T_s\\) es una dummy igual a 0 para Arkansas en todos los periodos e igual a 1 para Alabama en todos los periodos\n\n\\(POST_t\\) es igual a cero para el periodo 1970-1975 e igual a 1 para el periodo 1976-1983\n\\(T_s\\times POST_t\\) es igual a 1 para las observaciones de Alabama en los años en los que la nueva política ya está en vigor"
+  },
+  {
+    "objectID": "diapositivas/did.html#más-de-un-estado",
+    "href": "diapositivas/did.html#más-de-un-estado",
+    "title": "Inferencia Causal 2025",
+    "section": "Más de un estado",
+    "text": "Más de un estado\n\n¿Por qué quedarnos solo con la comparación con Arkansas?\nPodemos incluir más unidades que implementen cambios en la política en distintos momentos\nEn vez de \\(POST_t\\) usamos efectos fijos por año\nY en vez de una dummy de tratamiento, incluimos efectos fijos por unidad\nAdemás, en el cambio en la ley podría no ser el mismo\n\nAlgunos estados mueven la edad a 18, otros a 19 y otros a 20\nPodemos definir \\(LEGAL_{st}\\) como la proporción de individuos de entre 18 y 20 años autorizados para beber en el estado \\(s\\) y en el año \\(t\\)\n\n\n\\[y_{st}=\\alpha+\\delta_{DID}LEGAL_{st}+\\sum_k\\beta_k STATE_{ks}+\\sum_j \\gamma_j YEAR_{jt}+e_{st}\\]"
+  },
+  {
+    "objectID": "diapositivas/did.html#estructura-de-datos-en-panel",
+    "href": "diapositivas/did.html#estructura-de-datos-en-panel",
+    "title": "Inferencia Causal 2025",
+    "section": "Estructura de datos en panel",
+    "text": "Estructura de datos en panel\n\nLos datos que acabamos de describir tienen una estructura de panel\nLa variable de panel es el estado \\(s\\) y la variable de tiempo es el año \\(t\\)\nEn nuestros datos, cada estado se encuentra presente en varios años, y para cada estado y año sabemos la mortalidad y la fracción de personas de 18 a 20 años que pueden beber\nEfectos fijos \\(STATE_{ks}\\): diferencias entre estados que no cambian con el tiempo\nEfectos año \\(YEAR_{jt}\\): factores que afectan a todas las unidades por igual en un momento del tiempo"
+  },
+  {
+    "objectID": "diapositivas/did.html#interpretación",
+    "href": "diapositivas/did.html#interpretación",
+    "title": "Inferencia Causal 2025",
+    "section": "Interpretación",
+    "text": "Interpretación\n\n\n\nMuertes por 100,000 habs.:\n\\(\\hat{\\delta}_{DID}\\)\n\n\n\n\nTodas\n10.80\n\n\n\n(4.59)\n\n\nAccidentes en vehículos\n7.59\n\n\n\n(2.50)\n\n\nSuicidio\n0.59\n\n\n\n(0.59)\n\n\nCausas internas\n1.33\n\n\n\n(1.59)\n\n\n\n\nLa interpretación de los resultados es directa\nEl acceso a alcohol causa un incremento de casi 11 muertes adicionales por cada 100,000 habitantes y este efecto es estadísticamente significativo\nNo hay efectos donde no esperaríamos tenerlos"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nConsideremos el siguiente problema de adopción escalonada\n\nObservamos \\(T\\) periodos\n\\(k\\) denota la unidad tratada temprano\n\\(l\\) denota la unidad tratada tarde\nDenotamos \\(\\bar{D}_k\\) al tiempo que \\(k\\) pasa tratado\nSimilarmente, \\(\\bar{D}_l\\)\n\\(n_k\\) es el número de unidades tratadas temprano\n\\(n_l\\) es el número de unidades tratadas tarde\n\\(n_U\\) es el número de unidades nunca tratadas\nPara cualesquiera dos grupos \\(a\\) y \\(b\\), \\(a_{ab}=\\frac{n_a}{n_a+n_b}\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-1",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-1",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-2",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-2",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nTenemos cuatro posibles comparaciones \\(2x2\\)\n\nLas comparaciones con las unidades nunca tratadas:\n\n\\[\\hat{\\beta}_{jU}=\\left(\\bar{y}_j^{POST(j)}-\\bar{y}_j^{PRE(j)}\\right)-\\left(\\bar{y}_U^{POST(j)}-\\bar{y}_U^{PRE(j)}\\right),\\;j=\\{k,l\\}\\]\n\nLa comparación entre \\(k\\) y \\(l\\) cuando \\(k\\) es tratada, usando los periodos antes de que \\(l\\) sea tratada\n\n\\[\\hat{\\beta}^{k}_{kl}=\\left(\\bar{y}_k^{MID(k,l)}-\\bar{y}_k^{PRE(k)}\\right)-\\left(\\bar{y}_l^{MID(k,l)}-\\bar{y}_l^{PRE(k)}\\right)\\]\n\nLa comparación entre \\(l\\) y \\(k\\) cuando \\(l\\) es tratada, usando los periodos después de que \\(k\\) fue tratada\n\n\\[\\hat{\\beta}^{l}_{kl}=\\left(\\bar{y}_l^{POST(l)}-\\bar{y}_l^{MID(k,l)}\\right)-\\left(\\bar{y}_k^{POST(l)}-\\bar{y}_k^{MID(k,l)}\\right)\\]"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-3",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-3",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-4",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-4",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nDenotamos \\(D_{it}=1\\) cuando la unidad \\(i\\) es tratada en el periodo \\(0\\)\nPor el teorema de Frisch-Waugh-Lovell sabemos que podemos purgar de efectos fijos a la variable \\(D_{it}\\)\nEs decir, podemos estimar por MCO:\n\\[D_{it}=\\sum_t \\gamma_t P_t + \\sum_i \\pi S_i + \\varepsilon_{it}\\]\ndonde \\(P_t\\) son dummies temporales y \\(S_i\\) son dummies individuales\nLuego obtenemos\n\\[\\tilde{D}_{it}=D_{it}-\\hat{D}_{it}\\] Y entonces el estimador de TWFE puede escribirse como el coeficiente de una regresión bivariada:\n\\[\\hat{\\beta}_{DD}=\\frac{\\hat{C}(y_{it}, \\tilde{D}_{it})}{\\hat{V}^D}\\] \\(\\hat{V}^D\\) es la varianza de la variable de tratamiento purgada de efectos fijos"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-5",
+    "href": "diapositivas/did.html#qué-hace-el-estimador-de-twfe-5",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué hace el estimador de TWFE?",
+    "text": "¿Qué hace el estimador de TWFE?\nGoodman-Bacon (2021) muestra que el estimador de TWFE puede descomponerse como:\n\\[\\hat{\\beta}_{DD}=s_{kU}\\hat{\\beta}_{kU}+s_{lU}\\hat{\\beta}_{lU}+s_{kl}^k\\hat{\\beta}_{kl}^k+s_{kl}^l\\hat{\\beta}_{kl}^l\\]"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-son-los-pesos",
+    "href": "diapositivas/did.html#qué-son-los-pesos",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nGoodman-Bacon (2021) muestra que los pesos están dados por:\n\n\\(s_{kU}=\\frac{(n_k+n_U)^2\\hat{V}_{kU}^D}{\\hat{V}^D}\\)\n\\(s_{lU}=\\frac{(n_l+n_U)^2\\hat{V}_{lU}^D}{\\hat{V}^D}\\)\n\\(s_{kl}^k=\\frac{[(n_k+n_l)(1-\\bar{D}_l)]^2\\hat{V}_{kl}^{D,k}}{\\hat{V}^D}\\)\n\\(s_{kl}^l=\\frac{[(n_k+n_l)\\bar{D}_k]^2\\hat{V}_{kl}^{D,l}}{\\hat{V}^D}\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-son-los-pesos-1",
+    "href": "diapositivas/did.html#qué-son-los-pesos-1",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nLas varianzas del tratamiento en la submuestra tienen las siguientes formas:\n\n\\(s_{kU}=\\frac{(n_k+n_U)^2\\hat{V}_{kU}^D}{\\hat{V}^D}=\\frac{(n_k+n_U)^2n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)}{\\hat{V}^D}\\)\n\\(s_{lU}=\\frac{(n_l+n_U)^2\\hat{V}_{lU}^D}{\\hat{V}^D}=\\frac{(n_l+n_U)^2n_{lU}(1-n_{lU})\\bar{D}_l(1-\\bar{D}_l)}{\\hat{V}^D}\\)\n\\(s_{kl}^k=\\frac{[(n_k+n_l)(1-\\bar{D}_l)]^2\\hat{V}_{kl}^{D,k}}{\\hat{V}^D}=\\frac{[(n_k+n_l)(1-\\bar{D}_l)]^2n_{kl}(1-n_{kl}) \\frac{\\bar{D}_k-\\bar{D}_l}{1-\\bar{D}_l}\\frac{1-\\bar{D}_k}{1-\\bar{D}_l}}{\\hat{V}^D}\\)\n\\(s_{kl}^l=\\frac{[(n_k+n_l)\\bar{D}_k]^2\\hat{V}_{kl}^{D,l}}{\\hat{V}^D}=\\frac{[(n_k+n_l)\\bar{D}_k]^2n_{kl}(1-n_{kl})\\frac{\\bar{D}_l}{\\bar{D}_k}\\frac{\\bar{D}_k-\\bar{D}_l}{\\bar{D}_k}}{\\hat{V}^D}\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-son-los-pesos-2",
+    "href": "diapositivas/did.html#qué-son-los-pesos-2",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nPongamos atención a uno de los pesos, \\(s_{kU}\\) para ver la intuición\nVimos que:\n\\[s_{kU}=\\frac{(n_k+n_U)^2\\hat{V}_{kU}^D}{\\hat{V}^D}=\\frac{(n_k+n_U)^2n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)}{\\hat{V}^D}\\]\nPrimero, noten que el peso depende de \\((n_k+n_u)^2\\), es decir, la parte de la submuestra que se usa para estimar cada comparación \\(2x2\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-son-los-pesos-3",
+    "href": "diapositivas/did.html#qué-son-los-pesos-3",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nAhora veamos la varianza que entra en este peso:\n\\[\\hat{V}_{kU}^D=n_{kU}(1-n_{kU})\\bar{D}_k(1-\\bar{D}_k)\\] Una primer cosa que entra en juego es \\(n_{kU}=\\frac{n_k}{n_k+n_U}\\), el peso relativo del grupo tratado temprano en la submuestra\nRecordemos que \\(\\bar{D}_k\\) indica la fracción del tiempo del panel que \\(k\\) permanece tratado\nDado que \\(D_{it}\\) es binaria, \\(\\bar{D}_k(1-\\bar{D}_k)\\) es la varianza de \\(D_{it}\\)\n¿Qué es lo más grande que puede ser \\(\\bar{D}_k(1-\\bar{D}_k)\\)?\nClaramente esto es a lo más 0.5, es decir, la contribución se maximiza cuando el tratamiento ocurre lo más cercano a la mitad del panel"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-son-los-pesos-4",
+    "href": "diapositivas/did.html#qué-son-los-pesos-4",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué son los pesos?",
+    "text": "¿Qué son los pesos?\nEn resumen, los pesos están dados por\n\\[\\scriptsize  pesos = \\frac{(\\text{participación de la submuestra})^2(\\text{varianza del tratamiento purgada de efectos fijos en la submuestra})}{\\text{varianza del tratamiento purgada de efectos fijos en la muestra completa}}\\]"
+  },
+  {
+    "objectID": "diapositivas/did.html#qué-nos-dice-la-descomposición",
+    "href": "diapositivas/did.html#qué-nos-dice-la-descomposición",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué nos dice la descomposición?",
+    "text": "¿Qué nos dice la descomposición?\nTodos los grupos funcionan como controles (algunas veces)\nLos pesos en cada comparación \\(2 \\times 2\\) dependen del tamaño de la muestra usada para estimarlos y del tiempo que las unidades permanecen tratadas\nEl efecto estimado se modificaría solo por agregar más años al final del panel\nLos términos que dominen pueden incluso cambiar el signo del efecto estimado\nGoodman-Bacon (2021) muestra que, en general usar TWFE solo recupera un efecto de tratamiento bajo supuestos muy fuertes, el más crucial, bajo efectos de tratamiento que no varían en el tiempo (no hay efectos dinámicos)"
+  },
+  {
+    "objectID": "diapositivas/did.html#estimador-de-callaway-santanna-1",
+    "href": "diapositivas/did.html#estimador-de-callaway-santanna-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Estimador de Callaway & Sant’Anna",
+    "text": "Estimador de Callaway & Sant’Anna\nEl estimador de Callaway & Sant’Anna (2021) es una forma muy sencilla de explotar la información del desfase del tratamiento\nAdemás permite una presentación muy intuitiva de los efectos de tratamiento\nEsencialmente consiste en definir una serie de cohortes de unidades y estimar los impactos para cada cohorte\nLuego podemos agregar los impactos por cohorte o presentar la dinámica de los impactos de forma gráfica"
+  },
+  {
+    "objectID": "diapositivas/did.html#definiciones",
+    "href": "diapositivas/did.html#definiciones",
+    "title": "Inferencia Causal 2025",
+    "section": "Definiciones",
+    "text": "Definiciones\n\n\\(G_i=\\min\\{t:D_{it}=1\\}\\) es el primer periodo en que \\(i\\) es tratado\n\\(G_i=\\infty\\) indoca que \\(i\\) nunca es tratado\n\\(t=1,\\ldots,T\\) son los periodos\n\\(D_{it}=1\\;\\forall\\;t\\geq G_i\\) indica tratamiento absorbente\n\nDefinamos el efecto del tratamiento al periodo \\(t\\) para el cohorte que empezó a ser tratado en \\(g\\):\n\\[ATT(g,t)=E(y_{it}(g)-y_{it}(\\infty)|G_i=g)\\] Por ejemplo, \\(ATT(2014,2016)\\) es el efecto del tratamiento en 2016 para aquellos tratados empezando en 2014"
+  },
+  {
+    "objectID": "diapositivas/did.html#supuestos",
+    "href": "diapositivas/did.html#supuestos",
+    "title": "Inferencia Causal 2025",
+    "section": "Supuestos",
+    "text": "Supuestos\nTendencias paralelas en el contexto escalonado\n\\[E(y_{it}(\\infty)-y_{it'}(\\infty)|G_i=g)=E(y_{it}(\\infty)-y_{it'}(\\infty)|G_i=g')\\quad\\forall\\;t\\neq t',\\; g\\neq q'\\]\nEste supuesto indica que en el estado contrafactual de nunca haber sido tratados, dos grupos tratados en dos momentos diferentes \\(g\\) y \\(g'\\) habrían tenido una trayectoria igual entre los periodos \\(t\\) y \\(t'\\)\nTendencias paralelas en el contexto escalonado (a)\nModifica el supuesto anterior pero \\(\\forall \\;t,t'\\geq g_{min}-1\\) donde \\(g_{min}=\\min G\\) es el primer periodo en donde alguna unidad es tratada (Callaway y Sant’Anna solo usan este supuesto más débil)"
+  },
+  {
+    "objectID": "diapositivas/did.html#supuestos-1",
+    "href": "diapositivas/did.html#supuestos-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Supuestos",
+    "text": "Supuestos\nNo anticipación en el contexto escalonado\n\\[y_{it}(g)=y_{it}(\\infty)\\quad \\forall\\;i \\;\\text{y}\\;\\forall\\;t&lt;g\\]"
+  },
+  {
+    "objectID": "diapositivas/did.html#estimador-de-callaway-santanna-2",
+    "href": "diapositivas/did.html#estimador-de-callaway-santanna-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Estimador de Callaway & Sant’Anna",
+    "text": "Estimador de Callaway & Sant’Anna\nEl estimador de Callaway & Sant’Anna (2021) se define como:\n\\[ATT(g,t)=E(y_{it}-y_{i,g-1}|G_i=g)-E(y_{it}-y_{i,g-1}|G_i\\in\\mathcal{G}_{comp})\\] Queremos comparar el valor de la variable de impacto entre el periodo \\(g-1\\) y el \\(t\\) para el grupo que fue tratado en \\(g\\) con algún grupo de comparación denominado \\(\\mathcal{G}_{comp}\\)\nSustituyendo por el análogo muestral:\n\\[\\hat{ATT}(g,t)=\\frac{1}{N_g}\\sum_{i:\\;G_i=g}(y_{it}-y_{i,g-1})-\\frac{1}{N_{\\mathcal{G}_{comp}}}\\sum_{i\\;G_i\\in \\mathcal{G}_{comp}}(y_{it}-y_{i,g-1})\\]\n¿Qué es \\(\\mathcal{G}_{comp}\\)?\n\n\\(\\mathcal{G}_{comp}=\\{\\infty \\}\\): aquellas unidades nunca tratadas\n\\(\\mathcal{G}_{comp}=\\{g':g'&gt;t \\}\\): aquellas unidades aún no tratadas al periodo \\(t\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#reportar-resultados",
+    "href": "diapositivas/did.html#reportar-resultados",
+    "title": "Inferencia Causal 2025",
+    "section": "Reportar resultados",
+    "text": "Reportar resultados\nSi tenemos pocos periodos y cohortes puede ser práctico reportar todos los \\(\\hat{ATT}(g,t)\\)\nTambién podemos construir medidas agregadas:\n\\[\\theta = \\sum_{g\\in\\mathcal{G}}\\sum_{t=2}^{\\mathcal{T}}w(g,t)ATT(g,t)\\]"
+  },
+  {
+    "objectID": "diapositivas/did.html#formas-de-agregación",
+    "href": "diapositivas/did.html#formas-de-agregación",
+    "title": "Inferencia Causal 2025",
+    "section": "Formas de agregación",
+    "text": "Formas de agregación\nLa notación usada en el artículo es densa pero en resumen, algunas agregaciones posibles son:\nEfecto de tratamiento por duración de exposición\n\nPodemos calcular \\(\\theta(e)\\), el efecto promedio \\(e\\) periodos después del tratamiento, donde \\(e=t-g\\) es el tiempo que ocurre desde que se realizó el tratamiento\nPodemos hacer un gráfico de \\(\\theta(e)\\)\n\nEfecto de tratamiento por grupo o cohorte\n\nLo llamamos \\(\\theta(\\tilde{g})\\) y nos permite conocer si el efecto del tratamiento es distinto para cohortes que fueron tratados temprano o tarde\n\nEfecto de tratamiento acumulado\n\nLo llamamos \\(\\theta(\\tilde{t})\\) y lo definimos como el efecto promedio por participar en el tratamiento hasta una fecha dada \\(\\tilde{t}\\)"
+  },
+  {
+    "objectID": "diapositivas/did.html#ventajas-del-estimador",
+    "href": "diapositivas/did.html#ventajas-del-estimador",
+    "title": "Inferencia Causal 2025",
+    "section": "Ventajas del estimador",
+    "text": "Ventajas del estimador\nToma en cuenta la heterogeneidad de los efectos de tratamiento\nLos pesos son especificados por el investigador y no mecánicamente con en TWFE\nHace explícito el grupo de comparación (nunca tratados o aún no tratados)"
+  },
+  {
+    "objectID": "diapositivas/did.html#diferencia-en-diferencias-5",
+    "href": "diapositivas/did.html#diferencia-en-diferencias-5",
+    "title": "Inferencia Causal 2025",
+    "section": "Diferencia en diferencias",
+    "text": "Diferencia en diferencias\n\nPodemos dar así una primera definición de lo que es la diferencia en diferencias del número de bancos que sobrevivieron a la Gran Depresión en Mississippi\n\n\\[\n\\begin{aligned}\n\\delta_{DID}&=(Y_{6,post}-Y_{6,pre})-(Y_{8,post}-Y_{8,pre}) \\\\\n&=(Y_{6,1931}-Y_{6,1930})-(Y_{8,1931}-Y_{8,1930}) \\\\\n&=(121-135)-(132-165) \\\\\n&=-14+33 = 19\n\\end{aligned}\n\\]\n\nEl estimador de DID toma en cuenta las diferencias iniciales\nEn este caso, el distrito 8 ya tenía más bancos abiertos que el 6 antes de la crisis\nDID construye un contrafactual para las unidades tratadas usando la pendiente de las unidades no tratadas"
+  },
+  {
+    "objectID": "diapositivas/did.html#diferencia-en-diferencias-6",
+    "href": "diapositivas/did.html#diferencia-en-diferencias-6",
+    "title": "Inferencia Causal 2025",
+    "section": "Diferencia en diferencias",
+    "text": "Diferencia en diferencias\n\nEl supuesto fundamental es el de tendencias comunes, es decir, que en ausencia del tratamiento, el grupo de tratamiento se hubiera comportado igual al grupo de control\nSi hay varios puntos pre intervención, el supuesto de tendencias comunes puede probarse empíricamente"
   }
 ]
