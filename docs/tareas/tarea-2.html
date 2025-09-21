@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -249,9 +284,19 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
 <p>En Crepon et al.&nbsp;(2015)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> se estudia una intervención en Marruecos en la que se analiza el efecto de la <em>adopción</em> de microfinanzas, a través de un experimento de campo. En 81 de 162 localidades estudiadas se introdujo aleatoriamente una empresa de microfinanzas. Para seleccionar las localidades de tratamiento, primero se <em>emparejaron</em> localidades de acuerdo a características observables y, para cada pareja se asignó a tratamiento y otra a control. La variable que identifica a las parejas es <strong>paire</strong>. La base de datos <em>crepon_morocco_balance.csv</em> contiene los datos de este estudio usados para mostrar la integridad del diseño. La variable <strong>treatment</strong> es la variable de asignación aleatoria, mientras que la variable <strong>client</strong> es la variable de adopción</p>
 <ol type="a">
-<li>[3 puntos] Primero recordaremos cómo mostrar que el tratamiento efectivamente fue asignado de manera aleatoria. El siguiente código lee los datos que debemos usar y se queda con las observaciones de la línea base. Con estos datos, mostraremos que la variable <strong>members_resid_bl</strong>, que indica el número de personas que viven en cada hogar está balanceado entre los grupos asignados a tratamiento y control. Noten que la media del número de personas que viven en el hogar en el grupo de control es 5.14 (d.e. 2.70) y que hay 2,266 hogares en dicho grupo de control. Esto es exactamente lo que se reporta en la fila correspondiente a <em>Number members</em> en la tabla 1 del artículo.</li>
-</ol>
+<li><p>[3 puntos] Primero recordaremos cómo mostrar que el tratamiento efectivamente fue asignado de manera aleatoria. El siguiente código lee los datos que debemos usar y se queda con las observaciones de la línea base. Con estos datos, mostraremos que la variable <strong>members_resid_bl</strong>, que indica el número de personas que viven en cada hogar está balanceado entre los grupos asignados a tratamiento y control. Noten que la media del número de personas que viven en el hogar en el grupo de control es 5.14 (d.e. 2.70) y que hay 2,266 hogares en dicho grupo de control. Esto es exactamente lo que se reporta en la fila correspondiente a <em>Number members</em> en la tabla 1 del artículo.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data.morocco<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"../files/crepon_morocco_balance.csv"</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"latin1"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">filter</span>(merge_indicator<span class="sc">!=</span><span class="dv">1</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>data.morocco <span class="sc">%&gt;%</span> </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a> <span class="fu">summarize</span>(<span class="at">mean=</span><span class="fu">mean</span>(members_resid_bl, <span class="at">na.rm=</span>T),</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">std=</span><span class="fu">sd</span>(members_resid_bl, <span class="at">na.rm=</span>T),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">n=</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ungroup</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 4
   treatment  mean   std     n
@@ -260,30 +305,7 @@ window.Quarto = {
 2         1  5.19  2.76  2199</code></pre>
 </div>
 </div>
-<p>Obtenga ahora el valor de la diferencia entre el grupo de tratamiento y el de control, así como su valor <span class="math inline">\(p\)</span> (últimas dos columnas). Para ello, estime una regresión en la que la variable dependiente sea número de personas que vive en el hogar <strong>members_resid_bl</strong>, en función de la variable de asignación <strong>treatment</strong> y variables dummy de pareja de localidad (la variable <strong>paire</strong> indica cuáles son las parejas). La regresión permite recuperar la diferencia de 0.04 personas que se reporta en la fila correspondiente en la tabla 1. Para recuperar el valor <span class="math inline">\(p\)</span>, estime errores agrupados usando la variable <strong>demi_paire</strong>, que es la clave de las distintas localidades, como variable de agrupación. Una forma de realizar esto es con la función <em>coef_test</em> del paquete <em>clubSandwich</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p><em>Estimamos la regresión con el número de personas como variable dependiente en función de la asignación al tratamiento y de las parejas:</em></p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>                  Estimate Std. Error    t value     Pr(&gt;|t|)
-(Intercept)     4.06166091  0.3047365 13.3284357 9.311212e-40
-treatment       0.04334484  0.0707258  0.6128576 5.400023e-01
-factor(paire)2  1.78431373  0.4152704  4.2967514 1.770771e-05
-factor(paire)3  1.06107184  0.4356350  2.4356902 1.490300e-02
-factor(paire)4 -3.08333333  0.4594672 -6.7106719 2.184193e-11
-factor(paire)5  1.85814080  0.4442115  4.1830089 2.933028e-05
-factor(paire)6  2.88352450  0.4262934  6.7641779 1.517259e-11</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4465</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       Coef. Estimate     SE t-stat d.f. (Satt) p-val (Satt) Sig.
- (Intercept)   4.0617 0.0647  62.80        1.03      0.00911   **
-   treatment   0.0433 0.0787   0.55       76.54      0.58361     </code></pre>
-</div>
-</div>
-<p><em>Obtenemos un coeficiente de 0.04334484, que se redondea a 0.04 en la tabla. El valor <span class="math inline">\(p\)</span> de 0.583 es exactamente el reportado en la última columna. Aquí lo clave es calcular los errores agrupados.</em></p>
-<ol type="a">
+<p>Obtenga ahora el valor de la diferencia entre el grupo de tratamiento y el de control, así como su valor <span class="math inline">\(p\)</span> (últimas dos columnas). Para ello, estime una regresión en la que la variable dependiente sea número de personas que vive en el hogar <strong>members_resid_bl</strong>, en función de la variable de asignación <strong>treatment</strong> y variables dummy de pareja de localidad (la variable <strong>paire</strong> indica cuáles son las parejas). La regresión permite recuperar la diferencia de 0.04 personas que se reporta en la fila correspondiente en la tabla 1. Para recuperar el valor <span class="math inline">\(p\)</span>, estime errores agrupados usando la variable <strong>demi_paire</strong>, que es la clave de las distintas localidades, como variable de agrupación. Una forma de realizar esto es con la función <em>coef_test</em> del paquete <em>clubSandwich</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p></li>
 <li><p>[2 puntos] Ahora mostremos que efectivamente este es un ejemplo de una intervención con cumplimiento imperfecto. Genere un cuadro que indique: 1) cuántas personas que fueron asignadas a recibir el tratamiento efectivamente fueron clientes; 2) cuántas personas que fueron asignadas a recibir el tratamiento no se convirtieron en clientes; 3) cuántas personas que no fueron asignadas a recibir el tratamiento sí se convirtieron en clientes; y 4) cuántas personas que no fueron asignadas a recibir el tratamiento tampoco se convirtieron en clientes.</p></li>
 <li><p>[5 puntos] Ahora mostraremos que la adopción, es decir, convertirse en cliente, no es independiente de las características de los hogares. Considere las variables <strong>members_resid_bl</strong> y <strong>act_number_bl</strong>, que indican el número de miembros del hogar y el número de actividades económicas del hogar. Para cada una de estas dos variables, utilice la misma especificación que en la parte a., pero ahora usando la variable <strong>cliente</strong> como regresor. ¿Qué concluye?</p></li>
 <li><p>[5 puntos] Con estos elementos estamos convencidos de que es necesario emplear lo que sabemos sobre cumplimiento imperfecto. Usaremos ahora los datos en <em>crepon_morocco_analysis.csv</em>, que contiene los datos empleados para evaluar el impacto de la adopción. Estos datos están listos para analizarse. Estime la forma reducida del efecto de ser asignado al tratamiento sobre gasto total, <strong>expense_total</strong>. Comente los resultados, en particular, comente sobre la magnitud y la significancia estadística de la variable <strong>treatment</strong>. Aquí y en adelante, incluya los siguientes controles en la regresión: <strong>members_resid_bl</strong>, <strong>nadults_resid_bl</strong>, <strong>head_age_bl</strong>, <strong>act_livestock_bl</strong>, <strong>act_business_bl</strong>, <strong>borrowed_total_bl</strong>, <strong>members_resid_d_bl</strong>, <strong>nadults_resid_d_bl</strong>, <strong>head_age_d_bl</strong>, <strong>act_livestock_d_bl</strong>, <strong>act_business_d_bl</strong>, <strong>borrowed_total_d_bl</strong>, <strong>ccm_resp_activ</strong>, <strong>other_resp_activ</strong>, <strong>ccm_resp_activ_d</strong> y <strong>other_resp_activ_d</strong>. Además, incluya efectos fijos por pareja introduciendo la variable <strong>paire</strong> como factor. Use los mismos errores estándar que en la parte a. Con esto deberá poder recuperar el coeficiente y el error estándar de la columna (3) de la tabla 3.</p></li>
@@ -333,6 +355,11 @@ factor(paire)6  2.88352450  0.4262934  6.7641779 1.517259e-11</code></pre>
 
 <ol>
 <li id="fn1"><p>Por ejemplo, suponga que estima un modelo al que llame <em>modelo1</em>. Entonces, si ejecuta</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef_test</span>(modelo1,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">vcov=</span><span class="st">"CR1S"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">cluster=</span>mis_datos<span class="sc">$</span>demi_paire)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>obtendrá los coeficientes con los errores agrupados requeridos. La opción <em>CR1S</em> toma en cuenta el número de grupos o <em>clusters</em> para realizar inferencia. Puede leer más al respecto en la ayuda al ejecutar <em>?vcovCR</em>. Este es el tipo de ajuste de muestras finitas que usan los autores. Esta corrección consiste en multiplicar la matriz de sándwich agrupada CR0 por <span class="math inline">\(\frac{G(N-1)}{(G-1)(N-p)}\)</span>, donde <span class="math inline">\(G\)</span> es el número de grupos, <span class="math inline">\(N\)</span> es el número total de observaciones y <span class="math inline">\(p\)</span> es el número de regresores.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Crépon, B., Devoto, F., Duflo, E., &amp; Parienté, W. (2015). Estimating the impact of microcredit on those who take it up: Evidence from a randomized experiment in Morocco. <em>American Economic Journal: Applied Economics</em>, 7(1), 123-50.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Angrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. <em>American Economic Journal: Applied Economics</em>, 1(1), 136-63.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

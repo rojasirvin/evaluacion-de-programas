@@ -51,37 +51,23 @@ En Crepon et al. (2015)[^2] se estudia una intervención en Marruecos en la que 
 a. [3 puntos] Primero recordaremos cómo mostrar que el tratamiento efectivamente fue asignado de manera aleatoria. El siguiente código lee los datos que debemos usar y se queda con las observaciones de la línea base. Con estos datos, mostraremos que la variable **members_resid_bl**, que indica el número de personas que viven en cada hogar está balanceado entre los grupos asignados a tratamiento y control. Noten que la media del número de personas que viven en el hogar en el grupo de control es 5.14 (d.e. 2.70) y que hay 2,266 hogares en dicho grupo de control. Esto es exactamente lo que se reporta en la fila correspondiente a *Number members* en la tabla 1 del artículo.
 
 
-```{r}
-  data.morocco<-read_csv("../files/crepon_morocco_balance.csv",
+   ```{r}
+   #| echo: true
+   
+   data.morocco<-read_csv("../files/crepon_morocco_balance.csv",
                          locale = locale(encoding = "latin1")) %>% 
     clean_names() %>% 
     filter(merge_indicator!=1)
-      
-  data.morocco %>% 
+
+   data.morocco %>% 
     group_by(treatment) %>%
     summarize(mean=mean(members_resid_bl, na.rm=T),
               std=sd(members_resid_bl, na.rm=T),
-              n=n()) %>% 
-    ungroup()
-```
+              n=n()) %>%
+   ungroup()
+   ```
 
    Obtenga ahora el valor de la diferencia entre el grupo de tratamiento y el de control, así como su valor $p$ (últimas dos columnas). Para ello, estime una regresión en la que la variable dependiente sea número de personas que vive en el hogar **members_resid_bl**, en función de la variable de asignación **treatment** y variables dummy de pareja de localidad (la variable **paire** indica cuáles son las parejas). La regresión permite recuperar la diferencia de 0.04 personas que se reporta en la fila correspondiente en la tabla 1. Para recuperar el valor $p$, estime errores agrupados usando la variable **demi_paire**, que es la clave de las distintas localidades, como variable de agrupación. Una forma de realizar esto es con la función *coef_test* del paquete *clubSandwich*.[^3]
-   
-   *Estimamos la regresión con el número de personas como variable dependiente en función de la asignación al tratamiento y de las parejas:*
-   
-```{r}
-dif_members <- lm(members_resid_bl ~ treatment + factor(paire),
-   data=data.morocco)
-
-summary(dif_members)$coef[1:7,]
-nobs(dif_members)
-
-coef_test(dif_members,
-          vcov = "CR1S", 
-          cluster = data.morocco$demi_paire)[1:2,]
-```
-
-   *Obtenemos un coeficiente de 0.04334484, que se redondea a 0.04 en la tabla. El valor $p$ de 0.583 es exactamente el reportado en la última columna. Aquí lo clave es calcular los errores agrupados.*
 
 a. [2 puntos] Ahora mostremos que efectivamente este es un ejemplo de una intervención con cumplimiento imperfecto. Genere un cuadro que indique: 1) cuántas personas que fueron asignadas a recibir el tratamiento efectivamente fueron clientes; 2) cuántas personas que fueron asignadas a recibir el tratamiento no se convirtieron en clientes; 3) cuántas personas que no fueron asignadas a recibir el tratamiento sí se convirtieron en clientes; y 4) cuántas personas que no fueron asignadas a recibir el tratamiento tampoco se convirtieron en clientes.
 
@@ -145,6 +131,7 @@ a. [5 puntos] Estime ahora el efecto de tratamiento sobre **indice_escolar_sd**,
 [^2]: Por ejemplo, suponga que estima un modelo al que llame *modelo1*. Entonces, si ejecuta
 
 ```{r indent='    '}
+#| echo: true
 #| include: true
 #| eval: false
 
