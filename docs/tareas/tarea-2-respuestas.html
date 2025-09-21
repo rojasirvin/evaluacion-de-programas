@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -63,15 +64,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-209d9ab60904f1bb8f31161fafd02104.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -133,7 +135,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -270,36 +272,7 @@ window.Quarto = {
 <h1>Respuestas</h1>
 <section id="pregunta-1" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-1">Pregunta 1</h2>
-<p>En esta pregunta usaremos un ejemplo de el estudio con asignación experimental de Banerjee et al.&nbsp;(2015)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> para fijar algunas ideas referentes al análisis de una intervención de este tipo. A diferencia de otros ejemplos vistos en clase, este es un experimento a gran escala. Por favor, utilice la versión publicada, así como el <a href="https://www.science.org/doi/abs/10.1126/science.1260799">material suplementario</a>.</p>
-<ol type="a">
-<li><p>[5 puntos] Describa brevemente en qué consiste la intervención que se discute en el artículo.</p>
-<p><em>La intervención que se reporta en el artículo es descrita como una intervención holística. Se trata de un paquete de intervenciones que incluyen una transferencia monetaria periódica, la dotación de activos productivos, un instrumento de acceso a ahorro, así como servicios de salud y educación básicos.</em></p>
-<p><em>La idea es inducir un fuerte impulso para el ingreso y las oportunidades de generar ingreso de los hogares pobres. El programa tiene un enfoque de graduación, es decir, busca que, a partir de cierto momento, los hogares ya no requieran el apoyo del programa para sostener unas condiciones de vida mejores.</em></p></li>
-<li><p>[5 puntos] Describa brevemente en qué consiste el diseño experimental, es decir, ¿cómo se construye la variación que permite identificar el efecto del tratamiento? ¿Cómo se construyen los grupos de tratamiento y control?</p>
-<p><em>El experimento se desarrolló en seis países. En cada uno, un proceso participativo permitió identificar a los hogares elegibles. En tres de los países del experimento, la asignación del tratamiento fue aleatorizada de manera simple, es decir, aproximadamente la mitad de los hogares fueron asignados al azar a ser tratados y la otra parte no.</em></p>
-<p><em>En los otros tres países, la asignación fue mediante una aleatorización por grupos, con una primera asignación aleatoria del tratamiento a nivel localidad y una segunda asignación aleatoria a nivel hogar. Es decir, en estos tres países existieron localidades de tratamiento y de control. En las localidades de control nadie recibió el tratamiento. En las localidades de tratamiento, sin embargo, algunos hogares recibieron la intervención y algunos no.</em></p></li>
-<li><p>[5 puntos] En la página 1260799-7 se presenta una subsección denominada <em>Atrition</em>. Describa brevemente el propósito de este análisis y qué se concluye al respecto.</p>
-<p><em>Este análisis tiene el objetivo de demostrar que los hogares que abandonaron el programa no eran diferentes de aquellos que permanecieron en el mismo. Esto es importante porque podría ser que los hogares que dejan el programa sean distintos que los que se quedan, ocasionando un problema de selección. Por ejemplo, si los hogares más pobres dejan el programa en una mayor proporción que los hogares menos pobres, el grupo final con el que se estima el impacto tendrá una composición relativamente menos pobre, con lo que es probable que se sobre estime el impacto del programa.</em></p>
-<p><em>En este experimento, la atrición fue, en promedio, de 6% en la encuesta de seguimiento después de 24 meses, y de 9% en la encuesta de seguimiento después de 36 meses.</em></p>
-<p><em>Los autores concluyen que la atrición no dio lugar a un sesgo porla composición del grupo de personas que tomaron las dos encuestas de seguimiento (ver tabla S1f del material suplementario).</em></p></li>
-<li><p>[5 puntos] En la página 1260799-7, la subsección <em>Compliance with treatment assignment</em> concluye que los efectos estimados en el artículo se refieren a un efecto de intención a tratar o <em>intent-to-treat</em> o <em>ITT</em>. ¿Por qué?</p>
-<p><em>Los autores reportan que en cinco de los seis países la adopción del tratamiento fue perfecta: ninguno de los hogares asignados al grupo de control recibió el tratamiento y todos los hogares asignados a ser tratados recibieron la intervención. Son embargo, en India esto no fue así. Solo el 52% de los hogares asignados al tratamiento lo recibieron, por razones que van desde cuestiones religiosas hasta normas sociales.</em></p>
-<p><em>Por esta razón, los investigadores reconocen que el efecto estimado es un efecto de intención a tratar o ITT, que compara los resultados entre los grupos de asignación, ignorando la decisión de adoptar o no.</em></p>
-<p><em>Los autores pudieron haber decidido estimar aquí el LATE. Aunque en el caso de los cinco países con cumplimiento perfecto, el resultado se mantendría inalterado.</em></p></li>
-<li><p>[5 puntos] En la página 1260799-8 se discuten dos métodos para tomar en cuenta la prueba de hipótesis múltiples. Describa brevemente por qué puede ser problemático probar múltiples hipótesis y cuáles son las dos formas en que los autores enfrentan este problema.</p>
-<p><em>Probar múltiples hipótesis incrementa exponencialmente la probabilidad de obtener un efecto estadísticamente signficativo por suerte. Para tomar en cuenta este problema, los autores emplean dos métodos que son los vistos en clase.</em></p>
-<p><em>Primero, se emplean índices para agregar las variables que pertenecen a una familia en un solo indicador. De hecho, los impactos sobre los índices de la tabla 3 del artículo son los que se consideran los resultados principales del trabajo.</em></p>
-<p><em>Segundo, se emplea la corrección de Benjamini &amp; Hochberg, descrita en clase. Esto se describe en la página 5 del material suplementario. Los autores realizan un procedimiento un poco más general. Realizan el mismo procedimiento que vimos en clase pero para todos los posibles valores de <span class="math inline">\(\alpha\)</span>, el nivel de significancia. Por ejemplo, primero se fija <span class="math inline">\(\alpha=1.000\)</span> y se realiza el procedimiento de Benjamini &amp; Hochberg. Luego se toma <span class="math inline">\(\alpha=0.0999\)</span> y se realiza lo mismo. Así sucesivamente hasta llegar a fijar <span class="math inline">\(\alpha=0.000\)</span>. Así, para cada hipótesis, los autores son capaces de identificar el valor de <span class="math inline">\(\alpha\)</span> más pequeño tal que se rechace la hipótesis nula y a dicho valor le llaman valor <span class="math inline">\(q\)</span>. Este valor se reporta en la columna 5 de la tabla 3 y se puede interpretar como interpretamos el valor <span class="math inline">\(p\)</span>.</em></p>
-<p><em><strong>NOTA: El procedimiento de Benjamini &amp; Hochberg es tedioso y lo es más el cálculo de los valores <span class="math inline">\(q\)</span>. No es algo que se pediría hacer en un examen, aunque sí es importante entender el concepto y la idea detrás de la corrección.</strong></em></p></li>
-<li><p>[5 puntos] En la página 1260799-12 se discute la posible presencia de efectos de derramamiento o <em>spillovers</em>. Describa brevemente en qué consisten dichos efectos de derramamiento y cómo los autores muestran la presencia o ausencia de dichos efectos usando regresiones.</p>
-<p><em>Los efectos de derramamiento ocurren cuando hogares asignados al grupo de control se benefician indirectamente del tratamiento. Podría ocurrir, por ejemplo, que los hogares tratados le donaran parte de los recursos de su transferencia monetaria a hogares del grupo de control. Otra forma de efecto de derramamiento ocurre son los efectos de equilibrio general, por ejemplo, cuando la intervención genera inflación a nivel local, afectando el nivel de ingreso real de los hogares tratados y no tratados por igual.</em></p>
-<p><em>El diseño experimental de este estudio permite probar empíricamente la presencia de efectos de derramamiento al explotar la variación entre localidades en los tres países con aleatorización por grupos. En particular, se pueden comparar a los hogares en las localidades de control (controles puros) con los hogares no tratados en localidades de tratamiento, que son los que pudieron estar expuestos a los efectos de derramamiento.</em></p>
-<p><em>Dado que no existen diferencias estadísticamente significativas en las variables de impacto (ver tabla S6a del material suplementario), se descarta la presencia de efectos de derramamiento.</em></p></li>
-</ol>
-</section>
-<section id="pregunta-2" class="level2">
-<h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
-<p>En Crepon et al.&nbsp;(2015)<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> se estudia una intervención en Marruecos en la que se analiza el efecto de la <em>adopción</em> de microfinanzas, a través de un experimento de campo. En 81 de 162 localidades estudiadas se introdujo aleatoriamente una empresa de microfinanzas. Para seleccionar las localidades de tratamiento, primero se <em>emparejaron</em> localidades de acuerdo a características observables y, para cada pareja se asignó a tratamiento y otra a control. La variable que identifica a las parejas es <strong>paire</strong>. La base de datos <em>crepon_morocco_balance.csv</em> contiene los datos de este estudio usados para mostrar la integridad del diseño. La variable <strong>treatment</strong> es la variable de asignación aleatoria, mientras que la variable <strong>client</strong> es la variable de adopción</p>
+<p>En Crepon et al.&nbsp;(2015)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> se estudia una intervención en Marruecos en la que se analiza el efecto de la <em>adopción</em> de microfinanzas, a través de un experimento de campo. En 81 de 162 localidades estudiadas se introdujo aleatoriamente una empresa de microfinanzas. Para seleccionar las localidades de tratamiento, primero se <em>emparejaron</em> localidades de acuerdo a características observables y, para cada pareja se asignó a tratamiento y otra a control. La variable que identifica a las parejas es <strong>paire</strong>. La base de datos <em>crepon_morocco_balance.csv</em> contiene los datos de este estudio usados para mostrar la integridad del diseño. La variable <strong>treatment</strong> es la variable de asignación aleatoria, mientras que la variable <strong>client</strong> es la variable de adopción</p>
 <ol type="a">
 <li><p>[3 puntos] Primero recordaremos cómo mostrar que el tratamiento efectivamente fue asignado de manera aleatoria. El siguiente código lee los datos que debemos usar y se queda con las observaciones de la línea base. Con estos datos, mostraremos que la variable <strong>members_resid_bl</strong>, que indica el número de personas que viven en cada hogar está balanceado entre los grupos asignados a tratamiento y control. Noten que la media del número de personas que viven en el hogar en el grupo de control es 5.14 (d.e. 2.70) y que hay 2,266 hogares en dicho grupo de control. Esto es exactamente lo que se reporta en la fila correspondiente a <em>Number members</em> en la tabla 1 del artículo.</p>
 <div class="cell">
@@ -322,7 +295,7 @@ window.Quarto = {
 2         1  5.19  2.76  2199</code></pre>
 </div>
 </div>
-<p>Obtenga ahora el valor de la diferencia entre el grupo de tratamiento y el de control, así como su valor <span class="math inline">\(p\)</span> (últimas dos columnas). Para ello, estime una regresión en la que la variable dependiente sea número de personas que vive en el hogar <strong>members_resid_bl</strong>, en función de la variable de asignación <strong>treatment</strong> y variables dummy de pareja de localidad (la variable <strong>paire</strong> indica cuáles son las parejas). La regresión permite recuperar la diferencia de 0.04 personas que se reporta en la fila correspondiente en la tabla 1. Para recuperar el valor <span class="math inline">\(p\)</span>, estime errores agrupados usando la variable <strong>demi_paire</strong>, que es la clave de las distintas localidades, como variable de agrupación. Una forma de realizar esto es con la función <em>coef_test</em> del paquete <em>clubSandwich</em>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Obtenga ahora el valor de la diferencia entre el grupo de tratamiento y el de control, así como su valor <span class="math inline">\(p\)</span> (últimas dos columnas). Para ello, estime una regresión en la que la variable dependiente sea número de personas que vive en el hogar <strong>members_resid_bl</strong>, en función de la variable de asignación <strong>treatment</strong> y variables dummy de pareja de localidad (la variable <strong>paire</strong> indica cuáles son las parejas). La regresión permite recuperar la diferencia de 0.04 personas que se reporta en la fila correspondiente en la tabla 1. Para recuperar el valor <span class="math inline">\(p\)</span>, estime errores agrupados usando la variable <strong>demi_paire</strong>, que es la clave de las distintas localidades, como variable de agrupación. Una forma de realizar esto es con la función <em>coef_test</em> del paquete <em>clubSandwich</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p><em>Estimamos la regresión con el número de personas como variable dependiente en función de la asignación al tratamiento y de las parejas:</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dif_members <span class="ot">&lt;-</span> <span class="fu">lm</span>(members_resid_bl <span class="sc">~</span> treatment <span class="sc">+</span> <span class="fu">factor</span>(paire),</span>
@@ -503,13 +476,13 @@ client       24263.46   12419.55  1.953651 0.05080007</code></pre>
 </div></li>
 </ol>
 </section>
-<section id="pregunta-3" class="level2">
-<h2 class="anchored" data-anchor-id="pregunta-3">Pregunta 3</h2>
+<section id="pregunta-2" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-2">Pregunta 2</h2>
 <p>Sea una variable de resultados <span class="math inline">\(y_i\)</span>, una variable de asignación aleatoria <span class="math inline">\(Z_i\)</span> y una variable de adopción <span class="math inline">\(D_i\)</span>. El estimador de Wald se define como:</p>
 <p><span class="math display">\[\hat{\beta}_{Wald}=\frac{\bar{Y}_{Z_i=1}-\bar{Y}_{Z_i=0}}{\bar{D}_{Z_i=1}-\bar{D}_{Z_i=0}}\]</span></p>
 <p>En esta pregunta mostraremos cómo el estimador de Wald es equivalente al estimador de VI cuando no hay controles. Use nuevamente los datos en <em>crepon_morocco_analysis.csv</em>.</p>
 <ol type="a">
-<li><p>[5 puntos] Obtenga el estimador de Wald como el cociente de la diferencia en gasto total promedio entre los hogares asignados a tratamiento y control dividido por la diferencia en la probabilidad de adopción entre los hogares asignados a tratamiento y control. Recuerde que la variable del gasto total es <strong>expense_total</strong>.</p>
+<li><p>[10 puntos] Obtenga el estimador de Wald como el cociente de la diferencia en gasto total promedio entre los hogares asignados a tratamiento y control dividido por la diferencia en la probabilidad de adopción entre los hogares asignados a tratamiento y control. Recuerde que la variable del gasto total es <strong>expense_total</strong>.</p>
 <p><em>Obtenemos el estadístico de Wald, usando la definición:</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>data.morocco<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"../files/crepon_morocco_analysis.csv"</span>)   <span class="sc">%&gt;%</span> </span>
@@ -563,8 +536,9 @@ Residual standard error: 74610 on 4932 degrees of freedom
 Multiple R-Squared: 0.00651, Adjusted R-squared: 0.006309 
 Wald test: 3.251 on 1 and 4932 DF,  p-value: 0.07144 </code></pre>
 </div>
-</div>
-<p><em>Más aún, podríamos obtener el mismo coeficiente haciendo MC2E a mano, lo cual nunca es recomendable debido a que la inferencia sobre el coeficiente de la segunda etapa es incorrecta. Sin embargo, nos deja ver cómo podemos entender el proceso de estimación conceptualmente.</em></p>
+</div></li>
+<li><p>[10 puntos] Ahora estime por MC2E el efecto de la adopción sobre el gasto total, usando la variable de asignación como instrumento para la adopción. A diferencia del punto previo, realice la estimación <em>a mano</em>, es decir, primero estime los valores ajustados de la variable endógena en una primera etapa y luego use estos valores ajustados en la estimación estructural. ¿Qué desventaja observa con respecto a la estimación del punto previo?</p>
+<p><em>Podemos obtener el mismo coeficiente haciendo MC2E a mano, lo cual nunca es recomendable debido a que la inferencia sobre el coeficiente de la segunda etapa es incorrecta. Sin embargo, nos deja ver cómo podemos entender el proceso de estimación conceptualmente.</em></p>
 <p><em>Estimamos la primera etapa y obtenemos los valores ajustados:</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>p.e <span class="ot">&lt;-</span> <span class="fu">lm</span>(client <span class="sc">~</span> treatment,</span>
@@ -600,36 +574,159 @@ Multiple R-squared:  0.0006549,  Adjusted R-squared:  0.0004522
 F-statistic: 3.232 on 1 and 4932 DF,  p-value: 0.07228</code></pre>
 </div>
 </div>
-<p><em>Y obtenemos de nuevo 22,869 unidades monetarias como impacto estimado.</em></p></li>
+<p><em>Y obtenemos de nuevo 22,869 unidades monetarias como impacto estimado.</em></p>
+<p><em>La desventaja de este procedimiento es que los errores estándar son incorrectos pues la estimación de la ecuación estructural no considera el error muestral de la primera etapa y, por tanto, considera a los valores de client_hat como si fueran directamente observados.</em></p></li>
+</ol>
+</section>
+<section id="pregunta-3" class="level2">
+<h2 class="anchored" data-anchor-id="pregunta-3">Pregunta 3</h2>
+<p>En la Pregunta 2, parte a, obtuvo el estimador de Wald para aproximar el efecto de la adopción en el gasto total como un cosciente de dos diferencias de medias.</p>
+<ol type="a">
+<li><p>[5 puntos] Utilice un procedimiento bootstrap <em>a mano</em> para estimar el error estándar del estimador de Wald usando 50 repeticiones. Es decir, debe realizar un remuestreo de los datos originales y para cada muestra obtener el estimador de Wald. Luego, obtenga la desviación estándar de los 50 estadísticos calculados. Utilice una semilla para poder replicar sus resultados.</p>
+<p><em>Ya sabemos calcular un estadístico de Wald, como en la Pregunta 2, parte a. La idea ahora es repetir dicho proceso B veces, pero en cada repetición con una muestra bootstrap a la mano:</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>data.morocco<span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"../files/crepon_morocco_analysis.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(treatment,client,expense_total)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>obs <span class="ot">&lt;-</span> <span class="fu">nrow</span>(data.morocco)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Solo para ejemplificar, la siguiente línea pide el remuestreo, es decir, obtener una muestra de tamaño N de la muestra original, con reemplazo</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>data.b <span class="ot">&lt;-</span>data.morocco[<span class="fu">sample</span>(<span class="fu">nrow</span>(data.morocco),obs, <span class="at">replace =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Simplemente repetimos el proceso anterior B veces</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">821</span>)</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>B<span class="ot">=</span><span class="dv">50</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Inicializamos el vector donde guardaremos los W estimados</span></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>Wrep50_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">W=</span><span class="fu">matrix</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">nrow =</span> B))</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B)</span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>  data.b <span class="ot">&lt;-</span>data.morocco[<span class="fu">sample</span>(<span class="fu">nrow</span>(data.morocco),obs, <span class="at">replace =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Literalmente pegamos el cálculo de un W, hecho en la Pregunta 2a</span></span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>  mean_cliente<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">p_cliente=</span><span class="fu">mean</span>(client, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ungroup</span>()</span>
+<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>  mean_gasto<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">m_gasto=</span><span class="fu">mean</span>(expense_total, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a><span class="fu">ungroup</span>()</span>
+<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a>  dif_gasto <span class="ot">&lt;-</span> mean_gasto[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_gasto[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a>  dif_cliente <span class="ot">&lt;-</span> mean_cliente[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_cliente[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Y lo guardamos en la posición adecuada</span></span>
+<span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a>  Wrep50_1[i,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(dif_gasto <span class="sc">/</span> dif_cliente)</span>
+<span id="cb33-37"><a href="#cb33-37" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb33-38"><a href="#cb33-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-39"><a href="#cb33-39" aria-hidden="true" tabindex="-1"></a><span class="co">#El error estimado es simplemente la desviación estándar de los B estadísticos estimados</span></span>
+<span id="cb33-40"><a href="#cb33-40" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Wrep50_1<span class="sc">$</span>W)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14735.91</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Reemplace la semilla de la parte a. por una nueva semilla y estime nuevamente el error estándar del estimador de Wald con 50 repeticiones. Comente sobre la diferencia entre este error estándar y el de la parte a.</p>
+<p><em>El cambio que observamos en el error estándar estimado por bootstrap entre esta parte y la parte a. es que al cambiar la semilla, los números aleatorios generados son distitnos y, por tanto, cada muestra bootstrap tiene distintos individuos.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Simplemente cambiamos la semilla</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8212</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>B<span class="ot">=</span><span class="dv">50</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Inicializamos el vector donde guardaremos los W estimados</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>Wrep50_2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">W=</span><span class="fu">matrix</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">nrow =</span> B))</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  data.b <span class="ot">&lt;-</span>data.morocco[<span class="fu">sample</span>(<span class="fu">nrow</span>(data.morocco),obs, <span class="at">replace =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>  mean_cliente<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">p_cliente=</span><span class="fu">mean</span>(client, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ungroup</span>()</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>  mean_gasto<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">m_gasto=</span><span class="fu">mean</span>(expense_total, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ungroup</span>()</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>  dif_gasto <span class="ot">&lt;-</span> mean_gasto[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_gasto[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>  dif_cliente <span class="ot">&lt;-</span> mean_cliente[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_cliente[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>  Wrep50_2[i,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(dif_gasto <span class="sc">/</span> dif_cliente)</span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Wrep50_2<span class="sc">$</span>W)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14869.02</code></pre>
+</div>
+</div></li>
+<li><p>[5 puntos] Regrese el valor de la semilla al usado en a. y estime nuevamente el error estándar del estimador de Wald, esta vez usando 1000 repeticiones. Comente sobre la diferencia entre este error estándar y el de la parte a.</p>
+<p><em>Ahora las diferencias en el error estimado surgen porque tenemos muchas más repeticiones bootstrap. Lo más importante de estos procedimientos es que pueda implementarlos a otros contextos. Por ejemplo, podemos hacer obtener errores bootstrap para el vector de coeficientes de una estimación de MC2E, para el producto de dos coeficientes, etc.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Regresamos a la primera semilla pero ahora B=1000</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">820</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>B<span class="ot">=</span><span class="dv">1000</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>Wrep1000 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">W=</span><span class="fu">matrix</span>(<span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">nrow =</span> B))</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>  data.b <span class="ot">&lt;-</span>data.morocco[<span class="fu">sample</span>(<span class="fu">nrow</span>(data.morocco),obs, <span class="at">replace =</span> <span class="cn">TRUE</span>),]</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>  mean_cliente<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">p_cliente=</span><span class="fu">mean</span>(client, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ungroup</span>()</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>  mean_gasto<span class="ot">&lt;-</span>data.b <span class="sc">%&gt;%</span></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(treatment) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">m_gasto=</span><span class="fu">mean</span>(expense_total, <span class="at">na.rm=</span>F)) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ungroup</span>()</span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>  dif_gasto <span class="ot">&lt;-</span> mean_gasto[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_gasto[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>  dif_cliente <span class="ot">&lt;-</span> mean_cliente[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">-</span>mean_cliente[<span class="dv">1</span>,<span class="dv">2</span>]</span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>  Wrep1000[i,<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(dif_gasto <span class="sc">/</span> dif_cliente)</span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a><span class="co">#El error estimado es simplemente la desviación estándar de los B estadísticos estimados</span></span>
+<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(Wrep1000<span class="sc">$</span>W)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12998.05</code></pre>
+</div>
+</div></li>
 </ol>
 </section>
 <section id="pregunta-4" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-4">Pregunta 4</h2>
-<p>Considere nuevamente la base <em>STAR_public_use.csv</em> usada en la Tarea 1 del artículo Angrist, Lang y Oreopoulos (2009)<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. En esta pregunta nos concentraremos en los efectos de la intervención en el año 2, mostrados en la columna (4) de la Tabla 6, sobre dos variables, el promedio de calificaciones <strong>gpa_year2</strong> y los créditos completados <strong>credits_earned2</strong>.</p>
+<p>Considere nuevamente la base <em>STAR_public_use.csv</em> usada en la Tarea 1 del artículo Angrist, Lang y Oreopoulos (2009)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. En esta pregunta nos concentraremos en los efectos de la intervención en el año 2, mostrados en la columna (4) de la Tabla 6, sobre dos variables, el promedio de calificaciones <strong>gpa_year2</strong> y los créditos completados <strong>credits_earned2</strong>.</p>
 <p>El propósito de esta pregunta es mostrar la función de los <span class="math inline">\(z\)</span>-scores en el análisis de efectos de tratamiento. De nuevo, puede quedarse solo con las observaciones que tienen <strong>noshow</strong> igual a 0. Antes de comenzar su análisis, sustituya por NA los valores en <strong>credits_earned2</strong> para aquellas observaciones que tienen <span class="math inline">\(NA\)</span> en la variable <strong>prob_year1</strong>.</p>
 <ol type="a">
 <li><p>[5 puntos] Para tener un punto de comparación, estime la ecuación del efecto de tratamiento para <strong>gpa_year2</strong> usando la misma especificación que en la pregunta 5 de la Tarea 1. Use también errores robustos. Deberá poder replicar los coeficientes y errores estándar del panel A, columna (4). ¿Cómo se interpretan el coeficiente sobre la variable <strong>ssp</strong>?</p>
 <p><em>Usando la misma especificación que usamos en la Tarea 1, obtenemos los coeficientes en el artículo.</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>data.angrist<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"../files/STAR_public_use.csv"</span>,</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"latin1"</span>))   <span class="sc">%&gt;%</span> </span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>data.angrist<span class="ot">&lt;-</span>data.angrist <span class="sc">%&gt;%</span> </span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(noshow<span class="sc">==</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">credits_earned2=</span><span class="fu">ifelse</span>(<span class="fu">is.na</span>(prob_year1),<span class="cn">NA</span>,credits_earned2)) </span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">&lt;-</span><span class="fu">lm</span>(gpa_year2 <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp<span class="sc">+</span></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(sex)<span class="sc">+</span></span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mtongue)<span class="sc">+</span></span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(hsgroup)<span class="sc">+</span></span>
-<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(numcourses_nov1)<span class="sc">+</span></span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(lastmin)<span class="sc">+</span></span>
-<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mom_edn)<span class="sc">+</span></span>
-<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(dad_edn),</span>
-<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>           data.angrist)</span>
-<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r1, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r1, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>data.angrist<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"../files/STAR_public_use.csv"</span>,</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">encoding =</span> <span class="st">"latin1"</span>))   <span class="sc">%&gt;%</span> </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>data.angrist<span class="ot">&lt;-</span>data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(noshow<span class="sc">==</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">credits_earned2=</span><span class="fu">ifelse</span>(<span class="fu">is.na</span>(prob_year1),<span class="cn">NA</span>,credits_earned2)) </span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>r1 <span class="ot">&lt;-</span><span class="fu">lm</span>(gpa_year2 <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp<span class="sc">+</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(sex)<span class="sc">+</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mtongue)<span class="sc">+</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(hsgroup)<span class="sc">+</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(numcourses_nov1)<span class="sc">+</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(lastmin)<span class="sc">+</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mom_edn)<span class="sc">+</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(dad_edn),</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>           data.angrist)</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r1, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r1, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               Estimate Std. Error    t value     Pr(&gt;|t|)
 (Intercept)  2.87240513 0.45314003  6.3388908 3.261488e-10
@@ -641,19 +738,19 @@ sfsp         0.07158763 0.09081195  0.7883063 4.306722e-01</code></pre>
 <li><p>[5 puntos] Genere un <span class="math inline">\(z\)</span>-score para la variable <strong>gpa_year2</strong> al que llame <strong>gpa_year2_sd</strong>. Para ello, calcule la media y desviación estándar de <strong>gpa_year2</strong> para el grupo de control y luego genere <strong>gpa_year2_sd</strong> restándole a <strong>gpa_year2</strong> la media obtenida y dividiendo esta diferencia por la desviación estándar obtenida. Compruebe que si calcula la media y la desviación estándar de <strong>gpa_year2_sd</strong>, en el grupo de control estas deberían ser 0 y 1, respectivamente.</p>
 <p><em>Creamos un z-score:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>gpa_year2_stats <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(gpa_year2,<span class="at">na.rm=</span>T),</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">desvest=</span><span class="fu">sd</span>(gpa_year2,<span class="at">na.rm=</span>T))</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">gpa_year2_sd=</span>(gpa_year2<span class="sc">-</span>gpa_year2_stats<span class="sc">$</span>media)<span class="sc">/</span>gpa_year2_stats<span class="sc">$</span>desvest)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>gpa_year2_stats <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(gpa_year2,<span class="at">na.rm=</span>T),</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">desvest=</span><span class="fu">sd</span>(gpa_year2,<span class="at">na.rm=</span>T))</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">gpa_year2_sd=</span>(gpa_year2<span class="sc">-</span>gpa_year2_stats<span class="sc">$</span>media)<span class="sc">/</span>gpa_year2_stats<span class="sc">$</span>desvest)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>Tiene media igual a 0:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(gpa_year2_sd,<span class="at">na.rm=</span>T))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(gpa_year2_sd,<span class="at">na.rm=</span>T))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
      media
@@ -663,9 +760,9 @@ sfsp         0.07158763 0.09081195  0.7883063 4.306722e-01</code></pre>
 </div>
 <p><em>Y desviación estándar igual a 1:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">desvest=</span><span class="fu">sd</span>(gpa_year2_sd,<span class="at">na.rm=</span>T)) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">desvest=</span><span class="fu">sd</span>(gpa_year2_sd,<span class="at">na.rm=</span>T)) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   desvest
@@ -676,17 +773,17 @@ sfsp         0.07158763 0.09081195  0.7883063 4.306722e-01</code></pre>
 <li><p>[5 puntos] Realice la misma estimación que en la parte a., pero ahora use como variable dependiente <strong>gpa_year2_sd</strong>. ¿Cómo se interpreta el coeficiente sobre <strong>ssp</strong>? ¿Qué es diferente y qué es igual entre los resultados obtenidos en esta parte y los obtenidos en la parte a.?</p>
 <p><em>Realizamos la estimación, pero con la variable dependiente estandarizada:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">&lt;-</span><span class="fu">lm</span>(gpa_year2_sd <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp<span class="sc">+</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(sex)<span class="sc">+</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mtongue)<span class="sc">+</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(hsgroup)<span class="sc">+</span></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(numcourses_nov1)<span class="sc">+</span></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(lastmin)<span class="sc">+</span></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mom_edn)<span class="sc">+</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(dad_edn),</span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>           data.angrist)</span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r2, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r2, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>r2 <span class="ot">&lt;-</span><span class="fu">lm</span>(gpa_year2_sd <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp<span class="sc">+</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(sex)<span class="sc">+</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mtongue)<span class="sc">+</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(hsgroup)<span class="sc">+</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(numcourses_nov1)<span class="sc">+</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(lastmin)<span class="sc">+</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(mom_edn)<span class="sc">+</span></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>             <span class="fu">factor</span>(dad_edn),</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>           data.angrist)</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r2, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r2, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               Estimate Std. Error    t value   Pr(&gt;|t|)
 (Intercept)  0.94640721 0.50806908  1.8627530 0.06273961
@@ -697,7 +794,7 @@ sfsp         0.08026539 0.10182006  0.7883063 0.43067220</code></pre>
 </div>
 <p><em>Los coeficientes estimados son diferentes. Ahora el coeficiente sobre ssp es el efecto que tiene el programa en el z-score del promedio de calificaciones, es decir, el SSP tiene un efecto de 0.056 desviaciones estándar en el z-score del promedio de calificaciones, aunque este efecto no es estadísticamente significativo. La magnitud del error estándar también es diferente, pues ahora las variables están en distintas unidades. Noten, en cambio, que el estadístico t asociado a SSP es exactamente igual al de la parte a., por lo que en ambos casos no se rechaza la <span class="math inline">\(H_0\)</span>.</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r1, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r1, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r1, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r1, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               Estimate Std. Error    t value     Pr(&gt;|t|)
 (Intercept)  2.87240513 0.45314003  6.3388908 3.261488e-10
@@ -706,37 +803,37 @@ sfp         -0.01807372 0.06618352 -0.2730848 7.848347e-01
 sfsp         0.07158763 0.09081195  0.7883063 4.306722e-01</code></pre>
 </div>
 </div></li>
-<li><p>[5 puntos] Ahora realizaremos un índice de mejora en educación, al agregar los resultados de estos dos indicadores en una sola variable, como se describe en Banerjee et al.&nbsp;(2015)<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. Para ello, primero genere <strong>credits_earned2_sd</strong>, que será la versión estandarizada de <strong>credits_earned2</strong>, siguiendo el mismo procedimiento que en la parte b. En seguida, genere una nueva variable llamada <strong>indice_escolar</strong>, que será el promedio de <strong>credits_earned2_sd</strong> y <strong>gpa_year2_sd</strong>. Luego, calcule la media y la desviación estándar de <strong>indice_escolar</strong> en el grupo de control. Finalmente, genere una nueva variable <strong>indice_escolar_sd</strong> restándole a <strong>indice_escolar</strong> la media antes calculada y dividiendo esta diferencia por la desviación estándar antes calculada. Muestre que la variable <strong>indice_escolar_sd</strong> tiene media 0 y desviación estándar 1 en el grupo de control.</p>
+<li><p>[5 puntos] Ahora realizaremos un índice de mejora en educación, al agregar los resultados de estos dos indicadores en una sola variable, como se describe en Banerjee et al.&nbsp;(2015)<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Para ello, primero genere <strong>credits_earned2_sd</strong>, que será la versión estandarizada de <strong>credits_earned2</strong>, siguiendo el mismo procedimiento que en la parte b. En seguida, genere una nueva variable llamada <strong>indice_escolar</strong>, que será el promedio de <strong>credits_earned2_sd</strong> y <strong>gpa_year2_sd</strong>. Luego, calcule la media y la desviación estándar de <strong>indice_escolar</strong> en el grupo de control. Finalmente, genere una nueva variable <strong>indice_escolar_sd</strong> restándole a <strong>indice_escolar</strong> la media antes calculada y dividiendo esta diferencia por la desviación estándar antes calculada. Muestre que la variable <strong>indice_escolar_sd</strong> tiene media 0 y desviación estándar 1 en el grupo de control.</p>
 <p><em>Primero creamos la versión estandarizada de la variable de créditos:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>credits_earned2_stats <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(credits_earned2,<span class="at">na.rm=</span>T),</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(credits_earned2,<span class="at">na.rm=</span>T))</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">credits_earned2_sd=</span>(credits_earned2<span class="sc">-</span>credits_earned2_stats<span class="sc">$</span>media)<span class="sc">/</span>credits_earned2_stats<span class="sc">$</span>desvest)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>credits_earned2_stats <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(credits_earned2,<span class="at">na.rm=</span>T),</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(credits_earned2,<span class="at">na.rm=</span>T))</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">credits_earned2_sd=</span>(credits_earned2<span class="sc">-</span>credits_earned2_stats<span class="sc">$</span>media)<span class="sc">/</span>credits_earned2_stats<span class="sc">$</span>desvest)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>Luego calculamos la media de las dos variables estandarizadas:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">indice_escolar=</span><span class="fu">rowMeans</span>(<span class="fu">select</span>(.,credits_earned2_sd,gpa_year2_sd)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">indice_escolar=</span><span class="fu">rowMeans</span>(<span class="fu">select</span>(.,credits_earned2_sd,gpa_year2_sd)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>Ahora obtenemos la media y la desviación estándar en el grupo de control del promedio antes calculado:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>indice_escolar_stats <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(indice_escolar,<span class="at">na.rm=</span>T),</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(indice_escolar,<span class="at">na.rm=</span>T))</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">indice_escolar_sd=</span>(indice_escolar<span class="sc">-</span>indice_escolar_stats<span class="sc">$</span>media)<span class="sc">/</span>indice_escolar_stats<span class="sc">$</span>desvest)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>indice_escolar_stats <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(indice_escolar,<span class="at">na.rm=</span>T),</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">desvest=</span><span class="fu">sd</span>(indice_escolar,<span class="at">na.rm=</span>T))</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="ot">&lt;-</span> data.angrist <span class="sc">%&gt;%</span> </span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">indice_escolar_sd=</span>(indice_escolar<span class="sc">-</span>indice_escolar_stats<span class="sc">$</span>media)<span class="sc">/</span>indice_escolar_stats<span class="sc">$</span>desvest)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>Efectivamente tiene media igual a 0:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(indice_escolar_sd,<span class="at">na.rm=</span>T))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">media=</span><span class="fu">mean</span>(indice_escolar_sd,<span class="at">na.rm=</span>T))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
       media
@@ -746,9 +843,9 @@ sfsp         0.07158763 0.09081195  0.7883063 4.306722e-01</code></pre>
 </div>
 <p><em>Y desviación estándar igual a 1:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">desvest=</span><span class="fu">sd</span>(indice_escolar_sd,<span class="at">na.rm=</span>T)) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>data.angrist <span class="sc">%&gt;%</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(control<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">desvest=</span><span class="fu">sd</span>(indice_escolar_sd,<span class="at">na.rm=</span>T)) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   desvest
@@ -759,17 +856,17 @@ sfsp         0.07158763 0.09081195  0.7883063 4.306722e-01</code></pre>
 <li><p>[5 puntos] Estime ahora el efecto de tratamiento sobre <strong>indice_escolar_sd</strong>, siguiendo la misma especificación econométrica que en la parte a. y usando errores robustos. ¿Qué concluye?</p>
 <p><em>Estimamos usando la misma especificación, pero ahora con el índice compuesto como variable de impacto:</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>r3 <span class="ot">&lt;-</span><span class="fu">lm</span>(indice_escolar_sd <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp<span class="sc">+</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(sex)<span class="sc">+</span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(mtongue)<span class="sc">+</span></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(hsgroup)<span class="sc">+</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(numcourses_nov1)<span class="sc">+</span></span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(lastmin)<span class="sc">+</span></span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(mom_edn)<span class="sc">+</span></span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(dad_edn),</span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>                           data.angrist)</span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r3, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r3, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>r3 <span class="ot">&lt;-</span><span class="fu">lm</span>(indice_escolar_sd <span class="sc">~</span> ssp <span class="sc">+</span> sfp<span class="sc">+</span> sfsp<span class="sc">+</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(sex)<span class="sc">+</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(mtongue)<span class="sc">+</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(hsgroup)<span class="sc">+</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(numcourses_nov1)<span class="sc">+</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(lastmin)<span class="sc">+</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(mom_edn)<span class="sc">+</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>                             <span class="fu">factor</span>(dad_edn),</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>                           data.angrist)</span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a><span class="fu">coeftest</span>(r3, <span class="at">vcov =</span> <span class="fu">vcovHC</span>(r3, <span class="st">"HC1"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               Estimate Std. Error    t value  Pr(&gt;|t|)
 (Intercept)  0.49452306 0.46650249  1.0600652 0.2893277
@@ -789,253 +886,255 @@ sfsp         0.03404990 0.09616572  0.3540753 0.7233445</code></pre>
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas</h2>
 
 <ol>
-<li id="fn1"><p>Banerjee, A. et al.&nbsp;(2015). A multifaceted program causes lasting progress for the very poor: Evidence from six countries. <em>Science</em>, 348(6236).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Por ejemplo, suponga que estima un modelo al que llame <em>modelo1</em>. Entonces, si ejecuta</p>
+<li id="fn1"><p>Por ejemplo, suponga que estima un modelo al que llame <em>modelo1</em>. Entonces, si ejecuta</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef_test</span>(modelo1,</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">vcov=</span><span class="st">"CR1S"</span>,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">cluster=</span>mis_datos<span class="sc">$</span>demi_paire)[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>obtendrá los coeficientes con los errores agrupados requeridos. La opción <em>CR1S</em> toma en cuenta el número de grupos o <em>clusters</em> para realizar inferencia. Puede leer más al respecto en la ayuda al ejecutar <em>?vcovCR</em>. Este es el tipo de ajuste de muestras finitas que usan los autores. Esta corrección consiste en multiplicar la matriz de sándwich agrupada CR0 por <span class="math inline">\(\frac{G(N-1)}{(G-1)(N-p)}\)</span>, donde <span class="math inline">\(G\)</span> es el número de grupos, <span class="math inline">\(N\)</span> es el número total de observaciones y <span class="math inline">\(p\)</span> es el número de regresores.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Crépon, B., Devoto, F., Duflo, E., &amp; Parienté, W. (2015). Estimating the impact of microcredit on those who take it up: Evidence from a randomized experiment in Morocco. <em>American Economic Journal: Applied Economics</em>, 7(1), 123-50.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>Angrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. <em>American Economic Journal: Applied Economics</em>, 1(1), 136-63.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Banerjee, A. et al.&nbsp;(2015). A multifaceted program causes lasting progress for the very poor: Evidence from six countries. <em>Science</em>, 348(6236).<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<p>obtendrá los coeficientes con los errores agrupados requeridos. La opción <em>CR1S</em> toma en cuenta el número de grupos o <em>clusters</em> para realizar inferencia. Puede leer más al respecto en la ayuda al ejecutar <em>?vcovCR</em>. Este es el tipo de ajuste de muestras finitas que usan los autores. Esta corrección consiste en multiplicar la matriz de sándwich agrupada CR0 por <span class="math inline">\(\frac{G(N-1)}{(G-1)(N-p)}\)</span>, donde <span class="math inline">\(G\)</span> es el número de grupos, <span class="math inline">\(N\)</span> es el número total de observaciones y <span class="math inline">\(p\)</span> es el número de regresores.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Crépon, B., Devoto, F., Duflo, E., &amp; Parienté, W. (2015). Estimating the impact of microcredit on those who take it up: Evidence from a randomized experiment in Morocco. <em>American Economic Journal: Applied Economics</em>, 7(1), 123-50.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Angrist, J., Lang, D., y Oreopoulos, P. (2009). Incentives and services for college achievement: Evidence from a randomized trial. <em>American Economic Journal: Applied Economics</em>, 1(1), 136-63.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Banerjee, A. et al.&nbsp;(2015). A multifaceted program causes lasting progress for the very poor: Evidence from six countries. <em>Science</em>, 348(6236).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiado");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copiado");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1043,185 +1142,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 
