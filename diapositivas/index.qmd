@@ -21,3 +21,6 @@ title: "Diapositivas"
 [Múltiples hipótesis](./multiples-hipotesis.html){target="_blank"}
 
 [Diferencia en diferencias](./did.html){target="_blank"}
+
+[Emparejamiento](./emparejamiento.html){target="_blank"}
+

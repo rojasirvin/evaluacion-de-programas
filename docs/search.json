@@ -504,7 +504,7 @@
     "href": "diapositivas/index.html",
     "title": "Diapositivas",
     "section": "",
-    "text": "Introducción del curso\nInferencia causal\nDiseños experimentales\nRegresión\nInferencia estadística\nErrores estándar e inferencia\nBootstrap\nLATE y variables instrumentales\nMúltiples hipótesis\nDiferencia en diferencias",
+    "text": "Introducción del curso\nInferencia causal\nDiseños experimentales\nRegresión\nInferencia estadística\nErrores estándar e inferencia\nBootstrap\nLATE y variables instrumentales\nMúltiples hipótesis\nDiferencia en diferencias\nEmparejamiento",
     "crumbs": [
       "Diapositivas"
     ]
@@ -1553,5 +1553,390 @@
     "title": "Tarea 2",
     "section": "Pregunta 5",
     "text": "Pregunta 5\nNuevamente, use los datos del archivo STAR_public_use.csv. En este problema, replicará dos columnas del efecto de tratamiento de la Tabla 5. Note que de nuevo se deben usar solo las observaciones que tienen noshow igual a 0. Los autores también sustituyen los valores de gpa_year1 por NA cuando la variable grade_20059_fall es NA; y sustituyen grade_20059_fall por NA cuando la variable gpa_year1 es NA. Además, note que se usan las siguientes variables de control: sex, mtongue, hsgroup, numcourses_nov1, lastmin, mom_edn, y dad_edn, todas ellas categóricas.\n\n[10 puntos] Estime el efecto de cada tipo de tratamiento sobre el promedio o GPA, denotado gpa_year1 en los datos, para toda la muestra (Panel B, columna 1). Calcule correctamente los errores estándar. Interprete los resultados.\n[10 puntos] Estime el efecto sobre el GPA de recibir cada tipo de tratamiento, considerando los tratamientos SSP o SFP (de cualquier tipo) en las mujeres de la muestra (Panel B, columna 6). Esto es, considere el tratamiento SSP como un primer tipo de tratamiento y, ya sea SFP o SFSP, como un segundo tipo de tratamiento. Calcule correctamente los errores estándar. Interprete sus resultados."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#sesgo-de-selección",
+    "href": "diapositivas/emparejamiento.html#sesgo-de-selección",
+    "title": "Inferencia Causal 2025",
+    "section": "Sesgo de selección",
+    "text": "Sesgo de selección\nLas razones que determinan la asignación del tratamiento pueden también determinar el valor de \\(Y\\). Entonces, una comparación observacional nos da el efecto del tratamiento más el sesgo de selección:\n\\[\n\\begin{aligned}\nE(y_i|D_i=1)-E(y_i|D_i=0)=&\\overbrace{ E(y_{1i}|D_i=1)-E(y_{0i}|D_i=1)}^{\\text{Efecto promedio en los tratados}}+\\\\& \\underbrace{E(y_{0i}|D_i=1)-E(y_{oi}|D_i=0)}_{\\text{Sesgo de selección}}\n\\end{aligned}\n\\]\nUna forma de eliminar el sesgo de selección es mediante la asignación aleatoria del tratamiento; sin embargo, esto no siempre es posible por lo que recurrimos a supuestos para eliminar el sesgo de selección."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#supuesto-de-independencia",
+    "href": "diapositivas/emparejamiento.html#supuesto-de-independencia",
+    "title": "Inferencia Causal 2025",
+    "section": "Supuesto de independencia",
+    "text": "Supuesto de independencia\nEl supuesto de independencia condicional dice que al controlar por una serie de características \\(X_i\\), el tratamiento es como si fuera aleatorio:\n\\[\nE(Y(1)|D=1,X)=E(Y(1)|D=0,X)\n\\]\n\\[\nE(Y(0)|D=1,X)=E(Y(0)|D=0,X)\n\\]\nEsto es, los valores esperados de \\(Y(1)\\) y \\(Y(0)\\) son iguales cuando nos fijamos en cada valor de \\(X\\)."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#matching-exacto-1",
+    "href": "diapositivas/emparejamiento.html#matching-exacto-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Matching exacto",
+    "text": "Matching exacto\nUn estimador de matching exacto consiste en emparejar individuos tratados y no tratados para cada valor específico de las \\(X\\) y luego tomar el promedio ponderado de las diferencias.\nTenemos datos observacionales de individuos que recibieron y no recibieron un tratamiento y tenemos una serie de características discretizadas en \\(X_i\\).\nAsumimos que controlando por las características \\(X_i\\) podemos obtener diferencias causales y luego hacemos un promedio de dichas diferencias."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-programa-hipotético-de-empleo",
+    "href": "diapositivas/emparejamiento.html#ejemplo-programa-hipotético-de-empleo",
+    "title": "Inferencia Causal 2025",
+    "section": "Ejemplo: programa hipotético de empleo",
+    "text": "Ejemplo: programa hipotético de empleo\nUsemos el ejemplo de MT (The Mixtape):"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-programa-hipotético-de-empleo-1",
+    "href": "diapositivas/emparejamiento.html#ejemplo-programa-hipotético-de-empleo-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Ejemplo: programa hipotético de empleo",
+    "text": "Ejemplo: programa hipotético de empleo\n\n\nLos individuos tratados:\n\n\n# A tibble: 10 × 3\n   unit_treat age_treat earnings_treat\n        &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;\n 1          1        18           9500\n 2          2        29          12250\n 3          3        24          11000\n 4          4        27          11750\n 5          5        33          13250\n 6          6        22          10500\n 7          7        19           9750\n 8          8        20          10000\n 9          9        21          10250\n10         10        30          12500\n\n\n\nMientras que los no tratados:\n\n\n# A tibble: 20 × 3\n   unit_control age_control earnings_control\n          &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;\n 1            1          20             8500\n 2            2          27            10075\n 3            3          21             8725\n 4            4          39            12775\n 5            5          38            12550\n 6            6          29            10525\n 7            7          39            12775\n 8            8          33            11425\n 9            9          24             9400\n10           10          30            10750\n11           11          33            11425\n12           12          36            12100\n13           13          22             8950\n14           14          18             8050\n15           15          43            13675\n16           16          39            12775\n17           17          19             8275\n18           18          30             9000\n19           19          51            15475\n20           20          48            14800"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#comparación-observacional",
+    "href": "diapositivas/emparejamiento.html#comparación-observacional",
+    "title": "Inferencia Causal 2025",
+    "section": "Comparación observacional",
+    "text": "Comparación observacional\nSi hiciéramos diferencias simples obtendríamos:\n\nmean(data.treat$earnings_treat)\n\n[1] 11075\n\nmean(data.control$earnings_control)\n\n[1] 11101.25\n\n#Diferencia\nmean(data.treat$earnings_treat)- mean(data.control$earnings_control)\n\n[1] -26.25\n\n\nParece que en el grupo de control ganan más (efecto de tratamiento negativo).\nEl principal problema con esta diferencia es que sabemos que los ingresos crecen con la edad. Pero notemos que la muestra de no tratados tiene mayor edad promedio:\n\nmean(data.treat$age_treat)\n\n[1] 24.3\n\nmean(data.control$age_control)\n\n[1] 31.95\n\n#Diferencia\nmean(data.treat$age_treat)- mean(data.control$age_control)\n\n[1] -7.65\n\n\nEs decir, estaríamos confundiendo el efecto de la edad."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#muestra-emparejada",
+    "href": "diapositivas/emparejamiento.html#muestra-emparejada",
+    "title": "Inferencia Causal 2025",
+    "section": "Muestra emparejada",
+    "text": "Muestra emparejada\nConstruyamos la muestra apareada: para cada individuo en el grupo tratado, buscaremos uno en el de control que tenga la misma edad. Cuando le encontramos un individuo no tratado al tratado con la misma edad decimos que esa pareja hizo match.\nPor ejemplo, la primera unidad tratada, con 18 años y un ingreso de 9500 estaría emparejada con la unidad 14 del grupo de control, que tiene también 18 años y un ingreso de 8050.\nPara dicho individuo de 18 años, su ingreso contrafactual sería 8050.\nCuando hay varias unidades en el grupo de control que pueden ser empatadas con la de tratamiento, podemos construir el ingreso contrafactual calculando el promedio.\nDel grupo de control, los individuos 10 y 18 tienen 30 años, con ingresos 10750 y 9000, por lo que usamos el promedio (9875) para crear el contrafactual del individuo tratado de 30 años de la fila 10."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#muestra-emparejada-1",
+    "href": "diapositivas/emparejamiento.html#muestra-emparejada-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Muestra emparejada",
+    "text": "Muestra emparejada\nLa muestra emparejada o contrafactual será:\n\n\n# A tibble: 10 × 3\n   unit_matched age_matched earnings_matched\n          &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;\n 1            1          18             8050\n 2            2          29            10525\n 3            3          24             9400\n 4            4          27            10075\n 5            5          33            11425\n 6            6          22             8950\n 7            7          19             8275\n 8            8          20             8500\n 9            9          21             8725\n10           10          30             9875"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#muestra-emparejada-2",
+    "href": "diapositivas/emparejamiento.html#muestra-emparejada-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Muestra emparejada",
+    "text": "Muestra emparejada\nNoten que la edad es la misma entre los tratados y la muestra apareada:\n\n\nMuestra de tratados:\n\nmean(data.treat$age_treat)\n\n[1] 24.3\n\n\n\nMuestra emparejada:\n\nmean(data.matched$age_matched)\n\n[1] 24.3\n\n\n\nEn este caso, decimos que la edad está balanceada.\nY entonces podemos calcular el efecto de tratamiento como la diferencia de ingresos entre los tratados y los no tratados en la muestra emparejada:\n\n\n[1] 1695\n\n\nEn este caso, encontramos un efecto positivo del programa de 1695 unidades monetarias."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estimador-de-matching-exacto",
+    "href": "diapositivas/emparejamiento.html#estimador-de-matching-exacto",
+    "title": "Inferencia Causal 2025",
+    "section": "Estimador de matching exacto",
+    "text": "Estimador de matching exacto\nLo anterior nos permite definir el estimador de matching exacto del TOT como:\n\\[\\hat{\\delta}_{TOT}=\\frac{1}{N_T}\\sum_{D_i=1}\\left(Y_i-\\left(\\frac{1}{M}\\sum_{m=1}^{M}Y_{jm(i)}\\right)\\right)\\]"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#importancia-del-soporte-común",
+    "href": "diapositivas/emparejamiento.html#importancia-del-soporte-común",
+    "title": "Inferencia Causal 2025",
+    "section": "Importancia del soporte común",
+    "text": "Importancia del soporte común\nObservemos lo que ocurre con la distribución de edades en ambos grupos:\n\n\nPara los tratados:\n\n\n\n\n\n\n\n\n\n\nMientras que para los no tratados:\n\n\n\n\n\n\n\n\n\n\nEl supuesto de traslape débil para identificar el TOT significa que para cada unidad tratada, hay al menos un no tratado. De otra forma, no podemos hacer la comparación."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estimador-de-matching-exacto-1",
+    "href": "diapositivas/emparejamiento.html#estimador-de-matching-exacto-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Estimador de matching exacto",
+    "text": "Estimador de matching exacto\n\nHasta aquí, solo hemos imputado el contrafactual para cada unidad en el grupo tratado\nSi podemos imputar también, para cada unidad no tratada, su correspondiente contrafactual tratado, podemos estimar el ATE\nY un estimador de matching exacto del ATE sería:\n\n\\[\\hat{\\delta}_{ATE}=\\frac{1}{N}\\sum_{i}^N(2D_i-1)\\left(Y_i-\\left(\\frac{1}{M}\\sum_{m=1}^{M}Y_{jm(i)}\\right)\\right)\\]"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-de-la-vida-real",
+    "href": "diapositivas/emparejamiento.html#ejemplo-de-la-vida-real",
+    "title": "Inferencia Causal 2025",
+    "section": "Ejemplo de la vida real",
+    "text": "Ejemplo de la vida real\n\nTenemos varias características en \\(X_i\\), no solo la edad\nEsto hace que cada valor \\(X_i=x_i\\) este representado por una celda\n\\(X_i\\) incluye, por ejemplo, raza, año de solicitud de ingreso al programa, escolaridad, calificación en examen de aptitud, año de nacimiento (son las características del ejemplo que vermeos más adelante)\nEstas características definen celdas y dentro de cada celda tenemos tratados y no tratados"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#efecto-del-tratamiento-con-matching-exacto",
+    "href": "diapositivas/emparejamiento.html#efecto-del-tratamiento-con-matching-exacto",
+    "title": "Inferencia Causal 2025",
+    "section": "Efecto del tratamiento con matching exacto",
+    "text": "Efecto del tratamiento con matching exacto\n\nEl TOT asumiendo inconfundibilidad:\n\n\\[\n\\begin{aligned}\n\\delta^M=TOT&=E\\left\\{ E(y_{1i}|X_i,D_i=1)-E(y_{0i}|X_i,D_i=0)|D_i=1\\right\\} \\\\\n&=E\\left\\{\\delta_X | D_i=1\\right\\}\n\\end{aligned}\n\\]\n\n\\(\\delta_X\\) es la diferencia de ingresos promedio entre estados de tratamiento para cada valor de \\(X_i\\)\nCon \\(X_i\\) discreta y con una muestra disponible:\n\n\\[\n\\delta^M=\\sum_{x} \\delta_x P(X_i=x|D_i=1)\n\\]"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos",
+    "href": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos",
+    "title": "Inferencia Causal 2025",
+    "section": "Ejemplo: veteranos de guerra en Estados Unidos",
+    "text": "Ejemplo: veteranos de guerra en Estados Unidos\n\nAngrist (1998), Estimating the Labor Market Impact of Voluntary Military Service Using Social Security Data on Military Applicants\nEl tratamiento es haber servido en el ejercito, algo que claramente tiene autoselección\nSe trata de estimar el efecto en el ingreso\nLos autores construyen celdas de acuerdo a las características antes mencionadas\n\nRaza, año de solicitud de ingreso al programa, escolaridad, calificación en examen de aptitud, año de nacimiento"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-1",
+    "href": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Ejemplo: veteranos de guerra en Estados Unidos",
+    "text": "Ejemplo: veteranos de guerra en Estados Unidos\n\nEfectos estimados usando distintas metodologías\nLos impactos estimados usando el matching exacto se encuentran bajo la columna Controlled contrast"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-2",
+    "href": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Ejemplo: veteranos de guerra en Estados Unidos",
+    "text": "Ejemplo: veteranos de guerra en Estados Unidos\n\nNoten que la columna (2) muestra lo que se hubiera concluido si solo se comparan diferencias de medias\nAntes de 1980, las diferencias eran muy pequeñas (cero en términos prácticos)\nEn esta aplicación esta comparación llevaría a conclusiones incorrectas\nAdemás, las diferencias para no-blancos y blancos son distintas\nHay un pico en los efectos alrededor de 1982\nEn esta aplicación, los resultados por matching y regresión son muy parecidos hasta 1984\nLa conclusión es que existe evidencia de efectos negativos en los ingresos por haber servido en el ejército en los blancos y efectos positivos para los individuos de otras razas"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-3",
+    "href": "diapositivas/emparejamiento.html#ejemplo-veteranos-de-guerra-en-estados-unidos-3",
+    "title": "Inferencia Causal 2025",
+    "section": "Ejemplo: veteranos de guerra en Estados Unidos",
+    "text": "Ejemplo: veteranos de guerra en Estados Unidos\n\n\nPara personas identificadas como blancas:\n\n\n\n\n\n\n\n\n\n\nPara personas identificadas como no blancas:"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#métodos-de-apareamiento-o-matching",
+    "href": "diapositivas/emparejamiento.html#métodos-de-apareamiento-o-matching",
+    "title": "Inferencia Causal 2025",
+    "section": "Métodos de apareamiento o matching",
+    "text": "Métodos de apareamiento o matching\n\nLos métodos apareamiento o matching recaen en el supuesto de independencia condicional\nAl controlar por una serie de características \\(X_i\\), el tratamiento es como si fuera aleatorio\nPodemos escribir\n\n\\[\nE(Y(1)|D=1,X)=E(Y(1)|D=0,X)\n\\]\n\\[\nE(Y(0)|D=1,X)=E(Y(0)|D=0,X)\n\\]\n\nEsto es, los valores esperados de \\(Y(1)\\) y \\(Y(0)\\) son iguales cuando nos fijamos en cada valor de \\(X\\)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#supuestos-de-identificación-del-tot",
+    "href": "diapositivas/emparejamiento.html#supuestos-de-identificación-del-tot",
+    "title": "Inferencia Causal 2025",
+    "section": "Supuestos de identificación del TOT",
+    "text": "Supuestos de identificación del TOT\nSupuesto 1. Inconfundibilidad\n\\[\nY(0), Y(1) \\perp  D|X\n\\]\n\nDado un conjunto de variables \\(X\\), los resultados potenciales son independientes del tratamiento\n\\(X\\) debe incluir todas las variables que determinan el tratamiento y los resultados potenciales\n\nSupuesto 2: Traslape\n\\[\n0&lt; P(D=1|X) &lt; 1\n\\]\n\n\\(X\\) no predice \\(D\\) perfectamente\nPersonas con el mismo \\(X\\) tienen probabilidad positiva de ser tratados y no tratados"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#supuestos-de-identificación-del-tot-1",
+    "href": "diapositivas/emparejamiento.html#supuestos-de-identificación-del-tot-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Supuestos de identificación del TOT",
+    "text": "Supuestos de identificación del TOT\n\nCuando se cumple Supuesto 1 \\(+\\) Supuesto 2 se conoce como ignorabilidad fuerte\nHeckman (1998) muestra que estás condiciones son demasiado estrictas\nPara identificar el \\(TOT\\) es suficiente:\nSupuesto 1a. Inconfundibilidad en el control\n\n\\[\nY(0) \\perp  D | X\n\\]\n\nSupuesto 2a. Traslape débil\n\n\\[\nP(D=1|X) &lt; 1\n\\]"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#matching-exacto-es-impráctico",
+    "href": "diapositivas/emparejamiento.html#matching-exacto-es-impráctico",
+    "title": "Inferencia Causal 2025",
+    "section": "Matching exacto es impráctico",
+    "text": "Matching exacto es impráctico\n\nEn la práctica es difícil manejar problemas en espacios de múltiples dimensiones: maldición de la dimensionalidad\nEl problema de la maldición de la dimensionalidad se exacerba con el tamaño limitado de las bases de datos\nSi \\(X\\) tuviera solo indicadores binarios, el número de posibles combinaciones sería \\(2^s\\)\nPor ejemplo, si solo tuviéramos \\(X_1=\\{\\text{menor de 35 años}, \\text{con 35 años o más}\\}\\), \\(X_2=\\{\\text{más que preparatoria}, \\text{menos que preparatoria}\\}\\), \\(X_3=\\{\\text{indígena}, \\text{no indígena}\\}\\), tendríamos que hacer ocho comparaciones:\n\nmenor de 35 años, más que preparatoria, indígena\nmenor de 35 años, más que preparatoria, no indígena\n…\ncon 35 años o más, menos que preparatoria, no indígena\n\nPero Si \\(X\\) incluye muchas variables, algunas tomando muchos valores, esto se vuelve imposible de realizar"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#maldición-de-la-dimensionalidad",
+    "href": "diapositivas/emparejamiento.html#maldición-de-la-dimensionalidad",
+    "title": "Inferencia Causal 2025",
+    "section": "Maldición de la dimensionalidad",
+    "text": "Maldición de la dimensionalidad\n\nEl requerimiento de soporte común significa que debemos tener tratados y no tratados para cada valor de \\(X_i\\) para hacer comparaciónes\nCuando \\(X_i\\) tiene muchas dimensiones, resulta un problema de escasez o sparseness\nAlgunas celdas estarán vacías, o solo tendrán tratados, o solo tendrán no tratados\nSi tenemos unidades en todas las celdas de control, aún podemos estimar el TOT\n\nNoten que cuando completamos la fase pareada en el ejemplo hipotético, siempre encontramos a alguien en el grupo de control para asignárselo a un tratado\nPero al revés, no siempre es posible: por ejemplo, no hay ningún tratado de 48 años"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#teorema-del-ps-rosenbaum-y-rubin-1983",
+    "href": "diapositivas/emparejamiento.html#teorema-del-ps-rosenbaum-y-rubin-1983",
+    "title": "Inferencia Causal 2025",
+    "section": "Teorema del PS (Rosenbaum y Rubin, 1983)",
+    "text": "Teorema del PS (Rosenbaum y Rubin, 1983)\n\nCorolario 1. Inconfundibilidad dado el propensity score\nEl Supuesto 1 implica:\n\n\\[\nY(0), Y(1) \\perp  D|P(X)\n\\]\ndonde \\(P(X)=P(D=1|X)\\) es la probabilidad de ser tratado dado un conjunto de covariables \\(X\\), el propensity score o PS"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#efecto-del-tratamiento",
+    "href": "diapositivas/emparejamiento.html#efecto-del-tratamiento",
+    "title": "Inferencia Causal 2025",
+    "section": "Efecto del tratamiento",
+    "text": "Efecto del tratamiento\n\nEl efecto del tratamiento, bajo el supuesto de inconfundibilidad dado el propensity score, es:\n\n\\[\nTOT^{PSM}=E_{P(X)|D=1} \\left(E(Y(1)|D=1, P(X))-E(Y(0)|D=0,P(X)) \\right)\n\\]\n\nEl \\(TOT\\) es la diferencia en la variable de resultados de los tratados y los no tratados pesada por la distribución del PS en los tratados"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estimación",
+    "href": "diapositivas/emparejamiento.html#estimación",
+    "title": "Inferencia Causal 2025",
+    "section": "Estimación",
+    "text": "Estimación\n\nDebemos por tanto primero calcular el PS\nSe empatan o se hace match de unidades que fueron tratadas con unidades que no lo fueron usando el PS\nSe mide la diferencia en la variable de resultados entre estos grupos\nSe hace un promedio ponderado de las diferencias"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#implementación",
+    "href": "diapositivas/emparejamiento.html#implementación",
+    "title": "Inferencia Causal 2025",
+    "section": "Implementación",
+    "text": "Implementación\n\nEstimación del PS\nEscoger el algoritmo de matching\nComprobar la calidad del matching\nEstimar el \\(TOT\\)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#especificar-el-modelo-del-ps",
+    "href": "diapositivas/emparejamiento.html#especificar-el-modelo-del-ps",
+    "title": "Inferencia Causal 2025",
+    "section": "Especificar el modelo del PS",
+    "text": "Especificar el modelo del PS\n\nSe usa un modelo probit o logit\n\nPrueba y error. Maximizar la tasa clasificación de tratamientos y controles usando \\(\\bar{P}\\), la proporción de tratamientos en la muestra\nSignificancia estadística. Usar solo las variables estadísticamente significativas, comenzando con un modelo muy básico\nValidación cruzada. Comenzar con un modelo simple y agregar grupos de variables comparando las que reduzcan el error cuadrático promedio\n\nEl propósito del PS es sobre todo generar balance de las variables en \\(X\\)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#vecino-más-cercano",
+    "href": "diapositivas/emparejamiento.html#vecino-más-cercano",
+    "title": "Inferencia Causal 2025",
+    "section": "Vecino más cercano",
+    "text": "Vecino más cercano\n\nA cada individuo del grupo tratado se le asigna uno del grupo de comparación en términos del PS\nPuede hacerse con remplazo o sin remplazo\nPuede emplearse también sobremuestreo (oversampling), es decir, asignar más de un individuo del grupo de comparación\nPor ejemplo, NN 5 significa que a cada individuo tratado se le asignan los cinco individuos del grupo no tratado con los PS estimados más cercanos"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#vecino-más-cercano-1",
+    "href": "diapositivas/emparejamiento.html#vecino-más-cercano-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Vecino más cercano",
+    "text": "Vecino más cercano\n\n\n\n\n\nTratados\n\\(\\hat{p}\\)\n\n\n\n\na\n0.031\n\n\nb\n0.042\n\n\nc\n0.07\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\n\nNo tratados\n\\(\\hat{p}\\)\n\n\n\n\nA\n0.034\n\n\nB\n0.068\n\n\nC\n0.21\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\nCon vecino más cercano, el individuo \\(a\\) tratado estaría emparejado con el \\(A\\) no tratado\nSi el emparejamiento es con reemplazo, \\(A\\) podría ser usado otra vez y \\(b\\) también sería emparejado con \\(A\\)\nPero si el emparejamiento es sin reemplazo, \\(A\\) ya no puede ser usado y a \\(b\\) se le emparejaría con \\(B\\)\nCuando hacemos el pareamiento sin reemplazo, debemos tener una muestra lo suficientemente grande\nEl pareamiento sin reemplazo depende del orden en que se realice el procedimiento"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#caliper-y-radio",
+    "href": "diapositivas/emparejamiento.html#caliper-y-radio",
+    "title": "Inferencia Causal 2025",
+    "section": "Caliper y radio",
+    "text": "Caliper y radio\n\nEl método de vecino más cercano puede generar malos emparejamientos si el vecino más cercano está muy lejos en términos del PS\nEspecificar un caliper consiste en definir una vecindad aceptable de matching (el caliper) y elegir solo el vecino más cercano dentro del caliper\nCon las funciones de R que usaremos más adelante, el radio consiste en definir cuántos individuos deberán ser apareados dado que están dentro del caliper"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#caliper",
+    "href": "diapositivas/emparejamiento.html#caliper",
+    "title": "Inferencia Causal 2025",
+    "section": "Caliper",
+    "text": "Caliper\n\n\n\n\n\nTratados\n\\(\\hat{p}\\)\n\n\n\n\na\n0.031\n\n\nb\n0.042\n\n\nc\n0.07\n\n\nd\n0.11\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\n\nNo tratados\n\\(\\hat{p}\\)\n\n\n\n\nA\n0.034\n\n\nB\n0.068\n\n\nC\n0.21\n\n\nD\n0.40\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\nEl primer paso es fijar el caliper, por ejemplo, de 0.1\nEl caliper implica buscar al vecino más cercano dentro de una vecindad de 0.1\nEn este ejemplo \\(c\\) podría ser solo emparejado con \\(B\\) si \\(B\\) aún está disponible (porque no ha sido emparejado con nadie o porque, aunque haya sido emparejado, el procedimiento se hace con reemplazo)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#caliper-con-sobremuestreo",
+    "href": "diapositivas/emparejamiento.html#caliper-con-sobremuestreo",
+    "title": "Inferencia Causal 2025",
+    "section": "Caliper con sobremuestreo",
+    "text": "Caliper con sobremuestreo\n\n\n\n\n\nTratados\n\\(\\hat{p}\\)\n\n\n\n\nd\n0.31\n\n\ne\n0.39\n\n\nf\n0.44\n\n\ng\n0.52\n\n\nh\n0.55\n\n\ni\n0.62\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\n\nNo tratados\n\\(\\hat{p}\\)\n\n\n\n\nR\n0.27\n\n\nS\n0.29\n\n\nT\n0.33\n\n\nU\n0.49\n\n\nV\n0.57\n\n\nW\n0.61\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\nSi el caliper se realiza con sobremuestreo, con un caliper de 0.10 y 2 vecinos a \\(g\\) se le asignarían \\(U\\) y \\(V\\) (si estuvieran disponibles)\nEs decir, dentro del caliper, los dos individuos con el PS más cercano"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#radio",
+    "href": "diapositivas/emparejamiento.html#radio",
+    "title": "Inferencia Causal 2025",
+    "section": "Radio",
+    "text": "Radio\n\n\n\n\n\nTratados\n\\(\\hat{p}\\)\n\n\n\n\nd\n0.31\n\n\ne\n0.39\n\n\nf\n0.44\n\n\ng\n0.52\n\n\nh\n0.55\n\n\ni\n0.62\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\n\n\nNo tratados\n\\(\\hat{p}\\)\n\n\n\n\nR\n0.27\n\n\nS\n0.29\n\n\nT\n0.33\n\n\nU\n0.49\n\n\nV\n0.57\n\n\nW\n0.61\n\n\n\\(\\vdots\\)\n\\(\\vdots\\)\n\n\n\n\n\nPero si ahora implementamos radio con un caliper de 0.10, a \\(g\\) se le asignarían \\(U\\), \\(V\\) y \\(W\\) (si estuvieran disponibles)\nEs decir, todos los individuos dentro del caliper"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estratificación",
+    "href": "diapositivas/emparejamiento.html#estratificación",
+    "title": "Inferencia Causal 2025",
+    "section": "Estratificación",
+    "text": "Estratificación\n\nPartir la región de soporte común en bloques de acuerdo al PS\nEstimar el efecto de tratamiento dentro de cada bloque\nNo hay una regla sobre cuántos estratos usar. Se aconsajan generalmente cinco\nDentro de cada estrato debe haber balance de los covariables"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#kernel-y-métodos-no-paramétricos",
+    "href": "diapositivas/emparejamiento.html#kernel-y-métodos-no-paramétricos",
+    "title": "Inferencia Causal 2025",
+    "section": "Kernel y métodos no paramétricos",
+    "text": "Kernel y métodos no paramétricos\n\nLos métodos anteriores escogen solo unas cuantas unidades del grupo de comparación\nPodemos escoger usar muchas o incluso todas las observaciones del grupo de comparación y pesarlas apropiadamente\nSe reduce la varianza pues usamos más información, pero se sacrifica precisión pues se usan observaciones potencialmente muy distantes\nSe le otorga más peso a las observaciones más cercanas y menos a las más distantes"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#kernel",
+    "href": "diapositivas/emparejamiento.html#kernel",
+    "title": "Inferencia Causal 2025",
+    "section": "Kernel",
+    "text": "Kernel\n\n\n\n\n\nTratados\n\\(\\hat{p}\\)\n\n\n\n\nd\n0.31\n\n\ne\n0.39\n\n\nf\n0.44\n\n\ng\n0.52\n\n\nh\n0.55\n\n\ni\n0.62\n\n\n\n\n\n\n\nNo tratados\n\\(\\hat{p}\\)\n\n\n\n\nR\n0.27\n\n\nS\n0.29\n\n\nT\n0.33\n\n\nU\n0.49\n\n\nV\n0.57\n\n\nW\n0.61\n\n\n\n\n\nSupongamos que estos son todos nuestros datos\nCon un emparejamiento por kernel, a \\(d\\) lo compararemos con todos los individuos, desde \\(R\\) hasta \\(W\\)\nLa función kernel le dará más peso a \\(R\\), un poco menos a \\(S\\) y así hasta darle muy poco o casi nada de peso a \\(W\\)"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#qué-método-usar",
+    "href": "diapositivas/emparejamiento.html#qué-método-usar",
+    "title": "Inferencia Causal 2025",
+    "section": "¿Qué método usar?",
+    "text": "¿Qué método usar?\n\nNo hay un método claramente superior a todos los demás\nMás aún, el desempeño de cada método depende de cada aplicación\nLa ruta más seguida es usar varios algoritmos y mostrar la robustez de los resultados a esta elección"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#comprobar-empíricamente-los-supuestos",
+    "href": "diapositivas/emparejamiento.html#comprobar-empíricamente-los-supuestos",
+    "title": "Inferencia Causal 2025",
+    "section": "Comprobar empíricamente los supuestos",
+    "text": "Comprobar empíricamente los supuestos\n\nEl parámetro \\(TOT\\) solo se calcula sobre la región de sporte común por lo que se debe verificar el traslape del PS calculado para los tratados y no tratados\nOtro de los teoremas de Rosenbaum y Rubin (1983) implica que\n\n\\[\nX \\perp  D|P(X)\n\\]\n\nEsto es, que al controlar por el PS, las variables \\(X\\) no deben proveer información sobre \\(D\\)\nSe recomienda también hacer una prueba de estratificación\n\nDividir el rango del soporte común en bloques\nHacer una prueba de medias del PS entre grupos dentro de cada bloque\nHacer una prueba de medias de cada variable en \\(X_i\\) entre grupos dentro de cada bloque"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#ilustración-del-soporte-común",
+    "href": "diapositivas/emparejamiento.html#ilustración-del-soporte-común",
+    "title": "Inferencia Causal 2025",
+    "section": "Ilustración del soporte común",
+    "text": "Ilustración del soporte común"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#paquetes",
+    "href": "diapositivas/emparejamiento.html#paquetes",
+    "title": "Inferencia Causal 2025",
+    "section": "Paquetes",
+    "text": "Paquetes\nUsaremos dos paquetes nuevos: MatchIt y cobalt, que pueden descargar como cualquier otro paquete desde CRAN."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#datos-no-experimentales-de-una-muestra-de-mujeres",
+    "href": "diapositivas/emparejamiento.html#datos-no-experimentales-de-una-muestra-de-mujeres",
+    "title": "Inferencia Causal 2025",
+    "section": "Datos no experimentales de una muestra de mujeres",
+    "text": "Datos no experimentales de una muestra de mujeres\nLos datos en cattaneo_smoking.csv (Cattaneo, 2010) son de una muestra de mujeres que incluye un indicador de si la madre fumó durante el embarazo. El propósito es evaluar el efecto de fumar sobre el peso de los bebés al nacer. Se incluyen una serie de covariables que usaremos para modelar el propensity score."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#matchit-para-realizar-los-emparejamientos",
+    "href": "diapositivas/emparejamiento.html#matchit-para-realizar-los-emparejamientos",
+    "title": "Inferencia Causal 2025",
+    "section": "matchit para realizar los emparejamientos",
+    "text": "matchit para realizar los emparejamientos\nLa función que usaremos para hacer los emparejamientos es matchit de la librería MatchIt. Antes de hacer los emparejamientos, construimos la dummy de tratamiento, smoke, una dummy para mujeres casadas, married, y una dummy para si el caso en cuestión es el primer bebé, firstbaby:"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#comparación-observacional-1",
+    "href": "diapositivas/emparejamiento.html#comparación-observacional-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Comparación observacional",
+    "text": "Comparación observacional\nNotemos que, si solo comparamos a las mujeres que fuman con las que no fuman, estamos comparando personas muy diferentes:\n\n\n \n\n  \n    \n    \n    tinytable_1lsywiap0udluzc6gvjv\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n\n \n0\n1\n \n \n\n        Pruebas de balance\n              \n                 \n                Mean\n                Std. Dev.\n                Mean\n                Std. Dev.\n                Diff. in Means\n                p\n              \n        \n        Fuente: Cattaneo (2009)\n        \n                \n                  married  \n                  0.75 \n                  0.43\n                  0.47 \n                  0.50 \n                  -0.28\n                  0.00\n                \n                \n                  firstbaby\n                  0.45 \n                  0.50\n                  0.37 \n                  0.48 \n                  -0.08\n                  0.00\n                \n                \n                  medu     \n                  12.93\n                  2.53\n                  11.64\n                  2.17 \n                  -1.29\n                  0.00\n                \n                \n                  nprenatal\n                  10.96\n                  3.52\n                  9.86 \n                  4.21 \n                  -1.10\n                  0.00\n                \n                \n                  foreign  \n                  0.06 \n                  0.24\n                  0.03 \n                  0.16 \n                  -0.03\n                  0.00\n                \n                \n                  mhisp    \n                  0.04 \n                  0.19\n                  0.02 \n                  0.15 \n                  -0.01\n                  0.05\n                \n                \n                  fage     \n                  27.84\n                  8.79\n                  24.74\n                  11.15\n                  -3.10\n                  0.00"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estimación-del-ps",
+    "href": "diapositivas/emparejamiento.html#estimación-del-ps",
+    "title": "Inferencia Causal 2025",
+    "section": "Estimación del PS",
+    "text": "Estimación del PS\nUna manera de hacer más eficiente el uso de las fórmulas es usando as.formula:\n\n\nsmoke ~ married + firstbaby + medu + nprenatal + foreign + mhisp + \n    fage\n\n\nUsamos matchit para estimar el PS y realizar los emparejamientos con el algoritmo que indiquemos:"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#estimación-del-ps-1",
+    "href": "diapositivas/emparejamiento.html#estimación-del-ps-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Estimación del PS",
+    "text": "Estimación del PS\nEl resumen del procedimiento da bastante información sobre el pareamiento:\n\n\n\nCall:\nmatchit(formula = ps, data = data.smoking, method = \"nearest\", \n    distance = \"logit\", replace = FALSE, ratio = 1)\n\nSummary of Balance for All Data:\n          Means Treated Means Control Std. Mean Diff. Var. Ratio eCDF Mean\ndistance         0.2568        0.1700          0.6673     1.4475    0.2002\nmarried          0.4734        0.7515         -0.5569          .    0.2781\nfirstbaby        0.3715        0.4531         -0.1689          .    0.0816\nmedu            11.6389       12.9299         -0.5955     0.7316    0.0717\nnprenatal        9.8623       10.9629         -0.2616     1.4301    0.0376\nforeign          0.0255        0.0598         -0.2181          .    0.0344\nmhisp            0.0243        0.0363         -0.0776          .    0.0120\nfage            24.7431       27.8444         -0.2782     1.6070    0.0468\n          eCDF Max\ndistance    0.3329\nmarried     0.2781\nfirstbaby   0.0816\nmedu        0.2549\nnprenatal   0.1259\nforeign     0.0344\nmhisp       0.0120\nfage        0.1377\n\nSummary of Balance for Matched Data:\n          Means Treated Means Control Std. Mean Diff. Var. Ratio eCDF Mean\ndistance         0.2568        0.2564          0.0033     1.0110    0.0005\nmarried          0.4734        0.4769         -0.0070          .    0.0035\nfirstbaby        0.3715        0.3981         -0.0551          .    0.0266\nmedu            11.6389       11.6019          0.0171     0.7064    0.0161\nnprenatal        9.8623        9.8588          0.0008     1.1543    0.0059\nforeign          0.0255        0.0174          0.0514          .    0.0081\nmhisp            0.0243        0.0231          0.0075          .    0.0012\nfage            24.7431       24.5799          0.0146     1.0787    0.0124\n          eCDF Max Std. Pair Dist.\ndistance    0.0093          0.0046\nmarried     0.0035          0.2202\nfirstbaby   0.0266          0.4575\nmedu        0.0417          0.5168\nnprenatal   0.0185          0.7039\nforeign     0.0081          0.2425\nmhisp       0.0012          0.2781\nfage        0.0556          0.6457\n\nSample Sizes:\n          Control Treated\nAll          3778     864\nMatched       864     864\nUnmatched    2914       0\nDiscarded       0       0"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#verificación-del-balance",
+    "href": "diapositivas/emparejamiento.html#verificación-del-balance",
+    "title": "Inferencia Causal 2025",
+    "section": "Verificación del balance",
+    "text": "Verificación del balance\n\n\nGráfico de nube:\n\n\n\n\n\n\n\n\n\nTo identify the units, use first mouse button; to stop, use second.\n\n\n\nHistograma:"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#muestra-emparejada-3",
+    "href": "diapositivas/emparejamiento.html#muestra-emparejada-3",
+    "title": "Inferencia Causal 2025",
+    "section": "Muestra emparejada",
+    "text": "Muestra emparejada\nPodemos guardar un objeto con la muestra emparejada usando match.data y observar quién hace match con quién:\n\n\n   [,1]  \n11 \"4130\"\n20 \"2234\"\n25 \"1740\"\n43 \"2857\"\n47 \"305\" \n49 \"1442\""
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#muestra-emparejada-4",
+    "href": "diapositivas/emparejamiento.html#muestra-emparejada-4",
+    "title": "Inferencia Causal 2025",
+    "section": "Muestra emparejada",
+    "text": "Muestra emparejada\nUna propuesta para determinar si el emparejamiento fue exitoso es observar las diferencias promedio estandarizadas (SMD) entre los grupos tratados y no tratados, antes y después del emparejamiento.\n\\[SMD_X=\\frac{\\bar{X}_T-\\bar{X}_{NT}}{\\sqrt{S^2_T+S^2_{NT}}}\\]\nTambién vale la pena no perder de vista la razón de varianzas (VR). Se espera que este ratio no sea muy distinto de 1 después de hacer el emparejamiento:\n\\[VR=\\frac{S^2_T}{S^2_{NT}}\\]\nComo regla de dedo, una diferencia de 0.1 o menos en el SMD se considera un buen balance. Por ejemplo, la escolaridad de la madre tenía un SDM de -0.5955 en la muestra en bruto, pero con el emparejamiento el SDM se vuelve de solo 0.0171."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#loveplot",
+    "href": "diapositivas/emparejamiento.html#loveplot",
+    "title": "Inferencia Causal 2025",
+    "section": "Loveplot",
+    "text": "Loveplot\nUsando la librería cobalt podemos construir un love plot que representa gráficamente las diferencias antes y después del emparejamiento"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#efecto-de-tratamiento",
+    "href": "diapositivas/emparejamiento.html#efecto-de-tratamiento",
+    "title": "Inferencia Causal 2025",
+    "section": "Efecto de tratamiento",
+    "text": "Efecto de tratamiento\nExisten muchas maneras de explotar la muestra emparejada. Aquí veremos la más sencilla. Simplemente consideremos a la muestra emparejada como si viniera de un experimento. Sin embargo, debemos poner especial atención a la forma de hacer inferencia pues no debemos ignorar que el PS es estimado.\nDependiendo de si el emparejamiento ocurre con o sin reemplazo, y de la naturaleza de la variable dependiente, se recomiendan distintas maneras de estimar el efecto del tratamiento y hacer inferencia. Una buena guía está en la documentación de MatchIt.\nPor ejemplo, cuando se realiza el emparejamiento sin reemplazo, Abadie & Spiess (2019) muestran que podemos estimar los errores estándar simplemente agrupando a nivel de pareja (o grupo) emparejado (subclass es una columna que enumera a las parejas o grupos emparejados y es construida automáticamente por matchit)."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#efecto-de-tratamiento-1",
+    "href": "diapositivas/emparejamiento.html#efecto-de-tratamiento-1",
+    "title": "Inferencia Causal 2025",
+    "section": "Efecto de tratamiento",
+    "text": "Efecto de tratamiento\nUsando una regresión con la muestra emparejada\n\n\n\nt test of coefficients:\n\n            Estimate Std. Error  t value  Pr(&gt;|t|)    \n(Intercept) 3331.473     21.424 155.5033 &lt; 2.2e-16 ***\nsmoke       -193.814     28.137  -6.8882 7.889e-12 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#efecto-de-tratamiento-2",
+    "href": "diapositivas/emparejamiento.html#efecto-de-tratamiento-2",
+    "title": "Inferencia Causal 2025",
+    "section": "Efecto de tratamiento",
+    "text": "Efecto de tratamiento\nAlgunos autores incluyen los covariables en su estimación:\n\n\n\nt test of coefficients:\n\n              Estimate Std. Error t value  Pr(&gt;|t|)    \n(Intercept) 2984.54803   76.55850 38.9839 &lt; 2.2e-16 ***\nsmoke       -195.50844   27.96378 -6.9915 3.879e-12 ***\nmarried      113.92672   30.76389  3.7033 0.0002196 ***\nfirstbaby    -62.70697   30.19829 -2.0765 0.0379953 *  \nmedu           0.12530    5.38318  0.0233 0.9814333    \nnprenatal     32.29921    4.49984  7.1779 1.049e-12 ***\nforeign       25.99372  109.26081  0.2379 0.8119829    \nmhisp        111.67360   85.14066  1.3116 0.1898179    \nfage          -0.21788    1.43015 -0.1523 0.8789301    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nCuando el emparejamiento es con reemplazo, las unidades no tratadas son emparejadas varias veces (aparecen repetidas en la muestra emparejada), lo cual debe ser considerado para estimar los efectos del tratamiento y hacer inferencia. Por ejemplo, se puede usar bootstrap para obtener el error estándar del efecto del tratamiento cuando la variable de impacto es continua."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#recomendaciones-prácticas",
+    "href": "diapositivas/emparejamiento.html#recomendaciones-prácticas",
+    "title": "Inferencia Causal 2025",
+    "section": "Recomendaciones prácticas",
+    "text": "Recomendaciones prácticas\n\nLas características \\(X\\) que determinan la probabilidad de tratamiento deben ser observables\nLas variables usadas para calcular el PS no deben haber sido afectadas por el tratamiento\nIdealmente usamos variables \\(X\\) pre-intervención\nCuando no hay \\(X\\) pre-intervención, a veces se puede obtener el PS con variables post-intervención siempre y cuando estas no hayan sido afectadas por el tratamiento (pocas veces recomendado)\nSe recomienda ampliamente ver:\n\nCaliendo, M., & Kopeinig, S. (2008). Some practical guidance for the implementation of propensity score matching. Journal of Economic Surveys, 22(1), 31-72."
+  },
+  {
+    "objectID": "diapositivas/emparejamiento.html#conclusión",
+    "href": "diapositivas/emparejamiento.html#conclusión",
+    "title": "Inferencia Causal 2025",
+    "section": "Conclusión",
+    "text": "Conclusión\n\nLas técnicas de PSM dependen de varios supuestos teoricos fuertes\nLa implementación implica que las variables en \\(X\\) son aquellas que permiten hacer los supuestos de inconfundibilidad dado el PS\nEn la estimación del PS se toma la decisión sobre la forma funcional\nLos efectos de tratamiento pueden ser distintos entre diferentes algoritmos de emparejamiento y la especificación del PS\nLa crítica más importante es que la mayoría de las veces nos preocupa más la autoselección basada en no observables que en observables\nPero muchas veces es todo lo que tenemos a la mano\nHay que hacer análisis de sensibilidad a las distintas decisiones\nPresentar resultados transparentes"
   }
 ]
