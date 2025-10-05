@@ -508,7 +508,7 @@ client       24263.46   12419.55  1.953651 0.05080007</code></pre>
 <pre><code>[1] 22869.23</code></pre>
 </div>
 </div></li>
-<li><p>[5 puntos] Ahora estime por MC2E el efecto de la adopción sobre el gasto total, usando la variable de asignación como instrumento para la adopción. ¿Qué ventaja observa con respecto al estimador de Wald?</p>
+<li><p>[5 puntos] Ahora estime por MC2E el efecto de la adopción sobre el gasto total, usando la variable de asignación como instrumento para la adopción. Use <em>ivreg</em> para estimar el efecto directamente. ¿Qué ventaja observa con respecto al estimador de Wald?</p>
 <p><em>Notemos que obtenemos lo mismo al hacer una estimación de variables instrumentales. El coeficiente sobre la variable client es igual al estadístico de Wald. El estadístico de Wald es idéntico al estimador de variables instrumentales cuando el instrumento es binario. La mayor ventaja de realizar la estimación de esta manera es que podemos obtener errores estándar, lo cual nos permite hacer inferencia estadística sobre el tamaño del efecto de ser cliente en el gasto.</em></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>Wald_vi <span class="ot">&lt;-</span> <span class="fu">ivreg</span>(expense_total <span class="sc">~</span> client  <span class="sc">|</span> treatment,</span>
