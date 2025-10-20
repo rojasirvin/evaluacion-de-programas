@@ -504,7 +504,7 @@
     "href": "diapositivas/index.html",
     "title": "Diapositivas",
     "section": "",
-    "text": "Introducción del curso\nInferencia causal\nDiseños experimentales\nRegresión\nInferencia estadística\nErrores estándar e inferencia\nBootstrap\nLATE y variables instrumentales\nMúltiples hipótesis\nDiferencia en diferencias\nEmparejamiento",
+    "text": "Introducción del curso\nInferencia causal\nDiseños experimentales\nRegresión\nInferencia estadística\nErrores estándar e inferencia\nBootstrap\nLATE y variables instrumentales\nMúltiples hipótesis\nDiferencia en diferencias\nEmparejamiento\nDiscontinuidades",
     "crumbs": [
       "Diapositivas"
     ]
@@ -1938,5 +1938,264 @@
     "title": "Inferencia Causal 2025",
     "section": "Conclusión",
     "text": "Conclusión\n\nLas técnicas de PSM dependen de varios supuestos teoricos fuertes\nLa implementación implica que las variables en \\(X\\) son aquellas que permiten hacer los supuestos de inconfundibilidad dado el PS\nEn la estimación del PS se toma la decisión sobre la forma funcional\nLos efectos de tratamiento pueden ser distintos entre diferentes algoritmos de emparejamiento y la especificación del PS\nLa crítica más importante es que la mayoría de las veces nos preocupa más la autoselección basada en no observables que en observables\nPero muchas veces es todo lo que tenemos a la mano\nHay que hacer análisis de sensibilidad a las distintas decisiones\nPresentar resultados transparentes"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#ejemplo-edad-legal-para-tomar-en-eu",
+    "href": "diapositivas/discontinuidades.html#ejemplo-edad-legal-para-tomar-en-eu",
+    "title": "Diseños con discontinuidades",
+    "section": "Ejemplo: edad legal para tomar en EU",
+    "text": "Ejemplo: edad legal para tomar en EU\n\n\n\nEn Estados Unidos la edad legal para tomar es de 21 años\n¿Por qué tenemos una ley para prohibir el consumo de alcohol antes de los 21 (o 18) años?\nLa ley genera una discontinuidad en el acceso a alcohol justo a los 21 años\nPodemos evaluar la efectividad de la política"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#qué-pasa-en-el-cumpleaños-21",
+    "href": "diapositivas/discontinuidades.html#qué-pasa-en-el-cumpleaños-21",
+    "title": "Diseños con discontinuidades",
+    "section": "¿Qué pasa en el cumpleaños 21?",
+    "text": "¿Qué pasa en el cumpleaños 21?\n\n\n\n¿Efecto fiesta?\nHay una tendendencia a la baja a ambos lados de la discotinuidad\nSin embargo, hay un claro salto en el número de muertes a los 21 años"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#discontinuidades-nítidas-1",
+    "href": "diapositivas/discontinuidades.html#discontinuidades-nítidas-1",
+    "title": "Diseños con discontinuidades",
+    "section": "Discontinuidades nítidas",
+    "text": "Discontinuidades nítidas\n\n\\(D_a\\) es el estado del tratamiento\n\n\\[\nD_a =\n\\begin{cases}\n1  & \\text{si } a \\geq 21 \\\\\n0  & \\text{si } a &lt; 21\n\\end{cases}\n\\]\n\n\\(a\\) es conocida como running variable, score, variable de selección, variable de asignación, etc.\nEl tratamiento es una función determinística de \\(a\\)\n\nSi conocemos \\(a\\) entonces conocemos \\(D_a\\)\n\nEl tratamiento es discontinuo sobre \\(a\\)\n\nNo importa qué tanto nos acercamos al corte, el estatus de tratamiento es el mismo hasta \\(a\\)"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#discontinuidades-nítidas-y-regresión",
+    "href": "diapositivas/discontinuidades.html#discontinuidades-nítidas-y-regresión",
+    "title": "Diseños con discontinuidades",
+    "section": "Discontinuidades nítidas y regresión",
+    "text": "Discontinuidades nítidas y regresión\n\nMuchas cosas cambian con la edad\nRiesgo de enfermedades, muerte por otras causas\nUsamos regresión para aislar los efectos de la regla\n\n\\[\n\\bar{M}_a=\\alpha+\\rho D_a + \\gamma a + \\epsilon_a\n\\]\n\n\\(\\bar{M}_a\\) es la tasa de mortalidad en el mes \\(a\\)\n\\(\\rho\\) captura el salto en la mortalidad a los 21 años\n\\(\\hat{\\rho}=7.66\\) : número de muertes adicionales a los 21 años"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#diferencia-con-otros-diseños",
+    "href": "diapositivas/discontinuidades.html#diferencia-con-otros-diseños",
+    "title": "Diseños con discontinuidades",
+    "section": "Diferencia con otros diseños",
+    "text": "Diferencia con otros diseños\n\nA diferencia de los métodos de regresión o pareamiento donde controlamos por un vector \\(X\\) y esperamos que el tratamiento sea aleatorio controlando por \\(X\\)\nAquí no hay valores de \\(a\\) para los que observemos individuos en ambos estados del tratamiento\nLa interpretación de la RD es en la vecindad de la discontinuidad"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#no-linealidad-vs-discontinuidad",
+    "href": "diapositivas/discontinuidades.html#no-linealidad-vs-discontinuidad",
+    "title": "Diseños con discontinuidades",
+    "section": "No linealidad vs discontinuidad",
+    "text": "No linealidad vs discontinuidad\n\n\n\nEstimar el modelo de RD cuando la relación entre \\(E[Y|X]\\) es como en el tercer panel nos llevaría a inferir un salto donde no existe\nAl usar RD debemos asegurarnos que estamos identificando una discontinuidad\n\nModelar la no linealidad (enfoque antiguo)\nConcentrarnos solo en una ventana cercana a \\(a_0\\) (enfoque más moderno)"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#no-linealidades",
+    "href": "diapositivas/discontinuidades.html#no-linealidades",
+    "title": "Diseños con discontinuidades",
+    "section": "No linealidades",
+    "text": "No linealidades\n\nPodemos usar polinomios de \\(a\\)\nIdealmente, las conclusiones no deberían cambiar de acuerdo al grado del polinomio usado\nEl consejo es intentar varias especificaciones y no solo la que se ajuste más a nuestras expectativas de los resultados\nLa Figura 4.2 parece tener una leve curvatura a la derecha de \\(a\\)\nPodemos ajustar directamente un polinomio de la edad:\n\n\\[\n\\bar{M}_a=\\alpha+\\rho D_a + \\gamma_1 a + \\gamma_2 a^2 + \\epsilon_a\n\\]"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#no-linealidades-1",
+    "href": "diapositivas/discontinuidades.html#no-linealidades-1",
+    "title": "Diseños con discontinuidades",
+    "section": "No linealidades",
+    "text": "No linealidades\n\nO podemos espcificar un coeficiente diferente para \\(a\\) antes y después de \\(a_0\\):\n\n\\[\n\\bar{M}_a=\\alpha+\\rho D_a + \\gamma(a-a_0) + \\delta[(a-a_0)D_a] + \\epsilon_a\n\\]\n\nNotemos que en este caso el efecto del tratamiento es:\n\n\\[\n\\rho+\\delta(a-a_0)\n\\]\n\nEs decir, un efecto que depende de la distancia con \\(a_0\\)\nSin embargo, ¿qué tan válido es evaluar el efecto en, digamos, \\(a=30\\)? ¿O en \\(a=10\\)?"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#no-linealidades-2",
+    "href": "diapositivas/discontinuidades.html#no-linealidades-2",
+    "title": "Diseños con discontinuidades",
+    "section": "No linealidades",
+    "text": "No linealidades\n\nPodemos emplear una combinación de no linealidades y cambios en pendiente:\n\n\\[\n\\begin{aligned}\n\\bar{M}_a&=\\alpha+\\rho D_a + \\gamma_1(a-a_0) +\\gamma_2(a-a_0)^2+\\delta_1[(a-a_0)D_a]+ \\delta_2[(a-a_0)^2D_a] + \\epsilon_a\n\\end{aligned}\n\\]\n\nEn esta especificación los términos lineal y cuadrático cambian en \\(a_0\\)\nY el efecto del tratamiento en este caso es:\nNotemos que en este caso el efecto del tratamiento es:\n\n\\[\n\\rho+\\delta_1(a-a_0)+\\delta_2(a-a_0)^2\n\\]\n\nEn los dos casos anteriores, regularmente se interpreta solo a \\(\\rho\\) como el efecto del tratamiento"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#no-linealidades-3",
+    "href": "diapositivas/discontinuidades.html#no-linealidades-3",
+    "title": "Diseños con discontinuidades",
+    "section": "No linealidades",
+    "text": "No linealidades\n\n\n\n\\(\\hat{\\rho}=9.55\\)\nModelo más elaborado con mejor ajuste\nEs evidente gráficamente que hay un salto a los 21 años y una caída suave después\n¿Qué tan robustos son los resultados?"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#efectos-estimados",
+    "href": "diapositivas/discontinuidades.html#efectos-estimados",
+    "title": "Diseños con discontinuidades",
+    "section": "Efectos estimados",
+    "text": "Efectos estimados"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#efectos-estimados-1",
+    "href": "diapositivas/discontinuidades.html#efectos-estimados-1",
+    "title": "Diseños con discontinuidades",
+    "section": "Efectos estimados",
+    "text": "Efectos estimados"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#discontinuidades-nítidas-resumen",
+    "href": "diapositivas/discontinuidades.html#discontinuidades-nítidas-resumen",
+    "title": "Diseños con discontinuidades",
+    "section": "Discontinuidades nítidas: resumen",
+    "text": "Discontinuidades nítidas: resumen\n\nRD nítida se usa cuando el tratamiento es una función determinística de una variable \\(x\\)\n\n\\[\nD_i =\n\\begin{cases}\n1  & \\mbox{if } x_i \\geq x_0 \\\\\n0  & \\mbox{if } x_i &lt; x_0\n\\end{cases}\n\\]\n\n\\(x_0\\) es el umbral o corte\n\\(D_i\\) es una función determinística de \\(x_i\\) pues una vez que conocemos \\(x_i\\) entonces conocemos \\(D_i\\)\n\\(D_i\\) es una función discontinua en \\(x_i\\) pues no importa que tanto nos acerquemos por la izquierda o por la derecha a \\(x_0\\), el estado del tratamiento no cambia"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#discontinuidades-nítidas-resumen-1",
+    "href": "diapositivas/discontinuidades.html#discontinuidades-nítidas-resumen-1",
+    "title": "Diseños con discontinuidades",
+    "section": "Discontinuidades nítidas: resumen",
+    "text": "Discontinuidades nítidas: resumen\n\nA diferencia de los modelos de regresión o de pareamiento, no hay valor de \\(x_i\\) en el que observemos a individuos tratados y no tratados\nLa interpretación del efecto estimado por RD es un efecto local en la vecindad de \\(x_0\\), donde podemos tener confianza que los individuos tratados y no tratados son similares en todas las dimensiones excepto en su posición respecto a \\(x_0\\)\nUna especificación flexible permite no confundir una discontinuidad con una no linealidad\nEn la práctica, el polinomio de \\(x_i\\) puede ser tan complejo como se desee pero se espera que los resultados no sean muy sensibles a especificaciones de este\nEl método no paramétrico consiste en la estimación de \\(\\rho\\) en vecindades cada vez más pequeñas alrededor de \\(x_0\\)"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#la-ilusión-de-la-élite",
+    "href": "diapositivas/discontinuidades.html#la-ilusión-de-la-élite",
+    "title": "Diseños con discontinuidades",
+    "section": "La ilusión de la élite",
+    "text": "La ilusión de la élite\n\nEscuelas de élite, exam schools, altamente competitivas en Nueva York y Boston\nBajas tasas de admisión\n¿Cómo diferenciar el valor agregado de la escuela del hecho de que la acta selectividad hace que a estas escuelas asistan solo los alumnos más brillantes?\n¡Ojalá pudiéramos asignar alumnos al azar!\nLos estudiantes en estas escuelas de élite comparten clases con estudiantes aventajados"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#la-regla-de-asignación",
+    "href": "diapositivas/discontinuidades.html#la-regla-de-asignación",
+    "title": "Diseños con discontinuidades",
+    "section": "La regla de asignación",
+    "text": "La regla de asignación\n\n\n\nCada escuela tiene un corte de puntaje de admisión\nEn la escuela más competitiva de Boston aquellos estudiantes debajo del corte nunca asisten a dicha escuela\nLos que están arriba del corte casi siempre acaban en la BLS"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#la-regla-de-asignación-1",
+    "href": "diapositivas/discontinuidades.html#la-regla-de-asignación-1",
+    "title": "Diseños con discontinuidades",
+    "section": "La regla de asignación",
+    "text": "La regla de asignación\n\n\n\nSin embargo, aquellos que no alcanzan el puntaje mínimo de la BLS acaban de cualquier forma en una escuela de élite"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#la-regla-de-asignación-2",
+    "href": "diapositivas/discontinuidades.html#la-regla-de-asignación-2",
+    "title": "Diseños con discontinuidades",
+    "section": "La regla de asignación",
+    "text": "La regla de asignación\n\n\n\nHay una dimensión que genera una discontinuidad: efectos de pares o peer effects\nEs una de las preocupaciones más importantes de política educativa en casi cualquier país\nTener buenos (malos) compañeros afecta los resultados del individuo \\(i\\)\nQuienes ingresan a la BLS (séptimo grado) tuvieron compañeros con mejor desempeño en matemáticas cuando iban en cuarto grado"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#modelo-de-efectos-de-pares",
+    "href": "diapositivas/discontinuidades.html#modelo-de-efectos-de-pares",
+    "title": "Diseños con discontinuidades",
+    "section": "Modelo de efectos de pares",
+    "text": "Modelo de efectos de pares\n\nUn modelo de efectos de pares:\n\n\\[Y_i=\\theta_0+\\theta_1\\bar{X}_{(i)}+\\theta_2 X_i + u_i\\]\n\n\\(Y_i\\) es el resultado de un examen de matemáticas en el séptimo año del individuo \\(i\\)\n\\(X_i\\) es el resultado de un examen de matemáticas en el cuarto año del individuo \\(i\\)\n\\(\\bar{X}_{(i)}\\) es el resultado promedio de un examen de matemáticas en el cuarto año de los compañeros de \\(i\\) sin incluir \\(i\\)\nOtra notación en la literatura escribe esto como \\(\\bar{X}_{(-i)}\\)\nLos resultados están estandarizados por lo que los coeficientes se interpretan en términos de desviaciones estándar: \\(\\hat{\\theta}_1=0.25\\sigma\\)"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#rd-difuso-vi",
+    "href": "diapositivas/discontinuidades.html#rd-difuso-vi",
+    "title": "Diseños con discontinuidades",
+    "section": "RD difuso + VI",
+    "text": "RD difuso + VI\n\nProblemas\n\nSabemos que en la discontinuidad, la calidad de los pares cambia drásticamente\nCaracterísticas de los hogares (habilidad de los padres)\nDoble causalidad: \\(i\\) afecta a \\(j\\) pero \\(j\\) afecta a \\(i\\) a la vez\n\n\n\n\nVariables instrumentales:\n\nQueremos conocer el efecto de la calidad de los pares en el desempeño de matemáticas\nUsamos el corte mínimo para ser aceptado en BLS como instrumento de la calidad de los pares"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#forma-reducida",
+    "href": "diapositivas/discontinuidades.html#forma-reducida",
+    "title": "Diseños con discontinuidades",
+    "section": "Forma reducida",
+    "text": "Forma reducida\n\n\n\nSi solo usamos el corte para ser aceptado en BLS:\n\n\\[Y_i=\\alpha_0+\\rho D_i + \\beta_0 R_i + \\epsilon_i\\]\n\nSe obtiene \\(\\hat{\\rho}=-0.02\\), \\(s.e.=0.10\\)\nEste es un modelo de forma reducida (variable de interés en función de la posición respecto al corte)\nEs el efecto causal de estar antes o después del corte"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#modelo-de-vi",
+    "href": "diapositivas/discontinuidades.html#modelo-de-vi",
+    "title": "Diseños con discontinuidades",
+    "section": "Modelo de VI",
+    "text": "Modelo de VI\n\nModelo estructural:\n\n\\[Y_i=\\alpha_2+\\lambda \\bar{X}_{(i)} + \\beta_2 R_i + \\epsilon_{2i}\\]\n\nCon una primera etapa\n\n\\[\\bar{X}_{(i)}=\\alpha_1 + \\phi D_i + \\beta_1 R_i + \\epsilon_{1i}\\]\n\nEn la primera etapa \\(\\hat{\\phi}=0.80\\sigma\\), como lo habíamos visto ya en la Figura 4.8\nEn la segunda etapa \\(\\hat{\\lambda}=-0.023\\), \\((s.e.=0.13)\\)"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#modelo-de-vi-1",
+    "href": "diapositivas/discontinuidades.html#modelo-de-vi-1",
+    "title": "Diseños con discontinuidades",
+    "section": "Modelo de VI",
+    "text": "Modelo de VI"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#la-ilusión",
+    "href": "diapositivas/discontinuidades.html#la-ilusión",
+    "title": "Diseños con discontinuidades",
+    "section": "La ilusión",
+    "text": "La ilusión\n\nNo hay tal ganancia por compartir clase con alumnos brillantes\nLa gente sigue percibiendo que sus hijos ganan al ir a escuelas de élite\nPosiblemente los egresados de estas escuelas tengan mayores ingresos\nLas ganancias que se puedan obtener no son vía el efecto de pares o un mejor rendimiento cognitivo"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#rd-difusa-resumen",
+    "href": "diapositivas/discontinuidades.html#rd-difusa-resumen",
+    "title": "Diseños con discontinuidades",
+    "section": "RD difusa: resumen",
+    "text": "RD difusa: resumen\n\nRD difusa explota discontinuidades en la probabilidad o valor esperado del tratamiento condicional en una variable\nEl resultado es que la discontinuidad se convierte en una VI para el estado del tratamiento en vez de una variable que se prende y apaga\n\n\\[\nP(D_i =1|x_i)=\n\\begin{cases}\ng_1(x_i)  & \\mbox{if } x_i \\geq x_0 \\\\\ng_0(x_i)  & \\mbox{if } x_i &lt; x_0\n\\end{cases}\n\\]\n\nLas funciones \\(g_0\\) u \\(g_1\\) difieren en \\(x_0\\)\nSupongamos que \\(g_1(x_0)&gt;g_0(x_0)\\), es decir, \\(x_i\\geq x_0\\) hace el tratamiento más probable"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#rd-difusa-resumen-1",
+    "href": "diapositivas/discontinuidades.html#rd-difusa-resumen-1",
+    "title": "Diseños con discontinuidades",
+    "section": "RD difusa: resumen",
+    "text": "RD difusa: resumen\n\nLa relación entre el estado de tratamiento y \\(x_i\\) puede ser escrita como:\n\n\\[E(D_i|x_i)=P(D_i=1|x_i)=g_0(x_i)+[g_1(x_i)-g_0(x_i)]T_i\\]\ncon \\(T_i=\\mathcal{I}(x_i\\geq x_0)\\)\n\nEscribiendo las funciones \\(g_0\\) y \\(g_1\\) como polinomios flexibles de \\(x_i\\)\n\n\\[E(D_i|x_i)=\\gamma_{00}+\\gamma_{01}x_i+\\gamma_{02}x_i+\\ldots+\\gamma_{0p}x_i^p +\\pi T_i + \\gamma_{1}^{*}x_i T_i+ \\gamma_{2}^{*}x_i^2 T_i+\\ldots+ \\gamma_{p}^{*}x_i^p T_i\\]"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#rd-difusa-resumen-2",
+    "href": "diapositivas/discontinuidades.html#rd-difusa-resumen-2",
+    "title": "Diseños con discontinuidades",
+    "section": "RD difusa: resumen",
+    "text": "RD difusa: resumen\n\nEn la primera etapa podríamos usar \\(\\{x_iTi, x_i^2 T_i,...,x_i^p T_i\\}\\) como instrumentos para \\(D_i\\)\nUna primera etapa con interacciones sugeriría emplear una segunda etapa también con interacciones\nLa versión más simple solo usa \\(T_i\\) como instrumento\nLa primera etapa será\n\n\\[D_i=\\gamma_0+\\gamma_1 x_i + \\gamma_2 x_i^2 + \\ldots + \\gamma_p x_i^p + \\rho T_i + \\xi_{i}\\]\n\nLa forma reducida o ITT de este modelo es:\n\n\\[y_i=\\beta_0+\\beta_1 x_i + \\beta_2 x_i^2 + \\ldots + \\beta_p x_i^p + \\delta\\ T_i + u_{i}\\] - Mientras que la ecuación estructural\n\\[y_i=\\pi_0+\\pi_1 x_i + \\pi_2 x_i^2 + \\ldots + \\pi_p x_i^p + \\lambda\\ D_i + u_{i}\\] se estima por MC2E usando \\(T_i\\) como instrumento de \\(D_i\\)"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#transferencias-gubernamentales-y-apoyo-político",
+    "href": "diapositivas/discontinuidades.html#transferencias-gubernamentales-y-apoyo-político",
+    "title": "Diseños con discontinuidades",
+    "section": "Transferencias gubernamentales y apoyo político",
+    "text": "Transferencias gubernamentales y apoyo político\n\nManacorda, M., E. Miguel y A. Vigorito (2011), Government Transfers and Political Support\n¿Los programas gubernamentales generan lealtades?\nPrograma Nacional de Emergencia Social (PANES) basado en un índice de pobreza\nExiste una discontinudad en el acceso al programa"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#contexto",
+    "href": "diapositivas/discontinuidades.html#contexto",
+    "title": "Diseños con discontinuidades",
+    "section": "Contexto",
+    "text": "Contexto\n\n¿Qué pasó en Uruguay?\nCrisis económica a inicios de los 2000\nEn abril de 2005 el Frente Amplio toma el poder\nExpansión del gasto público contra la pobreza (0.41% del PIB)\nPANES\n\nIngreso ciudadano: US$70\nOtros componentes: alimenticio, empleo, salud, etc.\nAlcanzó al 10% de los hogares y 14% de la población"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#regla-de-asignación",
+    "href": "diapositivas/discontinuidades.html#regla-de-asignación",
+    "title": "Diseños con discontinuidades",
+    "section": "Regla de asignación",
+    "text": "Regla de asignación\n\n¿Cómo se decidió quién recibiría el PANES?\nFocalizado a los más pobres\nModelo probit de ingreso ajustado\nEl ingreso observado puede ser un indicador muy ruidoso\nSe asignó el programa solo a aquellos por debajo de un umbral de ingreso ajustado"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#datos",
+    "href": "diapositivas/discontinuidades.html#datos",
+    "title": "Diseños con discontinuidades",
+    "section": "Datos",
+    "text": "Datos\n\n\n\nSe recolectó información de los hogares alrededor de la discontinuidad (tratados y no tratados)\nSe realizaron dos rondas de seguimiento en 2006-07 y en 2008\nVariable de interés: apoyo político al gobierno en turno"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#cómo-medir-el-apoyo-político",
+    "href": "diapositivas/discontinuidades.html#cómo-medir-el-apoyo-político",
+    "title": "Diseños con discontinuidades",
+    "section": "¿Cómo medir el apoyo político?",
+    "text": "¿Cómo medir el apoyo político?\n\nConstrucción de un índice del 0 al 1\nLos hogares que reciben PANES tenían un apoyo político cercano a 0.90\nLos no elegibles mostraban un apoyo de 0.77\nEsto implica un incremento de 13 puntos porcentuales"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#evidencia-gráfica",
+    "href": "diapositivas/discontinuidades.html#evidencia-gráfica",
+    "title": "Diseños con discontinuidades",
+    "section": "Evidencia gráfica",
+    "text": "Evidencia gráfica"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#resultados-de-regresión",
+    "href": "diapositivas/discontinuidades.html#resultados-de-regresión",
+    "title": "Diseños con discontinuidades",
+    "section": "Resultados de regresión",
+    "text": "Resultados de regresión\n\n\\(E\\) es el umbral de elegibilidad de PANES\n\\(N_i=S_i-E\\) es el score normalizado\n\n\\[\ny_i=\\beta_0+\\beta_1 \\mathcal{I}(N_i&lt;0) + f_1(N_i) + \\mathcal{I}f_2(N_i)+u_i\n\\]\n\n\\(\\beta_1\\) captura el impacto del programa"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#efectos-estimados-2",
+    "href": "diapositivas/discontinuidades.html#efectos-estimados-2",
+    "title": "Diseños con discontinuidades",
+    "section": "Efectos estimados",
+    "text": "Efectos estimados"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#evidencia-gráfica-en-2008",
+    "href": "diapositivas/discontinuidades.html#evidencia-gráfica-en-2008",
+    "title": "Diseños con discontinuidades",
+    "section": "Evidencia gráfica en 2008",
+    "text": "Evidencia gráfica en 2008"
+  },
+  {
+    "objectID": "diapositivas/discontinuidades.html#robustez",
+    "href": "diapositivas/discontinuidades.html#robustez",
+    "title": "Diseños con discontinuidades",
+    "section": "Robustez",
+    "text": "Robustez"
   }
 ]

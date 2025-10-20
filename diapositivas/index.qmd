@@ -24,3 +24,4 @@ title: "Diapositivas"
 
 [Emparejamiento](./emparejamiento.html){target="_blank"}
 
+[Discontinuidades](./discontinuidades.html){target="_blank"}
