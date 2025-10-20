@@ -1,21 +1,27 @@
 ---
-title: "Diseños con discontinuidades"
-author: "Irvin Rojas"
-format: 
+format:
   revealjs:
+    title-slide-attributes:
+      data-background-color: "#00573F"
+      data-background-transition: "fade"
+      class: portada
     slide-number: c/t
     width: 1600
     height: 900
+    scrollable: false
+    theme: [default, "./cide.scss"]
+    logo: https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/122010/logo_cide_verde.png?itok=NUstTkpt
+    title-slide: false
+    includes:
+      in-header:
+        - fontawesome.html
 ---
 
 
-```{r setup}
-#| echo: false
-#| warning: false 
-#| message: false
-knitr::opts_chunk$set(echo = TRUE,
-                      warning = FALSE,
-                      message = FALSE)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.path = "figures/")
+
 library(tidyverse)
 library(janitor)
 library(sandwich)
@@ -28,6 +34,48 @@ library(lubridate)
 library(lfe)
 library(modelsummary)
 library(estimatr)
+
+
+xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
+```
+
+
+# Diseños con discontinuidades {.portada}
+
+<div style="text-align: center; font-size: 1.2em; font-weight: bold;">
+  Inferencia Causal
+</div>
+
+<div style="text-align: center; margin-top: 1em;">
+  <strong>Irvin Rojas</strong>  
+  <br>
+  <a href="https://rojasirvin.github.io/" style="color: #ffffff;">https://rojasirvin.github.io/</a>
+</div>
+
+
+<div style="text-align: center; margin-top: 1em;">
+  <a href="https://github.com/rojasirvin" target="_blank" style="margin-right: 0 10px;">
+    {{< bi github >}}
+  </a>
+  <a href="https://twitter.com/RojasIrvin" target="_blank" style="margin-right: 0 10px;">
+    {{< bi twitter >}}
+  </a>
+  <a href="https://scholar.google.com/citations?user=FUwdSTMAAAAJ&hl=en" style="margin: 0 10px;">
+    {{< bi google >}}
+  </a>
+</div>
+
+**Centro de Investigación y Docencia Económicas**
+
+División de Economía
+
+```{css, echo = FALSE}
+.huge .remark-code { /*Change made here*/
+  font-size: 200% !important;
+}
+.tiny .remark-code { /*Change made here*/
+  font-size: 60% !important;
+}
 ```
 
 
@@ -349,7 +397,8 @@ $$
 ```{r}
 #| echo: FALSE
 #| fig-align: center
-knitr::include_graphics("figures/RDfuzzy_enrollment_BLS.png")
+knitr::include_graphics("figures/RDfuzzy_enrollment_BLS.png",
+                        dpi = 15)
 ```
 
 :::
@@ -372,7 +421,8 @@ knitr::include_graphics("figures/RDfuzzy_enrollment_BLS.png")
 ```{r}
 #| echo: FALSE
 #| fig-align: center
-knitr::include_graphics("figures/RDfuzzy_enrollment_any.png")
+knitr::include_graphics("figures/RDfuzzy_enrollment_any.png",
+                        dpi = 15)
 ```
 
 :::
@@ -399,7 +449,8 @@ knitr::include_graphics("figures/RDfuzzy_enrollment_any.png")
 ```{r}
 #| echo: FALSE
 #| fig-align: center
-knitr::include_graphics("figures/RDfuzzy_enrollment_peers.png")
+knitr::include_graphics("figures/RDfuzzy_enrollment_peers.png",
+                        dpi = 15)
 ```
 
 :::
@@ -475,7 +526,8 @@ $$Y_i=\alpha_0+\rho D_i + \beta_0 R_i + \epsilon_i$$
 ```{r}
 #| echo: FALSE
 #| fig-align: center
-knitr::include_graphics("figures/RDfuzzy_reducedform.png")
+knitr::include_graphics("figures/RDfuzzy_reducedform.png",
+                        dpi = 15)
 ```
 :::
 ::::
@@ -646,7 +698,8 @@ se estima por MC2E usando $T_i$ como instrumento de $D_i$
 ```{r}
 #| echo: FALSE
 #| fig-align: center
-knitr::include_graphics("PANES_implementation.png")
+knitr::include_graphics("PANES_implementation.png",
+                        dpi = 15)
 ```
 :::
 

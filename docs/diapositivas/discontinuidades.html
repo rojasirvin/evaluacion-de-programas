@@ -6,11 +6,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-contrib/bootstrap-icons-1.13.1/bootstrap-icons.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <meta name="author" content="Irvin Rojas">
-  <title>Inferencia Causal 2025 – Diseños con discontinuidades</title>
+  <title>Inferencia Causal 2025 – discontinuidades</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-8b940f0b0c37e8b60983ca0a0adffd2d.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -126,20 +126,35 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Diseños con discontinuidades</h1>
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Irvin Rojas 
+<section id="diseños-con-discontinuidades" class="title-slide slide level1 portada center">
+<h1>Diseños con discontinuidades</h1>
+<div style="text-align: center; font-size: 1.2em; font-weight: bold;">
+<p>Inferencia Causal</p>
 </div>
+<div style="text-align: center; margin-top: 1em;">
+<p><strong>Irvin Rojas</strong><br>
+<br> <a href="https://rojasirvin.github.io/" style="color: #ffffff;">https://rojasirvin.github.io/</a></p>
 </div>
+<div style="text-align: center; margin-top: 1em;">
+<p><a href="https://github.com/rojasirvin" target="_blank" style="margin-right: 0 10px;"> <i class="bi-github " style="" role="img" aria-hidden="true"></i> </a> <a href="https://twitter.com/RojasIrvin" target="_blank" style="margin-right: 0 10px;"> <i class="bi-twitter " style="" role="img" aria-hidden="true"></i> </a> <a href="https://scholar.google.com/citations?user=FUwdSTMAAAAJ&amp;hl=en" style="margin: 0 10px;"> <i class="bi-google " style="" role="img" aria-hidden="true"></i> </a></p>
 </div>
-
+<p><strong>Centro de Investigación y Docencia Económicas</strong></p>
+<p>División de Economía</p>
+<div class="cell">
+<style type="text/css">
+.huge .remark-code { /*Change made here*/
+  font-size: 200% !important;
+}
+.tiny .remark-code { /*Change made here*/
+  font-size: 60% !important;
+}
+</style>
+</div>
 </section>
+
 <section>
-<section id="diseños-con-discontinuidades" class="title-slide slide level1 center">
+<section id="diseños-con-discontinuidades-1" class="title-slide slide level1 center">
 <h1>Diseños con discontinuidades</h1>
 
 </section>
@@ -404,7 +419,7 @@ D_i =
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/RDfuzzy_enrollment_BLS.png" class="quarto-figure quarto-figure-center" width="408"></p>
+<p><img data-src="figures/RDfuzzy_enrollment_BLS.png" class="quarto-figure quarto-figure-center" width="5216"></p>
 </figure>
 </div>
 </div>
@@ -423,7 +438,7 @@ D_i =
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/RDfuzzy_enrollment_any.png" class="quarto-figure quarto-figure-center" width="380"></p>
+<p><img data-src="figures/RDfuzzy_enrollment_any.png" class="quarto-figure quarto-figure-center" width="4864"></p>
 </figure>
 </div>
 </div>
@@ -445,7 +460,7 @@ D_i =
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/RDfuzzy_enrollment_peers.png" class="quarto-figure quarto-figure-center" width="372"></p>
+<p><img data-src="figures/RDfuzzy_enrollment_peers.png" class="quarto-figure quarto-figure-center" width="4755"></p>
 </figure>
 </div>
 </div>
@@ -504,7 +519,7 @@ D_i =
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figures/RDfuzzy_reducedform.png" class="quarto-figure quarto-figure-center" width="366"></p>
+<p><img data-src="figures/RDfuzzy_reducedform.png" class="quarto-figure quarto-figure-center" width="4678"></p>
 </figure>
 </div>
 </div>
@@ -637,7 +652,7 @@ g_0(x_i)  &amp; \mbox{if } x_i &lt; x_0
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="PANES_implementation.png" class="quarto-figure quarto-figure-center" width="671"></p>
+<p><img data-src="PANES_implementation.png" class="quarto-figure quarto-figure-center" width="8589"></p>
 </figure>
 </div>
 </div>
@@ -686,6 +701,7 @@ y_i=\beta_0+\beta_1 \mathcal{I}(N_i&lt;0) + f_1(N_i) + \mathcal{I}f_2(N_i)+u_i
 <img data-src="PANES_validation.png" class="quarto-figure quarto-figure-center r-stretch" width="730"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/122010/logo_cide_verde.png?itok=NUstTkpt" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
