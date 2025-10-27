@@ -10,9 +10,9 @@ Por favor, seleccione una de las lecturas marcadas con una "+" de la lista de le
 | Hoyos, Attanasio & Meghir (2024) | Experimental | Dulce López  | Lunes 8 de septiembre |
 | Gonzalez-Navarro & Quintana-Domeque (2016) | LATE | Emiliano Villacaña | Lunes 22 de septiembre |
 | Boruchowicz, Parker & Robbins (2022) | DID | José Luis Cadena  | Lunes 13 de octubre |
-|  | DID |   | Lunes 13 de octubre |
-|  | Discontinuidades |   | Lunes 27 de octubre |
-|  | Discontinuidades |   | Lunes 27 de octubre |
+| Gutiérrez Vázquez & Parrado (2016).   | DID | Dulce López  | Lunes 13 de octubre |
+| Cañedo, Fabregas & Gupta (2023). | Discontinuidades | Emiliano Villacaña  | Lunes 27 de octubre |
+| Aguilar, Gutierrez & Seira (2021)  | Discontinuidades | Arturo López  | Lunes 27 de octubre |
 | González-Rozada & Ruffo (2024) | Control Sintético | José Luis Cadena | Lunes 10 de noviembre |
-|  | Control Sintético |   | Lunes 10 de noviembre |
-|  | Machine learning |   | Lunes 24 de noviembre |
+| Cepeda-Francese & Ramírez-Álvarez (2023)  | Control Sintético |  José Luis Valle | Lunes 10 de noviembre |
+| Por definir | Machine learning | Arturo López | Lunes 24 de noviembre |
