@@ -504,7 +504,7 @@
     "href": "diapositivas/index.html",
     "title": "Diapositivas",
     "section": "",
-    "text": "Introducción del curso\nInferencia causal\nDiseños experimentales\nRegresión\nInferencia estadística\nErrores estándar e inferencia\nBootstrap\nLATE y variables instrumentales\nMúltiples hipótesis\nDiferencia en diferencias\nEmparejamiento\nDiscontinuidades",
+    "text": "Introducción del curso\nInferencia causal\nDiseños experimentales\nRegresión\nInferencia estadística\nErrores estándar e inferencia\nBootstrap\nLATE y variables instrumentales\nMúltiples hipótesis\nDiferencia en diferencias\nEmparejamiento\nDiscontinuidades\nControl sintético",
     "crumbs": [
       "Diapositivas"
     ]

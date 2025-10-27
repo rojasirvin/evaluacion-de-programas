@@ -25,3 +25,6 @@ title: "Diapositivas"
 [Emparejamiento](./emparejamiento.html){target="_blank"}
 
 [Discontinuidades](./discontinuidades.html){target="_blank"}
+
+[Control sintético](./sintetico.html){target="_blank"}
+
