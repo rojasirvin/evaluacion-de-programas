@@ -696,9 +696,226 @@ y_i=\beta_0+\beta_1 \mathcal{I}(N_i&lt;0) + f_1(N_i) + \mathcal{I}f_2(N_i)+u_i
 <section id="robustez" class="slide level2">
 <h2>Robustez</h2>
 
-
-
 <img data-src="PANES_validation.png" class="quarto-figure quarto-figure-center r-stretch" width="730"></section></section>
+<section>
+<section id="estimación" class="title-slide slide level1 center">
+<h1>Estimación</h1>
+
+</section>
+<section id="discontinuidades-nítidas-2" class="slide level2">
+<h2>Discontinuidades nítidas</h2>
+<ul>
+<li>Motivamos el uso de una regresión con el siguiente modelo</li>
+</ul>
+<p><span class="math display">\[
+D_i =
+\begin{cases}
+1  &amp; \mbox{si } x_i \geq c_0 \\
+0  &amp; \mbox{si } x_i &lt; c_0
+\end{cases}
+\]</span></p>
+<ul>
+<li>Si asumimos efectos de tratamiento constantes</li>
+</ul>
+<p><span class="math display">\[
+y_i^0=\alpha + \beta x_i \\
+y_i^1= y_i^0 + \delta
+\]</span></p>
+</section>
+<section id="discontinuidades-nítidas-3" class="slide level2">
+<h2>Discontinuidades nítidas</h2>
+<ul>
+<li>Con nuestro modelo de resultados contrafactuales</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+y_i &amp;= y_i^0 + (y_i^1 - y_i^0)D_i \\
+y_i &amp;= \alpha + \beta x_i + (\alpha + \beta x_i + \delta - \alpha - \beta x_i)D_i \\
+y_i &amp;= \alpha + \beta x_i + \delta D_i + \varepsilon_i
+\end{align}
+\]</span></p>
+<ul>
+<li>Formalmente, el efecto del tratamiento es</li>
+</ul>
+<p><span class="math display">\[
+\delta = \lim_{x_i\to c_o} E(y_i^1|x_i = c_0) - \lim_{x_i\leftarrow c_o} E(y_i^0|x_i = c_0)
+\]</span> - Pero como solo usamos la información en la vecindad del corte de elegibilidad, podemos definir el efecto como</p>
+<p><span class="math display">\[
+\delta^{RD,N} = E(y_i^1 - y_i^0 | x_i=c_0)
+\]</span></p>
+</section>
+<section id="discontinuidades-nítidas-4" class="slide level2">
+<h2>Discontinuidades nítidas</h2>
+<ul>
+<li><p>El efecto estimado es un <em>efecto local</em> en sentido de que nuestras conclusiones son válidas solo en la vecindad alrededor de <span class="math inline">\(c_0\)</span></p></li>
+<li><p>A diferencia de otros diseños, aquí no hay traslape</p></li>
+<li><p>Recurrimos a la extrapolación</p></li>
+</ul>
+
+<img data-src="figures/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="supuesto-de-identificación" class="slide level2">
+<h2>Supuesto de identificación</h2>
+<p><strong>Continuidad</strong></p>
+<p><span class="math inline">\(E(y_i^0)\)</span> y <span class="math inline">\(E(y_i^1)\)</span> son funciones suaves y continuas de <span class="math inline">\(x_i\)</span> en el corte <span class="math inline">\(c_0\)</span></p>
+<ul>
+<li><p>En ausencia del tratamiento, los resultados potenciales <em>no saltan</em></p></li>
+<li><p>Esto implica que no debe haber otras interacciones o variables imitidas que salten en <span class="math inline">\(c_0\)</span></p></li>
+<li><p>En el ejemplo del acceso a alcohol, debemos descartar que no hay otros factores (como enfermedades) que se disparen a los 21 años</p></li>
+</ul>
+</section>
+<section id="estimación-1" class="slide level2">
+<h2>Estimación</h2>
+<ul>
+<li><p>Se acostumbra construir la versión <em>centrada</em> de la variable de asignación: <span class="math inline">\(x_i-c_0\)</span></p></li>
+<li><p>Para permitir no linealidades en <span class="math inline">\(x_i\)</span>, podríamos pensar que podemos especificar polinomios de alto grado</p></li>
+<li><p>Esta es una mala idea, como lo muestran Andew &amp; Imbens (20219), “Why Higher-Order Polynomial Shpuld Not Be Used in Regression Discontinuity Designs”</p></li>
+</ul>
+</section>
+<section id="estimación-2" class="slide level2">
+<h2>Estimación</h2>
+<ul>
+<li>Cuando recentramos:</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+y_i^*&amp;=\alpha + \beta (x_i-c_0) + \delta D_i + \varepsilon_i \\
+&amp; = \alpha + \beta x_i - \beta c_0 + \delta D_i + \varepsilon_i \\
+&amp; = \alpha^* + \beta x_i + \delta D_i + \varepsilon_i
+\end{align}
+\]</span> con <span class="math inline">\(\alpha^*=\alpha-\beta c_0\)</span></p>
+<ul>
+<li>Es decir, solo se modifica la ordenada al origen en la regresión</li>
+</ul>
+</section>
+<section id="estimación-3" class="slide level2">
+<h2>Estimación</h2>
+<ul>
+<li>Permitimos pendientes distintas antes y despues de <span class="math inline">\(c_0\)</span></li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+E(y_i^0|x_i)&amp;=\alpha + \beta_{01} \tilde{x}_i \\
+E(y_i^1|x_i)&amp;=\alpha + \delta + \beta_{11} \tilde{x}_i
+\end{align}
+\]</span></p>
+<ul>
+<li>Usando la ecuación de resultados potenciales</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+E(y_i|x_i)=\alpha + \beta_{01} \tilde{x}_i + (\alpha + \delta + \beta_{11} \tilde{x}_i-\alpha - \beta_{01} \tilde{x}_i) D_i
+\end{align}
+\]</span></p>
+<ul>
+<li>Dando lugar a la regresión</li>
+</ul>
+<p><span class="math display">\[
+y_i = \alpha +  \beta_{01} \tilde{x}_i + \delta D_i + \beta_1^*\tilde{x}_i D_i+ \varepsilon_i
+\]</span> donde <span class="math inline">\(\beta_1^*=\beta_{11}-\beta_{01}\)</span></p>
+<ul>
+<li><p>Esto es, una regresión de <span class="math inline">\(y_i\)</span> en <span class="math inline">\(D_i\)</span>, <span class="math inline">\(\tilde{x}_i\)</span> y la interacción <span class="math inline">\(\tilde{x}_i D_i\)</span></p></li>
+<li><p>Interpretamos <span class="math inline">\(\delta\)</span> como el salto en la función o el efecto causal</p></li>
+<li><p>Con un polinomio de segundo orden tendríamos</p></li>
+</ul>
+<p><span class="math display">\[
+y_i = \alpha +  \beta_{01} \tilde{x}_i + \beta_{02} \tilde{x}_i + \delta D_i + \beta_1^*\tilde{x}_i D_i+ \beta_2^*\tilde{x}_i^2 D_i+ \varepsilon_i
+\]</span></p>
+</section>
+<section id="estimación-no-paramétrica" class="slide level2">
+<h2>Estimación no paramétrica</h2>
+<ul>
+<li><p>Muchos autores cuestionan la estimación paramétrica que hemos tratado hasta ahora pues el sesgo puede ser sustancial</p></li>
+<li><p>En muchas aplicaciones se prefiere usar una regresión lineal no paramétrica</p></li>
+<li><p>Es una regresión restringida a una <em>ventana</em>, con pesos para cada valor de <span class="math inline">\(E(y|x)\)</span></p></li>
+<li><p>Consiste en estimar</p></li>
+</ul>
+<p><span class="math display">\[\hat{a}, \hat{b} = \arg \min_{a,b}\sum_{i=1}^n(y_i-a-b(x_i-c_0))^2K\left(\frac{x_-c_0}{h}\right)1(x_i\geq 0)\]</span></p>
+<ul>
+<li><p>Y lo mismo para <span class="math inline">\(x_i&lt;c_0\)</span></p></li>
+<li><p>El parámetro <span class="math inline">\(h\)</span> indica el <em>ancho de banda</em>, escogido mediante técnicas de optimización</p></li>
+<li><p>Consiste en estimar una regresión centrada en cada valor de <span class="math inline">\(x_i\)</span> para obtener una predicción de <span class="math inline">\(E(y_i| X_i=x_i)\)</span></p></li>
+</ul>
+</section>
+<section id="estimación-no-paramétrica-1" class="slide level2">
+<h2>Estimación no paramétrica</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Usamos observaciones a la izquierda y a la derecha de <span class="math inline">\(x_i\)</span></p></li>
+<li><p>Se les otorga un peso de acuerdo con la función <span class="math inline">\(K(\cdot)\)</span></p></li>
+<li><p>Son métodos computacionalmente intensivos</p></li>
+<li><p>En la práctica, el paquete <em>rdrobust</em> elige el <span class="math inline">\(h\)</span> óptimo, estima la regresión local (con un kernel triangular por default) y un polinomio del orden especificado</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Kernels.svg/1920px-Kernels.svg.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="discontinuidades-difusas-1" class="slide level2">
+<h2>Discontinuidades difusas</h2>
+<ul>
+<li>Tenemos un diseño difuso cuando hay un salto en la probabilidad de ser asignado al tratamiento</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+\lim_{x_i\rightarrow c_0} P(D_i=1|x_i=c_0) \neq \lim_{c_0 \leftarrow x_i}  P(D_i=1|x_i=c_0) \\
+\end{align}
+\]</span></p>
+<ul>
+<li><p>La probabilidad de recibir el tratamiento es discontinua en <span class="math inline">\(c_0\)</span></p></li>
+<li><p>El supuesto de identificación es igual que en el caso nítido, que los resultados potenciales son funciones continuas y suaves en <span class="math inline">\(c_0\)</span></p></li>
+<li><p>Recurrimos a variables instrumentales</p></li>
+<li><p>Ser asignado al tratamiento se vuelve un instrumento para recibir el tratamiento</p></li>
+</ul>
+<p><span class="math display">\[
+P(D_i=1|x_i) =
+\begin{cases}
+g_1(x_i)  &amp; \mbox{si } x_i \geq c_0 \\
+g_0(x_i)  &amp; \mbox{si } x_i &lt; c_0
+\end{cases}
+\]</span></p>
+</section>
+<section id="discontinuidades-difusas-2" class="slide level2">
+<h2>Discontinuidades difusas</h2>
+<ul>
+<li>Tenemos entonces una primera etapa</li>
+</ul>
+<p><span class="math display">\[
+D_i = \gamma_0 + \gamma_1 x_i + \gamma_2 x_i^2 + \rho T_i + \varepsilon_i
+\]</span></p>
+<p>donde</p>
+<p><span class="math display">\[
+T_i =
+\begin{cases}
+1  &amp; \mbox{si } x_i \geq c_0 \\
+0  &amp; \mbox{si } x_i &lt; c_0
+\end{cases}
+\]</span></p>
+</section>
+<section id="discontinuidades-difusas-3" class="slide level2">
+<h2>Discontinuidades difusas</h2>
+<ul>
+<li>La forma reducida es</li>
+</ul>
+<p><span class="math display">\[
+y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \delta T_i + u_i
+\]</span></p>
+<ul>
+<li>Y la ecuación estructural es</li>
+</ul>
+<p><span class="math display">\[
+y_i = \pi_0 + \pi_1 x_i + \pi_2 x_i^2 + \lambda D_i + \nu_i
+\]</span> - En términos de código, hacemos lo mismo que en los diseños nítidos</p>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/122010/logo_cide_verde.png?itok=NUstTkpt" class="slide-logo"></p>

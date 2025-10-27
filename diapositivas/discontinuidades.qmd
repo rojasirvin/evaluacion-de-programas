@@ -768,3 +768,270 @@ knitr::include_graphics("PANES_validation.png")
 ```
 
 
+# Estimación
+
+## Discontinuidades nítidas
+
+- Motivamos el uso de una regresión con el siguiente modelo
+
+
+$$
+D_i =
+\begin{cases}
+1  & \mbox{si } x_i \geq c_0 \\
+0  & \mbox{si } x_i < c_0
+\end{cases}
+$$
+
+- Si asumimos efectos de tratamiento constantes
+
+$$
+y_i^0=\alpha + \beta x_i \\
+y_i^1= y_i^0 + \delta
+$$
+
+## Discontinuidades nítidas
+
+- Con nuestro modelo de resultados contrafactuales
+
+$$
+\begin{align}
+y_i &= y_i^0 + (y_i^1 - y_i^0)D_i \\
+y_i &= \alpha + \beta x_i + (\alpha + \beta x_i + \delta - \alpha - \beta x_i)D_i \\
+y_i &= \alpha + \beta x_i + \delta D_i + \varepsilon_i
+\end{align}
+$$
+
+- Formalmente, el efecto del tratamiento es
+
+$$
+\delta = \lim_{x_i\to c_o} E(y_i^1|x_i = c_0) - \lim_{x_i\leftarrow c_o} E(y_i^0|x_i = c_0)
+$$
+- Pero como solo usamos la información en la vecindad del corte de elegibilidad, podemos definir el efecto como
+
+$$
+\delta^{RD,N} = E(y_i^1 - y_i^0 | x_i=c_0)
+$$
+
+## Discontinuidades nítidas
+
+- El efecto estimado es un *efecto local* en sentido de que nuestras conclusiones son válidas solo en la vecindad alrededor de $c_0$
+
+- A diferencia de otros diseños, aquí no hay traslape
+
+- Recurrimos a la extrapolación
+
+  
+```{r }
+#| fig-align: center
+set.seed(1711)
+  
+x <- runif(1000, -1, 1)
+y <- 3 + 2*x + 5*(x>=0) + rnorm(1000, mean = 0, sd = 0.2)
+
+data.sharp <- data.frame(y, x, c = 0)
+
+
+data.sharp %>% 
+  ggplot() +
+  geom_point(aes(x=x, y=y), size=0.5, alpha=0.5) +
+  geom_abline(intercept = 3, slope = 2, linetype = "dashed") +
+  geom_abline(intercept = 8, slope = 2, linetype = "dashed") +
+  geom_vline(xintercept = 0)+
+    annotate(
+    'text',
+    x = 0.5,
+    y = 6,
+    label = 'Lo que hubiera pasado a las undades\nno tratadas de haber sido tratadas',
+    fontface = 'bold', 
+    size = 2)+
+    annotate(
+    'curve',
+    x = 0.5, # Play around with the coordinates until you're satisfied
+    y = 5.5,
+    yend = 4.5,
+    xend = 0.6,
+    linewidth = 1,
+    curvature = -0.5,
+    arrow = arrow(length = unit(0.5, 'cm'))
+  )
+```
+    
+## Supuesto de identificación
+
+**Continuidad**
+
+$E(y_i^0)$ y $E(y_i^1)$ son funciones suaves y continuas de $x_i$ en el corte $c_0$
+
+- En ausencia del tratamiento, los resultados potenciales *no saltan*
+
+- Esto implica que no debe haber otras interacciones o variables imitidas que salten en $c_0$
+
+- En el ejemplo del acceso a alcohol, debemos descartar que no hay otros factores (como enfermedades) que se disparen a los 21 años
+
+## Estimación 
+
+- Se acostumbra construir la versión *centrada* de la variable de asignación: $x_i-c_0$
+
+- Para permitir no linealidades en $x_i$, podríamos pensar que podemos especificar polinomios de alto grado
+
+- Esta es una mala idea, como lo muestran Andew \& Imbens (20219), "Why Higher-Order Polynomial Shpuld Not Be Used in Regression Discontinuity Designs"
+
+
+## Estimación
+
+- Cuando recentramos:
+
+
+$$
+\begin{align}
+y_i^*&=\alpha + \beta (x_i-c_0) + \delta D_i + \varepsilon_i \\
+& = \alpha + \beta x_i - \beta c_0 + \delta D_i + \varepsilon_i \\
+& = \alpha^* + \beta x_i + \delta D_i + \varepsilon_i
+\end{align}
+$$
+con $\alpha^*=\alpha-\beta c_0$
+
+- Es decir, solo se modifica la ordenada al origen en la regresión
+
+
+## Estimación
+
+- Permitimos pendientes distintas antes y despues de $c_0$
+
+$$
+\begin{align}
+E(y_i^0|x_i)&=\alpha + \beta_{01} \tilde{x}_i \\
+E(y_i^1|x_i)&=\alpha + \delta + \beta_{11} \tilde{x}_i
+\end{align}
+$$
+
+- Usando la ecuación de resultados potenciales
+
+$$
+\begin{align}
+E(y_i|x_i)=\alpha + \beta_{01} \tilde{x}_i + (\alpha + \delta + \beta_{11} \tilde{x}_i-\alpha - \beta_{01} \tilde{x}_i) D_i
+\end{align}
+$$
+
+- Dando lugar a la regresión
+
+$$
+y_i = \alpha +  \beta_{01} \tilde{x}_i + \delta D_i + \beta_1^*\tilde{x}_i D_i+ \varepsilon_i
+$$
+donde $\beta_1^*=\beta_{11}-\beta_{01}$
+
+- Esto es, una regresión de $y_i$ en $D_i$, $\tilde{x}_i$ y la interacción $\tilde{x}_i D_i$
+
+- Interpretamos $\delta$ como el salto en la función o el efecto causal
+
+
+- Con un polinomio de segundo orden tendríamos
+
+$$
+y_i = \alpha +  \beta_{01} \tilde{x}_i + \beta_{02} \tilde{x}_i + \delta D_i + \beta_1^*\tilde{x}_i D_i+ \beta_2^*\tilde{x}_i^2 D_i+ \varepsilon_i
+$$
+
+## Estimación no paramétrica
+
+- Muchos autores cuestionan la estimación paramétrica que hemos tratado hasta ahora pues el sesgo puede ser sustancial
+
+- En muchas aplicaciones se prefiere usar una regresión lineal no paramétrica
+
+- Es una regresión restringida a una *ventana*, con pesos para cada valor de $E(y|x)$
+
+- Consiste en estimar 
+
+$$\hat{a}, \hat{b} = \arg \min_{a,b}\sum_{i=1}^n(y_i-a-b(x_i-c_0))^2K\left(\frac{x_-c_0}{h}\right)1(x_i\geq 0)$$
+
+- Y lo mismo para $x_i<c_0$
+
+- El parámetro $h$ indica el *ancho de banda*, escogido mediante técnicas de optimización
+
+- Consiste en estimar una regresión centrada en cada valor de $x_i$ para obtener una predicción de $E(y_i| X_i=x_i)$
+
+
+## Estimación no paramétrica
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Usamos observaciones a la izquierda y a la derecha de $x_i$
+
+- Se les otorga un peso de acuerdo con la función $K(\cdot)$
+
+- Son métodos computacionalmente intensivos
+
+- En la práctica, el paquete *rdrobust* elige el $h$ óptimo, estima la regresión local (con un kernel triangular por default) y un polinomio del orden especificado
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| fig-align: center
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Kernels.svg/1920px-Kernels.svg.png",
+                        dpi = 10)
+```
+:::
+
+::::
+
+## Discontinuidades difusas
+
+- Tenemos un diseño difuso cuando hay un salto en la probabilidad de ser asignado al tratamiento
+
+$$
+\begin{align}
+\lim_{x_i\rightarrow c_0} P(D_i=1|x_i=c_0) \neq \lim_{c_0 \leftarrow x_i}  P(D_i=1|x_i=c_0) \\
+\end{align}
+$$
+
+- La probabilidad de recibir el tratamiento es discontinua en $c_0$
+
+- El supuesto de identificación es igual que en el caso nítido, que los resultados potenciales son funciones continuas y suaves en $c_0$
+
+- Recurrimos a variables instrumentales
+
+- Ser asignado al tratamiento se vuelve un instrumento para recibir el tratamiento
+
+$$
+P(D_i=1|x_i) =
+\begin{cases}
+g_1(x_i)  & \mbox{si } x_i \geq c_0 \\
+g_0(x_i)  & \mbox{si } x_i < c_0
+\end{cases}
+$$
+
+## Discontinuidades difusas
+
+- Tenemos entonces una primera etapa
+
+$$
+D_i = \gamma_0 + \gamma_1 x_i + \gamma_2 x_i^2 + \rho T_i + \varepsilon_i
+$$
+
+donde
+
+$$
+T_i =
+\begin{cases}
+1  & \mbox{si } x_i \geq c_0 \\
+0  & \mbox{si } x_i < c_0
+\end{cases}
+$$
+
+## Discontinuidades difusas
+
+- La forma reducida es
+
+$$
+y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \delta T_i + u_i
+$$
+
+- Y la ecuación estructural es
+
+$$
+y_i = \pi_0 + \pi_1 x_i + \pi_2 x_i^2 + \lambda D_i + \nu_i
+$$
+- En términos de código, hacemos lo mismo que en los diseños nítidos
