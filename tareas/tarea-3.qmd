@@ -1,0 +1,82 @@
+---
+title: "Tarea 3"
+lang: es
+format: html
+---
+
+```{r setup}
+#| echo: false
+#| warning: false 
+#| message: false
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      indent = "   ")
+library(tidyverse)
+library(janitor)
+library(rdrobust)
+library(bacondecomp)
+library(lfe) #linear fixed effects
+library(fixest) #incluye el estimador de SA y el correspondiente gráfico de evento
+library(modelsummary)
+library(MatchIt)
+library(lmtest)
+library(sandwich)
+library(clubSandwich)
+library(cobalt)
+library(did)
+```
+
+
+## Preguntas
+
+Fecha de entrega: **viernes 14 de noviembre a las 20:00 en Teams**
+
+La tarea deberá entregarse en Teams. Deberá incluir dos documentos:
+
+Un primer documento de respuestas donde se incluyan las respuestas a las preguntas teóricas y conceptuales. Este documento debe estar en formato pdf y debe ser generado usando un software de procesamiento de textos científicos, por ejemplo, usando los leguajes LaTeX o Markdown. En este documento también se deben incluir las respuestas a preguntas sobre conclusiones que se desprenden de las secciones prácticas. Por ejemplo, si una pregunta pide obtener la media de la variable x en cierta base de datos, entonces el documento de respuestas debe incluir la pregunta y respuesta correspondiente: “la media de la variable x es 32.6”. En este documento también deberán incluirse las tablas y gráficas que se soliciten.
+
+Un segundo archivo deberá contener el código replicable usado para generar los resultados de la sección práctica. El código debe también crear las tablas y gráficas solicitadas. Los archivos de código se verificarán para comprobar su replicabilidad.
+
+## Datos
+
+[ehec_data.csv](../files/ehec_data.csv)
+
+## Pregunta 1 
+
+Los datos en *ehec_data.csv* son datos de panel a nivel estado para los Estados Unidos de 2008 a 2019. A partir de 2014 se llevó a cabo un proceso de expansión de un programa de ayuda para subsidiar el costo de los servicios de salud de personas de bajos ingresos, *Medicaid Expansion*. La columna **yexp2** indica el año en que cada estado es tratado con la expansión del programa, **treated** es un indicador de si el estado $i$ es tratado en el año $t$, mientras que **rel_year** indica el número de años desde la expansión. Si *yexp2==Inf*, entonces el estado no ha sido tratado para 2019. Se busca estimar el efecto de la expansión del programa en el porcentaje de la población asegurada que es de bajos ingresos, sin hijos, y de entre 25 y 64 años de edad, **dins**.
+
+a. [5 puntos] ¿Por qué decimos que esta es una aplicación de la estimación de efectos de tratamiento con adopción escalonada?
+
+a. [5 puntos] Como punto de partida, estime el efecto del tratamiento sobre **dins** usando efectos fijos por estado y año (TWFE) y empleando una librería específica para efectos fijos, como *felm*. Tome en cuenta la agrupación de los errores. Interprete sus resultados.
+
+a. [5 puntos] Compruebe que puede obtener el mismo resultado con una regresión lineal usando el paquete *lm* e incluyendo, además de la variable de tratamiento, dummies de estado y de año. 
+
+a. [10 puntos] Ahora muestre que podemos obtener el coeficiente de TWFE a partir de una regresión bivariada entre el porcentaje de la población asegurada y **treated**, una vez *purgada* por efectos fijos. Para ello, primero estime una regresión de **treated** en función de los efectos fijos. Obtenga la predicción y luego defina una nueva variable igual a la diferencia entre **treated** y la predicción que acaba de obtener. Finalmente, obtenga el coeficiente de TWFE con una regresión del porcentaje de la población asegurada en función de la diferencia antes definida.
+
+a. [10 puntos] Realice la descomposición de Goodman-Bacon (2021). Construya un gráfico donde muestre en el eje $x$ el peso otorgado a cada comparación 2x2 y en el eje $y$ el efecto estimado correspondiente a cada comparación. Interprete el gráfico obtenido.
+
+a. [10 puntos] Implemente el estimador de Callaway & Sant’Anna (2021) para estimar los efectos del tratamiento específicos para cada cohorte, usando el paquete *did*. Utilice como grupo de comparación los estados *no tratados aún*.
+
+a. [10 puntos] Reporte los resultados agregados obtenidos a partir del estimador Callaway & Sant’Anna (2021), usando una agregación dinámica que muestre los efectos promedio para cada periodo antes y después del tratamiento. Grafique e interprete los resultados.
+
+a. [10 puntos] Reporte los resultados agregados obtenidos a partir del estimador Callaway & Sant’Anna (2021), usando una agregación or grupos que muestre los efectos promedio para cada cohorte del tratamiento. Grafique e interprete los resultados.
+
+
+## Pregunta 2
+
+Suponga que se convierte en asesor de un programa de educación. Se tiene la hipótesis de que el bajo aprovechamiento académico responde a las condiciones de desventaja de los alumnos más pobres. Por tanto, el programa otorga una transferencia monetaria a los estudiantes considerados pobres. Para determinar la elegibilidad del programa, la autoridad educativa diseña un cuestionario socioeconómico y crea un índice de riqueza de los hogares. Además, esta entidad establece un umbral por debajo del cual los estudiantes son considerados pobres. Todos los estudiantes considerados pobres reciben una transferencia monetaria que es entregada en efectivo directamente al estudiante.
+
+a. [5 puntos] ¿Qué aspectos del programa permitirían emplear un diseño de regresión discontinua para evaluar la efectividad de este sobre el desempeño escolar y cómo mostraría su validez empíricamente?
+
+a. [10 puntos] ¿Cómo emplearía el diseño de este programa para evaluar su efectividad con un modelo de regresión discontinua nítida? Elabore una gráfica donde explique una situación en la que el programa muestra ser efectivo. Describa cómo usaría una regresión para hacer inferencia respecto a la efectividad del programa.
+
+a. [5 puntos] ¿Qué factores podrían invalidar el uso de este método para evaluar el programa?
+
+a. Suponga que se propone ahora que la transferencia se realice a la cuenta del padre o la madre del estudiante. Se sabe que una de las consecuencias de esta decisión es que una fracción de los estudiantes no recibirá el dinero. Suponiendo que en una encuesta de seguimiento pudiera conocer si cada estudiante efectivamente recibió el pago, ¿cómo emplearía un diseño de regresión discontinua difusa para evaluar el efecto del programa sobre el desempeño escolar? En particular, describa:
+
+    i. [5 puntos] ¿Cómo estimaría la forma reducida? ¿Cuál es el coeficiente relevante y cuál es su interpretación?
+    
+    i. [5 puntos] ¿Cómo estimaría la primera y la segunda etapa? ¿Cuáles son los coeficientes relevantes y cuál es su interpretación? 
+      
+    i. [5 puntos] ¿Cuáles son los supuestos necesarios para estimar este modelo usando variables instrumentales?

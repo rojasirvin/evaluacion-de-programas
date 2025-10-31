@@ -25,8 +25,9 @@ title: "Tareas"
 
 # Tarea 3
 
-- Fecha de entrega: lunes 10 de noviembre a las 20:00 en Teams
+- Fecha de entrega: viernes 14 de noviembre a las 20:00 en Teams
 
+- [Preguntas](./tarea-3.qmd)
 
 ---
 
